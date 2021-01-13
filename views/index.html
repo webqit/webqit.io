@@ -1,0 +1,578 @@
+
+<!-- Main Home View -->
+<div namespace class="snap-mandatory-container">
+
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid silver; z-index: 16;">
+
+        <div class="col-grows pd-10 pd-x3 flex-column">
+            <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
+                <li>
+                    <a href="/tooling" class="flex-y-center">
+                        <play-icon name="code-slash" size="sm" class="pd-6"></play-icon>
+                        <span class="pd-6">Tooling</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cloud" class="flex-y-center">
+                        <play-icon name="cloud" size="sm" class="pd-6"></play-icon>
+                        <span class="pd-6">Cloud</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/community" class="flex-y-center">
+                        <play-icon name="flag" size="sm" class="pd-6"></play-icon>
+                        <span class="pd-6">Community</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed sil-ver">
+                <li>
+                    <a href="/about" class="flex-y-center">
+                        <play-icon name="globe" size="sm" class="pd-6"></play-icon>
+                        <span class="pd-6">About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pd-10 b i flex-y-center flex-x-separate d-none">
+            <a href="" target="_blank">A</a>
+            <a href="" target="_blank">
+                <play-icon name="github" size="xs" play-icon-type=""></play-icon>
+            </a>
+        </div>
+    </div>
+    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
+
+    <script type="reflex">
+        $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
+        $(this.namespace.app_drawer_open2).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
+        $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
+        // ----------
+        let app = document.state;
+        let inReverseShow = app.page.outline.prev.active > app.page.outline.now.active;
+        if (app.page.outline.items && this.namespace.outline_menu) {
+            $(this.namespace.outline_menu).itemize(app.page.outline.items, (el, e, d) => el[e](d));
+            $(this.namespace.outline_show).itemize(app.page.outline.items, (el, e, d) => el[e](d), null, {itemExportId: 'show'});
+            $(this.namespace.outline_prev).on('click', () => { inReverseShow = true; app.page.outline.advance('prev', true); });
+            $(this.namespace.outline_next).on('click', () => { inReverseShow = false; app.page.outline.advance('next', true); });
+            $(this.namespace.outline_show).attrSync('reverse-show', inReverseShow ? 'true' : false);
+            if (app.page.outline.now.active) {
+                var active = app.page.outline.state.active.first();
+                $(this.namespace.outline_title).html(active.title);
+                $(this.namespace.outline_desc).html(active.desc);
+                $(this.namespace.outline_more).attr('href', '#' + active.title);
+            }
+        }
+    </script>
+
+    <div class="overflow-hidden" style="border-bottom: 3px solid silver; background-color: white;">
+
+        <header class="app-bar flex-y-stretch flex-wrap">
+            
+            <div class="col-4 pd-10 pd-x3 flex-x-separate md--flex-y-center sm--col-8 md--border-none overflow-hidden" style="border-right: 2px solid gainsboro;">
+                
+                <html-import name="logo_nav" template="brand"></html-import>
+                <div data-id="app_drawer_open" class="menu-control pos-rel wt-40 ht-40 flex-center cursor-pointer radius-10 md--d-none" play-icon-type="bootstrap">
+                    <play-icon name="filter-right" class="pos-rel"></play-icon>
+                </div>
+
+            </div>
+
+            <ul class="col-grows pd-10 pd-x3 flex-y-center flex-x-end list-style-none">
+                
+                <li class="sm--d-none pos-rel mg-rt-10 mg-rt-x6 z-index-10">
+                    <ul class="flex-y-center pd-8 radius-10 list-style-none" style="border: 1px dashed silver">
+                        <li><a class="pd-10" href="mailto://webqit.io@gmail.com">
+                            <play-icon name="chat-quote" size="sm"></play-icon>
+                        </a></li>
+                        <li><a class="pd-10" href="https://twitter.com/Web_Qit" target="_blank">
+                            <play-icon name="twitter" size="sm"></play-icon>
+                        </a></li>
+                        <li><a class="pd-10" href="https://github.com/webqit" target="_blank">
+                            <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                        </a></li>
+                    </ul>
+                </li>
+                <!--
+                <li><a class="mg-lft-10 pd-8 pd-x2 sm--pd-10" href="#">
+                    <play-icon name="search" size="sm" class="sm--txt-sm"></play-icon>
+                </a></li>
+                -->
+                <li data-id="app_drawer_open2" class="pd-8 d-none md--d-flex"><a class="menu-control-alt pos-rel" href="#">
+                    <play-icon name="filter-right" class="pos-rel"></play-icon>
+                </a></li>
+
+            </ul>
+
+        </header>
+
+        <!-- ::::::::::::::::: -->
+
+        <section class="flex-y-stretch flex-wrap pos-rel z-index-10">
+            <div class="col-4 pd-10 pd-x3 md--col-5 sm--col-12 sm--pd-10 md--border-none" style="background-color: white; border-right: 2px solid gainsboro;">
+                
+                <div class="pd-10 mg-btm-10 mg-x3 sm--mg-btm-10 flex-y-center sm--flex-x-center">
+                    <play-icon name="globe" size="sm" class="wt-60 ht-60 flex-center radius-10 radius-x8" style="background-color: ghostwhite;"></play-icon>
+                    <div class="pd-10 b i pos-rel">
+                        <span class="webqit_intro_a">the web of the future is magical, yet traditional...</span>
+                        <span class="webqit_intro_b" style="height: 0px;">...WebQit is the tooling, cloud, and community!</span>
+                    </div>
+                </div>
+
+                <div class="sm--flex-center sm--mg-btm-10 z-index-10">
+                    <div data-id="outline_prev" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-left"></play-icon></div>
+                    <ul is="play-seq-ul" data-id="outline_menu" template="page/#layout/outline" class="outline wt-full sm--wt-auto sm--flex-center list-style-none"></ul>
+                    <div data-id="outline_next" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-right"></play-icon></div>
+                </div>
+
+                <div class="col-12 mg-btm-10 d-none sm--d-block txt-align-cntr">
+                    <h3 data-id="outline_title" class="pd-10"></h3>
+                    <div data-id="outline_desc" class="pd-lft-10 pd-rt-10 pd-x2"></div>
+                    <div class="d-inline-block">
+                        <a data-id="outline_more" href="" class="flex-y-center b">
+                            <play-icon name="arrow-return-right" size="sm"></play-icon>
+                            <span class="pd-10">Learn more below</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-grows sm--col-12 flex-center pos-rel max-ht-100 max-ht-x5 pos-rel z-index-1 md--border-none" sty-le="border-top: 1px solid gainsboro; border-bottom: 1px solid gainsboro;">
+                <ul data-id="outline_show" template="page/#layout/outline" class="circus pos-rel min-wt-100 min-wt-x6 md--min-wt-100 md--min-wt-x4 ht-100 ht-x6 md--ht-100 md--ht-x4 flex-center"></ul>
+            </div>
+
+        </section>
+
+        <!-- ::::::::::::::::: -->
+
+        <section class="flex-y-stretch flex-wrap">
+            <div class="col-4 md--col-5 md--border-none sm--col-12 flex-y-center" style="border-right: 2px solid gainsboro;"></div>
+            <div class="col-grows ht-20 ht-x7 sm--ht-40 sm--ht-x6"></div>
+        </section>
+
+    </div>
+
+    <!-- ::::::::::::::::: -->
+    
+    <section class="pos-rel ht-0 flex-y-center pointer-events-none z-index-10">
+        <div class="col-4 md--col-12 flex-x-end">
+
+            <div class="flex-y-stretch pointer-events pos-rel wt-100 wt-x3 ht-100 ht-x3 lg--wt-x2 lg--ht-x2 transition-all transition-fast">
+                <div class="pos-abs wt-half flex-x-end b mg-top-10 mg-top-x2 negative-mg sm--mg-top-10 sm--mg-top-x7 sm--negative-mg">
+                    <div class="txt-align-rt i">
+                        <div class="flex-y-center">
+                            <play-icon name="arrow-right" size="sm" class="pd-6"></play-icon>
+                            <span class="pd-6 no-wrap">Learn more about WebQit</span>
+                        </div>
+                        <div>The WebQit<br />Advantage</div>
+                    </div>
+                </div>
+                <div class="pos-abs cover flex-center md--overflow-x-hidden">
+                    <div class="pos-abs wt-full ht-full radius-full" style="left: 50%; background-color: black; border: 6px solid silver;"></div>
+                    <div class="pos-rel wt-60 ht-60 flex-center radius-full jelly-peel ring-shadow cursor-pointer">
+                        <play-icon name="play-fill" size="sm"></play-icon>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <main class="pos-rel">
+
+        <section namespace id="tooling" class="page-section flex-y-stretch flex-wrap">
+
+            <div class="section-div-a col-4 md--col-12 md--pd-btm-10">
+
+                <div class="mg-btm-10 mg-btm-x10 lg--mg-btm-x5 md--d-none"></div>
+
+                <div class="section-div-header md--pos-rel flex-y-center">
+                    <div class="section-icon flex-center mg-rt-10">
+                        <play-icon name="code-slash"></play-icon>
+                    </div>
+                    <h2 class="txt-xxl">Tooling</h2>
+                </div>
+                <div class="section-div-content md--flex-y-center sm--d-block">
+                    <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
+                    <div class="md--col-7 txt-align-cntr">
+                        <img src="/img/bg/netlify.png" />
+                    </div>
+                </div>
+            </div>
+            <div class="section-div-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0">
+
+                <div class="mg-btm-10 mg-btm-x10 lg--mg-btm-x5 md--d-none"></div>
+                
+                <div class="section-div-header flex-x-separate flex-y-center">
+                    <html-import data-id="tabs" name="tabs" template="page/#layout/tabbing"></html-import>
+                    <a href="/tooling" class="section-more flex-y-center">
+                        <span class="text transition-all transition-x-fast flex-x-end md--d-none">Learn More</span> <play-icon name="arrow-right"></play-icon>
+                    </a>
+                </div>
+                <div data-id="tabpanels" template="page/#layout/tabbing/tooling" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
+            </div>
+            <script type="reflex">
+                let app = document.state;
+                if (!app.page || !app.page.tooling.items) return;
+                $(this.namespace.intro).itemize(app.page.outline.items[0].intro, (el, e, d) => el[e](d));
+                this.namespace.tabs.setState(app.page.tooling);
+                $(this.namespace.tabpanels).itemize(app.page.tooling.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+            </script>
+        </section>
+
+        <section namespace id="cloud" class="page-section flex-y-stretch flex-wrap">
+
+            <div class="section-div-a col-4 md--col-12 md--pd-btm-10">
+                <div class="section-div-header md--pos-rel flex-y-center">
+                    <div class="section-icon flex-center mg-rt-10">
+                        <play-icon name="cloud"></play-icon>
+                    </div>
+                    <h2 class="txt-xxl">Cloud</h2>
+                </div>
+                <div class="section-div-content md--flex-y-center sm--d-block">
+                    <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
+                    <div class="md--col-7 txt-align-cntr">
+                        <img src="/img/new/rock.fw.png" style="min-width: 80%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="section-div-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0">
+                <div class="section-div-header flex-x-separate flex-y-center">
+                    <html-import data-id="tabs" name="tabs" template="page/#layout/tabbing"></html-import>
+                    <a href="/cloud" class="section-more flex-y-center">
+                        <span class="text transition-all transition-x-fast flex-x-end md--d-none">Learn More</span> <play-icon name="arrow-right"></play-icon>
+                    </a>
+                </div>
+                <div data-id="tabpanels" template="page/#layout/tabbing/cloud" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
+            </div>
+            <script type="reflex">
+                let app = document.state;
+                if (!app.page || !app.page.cloud.items) return;
+                $(this.namespace.intro).itemize(app.page.outline.items[1].intro, (el, e, d) => el[e](d));
+                this.namespace.tabs.setState(app.page.cloud);
+                $(this.namespace.tabpanels).itemize(app.page.cloud.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+            </script>
+        </section>
+
+        <section namespace id="community" class="page-section flex-y-stretch flex-wrap">
+            <div class="section-div-a col-4 md--col-12 md--pd-btm-10">
+                <div class="section-div-header md--pos-rel flex-y-center">
+                    <div class="section-icon flex-center mg-rt-10">
+                        <play-icon name="flag"></play-icon>
+                    </div>
+                    <h2 class="txt-xxl">Community</h2>
+                </div>
+                <div class="section-div-content md--flex-y-center sm--d-block">
+                    <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
+                    <div class="md--col-7 txt-align-cntr">
+                        <img src="/img/globe@2x-kgv9ll4o7r-havl08h54l.png" style="min-width: 90%;" />
+                    </div>
+                </div>
+            </div>
+            <div class="section-div-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0">
+                <div class="section-div-header flex-x-separate flex-y-center">
+                    <html-import data-id="tabs" name="tabs" template="page/#layout/tabbing"></html-import>
+                    <a href="/community" class="section-more flex-y-center">
+                        <span class="text transition-all transition-x-fast flex-x-end md--d-none">Learn More</span> <play-icon name="arrow-right"></play-icon>
+                    </a>
+                </div>
+                <div data-id="tabpanels" template="page/#layout/tabbing/community" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
+            </div>
+            <script type="reflex">
+                let app = document.state;
+                if (!app.page || !app.page.community.items) return;
+                $(this.namespace.intro).itemize(app.page.outline.items[2].intro, (el, e, d) => el[e](d));
+                this.namespace.tabs.setState(app.page.community);
+                $(this.namespace.tabpanels).itemize(app.page.community.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+            </script>
+        </section>
+
+    </main>
+
+    <footer class="flex-y-stretch flex-wrap" style="min-height: 300px; border-top: 3px solid silver; background-color: white;">
+    </footer>
+
+
+</div>    
+
+<!-- TEMPLATES -->
+
+<template name="#layout">
+
+    <ul exportgroup="shortcut-menu" class="pd-top-4 flex-y-center flex-x-end list-style-none">
+        <li><a class="pd-8 pd-x2" href="#">
+            <play-icon name="search" size="sm"></play-icon>
+        </a></li>
+        <li>
+            <ul class="flex-y-center pd-8 radius-10 list-style-none" style="border: 1px dashed silver">
+                <li><a class="pd-8" href="mailto://webqit.io@gmail.com">
+                    <play-icon name="chat-quote" size="sm"></play-icon>
+                </a></li>
+                <li><a class="pd-8" href="https://github.com/web-native" target="_blank">
+                    <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                </a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <template name="outline">
+        <li is="play-seq-li" namespace class="pd-10 mg-btm-10 mg-btm-x2 sm--mg-btm-0 radius-10 cursor-pointer" style="opacity: 0;">
+            <div class="flex-y-start">
+                <div class="icon pd-6">
+                    <play-icon data-id="icon" name="code-slash"></play-icon>
+                </div>
+                <div class="col-grows flex-y-center pd-lft-10 pd-lft-x2 sm--d-none">
+                    <div class="col-grows">
+                        <div data-id="title" class="b txt-xxl h2"></div>
+                        <div data-id="desc" class="txt-lg mg-top-4"></div>
+                    </div>
+                    <span class="sm--d-none pointer transition-all transition-fast" style="background-image: url(/img/bg/Dots.svg);">
+                        <play-icon name="chevron-right" size="sm"></play-icon>
+                    </span>
+                </div>
+            </div>
+            <script type="reflex">
+                $(this).on('click', () => {
+                    this.state.active = true;
+                });
+                if (!this.state.title) return;
+                $(this).class('icon-webqit-' + this.state.title, true);
+                $(this.namespace.icon).attr('name', this.state.icon);
+                $(this.namespace.title).html(this.state.title);
+                $(this.namespace.desc).html(this.state.desc);
+                $(this.namespace.link).attr('href', '#' + this.state.title);
+                $(this.namespace.link).css('color', this.state.lightTheme.color);
+                $(this).class('active', this.state.active);
+            </script>
+        </li>
+
+        <li exportgroup="show" namespace class="pos-abs cover radius-full flex-center pointer-events-none kids--pointer-events" style="opacity: 0;">
+            <a data-id="link" class="display-link flex-y-self-end wt-60 ht-60 flex-center radius-full jelly-peel ring-shadow z-index-10" href="#">
+                <play-icon name="arrow-down" size="sm"></play-icon>
+            </a>
+            <script type="reflex">
+                if (!this.state.title) return;
+                $(this).css('background-image', 'url(' + this.state.graphic + ')');
+                $(this.namespace.link).attr('href', '/#' + this.state.title);
+                $(this.namespace.link).css(this.state.darkTheme);
+                if (this.state.active || !this.state.active) {
+                    setTimeout(() => {
+                        let inReverse = this.parentNode.getAttribute('reverse-show');
+                        if (this.state.active) {
+                            $(this).attr('data-active', inReverse ? 'true-reverse' : 'true');
+                        } else {
+                            $(this).attr('data-active', inReverse ? 'false-reverse' : 'false');
+                        }
+                    }, 1);
+                }
+            </script>
+        </li>
+
+    </template>
+
+    <template name="intros">
+        <ul exportgroup="intro" template="page/#layout/intros" class="md--col-5 h5 txt-xl b list-style-none"></ul>
+        <li namespace class="flex-y-start">
+            <span class="bullet flex-center mg-rt-10 xs--d-none">
+                <play-icon data-id="icon" name="square" size="sm"></play-icon>
+            </span>
+            <span data-id="content"></span>
+            <script type="reflex">
+                if (!this.state.content) return;
+                $(this.namespace.icon).attr('name', this.state.icon);
+                $(this.namespace.content).html(this.state.content);
+            </script>
+        </li>
+    </template>
+
+    <template name="tabbing">
+
+        <div exportgroup="tabs" namespace class="col-grows">
+            <ul data-id="main" template="page/#layout/tabbing" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+                <li data-id="overflow" namespace class="overflow-notch d-none" tabindex="0">
+                    <play-icon name="three-dots" size="sm" class="ht-full flex-y-center"></play-icon>
+                    <div class="overflow ht-0 flex-x-center">
+                        <ul data-id="list" template="page/#layout/tabbing" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
+                    </div>
+                </li>
+            </ul>
+            <script type="reflex">
+                var main = this.namespace.main;
+                var overflowNotch = this.namespace.overflow;
+                var overflowList = overflowNotch.namespace.list;
+                if (this.state.items) {
+                    $(main).itemize(this.state.items, (el, e, d, k) => {
+                        d.overflowCollapsed = false;
+                        el[e](d);
+                        if (k === parseInt((this.state.items.length - 1) / 2)) {
+                            el.after(overflowNotch);
+                        }
+                    }, (el, e, d, k, overflowCount) => {
+                        d.overflowCollapsed = e === 'collapse';
+                        $(overflowNotch).class('d-none', overflowCount === 0);
+                    }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
+                    $(overflowList).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'overflow-tab'});
+                }
+            </script>            
+        </div>
+
+        <li exportgroup="tab" namespace>
+            <span data-id="content"></span>
+            <script type="reflex">
+                $(this).on('click', () => {
+                    this.state.active = true;
+                });
+                if (!this.state.name) return;
+                $(this.namespace.content).html(this.state.name);
+                $(this).class('d-none', this.state.overflowCollapsed);
+                $(this).class('active', this.state.active);
+            </script>
+        </li>
+
+        <li exportgroup="overflow-tab" namespace>
+            <span data-id="content"></span>
+            <script type="reflex">
+                $(this).on('click', () => {
+                    this.state.active = true;
+                });
+                if (!this.state.name) return;
+                $(this.namespace.content).html(this.state.name);
+                $(this).class('d-none', !this.state.overflowCollapsed);
+                $(this).class('active', this.state.active);
+            </script>
+        </li>
+
+        <template name="tooling">
+
+            <div exportgroup="panel" namespace class="col-grows flex-y-separate">
+                <ul class="highlights grid-3 list-style-none" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
+                <ul class="overflow list-style-none" data-id="overflow" template="page/#layout/overflow/tooling"></ul>
+                <script type="reflex">
+                    if (this.state.items) {
+                        $(this).class('d-none', !this.state.active);
+                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                    }
+                    if (this.state.overflow) {
+                        $(this.namespace.overflow).itemize(this.state.overflow, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                    }
+                </script>
+            </div>
+
+            <li exportgroup="item" namespace class="item flex-y-separate flex-wrap txt-lg animation-x-fast anim-scale-in-small">
+                <div>
+                    <play-icon data-id="icon" name="square"></play-icon>
+                    <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
+                    <p data-id="desc"></p>
+                </div>
+                <ul class="flex-x-separate flex-y-center wt-full pd-top-10 pd-top-x2 list-style-none">
+                    <li><a data-id="page" class="flex-y-center" href="">
+                        <play-icon name="arrow-return-right" size="sm"></play-icon>
+                        <span class="mg-lft-8">Learn more</span>
+                    </a></li>
+                    <li><a data-id="github" href="" target="_blank">
+                        <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                    </a></li>
+                </ul>
+                <script type="reflex">
+                    if (!this.state.title) return;
+                    $(this.namespace.icon).attr('name', this.state.icon);
+                    $(this.namespace.title).html(this.state.title);
+                    $(this.namespace.desc).html(this.state.desc);
+                    $(this.namespace.page).attr('href', this.state.page);
+                    $(this.namespace.github).attr('href', 'https:/github.com/' + this.state.github);
+                </script>
+            </li>
+
+        </template>
+        
+        <template name="cloud">
+
+            <div exportgroup="panel" namespace class="col-grows flex-y-separate">
+                <div class="about col-12 pd-10 flex-y-center">
+                    <div class="wt-60 wt-x2 pd-10 flex-center">
+                        <play-icon data-id="icon" size="xl"></play-icon>
+                    </div>
+                    <div class="pd-10 txt-xl">
+                        <h3 data-id="title" class="title"></h3>
+                        <div class="txt-smaller">Coming Soon!</div>
+                    </div>
+                </div>
+                <ul class="highlights list-style-none" data-id="highlights" template="page/#layout/tabbing/cloud"></ul>
+                <script type="reflex">
+                    if (this.state.items) {
+                        $(this).class('d-none', !this.state.active);
+                        // ----------------
+                        $(this.namespace.icon).attr('name', this.state.icon);
+                        $(this.namespace.title).html(this.state.title);
+                        // ----------------
+                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                    }
+                </script>
+            </div>
+
+            <li exportgroup="item" namespace class="item fl-ex-y-start animation-x-fast anim-scale-in-small">
+                <img data-id="icon" style="max-width: 50px; margin-bottom: 25px;" />
+                <div class="co-l-6" style="border-top: 3px whitesmoke;">
+                    <h3 data-id="title" class="txt-xl mg-btm-4"></h3>
+                    <div data-id="desc" class="txt-lg"></div>
+                </div>
+                <div class="col-grows">
+                </div>
+                <script type="reflex">
+                    if (!this.state.title) return;
+                    $(this.namespace.icon).attr('src', this.state.icon);
+                    //$(this.namespace.title).html(this.state.title);
+                    $(this.namespace.desc).html(this.state.desc);
+                    $(this.namespace.page).attr('href', this.state.page);
+                </script>
+            </li>
+
+        </template>
+        
+        <template name="community">
+
+            <div exportgroup="panel" namespace class="col-grows flex-y-separate">
+                <div class="about col-12 pd-10 flex-y-center">
+                    <div class="wt-60 wt-x2 pd-10 flex-center">
+                        <play-icon data-id="icon" size="xl"></play-icon>
+                    </div>
+                    <div class="pd-10 txt-xl">
+                        <h3 data-id="title" class="title"></h3>
+                        <div class="txt-smaller">Coming Soon!</div>
+                    </div>
+                </div>
+                <ul  class="highlights grid-3 list-style-none"data-id="highlights" template="page/#layout/tabbing/community"></ul>
+                <script type="reflex">
+                    if (this.state.items) {
+                        $(this).class('d-none', !this.state.active);
+                        // ----------------
+                        $(this.namespace.icon).attr('name', this.state.icon);
+                        $(this.namespace.title).html(this.state.title);
+                        // ----------------
+                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                    }
+                </script>
+            </div>
+
+            <li exportgroup="item" namespace class="item fl-ex-y-start animation-x-fast anim-scale-in-small">
+                <img data-id="icon" style="max-width: 50px; margin-bottom: 25px;" />
+                <div class="co-l-6" style="border-top: 3px whitesmoke;">
+                    <h3 data-id="title" class="txt-xl mg-btm-4"></h3>
+                    <div data-id="desc" class="txt-lg"></div>
+                </div>
+                <div class="col-grows">
+                </div>
+                <script type="reflex">
+                    if (!this.state.title) return;
+                    $(this.namespace.icon).attr('src', this.state.icon);
+                    $(this.namespace.title).html(this.state.title);
+                    $(this.namespace.desc).html(this.state.desc);
+                    $(this.namespace.page).attr('href', this.state.page);
+                </script>
+            </li>
+
+        </template>
+
+    </template>
+</template>

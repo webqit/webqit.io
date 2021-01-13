@@ -1,0 +1,40 @@
+{
+    "name": "WebQit",
+    "short_name": "WN",
+    "description": "WebQit.dev Site",
+    "categories": [
+        "documentation",
+        "dev"
+    ],
+    "theme_color": "darkblue",
+    "background_color": "whitesmoke",
+    "icons": [
+        {
+            "src": "/img/logo/logo.130x130.fw.png",
+            "type": "image/png",
+            "sizes": "130x130"
+        },
+        {
+            "src": "/img/logo/logo.200x200.fw.png",
+            "type": "image/png",
+            "sizes": "200x200"
+        },
+        {
+            "src": "/img/logo/logo.670x670.fw.png",
+            "type": "image/png",
+            "sizes": "670x670"
+        }
+    ],
+    "display": "standalone",
+    "orientation": "any",
+    "screenshots": [],
+    "shortcuts": [],
+    "scope": "/",
+    "start_url": "/pkg/@web-native-js/chtml",
+    "lang": "en-us",
+    "dir": "ltr",
+    "related_applications": [
+        ""
+    ],
+    "prefer_related_applications": false
+}

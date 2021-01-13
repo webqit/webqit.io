@@ -1,0 +1,72 @@
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+}
+.markdown-body a {
+    color: darkblue;
+}
+
+/**
+ * @breakpoints
+ * xl: 1200px
+ * lg: 992px
+ * sm: 768px
+ */
+
+.project-suboutline {
+    border-left: 1px dashed silver;
+}
+.project-outline li:hover > a > span,
+.project-outline li > a.active > span {
+    border-bottom: 1px dashed currentColor;
+    border-spacing: 1em;
+}
+.project-outline li > a.active {
+    color: mediumslateblue;
+}
+
+/* ------------------------ */
+
+.page-outline {
+}
+.page-suboutline {
+    border-left: 1px dashed silver;
+}
+.page-outline li:hover > a,
+.page-outline a:target {
+    border-bottom: 1px dashed currentColor;
+    border-spacing: 1em;
+}
+.page-outline a:target {
+    color: blue;
+}
+
+/* ------------------------ */
+
+.readme-footer {
+    background-color: white;
+    border-bottom: 3px solid darkblue;
+}
+.footer-nav {
+    padding:0px;
+    list-style: none;
+}
+
+/* ------------------------ */
+
+.readme-container {
+    padding: 30px;
+    padding-left: 75px;
+    padding-right: 75px;
+}
+@media (max-width: 992px) {
+    .readme-container {
+        padding: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

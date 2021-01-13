@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;" />
+
+        <title data-id="title"></title>
+        <meta name="description" content="An opensource OOHTML-based documentation site" />
+        <meta name="theme-color" content="darkblue" />
+        
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="darkblue" />
+        <meta name="apple-mobile-web-app-title" content="OOHTML-Based Documentation Site" />
+        <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
+
+        <!-- LIBS -->
+        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/plot-css/src/resets.css" /> <!-- first -->
+        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/plot-css/src/canvas.css" /> <!-- second -->
+        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/play-css/src/keyframes.css" />
+        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/play-css/src/classes.css" />
+        <script src="http://unpkg2.com:9000/@webqit/play-ui/dist/main.js" ssr></script>
+        <script>
+            $ = WQ.DOM.$;
+            toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {
+                const applyBreakpoint = _class => !breakpoint ? _class : _class.split(' ').map(c => breakpoint + '--' + c).join(' ');
+                $(drawer).class(applyBreakpoint('d-none'), false);
+                $(drawer).class(applyBreakpoint('wt-40 wt-x10'), true);
+                $(drawer).play([{transform: 'translate(-400px)'}, {transform: 'translate(0px)'}], {duration: 200, reverse: !open}).then(el => {
+                    if (!open) {
+                        $(el).class(applyBreakpoint('d-none'), true);
+                        $(el).class(applyBreakpoint('wt-40 wt-x10'), false);
+                    }
+                });
+                $(backdrop).class(applyBreakpoint('d-none'), false);
+                $(backdrop).class(applyBreakpoint('d-block'), true);
+                $(backdrop).play([{opacity: 0}, {opacity: 1}], {duration: 300, reverse: !open}).then(el => {
+                    if (!open) {
+                        $(el).class(applyBreakpoint('d-none'), true);
+                        $(el).class(applyBreakpoint('d-block'), false);
+                    }
+                });
+            };
+        </script>
+        
+        <!-- BUDNLES -->
+        <template name="page" src="/bundle.html"></template>
+        <link type="text/css" rel="stylesheet" href="/css/main.css" />
+        <script src="/bundle.js"></script>
+
+        <script type="reflex">
+            let app = document.state;
+            if (!app.page.title) return;
+            $(document.namespace.title).html(app.page.title);
+        </script>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YMML9GXC1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-9YMML9GXC1');
+        </script>
+
+    </head>
+
+    <body template="" play-icon-path="/icon" play-icon-type="bootstrap">
+        <html-import name="index" template-fallback="2-10">
+            <div class="flex-center" style="min-height: 100vh;">
+                <div class="txt-align-cntr">
+                    <div class="anim-flash">Not Found!</div>
+                    <br />
+                    <a href="/">&leftarrow; Back to Home</a>
+                </div>
+            </div>
+        </html-import>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+
+        <template name="brand">
+            <a exportgroup="logo_nav" href="/" class="brand-container flex-y-center">
+                <img alt="@webqit/chtml logo" data-id="logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10" style="display: block; color: transparent; background: none;" />
+                <div class="pd-10">
+                    <div class="txt-lg b">WebQit</div>
+                    <div class="i">--traditional</div>
+                </div>
+            </a>
+        </template>
+
+    </body>
+
+</html>
