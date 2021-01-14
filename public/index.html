@@ -25,7 +25,7 @@
         <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
             $ = WQ.DOM.$;
-            alert(1);
+            alert(2);
             toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {
                 const applyBreakpoint = _class => !breakpoint ? _class : _class.split(' ').map(c => breakpoint + '--' + c).join(' ');
                 $(drawer).class(applyBreakpoint('d-none'), false);
