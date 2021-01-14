@@ -9,7 +9,7 @@
 
         <title data-id="title"></title>
         <meta name="description" content="An opensource OOHTML-based documentation site" />
-        <meta name="theme-color" content="darkblue" />
+        <meta name="theme-color" content="white" data-id="theme_color" />
         
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,11 +18,11 @@
         <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
 
         <!-- LIBS -->
-        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/plot-css/src/resets.css" /> <!-- first -->
-        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/plot-css/src/canvas.css" /> <!-- second -->
-        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/play-css/src/keyframes.css" />
-        <link type="text/css" rel="stylesheet" href="http://unpkg2.com:9000/@webqit/play-css/src/classes.css" />
-        <script src="http://unpkg2.com:9000/@webqit/play-ui/dist/main.js" ssr></script>
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@webqit/plot-css/src/resets.css" /> <!-- first -->
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@webqit/plot-css/src/canvas.css" /> <!-- second -->
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@webqit/play-css/src/keyframes.css" />
+        <link type="text/css" rel="stylesheet" href="https://unpkg.com/@webqit/play-css/src/classes.css" />
+        <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
             $ = WQ.DOM.$;
             toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {

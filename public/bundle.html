@@ -46,6 +46,7 @@
     <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
 
     <script type="reflex">
+        $(document.namespace.theme_color).attr('content', 'white');
         $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
         $(this.namespace.app_drawer_open2).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
         $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
@@ -578,6 +579,7 @@
 <div namespace class="snap-mandatory-container" exportgroup="index">
     
     <script type="reflex">
+        $(document.namespace.theme_color).attr('content', 'ghostwhite');
         let app = document.state;
         if (app.page.nav) {
             var nav = app.page.nav;

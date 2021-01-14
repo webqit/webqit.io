@@ -24,7 +24,6 @@
     "bootstrap-icons": "^1.1.0"
   },
   "devDependencies": {
-    "@webqit/webflo": "^0.2.1",
     "@webqit/oohtml-cli": "^0.0.7"
   }
 }
