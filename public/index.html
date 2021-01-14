@@ -24,8 +24,9 @@
         <link type="text/css" rel="stylesheet" href="https://unpkg.com/@webqit/play-css/src/classes.css" />
         <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
+
             $ = WQ.DOM.$;
-            alert(30);
+
             toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {
                 const applyBreakpoint = _class => !breakpoint ? _class : _class.split(' ').map(c => breakpoint + '--' + c).join(' ');
                 $(drawer).class(applyBreakpoint('d-none'), false);
@@ -45,6 +46,7 @@
                     }
                 });
             };
+            
         </script>
         
         <!-- BUDNLES -->
