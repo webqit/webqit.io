@@ -51,10 +51,12 @@
         <link type="text/css" rel="stylesheet" href="/css/main.css" />
         <script src="/bundle.js"></script>
 
-        <script type="reflex">
+        <script type="subscript">
             let app = document.state;
-            if (!app.page.title) return;
-            $(document.namespace.title).html(app.page.title);
+            if (app.page.title) {
+                $(document.namespace.title).html(app.page.title);
+                $(document.namespace.base).attr('href', app.location.pathname + (!app.location.pathname.endsWith('/') ? '/' : ''));
+            }
         </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -67,10 +69,12 @@
         gtag('config', 'G-9YMML9GXC1');
         </script>
 
+        <base data-id="base" />
+
     </head>
 
     <body template="" play-icon-path="/icon" play-icon-type="bootstrap">
-        <html-import name="index" template-fallback="2-10">
+        <html-import name="index" template-specificity="2-10">
             <div class="flex-center" style="min-height: 100vh;">
                 <div class="txt-align-cntr">
                     <div class="anim-flash">Not Found!</div>

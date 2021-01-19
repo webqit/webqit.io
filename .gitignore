@@ -1,3 +1,6 @@
 .*
 !/.gitignore
+!.webflo
+!.oohtml-cli
+!.docs
 node_modules

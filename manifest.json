@@ -1,0 +1,41 @@
+{
+    "PUBLIC_DIR": "./public",
+    "name": "WebQit",
+    "short_name": "WebQit",
+    "description": "Tooling, Cloud, Community",
+    "categories": [
+        "WebQit Tooling",
+        "WebQit Cloud",
+        "WebQit Community"
+    ],
+    "theme_color": "white",
+    "background_color": "white",
+    "icons": [
+        {
+            "src": "/img/logo/logo.130x130.fw.png",
+            "type": "image/png",
+            "sizes": "130x130"
+        },
+        {
+            "src": "/img/logo/logo.200x200.fw.png",
+            "type": "image/png",
+            "sizes": "200x200"
+        },
+        {
+            "src": "/img/logo/logo.670x670.fw.png",
+            "type": "image/png",
+            "sizes": "670x670"
+        }
+    ],
+    "display": "standalone",
+    "orientation": "any",
+    "screenshots": [],
+    "shortcuts": [],
+    "scope": "/",
+    "start_url": "/",
+    "lang": "en-us",
+    "dir": "ltr",
+    "related_applications": "",
+    "prefer_related_applications": false,
+    "icon": true
+}

@@ -44,7 +44,7 @@
     </div>
     <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
 
-    <script type="reflex">
+    <script type="subscript">
         $(document.namespace.theme_color).attr('content', 'white');
         $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
         $(this.namespace.app_drawer_open2).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
@@ -53,8 +53,8 @@
         let app = document.state;
         let inReverseShow = app.page.outline.prev.active > app.page.outline.now.active;
         if (app.page.outline.items && this.namespace.outline_menu) {
-            $(this.namespace.outline_menu).itemize(app.page.outline.items, (el, e, d) => el[e](d));
-            $(this.namespace.outline_show).itemize(app.page.outline.items, (el, e, d) => el[e](d), null, {itemExportId: 'show'});
+            $(this.namespace.outline_menu).itemize(app.page.outline.items);
+            $(this.namespace.outline_show).itemize(app.page.outline.items, null, null, {itemExportId: 'show'});
             $(this.namespace.outline_prev).on('click', () => { inReverseShow = true; app.page.outline.advance('prev', true); });
             $(this.namespace.outline_next).on('click', () => { inReverseShow = false; app.page.outline.advance('next', true); });
             $(this.namespace.outline_show).attrSync('reverse-show', inReverseShow ? 'true' : false);
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="col-12 mg-btm-10 d-none sm--d-block txt-align-cntr">
-                    <h3 data-id="outline_title" class="pd-10"></h3>
+                    <div data-id="outline_title" class="pd-10 b txt-xxl h2"></div>
                     <div data-id="outline_desc" class="pd-lft-10 pd-rt-10 pd-x2"></div>
                     <div class="d-inline-block">
                         <a data-id="outline_more" href="" class="flex-y-center b">
@@ -213,12 +213,12 @@
                 </div>
                 <div data-id="tabpanels" template="page/#layout/tabbing/tooling" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
             </div>
-            <script type="reflex">
+            <script type="subscript">
                 let app = document.state;
                 if (!app.page || !app.page.tooling.items) return;
-                $(this.namespace.intro).itemize(app.page.outline.items[0].intro, (el, e, d) => el[e](d));
+                $(this.namespace.intro).itemize(app.page.outline.items[0].intro);
                 this.namespace.tabs.setState(app.page.tooling);
-                $(this.namespace.tabpanels).itemize(app.page.tooling.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+                $(this.namespace.tabpanels).itemize(app.page.tooling.items, null, null, {itemExportId: 'panel'});
             </script>
         </section>
 
@@ -247,12 +247,12 @@
                 </div>
                 <div data-id="tabpanels" template="page/#layout/tabbing/cloud" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
             </div>
-            <script type="reflex">
+            <script type="subscript">
                 let app = document.state;
                 if (!app.page || !app.page.cloud.items) return;
-                $(this.namespace.intro).itemize(app.page.outline.items[1].intro, (el, e, d) => el[e](d));
+                $(this.namespace.intro).itemize(app.page.outline.items[1].intro);
                 this.namespace.tabs.setState(app.page.cloud);
-                $(this.namespace.tabpanels).itemize(app.page.cloud.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+                $(this.namespace.tabpanels).itemize(app.page.cloud.items, null, null, {itemExportId: 'panel'});
             </script>
         </section>
 
@@ -280,12 +280,12 @@
                 </div>
                 <div data-id="tabpanels" template="page/#layout/tabbing/community" class="section-div-content col-grows md--col-12 flex-y-stretch"></div>
             </div>
-            <script type="reflex">
+            <script type="subscript">
                 let app = document.state;
                 if (!app.page || !app.page.community.items) return;
-                $(this.namespace.intro).itemize(app.page.outline.items[2].intro, (el, e, d) => el[e](d));
+                $(this.namespace.intro).itemize(app.page.outline.items[2].intro);
                 this.namespace.tabs.setState(app.page.community);
-                $(this.namespace.tabpanels).itemize(app.page.community.items, (el, e, d) => el[e](d), null, {itemExportId: 'panel'});
+                $(this.namespace.tabpanels).itemize(app.page.community.items, null, null, {itemExportId: 'panel'});
             </script>
         </section>
 
@@ -333,7 +333,7 @@
                     </span>
                 </div>
             </div>
-            <script type="reflex">
+            <script type="subscript">
                 $(this).on('click', () => {
                     this.state.active = true;
                 });
@@ -352,7 +352,7 @@
             <a data-id="link" class="display-link flex-y-self-end wt-60 ht-60 flex-center radius-full jelly-peel ring-shadow z-index-10" href="#">
                 <play-icon name="arrow-down" size="sm"></play-icon>
             </a>
-            <script type="reflex">
+            <script type="subscript">
                 if (!this.state.title) return;
                 $(this).css('background-image', 'url(' + this.state.graphic + ')');
                 $(this.namespace.link).attr('href', '/#' + this.state.title);
@@ -379,7 +379,7 @@
                 <play-icon data-id="icon" name="square" size="sm"></play-icon>
             </span>
             <span data-id="content"></span>
-            <script type="reflex">
+            <script type="subscript">
                 if (!this.state.content) return;
                 $(this.namespace.icon).attr('name', this.state.icon);
                 $(this.namespace.content).html(this.state.content);
@@ -398,29 +398,28 @@
                     </div>
                 </li>
             </ul>
-            <script type="reflex">
+            <script type="subscript">
                 var main = this.namespace.main;
                 var overflowNotch = this.namespace.overflow;
                 var overflowList = overflowNotch.namespace.list;
                 if (this.state.items) {
-                    $(main).itemize(this.state.items, (el, e, d, k) => {
+                    $(main).itemize(this.state.items, (e, el, d, k) => {
                         d.overflowCollapsed = false;
-                        el[e](d);
                         if (k === parseInt((this.state.items.length - 1) / 2)) {
                             el.after(overflowNotch);
                         }
-                    }, (el, e, d, k, overflowCount) => {
+                    }, (e, el, d, k, overflowCount) => {
                         d.overflowCollapsed = e === 'collapse';
                         $(overflowNotch).class('d-none', overflowCount === 0);
                     }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
-                    $(overflowList).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'overflow-tab'});
+                    $(overflowList).itemize(this.state.items, null, null, {itemExportId: 'overflow-tab'});
                 }
             </script>            
         </div>
 
         <li exportgroup="tab" namespace>
             <span data-id="content"></span>
-            <script type="reflex">
+            <script type="subscript">
                 $(this).on('click', () => {
                     this.state.active = true;
                 });
@@ -433,7 +432,7 @@
 
         <li exportgroup="overflow-tab" namespace>
             <span data-id="content"></span>
-            <script type="reflex">
+            <script type="subscript">
                 $(this).on('click', () => {
                     this.state.active = true;
                 });
@@ -449,13 +448,13 @@
             <div exportgroup="panel" namespace class="col-grows flex-y-separate">
                 <ul class="highlights grid-3 list-style-none" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
                 <ul class="overflow list-style-none" data-id="overflow" template="page/#layout/overflow/tooling"></ul>
-                <script type="reflex">
+                <script type="subscript">
                     if (this.state.items) {
                         $(this).class('d-none', !this.state.active);
-                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                        $(this.namespace.highlights).itemize(this.state.items, null, null, {itemExportId: 'item'});
                     }
                     if (this.state.overflow) {
-                        $(this.namespace.overflow).itemize(this.state.overflow, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                        $(this.namespace.overflow).itemize(this.state.overflow, null, null, {itemExportId: 'item'});
                     }
                 </script>
             </div>
@@ -475,7 +474,7 @@
                         <play-icon name="github" size="sm" play-icon-type=""></play-icon>
                     </a></li>
                 </ul>
-                <script type="reflex">
+                <script type="subscript">
                     if (!this.state.title) return;
                     $(this.namespace.icon).attr('name', this.state.icon);
                     $(this.namespace.title).html(this.state.title);
@@ -500,14 +499,14 @@
                     </div>
                 </div>
                 <ul class="highlights list-style-none" data-id="highlights" template="page/#layout/tabbing/cloud"></ul>
-                <script type="reflex">
+                <script type="subscript">
                     if (this.state.items) {
                         $(this).class('d-none', !this.state.active);
                         // ----------------
                         $(this.namespace.icon).attr('name', this.state.icon);
                         $(this.namespace.title).html(this.state.title);
                         // ----------------
-                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                        $(this.namespace.highlights).itemize(this.state.items, null, null, {itemExportId: 'item'});
                     }
                 </script>
             </div>
@@ -520,7 +519,7 @@
                 </div>
                 <div class="col-grows">
                 </div>
-                <script type="reflex">
+                <script type="subscript">
                     if (!this.state.title) return;
                     $(this.namespace.icon).attr('src', this.state.icon);
                     //$(this.namespace.title).html(this.state.title);
@@ -544,14 +543,14 @@
                     </div>
                 </div>
                 <ul  class="highlights grid-3 list-style-none"data-id="highlights" template="page/#layout/tabbing/community"></ul>
-                <script type="reflex">
+                <script type="subscript">
                     if (this.state.items) {
                         $(this).class('d-none', !this.state.active);
                         // ----------------
                         $(this.namespace.icon).attr('name', this.state.icon);
                         $(this.namespace.title).html(this.state.title);
                         // ----------------
-                        $(this.namespace.highlights).itemize(this.state.items, (el, e, d) => el[e](d), null, {itemExportId: 'item'});
+                        $(this.namespace.highlights).itemize(this.state.items, null, null, {itemExportId: 'item'});
                     }
                 </script>
             </div>
@@ -564,7 +563,7 @@
                 </div>
                 <div class="col-grows">
                 </div>
-                <script type="reflex">
+                <script type="subscript">
                     if (!this.state.title) return;
                     $(this.namespace.icon).attr('src', this.state.icon);
                     $(this.namespace.title).html(this.state.title);

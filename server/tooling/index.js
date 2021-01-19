@@ -18,6 +18,9 @@ import { render as packageRender } from '../../common/package.js';
  * @return object
  */
 export default async function(flo, recieved, next) {
+    if ((next.pathname || '').startsWith('.')) {
+        return next();
+    }
     var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(flo.config.ROOT, flo.config.PUBLIC_DIR, 'bundle.html.json')) 
         ? JSON.parse(Fs.readFileSync(outlineFile)) 
         : {};
@@ -25,7 +28,7 @@ export default async function(flo, recieved, next) {
         outline.subtree.tooling.subtree = {};
     }
     const data = {title: 'WebQit Tooling', outline};
-    const baseDir = Path.resolve(this.dirname, '../../../webqit.docs');
+    const baseDir = Path.resolve(this.dirname, '../../views/tooling/.docs');
     if (next.pathname) {
         var pathnameArray = next.pathname.split('/'),
             projectName = pathnameArray[0],

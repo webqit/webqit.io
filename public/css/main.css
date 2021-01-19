@@ -134,8 +134,8 @@ p, .p, a, .a {
         color: slateblue;
     }
     .outline li.icon-webqit-cloud.active {
-        border: 1px solid purple;
-        color: purple;
+        border: 1px solid slateblue;
+        color: slateblue;
     }
     .outline li.icon-webqit-community.active {
         border: 1px solid teal;
@@ -148,8 +148,8 @@ a.icon-webqit-tooling.active {
     color: slateblue;
 }
 a.icon-webqit-cloud.active {
-    border: 1px solid purple;
-    color: purple;
+    border: 1px solid slateblue;
+    color: slateblue;
 }
 a.icon-webqit-community.active {
     border: 1px solid teal;
@@ -281,15 +281,18 @@ body {
 }
 .section-div-a,
 .section-div-a .section-div-header {
-    background-color: var(--section-div-a-bg);;
+    background-color: var(--section-div-a-bg);
+    color: var(--section-div-a-color);
 }
 .section-div-b,
 .section-div-b .section-div-header {
-    background-color: var(--section-div-b-bg);;
+    background-color: var(--section-div-b-bg);
+    color: var(--section-div-b-color);
 }
 @media (max-width: 992px) {
     .section-div-b .section-div-header {
-        background-color: var(--section-div-a-bg);;
+        background-color: var(--section-div-a-bg);
+        color: var(--section-div-a-color);
     }
 }
 @media (max-width: 760px) {
@@ -477,6 +480,8 @@ body {
 #tooling {
     --section-div-a-bg: ghostwhite;
     --section-div-b-bg: ghostwhite;
+    --section-div-a-color: black;
+    --section-div-b-color: black;
     border-bottom-color: black;
 }
 #tooling .item {
@@ -485,6 +490,7 @@ body {
 	padding: 35px;
     border-radius: 15px;
     border: 5px solid rgba(0, 0, 0, 0.2);
+    border: 5px solid gainsboro;
 }
 #tooling .item:hover {
     background-color: white;
@@ -499,17 +505,17 @@ body {
 /* ------------------- */
 
 #cloud {
-    --section-div-a-bg: purple;
-    --section-div-b-bg: gray;
+    --section-div-a-bg: slateblue;
+    --section-div-b-bg: gainsboro;
+    --section-div-a-color: ghostwhite;
+    --section-div-b-color: black;
     border-top-color: black;
     border-bottom-color: black;
-    color: wheat;
 }
 #cloud .section-div-b .section-div-content {
     min-height: 70vh !important;
 }
 #cloud .about {
-    color: gainsboro;
     font-weight: bold;
     background-image: url(/img/bg/Dots.svg);
 }
@@ -533,6 +539,8 @@ body {
 #community {
     --section-div-a-bg: beige;
     --section-div-b-bg: beige;
+    --section-div-a-color: black;
+    --section-div-b-color: black;
     border-top-color: black;
 }
 #community .section-div-b .section-div-content {

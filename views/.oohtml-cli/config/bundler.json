@@ -1,0 +1,30 @@
+{
+    "ENTRY_DIR": "./",
+    "OUTPUT_FILE": "../public/bundle.html",
+    "SHOW_OUTLINE_NUMBERING": false,
+    "LOADERS": [
+        {
+            "name": "default:md-loader",
+            "argument/flag": true,
+            "args": {
+                "flavor": "github",
+                "outline_generation": "outline",
+                "code_highlighting": "1"
+            }
+        }
+    ],
+    "IGNORE_FOLDERS_BY_PREFIX": [
+        "."
+    ],
+    "CREATE_OUTLINE_FILE": "create",
+    "TEMPLATE_ELEMENT": " ",
+    "TEMPLATE_NAME_ATTR": "name",
+    "EXPORT_MODE": "attribute",
+    "EXPORT_GROUP_ATTR": "exportgroup",
+    "EXPORT_ELEMENT": "html-export",
+    "EXPORT_ID_ATTR": "name",
+    "MAX_DATA_URL_SIZE": 1024,
+    "ASSETS_PUBLIC_BASE": "/",
+    "loader": true,
+    "__advanced": false
+}

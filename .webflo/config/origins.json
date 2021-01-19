@@ -1,0 +1,15 @@
+{
+    "ORIGINS": [
+        {
+            "HOST": "github",
+            "REPO": "webqit/docs",
+            "BRANCH": "master",
+            "TAG": "docs",
+            "DEPLOY_PATH": "./views/tooling/.docs",
+            "AUTO_DEPLOY": true,
+            "AUTO_DEPLOY_SECRET": "docs",
+            "ONDEPLOY": "oohtml bundle"
+        }
+    ],
+    "repository": true
+}

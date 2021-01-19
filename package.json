@@ -1,16 +1,16 @@
 {
-  "name": "@webqit/webqit.dev",
+  "name": "@webqit/www",
   "version": "0.0.0",
-  "description": "webqit.dev Site",
+  "description": "Tooling, Cloud, Community",
   "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "PHPPOS",
-    "SYNCING",
-    "CLOUD"
+    "WebQit Tooling",
+    "WebQit Tooling",
+    "WebQit Tooling"
   ],
   "author": "Oxford Harrison <oxharris.dev@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",

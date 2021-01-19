@@ -58,6 +58,12 @@ export const tooling = List.create([
         active: true,
         overflowCollapsed: false,
         items: [{
+            icon: 'code-slash',
+            title: 'OOHTML',
+            desc: 'Object-Oriented HTML (OOHTML) - a <a target="_blank" href="https://discourse.wicg.io/t/proposal-chtml/4716">WICG proposal</a>.',
+            page: '/tooling/oohtml',
+            github: 'webqit/oohtml',
+        }, {
             icon: 'app-indicator',
             title: 'Webflo',
             desc: 'The universal JavaScript framework - Web, Mobile, API Backends.',
@@ -69,12 +75,6 @@ export const tooling = List.create([
             desc: 'Fullstack, object-oriented SQL for modern apps - one SQL, multiple technologies.',
             page: '/tooling/objective-sql',
             github: 'webqit/objective-sql',
-        }, {
-            icon: 'code-slash',
-            title: 'OOHTML',
-            desc: 'Object-Oriented HTML (OOHTML) - a <a target="_blank" href="https://discourse.wicg.io/t/proposal-chtml/4716">WICG proposal</a>.',
-            page: '/tooling/oohtml',
-            github: 'webqit/oohtml',
         }],
     }, {
         name: 'Primitives',
