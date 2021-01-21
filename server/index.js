@@ -22,62 +22,70 @@ export default async (flo, recieved, next) => {
         {
             icon: 'code-slash',
             title: 'tooling',
-            desc: 'modern opensource tooling.',
+            desc: 'WebQit projects.',
             intro: [
                 {icon: 'square', content: 'Leverage some magic to write less code!'},
                 {icon: 'arrow-return-right', content: '...explore a growing collection of opensource work!'},
             ],
-            graphic: '/img/editor-ctrlshiftp.gif',
+            graphic: '/img/Globe.svg',
             active: true,
             lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
             darkTheme: {color: 'white', backgroundColor: 'slateblue'},
         }, {
             icon: 'cloud',
             title: 'cloud',
-            desc: 'the WebQit platform and APIs.',
+            desc: 'WebQit platform & APIs.',
             intro: [
                 {icon: 'square', content: 'Fasttrack how you build, ship, and scale!'},
                 {icon: 'arrow-return-right', content: '...enjoy the WebQit advantage in the cloud!'},
             ],
-            graphic: '/img/globe@2x-kgv9ll4o7r-havl08h54l.png',
+            graphic: '/img/Globe.svg',
             active: false,
-            lightTheme: {color: 'purple', backgroundColor: 'wheat'},
-            darkTheme: {color: 'wheat', backgroundColor: 'purple'},
+            lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
+            darkTheme: {color: 'white', backgroundColor: 'slateblue'},
         }, {
             icon: 'flag',
             title: 'community',
-            desc: 'shaping the web of the future.',
+            desc: 'WebQit communities.',
             intro: [
                 {icon: 'square', content: 'The web is all of us - join in shaping it!'},
                 {icon: 'arrow-return-right', content: '...or discover new heights for your career!'},
             ],
-            graphic: '/img/dna.fw.png',
+            graphic: '/img/Globe.svg',
             active: false,
-            lightTheme: {color: 'black', backgroundColor: 'lightcyan'},
-            darkTheme: {color: 'white', backgroundColor: 'teal'},
+            lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
+            darkTheme: {color: 'white', backgroundColor: 'slateblue'},
         },
     ];
     const tooling = detailsAll(getAll(), true);
     const cloud = [{
+        icon: 'clock',
         name: 'webflo-cloud',
         title: 'Webflo Cloud',
         desc: 'WebQit Dev global deployment feef efedefe',
+        items: [],
     }, {
+        icon: 'clock',
         name: 'objective-db',
         title: 'Objective DB',
         desc: 'WebQit Dev global deployment feef efedefe',
+        items: [],
     }];
     const community = [{
+        icon: 'clock',
         name: 'webqit-community',
         title: 'WebQit Community',
         desc: 'WebQit Dev global deployment feef efedefe',
+        items: [],
     }, {
+        icon: 'clock',
         name: 'web-native-cg',
         title: 'Web-Native (W3C) Community Group',
         desc: 'WebQit Dev global deployment feef efedefe',
+        items: [],
     }];
     return {
-        title: '::WebQit',
+        title: 'The WebQit Project',
         outline,
         tooling,
         cloud,

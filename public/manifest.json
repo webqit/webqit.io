@@ -1,13 +1,14 @@
 {
     "name": "WebQit",
-    "short_name": "WN",
-    "description": "WebQit.dev Site",
+    "short_name": "WebQit",
+    "description": "Tooling, Cloud, Community",
     "categories": [
-        "documentation",
-        "dev"
+        "WebQit Tooling",
+        "WebQit Cloud",
+        "WebQit Community"
     ],
-    "theme_color": "darkblue",
-    "background_color": "whitesmoke",
+    "theme_color": "white",
+    "background_color": "white",
     "icons": [
         {
             "src": "/img/logo/logo.130x130.fw.png",
@@ -30,11 +31,10 @@
     "screenshots": [],
     "shortcuts": [],
     "scope": "/",
-    "start_url": "/pkg/@web-native-js/chtml",
+    "start_url": "/",
     "lang": "en-us",
     "dir": "ltr",
-    "related_applications": [
-        ""
-    ],
-    "prefer_related_applications": false
+    "related_applications": "",
+    "prefer_related_applications": false,
+    "icon": true
 }

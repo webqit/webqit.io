@@ -234,7 +234,7 @@
                 <div class="section-div-content md--flex-y-center sm--d-block">
                     <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
                     <div class="md--col-7 txt-align-cntr">
-                        <img src="/img/new/rock.fw.png" style="min-width: 80%;" />
+                        <img src="/img/globe@2x-kgv9ll4o7r-havl08h54l.png" style="min-width: 80%;" />
                     </div>
                 </div>
             </div>
@@ -267,7 +267,7 @@
                 <div class="section-div-content md--flex-y-center sm--d-block">
                     <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
                     <div class="md--col-7 txt-align-cntr">
-                        <img src="/img/globe@2x-kgv9ll4o7r-havl08h54l.png" style="min-width: 90%;" />
+                        <img src="/img/bg/netlify.png" style="min-width: 90%;" />
                     </div>
                 </div>
             </div>
@@ -320,7 +320,7 @@
     <template name="outline">
         <li is="play-seq-li" namespace class="pd-10 mg-btm-10 mg-btm-x2 sm--mg-btm-0 radius-10 cursor-pointer" style="opacity: 0;">
             <div class="flex-y-start">
-                <div class="icon pd-6">
+                <div class="icon">
                     <play-icon data-id="icon" name="code-slash"></play-icon>
                 </div>
                 <div class="col-grows flex-y-center pd-lft-10 pd-lft-x2 sm--d-none">
@@ -424,7 +424,7 @@
                     this.state.active = true;
                 });
                 if (!this.state.name) return;
-                $(this.namespace.content).html(this.state.name);
+                $(this.namespace.content).html(this.state.title);
                 $(this).class('d-none', this.state.overflowCollapsed);
                 $(this).class('active', this.state.active);
             </script>

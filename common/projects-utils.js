@@ -8,7 +8,6 @@ import Path from 'path';
 import _isString from '@webqit/util/js/isString.js';
 import _toTitle from '@webqit/util/str/toTitle.js';
 import _each from '@webqit/util/obj/each.js';
-import { isString } from 'util';
 
 export function get(name, withHTML = false) {
     const project = {name}, baseDir = Path.resolve(Url.fileURLToPath(import.meta.url), '../../views/tooling/.docs');
@@ -73,7 +72,7 @@ export function detailsAll(projects, categorization = false) {
         }
     });
     if (categorization) {
-        return Object.keys(_detailsAll).sort((a, b) => a.toLowerCase() === 'featured' || b === categorization ? -1 : (a === categorization || b === 'featured' ? 1 : a > b)).map(name => ({
+        return Object.keys(_detailsAll).sort((a, b) => a.toLowerCase() === 'featured' || b.toLowerCase() === categorization ? -1 : (a.toLowerCase() === categorization || b.toLowerCase() === 'featured' ? 1 : a < b)).map(name => ({
             name,
             title: _toTitle(name),
             items: _detailsAll[name].sort((a, b) => a._before === b.name || a.name === b._after ? -1 : (a._after === b.name || b.name === a._before ? 1 : 0)),
