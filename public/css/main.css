@@ -136,6 +136,8 @@ p, .p, a, .a {
         border: none;
     }
     .outline li.active {
+        color: white;
+        background-color: slateblue;
         box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
     }
     .outline li.icon-webqit-tooling.active {
