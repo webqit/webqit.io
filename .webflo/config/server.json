@@ -3,7 +3,7 @@
     "https": {
         "port": 4200,
         "keyfile": "/etc/letsencrypt/live/webqit.io/privkey.pem",
-        "permfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
+        "certfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
         "force": true
     },
     "process": {
