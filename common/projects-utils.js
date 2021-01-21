@@ -3,8 +3,8 @@
  * @imports
  */
 import Fs from 'fs';
-import Path from 'path';
 import Url from 'url';
+import Path from 'path';
 import _isString from '@webqit/util/js/isString.js';
 import _toTitle from '@webqit/util/str/toTitle.js';
 import _each from '@webqit/util/obj/each.js';
