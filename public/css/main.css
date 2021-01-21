@@ -105,6 +105,9 @@ p, .p, a, .a {
 .markdown-body p,
 .markdown-body a {
 }
+.site-menu li:hover {
+    background-color: gainsboro;
+}
 .outline li {
     position: relative;
     border: 2px dashed transparent;
