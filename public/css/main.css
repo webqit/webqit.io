@@ -133,16 +133,13 @@ p, .p, a, .a {
 }
 @media (max-width: 760px) {
     .outline li.icon-webqit-tooling.active {
-        border: 1px solid slateblue;
-        color: slateblue;
+        background-color: gainsboro;
     }
     .outline li.icon-webqit-cloud.active {
-        border: 1px solid slateblue;
-        color: slateblue;
+        background-color: gainsboro;
     }
     .outline li.icon-webqit-community.active {
-        border: 1px solid teal;
-        color: teal;
+        background-color: gainsboro;
     }
 }
 
