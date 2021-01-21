@@ -60,26 +60,26 @@ export default async (flo, recieved, next) => {
     const tooling = detailsAll(getAll(), true);
     const cloud = [{
         icon: 'clock',
-        name: 'webflo-cloud',
+        name: 'Webflo Cloud',
         title: 'Webflo Cloud',
         desc: 'WebQit Dev global deployment feef efedefe',
         items: [],
     }, {
         icon: 'clock',
-        name: 'objective-db',
+        name: 'Objective DB',
         title: 'Objective DB',
         desc: 'WebQit Dev global deployment feef efedefe',
         items: [],
     }];
     const community = [{
         icon: 'clock',
-        name: 'webqit-community',
+        name: 'WebQit Community',
         title: 'WebQit Community',
         desc: 'WebQit Dev global deployment feef efedefe',
         items: [],
     }, {
         icon: 'clock',
-        name: 'web-native-cg',
+        name: 'Web-Native CG',
         title: 'Web-Native (W3C) Community Group',
         desc: 'WebQit Dev global deployment feef efedefe',
         items: [],

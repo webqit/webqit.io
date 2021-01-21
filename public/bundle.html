@@ -424,7 +424,7 @@
                     this.state.active = true;
                 });
                 if (!this.state.name) return;
-                $(this.namespace.content).html(this.state.title);
+                $(this.namespace.content).html(this.state.name);
                 $(this).class('d-none', this.state.overflowCollapsed);
                 $(this).class('active', this.state.active);
             </script>
