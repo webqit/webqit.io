@@ -73,7 +73,7 @@ export function detailsAll(projects, categorization = false) {
         }
     });
     if (categorization) {
-        return Object.keys(_detailsAll).sort((a, b) => a === 'featured' || b === categorization ? -1 : (a === categorization || b === 'featured' ? 1 : a > b)).map(name => ({
+        return Object.keys(_detailsAll).sort((a, b) => a.toLowerCase() === 'featured' || b === categorization ? -1 : (a === categorization || b === 'featured' ? 1 : a > b)).map(name => ({
             name,
             title: _toTitle(name),
             items: _detailsAll[name].sort((a, b) => a._before === b.name || a.name === b._after ? -1 : (a._after === b.name || b.name === a._before ? 1 : 0)),
