@@ -106,7 +106,6 @@ p, .p, a, .a {
 .markdown-body a {
 }
 .site-menu li:hover {
-    background-color: gainsboro;
 }
 .outline li {
     position: relative;
