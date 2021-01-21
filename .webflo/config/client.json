@@ -1,27 +1,20 @@
 {
-    "PUBLIC_DIR": "./public",
-    "CLIENT_DIR": "./client",
-    "CREATE_WORKER": true,
-    "WORKER_DIR": "./worker",
-    "WORKER_SHOW_LIFECYCLE_LOG": true,
-    "WORKER_SCOPE": "/",
-    "WORKER_CACHE_NAME": "cache_v2",
-    "WORKER_FETCHING_STRATEGY": "cache_first",
-    "WORKER_CACHING_STRATEGY": "dynamic",
-    "WORKER_CACHING_LIST": [
-        ""
-    ],
-    "WORKER_SKIP_WAITING": false,
-    "WORKER_SUPPORT_MESSAGING": false,
-    "WORKER_MESSAGE_ROUTING_URL_PROPERTY": "",
-    "WORKER_MESSAGE_SHOULD_RELAY_PROPERTY": "",
-    "WORKER_SUPPORT_NOTIFICATION": false,
-    "WORKER_PUSH_REGISTRATION_URL": "",
-    "WORKER_PUSH_UNREGISTRATION_URL": "",
-    "WORKER_PUSH_PUBLIC_KEY": "",
-    "WORKER_NOTIFICATION_ROUTING_URL_PROPERTY": "",
-    "WORKER_NOTIFICATION_TARGET_URL_PROPERTY": "",
-    "__client_advanced": true,
-    "__worker_advanced": true,
-    "__notification_advanced": false
+    "worker": {
+        "dir": "",
+        "lifecycle_logs": false,
+        "__advanced": true,
+        "scope": "/",
+        "cache_name": "",
+        "fetching_strategy": "network_first",
+        "caching_strategy": "static",
+        "caching_list": [
+            ""
+        ],
+        "skip_waiting": true,
+        "support_messaging": false,
+        "support_notification": false
+    },
+    "client params": true,
+    "client": {},
+    "Service Worker": true
 }

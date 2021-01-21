@@ -1,11 +1,7 @@
 {
-    "PORT": 4200,
-    "PUBLIC_DIR": "./public",
-    "SERVER_DIR": "./server",
-    "RUNTIME_MODE": "dev",
-    "RUNTIME_NAME": "www",
-    "AUTO_RESTART": true,
-    "VHOSTS_MODE": false,
-    "SHOW_REQUEST_LOG": true,
-    "__advanced": false
+    "port": 4200,
+    "https": {},
+    "process": {},
+    "shared": false,
+    "background process": false
 }

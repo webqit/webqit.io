@@ -31,9 +31,9 @@ if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/worker.js', {scope: '/'}).then(async registration => {
             console.log('Service worker registered.');
             await /*SUPPORT_PUSH*/undefined ? new Push(registration, {
-                REGISTRATION_URL: '',
-                UNREGISTRATION_URL: '',
-                PUBLIC_KEY: '',
+                REGISTRATION_URL: 'undefined',
+                UNREGISTRATION_URL: 'undefined',
+                PUBLIC_KEY: 'undefined',
             }) : null;
         });
     });

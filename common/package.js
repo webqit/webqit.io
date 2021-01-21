@@ -24,7 +24,7 @@ export async function render(window, data, this_pathname, next_pathname) {
     }));
     // ----------------
     var nav;
-    if (0 && window.document.state.page.nav && ((data.project || {}).json || null) === (window.document.state.page.project || {}).json) {
+    if (window.document.state.page.nav && ((data.project || {}).json || null) === (window.document.state.page.project || {}).json) {
         nav = window.document.state.page.nav;
     } else {
         var outline = data.outline;

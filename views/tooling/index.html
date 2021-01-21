@@ -166,7 +166,7 @@
                 <div class="flex-x-separate">
                     <a data-id="edit_link" href="" target="_blank" class="pd-6 flex-y-center" style="background-color: ghostwhite;">
                         <play-icon name="pencil" size="xs" class="pd-4" style="font-size: smaller;"></play-icon>
-                        <span class="pd-4 i">Edit on github</span>
+                        <span class="pd-4">Edit this page on github</span>
                     </a>
                 </div>
 
@@ -215,24 +215,44 @@
             <script type="subscript">
                 let app = document.state;
                 if (app.page.nav && !app.page.project) {
-                    var nav = app.page.nav.items.filter(n => n.name === 'tooling')[0].subtree;
-                    $(this).itemize(nav.items);
+                    $(this).itemize(app.page.projects);
                 }
             </script>
         </ul>
-        <li namespace class="pd-top-6 pd-btm-6 b">
-            <a data-id="link" href="" class="flex-y-center flex-x-separate pd-10 radius-10 radius-x5" style="background-color: whitesmoke; text-decoration: none;">
-                <span class="flex-y-center">
-                    <play-icon name="text-left" size="sm" class="pd-lft-8 pd-rt-8"></play-icon>
-                    <span data-id="link_text"></span>
-                </span>
-                <play-icon name="chevron-right" size="xs" class="flex-y-center pd-lft-8"></play-icon>
-            </a>
+        <li namespace>
+            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-lft-10 pd-x2 b border-lft-solid border-lft-4 txt-sm"></h3>
+            <ul data-id="items" class="pd-0 d-flex flex-wrap list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
-                    $(this.namespace.link).attr('href', this.state.path);
-                    $(this.namespace.link_text).html(this.state.title);
+                    $(this.namespace.title).html(this.state.title);
+                    $(this.namespace.items).itemize(this.state.items, null, null, {itemExportId: 'project'});
                 }
+            </script>
+        </li>
+        <li exportgroup="project" namespace class="col-6 sm--col-12 pd-6">
+            <div class="pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-10 drop-shadow" style="background-color: ghostwhite;">
+                <div>
+                    <play-icon data-id="icon" name="square"></play-icon>
+                    <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
+                    <p data-id="desc"></p>
+                </div>
+                <ul class="pd-0 flex-x-separate flex-y-center wt-full pd-top-10 pd-top-x2 list-style-none">
+                    <li><a data-id="page" class="flex-y-center" href="" style="text-decoration: none;">
+                        <play-icon name="arrow-return-right" size="sm"></play-icon>
+                        <span class="mg-lft-8">Learn more</span>
+                    </a></li>
+                    <li><a data-id="github" href="" target="_blank">
+                        <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                    </a></li>
+                </ul>
+            </div>
+            <script type="subscript">
+                if (!this.state.title) return;
+                $(this.namespace.icon).attr('name', this.state.icon || 'square');
+                $(this.namespace.title).html(this.state.title);
+                $(this.namespace.desc).html(this.state.desc);
+                $(this.namespace.page).attr('href', this.state.page);
+                $(this.namespace.github).attr('href', 'https:/github.com/' + this.state.github);
             </script>
         </li>
     </template>

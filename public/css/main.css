@@ -266,10 +266,12 @@ body {
 }
 .page-section {
     min-height: 100vh;
-    border-bottom: 3px solid silver;
 }
-.page-section {
+.page-section:first-of-type {
     border-top: 3px solid silver;
+}
+.page-section:last-of-type {
+    border-bottom: 3px solid silver;
 }
 
 /* ------------------- */
@@ -486,9 +488,6 @@ body {
 }
 #tooling .item {
     min-height: 250px;
-	padding: 45px;
-	padding: 35px;
-    border-radius: 15px;
     border: 5px solid rgba(0, 0, 0, 0.2);
     border: 5px solid gainsboro;
 }
@@ -537,8 +536,8 @@ body {
 /* ------------------- */
 
 #community {
-    --section-div-a-bg: beige;
-    --section-div-b-bg: beige;
+    --section-div-a-bg: ghostwhite;
+    --section-div-b-bg: ghostwhite;
     --section-div-a-color: black;
     --section-div-b-color: black;
     border-top-color: black;

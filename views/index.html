@@ -459,7 +459,7 @@
                 </script>
             </div>
 
-            <li exportgroup="item" namespace class="item flex-y-separate flex-wrap txt-lg animation-x-fast anim-scale-in-small">
+            <li exportgroup="item" namespace class="item pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-8 radius-x2 flex-y-separate flex-wrap txt-lg animation-x-fast anim-scale-in-small">
                 <div>
                     <play-icon data-id="icon" name="square"></play-icon>
                     <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
@@ -476,7 +476,7 @@
                 </ul>
                 <script type="subscript">
                     if (!this.state.title) return;
-                    $(this.namespace.icon).attr('name', this.state.icon);
+                    $(this.namespace.icon).attr('name', this.state.icon || 'square');
                     $(this.namespace.title).html(this.state.title);
                     $(this.namespace.desc).html(this.state.desc);
                     $(this.namespace.page).attr('href', this.state.page);

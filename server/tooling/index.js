@@ -2,10 +2,9 @@
 /**
  * @imports
  */
-//import _delay from '@webqit/util/js/delay.js';
 import Fs from 'fs';
 import Path from 'path';
-import _toTitle from '@webqit/util/str/toTitle.js';
+import { get, getAll, detailsAll } from '../../common/projects-utils.js';
 import { render as packageRender } from '../../common/package.js';
 
 /**
@@ -21,37 +20,20 @@ export default async function(flo, recieved, next) {
     if ((next.pathname || '').startsWith('.')) {
         return next();
     }
-    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(flo.config.ROOT, flo.config.PUBLIC_DIR, 'bundle.html.json')) 
+    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(flo.setup.ROOT, flo.setup.PUBLIC_DIR, 'bundle.html.json')) 
         ? JSON.parse(Fs.readFileSync(outlineFile)) 
         : {};
     if (!outline.subtree.tooling.subtree) {
         outline.subtree.tooling.subtree = {};
     }
     const data = {title: 'WebQit Tooling', outline};
-    const baseDir = Path.resolve(this.dirname, '../../views/tooling/.docs');
     if (next.pathname) {
-        var pathnameArray = next.pathname.split('/'),
-            projectName = pathnameArray[0],
-            projectDir = Path.join(baseDir, projectName),
-            htmlFile,
-            jsonFile;
-        if (!Fs.existsSync(jsonFile = Path.join(projectDir, '/bundle.html.json'))) {
-            return;
-        }
-        var html = (Fs.existsSync(htmlFile = Path.join(projectDir, '/bundle.html')) ? Fs.readFileSync(htmlFile) : '').toString();
-        var json = JSON.parse(Fs.readFileSync(jsonFile));
-        data.project = {
-            name: projectName,
-            json,
-            html,
-        }
+        var projectName = next.pathname.split('/')[0];
+        data.project = get(projectName, true);
     } else {
-        Fs.readdirSync(baseDir).forEach(name => {
-            var jsonFile, resource = Path.join(baseDir, name);
-            if (Fs.statSync(resource).isDirectory() && Fs.existsSync(jsonFile = Path.join(resource, '/bundle.html.json'))) {
-                data.outline.subtree.tooling.subtree[name] = JSON.parse(Fs.readFileSync(jsonFile));
-            }
-        });
+        var projects = getAll();
+        data.projects = detailsAll(projects, 'more');
+        data.outline.subtree.tooling.subtree = projects;
     }
     return data;
 };

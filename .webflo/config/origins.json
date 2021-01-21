@@ -1,14 +1,24 @@
 {
-    "ORIGINS": [
+    "entries": [
         {
-            "HOST": "github",
-            "REPO": "webqit/docs",
-            "BRANCH": "master",
-            "TAG": "docs",
-            "DEPLOY_PATH": "./views/tooling/.docs",
-            "AUTO_DEPLOY": true,
-            "AUTO_DEPLOY_SECRET": "docs",
-            "ONDEPLOY": "oohtml bundle"
+            "host": "github",
+            "repo": "webqit/webqit.io",
+            "branch": "master",
+            "tag": "webqit.io",
+            "deploy_path": ".",
+            "autodeploy": true,
+            "autodeploy_secret": "webqit.io",
+            "ondeploy": ""
+        },
+        {
+            "host": "github",
+            "repo": "webqit/docs",
+            "branch": "master",
+            "tag": "docs",
+            "deploy_path": "./views/tooling/.docs",
+            "autodeploy": true,
+            "autodeploy_secret": "docs",
+            "ondeploy": "oohtml bundle"
         }
     ],
     "repository": true

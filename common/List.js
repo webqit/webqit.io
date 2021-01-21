@@ -22,17 +22,20 @@ export default class List extends _List {
 
         var entries = Object.keys(outline).map(name => {
             var entry = outline[name];
-            var inlineOutline = ((entry.meta || {}).readme || {}).outline || {};
-            var title = inlineOutline[0] && inlineOutline[0].level === 1 ? inlineOutline[0].title : _toTitle(name);
+            var readme = (entry.meta || {}).readme || {};
+            var title = readme.title || (readme.outline || []).length && readme.outline[0].level === 1 ? readme.outline[0].title : _toTitle(name);
             var _entry = {
                 title,
                 name,
                 path: (parent ? parent.path : '') + '/' + name,
                 active: false,
+                desc: readme.desc,
+                _before: readme._before,
+                _after: readme._after,
             };
             // Add parent
             if (detailed) {
-                Object.defineProperty(_entry, 'outline', {value: inlineOutline, enumerable: false});
+                Object.defineProperty(_entry, 'outline', {value: readme.outline || [], enumerable: false});
                 if (parent) {
                     Object.defineProperty(_entry, 'parent', {value: parent, enumerable: false});
                 }
@@ -42,6 +45,16 @@ export default class List extends _List {
                 _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry);
             }        
             return _entry;
+        });
+
+        entries.sort((a, b) => {
+            if (a._before === b.name || b._after === a.name) {
+                return -1;
+            }
+            if (a._after === b.name || b._before === a.name) {
+                return 1;
+            }
+            return 0;
         });
 
         if (detailed) {
