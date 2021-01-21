@@ -123,7 +123,7 @@
 
                 <div class="sm--flex-center sm--mg-btm-10 z-index-10">
                     <div data-id="outline_prev" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-left"></play-icon></div>
-                    <ul is="play-seq-ul" data-id="outline_menu" template="page/#layout/outline" class="outline wt-full sm--wt-auto sm--flex-center list-style-none"></ul>
+                    <ul data-id="outline_menu" template="page/#layout/outline" class="outline wt-full sm--wt-auto sm--flex-center list-style-none"></ul>
                     <div data-id="outline_next" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-right"></play-icon></div>
                 </div>
 
@@ -318,7 +318,7 @@
     </ul>
 
     <template name="outline">
-        <li is="play-seq-li" namespace class="pd-10 mg-btm-10 mg-btm-x2 sm--mg-btm-0 radius-10 cursor-pointer" style="opacity: 0;">
+        <li namespace class="pd-10 mg-btm-10 mg-btm-x2 sm--mg-btm-0 radius-10 cursor-pointer">
             <div class="flex-y-start">
                 <div class="icon">
                     <play-icon data-id="icon" name="code-slash"></play-icon>
@@ -390,8 +390,8 @@
     <template name="tabbing">
 
         <div exportgroup="tabs" namespace class="col-grows">
-            <ul data-id="main" template="page/#layout/tabbing" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
-                <li data-id="overflow" namespace class="overflow-notch d-none" tabindex="0">
+            <ul is="play-seq-ul" data-id="main" template="page/#layout/tabbing" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+                <li is="play-seq-li" data-id="overflow" namespace class="overflow-notch d-none" tabindex="0" style="opacity: 0;">
                     <play-icon name="three-dots" size="sm" class="ht-full flex-y-center"></play-icon>
                     <div class="overflow ht-0 flex-x-center">
                         <ul data-id="list" template="page/#layout/tabbing" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
@@ -417,7 +417,7 @@
             </script>            
         </div>
 
-        <li exportgroup="tab" namespace>
+        <li is="play-seq-li" exportgroup="tab" namespace style="opacity: 0;">
             <span data-id="content"></span>
             <script type="subscript">
                 $(this).on('click', () => {
