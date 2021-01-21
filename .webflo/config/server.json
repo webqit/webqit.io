@@ -7,8 +7,13 @@
         "force": true
     },
     "process": {
-        "name": "webqit.io"
+        "name": "webqit.io",
+        "errfile": "",
+        "outfile": "",
+        "exec_mode": "fork",
+        "merge_logs": true,
+        "autorestart": true
     },
     "shared": false,
-    "background process": false
+    "background process": true
 }
