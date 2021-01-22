@@ -67,7 +67,7 @@
         }
     </script>
 
-    <div class="overflow-hidden" style="border-bottom: 3px solid silver; background-color: white;">
+    <div class="overflow-hidden">
 
         <header class="app-bar flex-y-stretch flex-wrap">
             
@@ -180,7 +180,7 @@
         </div>
     </section>
 
-    <main class="pos-rel">
+    <main class="pos-rel colored">
 
         <section namespace id="tooling" class="page-section flex-y-stretch flex-wrap">
 
@@ -291,7 +291,7 @@
 
     </main>
 
-    <footer class="flex-y-stretch flex-wrap" style="min-height: 300px; border-top: 3px solid silver; background-color: white;">
+    <footer class="flex-y-stretch flex-wrap">
     </footer>
 
 
@@ -390,11 +390,11 @@
     <template name="tabbing">
 
         <div exportgroup="tabs" namespace class="col-grows">
-            <ul is="play-seq-ul" data-id="main" template="page/#layout/tabbing" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+            <ul is="play-seq-ul" play-seq-displacement="100" data-id="main" template="page/#layout/tabbing" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
                 <li is="play-seq-li" data-id="overflow" namespace class="overflow-notch d-none" tabindex="0" style="opacity: 0;">
                     <play-icon name="three-dots" size="sm" class="ht-full flex-y-center"></play-icon>
                     <div class="overflow ht-0 flex-x-center">
-                        <ul data-id="list" template="page/#layout/tabbing" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
+                        <ul data-id="list" template="page/#layout/tabbing" class="overflow-list pos-abs animation-x-fast anim-fly-top-small list-style-none"></ul>
                     </div>
                 </li>
             </ul>
@@ -446,7 +446,7 @@
         <template name="tooling">
 
             <div exportgroup="panel" namespace class="col-grows flex-y-separate">
-                <ul class="highlights grid-3 list-style-none" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
+                <ul is="play-seq-ul" play-seq-displacement="50" play-seq-cancelforcss class="highlights grid-3 list-style-none anim-fade-in" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
                 <ul class="overflow list-style-none" data-id="overflow" template="page/#layout/overflow/tooling"></ul>
                 <script type="subscript">
                     if (this.state.items) {
@@ -459,7 +459,7 @@
                 </script>
             </div>
 
-            <li exportgroup="item" namespace class="item pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-8 radius-x2 flex-y-separate flex-wrap txt-lg animation-x-fast anim-scale-in-small">
+            <li is="play-seq-li" exportgroup="item" namespace class="item pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-8 radius-x2 flex-y-separate flex-wrap txt-lg">
                 <div>
                     <play-icon data-id="icon" name="square"></play-icon>
                     <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
@@ -689,7 +689,7 @@
                                 <play-icon name="three-dots" size="xs" class="cursor-pointer"></play-icon>
                             </div>
                             <div class="overflow ht-0 flex-x-start">
-                                <ul data-id="list" template="page/tooling/#layout/breadcrumb" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
+                                <ul data-id="list" template="page/tooling/#layout/breadcrumb" class="overflow-list pos-abs animation-x-fast anim-fly-top-small list-style-none"></ul>
                             </div>
                         </li>
                         <li data-id="subtree" namespace class="overflow-notch d-none" tabindex="0">

@@ -27,7 +27,7 @@
         }
     ],
     "display": "standalone",
-    "orientation": "natural",
+    "orientation": "portrait-primary",
     "screenshots": [],
     "shortcuts": [],
     "scope": "/",

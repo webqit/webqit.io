@@ -269,14 +269,14 @@ a.icon-webqit-community.active {
 body {
     background-color: white;
 }
-main.colored {
-    background: linear-gradient(180deg, white, hotpink, white);
-}
 .page-section {
     min-height: 100vh;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 3px 6px -3px gre
+}
+.page-section:first-of-type {
+    border-top: 3px solid silver;
+}
+.page-section:last-of-type {
+    border-bottom: 3px solid silver;
 }
 
 /* ------------------- */
@@ -313,8 +313,8 @@ main.colored {
 
 .section-div-header,
 .section-div-content {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 .section-div-header {
     position: sticky;
@@ -413,10 +413,6 @@ main.colored {
     background-color: white;
     display: none;
     border: 1px solid silver;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
 }
 .overflow-notch .overflow-list li:active,
 .overflow-notch .overflow-list li.active {
@@ -486,21 +482,19 @@ main.colored {
 */
 
 #tooling {
-    --section-div-a-bg: aliceblue;
+    --section-div-a-bg: ghostwhite;
     --section-div-b-bg: ghostwhite;
     --section-div-a-color: black;
     --section-div-b-color: black;
+    border-bottom-color: black;
 }
 #tooling .item {
     min-height: 250px;
-    background-color: gainsboro;
-    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
-    border: 1px solid transparent;
-    transition: all 300ms;
+    border: 5px solid rgba(0, 0, 0, 0.2);
+    border: 5px solid gainsboro;
 }
 #tooling .item:hover {
-    transform: scale(0.95) !important;
-    box-shadow: 0px 5px 10px -5px slateblue;
+    background-color: white;
 }
 #tooling .item a {
     font-weight: bold;
@@ -512,10 +506,12 @@ main.colored {
 /* ------------------- */
 
 #cloud {
-    --section-div-a-bg: darkmagenta;
-    --section-div-b-bg: purple;
-    --section-div-a-color: white;
-    --section-div-b-color: white;
+    --section-div-a-bg: slateblue;
+    --section-div-b-bg: gainsboro;
+    --section-div-a-color: ghostwhite;
+    --section-div-b-color: black;
+    border-top-color: black;
+    border-bottom-color: black;
 }
 #cloud .section-div-b .section-div-content {
     min-height: 70vh !important;
@@ -542,10 +538,11 @@ main.colored {
 /* ------------------- */
 
 #community {
-    --section-div-a-bg: lavenderblush;
-    --section-div-b-bg: floralwhite;
+    --section-div-a-bg: ghostwhite;
+    --section-div-b-bg: ghostwhite;
     --section-div-a-color: black;
     --section-div-b-color: black;
+    border-top-color: black;
 }
 #community .section-div-b .section-div-content {
     min-height: 70vh !important;
@@ -566,8 +563,4 @@ main.colored {
 .markdown-body h4,
 .markdown-body h5,
 .markdown-body h6 {
-}
-
-footer {
-    min-height: 300px;
 }
