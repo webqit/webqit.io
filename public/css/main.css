@@ -180,6 +180,10 @@ a.icon-webqit-community.active {
     z-index: 0;
 }
 
+.divides_right {
+    background-color: white;
+    border-right: 2px solid slateblue;
+}
 
 /**
  * ----------
@@ -197,9 +201,14 @@ a.icon-webqit-community.active {
 .webqit_intro_b {
     animation-delay: 5000ms;
 }
+.webqit_intro_video_circle {
+    background-color: gainsboro;
+    border: 2px solid slateblue;
+}
 .circus li {
     background-size: cover;
     background-position: center;
+    background-color: ghostwhite;
     box-shadow: 0px 0px 100px white inset;
     z-index: 1;
 }
@@ -277,9 +286,7 @@ main.home {
 }
 .page-section {
     min-height: 100vh;
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0px 3px 6px -3px gre
+    margin: 5px;
 }
 
 /* ------------------- */
@@ -500,6 +507,11 @@ main.home {
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
     border: 1px solid transparent;
     transition: all 300ms;
+}
+@media (max-width: 760px) {
+    #tooling .item {
+        min-height: 325px;
+    }
 }
 #tooling .item:hover {
     transform: scale(0.97) !important;

@@ -24,8 +24,8 @@ export default async (flo, recieved, next) => {
             title: 'tooling',
             desc: 'WebQit projects.',
             intro: [
-                {icon: 'square', content: 'Leverage some magic to write less code!'},
-                {icon: 'arrow-return-right', content: '...explore a growing collection of opensource work!'},
+                {icon: 'square', content: 'WebQit\'s opensource web technology projects.'},
+                {icon: 'arrow-return-right', content: '...leverage some magic to write less code!'},
             ],
             graphic: '/img/Globe.svg',
             active: true,
@@ -36,8 +36,8 @@ export default async (flo, recieved, next) => {
             title: 'cloud',
             desc: 'WebQit platform & APIs.',
             intro: [
-                {icon: 'square', content: 'Fasttrack how you build, ship, and scale!'},
-                {icon: 'arrow-return-right', content: '...enjoy the WebQit advantage in the cloud!'},
+                {icon: 'square', content: 'WebQit\'s fully-managed platform and APIs'},
+                {icon: 'arrow-return-right', content: '...take apps to production faster; scale to your imagination!'},
             ],
             graphic: '/img/Globe.svg',
             active: false,
@@ -48,8 +48,8 @@ export default async (flo, recieved, next) => {
             title: 'community',
             desc: 'WebQit communities.',
             intro: [
-                {icon: 'square', content: 'The web is all of us - join in shaping it!'},
-                {icon: 'arrow-return-right', content: '...or discover new heights for your career!'},
+                {icon: 'square', content: 'WebQit\'s community initiatives and web standardization efforts'},
+                {icon: 'arrow-return-right', content: '...join in with your voice!'},
             ],
             graphic: '/img/Globe.svg',
             active: false,
