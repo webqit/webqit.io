@@ -48,8 +48,8 @@
 /* ------------------------ */
 
 .readme-footer {
+    padding: 10px;
     background-color: white;
-    border-bottom: 3px solid darkblue;
 }
 .footer-nav {
     padding:0px;

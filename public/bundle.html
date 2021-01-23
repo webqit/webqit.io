@@ -584,10 +584,16 @@
         if (app.page.nav) {
             var nav = app.page.nav;
             if (app.page.project) {
+                console.log(app.page.project);
                 $(this.namespace.project_npm).html('@webqit/' + app.page.project.name);
+                $(this.namespace.app_bar_title).html('@webqit/' + app.page.project.name);
+                $(this.namespace.app_bar_back).attr('href', '/tooling');
                 $(this.namespace.project_npm).attr('href', 'https://npmjs.com/package/@webqit/' + app.page.project.name);
                 $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.project.name);
                 nav = app.page.nav.items.filter(n => n.name === 'tooling')[0].subtree;
+            } else {
+                $(this.namespace.app_bar_title).html('WebQit Tooling');
+                $(this.namespace.app_bar_back).attr('href', '/');
             }
             $(this.namespace.project_links).class('d-none', !app.page.project);
             $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit.docs/edit/master/' + document.state.location.pathname.replace('/tooling/', '') + '/README.md');
@@ -622,7 +628,7 @@
 
                 <div class="wt-full pd-10 pd-x2 pd-btm-0 d-flex flex-column">
 
-                    <div class="app-bar pd-10 mg-btm-10 mg-btm-x3 overflow-x-hidden md--d-none">
+                    <div class="app-bar pd-10 mg-btm-10 mg-btm-x3 overflow-x-hidden">
                         <html-import name="logo_nav" template="brand" class="wt-auto"></html-import>
                     </div>
 
@@ -666,8 +672,13 @@
 
             <div data-id="main_backdrop" class="pos-abs cover z-index-10 d-none" style="background-color: rgba(255, 255, 255, 0.95);"></div>
 
-            <div class="app-bar-alt col-12 pd-10 pd-x3 flex-y-center flex-x-separate d-none md--d-flex" style="background-color: ghostwhite;">
-                <html-import name="logo_nav" template="brand"></html-import>
+            <div class="app-bar-alt col-12 pd-10 pd-x2 flex-y-center flex-x-separate d-none md--d-flex" style="background-color: ghostwhite;">
+                <div class="flex-y-center">
+                    <a data-id="app_bar_back" href="/tooling">
+                        <play-icon name="arrow-left"></play-icon>
+                    </a>
+                    <h3 data-id="app_bar_title" class="mg-lft-10"></h3>
+                </div>
                 <div class="flex-y-center">
                     <div data-id="app_drawer_open" class="wt-40 ht-40 flex-center cursor-pointer">
                         <play-icon name="filter-right"></play-icon>
@@ -745,7 +756,6 @@
                 <br />
 
                 <footer class="readme-footer pos-sticky offset-btm-0">
-                    <br />
                     <ul data-id="nav" class="footer-nav flex-x-separate flex-y-center d-none">
                         <li><a href="" data-id="nav_left"><play-icon name="arrow-left" size="sm"></play-icon></a></li>
                         <li><a href="" data-id="nav_right"><play-icon name="arrow-right" size="sm"></play-icon></a></li>
