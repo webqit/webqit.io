@@ -447,7 +447,7 @@
         <template name="tooling">
 
             <div exportgroup="panel" namespace class="col-grows flex-y-separate">
-                <ul is="play-seq-ul" play-seq-displacement="50" play-seq-cancelforcss class="highlights grid-3 list-style-none anim-fade-in" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
+                <ul play-seq-displacement="50" play-seq-cancelforcss class="highlights grid-3 list-style-none" data-id="highlights" template="page/#layout/tabbing/tooling"></ul>
                 <ul class="overflow list-style-none" data-id="overflow" template="page/#layout/overflow/tooling"></ul>
                 <script type="subscript">
                     if (this.state.items) {
@@ -460,13 +460,13 @@
                 </script>
             </div>
 
-            <li is="play-seq-li" exportgroup="item" namespace class="item pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-8 radius-x2 flex-y-separate flex-wrap txt-lg">
-                <div>
+            <li exportgroup="item" namespace class="item radius-8 radius-x2 flex-y-separate txt-lg anim-scale-in-small animation-x-fast">
+                <div class="item-content col-grows pd-10 pd-x3 pd-btm-x2 radius-8 radius-x2 radius-btm-lft-none radius-btm-rt-none">
                     <play-icon data-id="icon" name="square"></play-icon>
-                    <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
+                    <h4 data-id="title" style="margin-top: 25px; margin-bottom: 25px;"></h4>
                     <p data-id="desc"></p>
                 </div>
-                <ul class="flex-x-separate flex-y-center wt-full pd-top-10 pd-top-x2 list-style-none">
+                <ul class="item-links flex-x-separate flex-y-center wt-full pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-8 radius-x2 radius-top-lft-none radius-top-rt-none list-style-none">
                     <li><a data-id="page" class="flex-y-center" href="">
                         <play-icon name="arrow-return-right" size="sm"></play-icon>
                         <span class="mg-lft-8">Learn more</span>
