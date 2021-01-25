@@ -22,9 +22,9 @@ export default async (flo, recieved, next) => {
         {
             icon: 'code-slash',
             title: 'tooling',
-            desc: 'WebQit projects.',
+            desc: 'The web tooling project.',
             intro: [
-                {icon: 'square', content: 'WebQit\'s opensource web technology projects.'},
+                {icon: 'square', content: 'WebQit\'s opensource web tooling project.'},
                 {icon: 'arrow-return-right', content: '...leverage some magic to write less code!'},
             ],
             graphic: '/img/Globe.svg',
@@ -34,7 +34,7 @@ export default async (flo, recieved, next) => {
         }, {
             icon: 'cloud',
             title: 'cloud',
-            desc: 'WebQit platform & APIs.',
+            desc: 'The WebQit platform & APIs.',
             intro: [
                 {icon: 'square', content: 'WebQit\'s fully-managed platform and APIs'},
                 {icon: 'arrow-return-right', content: '...take apps to production faster; scale to your imagination!'},
@@ -46,7 +46,7 @@ export default async (flo, recieved, next) => {
         }, {
             icon: 'flag',
             title: 'community',
-            desc: 'WebQit communities.',
+            desc: 'WebQit community initiatives.',
             intro: [
                 {icon: 'square', content: 'WebQit\'s community initiatives and web standardization efforts'},
                 {icon: 'arrow-return-right', content: '...join in with your voice!'},
