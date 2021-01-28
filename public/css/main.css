@@ -182,7 +182,7 @@ a.icon-webqit-community.active {
 
 .divides_right {
     background-color: white;
-    border-right: 2px solid slateblue;
+    border-right: 2px solid gainsboro;
 }
 
 /**
@@ -203,7 +203,7 @@ a.icon-webqit-community.active {
 }
 .webqit_intro_video_circle {
     background-color: gainsboro;
-    border: 2px solid slateblue;
+    border: 2px solid gainsboro;
 }
 .circus li {
     background-size: cover;
