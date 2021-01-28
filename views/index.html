@@ -71,49 +71,18 @@
 
         <header class="app-bar flex-y-stretch flex-wrap">
             
-            <div class="divides_right col-4 pd-10 pd-x3 flex-x-separate md--flex-y-center sm--col-8 md--border-none overflow-hidden">
+            <div class="divides_right col-4 sm--col-12 pd-10 pd-x3 flex-x-separate md--border-none overflow-hidden">
                 
                 <html-import name="logo_nav" template="brand"></html-import>
-                <div data-id="app_drawer_open" class="menu-control pos-rel wt-40 ht-40 flex-center cursor-pointer radius-10 md--d-none" play-icon-type="bootstrap">
+                <div data-id="app_drawer_open" class="menu-control pos-rel wt-40 ht-40 flex-center cursor-pointer radius-10 md--d-none sm--d-flex" play-icon-type="bootstrap">
                     <play-icon name="filter-right" class="pos-rel"></play-icon>
                 </div>
 
             </div>
 
-            <ul class="col-grows pd-10 pd-x3 flex-y-center flex-x-end list-style-none">
+            <div class="col-grows sm--col-12 pd-10 pd-x3 flex-y-center flex-x-separate">
                 
-                <li class="sm--d-none pos-rel mg-rt-10 mg-rt-x6 z-index-10">
-                    <ul class="flex-y-center pd-8 radius-10 drop-shadow list-style-none" style="border: 1px dashed silver">
-                        <li class="d-none"><a class="pd-10" href="mailto://webqit.io@gmail.com">
-                            <play-icon name="chat-quote" size="sm"></play-icon>
-                        </a></li>
-                        <li class="d-none"><a class="pd-10" href="https://twitter.com/Web_Qit" target="_blank">
-                            <play-icon name="twitter" size="sm"></play-icon>
-                        </a></li>
-                        <li><a class="pd-10" href="https://github.com/webqit" target="_blank">
-                            <play-icon name="github" size="sm" play-icon-type=""></play-icon>
-                        </a></li>
-                    </ul>
-                </li>
-                <!--
-                <li><a class="mg-lft-10 pd-8 pd-x2 sm--pd-10" href="#">
-                    <play-icon name="search" size="sm" class="sm--txt-sm"></play-icon>
-                </a></li>
-                -->
-                <li data-id="app_drawer_open2" class="pd-8 d-none md--d-flex"><a class="menu-control-alt pos-rel" href="#">
-                    <play-icon name="filter-right" class="pos-rel"></play-icon>
-                </a></li>
-
-            </ul>
-
-        </header>
-
-        <!-- ::::::::::::::::: -->
-
-        <section class="flex-y-stretch flex-wrap pos-rel z-index-10">
-            <div class="divides_right col-4 pd-10 pd-x3 md--col-5 sm--col-12 sm--pd-10 md--border-none">
-                
-                <div class="pd-10 mg-btm-10 mg-x3 sm--mg-btm-10 flex-y-center sm--flex-x-center">
+                <div class="mg-rt-10 mg-rt-x3 sm--mg-rt-10 flex-y-center sm--flex-x-center">
                     <play-icon name="globe" size="sm" class="wt-60 ht-60 flex-center radius-10 radius-x8" style="background-color: ghostwhite;"></play-icon>
                     <div class="pd-10 b i pos-rel">
                         <span>Complex stacks have had their day!</span>
@@ -122,13 +91,45 @@
                     </div>
                 </div>
 
-                <div class="sm--flex-center sm--mg-btm-10 z-index-10">
+                <ul class="flex-y-center list-style-none">
+                    <li class="sm--d-none pos-rel mg-rt-10 mg-rt-x6 z-index-10">
+                        <ul class="flex-y-center pd-8 radius-10 drop-shadow list-style-none" style="border: 1px dashed silver">
+                            <li class="d-none"><a class="pd-10" href="mailto://webqit.io@gmail.com">
+                                <play-icon name="chat-quote" size="sm"></play-icon>
+                            </a></li>
+                            <li class="d-none"><a class="pd-10" href="https://twitter.com/Web_Qit" target="_blank">
+                                <play-icon name="twitter" size="sm"></play-icon>
+                            </a></li>
+                            <li><a class="pd-10" href="https://github.com/webqit" target="_blank">
+                                <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                            </a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li><a class="mg-lft-10 pd-8 pd-x2 sm--pd-10" href="#">
+                        <play-icon name="search" size="sm" class="sm--txt-sm"></play-icon>
+                    </a></li>
+                    -->
+                    <li data-id="app_drawer_open2" class="pd-8 d-none md--d-flex sm--d-none"><a class="menu-control-alt pos-rel" href="#">
+                        <play-icon name="filter-right" class="pos-rel"></play-icon>
+                    </a></li>
+                </ul>
+
+            </div>
+        </header>
+
+        <!-- ::::::::::::::::: -->
+
+        <section class="flex-y-stretch flex-wrap pos-rel z-index-10">
+            <div class="divides_right col-4 sm--col-12 pd-10 pd-x3 md--col-5 sm--pd-10 flex-y-center sm--d-block md--border-none">
+                
+                <div class="sm--flex-center sm--mg-10 z-index-10">
                     <div data-id="outline_prev" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-left"></play-icon></div>
                     <ul data-id="outline_menu" template="page/#layout/outline" class="outline wt-full sm--wt-auto sm--flex-center list-style-none"></ul>
                     <div data-id="outline_next" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-right"></play-icon></div>
                 </div>
 
-                <div class="col-12 mg-btm-10 d-none sm--d-block txt-align-cntr">
+                <div class="mg-btm-10 d-none sm--d-block txt-align-cntr">
                     <div data-id="outline_title" class="pd-10 b txt-xxl h2"></div>
                     <div data-id="outline_desc" class="pd-lft-10 pd-rt-10 pd-x2"></div>
                     <div class="d-inline-block">
@@ -161,7 +162,7 @@
         <div class="col-4 md--col-12 flex-x-end">
 
             <div class="flex-y-stretch pointer-events pos-rel wt-100 wt-x3 ht-100 ht-x3 lg--wt-x2 lg--ht-x2 transition-all transition-fast">
-                <div class="pos-abs wt-half flex-x-end b mg-top-10 mg-top-x2 negative-mg sm--mg-top-10 sm--mg-top-x7 sm--negative-mg">
+                <div class="pos-abs wt-half flex-x-end b offset-lft-10 mg-top-10 mg-top-x2 negative-mg sm--mg-top-10 sm--mg-top-x7 sm--negative-mg">
                     <div class="txt-align-rt i">
                         <div class="flex-y-center">
                             <play-icon name="arrow-right" size="sm" class="pd-6"></play-icon>

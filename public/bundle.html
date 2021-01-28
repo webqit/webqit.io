@@ -1,4 +1,439 @@
 
+	<div exportgroup="dddd">
+
+		<p>Anyone played with some of these ideas in real life?</p>
+<p>I come with some good engagement with the usecase and I can say that what the warfront is dictating is a <strong>HTML-primary</strong>, <strong>JS-secodnary</strong> type of a module system. It seems to me that the JS approach is all being induced for some reason I can't figure out! It seems to me that important comments here emphasizing a HTML-oriented approach aren't being honoured at all. But truth is, these comments are simply the usecase talking. Even with the passing of time, the usecase today is still all about just being able to reuse HTML all by itself.</p>
+<p>Unfortunately, JavaScript keeps hunting down HTML everywhere. <strong>It's a feeling we don't want!</strong> And if we end up shipping one more thing like this, we would naturally seek <em>peace</em> with some other means to the same end, and "HTML Modules" would sit all by itself!</p>
+<p>All I have ever wanted, is being able to reuse HTML content; and without JavaScript! I already have ES6 modules for anything JS! Let me explain properly…</p>
+<ol>
+<li><p><strong>Should HTML modules be JavaScript oriented (using ES6's module infrastructure) or HTML oriented (using HTML's own infrasture)?</strong></p>
+<p>The answer should be obvious when we understand that we are talking about two different domains that each lends itself to be treated differently, with each having its own concept of reusability.</p>
+<ul>
+<li><p>When we think of HTML modules, what we are really thinking of is <em>reusable HTML contents - not reusable JavaScript</em>, as this is what ES6 modules are designed for. And when we look, it is for this purpose of reusability in HTML that we have the <code>&lt;template&gt;</code> element. And with the <code>template.content</code> API, JavaScript code is already able to <em>import</em> these reusable HTML elements for use.</p>
+<p>So, is there anything new about reusing HTML contents that we want to drop HTML's perfect infrastructure for the job in favour of ES6 modules? Is it just about that HTML now being in a remote file? We could simply do something that gets these remote contents to the same end - the <code>&lt;template&gt;</code> element!</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/bundle.html"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p>The template element above is simply loading itself from a remote file. This is even how HTML thinks.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="actionscript">
+    <span class="hljs-comment">// Code</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+or 
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/script.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-comment">/* Rules */</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+
+or 
+
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/styles.css"</span> /&gt;</span></code></pre>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Contents --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+
+or
+
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/image.svg"</span> /&gt;</span></code></pre>
+<p>So, HTML already gives us a way to either define things in-place or load them from a file. I am only wondering how come the <code>&lt;template&gt;</code> element shipped without an equivalent feature in the first place.</p>
+<p>If <em>reusable HTML</em> is the question anywhere, it seems pretty straight forward to just ask the <code>&lt;template&gt;</code> element. There shouldn't be one system for consuming HTML defined statcally and another separate system for consuming the same HTML defined in a remote file. The word "load" should simply be a means to get the supposed contents to the same end. Othereise, we would be introducing a new sort of engineering for an existing concept without any additional benefit.</p></li></ul></li>
+<li><p><strong>How about we rather talk about spicing up reusability in HTML with the <code>&lt;template&gt;</code> element, this time, using the <em>module</em>, <em>import</em> and <em>export</em> paradigm, while maintaining all the benefits of doing HTML with HTML?</strong></p>
+<p>I've engaged with this concept extensively using a polyfill I made. And after a million iterations building a real-word app with it, here are my conclusions.</p>
+<ol>
+<li><p>The <code>&lt;template&gt;</code> element is just perfect as <strong>one interface for anything reusable</strong>, whether defined statcally or defined remotely. <em>And this is the HTML module! Its contents should simply be taken as exports!</em></p>
+<p>In this sense of a module:</p>
+<ol>
+<li><p>The <code>&lt;template&gt;</code> element would have a <code>name</code> that's used as the <em>module ID</em>.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Contents --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+or 
+
+<span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/bundle.html"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre></li>
+<li><p>The <em>export</em> terminology of a standard module system would go to an <code>&lt;export&gt;</code> element that properly puts contents up for consumption using some <em>export ID</em>.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>export name="export1"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/export<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p>Contents may also be tagged to an export ID using something like an <code>exportgroup</code> attribute.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>div exportgroup="export1"<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>div exportgroup="export1"<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre></li>
+<li><p>The <em>import</em> terminology of a standard module system would go to an <code>&lt;import&gt;</code> element that let's us declaratively place any of a module's <em>export</em> on any location in the main document.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"export1"</span> <span class="hljs-attr">template</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">import</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<blockquote>
+  <p>Conincidentally, this <em>import</em> (or <em>include</em>) feature is something we've all asked for under different proposals. What's new here is that instead of being all about including server-side contents, the <code>&lt;import&gt;</code> element just maintains a relationship with the <code>&lt;template&gt;</code> element - the module. So, whether a <code>&lt;template&gt;</code> has its <em>content</em> statically defined or has it loaded, the <code>&lt;import&gt;</code> element's job would be just to <em>import</em> from the <code>&lt;template&gt;</code>.</p>
+</blockquote></li></ol></li>
+<li><p>Many new things become possible with this <em>HTML-oriented</em> HTML module system, all of which would be lost otherwise.</p>
+<ol>
+<li><p>Modules would now be nestable, to let us organize them more meaningfully.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>div exportgroup="export1"<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>div exportgroup="export1"<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>template name="module_nested_remote" src="/bundle.html"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/template<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p>So, a module can have other modules, which themselves can have other modules, as long as they each have a module ID.</p>
+<p>The full module ID for a nested module becomes a path like <code>module1/module_nested_remote</code>.</p></li>
+<li><p>Loading modules from a remote file can go without any <em>render-blocking</em> or <em>defer</em> semantics. They would simply announce a successful load event whenever loading is successful - just the way the <code>&lt;img&gt;</code> element works. Then, <code>&lt;import&gt;</code> elements in the UI that depend on these remote contents are simply resolved as exports become available - just as the <code>&lt;img&gt;</code> element is rendered at whatever time loading is successful.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- resolves when module1/module_nested_remote loads --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"export1"</span> <span class="hljs-attr">template</span>=<span class="hljs-string">"module1/module_nested_remote"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">import</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></li>
+<li><p>With the event system of HTML modules, the main document/UI is able to maintain a <strong>dynamic relationship</strong> with its modules.</p></li></ol>
+<p>Then, an HTML modules API!</p>
+<ol>
+<li><p>With something like a <code>document.templates</code> property, we could simply access modules without having to query the document for <code>&lt;template&gt;</code> elements using CSS selectors.</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">let</span> module1 = <span class="hljs-built_in">document</span>.templates.module1;</code></pre>
+<p>And for nested modules, something like a <code>template.templates</code> property would be used.</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">let</span> module_nested_remote = module1.templates.module_nested_remote;</code></pre></li>
+<li><p>With something like a <code>template.exports</code> property, we could access a module's exports without having to query <code>&lt;template&gt;</code> elements using CSS selectors.</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">let</span> import1 = module1.exports.export1;</code></pre></li>
+<li><p>And the <code>document.addEventListener()</code> method could always be used to observe the state of a document's modules - especially where modules are loading remote content or where modules are being programmatically added to the document.</p></li></ol>
+<p>Then some extended usecases where some exports have some JS?</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>export name="export1"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/export<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>export name="export1"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div<span class="hljs-symbol">&amp;gt;</span>
+        Part of export2
+        <span class="hljs-symbol">&amp;lt;</span>script<span class="hljs-symbol">&amp;gt;</span>
+            // Some JS?
+        <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/export<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p>Ususally, this kind of JS is solely for the purpose of <strong>scoped functionality</strong>, not for the purpose of being imported into another script. If I really wanted to import a script from another script, I would do so directly:</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">import</span> something <span class="hljs-keyword">from</span> <span class="hljs-string">'./script.js'</span>;</code></pre>
+<p>It doesn't make sense to me that I would first have taken the script into some HTML, then begin debating <em>how to import the script</em>!</p>
+<p><strong>Scoped JavaScript</strong> is an interesting possibility that should really be explored for its peculiar usecases. This, I certainly have! And here's what I've settled for:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>export name="export1"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div<span class="hljs-symbol">&amp;gt;</span>Part of export1<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/export<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>export name="export2"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div id="some-div"<span class="hljs-symbol">&amp;gt;</span>
+        Part of export2
+        <span class="hljs-symbol">&amp;lt;</span>script type="subscript"<span class="hljs-symbol">&amp;gt;</span>
+            // The this variable is a reference to the immediate host element
+            console.log(this.id); // some-div
+        <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/export<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p>And the script remains inert until the export is imported into the main document. It ever runs in the context of its immediate host element. Variables defined within aren't available outside, but variables in the global scope are available inside.</p>
+<p>On being imported, our final document becomes:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- &lt;import name="export2" template="module1"&gt;&lt;/import&gt; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-div"</span>&gt;</span>
+        Part of export2
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"subscript"</span>&gt;</span><span class="javascript">
+            <span class="hljs-comment">// The this variable is a reference to the immediate host element</span>
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.id); <span class="hljs-comment">// some-div</span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p>And the rest of the world of scoped functionality can go on:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- &lt;import name="export2" template="module1"&gt;&lt;/import&gt; --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"some-div"</span>&gt;</span>
+        Part of export2
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"subscript"</span>&gt;</span><span class="javascript">
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.closest(<span class="hljs-string">'body'</span>)); <span class="hljs-comment">// &lt;body&gt;</span>
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">document</span>.title); <span class="hljs-comment">// ...</span>
+            <span class="hljs-keyword">this</span>.addEventListener(<span class="hljs-string">'click'</span>, () =&gt; {
+                <span class="hljs-keyword">this</span>.remove();
+            });
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre></li></ol></li>
+</ol>
+<p>I can say convincingly that once you begin working with <code>&lt;template&gt;</code>s, <code>&lt;import</code>s, and <code>&lt;script type="subscript"&gt;</code>, everything becomes simple. We've particularly taken an app to production at WebQit with this approach, using the polyfill linked below.</p>
+<p>You'll find out however that all of the above features is only a part of what we need together to be able to author modular, reactive UI with just native HTML. Answering this challenge has been my project at WebQit which I have summed up as OOHTML (formally CHTML). OOHTML (Object-Oriented HTML) is <strong>a proposed suite</strong> of UI features that let's us build modular, reactive UIs natively.</p>
+<ul>
+<li>Please <a href="https://discourse.wicg.io/t/proposal-chtml/4716">see the proposal at the WICG</a>. (Discussion mainly at the WICG.)</li>
+<li>And <a href="https://github.com/webqit/oohtml">here is the project - the polyfill - on Github</a>. (The polyfill has full support for all OOHTML's features and its already being tested in production.)</li>
+<li>And <a href="https://webqit.io/tooling/oohtml">here is the documentation</a> (progressively being improved on.)</li>
+</ul>
+<p>I am very excited about OOHTML as it seeks to provide one answer to the many questions that go together, much of which different proposals have tried to address as standalone ideas.</p>
+<p>OOHTML was designed on the job and being iterated on on the job. And this has furnished us answers to many design questions. </p>
+<h2 id="major-updates-to-chtml">[Major Updates to CHTML]</h2>
+<p>CHTML today has received the following updates:</p>
+<h3 id="chtml-is-now-oohtml---object-oriented-html">CHTML is now OOHTML - Object-Oriented HTML</h3>
+<ul>
+<li>The modern UI is really all about objects - conceptual objects in the UI that translate to real objects in JavaScript, that are styled as objects in CSS.</li>
+<li>Reusable pieces of HTML are objects.</li>
+</ul>
+<p>The name Component-Oriented HTML had also earlier misconstrued CHTML as an alternative to Web Components.</p>
+<h3 id="chtml-has-moved-to-a-webqit-repository">CHTML has moved to a WebQit repository</h3>
+<ul>
+<li>This project is now at <a href="https://github.com/webqit/oohtml">WebQit/oohtml</a> from <a href="https://github.com/web-native/chtml">Web-Native/chtml</a></li>
+<li>The documentations is now at <a href="https://webqit.io/tooling/oohtml">WebQit.io/tooling/oohtml</a></li>
+</ul>
+<h3 id="some-features-have-changed-for-the-better">Some features have changed for the better</h3>
+<p>Here is a highlight of what changed. Details afterward.</p>
+<ul>
+<li><p><strong>Scoped HTML is now Namespaced HTML</strong> - just a name change.</p></li>
+<li><p><strong>Scoped CSS is no more - or maybe later</strong>. But this is currently less of a priority for OOHTML.</p></li>
+<li><p><strong>Scoped JS is now Subscript</strong> - major change:</p>
+<ul>
+<li><p>This "reactive scripts" feature is now its own script type - <code>&lt;script type="subscript"&gt;&lt;/script&gt;</code> - just as we have classic scripts (<code>type="text/javascript"</code>) and module scripts (<code>type="module"</code>). This is apt as reactive scripts are drastically different in behaviour from other script types.</p></li>
+<li><p>This updates the earlier convention of <code>&lt;script scoped&gt;&lt;/script&gt;</code>.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"alert"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"subscript"</span>&gt;</span><span class="javascript">
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.id); <span class="hljs-comment">// alert</span>
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+<li><p>Scoped JS's <code>document.bindings</code> and <code>element.bindings</code> properties have been dropped in favour of an equivalent new API in OOHTML - the State API (more on this next).</p></li></ul></li>
+<li><p><strong>We introduce the State API</strong>. This API gives us a way to maintain state at the document level (by offering a <code>document.state</code> property) and at individual element levels (by offering an <code>element.state</code> (that's <code>Element.prototype.state</code>)) property, and supports observability. This is finally how it becomes possible to implement state and reactivity with native elements and custom elements alike.</p></li>
+<li><p><strong>HTML Partials has evolved into two separate features: HTML Modules and HTML Imports</strong>. These features come with everything about <em>reusability in HTML</em> and <em>an API</em> for it in JavaScript. This has been one of the most talked-about topic of all time. And OOHTML's approach to the question turns out to be very delightfully different from what we could find anywhere else. This is because we've let the usecase dictate its direction.</p></li>
+</ul>
+<p>Summary of changes:</p>
+<ul>
+<li>CHTML - Scoped HTML, Scoped CSS, Scoped JS, HTML Partials</li>
+<li>OOHTML - Namespaced HTML, Subscript, The State API, HTML Modules, HTML Imports</li>
+</ul>
+<h2 id="introducing-oohtml">[Introducing OOHTML]</h2>
+<p>OOHTML (Object-Oriented HTML) is a suite of new DOM features that particularly facilitates writing modular HTML, CSS, and JavaScript natively and more conveniently. It addresses a number of limitions inherent to existing conventions, and welcomes much of the paradigms associated with modern UI development - reusability, reactivity, modularity.</p>
+<p>This is the successor to the of the CHTML proposal; with pretty the same goals, but a better direction.</p>
+<p>The quickest run-down of its features is right at its <a href="https://github.com/webqit/oohtml">project README</a>. A little more detailed run-down, followed by full documentation, is at its docs - <a href="https://webqit.io/tooling/oohtml">https://webqit.io/tooling/oohtml</a>.</p>
+<p>And what's even more exciting? It comes with a working polyfill that lets everything work today. Extra efforts have also been put to make it possible to customize the polyfill's syntax of each feature; this is to let everyone explore new possibilities with the entire idea and bring any new findings to the table.</p>
+<p>And what's even, yes, more exciting? Our usecase for OOHTML at WebQit is now in production. This took OOHTML through a million iterations over the past months. It just brings us closer to reaching our goal - being able to author modular, reusable, and reactive HTML at HTML level!</p>
+<h3 id="an-example-scenerio">An Example Scenerio</h3>
+<p>Below is how OOHTML's features could apply progressively on a simple scenerio. </p>
+<h4 id="the-idea">The idea</h4>
+<p>Some application has a name-card block in the UI that displays a user's name, and this time, along with an email:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name-card"</span>&gt;</span>
+        Hello,
+        my name is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        and my email is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<h4 id="challenge-1---reusability">Challenge #1 - reusability</h4>
+<p>First challenge is: this block has to appear in mutiple places in the UI - a repeating modular block.</p>
+<ul>
+<li><p>Approach #1 - This snippet is quite small, it wouldn't hurt too much repeating it manually across the UI.</p></li>
+<li><p>Approach #2 - Having some include feature like this:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>include src="./name-card.html"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/include<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>div id="elsewhere"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>include src="./name-card.html"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/include<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p><em>Bad feeling: a file for every little reusable thing.</em></p></li>
+<li><p>Approach #3 - Creating some custom element:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>name-card<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/name-card<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>div id="elsewhere"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>name-card<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/name-card<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p><em>Bad feeling: a JavaScript class for every little reusable thing. (<code>customElements.define('name-card', class extends HTMLElement {});</code>)</em></p></li>
+<li><p>Approach #4 - Define once in a <code>&lt;template&gt;</code> element, then clone programmatically, each time:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>template id="reusables"<span class="hljs-symbol">&amp;gt;</span>
+
+    <span class="hljs-symbol">&amp;lt;</span>div id="name-card"<span class="hljs-symbol">&amp;gt;</span>
+        Hello,
+        my name is: <span class="hljs-symbol">&amp;lt;</span>span id="name"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>
+        and my email is: <span class="hljs-symbol">&amp;lt;</span>span id="email"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>.
+    <span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>/template<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>div id="elsewhere"<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>script<span class="hljs-symbol">&amp;gt;</span>
+    let nameCard = document.querySelector('#reusables').querySelector('#name-card');
+    document.body.prepend(nameCard.cloneNode(true));
+    document.body.querySelector('#elsewhere').prepend(nameCard.cloneNode(true));
+<span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p><em>Bad feeling: this JavaScript.</em></p></li>
+<li><p>Approach #5 - HTML Modules + HTML Imports (OOHTML):</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>!-- This is a module --<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>template name="module1"<span class="hljs-symbol">&amp;gt;</span>
+
+    <span class="hljs-symbol">&amp;lt;</span>!-- This is an export --<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>div exportgroup="name-card"<span class="hljs-symbol">&amp;gt;</span>
+        Hello,
+        my name is: <span class="hljs-symbol">&amp;lt;</span>span id="name"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>
+        and my email is: <span class="hljs-symbol">&amp;lt;</span>span id="email"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>.
+    <span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>/template<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>!-- This is an import --<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>import name="name-card" template="module1"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/import<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>div id="elsewhere"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>!-- This is another import --<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>import name="name-card" template="module1"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/import<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p>And where the markup to reuse really fits better in a file, the <code>&lt;template&gt;</code> would simply load itself from the file and the convention for imports would still remain intact.</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"./content.html"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+...
+<span class="hljs-tag">&lt;<span class="hljs-name">import</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"name-card"</span> <span class="hljs-attr">template</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">import</span>&gt;</span></code></pre>
+<blockquote>
+  <p>This time, imports are rendered as their corresponding exports in the referenced module becomes available. (Imports maintain a live relationship with modules.)</p>
+</blockquote>
+<p><em>Good feeling: <code>&lt;template src=""&gt;&lt;/template&gt;</code>. HTML has always allowed us to either define things in-place (<code>&lt;script&gt;code&lt;/script&gt;</code>) or load them from a file (<code>&lt;script src=""&gt;&lt;/script&gt;</code>)</em></p>
+<p><em>Good feeling: Live imports. Network-based elements in HTML automatically work on load (<code>&lt;img src="" /&gt;</code>).</em></p></li>
+</ul>
+<h4 id="challenge-2---name-conflicts">Challenge #2 - name conflicts</h4>
+<p>A side effect to repeating modular blocks in the UI is name conflicts. Remember: IDs must be unique throughout an HTML document. But our code now looks like this:</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">exportgroup</span>=<span class="hljs-string">"name-card"</span>&gt;</span>
+        Hello,
+        my name is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+        and my email is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"elsewhere"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">exportgroup</span>=<span class="hljs-string">"name-card"</span>&gt;</span>
+            Hello,
+            my name is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"name"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            and my email is: <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"email"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>.
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<ul>
+<li><p>Approach #1 - Convert all IDs to classes:</p>
+<p>This is the way usually, <em>but beyond this trivial example, we hit terrible specificity problems</em>. This is beyond the scope of this example.</p></li>
+<li><p>Approach #2 - Namespaced HTML (OOHTML):</p>
+<p>Here each modular block simply establishes its own naming context for its descendants. (And the API benefits later on.)</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>!-- This is an import --<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>div exportgroup="name-card" namespace<span class="hljs-symbol">&amp;gt;</span>
+    Hello,
+    my name is: <span class="hljs-symbol">&amp;lt;</span>span id="name"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>
+    and my email is: <span class="hljs-symbol">&amp;lt;</span>span id="email"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>.
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre></li>
+</ul>
+<h4 id="challenge-3---application-data">Challenge #3 - application data</h4>
+<p>Our application layer is some JavaScript code. It makes the user data available globally so that all name-card elements can access.</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">let</span> globalData = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'john.doe@example.com'</span>,
+};</code></pre>
+<p>How does this get to the UI?</p>
+<ul>
+<li><p>Approach #1 - Manually apply to all elements:</p>
+<pre><code class="hljs js language-js"><span class="hljs-keyword">const</span> allNameCards = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">'#name-card'</span>);
+<span class="hljs-keyword">const</span> render = <span class="hljs-function"><span class="hljs-params">data</span> =&gt;</span> {
+    <span class="hljs-built_in">Array</span>.prototype.call(allNameCards).forEach(<span class="hljs-function"><span class="hljs-params">el</span> =&gt;</span> {
+        allNameCards.querySelector(<span class="hljs-string">'#name'</span>).innerHTML = data.name;
+        allNameCards.querySelector(<span class="hljs-string">'#email'</span>).innerHTML = data.email;
+    });
+};
+render(globalData);</code></pre>
+<p><em>Bad feeling: far from scalable!</em></p></li>
+<li><p>Approach #2 - Use the Custom Element approach:</p>
+<pre><code class="hljs js language-js">customElements.define(<span class="hljs-string">'name-card'</span>, <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">HTMLElement</span> </span>{
+    render(data) {
+        <span class="hljs-keyword">this</span>.shadowRoot.querySelector(<span class="hljs-string">'#name'</span>).innerHTML = data.name;
+        <span class="hljs-keyword">this</span>.shadowRoot.querySelector(<span class="hljs-string">'#email'</span>).innerHTML = data.email;
+    }
+    connectedCallback() {
+        <span class="hljs-keyword">this</span>.render(globalData);
+    }
+});</code></pre>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>name-card id="name-card"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/name-card<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>div id="elsewhere"<span class="hljs-symbol">&amp;gt;</span>
+    <span class="hljs-symbol">&amp;lt;</span>name-card id="name-card"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/name-card<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code></pre>
+<p><em>Bad feeling: a custom element <strong>just</strong> to render data, and no extra benefits?</em></p></li>
+<li><p>Approach #3 - Use Subscript + Namespaced HTML (OOHTML):</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>!-- This is an import --<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>div exportgroup="name-card" namespace<span class="hljs-symbol">&amp;gt;</span>
+
+    Hello,
+    my name is: <span class="hljs-symbol">&amp;lt;</span>span id="name"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>
+    and my email is: <span class="hljs-symbol">&amp;lt;</span>span id="email"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>.
+
+    <span class="hljs-symbol">&amp;lt;</span>script type="subscript"<span class="hljs-symbol">&amp;gt;</span>
+        let ns = this.namespace;
+        ns.name.innerHTML = globalData.name;
+        ns.email.innerHTML = globalData.email;
+    <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p><em>Good feeling: rendering at HTML level.</em></p>
+<p><em>Good feeling: two advantages of opening a script tag as compared to using some <code>{ templateVars }</code> - (1) we have <strong>enough room</strong> to do some little rendering logic <strong>with a familiar syntax</strong>. E.g <code>ns.name.innerHTML = data.name.toUpperCase()</code>.</em> (2) Everything logic is located together, and HTML is clean.</p></li>
+</ul>
+<h4 id="challenge-4---reactivity">Challenge #4 - reactivity</h4>
+<p>What happens if the data in the application layer will change? How do the approaches above fair?</p>
+<ul>
+<li><p>Approaches #1 and #2 - Invent some event system:</p>
+<p>The rendering logic listens to some event with a view to re-rendering.</p>
+<pre><code class="hljs js language-js"><span class="hljs-comment">// Approach #1 above</span>
+render(globalData);
+<span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'namechange'</span>, () =&gt; {
+    render(globalData);
+});</code></pre>
+<pre><code class="hljs js language-js"><span class="hljs-comment">// Approach #2 above</span>
+connectedCallback() {
+    <span class="hljs-keyword">this</span>.render(globalData);
+    <span class="hljs-built_in">document</span>.addEventListener(<span class="hljs-string">'namechange'</span>, () =&gt; {
+        <span class="hljs-keyword">this</span>.render(globalData);
+    });
+}</code></pre>
+<p>The code that changes the data fires the event.</p>
+<pre><code class="hljs js language-js">data.name = <span class="hljs-string">'John Doe Junior'</span>;
+<span class="hljs-built_in">document</span>.dispatchEvent(<span class="hljs-keyword">new</span> <span class="hljs-built_in">window</span>.CustomEvent(<span class="hljs-string">'namechange'</span>));</code></pre>
+<p><em>Not feasible: We'd be ending up rolling a new (bad) framework!</em></p></li>
+<li><p>Approaches #1 and #2 - The State API (OOHTML):</p>
+<p>Global data now in <code>document.state</code>.</p>
+<pre><code class="hljs js language-js"><span class="hljs-built_in">document</span>.setState({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'john.doe@example.com'</span>,
+});</code></pre>
+<p>The rendering logic works with <code>document.state</code>.</p>
+<pre><code class="hljs js language-js"><span class="hljs-comment">// Approach #1 above</span>
+render(<span class="hljs-built_in">document</span>.state);
+Observer.observe(<span class="hljs-built_in">document</span>.state, <span class="hljs-string">'data'</span>, e =&gt; {
+    render(e.value);
+});</code></pre>
+<pre><code class="hljs js language-js"><span class="hljs-comment">// Approach #2 above</span>
+connectedCallback() {
+    <span class="hljs-keyword">this</span>.render(<span class="hljs-built_in">document</span>.state);
+    Observer.observe(<span class="hljs-built_in">document</span>.state, <span class="hljs-string">'data'</span>, e =&gt; {
+        <span class="hljs-keyword">this</span>.render(e.value);
+    });
+}</code></pre>
+<p>The code that changes the data ends up firing observers.</p>
+<pre><code class="hljs js language-js"><span class="hljs-built_in">document</span>.setState({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'John Doe Junior'</span>,
+    <span class="hljs-attr">email</span>: <span class="hljs-string">'john.doe@example.com'</span>,
+});</code></pre>
+<p><em>Good feeling: State and Observability natively!</em></p>
+<p><em>Good feeling: Depth-based observability in more advanced cases!</em></p></li>
+<li><p>Approach #3 - Use Subscript + Namespaced HTML (OOHTML):</p>
+<p>Here we take no extra step as Subscript is already an event-based JavaScript runtime. (Statements that depend on updated properties in its scope are re-run automatically.)</p>
+<pre><code class="hljs html language-html"><span class="hljs-tag">&lt;<span class="hljs-name">template</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"module1"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span><span class="hljs-symbol">&amp;lt;</span>!-- This is an import --<span class="hljs-symbol">&amp;gt;</span>
+<span class="hljs-symbol">&amp;lt;</span>div exportgroup="name-card" namespace<span class="hljs-symbol">&amp;gt;</span>
+
+    Hello,
+    my name is: <span class="hljs-symbol">&amp;lt;</span>span id="name"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>
+    and my email is: <span class="hljs-symbol">&amp;lt;</span>span id="email"<span class="hljs-symbol">&amp;gt;</span><span class="hljs-symbol">&amp;lt;</span>/span<span class="hljs-symbol">&amp;gt;</span>.
+
+    <span class="hljs-symbol">&amp;lt;</span>script type="subscript"<span class="hljs-symbol">&amp;gt;</span>
+        let ns = this.namespace;
+        let data = document.state;
+        ns.name.innerHTML = data.name;
+        ns.email.innerHTML = data.email;
+    <span class="hljs-symbol">&amp;lt;</span>/script<span class="hljs-symbol">&amp;gt;</span>
+
+<span class="hljs-symbol">&amp;lt;</span>/div<span class="hljs-symbol">&amp;gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">template</span>&gt;</span></code></pre>
+<p><em>Good feeling: rendering at HTML level + reactivity with no extra step.</em></p></li>
+</ul>
+<h3 id="other-scenerios">Other Scenerios</h3>
+<p>The example scenerio above is really contrived, but it should furnish us a good starting point for painting usecases. You should please share you opinions. I'll stand by now to repond to usecase questions.</p>
+
+	</div>
+
 	<!-- Main Home View -->
 
 <div namespace class="snap-mandatory-container" exportgroup="index">
@@ -71,49 +506,18 @@
 
         <header class="app-bar flex-y-stretch flex-wrap">
             
-            <div class="divides_right col-4 pd-10 pd-x3 flex-x-separate md--flex-y-center sm--col-8 md--border-none overflow-hidden">
+            <div class="divides_right col-4 sm--col-12 pd-10 pd-x3 flex-x-separate md--border-none overflow-hidden">
                 
                 <html-import name="logo_nav" template="brand"></html-import>
-                <div data-id="app_drawer_open" class="menu-control pos-rel wt-40 ht-40 flex-center cursor-pointer radius-10 md--d-none" play-icon-type="bootstrap">
+                <div data-id="app_drawer_open" class="menu-control pos-rel wt-40 ht-40 flex-center cursor-pointer radius-10 md--d-none sm--d-flex" play-icon-type="bootstrap">
                     <play-icon name="filter-right" class="pos-rel"></play-icon>
                 </div>
 
             </div>
 
-            <ul class="col-grows pd-10 pd-x3 flex-y-center flex-x-end list-style-none">
+            <div class="col-grows sm--col-12 pd-10 pd-x3 flex-y-center flex-x-separate">
                 
-                <li class="sm--d-none pos-rel mg-rt-10 mg-rt-x6 z-index-10">
-                    <ul class="flex-y-center pd-8 radius-10 drop-shadow list-style-none" style="border: 1px dashed silver">
-                        <li class="d-none"><a class="pd-10" href="mailto://webqit.io@gmail.com">
-                            <play-icon name="chat-quote" size="sm"></play-icon>
-                        </a></li>
-                        <li class="d-none"><a class="pd-10" href="https://twitter.com/Web_Qit" target="_blank">
-                            <play-icon name="twitter" size="sm"></play-icon>
-                        </a></li>
-                        <li><a class="pd-10" href="https://github.com/webqit" target="_blank">
-                            <play-icon name="github" size="sm" play-icon-type=""></play-icon>
-                        </a></li>
-                    </ul>
-                </li>
-                <!--
-                <li><a class="mg-lft-10 pd-8 pd-x2 sm--pd-10" href="#">
-                    <play-icon name="search" size="sm" class="sm--txt-sm"></play-icon>
-                </a></li>
-                -->
-                <li data-id="app_drawer_open2" class="pd-8 d-none md--d-flex"><a class="menu-control-alt pos-rel" href="#">
-                    <play-icon name="filter-right" class="pos-rel"></play-icon>
-                </a></li>
-
-            </ul>
-
-        </header>
-
-        <!-- ::::::::::::::::: -->
-
-        <section class="flex-y-stretch flex-wrap pos-rel z-index-10">
-            <div class="divides_right col-4 pd-10 pd-x3 md--col-5 sm--col-12 sm--pd-10 md--border-none">
-                
-                <div class="pd-10 mg-btm-10 mg-x3 sm--mg-btm-10 flex-y-center sm--flex-x-center">
+                <div class="mg-rt-10 mg-rt-x3 sm--mg-rt-10 flex-y-center sm--flex-x-center">
                     <play-icon name="globe" size="sm" class="wt-60 ht-60 flex-center radius-10 radius-x8" style="background-color: ghostwhite;"></play-icon>
                     <div class="pd-10 b i pos-rel">
                         <span>Complex stacks have had their day!</span>
@@ -122,13 +526,45 @@
                     </div>
                 </div>
 
-                <div class="sm--flex-center sm--mg-btm-10 z-index-10">
+                <ul class="flex-y-center list-style-none">
+                    <li class="sm--d-none pos-rel mg-rt-10 mg-rt-x6 z-index-10">
+                        <ul class="flex-y-center pd-8 radius-10 drop-shadow list-style-none" style="border: 1px dashed silver">
+                            <li class="d-none"><a class="pd-10" href="mailto://webqit.io@gmail.com">
+                                <play-icon name="chat-quote" size="sm"></play-icon>
+                            </a></li>
+                            <li class="d-none"><a class="pd-10" href="https://twitter.com/Web_Qit" target="_blank">
+                                <play-icon name="twitter" size="sm"></play-icon>
+                            </a></li>
+                            <li><a class="pd-10" href="https://github.com/webqit" target="_blank">
+                                <play-icon name="github" size="sm" play-icon-type=""></play-icon>
+                            </a></li>
+                        </ul>
+                    </li>
+                    <!--
+                    <li><a class="mg-lft-10 pd-8 pd-x2 sm--pd-10" href="#">
+                        <play-icon name="search" size="sm" class="sm--txt-sm"></play-icon>
+                    </a></li>
+                    -->
+                    <li data-id="app_drawer_open2" class="pd-8 d-none md--d-flex sm--d-none"><a class="menu-control-alt pos-rel" href="#">
+                        <play-icon name="filter-right" class="pos-rel"></play-icon>
+                    </a></li>
+                </ul>
+
+            </div>
+        </header>
+
+        <!-- ::::::::::::::::: -->
+
+        <section class="flex-y-stretch flex-wrap pos-rel z-index-10">
+            <div class="divides_right col-4 sm--col-12 pd-10 pd-x3 md--col-5 sm--pd-10 flex-y-center sm--d-block md--border-none">
+                
+                <div class="sm--flex-center sm--mg-10 z-index-10">
                     <div data-id="outline_prev" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-left"></play-icon></div>
                     <ul data-id="outline_menu" template="page/#layout/outline" class="outline wt-full sm--wt-auto sm--flex-center list-style-none"></ul>
                     <div data-id="outline_next" class="pd-10 pd-x2 cursor-pointer d-none sm--d-flex"><play-icon name="chevron-right"></play-icon></div>
                 </div>
 
-                <div class="col-12 mg-btm-10 d-none sm--d-block txt-align-cntr">
+                <div class="mg-btm-10 d-none sm--d-block txt-align-cntr">
                     <div data-id="outline_title" class="pd-10 b txt-xxl h2"></div>
                     <div data-id="outline_desc" class="pd-lft-10 pd-rt-10 pd-x2"></div>
                     <div class="d-inline-block">
@@ -161,7 +597,7 @@
         <div class="col-4 md--col-12 flex-x-end">
 
             <div class="flex-y-stretch pointer-events pos-rel wt-100 wt-x3 ht-100 ht-x3 lg--wt-x2 lg--ht-x2 transition-all transition-fast">
-                <div class="pos-abs wt-half flex-x-end b mg-top-10 mg-top-x2 negative-mg sm--mg-top-10 sm--mg-top-x7 sm--negative-mg">
+                <div class="pos-abs wt-half flex-x-end b offset-lft-10 mg-top-10 mg-top-x2 negative-mg sm--mg-top-10 sm--mg-top-x7 sm--negative-mg">
                     <div class="txt-align-rt i">
                         <div class="flex-y-center">
                             <play-icon name="arrow-right" size="sm" class="pd-6"></play-icon>
