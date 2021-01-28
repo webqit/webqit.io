@@ -510,7 +510,8 @@ main.home {
 #tooling .item-content {
 }
 #tooling .item-links {
-    background-color: gainsboro;
+    color: white;
+    background-color: slateblue;
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 760px) {
