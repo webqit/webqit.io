@@ -175,7 +175,7 @@ a.icon-webqit-community.active {
     width: 200px;
     height: 250px;
     border-radius: 50%;
-    background-color: ghostwhite;
+    border: 2px dashed gainsboro;
     content: "";
     z-index: 0;
 }
