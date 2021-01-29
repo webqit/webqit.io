@@ -201,9 +201,12 @@ a.icon-webqit-community.active {
 .webqit_intro_b {
     animation-delay: 5000ms;
 }
+.webqit_intro_video_text {
+    color: slategray;
+}
 .webqit_intro_video_circle {
-    background-color: gainsboro;
-    border: 2px solid gainsboro;
+    background-color: slategray;
+    border: 2px solid slateblue;
 }
 .circus li {
     background-size: cover;
