@@ -520,6 +520,14 @@ main.home {
 }
 */
 
+#pre-tooling {
+    min-height: auto;
+    --section-div-a-bg: rgb(232, 243, 255);
+    --section-div-b-bg: ghostwhite;
+    --section-div-a-color: black;
+    --section-div-b-color: black;
+}
+
 #tooling {
     --section-div-a-bg: rgb(232, 243, 255);
     --section-div-b-bg: ghostwhite;

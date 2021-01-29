@@ -1,6 +1,6 @@
 
 <!-- Main Home View -->
-<div namespace class="snap-mandatory-container">
+<div namespace class="homepage snap-mandatory-container">
 
     <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid silver; z-index: 16;">
 
@@ -71,7 +71,7 @@
         }
     </script>
 
-    <div class="overflow-hidden">
+    <div class="overflow-hidden" style="background-color: white;">
 
         <header class="app-bar flex-y-stretch flex-wrap">
             
@@ -205,11 +205,14 @@
 
     <main class="home pos-rel colored">
 
+        <section namespace id="pre-tooling" class="page-section flex-y-stretch flex-wrap">
+            <div class="section-div-a col-4 md--col-12 md--pd-btm-10"></div>
+            <div class="section-div-b col-grows md--col-12 md--pd-top-0 md--d-none"></div>
+        </section>
+
         <section namespace id="tooling" class="page-section flex-y-stretch flex-wrap">
 
             <div class="section-div-a col-4 md--col-12 md--pd-btm-10">
-
-                <div class="mg-btm-10 mg-btm-x10 lg--mg-btm-x5 md--d-none"></div>
 
                 <div class="section-div-header md--pos-rel flex-y-center">
                     <div class="section-icon flex-center mg-rt-10">
@@ -225,8 +228,6 @@
                 </div>
             </div>
             <div class="section-div-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0">
-
-                <div class="mg-btm-10 mg-btm-x10 lg--mg-btm-x5 md--d-none"></div>
                 
                 <div class="section-div-header flex-x-separate flex-y-center">
                     <html-import data-id="tabs" name="tabs" template="page/#layout/tabbing"></html-import>
@@ -477,9 +478,9 @@
                 </script>
             </div>
 
-            <li exportgroup="item" namespace class="item radius-8 radius-x2 flex-y-separate txt-lg anim-scale-in-small animation-x-fast">
+            <li exportgroup="item" namespace class="item radius-8 radius-x2 flex-y-separate txt-lg">
                 <div class="item-content col-grows pd-10 pd-x3 pd-btm-x2 radius-8 radius-x2 radius-btm-lft-none radius-btm-rt-none">
-                    <play-icon data-id="icon" name="square"></play-icon>
+                    <play-icon data-id="icon" name="square" class="d-inline-block anim-zoom-in animation-fast"></play-icon>
                     <h4 data-id="title" style="margin-top: 25px; margin-bottom: 25px;"></h4>
                     <p data-id="desc"></p>
                 </div>
