@@ -208,27 +208,37 @@ a.icon-webqit-community.active {
     background-color: slategray;
     border: 2px solid slateblue;
 }
+.circus {
+    background-image: url(/img/bg/Dots.svg);
+    box-shadow: 0px 0px 100px white inset;
+}
+.circus-container .offset-icon {
+    background-color: ghostwhite;
+}
+.circus li {
+    opacity: 0;
+}
 .circus li {
     background-size: cover;
     background-position: center;
-    background-color: ghostwhite;
-    box-shadow: 0px 0px 100px white inset;
     z-index: 1;
 }
 .circus li[data-active="true"] {
-    animation: zoom-in 200ms forwards;
+    animation: zoom-in 400ms forwards;
     z-index: 1;
 }
 .circus li[data-active="false"] {
-    animation: zoom-in-off 200ms forwards;
+    animation: zoom-in-off 400ms forwards;
+    pointer-events: none;
     z-index: 10;
 }
 .circus li[data-active="true-reverse"] {
-    animation: zoom-out 200ms forwards;
+    animation: zoom-out 400ms forwards;
     z-index: 10;
 }
 .circus li[data-active="false-reverse"] {
-    animation: zoom-out-off 200ms forwards;
+    animation: zoom-out-off 400ms forwards;
+    pointer-events: none;
     z-index: 1;
 }
 @keyframes webqit-intro-alt {
@@ -237,6 +247,15 @@ a.icon-webqit-community.active {
     45% {opacity: 1; height: inherit;}
     49% {opacity: 0.5; height: 0px;}
     100% {opacity: 0; height: 0px;}
+}
+@keyframes fade-in {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+@keyframes fade-out {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
 @keyframes zoom-in {
     from {transform: scale(0.5); opacity: 0;}
@@ -255,14 +274,14 @@ a.icon-webqit-community.active {
     to {transform: scale(0.5); opacity: 0;}
 }
 
-.circus li .display-link {
+.circus li .display--link {
     opacity: 0;
 }
-.circus li[data-active="true"] .display-link {
+.circus li[data-active="true"] .display--link {
     animation: drop 400ms forwards;
     animation-delay: 400ms;
 }
-.circus li[data-active="true-reverse"] .display-link {
+.circus li[data-active="true-reverse"] .display--link {
     animation: raise 400ms forwards;
     animation-delay: 400ms;
 }
@@ -273,6 +292,10 @@ a.icon-webqit-community.active {
 @keyframes raise {
     from {transform: translateY(50px); opacity: 0;}
     to {transform: translateY(0); opacity: 1;}
+}
+
+.backers {
+    background-image: url(/img/bg/Dots.svg);
 }
 
 /**
@@ -360,7 +383,6 @@ main.home {
 }
 .section-icon {
     width: 40px;
-    background-image: url(/img/bg/Dots.svg);
     /*
     background-color: rgba(0, 0, 0, 0.04);
     border: 2px dashed silver;

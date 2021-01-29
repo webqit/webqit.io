@@ -62,7 +62,11 @@
                 var active = app.page.outline.state.active.first();
                 $(this.namespace.outline_title).html(active.title);
                 $(this.namespace.outline_desc).html(active.desc);
-                $(this.namespace.outline_more).attr('href', '#' + active.title);
+                $(this.namespace.outline_show_desc).html(active.desc2);
+                $(this.namespace.outline_show_desc2).html(active.desc3);
+                $(this.namespace.outline_show_link).attr('href', '/#' + active.title);
+                $(this.namespace.outline_show_link).css(active.darkTheme);
+                $(this.namespace.outline_show_link_text).html(active.title);
             }
         }
     </script>
@@ -132,17 +136,32 @@
                 <div class="mg-btm-10 d-none sm--d-block txt-align-cntr">
                     <div data-id="outline_title" class="pd-10 b txt-xxl h2"></div>
                     <div data-id="outline_desc" class="pd-lft-10 pd-rt-10 pd-x2"></div>
-                    <div class="d-inline-block">
-                        <a data-id="outline_more" href="" class="flex-y-center b">
-                            <play-icon name="arrow-return-right" size="sm"></play-icon>
-                            <span class="pd-10">Learn more below</span>
-                        </a>
-                    </div>
                 </div>
 
             </div>
-            <div class="col-grows sm--col-12 flex-center pos-rel max-ht-100 max-ht-x5 pos-rel z-index-1 md--border-none" sty-le="border-top: 1px solid gainsboro; border-bottom: 1px solid gainsboro;">
-                <ul data-id="outline_show" template="page/#layout/outline" class="circus pos-rel min-wt-100 min-wt-x6 md--min-wt-100 md--min-wt-x4 ht-100 ht-x6 md--ht-100 md--ht-x4 flex-center"></ul>
+            <div class="col-grows sm--col-12 flex-center pos-rel max-ht-100 max-ht-x5 pos-rel z-index-1 overflow-hidden">
+                <div class="circus-container radius-full pos-rel min-wt-100 min-wt-x6 md--min-wt-100 md--min-wt-x4 ht-100 ht-x6 md--ht-100 md--ht-x4 flex-center">
+                    
+                    <ul data-id="outline_show" template="page/#layout/outline" class="circus pos-abs cover flex-center"></ul>
+                    
+                    <div class="col-4 sm--col-5 ht-half flex-y-separate flex-x-end z-index-10">
+                        <div class="col-12 flex-x-end flex-wrap">
+                            <play-icon name="globe" size="sm" class="pos-abs offset-icon offset-lft-10 offset-lft-x7 negative-offset sm--offset-lft-0 sm--offset-top-10 sm--offset-top-x7 sm--negative-offset flex-center wt-60 ht-60 radius-full"></play-icon>
+                            <p data-id="outline_show_desc" class="col-12 pd-10 pd-x2 mg-btm-10 mg-btm-x2 radius-10 radius-x2 drop-shadow" style="background-color: white;">Hello world, jjf frjfk fkef ef</p>
+                        </div>
+                        <a data-id="outline_show_link" class="display-link flex-y-center pd-8 pd-lft-x2 pd-rt-x2 radius-10 radius-x2 drop-shadow jelly-peel z-index-10" href="#">
+                            <play-icon name="hash" size="sm" class="pd-8"></play-icon>
+                            <span data-id="outline_show_link_text" class="pd-8 pd-lft-0"></span>
+                        </a>
+                    </div>
+                    <div class="col-4 sm--col-2"></div>
+                    <div class="col-4 sm--col-3 sm--mg-top-10 sm--mg-top-x10 sm--negative-mg ht-half flex-y-separate z-index-10">
+                        <p data-id="outline_show_desc2" class="pd-10 pd-x2 radius-10 radius-x2 drop-shadow" style="background-color: white;">
+                            Hello, jjf frjfk fkef ef
+                        </p>
+                    </div> 
+
+                </div>
             </div>
 
         </section>
@@ -151,7 +170,9 @@
 
         <section class="flex-y-stretch flex-wrap">
             <div class="divides_right col-4 md--col-5 md--border-none sm--col-12 flex-y-center"></div>
-            <div class="col-grows ht-20 ht-x7 sm--ht-40 sm--ht-x6"></div>
+            <div class="col-grows flex-y-center ht-20 ht-x7 sm--ht-40 sm--ht-x6">
+                <div class="backers pd-10"></div>
+            </div>
         </section>
 
     </div>
@@ -326,9 +347,9 @@
                     <play-icon data-id="icon" name="code-slash"></play-icon>
                 </div>
                 <div class="col-grows flex-y-center pd-lft-10 pd-lft-x2 sm--d-none">
-                    <div class="col-grows">
-                        <div data-id="title" class="b txt-xxl h2"></div>
-                        <div data-id="desc" class="txt-lg mg-top-4"></div>
+                    <div class="col-grows b">
+                        <div data-id="title" class="txt-xxl h2"></div>
+                        <div data-id="desc" class="mg-top-8"></div>
                     </div>
                     <span class="sm--d-none pointer transition-all transition-fast" style="background-image: url(/img/bg/Dots.svg);">
                         <play-icon name="chevron-right" size="sm"></play-icon>
@@ -350,15 +371,10 @@
             </script>
         </li>
 
-        <li exportgroup="show" namespace class="pos-abs cover radius-full flex-center pointer-events-none kids--pointer-events" style="opacity: 0;">
-            <a data-id="link" class="display-link flex-y-self-end wt-60 ht-60 flex-center radius-full jelly-peel ring-shadow z-index-10" href="#">
-                <play-icon name="arrow-down" size="sm"></play-icon>
-            </a>
+        <li exportgroup="show" namespace class="pos-abs cover radius-full">
             <script type="subscript">
                 if (!this.state.title) return;
                 $(this).css('background-image', 'url(' + this.state.graphic + ')');
-                $(this.namespace.link).attr('href', '/#' + this.state.title);
-                $(this.namespace.link).css(this.state.darkTheme);
                 if (this.state.active || !this.state.active) {
                     setTimeout(() => {
                         let inReverse = this.parentNode.getAttribute('reverse-show');
