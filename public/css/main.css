@@ -26,8 +26,26 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Josefin Sans', sans-serif;
 }
-play-icon {
-    font-size: initial;
+.bi {
+    font-size: 1.5em;
+}
+.bi.xs {
+    font-size: 1em;
+}
+.bi.sm {
+    font-size: 1.5em;
+}
+.bi.md {
+    font-size: 2em;
+}
+.bi.lg {
+    font-size: 3em;
+}
+.bi.xl {
+    font-size: 3.5em;
+}
+.bi.xxl {
+    font-size: 4em;
 }
 
 /* ------------------ */
@@ -125,7 +143,6 @@ p, .p, a, .a {
 }
 .outline li .icon {
     background-color: transparent !important;
-    background-image: url(/img/bg/Dots.svg);
 }
 .outline li:hover .pointer,
 .outline li.active .pointer {

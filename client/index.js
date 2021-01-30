@@ -3,7 +3,6 @@
  * @imports
  */
 import '@webqit/play-sequence/src/browser-entry.js';
-import '@webqit/play-icon/src/browser-entry.js';
 import List from '../common/List.js';
 
 /**
