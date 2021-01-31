@@ -2,7 +2,7 @@
 <!-- Main Home View -->
 <div namespace class="homepage snap-mandatory-container">
 
-    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid silver; z-index: 16;">
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: white; border-right: 1px solid silver; z-index: 16;">
 
         <div class="col-grows pd-10 pd-x3 flex-column">
             <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
@@ -42,7 +42,7 @@
             </a>
         </div>
     </div>
-    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
+    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.15); z-index: 15;"></div>
 
     <script type="subscript">
         $(document.namespace.theme_color).attr('content', 'white');
@@ -168,7 +168,7 @@
 
         <!-- ::::::::::::::::: -->
 
-        <section class="flex-y-stretch flex-wrap">
+        <section class="flex-y-stretch flex-wrap d-none">
             <div class="divides_right col-4 md--col-5 md--border-none sm--col-12 flex-y-center"></div>
             <div class="col-grows flex-y-center ht-20 ht-x7 sm--ht-40 sm--ht-x6">
                 <div class="backers pd-10">
@@ -180,7 +180,7 @@
 
     <!-- ::::::::::::::::: -->
     
-    <section class="pos-rel ht-0 flex-y-center pointer-events-none z-index-10">
+    <section class="pos-rel ht-0 flex-y-center pointer-events-none z-index-10 d-none">
         <div class="col-4 md--col-12 flex-x-end">
 
             <div class="flex-y-stretch pointer-events b pos-rel wt-100 wt-x3 ht-100 ht-x3 lg--wt-x2 lg--ht-x2 transition-all transition-fast">
@@ -224,7 +224,8 @@
                 <div class="section-div-content md--flex-y-center sm--d-block">
                     <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
                     <div class="md--col-7 txt-align-cntr">
-                        <img src="/img/bg/netlify.png" />
+                        <br /><br />
+                        <img src="/img/banner-dev-tools.png" />
                     </div>
                 </div>
             </div>
@@ -259,7 +260,8 @@
                 <div class="section-div-content md--flex-y-center sm--d-block">
                     <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
                     <div class="md--col-7 txt-align-cntr">
-                        <img src="/img/new/rock.fw.png" style="min-width: 80%;" />
+                        <br /><br />
+                        <img style="max-width: 60%;" src="/img/nimbus-home-platform-2b9488fc3534555f545615c7104fcfc9580e5b359e86e7ec8b28f66ab0108cf6.svg" />
                     </div>
                 </div>
             </div>
@@ -292,7 +294,8 @@
                 <div class="section-div-content md--flex-y-center sm--d-block">
                     <html-import data-id="intro" name="intro" template="page/#layout/intros"></html-import>
                     <div class="md--col-7 txt-align-cntr">
-                        <img src="/img/bg/netlify.png" style="min-width: 90%;" />
+                        <br /><br />
+                        <img style="max-width: 60%;" src="/img/nimbus-home-platform-2b9488fc3534555f545615c7104fcfc9580e5b359e86e7ec8b28f66ab0108cf6.svg" />
                     </div>
                 </div>
             </div>
