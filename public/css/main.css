@@ -572,11 +572,6 @@ main.home {
 #tooling .link-secondary:hover {
     color: slateblue;
 }
-@media (max-width: 760px) {
-    #tooling .item {
-        min-height: 325px;
-    }
-}
 #tooling .item .icon {
     transition: all 300ms !important;
 }
@@ -641,14 +636,205 @@ main.home {
     background-image: url(/img/bg/Dots.svg);
 }
 
-.markdown-body h1,
-.markdown-body h2,
-.markdown-body h3,
-.markdown-body h4,
-.markdown-body h5,
-.markdown-body h6 {
-}
-
 footer.home {
     min-height: 300px;
 }
+
+
+
+
+[dramatic-circularprogress] .progressbar-indicator {
+	stroke-dashoffset: 0;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-width: 0.175em;
+}
+[dramatic-circularprogress][viewBox~="18"] .progressbar-indicator {
+	stroke-dasharray: 1, 50;
+}
+[dramatic-circularprogress][viewBox~="24"] .progressbar-indicator {
+	stroke-dasharray: 1, 63;
+}
+[dramatic-circularprogress][viewBox~="36"] .progressbar-indicator {
+	stroke-dasharray: 1, 94;
+}
+[dramatic-circularprogress][viewBox~="48"] .progressbar-indicator {
+	stroke-dasharray: 1, 126;
+}
+
+[dramatic-circularprogress][indeterminate] {
+	-webkit-animation: circular-indeterminate-rotate 2s linear infinite;
+	animation: circular-indeterminate-rotate 1.5s linear infinite;
+	z-index: 2;
+}
+[dramatic-circularprogress][indeterminate][viewBox~="18"] .progressbar-indicator {
+	animation: circular-indeterminate-18-dash 1.125s ease-in-out infinite;
+}
+[dramatic-circularprogress][indeterminate][viewBox~="24"] .progressbar-indicator {
+	animation: circular-indeterminate-24-dash 1.125s ease-in-out infinite;
+}
+[dramatic-circularprogress][indeterminate][viewBox~="36"] .progressbar-indicator {
+	animation: circular-indeterminate-36-dash 1.125s ease-in-out infinite;
+}
+[dramatic-circularprogress][indeterminate][viewBox~="48"] .progressbar-indicator {
+	animation: circular-indeterminate-48-dash 1.125s ease-in-out infinite;
+}
+
+/* ---------------------------------------- */
+
+[dramatic-linearprogress] {
+	min-height: 2px;
+}
+[dramatic-linearprogress] .progressbar-indicator-a,
+[dramatic-linearprogress] .progressbar-indicator-b {
+	position: absolute;
+	background-color: currentColor;
+}
+[dramatic-linearprogress][indeterminate] .progressbar-indicator-a,
+[dramatic-linearprogress][indeterminate] .progressbar-indicator-b {
+	top: 0;
+	left: 0;
+	bottom: 0;
+    width: auto;
+	-webkit-animation: linear-indeterminate-a 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: linear-indeterminate-a 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+}
+[dramatic-linearprogress][indeterminate] .progressbar-indicator-b {
+	-webkit-animation-name: linear-indeterminate-b;
+    animation-name: linear-indeterminate-b;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s;
+}
+
+/*
+ * ---------
+ * CIRCULAR-INDETERMINATE
+ * ---------
+ */
+
+@-webkit-keyframes circular-indeterminate-rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+@keyframes circular-indeterminate-rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes circular-indeterminate-18-dash {
+	0% {
+		stroke-dasharray: 1, 50;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 30, 50;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 30, 50;
+		stroke-dashoffset: -44;
+	}
+}
+@keyframes circular-indeterminate-24-dash {
+	0% {
+		stroke-dasharray: 1, 63;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 30, 63;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 30, 63;
+		stroke-dashoffset: -44;
+	}
+}
+@keyframes circular-indeterminate-36-dash {
+	0% {
+		stroke-dasharray: 1, 94;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 40, 94;
+		stroke-dashoffset: -45;
+	}
+	100% {
+		stroke-dasharray: 40, 94;
+		stroke-dashoffset: -54;
+	}
+}
+@keyframes circular-indeterminate-48-dash {
+	0% {
+		stroke-dasharray: 1, 126;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 60, 126;
+		stroke-dashoffset: -75;
+	}
+	100% {
+		stroke-dasharray: 60, 126;
+		stroke-dashoffset: -120;
+	}
+}
+
+/*
+ * ---------
+ * LINEAR-INDETERMINATE
+ * ---------
+ */
+
+@keyframes linear-indeterminate-a {
+	0% {
+		left: -35%;
+		right: 100%;
+	}
+	60% {
+		left: 100%;
+		right: -90%;
+	}
+	100% {
+		left: 100%;
+		right: -90%;
+	}
+}
+@keyframes linear-indeterminate-b {
+	0% {
+		left: -200%;
+		right: 100%;
+	}
+	60% {
+		left: 107%;
+		right: -8%;
+	}
+	100% {
+		left: 107%;
+		right: -8%;
+	}
+}
+
+/*
+ * ---------
+ * RIPPLE
+ * ---------
+ */
+
+@keyframes ripple {
+	0% {
+		opacity: 0;
+	} 25% {
+		opacity: 1;
+	} 100% {
+      	width: 350%;
+      	padding-bottom: 350%;
+		opacity: 0;
+	}
+}
+
