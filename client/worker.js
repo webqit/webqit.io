@@ -21,7 +21,7 @@ const params = {
    scope: '/',
    cache_name: '',
    fetching_strategy: 'network_first',
-   caching_strategy: 'static',
+   caching_strategy: 'dynamic',
    caching_list: '',
    skip_waiting: true,
    support_messaging: false,

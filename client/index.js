@@ -14,8 +14,15 @@ import List from '../common/List.js';
  * 
  * @return object
  */
+var cache;
 export default async (process, recieved, next) => {
-    return next();
+    if (next.pathname) {
+        return next();
+    }
+    if (!cache) {
+        cache = await next();
+    }
+    return {...cache};
 };
 
 /**

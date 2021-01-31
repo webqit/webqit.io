@@ -19,14 +19,11 @@ const cache = {};
  * @return object
  */
 export default async function(process, recieved, next) {
-    if (next.pathname) {
-        var pkgName = next.pathname.split('/')[0];
-        if (!cache[pkgName]) {
-            cache[pkgName] = await next();
-        }
-        return cache[pkgName];
+    var pkgName = (next.pathname || '').split('/')[0] || '';
+    if (!cache[pkgName]) {
+        cache[pkgName] = await next();
     }
-    return next();
+    return cache[pkgName];
 };
 
 /**
