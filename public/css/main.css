@@ -683,7 +683,7 @@ footer.home {
 /* ---------------------------------------- */
 
 [dramatic-linearprogress] {
-	min-height: 2px;
+	min-height: 3px;
 }
 [dramatic-linearprogress] .progressbar-indicator-a,
 [dramatic-linearprogress] .progressbar-indicator-b {
