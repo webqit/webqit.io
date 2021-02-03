@@ -330,7 +330,9 @@ body {
     background-color: white;
 }
 main.home {
+    /**
     background: linear-gradient(180deg, white, slateblue, white);
+    */
 }
 .page-section {
     min-height: 100vh;
@@ -346,8 +348,8 @@ main.home {
 }
 .section-div-a,
 .section-div-a .section-div-header {
-    background-color: var(--section-div-a-bg);
-    color: var(--section-div-a-color);
+    background-color: var(--section-div-b-bg);
+    color: var(--section-div-b-color);
 }
 .section-div-b,
 .section-div-b .section-div-header {
@@ -559,31 +561,42 @@ main.home {
 }
 #tooling .item {
     min-height: 275px;
-    background: whitesmoke;
-}
-#tooling .link-primary {
-    color: white;
-    background-color: black;
-    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.75);
-}
-#tooling .link-primary:hover {
-    background-color: slateblue;
-}
-#tooling .link-secondary:hover {
-    color: slateblue;
-}
-#tooling .item .icon {
-    transition: all 300ms !important;
-}
-#tooling .item:hover {
-    background-color: gainsboro;
-}
-#tooling .item:hover .icon {
-    transform: scale(1.3) !important;
+    border: 5px solid gainsboro;
 }
 #tooling .item a {
     font-weight: bold;
 }
+#tooling .link-primary {
+    background-color: gainsboro;
+}
+#tooling .item,
+#tooling .item .icon,
+#tooling .item .link-primary {
+    transition: all 300ms !important;
+}
+#tooling .item:hover {
+    border-color: slateblue;
+    background-color: gainsboro;
+}
+#tooling .item:hover .icon,
+#tooling .item:hover .link-primary {
+    transform: scale(1.2) !important;
+    color: slateblue;
+}
+#tooling .item:hover .icon {
+}
+#tooling .item:hover .link-primary {
+    background-color: silver;
+}
+/**
+#tooling .link-primary:hover {
+    color: slateblue;
+    background-color: lightgray;
+}
+#tooling .link-secondary:hover {
+    color: slateblue;
+}
+*/
 
 /* ------------------- */
 
