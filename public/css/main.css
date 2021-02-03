@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .jelly-peel {
     color: white;
-    background: black;
+    background: slateblue;
 }
 .jelly-peel:hover {
     background: slateblue;
@@ -163,7 +163,7 @@ p, .p, a, .a {
     }
     .outline li.active {
         color: white;
-        background-color: black;
+        background-color: slateblue;
         box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
     }
     .outline li.icon-webqit-tooling.active {
