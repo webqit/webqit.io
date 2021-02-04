@@ -87,10 +87,14 @@
 
         <html-import name="index" template-specificity="2-10">
             <div class="flex-center" style="min-height: 100vh;">
-                <div class="txt-align-cntr">
-                    <div class="anim-flash">Not Found!</div>
+                <div namespace class="txt-align-cntr b">
+                    <div data-id="error" class="anim-flash"></div>
                     <br />
                     <a href="/">&leftarrow; Back to Home</a>
+                    <script type="subscript">
+                        let app = document.state;
+                        $(this.namespace.error).html(app.network.error ? (app.network.online ? 'Network Error - ' : "You're Offline - ") + app.network.error : '404 - Not Found!');
+                    </script>
                 </div>
             </div>
         </html-import>
