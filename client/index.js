@@ -16,8 +16,8 @@ import List from '../common/List.js';
  */
 var cache;
 export default async (process, recieved, next) => {
-    if (next.pathname) {
         return next();
+    if (next.pathname) {
     }
     if (!cache) {
         cache = await next();
