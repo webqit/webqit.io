@@ -1065,9 +1065,6 @@ connectedCallback() {
                 $(this.namespace.page_outline_control).on('click', () => $(this.namespace.page_outline_container).class('sm--d-none', false));
         $(this.namespace.page_readme_container).on('focusin', () => $(this.namespace.page_outline_container).class('sm--d-none', true));
     </script>
-
-    <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
-    <link rel="stylesheet" type="text/css" href="/css/tooling.css" />
     
     <div class="flex-y-start">
             
@@ -1232,9 +1229,6 @@ connectedCallback() {
 
     </div>
 
-    <!-- CODE HIGHLIGHTING -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
-
 </div>
 
 <!-- TEMPLATES -->
@@ -1251,7 +1245,7 @@ connectedCallback() {
             </script>
         </ul>
         <li namespace>
-            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-10 radius-10 radius-x5 b txt-sm txt-align-cntr" style="background-color: gainsboro;"></h3>
+            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-10 radius-10 radius-x5 b txt-sm txt-align-cntr anim-fade-in" style="background-color: gainsboro;"></h3>
             <ul data-id="items" class="pd-0 d-flex flex-wrap list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
@@ -1260,7 +1254,7 @@ connectedCallback() {
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace class="col-6 sm--col-12 pd-10 pd-x2">
+        <li exportgroup="project" namespace class="col-6 sm--col-12 pd-10 pd-x2 anim-fade-in">
             <div class="pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-10" style="background-color: whitesmoke; border: gainsboro;">
                 <div>
                     <i data-id="icon" class="bi"></i>
@@ -1289,7 +1283,7 @@ connectedCallback() {
     </template>
 
     <template name="project-outline">
-        <li namespace class="pd-top-6 pd-btm-6">
+        <li namespace class="pd-top-6 pd-btm-6 anim-fade-in">
             <div class="flex-y-center">
                 <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
                     <i data-id="subtree_icon" class="bi bi-dot xs" style="font-size: x-small;"></i>
@@ -1329,7 +1323,7 @@ connectedCallback() {
     </template>
 
     <template name="page-outline">
-        <li namespace class="pd-6">
+        <li namespace class="pd-6 anim-fade-in">
             <a data-id="link" href=""></a>
             <ul data-id="sub_menu" template="page/tooling/#layout/page-outline" class="page-suboutline pd-4 d-none list-style-none"></ul>
             <script type="subscript">

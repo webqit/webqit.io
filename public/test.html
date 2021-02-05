@@ -62,13 +62,15 @@
                 var Obs = window.WQ.Observer;
                 var obj = {};
                 
-                Obs.observe(obj, e => {
-                    console.log(e);
+                Obs.observe(obj, ['key0', null, null], e => {
+                    console.log('>>>>>>>>>>', e);
                 });
 
-                Obs.set(obj, 'key1', 'val1');
+                Obs.set(obj, 'key0', {});
+                Obs.set(obj.key0, 'key1', {});
                 setTimeout(() => {
-                    Obs.set(obj, {key2: 'val2', key3: 'val3'});
+                    Obs.set(obj.key0.key1, {key2: 'val2', key3: 'val3', key4: 'val4', });
+                    Obs.set(obj.key0.key1, {key5: 'val5', });
                 }, 600);
 
             }, 600);
