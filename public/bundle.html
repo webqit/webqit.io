@@ -431,12 +431,20 @@ connectedCallback() {
 </ul>
 <h3 id="other-scenerios">Other Scenerios</h3>
 <p>The example scenerio above is really contrived, but it should furnish us a good starting point for painting usecases. You should please share you opinions. I'll stand by now to repond to usecase questions.</p>
+<p><br /></p>
+<h2 id="learn-more">Learn More</h2>
+<h3 id="magical-yet-traditional---the-webqit-advantage">Magical, Yet Traditional - the WebQit Advantage!</h3>
+<p>Since the modern web, every new magic has had something to change in our conventional way of thinking and doing things. For every feature X, "modern tooling" has had to alter something in how we authour and ship HTML, CSS and JavaScript, and overall, in how we build and maintian modern applications. For some reasons, we haven't had the benefit of <em>both</em> "modern" and "traditional". How we miss the latter!</p>
+<p>Come to a new way to think about tooling where everything suprisingly becomes possible with <em>little or zero engineering</em>; where the magic happens in the conventions of the traditional web. This is the possibility we explore with WebQit tooling. It comes on a clean slate bringing the benefits of <em>both</em> the <em>modern magic</em> and a <em>traditional developer experience</em>. This is the WebQit advantage!</p>
+<h3 id="the-web-native-future---our-subject-of-advocacy">The Web-Native Future - Our Subject of Advocacy!</h3>
+<p>In the era of startling advancements with ES6+ and CSS, there's now a native approach to 4 out of every 5 problems. And sooner than anyone thinks, the fifth will be here! Thus comes the web of the future leaning back on its standard conventions and tooling for building web apps! We call this the <em>web-native future</em>! If there's anything we want to be known for, it will be having a part to play in this!</p>
+<p>Through proposals and associated polyfills, we are indeed participating in web standardization. And with the launch of the <a href="https://www.w3.org/community/web-native/">Web-Native (W3C) Community Group</a>, we're set to join in driving community uptake of Web-Native tooling. <a href="https://www.w3.org/community/web-native/join">Join</a> us in <em>facilitating</em> and <em>embracing</em> the Web-Native future where everyone is banking more on the platform and less on abstractions.</p>
 
 	</div>
 
 	<!-- Main Home View -->
 
-<div namespace class="homepage snap-mandatory-container" exportgroup="index">
+<div namespace class="homepage snap-mandatory-container" exportgroup="index copy">
 
     <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: white; border-right: 1px solid silver; z-index: 16;">
 
@@ -1022,13 +1030,442 @@ connectedCallback() {
     </template>
 </template>
 
+	<!-- Main Home View -->
+
+<div namespace class="homepage snap-mandatory-container" exportgroup="index">
+
+    <!-- OVERLAY_MENU -->
+
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden bg-color-1 d-none" style="position: fixed; height: 100vh; max-width: 70vw; color: white; border-right: 1px solid silver; z-index: 16;">
+
+        <div class="col-grows pd-10 pd-x3 flex-column">
+            <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
+                <li>
+                    <a href="/tooling" class="flex-y-center">
+                        <i class="bi bi-braces sm flex-center pd-10"></i>
+                        <span class="pd-10 b">Tooling</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/cloud" class="flex-y-center">
+                        <i class="bi bi-cloud sm flex-center pd-10"></i>
+                        <span class="pd-10 b">Cloud</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/community" class="flex-y-center">
+                        <i class="bi bi-flag sm flex-center pd-10"></i>
+                        <span class="pd-10 b">Community</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed sil-ver">
+                <li>
+                    <a href="/about" class="flex-y-center">
+                        <i class="bi bi-globe sm flex-center pd-10"></i>
+                        <span class="pd-10 b">About</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
+            <a href="/" target="_blank" class="b">WebQit</a>
+            <a href="https://github.com/webqit" target="_blank">
+                <i class="bi bi-github sm"></i>
+            </a>
+        </div>
+    </div>
+    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.15); z-index: 15;"></div>
+
+    <script type="subscript">
+        $(document.namespace.theme_color).attr('content', 'white');
+        $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
+        $(this.namespace.app_drawer_open2).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
+        $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
+    </script>
+
+    <!-- HEADER -->
+
+    <header class="page-header flex-y-stretch">
+        <div class="col-1 sm--col-0 sm--pd-10 flex-center" style="border-right: 3px solid silver;">
+            <a data-id="app_drawer_open" class="flex-center b text-gradient text-gradient-2 sm--d-none" href="#">
+                <i class="bi bi-filter-left flex-center"></i>
+            </a>
+        </div>
+        <div class="pd-10 pd-lft-x2 sm--pd-10 sm--pd-lft-x2 sm--pd-top-x3 sm--pd-btm-x3 col-grows">
+            <html-import name="logo_nav" template="brand" class="wt-auto"></html-import>
+        </div>
+        <div class="col-2 flex-center d-none sm--d-flex">
+            <a data-id="app_drawer_open2" class="flex-center mg-rt-10 b text-gradient text-gradient-2" href="#">
+                <i class="bi bi-filter-right flex-center"></i>
+            </a>
+        </div>
+    </header>
+
+    <section namespace class="page-section hero">
+
+        <div class="section-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
+            <div class="section-header-left col-1 sm--col-0 sm--pd-10 border-color-2 pseudo-bg-color-2"></div>
+            <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0 b text-heavy">
+                <div class="pd-10 pd-x2 txt-xs color-2">
+                    <span class="section-header-tag pd-10 color-2">#DEV_X</span>
+                </div>
+                <h1 data-id="header" class="section-header-content text-hero pd-10 pd-x2 txt-xxl">
+                    <span class="text-gradient text-gradient-2">We fight bad abstractions</span><br />
+                    <span class="">so you can have a better dev experience!</span>
+                </h1>
+                <a href="#" class="mg-top-10 mg-lft-10 mg-lft-x2 flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1 d-none md--d-inline-flex" style="color: white;">
+                    <i class="bi bi-play-fill sm flex-center"></i>
+                </a>
+                <ul data-id="inpage_menu" class="pd-10 pd-x2 pd-btm-0 txt-lg b text-gradient text-gradient-2 d-inline-flex flex-y-center flex-wrap list-style-none">
+                    <li class="mg-top-10 mg-rt-10 mg-rt-x3"><a href="#tooling" class="flex-y-center">
+                        <i class="bi bi-braces sm flex-center"></i>
+                        <span class="pd-10">Tooling</span>
+                    </a></li>
+                    <li class="mg-top-10 mg-rt-10 mg-rt-x3"><a href="#cloud" class="flex-y-center">
+                        <i class="bi bi-cloud sm flex-center"></i>
+                        <span class="pd-10">Cloud</span>
+                    </a></li>
+                    <li class="mg-top-10 mg-rt-10 mg-rt-x3"><a href="#community" class="flex-y-center">
+                        <i class="bi bi-flag sm flex-center"></i>
+                        <span class="pd-10">Community</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="section-header-right col-1 sm--col-0 sm--pd-10 flex-y-stretch textured">
+                <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
+                    <ul class="list-style-none">
+                        <li class="mg-btm-10"><a href="#" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
+                            <i class="bi bi-play-fill sm flex-center"></i>
+                        </a></li>
+                        <li><a href="https://twitter.com/@Web_Qit" target="_blank" class="flex-center min-wt-40 ht-40 radius-full" style="background-color: whitesmoke; border: 1px solid gainsboro;">
+                            <i class="bi bi-twitter sm flex-center"></i>
+                        </a></li>
+                        <li><a href="https://github.com/webqit" target="_blank" class="flex-center min-wt-40 ht-40 radius-full" style="background-color: whitesmoke; border: 1px solid gainsboro;">
+                            <i class="bi bi-github sm flex-center"></i>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section namespace class="page-section showcase">
+        <div class="showcase-items flex-center">
+            <img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-40" />
+        </div>
+        <div class="section-footer flex-y-stretch textured">
+            <div class="section-footer-left col-1 sm--col-0 sm--pd-10 border-color-2"></div>
+        </div>
+    </section>
+
+    <!-- MAIN -->
+
+    <main data-id="sections" template="page/_section" class="pos-rel">
+        <script type="subscript">
+            let app = document.state;
+            if (app.page.sections) {
+                $(this).itemize(app.page.sections);
+            }
+        </script>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="home flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
+        <div class="col-2 txt-align-cntr sm--pd-lft-10 sm--pd-lft-x2">
+            <a href="/#" class="sm--mg-top-10 sm--mg-top-x3"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
+            <ul class="mg-top-10 mg-top-x2 list-style-none">
+                <li class="pd-4"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
+                    <i class="bi bi-twitter sm flex-center"></i>
+                </a></li>
+                <li class="pd-4"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
+                    <i class="bi bi-github sm flex-center"></i>
+                </a></li>
+            </ul>
+        </div>
+        <div class="col-8 sm--col-12 flex-y-stretch flex-x-separate flex-wrap">
+            <ul class="flex-y-stretch flex-wrap pd-10 pd-btm-x3 list-style-none">
+                <li class="pd-10">
+                    <span class="pd-10 b">Tooling</span>
+                    <ul class="mg-top-10 list-style-none">
+                        <li class="pd-10"><a href="/tooling">Projects</a></li>
+                        <li class="pd-10"><a href="https://github.com/webqit">Repos</a></li>
+                        <li class="pd-10"><a href="/">Contributors</a></li>
+                        <li class="pd-10"><a href="/">Sponsors</a></li>
+                    </ul>
+                </li>
+                <li class="pd-10">
+                    <span class="pd-10 b">Cloud</span>
+                    <ul class="mg-top-10 list-style-none">
+                        <li class="pd-10"><a href="/">Services</a></li>
+                        <li class="pd-10"><a href="/">Pricing</a></li>
+                        <li class="pd-10"><a href="/">Status</a></li>
+                    </ul>
+                </li>
+                <li class="pd-10">
+                    <span class="pd-10 b">Community</span>
+                    <ul class="mg-top-10 list-style-none">
+                        <li class="pd-10"><a href="/">WebQit</a></li>
+                        <li class="pd-10"><a target="_blank" href="https://w3.org/community/web-native">Web-Native</a></li>
+                        <li class="pd-10"><a href="/">Blog</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="pd-10" id="waitlist">
+                <div class="pd-4">
+                    <h3 class="pd-6">We're in private beta and iterating fast.</h3>
+                    <div class="pd-6 b">You may want to subscribe to updates...</div>
+                </div>
+                <div class="pd-10">
+                    <div class="pd-10" style="background-color: whitesmoke;">
+                        <!-- Begin Mailchimp Signup Form -->
+                        <style>
+                            #mc_embed_signup div.mce_inline_error {
+                                display: inline-block;
+                            }
+                        </style>
+                        <div id="mc_embed_signup">
+                            <form action="https://yahoo.us10.list-manage.com/subscribe/post?u=6091dca0ef3e87e3db682fe7f&id=a38711c3d0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                                <div id="mc_embed_signup_scroll">
+                                    <div class="mc-field-group flex-y-stretch" style="border: 1px solid silver;">
+                                        <input type="email" value="" name="EMAIL" class="required email col-grows pd-8 pd-x2 border-none" placeholder="Email Address" id="mce-EMAIL" />
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button pd-8 pd-x2 border-none bg-color-1" style="color: white;" />
+                                    </div>
+                                    <div id="mce-responses" class="clear">
+                                        <div class="response" id="mce-error-response" style="display:none; color: blueviolet; font-weight: bold;"></div>
+                                        <div class="response" id="mce-success-response" style="display:none; color: red; font-weight: bold;"></div>
+                                    </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6091dca0ef3e87e3db682fe7f_a38711c3d0" tabindex="-1" value="" /></div>
+                                </div>
+                            </form>
+                        </div>
+                        <script type='text/javascript' src='                        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        <!--End mc_embed_signup-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="pd-10 pd-x2 d-flex flex-wrap" style="border-top: 1px dashed silver;">
+        <div class="col-grows pd-10">&copy; <span data-id="site_year">2021</span> WebQit</div>
+        <ul class="col-grows flex-x-end no-wrap list-style-none">
+            <li class="pd-10"><a href="/">Contact</a></li>
+            <li class="pd-10"><a href="/">Terms</a></li>
+            <li class="pd-10"><a href="/">Privacy</a></li>
+        </ul>
+    </div>
+
+</div>    
+
+<!-- TEMPLATES -->
+
+<template name="_section">
+
+    <section namespace class="page-section">
+
+        <div class="section-header flex-y-stretch">
+            <div class="col-1 sm--col-0 sm--pd-10 section-header-left"></div>
+            <div class="col-grows pos-rel">
+                <div data-id="header" class="section-header-content pd-10 pd-x2 pd-top-x3 pd-btm-x3 b"></div>
+            </div>
+            <div class="col-1 sm--col-0 sm--pd-10 section-header-right"></div>
+        </div>
+
+        <div class="flex-y-stretch">
+            <div class="pd-10 sm--pd-lft-0 textured"></div>
+            <div data-id="main" class="section-main col-grows flex-y-stretch flex-wrap">
+                <div class="section-main-a col-4 md--col-12 md--pd-top-10 md--pd-top-x3 md--pd-btm-10 md--border-none">
+
+                    <div class="section-main-header flex-y-center pd-lft-10 pd-rt-10 pd-x4 md--pos-rel">
+                        <h2 data-id="title" class="section-title txt-xxl"></h2>
+                    </div>
+                    <div class="section-main-content pd-10 pd-x4 pd-top-x2 txt-xl md--flex-y-center sm--d-block">
+                        <div class="mg-btm-10 mg-btm-x4 md--col-5 h5">
+                            <p data-id="desc" class="section-desc"></p>
+                            <ul data-id="highlights" template="page/_section" class="section-highlights list-style-none"></ul>
+                        </div>
+                        <div class="md--col-7 txt-align-cntr">
+                            <img data-id="graphic" class="section-graphic" src="/img/banner-dev-tools.pngd" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0">
+                    <div class="section-main-header flex-x-separate flex-y-center pd-lft-10 pd-rt-10 pd-x3">
+
+                        <div class="col-grows">
+                            <ul is="play-seq-ul" data-id="tabs" play-seq-displacement="100" template="page/_section" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+                                <li is="play-seq-li" data-id="overflowNotch" namespace class="overflow-notch d-none" tabindex="0" style="opacity: 0;">
+                                    <i class="bi bi-three-dots sm ht-full flex-y-center"></i>
+                                    <div class="overflow ht-0 flex-x-center">
+                                        <ul data-id="list" template="page/_section" class="overflow-list pos-abs animation-x-fast anim-fly-top-small list-style-none"></ul>
+                                    </div>
+                                </li>
+                            </ul>        
+                        </div>
+
+                        <a data-id="url" href="" class="section-url flex-y-center">
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+                    <div data-id="tabpanels" template="page/_section" class="section-main-content col-grows md--col-12 flex-y-stretch"></div>
+                </div>
+            </div>
+            <div class="pd-10 sm--pd-rt-0 textured"></div>
+        </div>
+
+        <div class="section-footer flex-y-stretch textured">
+            <div class="col-1 sm--col-0 sm--pd-10 section-footer-left"></div>
+            <div class="col-grows">
+                <div data-id="footer" class="section-footer-content pd-10 pd-x2 pd-top-x3 pd-btm-x3 b"></div>
+            </div>
+            <div class="col-1 sm--col-0 sm--pd-10 section-footer-right textured"></div>
+        </div>
+
+        <script type="subscript">
+            let section = this.state;
+            let overflowNotch = this.namespace.overflowNotch;
+            let overflowList = overflowNotch.namespace.list;
+            if (!section.title) return;
+            $(this.namespace.main).attr('id', section.name);
+            $(this.namespace.header).html(section.header);
+            $(this.namespace.footer).html(section.footer);
+            $(this.namespace.url).attr('href', '/' + section.name);
+            $(this.namespace.title).html(section.title);
+            $(this.namespace.desc).html(section.desc);
+            $(this.namespace.highlights).itemize(section.highlights, null, null, {itemExportId: 'highlight'});
+            $(this.namespace.graphic).attr('src', '');
+                        $(this.namespace.tabs).itemize(section.featured.items, (e, el, d, k) => {
+                d.overflowCollapsed = false;
+                if (k === parseInt((section.featured.items.length - 1) / 2)) {
+                    el.after(overflowNotch);
+                }
+            }, (e, el, d, k, overflowCount) => {
+                d.overflowCollapsed = e === 'collapse';
+                $(overflowNotch).class('d-none', overflowCount === 0);
+            }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
+            $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
+                        $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
+        </script>
+
+    </section>
+
+    <li exportgroup="highlight" namespace class="flex-y-start">
+        <span class="bullet flex-center min-wt-40 ht-40 radius-full mg-rt-6 mg-rt-x2">
+            <i data-id="icon" class="bi xs flex-center"></i>
+        </span>
+        <span data-id="content" class="col-grows"></span>
+        <script type="subscript">
+            if (!this.state.content) return;
+            $(this.namespace.icon).class('bi-' + this.state.icon, true);
+            $(this.namespace.content).html(this.state.content);
+        </script>
+    </li>
+
+    <li exportgroup="tab" namespace is="play-seq-li" style="opacity: 0;">
+        <span data-id="content"></span>
+        <script type="subscript">
+            $(this).on('click', () => {
+                this.state.active = true;
+            });
+            if (!this.state.name) return;
+            $(this.namespace.content).html(this.state.shortTitle || this.state.title);
+            $(this).class('d-none', this.state.overflowCollapsed);
+            $(this).class('active', this.state.active);
+        </script>
+    </li>
+
+    <li exportgroup="overflow-tab" namespace>
+        <span data-id="content"></span>
+        <script type="subscript">
+            $(this).on('click', () => {
+                this.state.active = true;
+            });
+            if (!this.state.name) return;
+            $(this.namespace.content).html(this.state.shortTitle || this.state.title);
+            $(this).class('d-none', !this.state.overflowCollapsed);
+            $(this).class('active', this.state.active);
+        </script>
+    </li>
+
+    <div exportgroup="tabpanel" namespace class="section-panel col-grows">
+        <div class="panel-main col-12 pd-10 flex-y-start flex-wrap pd-10 pd-x4">
+            <div class="pd-lft-10 pd-rt-10 sm--pd-0 mg-rt-10 mg-rt-x3 flex-center">
+                <i data-id="icon" class="panel-icon bi xl"></i>
+            </div>
+            <div class="panel-content col-grows sm--col-12">
+                <h3 data-id="title" class="panel-title txt-xl"></h3>
+                <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
+                <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
+                <a data-id="ctaRef" href="/" class="panel-page cta d-inline-flex flex-y-center">
+                    <span data-id="cta" class="b underline">Explore</span>
+                    <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
+                </a>
+            </div>
+        </div>
+        <div class="panel-demo-container pd-lft-10 pd-lft-x6 sm--pd-lft-8 overflow-hidden textured">
+            <ul data-id="demo" template="page/_section" class="panel-demo list-style-none"></ul>
+        </div>
+        <div class="panel-meta-container pd-10 pd-x4">
+            <ul data-id="meta" template="page/_section" class="panel-meta"></ul>
+        </div>
+        <script type="subscript">
+            if (this.state.title) {
+                $(this).class('d-none', !this.state.active);
+                                $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                $(this.namespace.title).html(this.state.title);
+                $(this.namespace.desc).html(this.state.desc);
+                $(this.namespace.desc2).html(this.state.desc2 || '');
+                $(this.namespace.ctaRef).attr('href', this.state.ctaRef);
+                $(this.namespace.cta).html(this.state.cta);
+                if (this.state.ctaIsAlt) {
+                    $(this.namespace.ctaArrow).class('d-none', true);
+                }
+                                $(this.namespace.demo).itemize(this.state.demo || [], null, null, {itemExportId: 'demo'});
+                $(this.namespace.meta).itemize(this.state.meta, null, null, {itemExportId: 'meta'});
+            }
+        </script>
+    </div>
+
+    <li exportgroup="demo" namespace class="fl-ex-y-start animation-x-fast anim-scale-in-small">
+        <img data-id="icon" style="max-width: 50px; margin-bottom: 25px;" />
+        <div class="co-l-6" style="border-top: 3px whitesmoke;">
+            <h3 data-id="title" class="txt-xl mg-btm-4"></h3>
+            <div data-id="desc" class="txt-lg"></div>
+        </div>
+        <div class="col-grows">
+        </div>
+        <script type="subscript">
+            if (!this.state.title) return;
+            $(this.namespace.icon).attr('src', this.state.icon);
+                        $(this.namespace.desc).html(this.state.desc);
+            $(this.namespace.page).attr('href', this.state.page);
+        </script>
+    </li>
+
+    <li exportgroup="meta" namespace class="flex-y-start sm--d-block mg-btm-10">
+        <div data-id="title" class="mg-lft-6 md--mg-lft-0 sm--mg-btm-4 b wt-80 pd-rt-10 pd-rt-x2 txt-align-rt sm--txt-align-lft"></div>
+        <div data-id="desc" class="col-grows pd-lft-10 pd-lft-x2 sm--pd-lft-0"></div>
+        <script type="subscript">
+            if (!this.state.title) return;
+            $(this.namespace.title).html(this.state.title + ':');
+            $(this.namespace.desc).html(this.state.desc);
+        </script>
+    </li>
+
+</template>
+
 	<template name="tooling">
 		<!-- Main Home View -->
 
 <div namespace class="snap-mandatory-container" exportgroup="index">
     
     <script type="subscript">
-        $(document.namespace.theme_color).attr('content', 'ghostwhite');
         let app = document.state;
         if (app.page.nav) {
             var nav = app.page.nav;
@@ -1079,20 +1516,20 @@ connectedCallback() {
                     </div>
 
                     <div class="pd-lft-10 pd-rt-10">
-                        <ul class="pd-top-10 pd-btm-10 flex-y-center list-style-none" style="border-bottom: 1px dashed silver">
+                        <ul class="pd-8 flex-y-center list-style-none" style="border-bottom: 1px solid silver;">
                             <li>
-                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-10 d-inline-block radius-10">
-                                    <i class="bi bi-code-slash sm pd-6"></i>
+                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-4 d-inline-block color-1" style="background-color: lavender;">
+                                    <i class="bi bi-braces sm flex-center pd-6"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/cloud" title="Cloud" class="icon-webqit-cloud pd-10 d-inline-block radius-10">
-                                    <i class="bi bi-cloud sm pd-6" class=""></i>
+                                <a href="/cloud" title="Cloud" class="icon-webqit-cloud pd-4 d-inline-block">
+                                    <i class="bi bi-cloud sm flex-center pd-6" class=""></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="/community" title="Community" class="icon-webqit-community pd-10 d-inline-block radius-10">
-                                    <i class="bi bi-flag sm pd-6"></i>
+                                <a href="/community" title="Community" class="icon-webqit-community pd-4 d-inline-block">
+                                    <i class="bi bi-flag sm flex-center pd-6"></i>
                                 </a>
                             </li>
                         </ul>
@@ -1186,7 +1623,14 @@ connectedCallback() {
 
                 <div class="markdown-body" style="min-height: 75vh;">
                     <html-import name="readme" data-id="main">
-                        <div class="flex-center" style="height: 85vh;">DOCS not found!</div>
+                        <div class="flex-center" style="height: 85vh;">
+                            <div class="pd-10 pd-x2 txt-align-cntr">
+                                <i class="bi bi-emoji-smile-upside-down pd-10 flex-center"></i>
+                                <span>Not found! </span>
+                                <br /><br />
+                                (<span>Also, we're gradually rolling out DOCS.</span> <a href="/#waitlist">Get Notified</a>)                            
+                            </div>
+                        </div>
                     </html-import>
                 </div>
                 
@@ -1245,8 +1689,8 @@ connectedCallback() {
             </script>
         </ul>
         <li namespace>
-            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-10 radius-10 radius-x5 b txt-sm txt-align-cntr anim-fade-in animation-slow" style="background-color: gainsboro;"></h3>
-            <ul data-id="items" class="pd-0 d-flex flex-wrap list-style-none" template="page/tooling/#layout/projects-listing"></ul>
+            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-10 radius-10 radius-x5 b txt-sm txt-align-cntr" style="border: 1px solid silver;"></h3>
+            <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 d-flex flex-wrap list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.title).html(this.state.title);
@@ -1254,7 +1698,7 @@ connectedCallback() {
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace class="col-6 sm--col-12 pd-10 pd-x2 anim-fade-in">
+        <li exportgroup="project" namespace is="play-seq-li" class="col-6 sm--col-12 pd-10 pd-x2" style="opacity: 0;">
             <div class="pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-10" style="background-color: whitesmoke; border: gainsboro;">
                 <div>
                     <i data-id="icon" class="bi"></i>
@@ -1262,9 +1706,9 @@ connectedCallback() {
                     <p data-id="desc"></p>
                 </div>
                 <ul class="pd-0 flex-x-separate flex-y-center wt-full pd-top-10 pd-top-x2 list-style-none">
-                    <li><a data-id="page" class="flex-y-center" href="" style="text-decoration: none;">
+                    <li><a data-id="ctaRef" class="flex-y-center b" href="" style="text-decoration: none;">
                         <i class="bi bi-arrow-return-right sm flex-center"></i>
-                        <span class="mg-lft-8">Learn more</span>
+                        <span data-id="cta" class="mg-lft-8">Learn more</span>
                     </a></li>
                     <li><a data-id="github" href="" target="_blank">
                         <i class="bi bi-github sm"></i>
@@ -1276,14 +1720,15 @@ connectedCallback() {
                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
                 $(this.namespace.title).html(this.state.title);
                 $(this.namespace.desc).html(this.state.desc);
-                $(this.namespace.page).attr('href', this.state.page);
-                $(this.namespace.github).attr('href', 'https://github.com/' + this.state.github);
+                $(this.namespace.ctaRef).attr('href', this.state.ctaRef);
+                $(this.namespace.cta).html(this.state.cta);
+                let github = 'https:                $(this.namespace.github).attr('href', github);
             </script>
         </li>
     </template>
 
     <template name="project-outline">
-        <li namespace class="pd-top-6 pd-btm-6 anim-fade-in">
+        <li namespace class="pd-top-6 pd-btm-6">
             <div class="flex-y-center">
                 <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
                     <i data-id="subtree_icon" class="bi bi-dot xs" style="font-size: x-small;"></i>
@@ -1323,7 +1768,7 @@ connectedCallback() {
     </template>
 
     <template name="page-outline">
-        <li namespace class="pd-6 anim-fade-in">
+        <li namespace class="pd-6">
             <a data-id="link" href=""></a>
             <ul data-id="sub_menu" template="page/tooling/#layout/page-outline" class="page-suboutline pd-4 d-none list-style-none"></ul>
             <script type="subscript">
@@ -1394,14 +1839,6 @@ connectedCallback() {
 <ul>
 <li><a href="https://webqit.io">WebQit.io</a></li>
 </ul>
-<p><br /></p>
-<h2 id="learn-more">Learn More</h2>
-<h3 id="magical-yet-traditional---the-webqit-advantage">Magical, Yet Traditional - the WebQit Advantage!</h3>
-<p>Since the modern web, every new magic has had something to change in our conventional way of thinking and doing things. For every feature X, "modern tooling" has had to alter something in how we authour and ship HTML, CSS and JavaScript, and overall, in how we build and maintian modern applications. For some reasons, we haven't had the benefit of <em>both</em> "modern" and "traditional". How we miss the latter!</p>
-<p>Come to a new way to think about tooling where everything suprisingly becomes possible with <em>little or zero engineering</em>; where the magic happens in the conventions of the traditional web. This is the possibility we explore with WebQit tooling. It comes on a clean slate bringing the benefits of <em>both</em> the <em>modern magic</em> and a <em>traditional developer experience</em>. This is the WebQit advantage!</p>
-<h3 id="the-web-native-future---our-subject-of-advocacy">The Web-Native Future - Our Subject of Advocacy!</h3>
-<p>In the era of startling advancements with ES6+ and CSS, there's now a native approach to 4 out of every 5 problems. And sooner than anyone thinks, the fifth will be here! Thus comes the web of the future leaning back on its standard conventions and tooling for building web apps! We call this the <em>web-native future</em>! If there's anything we want to be known for, it will be having a part to play in this!</p>
-<p>Through proposals and associated polyfills, we are indeed participating in web standardization. And with the launch of the <a href="https://www.w3.org/community/web-native/">Web-Native (W3C) Community Group</a>, we're set to join in driving community uptake of Web-Native tooling. <a href="https://www.w3.org/community/web-native/join">Join</a> us in <em>facilitating</em> and <em>embracing</em> the Web-Native future where everyone is banking more on the platform and less on abstractions.</p>
 
 		</div>
 	</template>

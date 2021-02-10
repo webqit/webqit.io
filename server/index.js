@@ -18,84 +18,114 @@ export default async (flo, recieved, next) => {
     if (next.pathname) {
         return next();
     }
-    const outline = [
-        {
-            icon: 'code-slash',
-            title: 'tooling',
-            desc: 'The web tooling project.',
-            desc2: 'Leverage some magic to write less code',
-            desc3: '13',
-            intro: [
-                {icon: 'code-slash', content: 'WebQit\'s opensource web tooling project.'},
-                {icon: 'arrow-return-right', content: '...leverage some magic to write less code!'},
+
+    const featuredProjects = detailsAll(getAll(), false).filter(a => (a.categories || []).includes('Featured'));
+    featuredProjects.forEach(p => {
+        p.meta = [
+            {title: 'Tags', desc: `#${p.tags.join(', #')}`},
+            {title: 'Repo', desc: `<a href="https://github.com/${p.repo}">${p.repo}</a>`},
+            {title: 'License', desc: 'MIT'},
+        ];
+    });
+
+    const sections = [{
+        header: 'We work on low-abstraction tooling and potential web standards that make development more enjoyable.',
+        footer: '',
+        name: 'tooling',
+        icon: 'braces',
+        graphic: '/img/Globe.svg',
+        title: 'Tooling',
+        desc: 'WebQit\'s opensource web tooling project.',
+        highlights: [
+            {icon: 'braces', content: 'Do your magic using conventional paradigms!'},
+            {icon: 'arrow-return-right', content: 'Write less, think less, and do more in the process!'},
+        ],
+        featured: featuredProjects,
+    }, {
+        header: 'We develop the most concise cloud services to deliver the experience end-to-end.',
+        footer: '',
+        name: 'cloud',
+        icon: 'cloud',
+        graphic: '/img/Globe.svg',
+        title: 'Cloud',
+        desc: 'WebQit\'s fully-managed platform and APIs.',
+        highlights: [
+            {icon: 'cloud', content: 'Leverage the most simplistic way to build modern apps.'},
+            {icon: 'arrow-return-right', content: 'Take apps to production faster; scale to your imagination!'},
+        ],
+        featured: [{
+            icon: 'app-indicator',
+            name: 'platform',
+            shortTitle: 'Webflo Cloud',
+            title: 'Webflo Cloud',
+            desc: 'Managed hosting for Webflo apps. (Push to deploy.)',
+            desc2: 'The platform uniquely built for the Webflo experience!',
+            meta: [
+                {title: 'Pricing', desc: 'Free to start'},
+                {title: 'Status', desc: 'Coming soon'},
             ],
-            graphic: '/img/Globe.svg',
-            active: true,
-            lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
-            darkTheme: {color: 'white', backgroundColor: 'slateblue'},
+            cta: 'Be on the waitlist (Subscribe below)',
+            ctaRef: '/#waitlist',
+            ctaIsAlt: true,
         }, {
-            icon: 'cloud',
-            title: 'cloud',
-            desc: 'The WebQit platform & APIs.',
-            desc2: 'Take apps to production faster; scale to your imagination',
-            desc3: '2',
-            intro: [
-                {icon: 'cloud', content: 'WebQit\'s fully-managed platform and APIs'},
-                {icon: 'arrow-return-right', content: '...take apps to production faster; scale to your imagination!'},
+            icon: 'layers',
+            name: 'database',
+            shortTitle: 'Objective DB',
+            title: 'Objective DB',
+            desc: 'Managed cloud database for Objective SQL. (Go serverless.)',
+            desc2: 'The SQL-based object-oriented data API for modern applications!',
+            meta: [
+                {title: 'Pricing', desc: 'Free to start'},
+                {title: 'Status', desc: 'Coming soon'},
             ],
-            graphic: '/img/Globe.svg',
-            active: false,
-            lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
-            darkTheme: {color: 'white', backgroundColor: 'slateblue'},
+            cta: 'Be on the waitlist (Subscribe below)',
+            ctaRef: '/#waitlist',
+            ctaIsAlt: true,
+        }],
+    }, {
+        header: 'We work in the bigger picture to fight bad abstractions for the web at large.',
+        footer: '',
+        name: 'community',
+        icon: 'flag',
+        title: 'Community',
+        desc: 'WebQit\'s community initiatives and web standardization efforts.',
+        highlights: [
+            {icon: 'flag', content: 'Join in with your voice, or bring the course you care about.'},
+            {icon: 'arrow-return-right', content: 'The web is all of us!'},
+        ],
+        featured: [{
+            icon: 'flag',
+            name: 'webqit',
+            shortTitle: 'WebQit',
+            title: 'WebQit Community',
+            desc: 'WebQit community for Dev success.',
+            desc2: 'The best place to ask questions and provide feedback on your WebQit experience.',
+            meta: [
+                {title: 'OOHTML', desc: `<a href="https://github.com/webqit/oohtml/discussions">Github Discussions</a>, <a href="https://github.com/webqit/oohtml/issues">Github Issues</a>`},
+                {title: 'Observer', desc: `<a href="https://github.com/webqit/observer/discussions">Github Discussions</a>, <a href="https://github.com/webqit/observer/issues">Github Issues</a>`},
+                {title: 'Subscript', desc: `<a href="https://github.com/webqit/subscript/discussions">Github Discussions</a>, <a href="https://github.com/webqit/subscript/issues">Github Issues</a>`},
+            ],
+            cta: 'Join one of project communities below',
+            ctaRef: '/#community',
+            ctaIsAlt: true,
         }, {
             icon: 'flag',
-            title: 'community',
-            desc: 'WebQit community initiatives.',
-            desc2: 'Join our vibrant opensource communities',
-            desc3: '2',
-            intro: [
-                {icon: 'flag', content: 'WebQit\'s community initiatives and web standardization efforts'},
-                {icon: 'arrow-return-right', content: '...join in with your voice!'},
+            name: 'web-native',
+            shortTitle: 'Web-Native',
+            title: 'Web-Native (W3C) Community Group',
+            desc: 'A Community Group at W3C for the Web-Native initiative.',
+            desc2: 'Join in facilitating new and exisiting web platform technologies.',
+            meta: [
+                {title: 'Mission', desc: '"Bank more on the platform and less on abstractions."'},
             ],
-            graphic: '/img/Globe.svg',
-            active: false,
-            lightTheme: {color: 'black', backgroundColor: 'ghostwhite'},
-            darkTheme: {color: 'white', backgroundColor: 'slateblue'},
-        },
-    ];
-    const tooling = detailsAll(getAll(), true);
-    const cloud = [{
-        icon: 'clock',
-        name: 'Platform',
-        title: 'Webflo Cloud',
-        desc: 'WebQit Dev global deployment feef efedefe',
-        items: [],
-    }, {
-        icon: 'clock',
-        name: 'Database',
-        title: 'Objective DB',
-        desc: 'WebQit Dev global deployment feef efedefe',
-        items: [],
-    }];
-    const community = [{
-        icon: 'clock',
-        name: 'WebQit',
-        title: 'WebQit Community',
-        desc: 'WebQit Dev global deployment feef efedefe',
-        items: [],
-    }, {
-        icon: 'clock',
-        name: 'Web-Native',
-        title: 'Web-Native (W3C) Community Group',
-        desc: 'WebQit Dev global deployment feef efedefe',
-        items: [],
-    }];
+            cta: 'Join Web-Native',
+            ctaRef: 'https://w3.org/community/web-native/join',
+        }],
+    },];
+
     return {
         title: 'The WebQit Project',
-        outline,
-        tooling,
-        cloud,
-        community,
+        sections,
     }
 };
 
@@ -110,11 +140,9 @@ export default async (flo, recieved, next) => {
  */
 export async function render(data, _window, next) {
     if (!next.pathname) {
-        const createList = items => List.create(items.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
-        data.outline = createList(data.outline);
-        data.tooling = createList(data.tooling);
-        data.cloud = createList(data.cloud);
-        data.community = createList(data.community);
+        data.sections.forEach(s => {
+            s.featured = List.create(s.featured.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
+        });
     }
     return next();
 }
