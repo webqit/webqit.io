@@ -105,7 +105,7 @@ export default async (flo, recieved, next) => {
                 {title: 'Observer', desc: `<a href="https://github.com/webqit/observer/discussions">Github Discussions</a>, <a href="https://github.com/webqit/observer/issues">Github Issues</a>`},
                 {title: 'Subscript', desc: `<a href="https://github.com/webqit/subscript/discussions">Github Discussions</a>, <a href="https://github.com/webqit/subscript/issues">Github Issues</a>`},
             ],
-            cta: 'Join one of project communities below',
+            cta: 'Join our project communities below',
             ctaRef: '/#community',
             ctaIsAlt: true,
         }, {
