@@ -379,7 +379,7 @@ h1, h2, h3, h4, h5, h6,
         color: var(--section-main-a-color);
     }
     #cloud, #community {
-        --section-main-b-bg: dimgray;
+        --section-main-b-bg: dimgray !important;
     }
 }
 .page-section .section-main-header {
