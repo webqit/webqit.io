@@ -378,8 +378,8 @@ h1, h2, h3, h4, h5, h6,
         background-color: var(--section-main-a-bg);
         color: var(--section-main-a-color);
     }
-    .page-section .section-main-b {
-        border-bottom-right-radius: 50% 10px;
+    #cloud, #community {
+        --section-main-b-bg: dimgray;
     }
 }
 .page-section .section-main-header {
