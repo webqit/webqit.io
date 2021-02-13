@@ -83,7 +83,6 @@
                 <div class="progressbar-indicator-b"></div>
                 <script type="subscript">
                     let app = document.state;
-                    console.log('::::::===============:::::::::================::::::::::::', app.network.progress.active);
                     $(this).class('d-none', !app.network.progress.active);
                     $(this).css('color', app.network.error ? 'red' : 'blueviolet');
                 </script>
