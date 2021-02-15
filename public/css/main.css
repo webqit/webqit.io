@@ -97,6 +97,11 @@ h1, h2, h3, h4, h5, h6,
     font-family: 'League Spartan';
     font-size: 3em !important;
 }
+@media (max-width: 760px) {
+    .text-hero {
+        font-size: 2.4em !important;
+    }
+}
 .text-heavy {
     font-weight: 600;
 }
@@ -286,6 +291,12 @@ h1, h2, h3, h4, h5, h6,
     max-width: 500px;
     font-size: 2em;
 }
+@media (max-width: 760px) {
+    .page-section .section-header-content,
+    .page-section .section-footer-content {
+        font-size: 1.4em;
+    }
+}
 .page-section .section-header-content::before {
     position: absolute;
     top: 40px;
@@ -307,7 +318,7 @@ h1, h2, h3, h4, h5, h6,
     background-position: 50% 60%;
 }
 .page-section.hero .section-header-left {
-    border-right-color: purple;
+    border-right-color: skyblue;
 }
 .page-section.hero .section-header-content,
 .page-section.hero .section-footer-content {
@@ -316,7 +327,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .page-section.hero .section-header-content::before {
     border: 5px solid ghostwhite;
-    background-color: purple;
+    background-color: skyblue;
     transform: scale(1.3);
 }
 .section-header-tag {

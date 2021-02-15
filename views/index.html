@@ -6,7 +6,7 @@
 
     <div data-id="app_drawer" class="d-flex flex-column overflow-hidden bg-color-1 d-none" style="position: fixed; height: 100vh; max-width: 70vw; color: white; border-right: 1px solid silver; z-index: 16;">
 
-        <div class="col-grows pd-10 pd-x3 flex-column">
+        <div class="col-grows pd-10 pd-lft-x3 pd-rt-x3 flex-column">
             <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
                 <li>
                     <a href="/tooling" class="flex-y-center">
@@ -55,19 +55,24 @@
 
     <!-- HEADER -->
 
-    <header class="page-header flex-y-stretch">
-        <div class="col-1 sm--col-0 sm--pd-10 flex-center" style="border-right: 3px solid silver;">
-            <a data-id="app_drawer_open" class="flex-center b text-gradient text-gradient-2 sm--d-none" href="#">
-                <i class="bi bi-filter-left flex-center"></i>
-            </a>
+    <header class="page-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
+        <div class="col-1 pd-lft-10 pd-rt-10 sm--col-0 flex-x-center" style="border-right: 3px solid skyblue;">
+            <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
+                <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
+            </span>
         </div>
-        <div class="pd-10 pd-lft-x2 sm--pd-10 sm--pd-lft-x2 sm--pd-top-x3 sm--pd-btm-x3 col-grows">
-            <html-import name="logo_nav" template="brand" class="wt-auto"></html-import>
+        <div class="col-grows pd-lft-10 pd-rt-10 pd-x2">
+            <span class="brand-container flex-y-center">
+                <a href="/">
+                    <span class="txt-lg b">Web</span><span class="txt-lg b">Qit</span><br />
+                    <span class="txt-lg" style="color: blueviolet;">#dev_x</span>
+                </a>
+            </span>
         </div>
-        <div class="col-2 flex-center d-none sm--d-flex">
-            <a data-id="app_drawer_open2" class="flex-center mg-rt-10 b text-gradient text-gradient-2" href="#">
+        <div class="col-2 flex-x-center d-none sm--d-flex">
+            <span data-id="app_drawer_open2" class="mg-rt-10 b text-gradient text-gradient-2 cursor-pointer">
                 <i class="bi bi-filter-right flex-center"></i>
-            </a>
+            </span>
         </div>
     </header>
 
@@ -81,12 +86,12 @@
                 </div>
                 <h1 data-id="header" class="section-header-content text-hero pd-10 pd-x2 txt-xxl">
                     <span class="text-gradient text-gradient-2">We fight bad abstractions</span><br />
-                    <span class="">so you can have a better dev experience!</span>
+                    <span class="">so you can have a better developer experience!</span>
                 </h1>
                 <a href="#" class="mg-top-10 mg-lft-10 mg-lft-x2 flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1 d-none md--d-inline-flex" style="color: white;">
                     <i class="bi bi-play-fill sm flex-center"></i>
                 </a>
-                <ul data-id="inpage_menu" class="pd-10 pd-x2 pd-btm-0 txt-lg b text-gradient text-gradient-2 d-inline-flex flex-y-center flex-wrap list-style-none">
+                <ul data-id="inpage_menu" class="pd-10 pd-x2 pd-btm-0 txt-lg sm--txt-md b text-gradient text-gradient-2 d-inline-flex flex-y-center flex-wrap list-style-none">
                     <li class="mg-top-10 mg-rt-10 mg-rt-x3"><a href="#tooling" class="flex-y-center">
                         <i class="bi bi-braces sm flex-center"></i>
                         <span class="pd-10">Tooling</span>
@@ -103,7 +108,7 @@
             </div>
             <div class="section-header-right col-1 sm--col-0 sm--pd-10 flex-y-stretch textured">
                 <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
-                    <ul class="list-style-none">
+                    <ul class="mg-top-10 list-style-none">
                         <li class="mg-btm-10"><a href="#" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
                             <i class="bi bi-play-fill sm flex-center"></i>
                         </a></li>
@@ -240,7 +245,7 @@
         <div class="section-header flex-y-stretch">
             <div class="col-1 sm--col-0 sm--pd-10 section-header-left"></div>
             <div class="col-grows pos-rel">
-                <div data-id="header" class="section-header-content pd-10 pd-x2 pd-top-x3 pd-btm-x3 b"></div>
+                <div data-id="header" class="section-header-content pd-10 pd-x3 pd-lft-x2 b"></div>
             </div>
             <div class="col-1 sm--col-0 sm--pd-10 section-header-right"></div>
         </div>
