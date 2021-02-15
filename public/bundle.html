@@ -450,7 +450,7 @@ connectedCallback() {
 
     <div data-id="app_drawer" class="d-flex flex-column overflow-hidden bg-color-1 d-none" style="position: fixed; height: 100vh; max-width: 70vw; color: white; border-right: 1px solid silver; z-index: 16;">
 
-        <div class="col-grows pd-10 pd-lft-x3 pd-rt-x3 flex-column">
+        <div class="col-grows pd-10 pd-lft-x2 pd-rt-x2 flex-column">
             <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
                 <li>
                     <a href="/tooling" class="flex-y-center">
@@ -500,7 +500,7 @@ connectedCallback() {
     <!-- HEADER -->
 
     <header class="page-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
-        <div class="col-1 pd-lft-10 pd-rt-10 sm--col-0 flex-x-center" style="border-right: 3px solid skyblue;">
+        <div class="col-1 pd-lft-10 pd-rt-10 sm--col-0 flex-x-center" style="border-right: 3px solid hotpink;">
             <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
@@ -524,11 +524,11 @@ connectedCallback() {
 
         <div class="section-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
             <div class="section-header-left col-1 sm--col-0 sm--pd-10 border-color-2 pseudo-bg-color-2"></div>
-            <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0 b text-heavy">
-                <div class="pd-10 pd-x2 txt-xs color-2">
+            <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0 b heavy-text">
+                <div class="pd-10 pd-x2 txt-xs sm--txt-xxs color-2">
                     <span class="section-header-tag pd-10 color-2">#DEV_X</span>
                 </div>
-                <h1 data-id="header" class="section-header-content text-hero pd-10 pd-x2 txt-xxl">
+                <h1 data-id="header" class="section-header-content hero-text hero-font pd-10 pd-x2 txt-xxl">
                     <span class="text-gradient text-gradient-2">We fight bad abstractions</span><br />
                     <span class="">so you can have a better developer experience!</span>
                 </h1>
@@ -701,10 +701,10 @@ connectedCallback() {
                     <div class="section-main-header flex-y-center pd-lft-10 pd-rt-10 pd-x4 md--pos-rel">
                         <h2 data-id="title" class="section-title txt-xxl"></h2>
                     </div>
-                    <div class="section-main-content pd-10 pd-x4 pd-top-x2 txt-xl md--flex-y-center sm--d-block">
-                        <div class="mg-btm-10 mg-btm-x4 md--col-5 h5">
-                            <p data-id="desc" class="section-desc"></p>
-                            <ul data-id="highlights" template="page/_section" class="section-highlights list-style-none"></ul>
+                    <div class="section-main-content pd-10 pd-x4 pd-top-x2 txt-lg md--flex-y-center sm--d-block">
+                        <div class="mg-btm-10 mg-btm-x4 md--col-5">
+                            <p data-id="desc" class="section-desc legend-font"></p>
+                            <ul data-id="highlights" template="page/_section" class="section-highlights legend-font list-style-none"></ul>
                         </div>
                         <div class="md--col-7 txt-align-cntr">
                             <img data-id="graphic" class="section-graphic" src="/img/banner-dev-tools.pngd" />
@@ -889,7 +889,7 @@ connectedCallback() {
         if (app.page.nav) {
             var nav = app.page.nav;
             if (app.page.project) {
-                console.log(app.page.project);
+                $(this.namespace.project_outline_see_all).class('d-none', false);
                 $(this.namespace.project_npm).html('@webqit/' + app.page.project.name);
                 $(this.namespace.app_bar_title).html('@webqit/' + app.page.project.name);
                 $(this.namespace.app_bar_back).attr('href', '/tooling');
@@ -897,6 +897,7 @@ connectedCallback() {
                 $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.project.name);
                 nav = app.page.nav.items.filter(n => n.name === 'tooling')[0].subtree;
             } else {
+                $(this.namespace.project_outline_see_all).class('d-none', true);
                 $(this.namespace.app_bar_title).html('WebQit Tooling');
                 $(this.namespace.app_bar_back).attr('href', '/');
             }
@@ -937,7 +938,7 @@ connectedCallback() {
                     <div class="pd-lft-10 pd-rt-10">
                         <ul class="pd-8 flex-y-center list-style-none" style="border-bottom: 1px solid silver;">
                             <li>
-                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-4 d-inline-block color-1" style="background-color: lavender;">
+                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-4 d-inline-block drop-shadow color-1" style="background-color: white;">
                                     <i class="bi bi-braces sm flex-center pd-6"></i>
                                 </a>
                             </li>
@@ -955,7 +956,16 @@ connectedCallback() {
                     </div>
 
                     <div class="pd-10 col-grows overflow-y-auto">
-                        <ul data-id="project_outline" template="page/tooling/#layout/project-outline" class="project-outline list-style-none"></ul>
+                        <ul data-id="project_outline" template="page/tooling/#layout/project-outline" class="project-outline list-style-none">
+                            <li data-id="project_outline_see_all" class="pd-top-6 pd-btm-6 flex-y-center d-none">
+                                <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
+                                    <i data-id="subtree_icon" class="bi bi-chevron-left flex-center xs"></i>
+                                </span>
+                                <a data-id="link" href="/tooling" class="col-grows">
+                                    All
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     <div data-id="project_links" class="pd-10 b i flex-y-center flex-x-separate d-none">

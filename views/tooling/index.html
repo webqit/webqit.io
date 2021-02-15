@@ -7,7 +7,7 @@
         if (app.page.nav) {
             var nav = app.page.nav;
             if (app.page.project) {
-                console.log(app.page.project);
+                $(this.namespace.project_outline_see_all).class('d-none', false);
                 $(this.namespace.project_npm).html('@webqit/' + app.page.project.name);
                 $(this.namespace.app_bar_title).html('@webqit/' + app.page.project.name);
                 $(this.namespace.app_bar_back).attr('href', '/tooling');
@@ -15,6 +15,7 @@
                 $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.project.name);
                 nav = app.page.nav.items.filter(n => n.name === 'tooling')[0].subtree;
             } else {
+                $(this.namespace.project_outline_see_all).class('d-none', true);
                 $(this.namespace.app_bar_title).html('WebQit Tooling');
                 $(this.namespace.app_bar_back).attr('href', '/');
             }
@@ -59,7 +60,7 @@
                     <div class="pd-lft-10 pd-rt-10">
                         <ul class="pd-8 flex-y-center list-style-none" style="border-bottom: 1px solid silver;">
                             <li>
-                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-4 d-inline-block color-1" style="background-color: lavender;">
+                                <a href="/tooling" title="Tooling" class="icon-webqit-tooling active pd-4 d-inline-block drop-shadow color-1" style="background-color: white;">
                                     <i class="bi bi-braces sm flex-center pd-6"></i>
                                 </a>
                             </li>
@@ -77,7 +78,16 @@
                     </div>
 
                     <div class="pd-10 col-grows overflow-y-auto">
-                        <ul data-id="project_outline" template="page/tooling/#layout/project-outline" class="project-outline list-style-none"></ul>
+                        <ul data-id="project_outline" template="page/tooling/#layout/project-outline" class="project-outline list-style-none">
+                            <li data-id="project_outline_see_all" class="pd-top-6 pd-btm-6 flex-y-center d-none">
+                                <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
+                                    <i data-id="subtree_icon" class="bi bi-chevron-left flex-center xs"></i>
+                                </span>
+                                <a data-id="link" href="/tooling" class="col-grows">
+                                    All
+                                </a>
+                            </li>
+                        </ul>
                     </div>
 
                     <div data-id="project_links" class="pd-10 b i flex-y-center flex-x-separate d-none">

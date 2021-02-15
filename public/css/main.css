@@ -22,6 +22,7 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 a {
     color: inherit;
@@ -29,9 +30,6 @@ a {
 }
 img {
     max-width: 100%;
-}
-p, .p, a, .a {
-    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* ------------------ */
@@ -61,6 +59,28 @@ p, .p, a, .a {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: 'Josefin Sans', sans-serif;
+}
+p, .p,
+.content-font {
+    font-family: Roboto, 'Noto Sans', sans-serif;
+    font-stretch: normal;
+}
+.hero-font {
+    font-family: 'League Spartan';
+}
+.legend-font {
+    font-family: 'Prompt', sans-serif;
+}
+.hero-text {
+    font-size: 3em !important;
+}
+@media (max-width: 760px) {
+    .hero-text {
+        font-size: 2.8em !important;
+    }
+}
+.heavy-text {
+    font-weight: 600;
 }
 
 /* ------------------ */
@@ -93,18 +113,6 @@ h1, h2, h3, h4, h5, h6,
 
 /* ------------------ */
 
-.text-hero {
-    font-family: 'League Spartan';
-    font-size: 3em !important;
-}
-@media (max-width: 760px) {
-    .text-hero {
-        font-size: 2.8em !important;
-    }
-}
-.text-heavy {
-    font-weight: 600;
-}
 .underline,
 .underlines a {
     position: relative;
@@ -318,7 +326,7 @@ h1, h2, h3, h4, h5, h6,
     background-position: 50% 60%;
 }
 .page-section.hero .section-header-left {
-    border-right-color: skyblue;
+    border-right-color: hotpink;
 }
 .page-section.hero .section-header-content,
 .page-section.hero .section-footer-content {
@@ -327,7 +335,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .page-section.hero .section-header-content::before {
     border: 5px solid ghostwhite;
-    background-color: skyblue;
+    background-color: hotpink;
     transform: scale(1.3);
 }
 .section-header-tag {
@@ -354,6 +362,7 @@ h1, h2, h3, h4, h5, h6,
 
 .page-section .section-main {
     min-height: 100vh;
+    background-color: var(--section-main-a-bg);
     /**
     box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.75);
     */
@@ -364,33 +373,21 @@ h1, h2, h3, h4, h5, h6,
 .page-section .section-main-a,
 .page-section .section-main-b {
     padding-top:75px;
-    padding-bottom:50px;
-}
-.page-section .section-main-a,
-.page-section .section-main-a .section-main-header {
-    background-color: var(--section-main-a-bg);
-    color: var(--section-main-a-color);
+    padding-bottom:45px;
 }
 .page-section .section-main-a {
+    background-color: var(--section-main-a-bg);
+    color: var(--section-main-a-color);
     border-right: 1px solid var(--section-main-a-border);
 }
 .page-section .section-main-b {
-    /**
-    border-bottom-right-radius: 50% 5px;
-    */
-}
-.page-section .section-main-b,
-.page-section .section-main-b .section-main-header {
     background-color: var(--section-main-b-bg);
     color: var(--section-main-b-color);
 }
 @media (max-width: 992px) {
-    .page-section .section-main-b .section-main-header {
+    .page-section .section-main-b {
         background-color: var(--section-main-a-bg);
         color: var(--section-main-a-color);
-    }
-    #cloud, #community {
-        --section-main-b-bg: dimgray !important;
     }
 }
 .page-section .section-main-header {
@@ -399,9 +396,15 @@ h1, h2, h3, h4, h5, h6,
     font-weight: bold;
     line-height: 60px;
     z-index: 3;
+    -wekit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
 }
 .page-section .section-main-content {
     min-height: min-content !important;
+}
+.page-section .section-highlights {
+    border-top: 1px dashed silver;
+    padding-top: 15px;
 }
 .page-section .section-desc,
 .page-section .section-highlights li {
@@ -422,11 +425,12 @@ h1, h2, h3, h4, h5, h6,
     display: inline-block;
     font-weight: bold;
     font-size: 1.1em;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     cursor: default;
 }
 .page-section .section-nav > li.active {
-    border-color: currentColor;
+    color: white;
+    border-color: var(--section-main-b-border);
 }
 .page-section .section-nav > .overflow-notch {
     border: 1px dashed transparent;
@@ -472,8 +476,9 @@ h1, h2, h3, h4, h5, h6,
     --section-main-a-color2: white;
     --section-main-a-border: blueviolet;
     
+    --section-main-b-bg: purple;
     --section-main-b-bg: rgba(30, 30, 30, 1);
-    --section-main-b-color: lightgray;
+    --section-main-b-color: silver;
     --section-main-b-bg2: rgba(100, 100, 100, 0.05);
     --section-main-b-color2: white;
     --section-main-b-border: blueviolet;
