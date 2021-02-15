@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6,
 }
 @media (max-width: 760px) {
     .text-hero {
-        font-size: 2.4em !important;
+        font-size: 2.8em !important;
     }
 }
 .text-heavy {
@@ -294,7 +294,7 @@ h1, h2, h3, h4, h5, h6,
 @media (max-width: 760px) {
     .page-section .section-header-content,
     .page-section .section-footer-content {
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 }
 .page-section .section-header-content::before {
