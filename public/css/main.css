@@ -389,6 +389,9 @@ p, .p,
         background-color: var(--section-main-a-bg);
         color: var(--section-main-a-color);
     }
+    .page-section .section-main-b .section-main-content {
+        background-color: dimgray;
+    }
 }
 .page-section .section-main-header {
     position: sticky;
