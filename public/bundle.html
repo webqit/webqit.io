@@ -448,7 +448,7 @@ connectedCallback() {
 
     <!-- OVERLAY_MENU -->
 
-    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden bg-color-1 d-none" style="position: fixed; height: 100vh; max-width: 70vw; color: white; border-right: 1px solid silver; z-index: 16;">
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: rgba(60, 60, 60, 1); color: silver; border-right: 1px solid silver; z-index: 16;">
 
         <div class="col-grows pd-10 pd-lft-x2 pd-rt-x2 flex-column">
             <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
@@ -592,20 +592,20 @@ connectedCallback() {
     <!-- FOOTER -->
 
     <footer class="home flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
-        <div class="col-2 txt-align-cntr sm--pd-lft-10 sm--pd-lft-x2">
-            <a href="/#" class="sm--mg-top-10 sm--mg-top-x3"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
-            <ul class="mg-top-10 mg-top-x2 list-style-none">
-                <li class="pd-4"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
+        <div class="col-2 sm--col-12 sm--pd-10 sm--pd-x3 sm--pd-top-0 txt-align-cntr md--flex-y-center md--flex-x-separate">
+            <a href="/#" class="sm--mg-top-10 sm--mg-top-x3"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--min-wt-5 sm--min-wt-x10 mg-lft-2 negative-mg" /></a>
+            <ul class="mg-top-10 mg-top-x2 md--flex-y-center list-style-none">
+                <li class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
                     <i class="bi bi-twitter sm flex-center"></i>
                 </a></li>
-                <li class="pd-4"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
+                <li class="pd-4 sm--pd-10"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
                     <i class="bi bi-github sm flex-center"></i>
                 </a></li>
             </ul>
         </div>
         <div class="col-8 sm--col-12 flex-y-stretch flex-x-separate flex-wrap">
-            <ul class="flex-y-stretch flex-wrap pd-10 pd-btm-x3 list-style-none">
-                <li class="pd-10">
+            <ul class="sm--col-12 sm--txt-align-cnt-r flex-y-stretch flex-wrap pd-10 pd-btm-x3 txt-smaller list-style-none">
+                <li class="col-4 pd-10">
                     <span class="pd-10 b">Tooling</span>
                     <ul class="mg-top-10 list-style-none">
                         <li class="pd-10"><a href="/tooling">Projects</a></li>
@@ -614,7 +614,7 @@ connectedCallback() {
                         <li class="pd-10"><a href="/">Sponsors</a></li>
                     </ul>
                 </li>
-                <li class="pd-10">
+                <li class="col-4 pd-10">
                     <span class="pd-10 b">Cloud</span>
                     <ul class="mg-top-10 list-style-none">
                         <li class="pd-10"><a href="/">Services</a></li>
@@ -622,7 +622,7 @@ connectedCallback() {
                         <li class="pd-10"><a href="/">Status</a></li>
                     </ul>
                 </li>
-                <li class="pd-10">
+                <li class="col-4 pd-10">
                     <span class="pd-10 b">Community</span>
                     <ul class="mg-top-10 list-style-none">
                         <li class="pd-10"><a href="/">WebQit</a></li>
@@ -631,10 +631,10 @@ connectedCallback() {
                     </ul>
                 </li>
             </ul>
-            <div class="pd-10" id="waitlist">
-                <div class="pd-4">
-                    <h3 class="pd-6">We're in private beta and iterating fast.</h3>
-                    <div class="pd-6 b">You may want to subscribe to updates...</div>
+            <div class="sm--col-12 pd-10" id="waitlist">
+                <div class="pd-4 sm--txt-align-cntr">
+                    <div class="pd-6 b">We're in private beta and iterating fast.</div>
+                    <div class="pd-6">You may want to subscribe to updates...</div>
                 </div>
                 <div class="pd-10">
                     <div class="pd-10" style="background-color: whitesmoke;">
@@ -651,7 +651,7 @@ connectedCallback() {
                                         <div class="col-grows flex-y-stretch">
                                             <input type="email" value="" name="EMAIL" class="required email wt-full pd-8 pd-x2 border-none" placeholder="Email Address" id="mce-EMAIL" />
                                         </div>
-                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button pd-8 pd-x2 border-none bg-color-1" style="color: white;" />
+                                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button pd-8 pd-x2 border-none" style="color: white; background-color: dimgray;" />
                                     </div>
                                     <div id="mce-responses" class="clear">
                                         <div class="response" id="mce-error-response" style="display:none; color: blueviolet; font-weight: bold;"></div>
@@ -695,13 +695,15 @@ connectedCallback() {
 
         <div class="flex-y-stretch">
             <div class="pd-10 sm--pd-lft-0 textured"></div>
-            <div data-id="main" class="section-main col-grows flex-y-stretch flex-wrap">
-                <div class="section-main-a col-4 md--col-12 md--pd-top-10 md--pd-top-x3 md--pd-btm-10 md--border-none">
+            <div data-id="main" class="section-main col-grows flex-y-stretch flex-wrap md--radius-6">
+                <div class="section-main-a col-3 md--col-12 d-flex flex-column md--d-block md--border-none r-adius-6 r-adius-top-rt-none r-adius-btm-rt-none md--radius-6 md--radius-btm-lft-none md--radius-btm-rt-none">
 
-                    <div class="section-main-header flex-y-center pd-lft-10 pd-rt-10 pd-x4 md--pos-rel">
+                    <div class="section-main-padding-header ht-80 md--ht-40 textured radius-6 radius-top-rt-none radius-btm-rt-none radius-btm-lft-none md--radius-6 md--radius-btm-lft-none md--radius-btm-rt-none"></div>
+                    <div class="section-main-header textured flex-y-center flex-x-separate pd-lft-10 pd-rt-10 pd-x4 md--pos-rel">
                         <h2 data-id="title" class="section-title txt-xxl"></h2>
+                        <i data-id="icon" class="section-icon bi flex-center"></i>
                     </div>
-                    <div class="section-main-content pd-10 pd-x4 pd-top-x2 txt-lg md--flex-y-center sm--d-block">
+                    <div class="section-main-content col-grows pd-10 pd-x4 pd-top-x2 txt-lg flex-y-separate md--flex-y-center sm--d-block">
                         <div class="mg-btm-10 mg-btm-x4 md--col-5">
                             <p data-id="desc" class="section-desc legend-font"></p>
                             <ul data-id="highlights" template="page/_section" class="section-highlights legend-font list-style-none"></ul>
@@ -710,11 +712,13 @@ connectedCallback() {
                             <img data-id="graphic" class="section-graphic" src="/img/banner-dev-tools.pngd" />
                         </div>
                     </div>
+                    <div class="vertical-fit-content"></div>
 
                 </div>
 
-                <div class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block md--pd-top-0 md--pd-btm-0">
-                    <div class="section-main-header flex-x-separate flex-y-center pd-lft-10 pd-rt-10 pd-x3">
+                <div class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block r-adius-6 r-adius-top-lft-none r-adius-btm-lft-none md--radius-6 md--radius-top-lft-none md--radius-top-rt-none">
+                    <div class="section-main-padding-header ht-80 textured radius-6 radius-top-lft-none radius-btm-lft-none radius-btm-rt-none md--d-none"></div>
+                    <div class="section-main-header textured flex-x-separate flex-y-center pd-lft-10 pd-rt-10 pd-x3">
 
                         <div class="col-grows">
                             <ul data-id="tabs" play-seq-displacement="100" template="page/_section" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
@@ -727,12 +731,12 @@ connectedCallback() {
                             </ul>        
                         </div>
 
-                        <a data-id="url" href="" class="section-url pd-10 flex-y-center">
-                            <i class="bi bi-arrow-right flex-center"></i>
+                        <a data-id="url" href="" class="section-url flex-y-center">
+                            <i class="bi bi-arrow-right sm flex-center"></i>
                         </a>
 
                     </div>
-                    <div data-id="tabpanels" template="page/_section" class="section-main-content col-grows md--col-12 flex-y-stretch"></div>
+                    <div data-id="tabpanels" template="page/_section" class="section-main-content col-grows vertical-fit-content pd-btm-10 pd-x3 md--col-12 flex-y-stretch"></div>
                 </div>
             </div>
             <div class="pd-10 sm--pd-rt-0 textured"></div>
@@ -748,35 +752,38 @@ connectedCallback() {
 
         <script type="subscript">
             let section = this.state;
-            let overflowNotch = this.namespace.overflowNotch;
-            let overflowList = overflowNotch.namespace.list;
-            if (!section.title) return;
-            $(this.namespace.main).attr('id', section.name);
-            $(this.namespace.header).html(section.header);
-            $(this.namespace.footer).html(section.footer);
-            $(this.namespace.url).attr('href', '/' + section.name);
-            $(this.namespace.title).html(section.title);
-            $(this.namespace.desc).html(section.desc);
-            $(this.namespace.highlights).itemize(section.highlights, null, null, {itemExportId: 'highlight'});
-            $(this.namespace.graphic).attr('src', '');
-                        $(this.namespace.tabs).itemize(section.featured.items, (e, el, d, k) => {
-                d.overflowCollapsed = false;
-                if (k === parseInt((section.featured.items.length - 1) / 2)) {
-                    el.after(overflowNotch);
-                }
-            }, (e, el, d, k, overflowCount) => {
-                d.overflowCollapsed = e === 'collapse';
-                $(overflowNotch).class('d-none', overflowCount === 0);
-            }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
-            $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
-                        $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
+            if (section.title) {
+                let overflowNotch = this.namespace.overflowNotch;
+                let overflowList = overflowNotch.namespace.list;
+                $(this).attr('id', section.name + '-section');
+                $(this.namespace.main).attr('id', section.name);
+                $(this.namespace.header).html(section.header);
+                $(this.namespace.footer).html(section.footer);
+                $(this.namespace.url).attr('href', '/' + section.name);
+                $(this.namespace.title).html(section.title);
+                $(this.namespace.icon).class('bi-' + section.icon, true);
+                $(this.namespace.desc).html(section.desc);
+                $(this.namespace.highlights).itemize(section.highlights, null, null, {itemExportId: 'highlight'});
+                $(this.namespace.graphic).attr('src', section.graphic);
+                                $(this.namespace.tabs).itemize(section.featured.items, (e, el, d, k) => {
+                    d.overflowCollapsed = false;
+                    if (k === parseInt((section.featured.items.length - 1) / 2)) {
+                        el.after(overflowNotch);
+                    }
+                }, (e, el, d, k, overflowCount) => {
+                    d.overflowCollapsed = e === 'collapse';
+                    $(overflowNotch).class('d-none', overflowCount === 0);
+                }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
+                $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
+                                $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
+            }
         </script>
 
     </section>
 
     <li exportgroup="highlight" namespace class="flex-y-start">
-        <span class="bullet flex-center min-wt-40 ht-40 radius-full mg-rt-6 mg-rt-x2">
-            <i data-id="icon" class="bi xs flex-center"></i>
+        <span class="bullet flex-center radius-full mg-rt-6 mg-rt-x2">
+            <i data-id="icon" class="bi sm flex-center"></i>
         </span>
         <span data-id="content" class="col-grows"></span>
         <script type="subscript">
@@ -821,13 +828,13 @@ connectedCallback() {
                 <h3 data-id="title" class="panel-title txt-xl"></h3>
                 <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
                 <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
-                <a data-id="ctaRef" href="/" class="panel-page cta d-inline-flex flex-y-center">
-                    <span data-id="cta" class="b underline">Explore</span>
+                <a data-id="ctaRef" href="/" class="panel-page p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
+                    <span data-id="cta" class="b">Explore</span>
                     <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
                 </a>
             </div>
         </div>
-        <div class="panel-demo-container pd-lft-10 pd-lft-x6 sm--pd-lft-8 overflow-hidden textured">
+        <div class="panel-demo-container textured pd-lft-10 pd-lft-x6 sm--pd-lft-8 overflow-hidden">
             <ul data-id="demo" template="page/_section" class="panel-demo list-style-none"></ul>
         </div>
         <div class="panel-meta-container pd-10 pd-x4">
@@ -868,7 +875,7 @@ connectedCallback() {
     </li>
 
     <li exportgroup="meta" namespace class="flex-y-start sm--d-block mg-btm-10">
-        <div data-id="title" class="mg-lft-6 md--mg-lft-0 sm--mg-btm-4 b wt-80 pd-rt-10 pd-rt-x2 txt-align-rt sm--txt-align-lft"></div>
+        <div data-id="title" class="mg-lft-6 md--mg-lft-0 sm--mg-btm-4 wt-80 pd-rt-10 pd-rt-x2 txt-align-rt sm--txt-align-lft" style="color: gray;"></div>
         <div data-id="desc" class="col-grows pd-lft-10 pd-lft-x2 sm--pd-lft-0"></div>
         <script type="subscript">
             if (!this.state.title) return;

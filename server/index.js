@@ -23,7 +23,6 @@ export default async (flo, recieved, next) => {
     featuredProjects.forEach(p => {
         p.meta = [
             {title: 'Tags', desc: `#${p.tags.join(', #')}`},
-            {title: 'Repo', desc: `<a href="https://github.com/${p.repo}">${p.repo}</a>`},
             {title: 'License', desc: 'MIT'},
         ];
     });
@@ -33,7 +32,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'tooling',
         icon: 'braces',
-        graphic: '/img/Globe.svg',
+        graphic: '/img/banner-dev-tools.png',
         title: 'Tooling',
         desc: 'WebQit\'s opensource web tooling project.',
         highlights: [
@@ -46,7 +45,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'cloud',
         icon: 'cloud',
-        graphic: '/img/Globe.svg',
+        graphic: '/img/cloud-itls-image-best-approach.png',
         title: 'Cloud',
         desc: 'WebQit\'s fully-managed platform and APIs.',
         highlights: [
@@ -87,6 +86,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'community',
         icon: 'flag',
+        graphic: '/img/images_(31)[1].fw.png',
         title: 'Community',
         desc: 'WebQit\'s community initiatives and web standardization efforts.',
         highlights: [
@@ -102,8 +102,8 @@ export default async (flo, recieved, next) => {
             desc2: 'The best place to ask questions and provide feedback on your WebQit experience.',
             meta: [
                 {title: 'OOHTML', desc: `<a href="https://github.com/webqit/oohtml/discussions">Github Discussions</a>, <a href="https://github.com/webqit/oohtml/issues">Github Issues</a>`},
-                {title: 'Observer', desc: `<a href="https://github.com/webqit/observer/discussions">Github Discussions</a>, <a href="https://github.com/webqit/observer/issues">Github Issues</a>`},
-                {title: 'Subscript', desc: `<a href="https://github.com/webqit/subscript/discussions">Github Discussions</a>, <a href="https://github.com/webqit/subscript/issues">Github Issues</a>`},
+                //{title: 'Observer', desc: `<a href="https://github.com/webqit/observer/discussions">Github Discussions</a>, <a href="https://github.com/webqit/observer/issues">Github Issues</a>`},
+                //{title: 'Subscript', desc: `<a href="https://github.com/webqit/subscript/discussions">Github Discussions</a>, <a href="https://github.com/webqit/subscript/issues">Github Issues</a>`},
             ],
             cta: 'Join a project community below',
             ctaRef: '/#community',
