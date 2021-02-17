@@ -409,6 +409,10 @@ p, .p,
 @media (max-width: 992px) {
     .page-section .section-main-a {
         box-shadow: none;
+        z-index: 10;
+    }
+    .page-section .section-main-b .section-main-header {
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
     }
 }
 .page-section .section-main-a .section-main-header,
@@ -444,12 +448,6 @@ p, .p,
 .page-section .section-highlights li {
     margin-bottom: 15px;
 }
-.page-section .section-highlights .bullet {
-    /**
-    background-color: var(--section-main-a-bg2);
-    color: var(--section-main-a-color2);
-    */
-}
 
 /* section-nav overflow-notch */
 
@@ -466,12 +464,12 @@ p, .p,
 }
 .page-section .section-nav > li.active {
     color: var(--section-main-b-color-active);
-    border-color: currentColor;
+    border-bottom-color: currentColor;
 }
 @media (max-width: 992px) {
     .page-section .section-nav > li.active {
         color: var(--section-main-a-color-active);
-        border-color: currentColor;
+        background-color: rgba(0, 0, 0, 0.125);
     }
 }
 .page-section .section-nav > .overflow-notch {
@@ -555,7 +553,7 @@ p, .p,
 }
 #community-section {
     --story-line-color: pink;
-    --section-main-a-bg: cornflowerblue;
+    --section-main-a-bg: rgb(41, 96, 199);
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
