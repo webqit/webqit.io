@@ -32,7 +32,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'tooling',
         icon: 'braces',
-        graphic: '/img/banner-dev-tools.png',
+        graphic: '/img/illus/tooling/dev.fw.png',
         title: 'Tooling',
         desc: 'WebQit\'s opensource web tooling project.',
         highlights: [
@@ -45,7 +45,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'cloud',
         icon: 'cloud',
-        graphic: '/img/cloud-itls-image-best-approach.png',
+        graphic: '/img/illus/cloud/cloud3.fw.png',
         title: 'Cloud',
         desc: 'WebQit\'s fully-managed platform and APIs.',
         highlights: [
@@ -86,7 +86,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'community',
         icon: 'flag',
-        graphic: '/img/images_(31)[1].fw.png',
+        graphic: '/img/cloud-itls-image-best-approach.png',
         title: 'Community',
         desc: 'WebQit\'s community initiatives and web standardization efforts.',
         highlights: [

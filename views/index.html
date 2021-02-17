@@ -55,13 +55,13 @@
 
     <!-- HEADER -->
 
-    <header class="page-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
-        <div class="col-1 pd-lft-10 pd-rt-10 sm--col-0 flex-x-center" style="border-right: 3px solid hotpink;">
+    <header class="page-header flex-y-stretch">
+        <div class="col-1 pd-10 sm--col-0 flex-x-center" style="border-right: 3px solid hotpink;">
             <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
         </div>
-        <div class="col-grows pd-lft-10 pd-rt-10 pd-x2">
+        <div class="col-grows pd-10 pd-x2">
             <span class="brand-container flex-y-center">
                 <a href="/">
                     <span class="txt-lg b">Web</span><span class="txt-lg b">Qit</span><br />
@@ -78,7 +78,7 @@
 
     <section namespace class="page-section hero">
 
-        <div class="section-header flex-y-stretch pd-top-10 pd-btm-10 pd-x2">
+        <div class="section-header flex-y-stretch">
             <div class="section-header-left col-1 sm--col-0 sm--pd-10 border-color-2 pseudo-bg-color-2"></div>
             <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0 b heavy-text">
                 <div class="pd-10 pd-x2 txt-xs sm--txt-xxs color-2">
@@ -127,7 +127,7 @@
 
     <section namespace class="page-section showcase">
         <div class="showcase-items flex-center">
-            <img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-40" />
+            <img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60" />
         </div>
         <div class="section-footer flex-y-stretch textured">
             <div class="section-footer-left col-1 sm--col-0 sm--pd-10 border-color-2"></div>
@@ -136,7 +136,7 @@
 
     <!-- MAIN -->
 
-    <main data-id="sections" template="page/_section" class="pos-rel">
+    <main data-id="sections" template="page/_section" class="page-main pos-rel">
         <script type="subscript">
             let app = document.state;
             if (app.page.sections) {
@@ -147,7 +147,7 @@
 
     <!-- FOOTER -->
 
-    <footer class="home flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
+    <footer class="page-footer flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
         <div class="col-2 sm--col-12 sm--pd-10 sm--pd-x3 sm--pd-top-0 txt-align-cntr md--flex-y-center md--flex-x-separate">
             <a href="/#" class="sm--mg-top-10 sm--mg-top-x3"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--min-wt-5 sm--min-wt-x10 mg-lft-2 negative-mg" /></a>
             <ul class="mg-top-10 mg-top-x2 md--flex-y-center list-style-none">
@@ -252,15 +252,15 @@
 
         <div class="flex-y-stretch">
             <div class="pd-10 sm--pd-lft-0 textured"></div>
-            <div data-id="main" class="section-main col-grows flex-y-stretch flex-wrap md--radius-6">
-                <div class="section-main-a col-3 md--col-12 d-flex flex-column md--d-block md--border-none r-adius-6 r-adius-top-rt-none r-adius-btm-rt-none md--radius-6 md--radius-btm-lft-none md--radius-btm-rt-none">
+            <div data-id="main" class="section-main col-grows flex-y-stretch flex-wrap">
+                <div class="section-main-a col-3 md--col-12 d-flex flex-column md--d-block md--border-none">
 
-                    <div class="section-main-padding-header ht-80 md--ht-40 textured radius-6 radius-top-rt-none radius-btm-rt-none radius-btm-lft-none md--radius-6 md--radius-btm-lft-none md--radius-btm-rt-none"></div>
+                    <div class="section-main-padding-header ht-80 md--ht-40 textured"></div>
                     <div class="section-main-header textured flex-y-center flex-x-separate pd-lft-10 pd-rt-10 pd-x4 md--pos-rel">
                         <h2 data-id="title" class="section-title txt-xxl"></h2>
                         <i data-id="icon" class="section-icon bi flex-center"></i>
                     </div>
-                    <div class="section-main-content col-grows pd-10 pd-x4 pd-top-x2 txt-lg flex-y-separate md--flex-y-center sm--d-block">
+                    <div class="section-main-content col-grows vertical-fit-content pd-10 pd-x4 pd-top-x2 txt-lg flex-y-separate md--flex-y-center sm--d-block">
                         <div class="mg-btm-10 mg-btm-x4 md--col-5">
                             <p data-id="desc" class="section-desc legend-font"></p>
                             <ul data-id="highlights" template="page/_section" class="section-highlights legend-font list-style-none"></ul>
@@ -269,12 +269,11 @@
                             <img data-id="graphic" class="section-graphic" src="/img/banner-dev-tools.pngd" />
                         </div>
                     </div>
-                    <div class="vertical-fit-content"></div>
 
                 </div>
 
-                <div class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block r-adius-6 r-adius-top-lft-none r-adius-btm-lft-none md--radius-6 md--radius-top-lft-none md--radius-top-rt-none">
-                    <div class="section-main-padding-header ht-80 textured radius-6 radius-top-lft-none radius-btm-lft-none radius-btm-rt-none md--d-none"></div>
+                <div class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block">
+                    <div class="section-main-padding-header ht-80 textured md--d-none"></div>
                     <div class="section-main-header textured flex-x-separate flex-y-center pd-lft-10 pd-rt-10 pd-x3">
 
                         <div class="col-grows">
@@ -332,7 +331,7 @@
                     d.overflowCollapsed = e === 'collapse';
                     $(overflowNotch).class('d-none', overflowCount === 0);
                 }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
-                $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
+                $(overflowNotch.namespace.list).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
                 // ----
                 $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
             }

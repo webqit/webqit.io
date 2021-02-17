@@ -24,6 +24,9 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-family: 'Inter', sans-serif;
 }
+body {
+    
+}
 a {
     color: inherit;
     text-decoration: none;
@@ -76,7 +79,7 @@ p, .p,
 }
 @media (max-width: 760px) {
     .hero-text {
-        font-size: 2.8em !important;
+        font-size: 2.9em !important;
     }
 }
 .heavy-text {
@@ -275,12 +278,21 @@ p, .p,
 
 /** ------------- */
 
-.page-header {
+.homepage {
+    --page-bg: ghostwhite;
+    --page-color: silver;
+    background-color: var(--page-bg);
+}
+.page-section {
+    color: var(--page-color);
 }
 .page-header,
 .page-section.hero {
-    border-bottom: 1px dashed silver;
-    background-color: ghostwhite;
+    /**
+    */
+    border-bottom: 1px dashed gainsboro;
+}
+.page-header {
 }
 .page-section.hero {
 }
@@ -300,14 +312,15 @@ p, .p,
 .page-section .section-header-content,
 .page-section .section-footer-content {
     position: relative;
-    color: lightgray;
+    color: silver;
     max-width: 500px;
     font-size: 2em;
+    transition: all 800ms;
 }
 @media (max-width: 760px) {
     .page-section .section-header-content,
     .page-section .section-footer-content {
-        font-size: 1.6em;
+        font-size: 1.9em;
     }
 }
 .page-section .section-header-content::before {
@@ -318,17 +331,27 @@ p, .p,
     height: 20px;
     border-radius: 50%;
     border: 5px solid white;
-    background-color: lightgray;
+    background-color: silver;
     display: inline-block;
     content: "";
+    transition: all 800ms;
+}
+.page-section .section-header-content:hover,
+.page-section .section-footer-content:hover {
+    color: var(--story-line-color, lightgray);
+}
+.page-section .section-header-content:hover::before {
+    background-color: var(--story-line-color, lightgray);
 }
 
 /* ------------------- */
 
 .page-section.hero {
+    /**
     background-image: url(/img/nimbus-home-platform-bottom-56a511181a4242337a2bf115f8e32d613c081d1ddbf38d3d599826e0f9f7aac1.svg);
     background-repeat: no-repeat;
     background-position: 50% 60%;
+    */
 }
 .page-section.hero .section-header-left {
     border-right-color: hotpink;
@@ -350,8 +373,9 @@ p, .p,
 /* ------------------- */
 
 .page-section.showcase .showcase-items {
-    height: 100px;
+    height: 160px;
     border-bottom: 1px dashed gainsboro;
+    background-color: white;
 }
 .page-section.showcase .showcase-items img {
     transition: all 300ms;
@@ -360,6 +384,7 @@ p, .p,
     transform: scale(1.3);
  }
 .page-section.showcase .section-footer {
+    --story-line-color: hotpink;
     height: 50px;
 }
 
@@ -367,9 +392,6 @@ p, .p,
 
 .page-section .section-main {
     min-height: 100vh;
-    /**
-    */
-    box-shadow: 0px 2.5px 5px -2.5px rgba(0, 0, 0, 0.95);
 }
 
 /* ------------------- */
@@ -378,17 +400,16 @@ p, .p,
     background-color: var(--section-main-a-bg);
     color: var(--section-main-a-color);
     border-right: 3px solid var(--section-main-a-border);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 }
 .page-section .section-main-b {
     background-color: var(--section-main-b-bg);
     color: var(--section-main-b-color);
 }
-@media (max-width: 760px) {
-    /**
-    .page-section .section-main-b {
-        background-color: gainsboro;
+@media (max-width: 992px) {
+    .page-section .section-main-a {
+        box-shadow: none;
     }
-    */
 }
 .page-section .section-main-a .section-main-header,
 .page-section .section-main-a .section-main-padding-header {
@@ -500,13 +521,14 @@ p, .p,
 #tooling-section {
     --story-line-color: violet;
     --section-main-a-bg: rgba(60, 60, 60, 1);
-    --section-main-a-color: silver;
-    --section-main-a-color-active: violet;
+    --section-main-a-bg: purple;
+    --section-main-a-color: gainsboro;
+    --section-main-a-color-active: white;
     --section-main-a-border: blueviolet;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: whitesmoke;
+    --section-main-b-bg: white;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: blueviolet;
@@ -516,14 +538,14 @@ p, .p,
 }
 #cloud-section {
     --story-line-color: skyblue;
-    --section-main-a-bg: lavender;
-    --section-main-a-color: black;
-    --section-main-a-color-active: darkblue;
+    --section-main-a-bg: blueviolet;
+    --section-main-a-color: whitesmoke;
+    --section-main-a-color-active: white;
     --section-main-a-border: dodgerblue;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: whitesmoke;
+    --section-main-b-bg: white;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: dodgerblue;
@@ -531,17 +553,16 @@ p, .p,
     --section-main-b-bg2: rgba(100, 100, 100, 0.125);
     --section-main-b-color2: white;
 }
-#community {
+#community-section {
     --story-line-color: pink;
-    --section-main-a-bg: rgb(253, 181, 231);
-    --section-main-a-bg: lavenderblush;
-    --section-main-a-color: black;
-    --section-main-a-color-active: darkred;
+    --section-main-a-bg: cornflowerblue;
+    --section-main-a-color: whitesmoke;
+    --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: whitesmoke;
+    --section-main-b-bg: white;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: deeppink;
