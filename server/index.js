@@ -41,7 +41,7 @@ export default async (flo, recieved, next) => {
         ],
         featured: featuredProjects,
     }, {
-        header: 'We develop the most concise cloud services to deliver the experience end-to-end.',
+        header: 'We bring the best of WebQit Tooling to the cloud to take the workloads off and leave just the experience.',
         footer: '',
         name: 'cloud',
         icon: 'cloud',
