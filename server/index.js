@@ -45,7 +45,7 @@ export default async (flo, recieved, next) => {
         footer: '',
         name: 'cloud',
         icon: 'cloud',
-        graphic: '/img/illus/cloud/cloud3.fw.png',
+        graphic: '/img/illus/cloud/images(35).fw.png',
         title: 'Cloud',
         desc: 'WebQit\'s fully-managed platform and APIs.',
         highlights: [

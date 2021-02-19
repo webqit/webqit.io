@@ -83,35 +83,35 @@ p, .p,
     }
 }
 .heavy-text {
-    font-weight: 800;
+    font-weight: 800 !important;
 }
 
 /* ------------------ */
 
 .bi {
-    font-size: 2em;
+    font-size: 2em !important;
 }
 [class^="bi-"]::before, [class*=" bi-"]::before {
     vertical-align: unset !important;
     font-weight: inherit !important;
 }
 .bi.xs {
-    font-size: 1em;
+    font-size: 1em !important;
 }
 .bi.sm {
-    font-size: 1.5em;
+    font-size: 1.5em !important;
 }
 .bi.md {
-    font-size: 2em;
+    font-size: 2em !important;
 }
 .bi.lg {
-    font-size: 3em;
+    font-size: 3em !important;
 }
 .bi.xl {
-    font-size: 3.5em;
+    font-size: 3.5em !important;
 }
 .bi.xxl {
-    font-size: 4em;
+    font-size: 4em !important;
 }
 
 /* ------------------ */
@@ -286,6 +286,7 @@ p, .p,
 .page-section {
     color: var(--page-color);
 }
+
 .page-header,
 .page-section.hero {
     /**
@@ -301,8 +302,8 @@ p, .p,
 .page-section.showcase .showcase-items {
     height: 100px;
     /**
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
     */
     background-color: white;
 }
@@ -325,7 +326,7 @@ p, .p,
     width: 500px;
     max-width: 90%;
     font-size: 2em;
-    font-weight: 100;
+    font-weight: 200;
     transition: all 800ms;
     /**
     opacity: 0.35;
@@ -452,6 +453,7 @@ p, .p,
 .page-section .section-main-header {
     position: sticky;
     top: 0px;
+    bottom: 20px;
     font-weight: bold;
     line-height: 60px;
     z-index: 3;
@@ -464,7 +466,7 @@ p, .p,
 }
 .page-section .section-desc,
 .page-section .section-highlights li {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 /* section-nav overflow-notch */
@@ -477,7 +479,6 @@ p, .p,
     display: inline-block;
     font-weight: bold;
     font-size: 1.1em;
-    border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     cursor: default;
 }
@@ -544,6 +545,26 @@ p, .p,
 .page-section .section-panel .panel-demo,
 .page-section .section-panel .panel-meta {
     min-height: 100px;
+}
+
+/* ------------------- */
+
+
+.hero-links li:not(:last-of-type) a {
+    background-color: white;
+    box-shadow: 0px 5px 5px -5px rgba(0, 0, 0, 0.5);
+}
+.hero-links li:nth-of-type(1) a:hover {
+    background-color: #800080;
+    color: white;
+}
+.hero-links li:nth-of-type(2) a:hover {
+    background-color: #8a2be2;
+    color: white;
+}
+.hero-links li:nth-of-type(3) a:hover {
+    background-color: #2960c7;
+    color: white;
 }
 
 /* ------------------- */
