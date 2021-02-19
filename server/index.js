@@ -28,7 +28,7 @@ export default async (flo, recieved, next) => {
     });
 
     const sections = [{
-        header: 'We work on low-abstraction tooling and potential web standards that make development more enjoyable.',
+        header: 'We work on low-abstraction tooling and potential web standards that make development, not just enjoyable, but future-proof.',
         footer: '',
         name: 'tooling',
         icon: 'braces',
@@ -82,7 +82,7 @@ export default async (flo, recieved, next) => {
             ctaIsAlt: true,
         }],
     }, {
-        header: 'We work in the bigger picture to fight bad abstractions for the web at large.',
+        header: 'We work in the bigger picture to help the community bank more on the platform and less on abstractions.',
         footer: '',
         name: 'community',
         icon: 'flag',
@@ -93,7 +93,7 @@ export default async (flo, recieved, next) => {
             {icon: 'flag', content: 'Join in with your voice, or bring the course you care about.'},
             {icon: 'arrow-return-right', content: 'The web is all of us!'},
         ],
-        featured: [{
+        featured: [/**{
             icon: 'flag',
             name: 'webqit',
             shortTitle: 'WebQit',
@@ -108,7 +108,7 @@ export default async (flo, recieved, next) => {
             cta: 'Join a project community below',
             ctaRef: '/#community',
             ctaIsAlt: true,
-        }, {
+        }, */{
             icon: 'flag',
             name: 'web-native',
             shortTitle: 'Web-Native',
