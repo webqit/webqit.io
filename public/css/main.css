@@ -322,9 +322,10 @@ p, .p,
 .page-section .section-header-content,
 .page-section .section-footer-content {
     position: relative;
-    color: var(--section-main-a-bg-light, --section-main-a-bg, );
-    max-width: 500px;
+    width: 500px;
+    max-width: 90%;
     font-size: 2em;
+    font-weight: 100;
     transition: all 800ms;
     /**
     opacity: 0.35;
@@ -378,7 +379,9 @@ p, .p,
 }
 .page-section.hero .section-header-content,
 .page-section.hero .section-footer-content {
-    max-width: 750px;
+    width: 750px;
+    max-width: 95%;
+    font-weight: 600;
     opacity: 1;
 }
 .page-section.hero .section-header-content::before {
@@ -480,19 +483,21 @@ p, .p,
 }
 .page-section .section-nav > li.active {
     color: var(--section-main-b-color-active);
-    border-bottom-color: currentColor;
+    border-color: currentColor;
 }
 @media (max-width: 992px) {
     .page-section .section-nav > li {
         /**
+        border-top: 1px solid transparent;
+        border-bottom: none;
+        border-bottom-width: 3px;
         */
         border: 1px dashed transparent;
         border-bottom-style: solid;
-        border-bottom-width: 3px;
     }
     .page-section .section-nav > li.active {
         color: var(--section-main-a-color-active);
-        border-color: var(--section-main-a-color-active);
+        border-color: var(whitesmoke, --section-main-a-color-active);
         border-bottom-color: var(--section-main-a-border);
         /**
         border-bottom-color: currentColor;
@@ -544,9 +549,8 @@ p, .p,
 /* ------------------- */
 
 #tooling-section {
-    --story-line-color: violet;
+    --story-line-color: #f77bf7;
     --section-main-a-bg: #800080;
-    --section-main-a-bg-light: #b406b4;
     --section-main-a-color: gainsboro;
     --section-main-a-color-active: white;
     --section-main-a-border: blueviolet;
@@ -562,9 +566,8 @@ p, .p,
     --section-main-b-color2: white;
 }
 #cloud-section {
-    --story-line-color: skyblue;
+    --story-line-color: #cca0f5;
     --section-main-a-bg: #8a2be2;
-    --section-main-a-bg-light: #a550f5;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: dodgerblue;
@@ -580,9 +583,8 @@ p, .p,
     --section-main-b-color2: white;
 }
 #community-section {
-    --story-line-color: pink;
+    --story-line-color: #8eb4fa;
     --section-main-a-bg: #2960c7;
-    --section-main-a-bg-light: #3a75e2;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
