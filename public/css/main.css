@@ -577,7 +577,7 @@ p, .p,
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #f5daf5;
+    --section-main-b-bg: #faebfa;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: blueviolet;
@@ -594,7 +594,7 @@ p, .p,
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #e9d7fb;
+    --section-main-b-bg: #f1e9fa;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: dodgerblue;
@@ -604,14 +604,14 @@ p, .p,
 }
 #community-section {
     --story-line-color: #8eb4fa;
-    --section-main-a-bg: #2960c7;
+    --section-main-a-bg: #366ed4;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #d8e4f7;
+    --section-main-b-bg: #ebf1fa;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: deeppink;
