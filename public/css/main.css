@@ -372,7 +372,7 @@ p, .p,
 }
 .page-section.hero .section-header-content,
 .page-section.hero .section-footer-content {
-    font-weight: 300;
+    font-weight: 500;
 }
 .page-section.hero .section-header-content::before {
     border: 5px solid aliceblue;
