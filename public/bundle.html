@@ -487,7 +487,7 @@ connectedCallback() {
 
         <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
             <a href="/" target="_blank" class="">About</a>
-            <a href="https://github.com/webqit" target="_blank">
+            <a href="https://github.com/webqit" target="_blank" class="d-none">
                 <i class="bi bi-github sm"></i>
             </a>
         </div>
@@ -534,7 +534,7 @@ connectedCallback() {
                 </div>
                 <h1 data-id="header" class="section-header-content pd-top-10 pd-btm-10 pd-x2" style="font-family: 'Inter', sans-serif">
                     <span class="heavy-text text-gradient text-gradient-2" style="font-size: 1.7em;">We fight bad abstractions</span><br />
-                    <span class="d-inline-block pd-top-10 pd-x2 txt-larger">so you don't bank your life's work on them!</span>
+                    <span class="d-inline-block pd-top-10 pd-x2 txt-larger">so you can code more naturally on your life's work!</span>
                 </h1>
                 <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 d-inline-block list-style-none">
                     <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#tooling-section" class="flex-y-end">
@@ -665,7 +665,8 @@ connectedCallback() {
                                 </div>
                             </form>
                         </div>
-                        <script type='text/javascript' src='                        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                        <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
                         <!--End mc_embed_signup-->
                     </div>
                 </div>
@@ -777,7 +778,6 @@ connectedCallback() {
                     d.overflowCollapsed = e === 'collapse';
                     $(overflowNotch).class('d-none', overflowCount === 0);
                 }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
-                console.log('----------', overflowList, section.featured.items);
                 $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
                                 $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
             }
