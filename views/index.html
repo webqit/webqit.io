@@ -4,47 +4,51 @@
 
     <!-- OVERLAY_MENU -->
 
-    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: blueviolet; color: white; border-right: 1px solid silver; z-index: 16;">
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid silver; z-index: 16;">
 
-        <div class="col-grows pd-10 pd-lft-x2 pd-rt-x2 flex-column">
-            <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed silver">
+        <div class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column">
+
+            <div class="app-bar pd-10 mg-btm-10 overflow-x-hidden">
+                <html-import name="logo_nav" template="brand" class="wt-auto"></html-import>
+            </div>
+            <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-top: 1px dashed silver; border-bottom: 1px dashed silver">
                 <li>
                     <a href="/tooling" class="flex-y-center">
-                        <i class="bi bi-braces sm flex-center pd-10"></i>
-                        <span class="pd-10 b">Tooling</span>
+                        <i class="bi bi-braces sm flex-center pd-lft-10 pd-rt-10"></i>
+                        <span class="pd-10">Tooling</span>
                     </a>
                 </li>
                 <li>
                     <a href="/cloud" class="flex-y-center">
-                        <i class="bi bi-cloud sm flex-center pd-10"></i>
-                        <span class="pd-10 b">Cloud</span>
+                        <i class="bi bi-cloud sm flex-center pd-lft-10 pd-rt-10"></i>
+                        <span class="pd-10">Cloud</span>
                     </a>
                 </li>
                 <li>
                     <a href="/community" class="flex-y-center">
-                        <i class="bi bi-flag sm flex-center pd-10"></i>
-                        <span class="pd-10 b">Community</span>
+                        <i class="bi bi-flag sm flex-center pd-lft-10 pd-rt-10"></i>
+                        <span class="pd-10">Community</span>
                     </a>
                 </li>
             </ul>
-            <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-bottom: 1px dashed sil-ver">
+            <ul class="pd-top-10 pd-btm-10 d-none list-style-none" style="border-bottom: 1px dashed sil-ver">
                 <li>
                     <a href="/about" class="flex-y-center">
                         <i class="bi bi-globe sm flex-center pd-10"></i>
-                        <span class="pd-10 b">About</span>
+                        <span class="pd-10">About</span>
                     </a>
                 </li>
             </ul>
         </div>
 
         <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
-            <a href="/" target="_blank" class="b">WebQit</a>
+            <a href="/" target="_blank" class="">About</a>
             <a href="https://github.com/webqit" target="_blank">
                 <i class="bi bi-github sm"></i>
             </a>
         </div>
     </div>
-    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.15); z-index: 15;"></div>
+    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
 
     <script type="subscript">
         $(document.namespace.theme_color).attr('content', 'white');
@@ -56,12 +60,12 @@
     <!-- HEADER -->
 
     <header class="page-header flex-y-stretch">
-        <div class="col-1 pd-10 sm--col-0 flex-x-center" style="border-right: 3px solid hotpink;">
+        <div class="col-1 sm--col-0 sm--pd-10 sm--pd-x2 flex-x-center">
             <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
         </div>
-        <div class="col-grows pd-10 pd-x2">
+        <div class="col-grows pd-top-10 pd-btm-10 pd-x2">
             <span class="brand-container flex-y-center">
                 <a href="/">
                     <span class="txt-lg b">Web</span><span class="txt-lg b">Qit</span><br />
@@ -79,34 +83,34 @@
     <section namespace class="page-section hero">
 
         <div class="section-header flex-y-stretch">
-            <div class="section-header-left col-1 sm--col-0 sm--pd-10 border-color-2 pseudo-bg-color-2"></div>
+            <div class="section-header-left col-1 sm--col-0 sm--pd-10 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
             <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0">
-                <div class="pd-10 pd-x2 txt-xs sm--txt-xxs color-2">
+                <div class="pd-top-10 pd-btm-10 pd-x2 txt-xs sm--txt-xxs color-2">
                     <span class="section-header-tag pd-10 color-2 b">#DEV</span>
                 </div>
-                <h1 data-id="header" class="section-header-content pd-10 pd-x2 hero-text" style="font-family: 'Inter', sans-serif">
-                    <span class="heavy-text text-gradient text-gradient-2">We fight bad abstractions</span><br />
-                    <span class="pd-top-10 heavy-text">so you don't bank your life's work on them!</span>
+                <h1 data-id="header" class="section-header-content pd-top-10 pd-btm-10 pd-x2" style="font-family: 'Inter', sans-serif">
+                    <span class="heavy-text text-gradient text-gradient-2" style="font-size: 1.7em;">We fight bad abstractions</span><br />
+                    <span class="d-inline-block pd-top-10 pd-x2 txt-larger">so you don't bank your life's work on them!</span>
                 </h1>
-                <ul data-id="inpage_menu" class="hero-links b mg-10 mg-x2 mg-btm-x4 d-flex flex-wrap txt-lg sm--txt-md d-inline-flex flex-y-start flex-wrap list-style-none">
-                    <li class="pd-2"><a href="#tooling" class="d-block wt-80 wt-x2 pd-10 hero-link">
-                        <i class="bi bi-braces d-inline-flex flex-center mg-10 mg-btm-0"></i>
-                        <div class="mg-10">Tooling</div>
+                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 d-inline-block list-style-none">
+                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#tooling-section" class="flex-y-end">
+                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
+                        <div class="txt-xl b">Tooling</div>
                     </a></li>
-                    <li class="pd-2"><a href="#cloud" class="d-block wt-80 wt-x2 pd-10 hero-link">
-                        <i class="bi bi-cloud d-inline-flex flex-center mg-10 mg-btm-0"></i>
-                        <div class="mg-10">Cloud</div>
+                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#cloud-section" class="flex-y-end">
+                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
+                        <div class="txt-xl b">Cloud</div>
                     </a></li>
-                    <li class="pd-2"><a href="#community" class="d-block wt-80 wt-x2 pd-10 hero-link">
-                        <i class="bi bi-flag d-inline-flex flex-center mg-10 mg-btm-0"></i>
-                        <div class="mg-10">Community</div>
+                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#community-section" class="flex-y-end">
+                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
+                        <div class="txt-xl b">Community</div>
                     </a></li>
-                    <li class="pd-2"><a href="#" class="mg-10 flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1 d-none md--d-inline-flex" style="color: white;">
+                    <li class="pd-2"><a href="#" class="mg-10 flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1 d-none md---d-inline-flex" style="color: white;">
                         <i class="bi bi-play-fill sm flex-center"></i>
                     </a></li>
                 </ul>
             </div>
-            <div class="section-header-right col-1 sm--col-0 sm--pd-10 flex-y-stretch textured">
+            <div class="section-header-right col-1 sm--col-0 sm--pd-10 sm--pd-x2 flex-y-stretch textured">
                 <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
                     <ul class="mg-top-10 list-style-none">
                         <li class="mg-btm-10"><a href="#" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
@@ -149,8 +153,8 @@
 
     <footer class="page-footer flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
         <div class="col-2 sm--col-12 sm--pd-10 sm--pd-x3 sm--pd-top-0 txt-align-cntr sm--flex-y-center sm--flex-x-separate">
-            <a href="/#" class="sm--mg-top-10 sm--mg-top-x3"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-5 wt-x10 sm--wt-40 mg-lft-2 negative-mg" /></a>
-            <ul class="mg-top-10 mg-top-x2 sm--flex-y-center list-style-none">
+            <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
+            <ul class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
                 <li class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
                     <i class="bi bi-twitter sm flex-center"></i>
                 </a></li>
