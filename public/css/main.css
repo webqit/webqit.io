@@ -486,6 +486,10 @@ p, .p,
     border-color: currentColor;
 }
 @media (max-width: 992px) {
+    .page-section .section-main-header {
+        -wekit-backdrop-filter: unset;
+        backdrop-filter: unset;
+    }
     .page-section .section-nav > li {
         /**
         border-top: 1px solid transparent;
@@ -577,7 +581,7 @@ p, .p,
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #faebfa;
+    --section-main-b-bg: #fae0fa;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: blueviolet;
@@ -594,7 +598,7 @@ p, .p,
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #f1e9fa;
+    --section-main-b-bg: #e8dcf7;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: dodgerblue;
@@ -604,14 +608,14 @@ p, .p,
 }
 #community-section {
     --story-line-color: #8eb4fa;
-    --section-main-a-bg: #366ed4;
+    --section-main-a-bg: #2f68d1;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #ebf1fa;
+    --section-main-b-bg: #dee8f8;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: deeppink;
