@@ -60,7 +60,7 @@
     <!-- HEADER -->
 
     <header class="page-header flex-y-stretch">
-        <div class="col-1 sm--col-0 sm--pd-10 sm--pd-x2 flex-x-center">
+        <div class="col-1 sm--col-0 sm--pd-6 sm--pd-x2 flex-x-center">
             <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
@@ -83,8 +83,8 @@
     <section namespace class="page-section hero">
 
         <div class="section-header flex-y-stretch">
-            <div class="section-header-left col-1 sm--col-0 sm--pd-10 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
-            <div class="col-grows pd-top-10 pd-btm-10 pd-x3 sm--pd-btm-0">
+            <div class="section-header-left col-1 sm--col-0 sm--pd-6 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
+            <div class="col-grows pd-top-10 pd-btm-10 pd-x3">
                 <div class="pd-top-10 pd-btm-10 pd-x2 txt-xs sm--txt-xxs color-2">
                     <span class="section-header-tag pd-10 color-2 b">#DEV</span>
                 </div>
@@ -110,7 +110,7 @@
                     </a></li>
                 </ul>
             </div>
-            <div class="section-header-right col-1 sm--col-0 sm--pd-10 sm--pd-x2 flex-y-stretch textured">
+            <div class="section-header-right col-1 sm--col-0 sm--pd-6 sm--pd-x2 flex-y-stretch textured">
                 <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
                     <ul class="mg-top-10 list-style-none">
                         <li class="mg-btm-10"><a href="#" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
@@ -335,6 +335,7 @@
                     d.overflowCollapsed = e === 'collapse';
                     $(overflowNotch).class('d-none', overflowCount === 0);
                 }, {itemExportId: 'tab', collapsionPoint: 'center-end'});
+                console.log('----------', overflowList, section.featured.items);
                 $(overflowList).itemize(section.featured.items, null, null, {itemExportId: 'overflow-tab'});
                 // ----
                 $(this.namespace.tabpanels).itemize(section.featured.items, null, null, {itemExportId: 'tabpanel'});
