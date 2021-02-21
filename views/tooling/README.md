@@ -1,13 +1,6 @@
 # WebQit Tooling
-Leverage some magic to write less code! Enjoy the most traditional developer experience at the same time! This is *the WebQit Advantage*!
+Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. 
 
-Explore our growing [ecosystem](#projects) of opensource and *web-native* tooling.
-
-## Projects
+> Write more native, universal, and stable code; enjoy a traditional developer experience.
 
 <html-import name="ul" template="page/tooling/#layout/projects-listing"></html-import>
-
-<br />
-
-## Who's Using WebQit?
-+ [WebQit.io](https://webqit.io)

@@ -121,7 +121,7 @@
         
             <div data-id="page_readme_container" class="readme-container col-9 sm--col-12" tabindex="0">
 
-                <div namespace data-id="breadcrumb" class="col-grows">
+                <div namespace data-id="breadcrumb" class="col-grows" style="z-index: 100;">
                     <ul data-id="main" template="page/tooling/#layout/breadcrumb" class="flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
                         <li namespace class="flex-y-center">
                             <a data-id="link" class="pd-6 pd-lft-0 no-wrap" href="/">
@@ -239,7 +239,7 @@
             </script>
         </ul>
         <li namespace>
-            <h3 data-id="title" class="pd-10 pd-x3 b txt-sm txt-align-cntr"></h3>
+            <h3 data-id="title" class="pd-10 pd-top-x3 pd-btm-x3 b txt-sm"></h3>
             <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
@@ -256,7 +256,7 @@
                 <h3 data-id="title" class="panel-title txt-xl" style="margin-top: 10px"></h3>
                 <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
                 <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
-                <a data-id="ctaRef" href="/" class="panel-page p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
+                <a data-id="ctaRef" href="/" class="panel-page mg-top-10 p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
                     <span data-id="cta" class="b">Explore</span>
                     <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
                 </a>

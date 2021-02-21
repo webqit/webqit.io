@@ -110,20 +110,7 @@
                             "level": 1,
                             "title": "WebQit Tooling",
                             "uri": "webqit-tooling",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "Projects",
-                                    "uri": "projects",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Who's Using WebQit?",
-                                    "uri": "whos-using-webqit",
-                                    "subtree": []
-                                }
-                            ]
+                            "subtree": []
                         }
                     ]
                 }

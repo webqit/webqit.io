@@ -579,14 +579,14 @@ p, .p,
 
 #tooling-section {
     --story-line-color: #f77bf7;
-    --section-main-a-bg: #8d379e;
+    --section-main-a-bg: #7c278d;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: blueviolet;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #f8e7fc;
+    --section-main-b-bg: #f4e2f8;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: blueviolet;

@@ -509,7 +509,7 @@ connectedCallback() {
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
         </div>
-        <div class="col-grows pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2">
+        <div class="col-grows pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2">
             <span class="brand-container flex-y-center">
                 <a href="/">
                     <span class="txt-lg b">Web</span><span class="txt-lg b">Qit</span><br />
@@ -529,14 +529,14 @@ connectedCallback() {
         <div class="section-header flex-y-stretch">
             <div class="section-header-left col-1 sm--col-0 sm--pd-6 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
             <div class="section-header-content-container overflow-hidden col-grows pd-top-10 pd-btm-10 pd-x3">
-                <div class="pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2 txt-xs sm--txt-xxs color-2">
+                <div class="pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2 txt-xs sm--txt-xxs color-2">
                     <span class="section-header-tag pd-10 color-2 b">#WEB_NATIVE</span>
                 </div>
-                <h1 data-id="header" class="section-header-content pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2" style="font-family: 'Inter', sans-serif">
+                <h1 data-id="header" class="section-header-content pd-top-8 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2" style="font-family: 'Inter', sans-serif">
                     <span class="heavy-text" style="font-size: 1.2em;">The tooling, cloud, and community for <span class="no-wrap text-gradient text-gradient-2">web-native</span> apps.</span><br />
                     <span class="d-inline-block pd-top-10 pd-x2 txt-larger">Build your most ambitious apps without the usual terrible abstractions!</span>
                 </h1>
-                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2 d-inline-block list-style-none">
+                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2 d-inline-block list-style-none">
                     <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#tooling-section" class="flex-y-end">
                         <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
                         <div class="txt-xl b">Tooling</div>
@@ -557,7 +557,7 @@ connectedCallback() {
             <div class="section-header-right col-1 sm--col-0 sm--pd-6 sm--pd-x2 flex-y-stretch textured">
                 <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
                     <ul class="mg-top-10 list-style-none">
-                        <li class="mg-btm-10"><a href="#" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
+                        <li class="mg-btm-10"><a href="#tooling-section" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
                             <i class="bi bi-play-fill sm flex-center"></i>
                         </a></li>
                         <li><a href="https://twitter.com/@Web_Qit" target="_blank" class="flex-center min-wt-40 ht-40 radius-full" style="background-color: whitesmoke; border: 1px solid gainsboro;">
@@ -1009,7 +1009,7 @@ connectedCallback() {
         
             <div data-id="page_readme_container" class="readme-container col-9 sm--col-12" tabindex="0">
 
-                <div namespace data-id="breadcrumb" class="col-grows">
+                <div namespace data-id="breadcrumb" class="col-grows" style="z-index: 100;">
                     <ul data-id="main" template="page/tooling/#layout/breadcrumb" class="flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
                         <li namespace class="flex-y-center">
                             <a data-id="link" class="pd-6 pd-lft-0 no-wrap" href="/">
@@ -1127,7 +1127,7 @@ connectedCallback() {
             </script>
         </ul>
         <li namespace>
-            <h3 data-id="title" class="pd-10 pd-x3 b txt-sm txt-align-cntr"></h3>
+            <h3 data-id="title" class="pd-10 pd-top-x3 pd-btm-x3 b txt-sm"></h3>
             <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
@@ -1144,7 +1144,7 @@ connectedCallback() {
                 <h3 data-id="title" class="panel-title txt-xl" style="margin-top: 10px"></h3>
                 <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
                 <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
-                <a data-id="ctaRef" href="/" class="panel-page p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
+                <a data-id="ctaRef" href="/" class="panel-page mg-top-10 p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
                     <span data-id="cta" class="b">Explore</span>
                     <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
                 </a>
@@ -1264,15 +1264,11 @@ connectedCallback() {
 		<div exportgroup="readme">
 
 			<h1 id="webqit-tooling">WebQit Tooling</h1>
-<p>Leverage some magic to write less code! Enjoy the most traditional developer experience at the same time! This is <em>the WebQit Advantage</em>!</p>
-<p>Explore our growing <a href="#projects">ecosystem</a> of opensource and <em>web-native</em> tooling.</p>
-<h2 id="projects">Projects</h2>
+<p>Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. </p>
+<blockquote>
+  <p>Write more native, universal, and stable code; enjoy a traditional developer experience.</p>
+</blockquote>
 <p><html-import name="ul" template="page/tooling/#layout/projects-listing"></html-import></p>
-<p><br /></p>
-<h2 id="whos-using-webqit">Who's Using WebQit?</h2>
-<ul>
-<li><a href="https://webqit.io">WebQit.io</a></li>
-</ul>
 
 		</div>
 	</template>
