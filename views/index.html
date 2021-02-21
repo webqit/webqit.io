@@ -4,7 +4,7 @@
 
     <!-- OVERLAY_MENU -->
 
-    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid silver; z-index: 16;">
+    <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid white; z-index: 16;">
 
         <div class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column">
 
@@ -42,13 +42,13 @@
         </div>
 
         <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
-            <a href="/" target="_blank" class="">About</a>
+            <a href="/" target="_blank" class="d-none">About</a>
             <a href="https://github.com/webqit" target="_blank" class="d-none">
                 <i class="bi bi-github sm"></i>
             </a>
         </div>
     </div>
-    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(255, 255, 255, 0.95); z-index: 15;"></div>
+    <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.125); z-index: 15;"></div>
 
     <script type="subscript">
         $(document.namespace.theme_color).attr('content', 'white');
@@ -65,7 +65,7 @@
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
         </div>
-        <div class="col-grows pd-top-10 pd-btm-10 pd-x2">
+        <div class="col-grows pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2">
             <span class="brand-container flex-y-center">
                 <a href="/">
                     <span class="txt-lg b">Web</span><span class="txt-lg b">Qit</span><br />
@@ -74,7 +74,7 @@
             </span>
         </div>
         <div class="col-2 flex-x-center d-none sm--d-flex">
-            <span data-id="app_drawer_open2" class="pd-10 pd-x2 b text-gradient text-gradient-2 cursor-pointer">
+            <span data-id="app_drawer_open2" class="pd-10 pd-top-x2 b text-gradient text-gradient-2 cursor-pointer">
                 <i class="bi bi-filter-right flex-center"></i>
             </span>
         </div>
@@ -84,15 +84,15 @@
 
         <div class="section-header flex-y-stretch">
             <div class="section-header-left col-1 sm--col-0 sm--pd-6 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
-            <div class="col-grows pd-top-10 pd-btm-10 pd-x3">
-                <div class="pd-top-10 pd-btm-10 pd-x2 txt-xs sm--txt-xxs color-2">
-                    <span class="section-header-tag pd-10 color-2 b">#DEV</span>
+            <div class="section-header-content-container overflow-hidden col-grows pd-top-10 pd-btm-10 pd-x3">
+                <div class="pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2 txt-xs sm--txt-xxs color-2">
+                    <span class="section-header-tag pd-10 color-2 b">#WEB_NATIVE</span>
                 </div>
-                <h1 data-id="header" class="section-header-content pd-top-10 pd-btm-10 pd-x2" style="font-family: 'Inter', sans-serif">
-                    <span class="heavy-text text-gradient text-gradient-2" style="font-size: 1.7em;">We fight bad abstractions</span><br />
-                    <span class="d-inline-block pd-top-10 pd-x2 txt-larger">so you can code more naturally on your life's work!</span>
+                <h1 data-id="header" class="section-header-content pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2" style="font-family: 'Inter', sans-serif">
+                    <span class="heavy-text" style="font-size: 1.2em;">The tooling, cloud, and community for <span class="no-wrap text-gradient text-gradient-2">web-native</span> apps.</span><br />
+                    <span class="d-inline-block pd-top-10 pd-x2 txt-larger">Build your most ambitious apps without the usual terrible abstractions!</span>
                 </h1>
-                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 d-inline-block list-style-none">
+                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2 d-inline-block list-style-none">
                     <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#tooling-section" class="flex-y-end">
                         <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
                         <div class="txt-xl b">Tooling</div>

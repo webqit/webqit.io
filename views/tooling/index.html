@@ -239,8 +239,8 @@
             </script>
         </ul>
         <li namespace>
-            <h3 data-id="title" class="mg-top-10 mg-btm-10 mg-x2 pd-10 radius-10 radius-x5 b txt-sm txt-align-cntr" style="border: 1px solid silver;"></h3>
-            <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 d-flex flex-wrap list-style-none" template="page/tooling/#layout/projects-listing"></ul>
+            <h3 data-id="title" class="pd-10 pd-x3 b txt-sm txt-align-cntr"></h3>
+            <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.title).html(this.state.title);
@@ -248,32 +248,29 @@
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace is="play-seq-li" class="col-6 sm--col-12 pd-10 pd-x2" style="opacity: 0;">
-            <div class="pd-10 pd-x3 pd-top-x2 pd-btm-x2 radius-10" style="background-color: whitesmoke; border: gainsboro;">
-                <div>
-                    <i data-id="icon" class="bi"></i>
-                    <h4 data-id="title" style="margin-top: 15px; margin-bottom: 15px;"></h4>
-                    <p data-id="desc"></p>
-                </div>
-                <ul class="pd-0 flex-x-separate flex-y-center wt-full pd-top-10 pd-top-x2 list-style-none">
-                    <li><a data-id="ctaRef" class="flex-y-center b" href="" style="text-decoration: none;">
-                        <i class="bi bi-arrow-return-right sm flex-center"></i>
-                        <span data-id="cta" class="mg-lft-8">Learn more</span>
-                    </a></li>
-                    <li><a data-id="github" href="" target="_blank">
-                        <i class="bi bi-github sm"></i>
-                    </a></li>
-                </ul>
+        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10" style="opacity: 0; background-color: ghostwhite;">
+            <div class="pd-lft-10 pd-rt-10 sm--pd-0 mg-rt-10 flex-center">
+                <i data-id="icon" class="panel-icon bi lg"></i>
+            </div>
+            <div class="panel-content col-grows sm--col-12">
+                <h3 data-id="title" class="panel-title txt-xl" style="margin-top: 10px"></h3>
+                <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
+                <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
+                <a data-id="ctaRef" href="/" class="panel-page p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
+                    <span data-id="cta" class="b">Explore</span>
+                    <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
+                </a>
             </div>
             <script type="subscript">
                 if (!this.state.title) return;
                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
                 $(this.namespace.title).html(this.state.title);
                 $(this.namespace.desc).html(this.state.desc);
+                $(this.namespace.desc2).html(this.state.desc2 || '');
                 $(this.namespace.ctaRef).attr('href', this.state.ctaRef);
                 $(this.namespace.cta).html(this.state.cta);
-                let github = 'https://github.com/' + this.state.repo;
-                $(this.namespace.github).attr('href', github);
+                //let github = 'https://github.com/' + this.state.repo;
+                //$(this.namespace.github).attr('href', github);
             </script>
         </li>
     </template>

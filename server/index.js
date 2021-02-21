@@ -28,7 +28,7 @@ export default async (flo, recieved, next) => {
     });
 
     const sections = [{
-        header: 'We work on low-abstraction tooling and potential web standards that make development, not just enjoyable, but future-proof.',
+        header: 'We work on low-abstraction tooling and potential web standards that make your code more native, universal, stable and future-proof.',
         footer: '',
         name: 'tooling',
         icon: 'braces',
@@ -41,7 +41,7 @@ export default async (flo, recieved, next) => {
         ],
         featured: featuredProjects,
     }, {
-        header: 'We run the only cloud yet that\'s purpose-built to bring all the new possibilities with all the workloads taken care of.',
+        header: 'We operate a purpose-built cloud for web-native development to give you the most streamlined way yet to build the most stable apps.',
         footer: '',
         name: 'cloud',
         icon: 'cloud',
@@ -82,7 +82,7 @@ export default async (flo, recieved, next) => {
             ctaIsAlt: true,
         }],
     }, {
-        header: 'We work in the bigger picture to help the community bank more on the platform and less on abstractions.',
+        header: 'We work in the bigger picture to help the community bank more on native web technologies and less on abstractions.',
         footer: '',
         name: 'community',
         icon: 'flag',
@@ -111,7 +111,7 @@ export default async (flo, recieved, next) => {
         }, */{
             icon: 'flag',
             name: 'web-native',
-            shortTitle: 'Web-Native',
+            shortTitle: 'Web-Native CG',
             title: 'Web-Native (W3C) Community Group',
             desc: 'A Community Group at W3C for the Web-Native initiative.',
             desc2: 'Join in facilitating new and exisiting web platform technologies.',
