@@ -533,7 +533,7 @@ connectedCallback() {
                     <span class="section-header-tag pd-10 color-2 b">#WEB_NATIVE</span>
                 </div>
                 <h1 data-id="header" class="section-header-content pd-top-8 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2" style="font-family: 'Inter', sans-serif">
-                    <span class="heavy-text" style="font-size: 1.2em;">The tooling, cloud, and community for <span class="no-wrap text-gradient text-gradient-2">web-native</span> apps.</span><br />
+                    <span class="heavy-text" style="font-size: 1.2em;">The tooling, cloud, and community for <span class="no-wrap text-gradient text-gradient-2">web-native</span> development.</span><br />
                     <span class="d-inline-block pd-top-10 pd-x2 txt-larger">Build your most ambitious apps without the usual terrible abstractions!</span>
                 </h1>
                 <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-2 b pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2 d-inline-block list-style-none">
@@ -724,7 +724,7 @@ connectedCallback() {
                     <div class="section-main-header t-extured flex-x-separate flex-y-center pd-lft-10 pd-rt-4 pd-x3">
 
                         <div class="col-grows">
-                            <ul data-id="tabs" play-seq-displacement="100" template="page/_section" class="section-nav flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+                            <ul data-id="tabs" play-seq-displacement="100" template="page/_section" class="section-nav d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
                                 <li data-id="overflowNotch" namespace class="overflow-notch d-none" tabindex="0">
                                     <i class="bi bi-three-dots sm ht-full flex-y-center"></i>
                                     <div class="overflow ht-0 flex-x-center">
@@ -758,6 +758,10 @@ connectedCallback() {
             if (section.title) {
                 let overflowNotch = this.namespace.overflowNotch;
                 let overflowList = overflowNotch.namespace.list;
+                if (section.featured.now.active) {
+                    let active = section.featured.state.active.first();
+                    $(overflowNotch).class('active', active.overflowCollapsed);
+                }
                 $(this).attr('id', section.name + '-section');
                 $(this.namespace.main).attr('id', section.name);
                 $(this.namespace.header).html(section.header);
@@ -937,7 +941,7 @@ connectedCallback() {
             
         <div class="col-3 md--col-0 pos-sticky offset-top-0" style="z-index: 100;">
 
-            <div data-id="app_drawer" class="flex-y-stretch md--border-rt-solid overflow-hidden" style="height: 100vh; max-width: 70vw; background-color: ghostwhite; border-color: silver;">
+            <div data-id="app_drawer" class="flex-y-stretch overflow-hidden" style="height: 100vh; max-width: 70vw; background-color: ghostwhite;">
 
                 <div class="wt-full pd-10 pd-x2 pd-btm-0 d-flex flex-column">
 
@@ -991,7 +995,7 @@ connectedCallback() {
 
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
-            <div data-id="main_backdrop" class="pos-abs cover z-index-10 d-none" style="background-color: rgba(255, 255, 255, 0.95);"></div>
+            <div data-id="main_backdrop" class="pos-abs cover d-none" style="background-color: rgba(0, 0, 0, 0.125);; z-index: 75"></div>
 
             <div class="app-bar-alt col-12 pd-10 pd-x2 flex-y-center flex-x-separate d-none md--d-flex" style="background-color: ghostwhite;">
                 <div class="flex-y-center">
@@ -1009,8 +1013,8 @@ connectedCallback() {
         
             <div data-id="page_readme_container" class="readme-container col-9 sm--col-12" tabindex="0">
 
-                <div namespace data-id="breadcrumb" class="col-grows" style="z-index: 100;">
-                    <ul data-id="main" template="page/tooling/#layout/breadcrumb" class="flex-y-stretch h5 list-style-none" style="width: max-content; white-space: nowrap;">
+                <div namespace data-id="breadcrumb" class="col-grows" style="z-index: 50;">
+                    <ul data-id="main" template="page/tooling/#layout/breadcrumb" class="d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
                         <li namespace class="flex-y-center">
                             <a data-id="link" class="pd-6 pd-lft-0 no-wrap" href="/">
                                 <i class="bi bi-house-door xs"></i>
@@ -1041,16 +1045,16 @@ connectedCallback() {
                         var subtreeNotch = this.namespace.subtree;
                         var subtreeList = subtreeNotch.namespace.list;
                         if (this.state.items) {
+                            $(overflowNotch).class('d-none', true);
                             $(subtreeNotch).class('d-none', false);
                             $(main).itemize(this.state.items, (e, el, d, k) => {
                                 d.overflowCollapsed = false;
-                                el[e](d);
                                 if (k === this.state.items.length - 1) {
                                     $(subtreeList).itemize(d.subtree.items, null, null, {itemExportId: 'subtree'});
                                     main.append(subtreeNotch);
                                     $(subtreeNotch).class('disabled', !d.subtree);
                                 }
-                            }, (el, e, d, k, overflowCount) => {
+                            }, (e, el, d, k, overflowCount) => {
                                 d.overflowCollapsed = e === 'collapse';
                                 $(overflowNotch).class('d-none', overflowCount === 0);
                             }, {collapsionPoint: 'start'});
@@ -1144,7 +1148,7 @@ connectedCallback() {
                 <h3 data-id="title" class="panel-title txt-xl" style="margin-top: 10px"></h3>
                 <div data-id="desc" class="panel-desc txt-larger">Coming Soon!</div>
                 <div data-id="desc2" class="panel-desc2 txt-larger">Coming Soon!</div>
-                <a data-id="ctaRef" href="/" class="panel-page mg-top-10 p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center">
+                <a data-id="ctaRef" href="/" class="panel-page mg-top-10 p-d-6 pd-x2 pd-lft-x4 pd-rt-x4 cta radius-6 d-inline-flex flex-y-center" style="text-decoration: none;">
                     <span data-id="cta" class="b">Explore</span>
                     <i data-id="ctaArrow" class="flex-arrow bi bi-arrow-right sm flex-center"></i>
                 </a>
