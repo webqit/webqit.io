@@ -759,6 +759,7 @@ connectedCallback() {
                 let overflowNotch = this.namespace.overflowNotch;
                 let overflowList = overflowNotch.namespace.list;
                 if (section.featured.now.active) {
+                    console.log(overflowNotch);
                     let active = section.featured.state.active.first();
                     $(overflowNotch).class('active', active.overflowCollapsed);
                 }

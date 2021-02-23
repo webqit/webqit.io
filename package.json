@@ -17,7 +17,7 @@
   "dependencies": {
     "@webqit/backpack": "0.0.3",
     "@webqit/obs-client-query": "0.0.3",
-    "@webqit/obs-collection": "0.0.8",
+    "@webqit/obs-collection": "0.0.9",
     "@webqit/play-icon": "0.0.2",
     "@webqit/play-sequence": "0.0.7",
     "@webqit/util": "^0.7.0",
