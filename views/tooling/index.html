@@ -119,7 +119,7 @@
                 </div>
             </div>
         
-            <div data-id="page_readme_container" class="readme-container col-9 sm--col-12" tabindex="0">
+            <div data-id="page_readme_container" class="readme-container col-9 sm--col-12 overflow-x-hidden" tabindex="0">
 
                 <div namespace data-id="breadcrumb" class="col-grows" style="z-index: 50;">
                     <ul data-id="main" template="page/tooling/#layout/breadcrumb" class="d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
@@ -240,7 +240,7 @@
         </ul>
         <li namespace>
             <h3 data-id="title" class="pd-10 pd-top-x3 pd-btm-x3 b txt-sm"></h3>
-            <ul data-id="items" is="play-seq-ul" play-seq-displacement="100" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
+            <ul data-id="items" is="play-seq-ul" play-seq="classIn:anim-fly-bottom; classInAlt:anim-fly-top; classOut:opacity-0; rootMargin:100px; oneoff: 1; duration: 600;" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.title).html(this.state.title);
@@ -248,7 +248,7 @@
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10" style="opacit-y: 0; background-color: ghostwhite;">
+        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10 opacity-0" style="background-color: ghostwhite;">
             <div class="pd-lft-10 pd-rt-10 sm--pd-0 mg-rt-10 flex-center">
                 <i data-id="icon" class="panel-icon bi lg"></i>
             </div>

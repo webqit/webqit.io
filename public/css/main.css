@@ -164,6 +164,9 @@ p, .p,
 .no-wrap {
     white-space: nowrap;
 }
+.opacity-0 {
+    opacity: 0;
+}
 .ring-shadow {
     box-shadow: 0px 0px 20px rgba(50, 0, 100, 0.25);
 }
