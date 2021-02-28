@@ -249,7 +249,9 @@
         <div class="section-header flex-y-stretch">
             <div class="col-1 sm--col-0 sm--pd-10 section-header-left"></div>
             <div class="col-grows pos-rel">
-                <div data-id="header" is="play-seq-div" play-seq="classIn:anim-fly-left-small; classInAlt:anim-fly-right-small; classOut:opacity-0; rootMargin:10px; oneoff: 1; duration: 600;" class="section-header-content pd-10 pd-x3 h3 pd-lft-x2 pd-btm-x4 opacity-0"></div>
+                <div class="section-header-content pd-10 pd-x3 h3 pd-lft-x2 pd-btm-x4">
+                    <div data-id="header" is="play-seq-div" play-seq="animIn:fly_left_small; animInAlt:scale_in_small; duration: 600;" style="opacity: 0;"></div>
+                </div>
             </div>
             <div class="col-1 sm--col-0 sm--pd-10 section-header-right"></div>
         </div>
@@ -276,12 +278,12 @@
 
                 </div>
 
-                <div is="play-seq-div" play-seq="classIn:anim-fly-bottom-small; classInAlt:anim-fly-top-small; classOut:opacity-0; rootMargin:10px; oneoff: 1; duration: 600;" class="opacity-0 section-main-b col-grows md--col-12 d-flex flex-column md--d-block md--radius-10 md--radius-top-rt-none md--radius-top-lft-none md--radius-btm-lft-none">
+                <div is="play-seq-div" play-seq="animIn:fly_bottom_small; animInAlt:fly_top_small; oneoff: 1; duration: 600;" class="section-main-b col-grows md--col-12 d-flex flex-column md--d-block md--radius-10 md--radius-top-rt-none md--radius-top-lft-none md--radius-btm-lft-none" style="opacity: 0;">
                     <div class="section-main-padding-header ht-80 t-extured md--d-none"></div>
                     <div class="section-main-header t-extured flex-x-separate flex-y-center pd-lft-10 pd-rt-4 pd-x3">
 
                         <div class="col-grows">
-                            <ul data-id="tabs" play-seq-displacement="100" template="page/_section" class="section-nav d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
+                            <ul data-id="tabs" template="page/_section" class="section-nav d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
                                 <li data-id="overflowNotch" namespace class="overflow-notch d-none" tabindex="0">
                                     <i class="bi bi-three-dots sm ht-full flex-y-center"></i>
                                     <div class="overflow ht-0 flex-x-center">

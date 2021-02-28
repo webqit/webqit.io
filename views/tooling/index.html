@@ -240,7 +240,7 @@
         </ul>
         <li namespace>
             <h3 data-id="title" class="pd-10 pd-top-x3 pd-btm-x3 b txt-sm"></h3>
-            <ul data-id="items" is="play-seq-ul" play-seq="classIn:anim-fly-bottom; classInAlt:anim-fly-top; classOut:opacity-0; rootMargin:100px; oneoff: 1; duration: 600;" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
+            <ul data-id="items" is="play-seq-ul" play-seq="animIn:fly_bottom; animInAlt:fly_top; rootMargin:100px; oneoff: 1; duration: 600;" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.title).html(this.state.title);
@@ -248,7 +248,7 @@
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10 opacity-0" style="background-color: ghostwhite;">
+        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10" style="opacity: 0; background-color: ghostwhite;">
             <div class="pd-lft-10 pd-rt-10 sm--pd-0 mg-rt-10 flex-center">
                 <i data-id="icon" class="panel-icon bi lg"></i>
             </div>
