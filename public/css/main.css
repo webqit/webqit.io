@@ -419,8 +419,11 @@ p, .p,
 
 /* ------------------- */
 
+.page-section .section-main,
 .page-section .section-main-a {
     background-color: var(--section-main-a-bg);
+}
+.page-section .section-main-a {
     color: var(--section-main-a-color);
     border-right: 3px solid var(--section-main-a-border);
     /**
