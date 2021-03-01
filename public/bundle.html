@@ -597,12 +597,14 @@ connectedCallback() {
 
     <footer class="page-footer flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
         <div class="col-2 sm--col-12 sm--pd-10 sm--pd-x3 sm--pd-top-0 txt-align-cntr sm--flex-y-center sm--flex-x-separate">
-            <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
-            <ul class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
-                <li class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
+            <div is="play-seq-div" play-seq="animIn:flip; animInAlt:fade_in; duration: 600;">
+                <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
+            </div>
+            <ul is="play-seq-ul" play-seq="animIn:fly_bottom_small; animInAlt:fade_in; duration: 600;" class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
+                <li is="play-seq-li" class="pd-4 sm--pd-10" style="opacity: 0;"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
                     <i class="bi bi-twitter sm flex-center"></i>
                 </a></li>
-                <li class="pd-4 sm--pd-10"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
+                <li is="play-seq-li" class="pd-4 sm--pd-10" style="opacity: 0;"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
                     <i class="bi bi-github sm flex-center"></i>
                 </a></li>
             </ul>
