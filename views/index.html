@@ -153,12 +153,14 @@
 
     <footer class="page-footer flex-y-stretch flex-wrap pd-top-10 pd-top-x3" style="border-top: 1px dashed silver;">
         <div class="col-2 sm--col-12 sm--pd-10 sm--pd-x3 sm--pd-top-0 txt-align-cntr sm--flex-y-center sm--flex-x-separate">
-            <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
-            <ul class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
-                <li class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
+            <div is="play-seq-div" play-seq="animIn:flip; animInAlt:fade_in; duration: 600;">
+                <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
+            </div>
+            <ul is="play-seq-ul" play-seq="animIn:fly_bottom_small; animInAlt:fade_in; duration: 600;" class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
+                <li is="play-seq-li" class="pd-4 sm--pd-10" style="opacity: 0;"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
                     <i class="bi bi-twitter sm flex-center"></i>
                 </a></li>
-                <li class="pd-4 sm--pd-10"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
+                <li is="play-seq-li" class="pd-4 sm--pd-10" style="opacity: 0;"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
                     <i class="bi bi-github sm flex-center"></i>
                 </a></li>
             </ul>
@@ -217,7 +219,7 @@
                                         <div class="response" id="mce-error-response" style="display:none; color: blueviolet; font-weight: bold;"></div>
                                         <div class="response" id="mce-success-response" style="display:none; color: red; font-weight: bold;"></div>
                                     </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_6091dca0ef3e87e3db682fe7f_a38711c3d0" tabindex="-1" value="" /></div>
+                                    <div style="position: absolute; left: -8000px;" aria-hidden="true"><input type="text" name="b_6091dca0ef3e87e3db682fe7f_a38711c3d0" tabindex="-1" value="" /></div>
                                 </div>
                             </form>
                         </div>
@@ -250,7 +252,7 @@
             <div class="col-1 sm--col-0 sm--pd-10 section-header-left"></div>
             <div class="col-grows pos-rel">
                 <div class="section-header-content pd-10 pd-x3 h3 pd-lft-x2 pd-btm-x4">
-                    <div data-id="header" is="play-seq-div" play-seq="animIn:fly_left_small; animInAlt:scale_in_small; duration: 600;" style="opacity: 0;"></div>
+                    <div data-id="header" is="play-seq-div" play-seq="animIn:fly_left_small; animInAlt:fly_right_small; duration: 600;" style="opacity: 0;"></div>
                 </div>
             </div>
             <div class="col-1 sm--col-0 sm--pd-10 section-header-right"></div>
@@ -271,7 +273,7 @@
                             <p data-id="desc" class="section-desc legend-font"></p>
                             <ul data-id="highlights" template="page/_section" class="section-highlights legend-font list-style-none"></ul>
                         </div>
-                        <div class="md--col-7 txt-align-cntr">
+                        <div is="play-seq-div" play-seq="animIn:fly_bottom_small; animInAlt:fly_top_small; oneoff: 1; duration: 600;" class="md--col-7 txt-align-cntr" style="opacity: 0;">
                             <img data-id="graphic" class="section-graphic" src="/img/banner-dev-tools.pngd" />
                         </div>
                     </div>
