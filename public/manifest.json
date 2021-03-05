@@ -1,13 +1,14 @@
 {
     "name": "WebQit",
     "short_name": "WebQit",
-    "description": "Tooling, Cloud, Community",
+    "description": "The tooling, cloud, and community for web-native development",
     "categories": [
         "WebQit Tooling",
         "WebQit Cloud",
-        "WebQit Community"
+        "WebQit Community",
+        "Web-Native"
     ],
-    "theme_color": "white",
+    "theme_color": "ghostwhite",
     "background_color": "white",
     "icons": [
         {

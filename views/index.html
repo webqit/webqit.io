@@ -1,6 +1,6 @@
 
 <!-- Main Home View -->
-<div namespace class="homepage snap-mandatory-container">
+<div namespace class="homepage">
 
     <!-- OVERLAY_MENU -->
 
@@ -51,7 +51,6 @@
     <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.125); z-index: 15;"></div>
 
     <script type="subscript">
-        $(document.namespace.theme_color).attr('content', 'white');
         $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
         $(this.namespace.app_drawer_open2).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
         $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
