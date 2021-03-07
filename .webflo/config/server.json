@@ -4,16 +4,10 @@
         "port": 4200,
         "keyfile": "/etc/letsencrypt/live/webqit.io/privkey.pem",
         "certfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
-        "force": true
+        "force": false
     },
-    "process": {
-        "name": "webqit.io",
-        "errfile": "",
-        "outfile": "",
-        "exec_mode": "fork",
-        "merge_logs": true,
-        "autorestart": true
-    },
+    "process": {},
     "shared": false,
-    "background process": true
+    "background process": false,
+    "force_www": "remove"
 }

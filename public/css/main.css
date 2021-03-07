@@ -5,7 +5,7 @@
  * - 760px
  */
 
-@font-face {
+ @font-face {
     font-family: 'League Spartan';
     src: url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot');
     src: url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
@@ -287,7 +287,8 @@ p, .p,
     background-color: var(--page-bg);
 }
 .page-section {
-    color: var(--page-color);
+    color: var(--section-color);
+    background-color: var(--section-bg);
 }
 
 .page-header,
@@ -298,7 +299,7 @@ p, .p,
     border-bottom: 1px dashed gainsboro;
 }
 .page-section.showcase .showcase-items {
-    height: 100px;
+    height: 150px;
 }
 
 /**
@@ -311,7 +312,7 @@ p, .p,
 
 .page-section .section-header-left,
 .page-section .section-footer-left {
-    border-right: 3px solid var(--section-main-b-bg, lavender);
+    border-right: 3px solid var(--section-main-a-bg, gray);
 }
 .page-section .section-header-content,
 .page-section .section-footer-content {
@@ -333,11 +334,11 @@ p, .p,
 .page-section .section-header-content::before {
     position: absolute;
     top: 40px;
-    left: -11.5px;
-    width: 20px;
-    height: 20px;
+    left: -16.5px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 5px solid var(--page-bg);
+    border: 10px solid var(--section-bg);
     background-color: var(--section-main-a-bg, gainsboro);
     display: inline-block;
     content: "";
@@ -363,9 +364,9 @@ p, .p,
     background-image: url(/img/nimbus-home-platform-bottom-56a511181a4242337a2bf115f8e32d613c081d1ddbf38d3d599826e0f9f7aac1.svg);
     background-repeat: no-repeat;
     background-position: 50% 60%;
+    background-color: ghostwhite;
     */
     --section-main-a-bg: black;
-    background-color: ghostwhite;
 }
 .page-section.hero .section-header-left {
     border-right-color: hotpink;
@@ -415,25 +416,24 @@ p, .p,
 
 .page-section .section-main {
     min-height: 100vh;
+    border-right: 1px solid var(--section-main-a-bg);
 }
 
 /* ------------------- */
 
-.page-section .section-main,
 .page-section .section-main-a {
     background-color: var(--section-main-a-bg);
+    color: var(--section-main-a-color);
 }
 .page-section .section-main-a {
-    color: var(--section-main-a-color);
-    border-right: 3px solid var(--section-main-a-border);
-    /**
-    box-shadow: -10px 0px 15px rgba(0, 0, 0, 0.25);
-    */
+    border-right: 1px solid var(--section-main-a-bg2);
 }
+.page-section .section-main,
 .page-section .section-main-b {
     background-color: var(--section-main-b-bg);
     color: var(--section-main-b-color);
 }
+/*(
 .page-section .section-main-a .section-main-header,
 .page-section .section-main-a .section-main-padding-header {
     background-color: var(--section-main-a-bg1);
@@ -444,11 +444,30 @@ p, .p,
     background-color: var(--section-main-b-bg1);
     color: var(--section-main-b-color1);
 }
+.page-section .section-main-a .section-main-content {
+    background-color: var(--section-main-a-bg2);
+    color: var(--section-main-a-color2);
+}
+*/
+.page-section .section-main-a .section-graphic {
+    border-top: 1px solid var(--section-main-a-bg2);
+}
+.page-section .section-main-b .section-main-content {
+    background-color: white;
+}
 @media (max-width: 992px) {
     .page-section .section-main-a {
         box-shadow: none;
         z-index: 10;
     }
+    .page-section .section-main,
+    .page-section .section-main-a {
+        border-right: none;
+    }
+    .page-section .section-main {
+        border-bottom: 1px solid var(--section-main-a-bg);
+    }
+    .page-section .section-main,
     .page-section .section-main-b .section-main-header {
         background-color: var(--section-main-a-bg);
         color: var(--section-main-a-color);
@@ -467,7 +486,7 @@ p, .p,
     backdrop-filter: blur(10px);
 }
 .page-section .section-icon {
-    opacity: 0.95;
+    color: var(--section-main-a-bg2);
 }
 .page-section .section-highlights {
     border-top: 1px dashed silver;
@@ -480,6 +499,7 @@ p, .p,
 
 /* section-nav overflow-notch */
 
+
 .page-section .section-nav > li {
     line-height: 60px;
     padding-left: 15px;
@@ -488,10 +508,14 @@ p, .p,
     display: inline-block;
     font-weight: bold;
     font-size: 1.1em;
-    border-bottom: 1px solid transparent;
+    border-bottom: 2px solid transparent;
     cursor: default;
 }
+.page-section .section-nav > .overflow-notch:focus {
+    border: 1px dashed currentColor;
+}
 .page-section .section-nav > li.active {
+    border-bottom: 2px solid transparent;
     color: var(--section-main-b-color-active);
     border-color: currentColor;
 }
@@ -505,24 +529,21 @@ p, .p,
         border-top: 1px solid transparent;
         border-bottom: none;
         border-bottom-width: 3px;
-        */
         border: 1px dashed transparent;
-        border-bottom-style: solid;
+        border-bottom-width: solid;
+        */
+        color: whitesmoke;
     }
     .page-section .section-nav > li.active {
+        color: white;
+        border-bottom-color: white;
+        /**
         color: var(--section-main-a-color-active);
         border-color: var(--section-main-b-bg);
         border-bottom-color: var(--section-main-a-border);
-        /**
         border-bottom-color: currentColor;
         */
     }
-}
-.page-section .section-nav > .overflow-notch {
-    border: 1px dashed transparent;
-}
-.page-section .section-nav > .overflow-notch:focus {
-    border-color: currentColor;
 }
 .page-section .section-nav > .overflow-notch .overflow-list > li {
     line-height: normal;
@@ -540,7 +561,9 @@ p, .p,
 .page-section .section-panel .panel-page {
     margin-top: 10px;
 }
-.page-section .section-panel .panel-main,
+.page-section .section-panel .panel-main {
+    border-top: 1px solid var(--section-main-a-bg);
+}
 .page-section .section-panel .panel-demo-container,
 .page-section .section-panel .panel-meta-container {
     border-top: 1px dashed var(--section-main-b-border);
@@ -583,25 +606,11 @@ p, .p,
 
 /* ------------------- */
 
-#tooling-section {
-    --story-line-color: #f77bf7;
-    --section-main-a-bg: #7c278d;
-    --section-main-a-color: whitesmoke;
-    --section-main-a-color-active: white;
-    --section-main-a-border: blueviolet;
-    --section-main-a-bg2: rgba(5, 2, 2, 0.25);
-    --section-main-a-color2: white;
-    
-    --section-main-b-bg: #f4e2f8;
-    --section-main-b-color: black;
-    --section-main-b-bg-active: transparent;
-    --section-main-b-color-active: blueviolet;
-    --section-main-b-border: silver;
-    --section-main-b-bg2: rgba(100, 100, 100, 0.125);
-    --section-main-b-color2: white;
+.page-section.showcase {
+    --section-bg: ghostwhite;
 }
-#cloud-section {
-    --story-line-color: #cca0f5;
+#tooling-section {
+    --section-bg: ghostwhite;
     --section-main-a-bg: #8a2be2;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
@@ -617,16 +626,33 @@ p, .p,
     --section-main-b-bg2: rgba(100, 100, 100, 0.125);
     --section-main-b-color2: white;
 }
-#community-section {
-    --story-line-color: #8eb4fa;
+#cloud-section {
+    --section-bg: ghostwhite;
     --section-main-a-bg: #2f68d1;
+    --section-main-a-color: whitesmoke;
+    --section-main-a-color-active: white;
+    --section-main-a-border: turquoise;
+    --section-main-a-bg2: rgba(5, 2, 2, 0.25);
+    --section-main-a-color2: white;
+    
+    --section-main-b-bg: #e5edfa;
+    --section-main-b-color: black;
+    --section-main-b-bg-active: transparent;
+    --section-main-b-color-active: turquoise;
+    --section-main-b-border: silver;
+    --section-main-b-bg2: rgba(100, 100, 100, 0.125);
+    --section-main-b-color2: white;
+}
+#community-section {
+    --section-bg: ghostwhite;
+    --section-main-a-bg: #117cad;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
     --section-main-a-bg2: rgba(5, 2, 2, 0.25);
     --section-main-a-color2: white;
     
-    --section-main-b-bg: #e8eef8;
+    --section-main-b-bg: #c8ecf5;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
     --section-main-b-color-active: deeppink;
@@ -902,4 +928,3 @@ p, .p,
 		opacity: 0;
 	}
 }
-
