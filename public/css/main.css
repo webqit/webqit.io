@@ -133,8 +133,8 @@ p, .p,
 }
 .cta .flex-arrow {
     position: relative;
-    margin-left: 25px;
-    transform: translate(-15px, 0px);
+    margin-left: 35px;
+    transform: translate(-10px, 0px);
     transition: all 300ms !important;
 }
 .cta:hover .flex-arrow {
@@ -196,7 +196,7 @@ p, .p,
 }
 
 .text-gradient-1 {
-    background-image: -webkit-linear-gradient(70deg, black, slateblu);
+    background-image: -webkit-linear-gradient(70deg, blueviolet, teal);
 }
 .color-1 {
     color: slateblue;
@@ -292,7 +292,8 @@ p, .p,
 }
 
 .page-header,
-.page-section.hero,
+.page-section.hero .section-header-bg-graphic,
+.page-section.hero .section-header-right,
 .page-section.showcase .showcase-items {
     color: black;
     background-color: ghostwhite;
@@ -312,7 +313,7 @@ p, .p,
 
 .page-section .section-header-left,
 .page-section .section-footer-left {
-    border-right: 3px solid var(--section-main-a-bg, gray);
+    border-right: 3px solid var(--section-main-a-bg, black);
 }
 .page-section .section-header-content,
 .page-section .section-footer-content {
@@ -320,8 +321,9 @@ p, .p,
     width: 500px;
     max-width: 90%;
     font-size: 2em;
-    font-weight: 200;
+    color: var(--section-main-a-bg);
     /**
+    font-weight: 400;
     opacity: 0.35;
     */
 }
@@ -331,17 +333,21 @@ p, .p,
         font-size: 1.9em;
     }
 }
-.page-section .section-header-content::before {
+.page-section .section-header-icon {
     position: absolute;
     top: 40px;
+    left: -37.5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--section-bg);
+    /**
     left: -16.5px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     border: 10px solid var(--section-bg);
     background-color: var(--section-main-a-bg, gainsboro);
-    display: inline-block;
-    content: "";
+    */
 }
 /**
 .page-section .section-header-content:hover,
@@ -378,20 +384,29 @@ p, .p,
     transform: scale(1.3);
     z-index: -1;
 }
-.page-section.hero .section-header-content-container::before {
+.page-section.hero .section-header-bg-graphic {
     position: absolute;
     right: -100px;
     top: -20%;
     width: 40%;
     height: 140%;
-    display: block;
-    content: "";
     border-right: 10px solid white;
     transform: rotate(190deg);
+    overflow: hidden;
+}
+.page-section.hero .section-header-bg-graphic::before {
+    position: absolute;
+    left: 50px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    transform: rotate(-10deg);
     background-image: url(/img/bg/Dots.svg);
 }
 @media (max-width: 992px) {
-    .page-section.hero .section-header-content-container::before {
+    .page-section.hero .section-header-bg-graphic {
         display: none;
     }
 }
@@ -416,22 +431,37 @@ p, .p,
 
 .page-section .section-main {
     min-height: 100vh;
-    border-right: 1px solid var(--section-main-a-bg);
 }
 
 /* ------------------- */
 
+.page-section .section-main,
 .page-section .section-main-a {
     background-color: var(--section-main-a-bg);
     color: var(--section-main-a-color);
 }
-.page-section .section-main-a {
-    border-right: 1px solid var(--section-main-a-bg2);
+.page-section .section-main {
+    /**
+    padding-bottom: 40px;
+    */
+    border-left: 10px solid var(--section-main-a-bg);
+    border-right: 10px solid var(--section-main-a-bg);
 }
-.page-section .section-main,
+.page-section .section-main-a,
 .page-section .section-main-b {
+    background-image: url(/img/bg2/intro-circles.svg);
+    background-size: contain;
+    background-position: top center;
+}
+.page-section .section-main-b {
+    /**
     background-color: var(--section-main-b-bg);
+    */
     color: var(--section-main-b-color);
+}
+.page-section .section-url2 {
+    color: white;
+    background-color: var(--section-main-a-bg);
 }
 /*(
 .page-section .section-main-a .section-main-header,
@@ -453,7 +483,29 @@ p, .p,
     border-top: 1px solid var(--section-main-a-bg2);
 }
 .page-section .section-main-b .section-main-content {
-    background-color: white;
+    background-color: whitesmoke;
+    /**
+    background-color: dimgray;
+    */
+    background-color: rgba(60, 60, 60, 1);
+    color: silver;
+}
+.page-section .section-main-padding-header {
+    border-bottom: 3px solid var(--section-main-a-bg2);
+}
+.page-section .section-main-header {
+    position: sticky;
+    top: 0px;
+    font-weight: bold;
+    line-height: 90px;
+    -wekit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 3;
+}
+.page-section .section-main-a .section-main-header {
+}
+.page-section .section-main-b .section-main-header {
+    color: var(--section-main-a-color);
 }
 @media (max-width: 992px) {
     .page-section .section-main-a {
@@ -462,10 +514,12 @@ p, .p,
     }
     .page-section .section-main,
     .page-section .section-main-a {
-        border-right: none;
+        border: none;
     }
-    .page-section .section-main {
-        border-bottom: 1px solid var(--section-main-a-bg);
+    .page-section .section-main-b .section-main-content {
+        /**
+        background-color: white;
+        */
     }
     .page-section .section-main,
     .page-section .section-main-b .section-main-header {
@@ -475,15 +529,6 @@ p, .p,
         box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
         */
     }
-}
-.page-section .section-main-header {
-    position: sticky;
-    top: 0px;
-    font-weight: bold;
-    line-height: 60px;
-    z-index: 3;
-    -wekit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
 }
 .page-section .section-icon {
     color: var(--section-main-a-bg2);
@@ -500,39 +545,45 @@ p, .p,
 /* section-nav overflow-notch */
 
 
+.page-section ul {
+}
 .page-section .section-nav > li {
-    line-height: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: all 400ms;
+    height: 90px;
+    line-height: 84px;
+    padding-left: 12px;
+    padding-right: 12px;
     display: inline-block;
     font-weight: bold;
     font-size: 1.1em;
-    border-bottom: 2px solid transparent;
+    border: 3px solid transparent;
     cursor: default;
 }
 .page-section .section-nav > .overflow-notch:focus {
-    border: 1px dashed currentColor;
+    outline-width: 1px;
+    outline-style: dashed;
+    outline-color: currentColor;
 }
 .page-section .section-nav > li.active {
-    border-bottom: 2px solid transparent;
-    color: var(--section-main-b-color-active);
-    border-color: currentColor;
+    color: white;
+    border-bottom-color: black;
 }
 @media (max-width: 992px) {
     .page-section .section-main-header {
         -wekit-backdrop-filter: unset;
         backdrop-filter: unset;
+        border-bottom: none;
+    }
+    .page-section .section-nav {
+        color: gainsboro;
     }
     .page-section .section-nav > li {
         /**
+        border-bottom-width: 2px;
         border-top: 1px solid transparent;
         border-bottom: none;
-        border-bottom-width: 3px;
         border: 1px dashed transparent;
         border-bottom-width: solid;
         */
-        color: whitesmoke;
     }
     .page-section .section-nav > li.active {
         color: white;
@@ -555,28 +606,52 @@ p, .p,
 
 /** section-panel */
 
-.page-section .section-panel .panel-title,
+/**
+.page-section .section-panel .panel-title,*/
 .page-section .section-panel .panel-desc,
-.page-section .section-panel .panel-desc2,
-.page-section .section-panel .panel-page {
-    margin-top: 10px;
+.page-section .section-panel .panel-desc2 {
+    margin-top: 15px;
 }
 .page-section .section-panel .panel-main {
+    /**
     border-top: 1px solid var(--section-main-a-bg);
+    */
 }
 .page-section .section-panel .panel-demo-container,
 .page-section .section-panel .panel-meta-container {
-    border-top: 1px dashed var(--section-main-b-border);
+    border-top: 1px solid var(--section-main-a-bg2);
 }
-/**
 .page-section .section-panel .panel-icon,
-.page-section .section-panel .panel-title,*/
-.page-section .section-panel .panel-page {
-    color: var(--section-main-b-color-active);
+.page-section .section-panel .panel-title,
+.page-section .section-panel .panel-desc,
+.page-section .section-panel .panel-desc2 span,
+.page-section .section-panel a {
+    color: var(--section-main-b-color-light);
+}
+.page-section .section-panel .panel-icon:after {
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--section-main-b-color-light);
+    box-shadow: 0px -2.5px 5px var(--section-main-b-color-light);
+    display: block;
+    content: "";
+    opacity: 0.25;
 }
 .page-section .section-panel .panel-page {
-    background-color: var(--section-main-b-bg-active);
-    border-color: var(--section-main-b-color-active);
+    /**
+    background-color: var(--section-main-a-bg);
+    color: white;
+    background-color: var(--section-main-b-color-light);
+    color: black;
+    */
+    margin-top: 20px;
+    border: 2px solid var(--section-main-a-bg);
+    background-color: var(--section-main-a-bg);
+    color: white;
+    transition: all 300ms;
+}
+.page-section .section-panel .panel-page:active {
+    border-color: var(--section-main-b-color-light);
 }
 .page-section .section-panel .panel-demo,
 .page-section .section-panel .panel-meta {
@@ -606,8 +681,15 @@ p, .p,
 
 /* ------------------- */
 
-.page-section.showcase {
+.page-section.footer {
+    --section-color: gray;
     --section-bg: ghostwhite;
+}
+.page-section.footer a:hover {
+    color: black;
+}
+.page-section.showcase {
+    --section-bg: whitesmoke;
 }
 #tooling-section {
     --section-bg: ghostwhite;
@@ -615,13 +697,13 @@ p, .p,
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: dodgerblue;
-    --section-main-a-bg2: rgba(5, 2, 2, 0.25);
+    --section-main-a-bg2: rgba(5, 2, 2, 0.125);
     --section-main-a-color2: white;
     
     --section-main-b-bg: #ece5f5;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
-    --section-main-b-color-active: dodgerblue;
+    --section-main-b-color-light: skyblue;
     --section-main-b-border: silver;
     --section-main-b-bg2: rgba(100, 100, 100, 0.125);
     --section-main-b-color2: white;
@@ -632,13 +714,13 @@ p, .p,
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: turquoise;
-    --section-main-a-bg2: rgba(5, 2, 2, 0.25);
+    --section-main-a-bg2: rgba(5, 2, 2, 0.125);
     --section-main-a-color2: white;
     
     --section-main-b-bg: #e5edfa;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
-    --section-main-b-color-active: turquoise;
+    --section-main-b-color-light: turquoise;
     --section-main-b-border: silver;
     --section-main-b-bg2: rgba(100, 100, 100, 0.125);
     --section-main-b-color2: white;
@@ -646,16 +728,17 @@ p, .p,
 #community-section {
     --section-bg: ghostwhite;
     --section-main-a-bg: #117cad;
+    --section-main-a-bg: teal;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: deeppink;
-    --section-main-a-bg2: rgba(5, 2, 2, 0.25);
+    --section-main-a-bg2: rgba(5, 2, 2, 0.125);
     --section-main-a-color2: white;
     
     --section-main-b-bg: #c8ecf5;
     --section-main-b-color: black;
     --section-main-b-bg-active: transparent;
-    --section-main-b-color-active: deeppink;
+    --section-main-b-color-light: lightgreen;
     --section-main-b-border: silver;
     --section-main-b-bg2: rgba(100, 100, 100, 0.125);
     --section-main-b-color2: white;
