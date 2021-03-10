@@ -503,7 +503,7 @@ connectedCallback() {
     <!-- HEADER -->
 
     <header class="page-header flex-y-stretch">
-        <div class="col-1 sm--col-0 sm--pd-6 sm--pd-x2 flex-x-center">
+        <div class="wt-80 md--wt-60 sm--wt-20 flex-x-center">
             <span data-id="app_drawer_open" class="flex-center pd-4 b cursor-pointer sm--d-none">
                 <i class="bi bi-filter-left flex-center text-gradient text-gradient-2"></i>
             </span>
@@ -526,38 +526,38 @@ connectedCallback() {
     <section namespace class="page-section hero">
 
         <div class="section-header flex-y-stretch">
-            <div class="section-header-left col-1 sm--col-0 sm--pd-6 sm--pd-x2 border-color-2 pseudo-bg-color-2"></div>
-            <div class="section-header-content-container overflow-hidden col-grows pd-top-10 pd-btm-10 pd-x3">
-                <div class="pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2 txt-xs sm--txt-xxs color-2">
+            <div class="section-header-left sm--wt-0"></div>
+            <div class="section-header-content-container overflow-hidden col-grows pd-10 pd-x3">
+                <div class="pd-top-10 pd-btm-10 pd-x2 txt-xs sm--txt-xxs color-2">
                     <span class="section-header-tag pd-10 color-2 b">#WEB_NATIVE</span>
                 </div>
                 <div class="flex-y-stretch md--d-block">
-                    <h1 data-id="header" class="section-header-content pd-top-8 pd-btm-10 pd-x2 md--pd-10 md--pd-top-x2 md--pd-btm-x2">
+                    <h1 data-id="header" class="section-header-content pd-top-8 pd-btm-10 pd-x2">
                         <span class="heavy-text" style="font-size: 1.2em;">The tooling, cloud, and community for <span class="no-wrap text-gradient text-gradient-2">web-native</span> development.</span><br />
                         <span class="d-inline-block pd-top-10 pd-x2 txt-larger">Build your most ambitious apps with the most native approach!</span>
                     </h1>
                     <div class="section-header-graphic col-grows"></div>
                 </div>
-                <ul data-id="inpage_menu" class="hero-links text-gradient text-gradient-1 anim-fly-top-small b pd-top-10 pd-btm-10 pd-x2 md--pd-10 md--pd-lft-6 md--pd-top-x2 md--pd-btm-x2 d-inline-block list-style-none">
-                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#tooling-section" class="flex-y-end">
-                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
-                        <div class="txt-xl b">Tooling</div>
-                    </a></li>
-                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#cloud-section" class="flex-y-end">
-                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
-                        <div class="txt-xl b">Cloud</div>
-                    </a></li>
-                    <li class="pd-top-8 pd-btm-8 border-top-dashed"><a href="#community-section" class="flex-y-end">
-                        <i class="bi bi-arrow-down flex-center mg-rt-10"></i>
-                        <div class="txt-xl b">Community</div>
-                    </a></li>
-                    <li class="pd-2"><a href="#" class="mg-10 flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1 d-none md---d-inline-flex" style="color: white;">
-                        <i class="bi bi-play-fill sm flex-center"></i>
-                    </a></li>
-                </ul>
+                <div class="hero-inks-container d-inline-block radius-8 drop-shadow overflow-hidden">
+                    <ul data-id="inpage_menu" class="hero-links pd-10 pd-rt-x3 text-gradient text-gradient-1 anim-fly-top-small list-style-none">
+                        <li class="pd-top-8 pd-btm-8"><a href="#tooling-section" class="flex-y-end">
+                            <i class="bi bi-arrow-down sm flex-center pd-lft-6 pd-rt-6"></i>
+                            <div class="b pd-lft-6 pd-rt-6">Tooling</div>
+                        </a></li>
+                        <li class="pd-top-8 pd-btm-8"><a href="#cloud-section" class="flex-y-end">
+                            <i class="bi bi-arrow-down sm flex-center pd-lft-6 pd-rt-6"></i>
+                            <div class="b pd-lft-6 pd-rt-6">Cloud</div>
+                        </a></li>
+                        <li class="pd-top-8 pd-btm-8"><a href="#community-section" class="flex-y-end">
+                            <i class="bi bi-arrow-down sm flex-center pd-lft-6 pd-rt-6"></i>
+                            <div class="b pd-lft-6 pd-rt-6">Community</div>
+                        </a></li>
+                    </ul>
+                </div>
                 <div class="section-header-bg-graphic"></div>
             </div>
-            <div class="section-header-right col-1 sm--col-0 sm--pd-6 sm--pd-x2 flex-y-stretch textured">
+            <div class="section-header-right sm--wt-0"></div>
+            <div class="section-header-right wt-80 md--wt-60 sm--wt-0 sm--pd-10 flex-y-stretch d-none">
                 <div class="flex-x-center wt-0 pd-top-10 pd-top-x10 md--d-none">
                     <ul class="mg-top-10 list-style-none">
                         <li class="mg-btm-10"><a href="#tooling-section" class="flex-center min-wt-40 min-ht-40 radius-full ring-shadow bg-color-1" style="color: white;">
@@ -577,7 +577,11 @@ connectedCallback() {
     </section>
 
     <section namespace class="page-section showcase">
-        <div class="showcase-items flex-center">
+        <div class="flex-y-stretch d-none">
+            <div class="pd-10 sm--pd-lft-0"></div>
+            <div class="pd-10 sm--pd-lft-0"></div>
+        </div>
+        <div class="showcase-items flex-center c-ol-grows r-adius-8">
             <img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" />
         </div>
         <div class="section-footer flex-y-stretch">
@@ -603,11 +607,11 @@ connectedCallback() {
             <div is="play-seq-div" play-seq="animIn:flip; animInAlt:fade_in; duration: 600;">
                 <a href="/#"><img alt="WebQit logo" src="/img/logo/logo.130x130.fw.png" class="wt-60 sm--wt-5 sm--wt-x10 mg-lft-2 negative-mg" /></a>
             </div>
-            <ul is="play-seq-ul" play-seq="animIn:fly_bottom_small; animInAlt:fade_in; duration: 600;" class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
-                <li is="play-seq-li" class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
+            <ul i-s="play-seq-ul" play-seq="animIn:fly_bottom_small; animInAlt:fade_in; duration: 600;" class="mg-top-10 mg-top-x2 sm--mg-top-0 sm--flex-y-center list-style-none">
+                <li i-s="play-seq-li" class="pd-4 sm--pd-10"><a href="https://twitter.com/@Web_Qit" target="_blank" class="d-inline-block">
                     <i class="bi bi-twitter sm flex-center"></i>
                 </a></li>
-                <li is="play-seq-li" class="pd-4 sm--pd-10"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
+                <li i-s="play-seq-li" class="pd-4 sm--pd-10"><a href="https://github.com/webqit" target="_blank" class="d-inline-block">
                     <i class="bi bi-github sm flex-center"></i>
                 </a></li>
             </ul>
@@ -697,7 +701,7 @@ connectedCallback() {
         <div class="section-header flex-y-stretch">
             <div class="col-1 section-header-left"></div>
             <div class="col-grows pos-rel">
-                <div class="section-header-content pd-10 pd-x4 h3 pd-btm-x4">
+                <div class="section-header-content h3 pd-10 pd-x4 md--pd-10 md--pd-x4 md--pd-lft-x3">
                     <i data-id="icon1" class="section-header-icon bi flex-center xs b"></i>
                     <div data-id="header" is="play-seq-div" play-seq="animIn:fly_left_small; animInAlt:fly_right_small; duration:600; autoOffStateReverse:1;"></div>
                 </div>
