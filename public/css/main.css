@@ -382,6 +382,9 @@ p, .p,
     */
     --section-bg: ghostwhite;
 }
+.page-section.hero .section-header-content {
+    color: black;
+}
 .page-section.hero .section-header-left,
 .page-section.hero .section-header-right {
     width: 4%;
