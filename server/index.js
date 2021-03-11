@@ -41,7 +41,7 @@ export default async (flo, recieved, next) => {
         ],
         featured: featuredProjects,
     }, {
-        header: 'We operate a purpose-built cloud for web-native development to give you the most streamlined way yet to build the most stable apps.',
+        header: 'We offer a purpose-built cloud for web-native development to give you the most streamlined way yet to build the most stable apps.',
         footer: '',
         name: 'cloud',
         icon: 'cloud',
@@ -91,7 +91,7 @@ export default async (flo, recieved, next) => {
         desc: 'WebQit\'s community initiatives and web standardization efforts.',
         highlights: [
             {icon: 'flag', content: 'Join in with your voice, or bring the course you care about.'},
-            {icon: 'arrow-return-right', content: 'The web is all of us!'},
+            {icon: 'arrow-return-right', content: 'Or find help in getting success with web-native development!'},
         ],
         featured: [/**{
             icon: 'flag',
@@ -113,10 +113,10 @@ export default async (flo, recieved, next) => {
             name: 'web-native',
             shortTitle: 'Web-Native CG',
             title: 'Web-Native (W3C) Community Group',
-            desc: 'A Community Group at W3C for the Web-Native initiative.',
-            desc2: 'Join in facilitating new and exisiting web platform technologies.',
+            desc: 'The Web-Native Community Group at W3C.',
+            desc2: 'Bank more on the platform and less on abstractions; go further to getting involved in facilitating new native technologies.',
             meta: [
-                {title: 'Mission', desc: '"Bank more on the platform and less on abstractions."'},
+                {title: '...', desc: '<a href="https://w3.org/community/web-native">Learn more</a>'},
             ],
             cta: 'Join Web-Native',
             ctaRef: 'https://w3.org/community/web-native/join',
