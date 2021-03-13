@@ -292,7 +292,7 @@ p, .p,
 }
 
 .page-header {
-    border-bottom: 1px dashed gainsboro;
+    border-bottom: 3px solid gainsboro;
 }
 .page-section.hero .section-header-bg-graphic,
 .page-section.hero .section-header-right {
@@ -310,7 +310,7 @@ p, .p,
     position: relative;
 }
 .page-section.hero .header-base {
-    border-top: 1px solid slateblue;
+    border-top: 3px solid gainsboro;
     background-color: ghostwhite;
 }
 
@@ -380,7 +380,7 @@ p, .p,
 
 
 .page-header {
-    background-color: white;
+    background-color: ghostwhite;
 }
 .page-section.hero {
     /**
