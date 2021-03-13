@@ -196,7 +196,7 @@ p, .p,
 }
 
 .text-gradient-1 {
-    background-image: -webkit-linear-gradient(70deg, teal, blueviolet);
+    background-image: -webkit-linear-gradient(70deg, lime, hotpink);
 }
 .color-1 {
     color: slateblue;
@@ -294,8 +294,6 @@ p, .p,
 .page-header,
 .page-section.hero .section-header-bg-graphic,
 .page-section.hero .section-header-right {
-    color: black;
-    background-color: ghostwhite;
     border-bottom: 1px dashed gainsboro;
 }
 .page-section.hero .section-header-bg-graphic,
@@ -304,8 +302,18 @@ p, .p,
 }
 .page-section.showcase .showcase-items {
     height: 150px;
-    border-top: 1px solid gainsboro;
-    border-bottom: 1px solid gainsboro;
+    border-bottom: 1px dashed gainsboro;
+}
+.page-section.hero .section-header {
+    position: relative;
+}
+.page-section.showcase .showcase-items,
+.page-section.hero .header-base {
+    position: relative;
+}
+.page-section.hero .header-base {
+    border-top: 1px dashed gainsboro;
+    background-color: ghostwhite;
 }
 
 /**
@@ -372,6 +380,10 @@ p, .p,
 
 /* ------------------- */
 
+
+.page-header {
+    background-color: white;
+}
 .page-section.hero {
     /**
     background-image: url(/img/nimbus-home-platform-bottom-56a511181a4242337a2bf115f8e32d613c081d1ddbf38d3d599826e0f9f7aac1.svg);
@@ -380,14 +392,10 @@ p, .p,
     background-color: ghostwhite;
     --section-main-a-bg: black;
     */
-    --section-bg: ghostwhite;
+    --section-bg: white;
 }
 .page-section.hero .section-header-content {
     color: black;
-}
-.page-section.hero .section-header-left,
-.page-section.hero .section-header-right {
-    width: 4%;
 }
 .page-section.hero .section-header-bg-graphic {
     position: absolute;
@@ -395,6 +403,7 @@ p, .p,
     top: -20%;
     width: 40%;
     height: 140%;
+    min-height: 100px;
     /**
     border-right: 10px solid white;
     */
@@ -417,14 +426,23 @@ p, .p,
     }
 }
 .section-header-tag {
-    background-color: gainsboro;
+    background-color: ghostwhite;
 }
 .hero-inks-container {
+    position: relative;
+    background-color: rgb(60, 60, 60);
     background-color: white;
+    max-width: 300px;
+    top: 30px;
+    z-index: 20;
+    border-left: 4px solid slateblue;
 }
 .hero-links li:nth-child(even) {
     border-top: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
+}
+.hero-links li:hover {
+    color: black !important;
 }
 
 /* ------------------- */
@@ -646,7 +664,9 @@ p, .p,
 .page-section .section-panel .panel-desc,
 .page-section .section-panel .panel-desc2 span,
 .page-section .section-panel a {
+    /**
     color: var(--section-main-b-color-light);
+    */
 }
 .page-section .section-panel .panel-icon:after {
     height: 10px;
