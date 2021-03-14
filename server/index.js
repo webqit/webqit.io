@@ -38,7 +38,7 @@ export default async (flo, recieved, next) => {
         highlights: [
             {icon: 'code', content: '<b>Frontend</b> - find tools that let you author the UI the HTML5/CSS3/ES6+ way.',},
             {icon: 'braces', content: '<b>Backend</b> - find tools that cut your backend work in half using a native-first approach.'},
-            {icon: 'terminal', content: '<b>Fullstack</b> - leverage fullstack tools that let you use the same code both on both ends of your app.',},
+            {icon: 'terminal', content: '<b>Fullstack</b> - leverage fullstack tools that let you use the same code across all layers of your app.',},
             {icon: 'arrow-return-right', content: 'End up with less code! Ship a native-level performance to your users.'},
         ],
         featured: featuredProjects,
