@@ -41,7 +41,7 @@ export default async (flo, recieved, next) => {
         ],
         featured: featuredProjects,
     }, {
-        header: 'We offer a purpose-built cloud for web-native development to give you the most streamlined way yet to build the most stable apps.',
+        header: 'We offer a purpose-built cloud for web-native development to give you the most streamlined way yet to provision the most native apps.',
         footer: '',
         name: 'cloud',
         icon: 'cloud',
