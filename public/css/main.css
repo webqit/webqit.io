@@ -424,8 +424,8 @@ p, .p,
     }
 }
 .section-header-tag {
-    background-color: dimgray;
     background-color: rgb(60, 60, 60);
+    background-color: black;
     color: gainsboro;
 }
 .hero-inks-container {
