@@ -92,10 +92,11 @@ export default async (flo, recieved, next) => {
         icon: 'flag',
         graphic: '/img/cloud-itls-image-best-approach.png',
         title: 'Community',
-        desc: 'WebQit\'s community initiatives and web standardization efforts.',
+        desc: '<b>WebQit community</b> is a focused set of initiatives for facilitating community projects that explore new possibilities on the web platform, and for increasing community uptake of native web technologies.',
         highlights: [
-            {icon: 'flag', content: 'Join in with your voice, or bring the course you care about.'},
-            {icon: 'arrow-return-right', content: 'Or find help in getting success with web-native development!'},
+            {icon: 'dice-3', content: 'Innovate around native technologies to solve everyday dev problems; bring the course you care about.'},
+            {icon: 'code-slash', content: 'Learn the web-native approach or get help with your web-native project from the community.'},
+            {icon: 'arrow-return-right', content: 'Get recognized!'},
         ],
         featured: [/**{
             icon: 'flag',
