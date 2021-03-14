@@ -34,7 +34,7 @@ export default async (flo, recieved, next) => {
         icon: 'braces',
         graphic: '/img/illus/tooling/dev.fw.png',
         title: 'Tooling',
-        desc: 'The web tooling project with an obsessive focus on "less tooling". <b>WebQit Tooling</b> let's you succeed using more native technologies and languages and less abstractions. <i>Do your magic using conventional paradigms!</i>',
+        desc: 'The web tooling project with an obsessive focus on "less tooling". <b>WebQit Tooling</b> let's you succeed using more native technologies and less abstractions. <i>Do your magic using conventional paradigms!</i>',
         highlights: [
             {icon: 'code', content: '<b>Frontend</b> - find tools that let you author the UI the HTML5/CSS3/ES6+ way.',},
             {icon: 'braces', content: '<b>Backend</b> - find tools that cut your backend work in half using a native-first approach.'},
@@ -49,7 +49,7 @@ export default async (flo, recieved, next) => {
         icon: 'cloud',
         graphic: '/img/illus/cloud/images(35).fw.png',
         title: 'Cloud',
-        desc: 'WebQit\'s fully-managed platform and APIs.',
+        desc: 'The cloud for your web-native apps. <b>WebQit Cloud</b> is the easiest way to run your web-native backends, and further enriching your experience by helping you manage all the workloads of an app in production.',
         highlights: [
             {icon: 'cloud', content: 'Leverage the most simplistic way to build modern apps.'},
             {icon: 'arrow-return-right', content: 'Take apps to production faster; scale to your imagination!'},
