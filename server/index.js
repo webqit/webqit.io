@@ -34,7 +34,7 @@ export default async (flo, recieved, next) => {
         icon: 'braces',
         graphic: '/img/illus/tooling/dev.fw.png',
         title: 'Tooling',
-        desc: 'The web tooling project with an obsessive focus on "less tooling". <b>WebQit Tooling</b> let's you succeed using more native technologies and less abstractions. <i>Do your magic using conventional paradigms!</i>',
+        desc: 'The web tooling project with an obsessive focus on "less tooling". <b>WebQit Tooling</b> lets you succeed using more native technologies and less abstractions. <i>Do your magic using conventional paradigms!</i>',
         highlights: [
             {icon: 'code', content: '<b>Frontend</b> - find tools that let you author the UI the HTML5/CSS3/ES6+ way.',},
             {icon: 'braces', content: '<b>Backend</b> - find tools that cut your backend work in half using a native-first approach.'},
