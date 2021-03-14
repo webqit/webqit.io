@@ -223,25 +223,25 @@ p, .p,
     background-image: -webkit-linear-gradient(70deg, rgb(219, 70, 159), rgb(33, 136, 255));
 }
 .color-2 {
-    color: purple;
+    color: blueviolet;
 }
 .bg-color-2 {
-    background-color: purple;
+    background-color: blueviolet;
 }
 .border-color-2 {
-    border-color: purple;
+    border-color: blueviolet;
 }
 .pseudo-color-2:before,
 .pseudo-color-2:after {
-    color: purple;
+    color: blueviolet;
 }
 .pseudo-bg-color-2:before,
 .pseudo-bg-color-2:after {
-    background-color: purple;
+    background-color: blueviolet;
 }
 .pseudo-border-color-2:before,
 .pseudo-border-color-2:after {
-    border-color: purple;
+    border-color: blueviolet;
 }
 
 
@@ -750,7 +750,7 @@ p, .p,
 }
 #cloud-section {
     --section-bg: ghostwhite;
-    --section-main-a-bg: #2f68d1;
+    --section-main-a-bg: #1a6ab6;
     --section-main-a-color: whitesmoke;
     --section-main-a-color-active: white;
     --section-main-a-border: turquoise;
