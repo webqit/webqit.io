@@ -43,7 +43,7 @@ export default async (flo, recieved, next) => {
         ],
         featured: featuredProjects,
     }, {
-        header: 'We offer a purpose-built cloud for web-native apps to give you the most streamlined way yet to provision the most native apps.',
+        header: 'We work on the most streamlined way yet to provision the most native apps with the cloud that\'s purpose-built for web-native development.',
         footer: '',
         name: 'cloud',
         icon: 'cloud',
@@ -51,8 +51,10 @@ export default async (flo, recieved, next) => {
         title: 'Cloud',
         desc: '<b>WebQit Cloud</b> is the easiest way to run your web-native backends; designed to further enrich your experience by helping you manage all the concerns and workloads of an app in production.',
         highlights: [
-            {icon: 'cloud', content: 'Leverage the most simplistic way to build modern apps.'},
-            {icon: 'arrow-return-right', content: 'Take apps to production faster; scale to your imagination!'},
+            {icon: 'arrow-down-up', content: '<b>Instant APIs</b> - use instant APIs for User Auth, Batabase and Storage.'},
+            {icon: 'cloud-upload', content: '<b>Application deployment</b> - take apps to production faster; scale to your imagination.'},
+            {icon: 'controller', content: '<b>Minimalistic and intuitive dashboards</b> - stay in control with fewer clicks - even on the go.'},
+            {icon: 'arrow-return-right', content: 'Build in a weekend, scale to millions.'},
         ],
         featured: [{
             icon: 'app-indicator',
