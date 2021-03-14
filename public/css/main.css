@@ -515,7 +515,9 @@ p, .p,
     border-top: 1px solid var(--section-main-a-bg2);
 }
 .page-section .section-main-b .section-main-content {
-    background-color: whitesmoke;
+    color: whitesmoke;
+    background-color: gray;
+    border-top: 1px solid black;
     /**
     background-color: dimgray;
     */
@@ -534,7 +536,7 @@ p, .p,
     backdrop-filter: blur(10px);
     z-index: 3;
 }
-.page-section .section-main-a .section-main-header {
+.page-section .section-main-b .section-main-header {
 }
 .page-section .section-main-b .section-main-header {
     color: var(--section-main-a-color);
@@ -549,9 +551,8 @@ p, .p,
         border: none;
     }
     .page-section .section-main-b .section-main-content {
-        /**
-        background-color: white;
-        */
+        color: whitesmoke;
+        background-color: gray;
     }
     .page-section .section-main,
     .page-section .section-main-b .section-main-header {
