@@ -36,10 +36,10 @@ export default async (flo, recieved, next) => {
         title: 'Tooling',
         desc: 'The web tooling project with an obsessive focus on "less tooling". <b>WebQit Tooling</b> lets you succeed using more native technologies and less abstractions. <i>Do your magic using conventional paradigms!</i>',
         highlights: [
-            {icon: 'code', content: '<b>Frontend</b> - find tools that let you author the UI the HTML5/CSS3/ES6+ way.',},
-            {icon: 'braces', content: '<b>Backend</b> - find tools that cut your backend work in half using a native-first approach.'},
-            {icon: 'terminal', content: '<b>Fullstack</b> - leverage fullstack tools that let you use the same code across all layers of your app.',},
-            {icon: 'arrow-return-right', content: 'End up with less code! Ship a native-level performance to your users.'},
+            {icon: 'code', content: '<b>Frontend tools</b> - author modern UI out of HTML5, CSS3 and ES6+.',},
+            {icon: 'braces', content: '<b>Backend tools</b> - create powerful backends with less engineering.'},
+            {icon: 'terminal', content: '<b>Fullstack tools</b> - use the same code across all layers of your application stack.',},
+            {icon: 'arrow-return-right', content: 'End up with less code! Succeed with less!'},
         ],
         featured: featuredProjects,
     }, {
