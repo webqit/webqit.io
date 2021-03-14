@@ -516,14 +516,14 @@ p, .p,
     border-top: 1px solid var(--section-main-a-bg2);
 }
 .page-section .section-main-b .section-main-content {
-    color: whitesmoke;
-    background-color: gray;
-    border-top: 5px solid black;
+    border-top: 1px solid black;
     /**
     background-color: dimgray;
     */
     background-color: rgba(60, 60, 60, 1);
     color: silver;
+    color: whitesmoke;
+    background-color: gray;
 }
 .page-section .section-main-padding-header {
     border-bottom: 3px solid var(--section-main-a-bg2);
