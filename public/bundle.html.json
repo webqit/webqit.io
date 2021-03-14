@@ -1,4 +1,31 @@
 {
+    "subtree": {
+        "cloud": {
+            "meta": {
+                "index": {}
+            }
+        },
+        "community": {
+            "meta": {
+                "index": {}
+            }
+        },
+        "tooling": {
+            "meta": {
+                "index": {},
+                "readme": {
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "WebQit Tooling",
+                            "uri": "webqit-tooling",
+                            "subtree": []
+                        }
+                    ]
+                }
+            }
+        }
+    },
     "meta": {
         "dddd": {
             "outline": [
@@ -99,22 +126,5 @@
             ]
         },
         "index": {}
-    },
-    "subtree": {
-        "tooling": {
-            "meta": {
-                "index": {},
-                "readme": {
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "WebQit Tooling",
-                            "uri": "webqit-tooling",
-                            "subtree": []
-                        }
-                    ]
-                }
-            }
-        }
     }
 }

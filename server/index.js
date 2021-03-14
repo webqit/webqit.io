@@ -63,8 +63,8 @@ export default async (flo, recieved, next) => {
                 {title: 'Pricing', desc: 'Free to start'},
                 {title: 'Status', desc: 'Coming soon'},
             ],
-            cta: 'Be on the waitlist (Subscribe below)',
-            ctaRef: '/#waitlist',
+            cta: 'Be on the waitlist',
+            ctaRef: '/cloud',
             ctaIsAlt: true,
         }, {
             icon: 'layers',
@@ -77,8 +77,8 @@ export default async (flo, recieved, next) => {
                 {title: 'Pricing', desc: 'Free to start'},
                 {title: 'Status', desc: 'Coming soon'},
             ],
-            cta: 'Be on the waitlist (Subscribe below)',
-            ctaRef: '/#waitlist',
+            cta: 'Be on the waitlist',
+            ctaRef: '/cloud',
             ctaIsAlt: true,
         }],
     }, {
@@ -116,7 +116,7 @@ export default async (flo, recieved, next) => {
             desc: 'The Web-Native Community Group at W3C.',
             desc2: 'Bank more on the platform and less on abstractions; go further to getting involved in facilitating new native technologies.',
             meta: [
-                {title: '...', desc: '<a href="https://w3.org/community/web-native">Learn more</a>'},
+                {title: '...', desc: '<a href="https://w3.org/community/web-native">Learn more about Web-Native CG</a>'},
             ],
             cta: 'Join Web-Native',
             ctaRef: 'https://w3.org/community/web-native/join',
