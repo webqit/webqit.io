@@ -51,7 +51,7 @@ export default async (flo, recieved, next) => {
         title: 'Cloud',
         desc: '<b>WebQit Cloud</b> is the easiest way to run your web-native backends; designed to further enrich your experience by helping you manage all the concerns and workloads of an app in production.',
         highlights: [
-            {icon: 'arrow-down-up', content: '<b>Instant APIs</b> - use instant APIs for User Auth, Batabase and Storage.'},
+            {icon: 'arrow-down-up', content: '<b>Instant APIs</b> - use instant APIs for User Auth, Database and Storage.'},
             {icon: 'cloud-upload', content: '<b>Application deployment</b> - deploy apps to production faster; scale to your imagination.'},
             {icon: 'controller', content: '<b>Minimalistic and intuitive dashboards</b> - stay in control with fewer clicks - even on the go.'},
             {icon: 'arrow-return-right', content: 'Build in a weekend, scale to millions.'},
