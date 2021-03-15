@@ -122,7 +122,7 @@ export default async (flo, recieved, next) => {
             desc: 'The Web-Native Community Group at W3C. Web-Native is a unique way to contribute to web standardization and facilitate community uptake of web technologies. You\'re welcome in!',
             desc2: 'Join Web-Native and help implement strategies and community work with a global impact. Help bridge the divide between native technologies and the developer community.',
             meta: [
-                {title: '...', desc: '<a  href="https://w3.org/community/web-native">Learn more about Web-Native CG</a>'},
+                {title: '...', desc: '<a href="https://w3.org/community/web-native">Learn more about Web-Native CG</a>'},
             ],
             cta: 'Join Web-Native',
             ctaRef: 'https://w3.org/community/web-native/join',
