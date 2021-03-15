@@ -119,8 +119,8 @@ export default async (flo, recieved, next) => {
             name: 'web-native',
             shortTitle: 'Web-Native CG',
             title: 'Web-Native (W3C) Community Group',
-            desc: 'The Web-Native Community Group at W3C.',
-            desc2: 'Bank more on the platform and less on abstractions; go further to getting involved in facilitating new native technologies.',
+            desc: 'The Web-Native Community Group at W3C. Web-Native is a unique way to contribute to web standardization and facilitate community uptake of web technologies. You\'re welcome in!',
+            desc2: 'Join Web-Native and help implement strategies and community work with a global impact. Help bridge the divide between native technologies and the developer community.',
             meta: [
                 {title: '...', desc: '<a href="https://w3.org/community/web-native">Learn more about Web-Native CG</a>'},
             ],
