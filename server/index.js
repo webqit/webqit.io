@@ -61,7 +61,7 @@ export default async (flo, recieved, next) => {
             name: 'platform',
             shortTitle: 'Webflo Cloud',
             title: 'Webflo Cloud',
-            desc: 'Managed hosting for Webflo apps. (Push to deploy.)',
+            desc: 'Instant deployment platform for Webflo apps. (Push to deploy.)',
             desc2: 'The platform uniquely built for the Webflo experience!',
             meta: [
                 {title: 'Pricing', desc: 'Free to start'},
