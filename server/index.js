@@ -34,7 +34,7 @@ export default async (flo, recieved, next) => {
         icon: 'braces',
         graphic: '/img/illus/tooling/dev.fw.png',
         title: 'Tooling',
-        desc: '<b>WebQit Tooling</b> is an obsessive focus on new methodologies that let you do your magic using conventional paradigms and with less engineering. You end up banking more on native technologies and less on abstractions.',
+        desc: '<b>WebQit Tooling</b> is an obsessive focus on new methodologies that let you do your magic using conventional paradigms and less engineering. You end up banking more on native technologies and less on abstractions.',
         highlights: [
             {icon: 'code', content: '<b>Frontend</b> - find tools that let you author the UI with no more than HTML5, CSS3 and ES6+.',},
             {icon: 'braces', content: '<b>Backend</b> - find tools that let you create powerful backends with half the engineering.'},
@@ -52,7 +52,7 @@ export default async (flo, recieved, next) => {
         desc: '<b>WebQit Cloud</b> is the easiest way to run your web-native backends; designed to further enrich your experience by helping you manage all the concerns and workloads of an app in production.',
         highlights: [
             {icon: 'arrow-down-up', content: '<b>Instant APIs</b> - use instant APIs for User Auth, Batabase and Storage.'},
-            {icon: 'cloud-upload', content: '<b>Application deployment</b> - take apps to production faster; scale to your imagination.'},
+            {icon: 'cloud-upload', content: '<b>Application deployment</b> - deploy apps to production faster; scale to your imagination.'},
             {icon: 'controller', content: '<b>Minimalistic and intuitive dashboards</b> - stay in control with fewer clicks - even on the go.'},
             {icon: 'arrow-return-right', content: 'Build in a weekend, scale to millions.'},
         ],
@@ -92,11 +92,12 @@ export default async (flo, recieved, next) => {
         icon: 'flag',
         graphic: '/img/cloud-itls-image-best-approach.png',
         title: 'Community',
-        desc: '<b>WebQit community</b> is a focused set of initiatives for facilitating community projects that explore new possibilities on the web platform, and for increasing community uptake of native web technologies.',
+        desc: '<b>WebQit community</b> is a focused set of initiatives for recognizing community projects that explore new possibilities on the web platform, and for facilitating community uptake of native web technologies.',
         highlights: [
-            {icon: 'dice-3', content: 'Innovate around native technologies to solve everyday dev problems; bring the course you care about.'},
-            {icon: 'code-slash', content: 'Learn the web-native approach or get help with your web-native project from the community.'},
-            {icon: 'arrow-return-right', content: 'Get recognized!'},
+            {icon: 'person-check', content: 'Learn or showcase your web-native skills and get recognized.'},
+            {icon: 'heart', content: 'Offer help or get help in the community with web-native development.'},
+            {icon: 'dice-3', content: 'Innovate around native technologies and explore new ways to succeed with them and get community support for your work.'},
+            {icon: 'arrow-return-right', content: 'Leverage the support system for web-native development!'},
         ],
         featured: [/**{
             icon: 'flag',
