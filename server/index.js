@@ -76,7 +76,7 @@ export default async (flo, recieved, next) => {
             shortTitle: 'Objective DB',
             title: 'Objective DB',
             desc: 'Managed cloud database with native Objective SQL. Objective DB is built for the simplicity and developer experience that Objective SQL brings, and ofcourse, the scale, speed and reliability you\'d expect!',
-            desc2: 'Provision a database in a one click and get instant data APIs for your app! Speak the same Objective SQL as with when you host your DB locally. Reach for your dashboard and unlock a whole new experience.',
+            desc2: 'Provision a database in one click and get instant data APIs for your app! Speak the same Objective SQL as with when you host your DB locally. Reach for your dashboard and unlock a whole new experience.',
             meta: [
                 {title: 'Pricing', desc: 'Free to start'},
                 {title: 'Status', desc: 'Coming soon'},
