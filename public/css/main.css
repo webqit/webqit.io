@@ -543,6 +543,9 @@ p, .p,
     color: var(--section-main-a-color);
 }
 @media (max-width: 992px) {
+    .page-section.hero .section-header-left {
+        background-image: url(/img/bg/Dots.svg);
+    }
     .page-section .section-main-a {
         box-shadow: none;
         z-index: 10;
@@ -650,10 +653,10 @@ p, .p,
 }
 @media (max-width: 992px) {
     /**
-    .page-section .section-panel .panel-title {
-        margin-top: 25px;
-    }
     */
+    .page-section .section-panel .panel-title {
+        margin-top: 5px;
+    }
 }
 .page-section .section-panel .panel-main {
     /**
