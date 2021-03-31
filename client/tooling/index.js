@@ -2,7 +2,7 @@
 /**
  * @imports
  */
-import { render as packageRender } from '../../common/package.js';
+ import { createData, createNewOnlyTemplates } from '../../src/render-utils.js';
 
 /**
  * @var object
@@ -12,13 +12,13 @@ const cache = {};
 /**
  * Handles main HTTP process.
  * 
- * @param object    process
- * @param any       recieved
- * @param function  next
+ * @param Request   request
+ * @param Any       recieved
+ * @param Function  next
  * 
  * @return object
  */
-export default async function(process, recieved, next) {
+export default async (request, recieved, next) => {
     if (!next.pathname) {
         return next();
     }
@@ -32,14 +32,14 @@ export default async function(process, recieved, next) {
 /**
  * Creates and configures the rendering window.
  * 
- * @param object    data
- * @param window    _window
- * @param function  next
+ * @param Request   request
+ * @param Object    data
+ * @param Function  next
  * 
  * @return window
  */
-export async function render(data, _window, next) {
-    const window = await next();
-    await packageRender(window, data, this.pathname, next.pathname);
+export async function render(request, data, next) {
+    const window = await next(createData(data, next.pathname));
+    createNewOnlyTemplates(window, data);
     return window;
 };

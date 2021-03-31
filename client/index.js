@@ -3,42 +3,43 @@
  * @imports
  */
 import '@webqit/play-sequence/src/browser-entry.js';
-import List from '../common/List.js';
+import List from '../src/List.js';
 
 /**
  * Handles main HTTP process.
  * 
- * @param object    process
- * @param any       recieved
- * @param function  next
+ * @param Request   request
+ * @param Any       recieved
+ * @param Function  next
  * 
  * @return object
  */
-var cache;
-export default async (process, recieved, next) => {
-        return next();
+export default async (request, recieved, next) => {
     if (next.pathname) {
+        return next();
     }
     if (!cache) {
         cache = await next();
     }
-    return {...cache};
+    return {fromCache: true, ...cache};
 };
 
 /**
  * Creates and configures the rendering window.
  * 
- * @param object    data
- * @param window    _window
- * @param function  next
+ * @param Request   request
+ * @param Object    data
+ * @param Function  next
  * 
  * @return window
  */
-export async function render(data, _window, next) {
+export async function render(request, data, next) {
     if (!next.pathname) {
-        data.sections.forEach(s => {
-            s.featured = List.create(s.featured.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
-        });
+        if (!data.fromCache) {
+            data.sections.forEach(s => {
+                s.featured = List.create(s.featured.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
+            });
+        }
     }
-    return next();
+    return next(data);
 }

@@ -4,23 +4,23 @@
  */
 import Fs from 'fs';
 import Path from 'path';
-import { get, getAll, detailsAll } from '../../common/projects-utils.js';
-import { render as packageRender } from '../../common/package.js';
+import { get, getAll, detailsAll } from '../../src/projects-utils.js';
+import { createData, createNewOnlyTemplates } from '../../src/render-utils.js';
 
 /**
  * Handles main HTTP process.
  * 
- * @param object    process
+ * @param Request   request
  * @param any       recieved
  * @param function  next
  * 
  * @return object
  */
-export default async function(flo, recieved, next) {
+export default async function(request, recieved, next) {
     if ((next.pathname || '').startsWith('.')) {
         return next();
     }
-    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(flo.setup.ROOT, flo.setup.PUBLIC_DIR, 'bundle.html.json')) 
+    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(this.layout.ROOT, this.layout.PUBLIC_DIR, 'bundle.html.json')) 
         ? JSON.parse(Fs.readFileSync(outlineFile)) 
         : {};
     if (!outline.subtree.tooling.subtree) {
@@ -41,14 +41,14 @@ export default async function(flo, recieved, next) {
 /**
  * Creates and configures the rendering window.
  * 
- * @param object    data
- * @param window    _window
- * @param function  next
+ * @param Request   request
+ * @param Object    data
+ * @param Function  next
  * 
  * @return window
  */
-export async function render(data, _window, next) {
-    const window = await next();
-    await packageRender(window, data, this.pathname, next.pathname);
+export async function render(request, data, next) {
+    const window = await next(createData(data, next.pathname));
+    createNewOnlyTemplates(window, data);
     return window;
 };

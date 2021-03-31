@@ -2,19 +2,19 @@
 /**
  * @imports
  */
-import { getAll, detailsAll } from '../common/projects-utils.js';
-import List from '../common/List.js';
+import { getAll, detailsAll } from '../src/projects-utils.js';
+import List from '../src/List.js';
 
 /**
  * Handles main HTTP process.
  * 
- * @param object    process
- * @param any       recieved
- * @param function  next
+ * @param Request   request
+ * @param Any       recieved
+ * @param Function  next
  * 
  * @return object
  */
-export default async (flo, recieved, next) => {
+export default async (request, recieved, next) => {
     if (next.pathname) {
         return next();
     }
@@ -138,17 +138,17 @@ export default async (flo, recieved, next) => {
 /**
  * Creates and configures the rendering window.
  * 
- * @param object    data
- * @param window    _window
- * @param function  next
+ * @param Request   request
+ * @param Object    data
+ * @param Function  next
  * 
  * @return window
  */
-export async function render(data, _window, next) {
+export async function render(request, data, next) {
     if (!next.pathname) {
         data.sections.forEach(s => {
             s.featured = List.create(s.featured.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
         });
     }
-    return next();
+    return next(data);
 }

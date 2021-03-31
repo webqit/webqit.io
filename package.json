@@ -1,7 +1,7 @@
 {
-  "name": "@webqit/www",
+  "name": "@webqit/webqit.io",
   "version": "0.0.0",
-  "description": "Tooling, Cloud, Community",
+  "description": "The webqit.io website",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   },
   "keywords": [
     "WebQit Tooling",
-    "WebQit Tooling",
-    "WebQit Tooling"
+    "WebQit Cloud",
+    "WebQit Community"
   ],
   "author": "Oxford Harrison <oxharris.dev@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -22,8 +22,5 @@
     "@webqit/play-sequence": "^0.1.7",
     "@webqit/util": "^0.7.0",
     "bootstrap-icons": "^1.1.0"
-  },
-  "devDependencies": {
-    "@webqit/oohtml-cli": "^0.0.7"
   }
 }
