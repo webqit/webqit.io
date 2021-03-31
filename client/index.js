@@ -6,6 +6,11 @@ import '@webqit/play-sequence/src/browser-entry.js';
 import List from '../src/List.js';
 
 /**
+ * @var Object
+ */
+var cache;
+
+/**
  * Handles main HTTP process.
  * 
  * @param Request   request
