@@ -6,8 +6,8 @@
             "branch": "master",
             "tag": "webqit.io",
             "deploy_path": ".",
-            "autodeploy": false,
-            "autodeploy_secret": "",
+            "autodeploy": true,
+            "autodeploy_secret": "webqit.io",
             "ondeploy": ""
         },
         {
@@ -16,8 +16,8 @@
             "branch": "master",
             "tag": "docs",
             "deploy_path": "./views/tooling/.docs",
-            "autodeploy": false,
-            "autodeploy_secret": "",
+            "autodeploy": true,
+            "autodeploy_secret": "docs",
             "ondeploy": "oohtml bundle"
         }
     ],

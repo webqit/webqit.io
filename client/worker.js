@@ -2,7 +2,7 @@
 /**
  * @imports
  */
-import Worker from 'C:/Users/ox_ha/Documents/CODE/webqit/webflo/modules/client/Worker.js';
+import Worker from '/Users/eslcloud/Documents/CODE/webqit/webflo/modules/client/Worker.js';
 
 /**
  * -----------------

@@ -12,7 +12,6 @@
         },
         "tooling": {
             "meta": {
-                "index": {},
                 "readme": {
                     "outline": [
                         {
@@ -22,7 +21,8 @@
                             "subtree": []
                         }
                     ]
-                }
+                },
+                "index": {}
             }
         }
     },
