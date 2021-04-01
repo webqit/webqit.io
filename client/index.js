@@ -20,8 +20,8 @@ var cache;
  * @return object
  */
 export default async (request, recieved, next) => {
-    if (next.pathname) {
         return next();
+    if (next.pathname) {
     }
     if (!cache) {
         cache = await next();

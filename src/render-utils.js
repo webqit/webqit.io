@@ -34,6 +34,7 @@ export function createData(data, next_pathname) {
         nav,
         breadcrumb,
         title,
+        ...data
     };
 };
 

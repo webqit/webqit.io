@@ -1041,7 +1041,7 @@ Observer.observe(<span class="hljs-built_in">document</span>.state, <span class=
                 $(this.namespace.app_bar_back).attr('href', '/');
             }
             $(this.namespace.project_links).class('d-none', !app.page.project);
-            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit.docs/edit/master/' + document.state.location.pathname.replace('/tooling/', '') + '/README.md');
+            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit.docs/edit/master/' + document.state.url.pathname.replace('/tooling/', '') + '/README.md');
             $(this.namespace.project_outline).itemize(nav.items);
         }
                 if (app.page.breadcrumb) {
@@ -1257,7 +1257,7 @@ Observer.observe(<span class="hljs-built_in">document</span>.state, <span class=
         </ul>
         <li namespace>
             <h3 data-id="title" class="pd-10 pd-top-x3 pd-btm-x3 b txt-sm"></h3>
-            <ul data-id="items" is="play-seq-ul" play-seq="animIn:fly_bottom; animInAlt:fly_top; duration: 800;" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
+            <ul data-id="items" play-seq="animIn:fly_bottom; animInAlt:fly_top; duration: 800;" class="pd-0 list-style-none" template="page/tooling/#layout/projects-listing"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.title).html(this.state.title);
@@ -1265,7 +1265,7 @@ Observer.observe(<span class="hljs-built_in">document</span>.state, <span class=
                 }
             </script>
         </li>
-        <li exportgroup="project" namespace is="play-seq-li" class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10" style="background-color: ghostwhite;">
+        <li exportgroup="project" namespace class="flex-y-start flex-wrap pd-10 pd-x2 pd-btm-x3 radius-10 mg-top-10 mg-btm-10" style="background-color: ghostwhite;">
             <div class="pd-lft-10 pd-rt-10 sm--pd-0 mg-rt-10 flex-center">
                 <i data-id="icon" class="panel-icon bi lg"></i>
             </div>
@@ -1303,7 +1303,7 @@ Observer.observe(<span class="hljs-built_in">document</span>.state, <span class=
             </div>
             <ul data-id="sub_menu" template="page/tooling/#layout/project-outline" class="project-suboutline pd-lft-6 pd-lft-x2 pd-top-4 pd-btm-4 d-none list-style-none"></ul>
             <script type="subscript">
-                var activePath = document.state.location.pathname;
+                var activePath = document.state.url.pathname;
                 if (this.state.title) {
                     var isActivePath = (activePath + '/').startsWith(this.state.path + '/');
                     $(this.namespace.link).attr('href', this.state.path);
@@ -1335,7 +1335,7 @@ Observer.observe(<span class="hljs-built_in">document</span>.state, <span class=
             <a data-id="link" href=""></a>
             <ul data-id="sub_menu" template="page/tooling/#layout/page-outline" class="page-suboutline pd-4 d-none list-style-none"></ul>
             <script type="subscript">
-                var activeHash = document.state.location.hash;
+                var activeHash = document.state.url.hash;
                 if (this.state.title) {
                     $(this.namespace.link).html(this.state.title);
                     $(this.namespace.link).attr('href', '#' + this.state.uri);
