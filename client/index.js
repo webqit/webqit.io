@@ -20,6 +20,7 @@ var cache;
  * @return object
  */
 export default async (request, recieved, next) => {
+    
     return next();
     if (next.pathname) {
     }
