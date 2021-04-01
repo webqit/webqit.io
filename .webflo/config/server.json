@@ -1,10 +1,10 @@
 {
     "port": 3000,
     "https": {
-        "port": 0,
-        "keyfile": "",
-        "certfile": "",
-        "force": false
+        "port": 4200,
+        "keyfile": "/etc/letsencrypt/live/webqit.io/privkey.pem",
+        "certfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
+        "force": true
     },
     "process": {},
     "shared": false,
