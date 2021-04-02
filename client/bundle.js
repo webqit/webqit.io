@@ -13,17 +13,16 @@ import Client from '/Users/eslcloud/Documents/CODE/webqit/webflo/modules/client/
  */
 
 // >> Client-Side Routing:
-const routes = {};
-routes['/'] = index1;
-routes['/tooling'] = index2;
+const layout = {};
+layout['/'] = index1;
+layout['/tooling'] = index2;
 
 // >> Client Params
 const params = {
-   ROUTES: routes,
 };
 
 // >> Client Instantiation
-Client.call(null, params);
+Client.call(null, layout, params);
 
 // >> Service Worker Registration
 if ('serviceWorker' in navigator) {

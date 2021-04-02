@@ -11,7 +11,7 @@ import Worker from '/Users/eslcloud/Documents/CODE/webqit/webflo/modules/client/
  */
 
 // >> Worker-Side Routing:
-const routes = {};
+const layout = {};
 
 // >> Worker Params
 const params = {
@@ -26,8 +26,7 @@ const params = {
    skip_waiting: true,
    support_messaging: false,
    support_notification: false,
-   ROUTES: routes,
 };
 
 // >> Worker Instantiation
-Worker.call(null, params);
+Worker.call(null, layout, params);
