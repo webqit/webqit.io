@@ -4,7 +4,7 @@
             "host": "github",
             "repo": "webqit/webqit.io",
             "branch": "master",
-            "tag": "webqit.io",
+            "tag": "root",
             "deploy_path": ".",
             "autodeploy": true,
             "autodeploy_secret": "webqit.io",
