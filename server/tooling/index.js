@@ -28,8 +28,12 @@ export default async function(request, recieved, next) {
     }
     const data = {title: 'WebQit Tooling', outline};
     if (next.pathname) {
-        var projectName = next.pathname.split('/')[0];
+        var pathSplit = next.pathname.split('/');
+        var projectName = pathSplit.shift();
         data.project = get(projectName, true);
+        if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, data.project.json)) {
+            return;
+        }
     } else {
         var projects = getAll();
         data.projects = detailsAll(projects, 'more');
