@@ -2,9 +2,9 @@
 /**
  * @imports
  */
-import _isArray from '@webqit/util/js/isArray.js';
-import _isEmpty from '@webqit/util/js/isEmpty.js';
-import _toTitle from '@webqit/util/str/toTitle.js';
+import _isArray from '@webqit/util/js/isArray';
+import _isEmpty from '@webqit/util/js/isEmpty';
+import _toTitle from '@webqit/util/str/toTitle';
 import { List as _List, Observer } from '@webqit/obs-collection';
 
 export default class List extends _List {
