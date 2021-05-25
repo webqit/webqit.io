@@ -1,0 +1,19 @@
+
+/**
+ * @Whitney-Font
+ */
+@font-face{
+    font-family:Whitney;src:local("Whitney"),local("Whitney"),url(./whitney-light.otf) format("opentype");font-weight:300;font-style:normal
+}
+@font-face{
+    font-family:Whitney;src:local("Whitney"),local("Whitney"),url(./whitney-book.otf) format("opentype");font-weight:400;font-style:normal
+}
+@font-face{
+    font-family:Whitney;src:local("Whitney"),local("Whitney"),url(./whitney-medium.otf) format("opentype");font-weight:500;font-style:normal
+}
+@font-face{
+    font-family:Whitney;src:local("Whitney"),local("Whitney"),url(./whitney-semibold.otf) format("opentype");font-weight:600;font-style:normal
+}
+@font-face{
+    font-family:Whitney;src:local("Whitney"),local("Whitney"),url(./whitney-bold.otf) format("opentype");font-weight:700;font-style:normal
+}

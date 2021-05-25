@@ -26,10 +26,11 @@
         <link type="text/css" rel="stylesheet" crossorigin href="https://unpkg.com/@webqit/play-css/src/classes.css" />
         <link type="text/css" rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link type="text/css" rel="stylesheet" crossorigin href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,700;1,200;1,400;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
+        <link type="text/css" rel="stylesheet" crossorigin href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
+        <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
         <link type="text/css" rel="stylesheet" href="/css/main.css" />
         <link type="text/css" rel="stylesheet" href="/css/tooling.css" />
-        
+
         <!-- JS -->
         <script src="/bundle.js"></script>
         <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
@@ -77,10 +78,10 @@
                 $(document.namespace.base).attr('href', app.location.pathname + (!app.location.pathname.endsWith('/') ? '/' : ''));
             }
         </script>
-
+    
     </head>
 
-    <body template="" play-icon-path="/icon" play-icon-type="bootstrap">
+    <body template="" namespace class="snap-container" play-icon-path="/icon" play-icon-type="bootstrap">
                 
         <!-- PAGE_PROGRESS_BAR -->
 
@@ -95,10 +96,99 @@
                 </script>
             </div>
         </div>
+
+        <!-- OVERLAY_MENU -->
+
+        <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid white; z-index: 16;">
+
+            <div class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column b">
+
+                <ul class="pd-top-10 pd-btm-10 list-style-none">
+                    <li>
+                        <a href="/" class="flex-y-center">
+                            <i class="bi bi-house sm flex-center pd-10"></i>
+                            <span class="pd-10">Home</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-top: 1px dashed silver;">
+                    <li>
+                        <a href="/tooling" class="flex-y-center">
+                            <i class="bi bi-braces sm flex-center pd-lft-10 pd-rt-10"></i>
+                            <span class="pd-10">Tooling</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cloud" class="flex-y-center">
+                            <i class="bi bi-cloud sm flex-center pd-lft-10 pd-rt-10"></i>
+                            <span class="pd-10">Cloud</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/community" class="flex-y-center">
+                            <i class="bi bi-flag sm flex-center pd-lft-10 pd-rt-10"></i>
+                            <span class="pd-10">Community</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-top: 1px dashed silver">
+                    <li>
+                        <a href="/my-qit" class="flex-y-center">
+                            <i class="bi bi-box-arrow-in-right sm flex-center pd-10"></i>
+                            <span class="pd-10">My Qit</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
+                <a href="/" target="_blank" class="d-none">About</a>
+                <a href="https://github.com/webqit" target="_blank" class="d-none">
+                    <i class="bi bi-github sm"></i>
+                </a>
+            </div>
+
+        </div>
+        <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.125); z-index: 15;"></div>
+
+        <script type="subscript">
+            $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
+            $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
+        </script>
+
+        <!-- HEADER -->
+
+        <header class="page-header pos-sticky offset-top-0 pd-10 pd-x2 h5" style="border-bottom: 1px solid silver; background-color: white; z-index: 10;">
+            <div class="layout-section flex-x-separate" style="font-weight: 620; font-family: 'Josefin Sans', sans-serif;">
+                <a href="/" class="flex-y-center">
+                    <span class="flex-center" style="width: 54px; height: 47px; border: 1px solid black; font-size: 30px; vertical-align: baseline;">W</span>
+                    <span class="pd-lft-10" style="font-size: 24px;">WebQit</span>
+                </a>
+                <ul class="menu-bar flex-y-center sm--d-none list-style-none" style="font-size: 18px;">
+                    <li>
+                        <a href="/tooling">Tooling</a>
+                    </li>
+                    <li>
+                        <a href="/cloud">Cloud</a>
+                    </li>
+                    <li>
+                        <a href="/community">Community</a>
+                    </li>
+                    <li>|</li>
+                    <li>
+                        <a href="#" class="flex-y-center">My Qit <span class="pd-lft-10"><i class="bi-caret-down flex-center xs"></i></span></a>
+                    </li>
+                </ul>
+                <a href="#" data-id="app_drawer_open" class="d-none sm--d-flex">
+                    <i class="bi bi-filter-right flex-center md"></i>
+                </a>
+            </div>
+        </header>
         
         <!-- PAGE -->
 
-        <html-import name="index" template-specificity="2-10" class="anim--fly-bottom-small animation-fast">
+        <html-import name="index" template-specificity="2-10" class="pd-10 anim--fly-bottom-small animation-fast">
             <div class="flex-center" style="min-height: 100vh; background-color: whitesmoke;">
                 <div namespace class="pd-10 pd-x3 txt-align-cntr b anim-fade-in">
                     <div data-id="error"></div>
@@ -118,7 +208,10 @@
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
         <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
 
-        <template name="brand">
+        <template name="#layout">
+
+            <!-- -->
+
             <a exportgroup="logo_nav" href="/" class="brand-container flex-y-center h5">
                 <img alt="WebQit logo" data-id="logo" src="/img/logo/logo.130x130.fw.png" class="sm--wt-40 wt-5 wt-x10" style="display: block; color: transparent; background: none;" />
                 <div class="pd-10">
@@ -126,7 +219,213 @@
                     <div style="color: slateblue;">go --native</div>
                 </div>
             </a>
+
+            <!-- -->
+
+            <template name="hero">
+
+                <!-- -->
+
+                <section exportgroup="type1" namespace class="box-padded-layout-section pos-rel flex-x-separate sm--d-block pd-top-10 pd-btm-10 pd-x8">
+                    <div class="section-left col-4 md--col-6 sm--col-8">
+                        <h1 data-id="title"></h1>
+                        <p data-id="desc" class="section-desc"></p>
+                        <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center h5 b">
+                            <i class="bi bi-arrow-return-right flex-center"></i>
+                            <span data-id="cta_text" class="pd-lft-10 pd-x2" style="font-size: 30px;"></span>
+                        </a>
+                    </div>
+                    <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6">
+                        <ul data-id="nav" template="#layout/hero/nav" class="hero-nav with-separator sm--flex-y-center list-style-none"></ul>
+                        <div data-id="nav_play_separator" class="hero-nav-play-separator col-grows d-none"></div>
+                        <a data-id="play" href="#" class="wt-60 ht-60 flex-center radius-full border-solid">
+                            <i class="bi bi-play flex-center sm"></i>
+                        </a>
+                    </div>
+                    <script type="subscript">
+                        var heroData = this.state;
+                        if (heroData.title) {
+                            var titleHtml = heroData.title.map(chunk => '<span' + (chunk === 'web-native' ? ' class="text-gradient text-gradient-2"' : '') + '>' + chunk + '</span>');
+                            $(this.namespace.title).html(titleHtml.join(' '));
+                            $(this.namespace.desc).html(heroData.desc);
+                            $(this.namespace.cta_href).attr('href', heroData.cta.href);
+                            $(this.namespace.cta_text).text(heroData.cta.text);
+                            $(this.namespace.nav).itemize(heroData.nav);
+                            if (heroData.play) {
+                                $(this.namespace.nav_play_separator).class('d-none', false);
+                                $(this.namespace.play).attr('href', heroData.play);
+                            }
+                        }
+                    </script>
+                </section>
+
+                <!-- -->
+
+                <section exportgroup="type2" namespace class="box-padded-layout-section pos-rel flex-x-separate sm--d-block pd-top-10 pd-btm-10 pd-x8">
+                    <div class="section-left col-4 md--col-6 sm--col-8">
+                        <h1 class="flex-y-center sm--d-block">
+                            <i data-id="icon" class="bi md d-inline-flex flex-center md--md sm--sm"></i>
+                            <span data-id="title" class="pd-lft-10 pd-x2 sm--d-block sm--pd-lft-0 sm--pd-top-10 sm--pd-x2"></span>
+                        </h1>
+                        <p data-id="desc" class="section-desc"></p>
+                        <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center h5 b">
+                            <i class="bi bi-arrow-return-right flex-center"></i>
+                            <span data-id="cta_text" class="pd-lft-10 pd-x2" style="font-size: 30px;"></span>
+                        </a>
+                    </div>
+                    <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6 sm--d-none">
+                        <ul data-id="nav" template="#layout/hero/nav" class="hero-nav sm--flex-y-center list-style-none"></ul>
+                    </div>
+                    <script type="subscript">
+                        var heroData = this.state;
+                        if (heroData.title) {
+                            $(this.namespace.icon).class('bi-' + heroData.icon, true);
+                            $(this.namespace.title).html(heroData.title);
+                            $(this.namespace.desc).html(heroData.desc);
+                            $(this.namespace.cta_href).attr('href', heroData.cta.href);
+                            $(this.namespace.cta_text).text(heroData.cta.text);
+                            $(this.namespace.nav).itemize(heroData.nav);
+                        }
+                    </script>
+                </section>
+
+                <!-- -->
+
+                <template name="nav">
+                    <li namespace class="hero-nav-item sm--d-flex">
+                        <a data-id="href" href="" class="flex-center radius-full border-solid">
+                            <i data-id="icon" class="bi flex-center sm"></i>
+                        </a>
+                        <script type="subscript">
+                            if (this.state.href) {
+                                $(this.namespace.href).attr('href', this.state.href);
+                                $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                            }
+                        </script>
+                    </li>
+                </template>
+                
+                <!-- -->
+
+            </template>
+
+            <template name="showcase">
+
+                <!-- -->
+
+                <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d4234885e4c2e7955fc993c_zendesk.svg" loading="eager" alt="Zendesk" class="logo cc-zendesk">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5f68c5ab2b2bc1f1cce91512_rakuten-logo-black.svg" loading="eager" alt="Rakuten" class="logo cc-rakuten">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d42803c7ac788d482808c93_dell-word.svg" loading="eager" alt="Dell" class="logo cc-dell">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5f68c62e7e087c31a302df7b_upwork-black-webclip.svg" loading="eager" alt="Upwork" class="logo cc-upwork">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d4b269921bce7314c68055f_Page%201.svg" loading="eager" alt="Lattice" class="logo cc-lattice">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5d4c8b2c574a787655d450ce_getaround.svg" loading="eager" alt="Getaround" class="logo cc-getaround">
+                    <img src="https://assets-global.website-files.com/5d3e265ac89f6a3e64292efc/5f6bac6a70255801a19ae02e_petal-black.svg" loading="eager" alt="Petal" class="logo cc-petal">
+                </section>
+
+                <!-- -->
+
+            </template>
+
+            <template name="large-grid-2">
+
+                <!-- -->
+
+                <ul exportgroup="container" template="#layout/large-grid-2" class="grid-2 list-style-none">
+                    <script type="subscript">
+                        if (this.state.items) {
+                            $(this).itemize(this.state.items);
+                        }
+                    </script>
+                </ul>
+
+                <!-- -->
+
+                <li namespace class="category-block box-padded-section">
+                    <h3 data-id="title"></h3>
+                    <p data-id="desc" class="pd-top-10 pd-btm-10 pd-x4 border-btm-dashed">
+                        Build modern magic using plain web languages and conventional paradigms!
+                    </p>
+                    <ul data-id="items" play-seq="animIn:fly_bottom; animInAlt:fly_top; duration: 800;" class="project-items pd-top-10 pd-top-x3 list-style-none" template="#layout/large-grid-2"></ul>
+                    <script type="subscript">
+                        if (this.state.title) {
+                            $(this.namespace.title).html(this.state.title);
+                            //$(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.items).itemize(this.state.items, null, null, {itemExportId: 'subitem'});
+                        }
+                    </script>
+                </li>
+
+                <!-- -->
+
+                <li exportgroup="subitem" namespace class="project-item">
+                    <div class="flex-y-center b">
+                        <i data-id="icon" class="subitem-icon bi flex-center"></i>
+                        <h4 data-id="title" class="subitem-title pd-lft-10 pd-lft-x2"></h4>
+                    </div>
+                    <div data-id="desc" class="subitem-desc pd-top-10 pd-btm-10"></div>
+                    <div data-id="desc2" class="subitem-desc pd-top-10 pd-btm-10 d-none"></div>
+                    <a data-id="ctaRef" href="/" class="subitem-cta d-inline-flex flex-y-center" style="text-decoration: none;">
+                        <i data-id="ctaArrow" class="bi bi-arrow-return-right sm flex-center"></i>
+                        <span data-id="cta" class="pd-lft-10 pd-x2 b">Explore</span>
+                    </a>
+                    <script type="subscript">
+                        if (!this.state.title) return;
+                        $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
+                        $(this.namespace.title).html(this.state.title);
+                        $(this.namespace.desc).html(this.state.desc);
+                        $(this.namespace.desc2).html(this.state.desc2 || '');
+                        $(this.namespace.ctaRef).attr('href', this.state.ctaRef);
+                        $(this.namespace.cta).html(this.state.cta);
+                        //let github = 'https':
+                    </script>
+                </li>
+
+                <!-- -->
+        
+            </template>
+
+            <template name="grid-4">
+
+                <!-- -->
+
+                <ul exportgroup="container" template="#layout/grid-4" class="grid-4 list-style-none">
+                    <script type="subscript">
+                        if (this.state.items) {
+                            $(this).itemize(this.state.items);
+                        }
+                    </script>
+                </ul>
+
+                <!-- -->
+
+                <li namespace>
+                    <h4 class="flex-y-center">
+                        <i data-id="icon" class="bi md"></i>
+                        <span data-id="title" class="pd-lft-10 pd-x2"></span>
+                    </h4>
+                    <p data-id="content" class="pd-top-10 pd-btm-10 pd-x2"></p>
+                    <a data-id="cta_href" href="/" class="d-inline-flex flex-y-center b">
+                        <i class="bi bi-arrow-return-right flex-center sm"></i>
+                        <span data-id="cta_text" class="pd-lft-10 pd-x2"></span>
+                    </a>
+                    <script type="subscript">
+                        if (this.state.title) {
+                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.content).html(this.state.content);
+                            $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                            $(this.namespace.cta_text).html(this.state.cta.text);
+                        }
+                    </script>
+                </li>
+
+                <!-- -->
+
+            </template>
+
         </template>
+
         <template name="page" src="/bundle.html"></template>
 
     </body>
