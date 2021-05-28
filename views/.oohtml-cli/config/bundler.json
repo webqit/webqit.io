@@ -1,15 +1,13 @@
 {
     "ENTRY_DIR": "./",
     "OUTPUT_FILE": "../public/bundle.html",
-    "SHOW_OUTLINE_NUMBERING": false,
+    "EXPLODE_ENTRY_DIR": false,
     "LOADERS": [
         {
             "name": "default:md-loader",
             "argument/flag": true,
             "args": {
-                "flavor": "github",
-                "outline_generation": "outline",
-                "code_highlighting": "1"
+                "base_url": "/tooling/"
             }
         }
     ],
@@ -25,6 +23,7 @@
     "EXPORT_ID_ATTR": "name",
     "MAX_DATA_URL_SIZE": 1024,
     "ASSETS_PUBLIC_BASE": "/",
+    "SHOW_OUTLINE_NUMBERING": false,
     "loader": true,
     "__advanced": false
 }

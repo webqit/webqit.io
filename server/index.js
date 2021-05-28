@@ -2,7 +2,7 @@
 /**
  * @imports
  */
-import { getAll, detailsAll } from '../src/projects-utils.js';
+import { getProjectsList } from '../src/projects-utils.js';
 import List from '../src/List.js';
 
 /**
@@ -19,7 +19,7 @@ export default async (request, recieved, next) => {
         return next();
     }
 
-    const featuredProjects = detailsAll(getAll(), false).filter(a => (a.categories || []).includes('Featured'));
+    const featuredProjects = getProjectsList().filter(a => (a.categories || []).includes('Featured'));
     featuredProjects.forEach(p => {
         p.meta = [
             {title: 'Tags', desc: `#${p.tags.join(', #')}`},

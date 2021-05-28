@@ -4,7 +4,7 @@
  */
 import Fs from 'fs';
 import Path from 'path';
-import { get, getAll, detailsAll } from '../../src/projects-utils.js';
+import { getProject, getProjectsList, categorizeProjectsList } from '../../src/projects-utils.js';
 import { createData, createNewOnlyTemplates } from '../../src/render-utils.js';
 
 /**
@@ -30,13 +30,13 @@ export default async function(request, recieved, next) {
     if (next.pathname) {
         var pathSplit = next.pathname.split('/');
         var projectName = pathSplit.shift();
-        data.project = get(projectName, true);
-        if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, data.project.json)) {
+        outline.subtree.tooling.subtree[projectName] = getProject(projectName, pathSplit.length/* withBundles */);
+        if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, outline.subtree.tooling.subtree[projectName].bundles.json)) {
             return;
         }
     } else {
-        var projects = getAll();
-        data.projects = detailsAll(projects, 'more');
+        var projects = getProjectsList();
+        data.projects = categorizeProjectsList(projects, 'more');
         data.outline.subtree.tooling.subtree = projects;
     }
     return data;
@@ -53,6 +53,6 @@ export default async function(request, recieved, next) {
  */
 export async function render(request, data, next) {
     const window = await next(createData(data, next.pathname));
-    createNewOnlyTemplates(window, data);
+    createNewOnlyTemplates(window, data, next.pathname);
     return window;
 };

@@ -8,77 +8,136 @@ import Path from 'path';
 import _isString from '@webqit/util/js/isString.js';
 import _toTitle from '@webqit/util/str/toTitle.js';
 import _each from '@webqit/util/obj/each.js';
+import { DefaultDeserializer } from 'v8';
 
-export function get(name, withHTML = false) {
-    const project = {name}, baseDir = Path.resolve(Url.fileURLToPath(import.meta.url), '../../views/tooling/.docs');
-    var projectDir = Path.join(baseDir, name),
-        htmlFile,
-        jsonFile;
-    if (!Fs.existsSync(jsonFile = Path.join(projectDir, '/bundle.html.json'))) {
-        return;
-    }
-    project.json = JSON.parse(Fs.readFileSync(jsonFile));
-    if (withHTML && Fs.existsSync(htmlFile = Path.join(projectDir, '/bundle.html'))) {
-        project.html = Fs.readFileSync(htmlFile).toString();
-    }
-    return project;
-};
-
-export function getAll() {
-    const projects = {}, baseDir = Path.resolve(Url.fileURLToPath(import.meta.url), '../../views/tooling/.docs');
+/**
+ * Gets the list of projects.
+ * 
+ * @param Bool      withBundles
+ * 
+ * @uses @getProject()
+ * 
+ * @returns Object
+ */
+export function getProjectsList(withBundles = false) {
+    var baseDir = Path.resolve(Url.fileURLToPath(import.meta.url), '../../views/tooling/.docs'),
+        projects = {};
     Fs.readdirSync(baseDir).forEach(name => {
-        var jsonFile, resource = Path.join(baseDir, name);
-        if (Fs.statSync(resource).isDirectory() && Fs.existsSync(jsonFile = Path.join(resource, '/bundle.html.json'))) {
-            projects[name] = JSON.parse(Fs.readFileSync(jsonFile));
-        }
+        projects[name] = getProject(name, withBundles, baseDir);
     });
     return projects;
-};
+}
 
-export function details(name, project) {
-    var meta = project.meta || {};
-    var readme = meta.readme || {};
-    var title = readme.title || (readme.outline || []).length && readme.outline[0].level === 1 ? readme.outline[0].title : _toTitle(name);
+/**
+ * Gets a project by the given name.
+ * 
+ * @param String    name
+ * @param Bool      withBundles
+ * @param String    baseDir
+ * 
+ * @returns Object
+ */
+export function getProject(name, withBundles = false, baseDir = null) {
+    var project,
+        projectDir = Path.join(baseDir || Path.resolve(Url.fileURLToPath(import.meta.url), '../../views/tooling/.docs'), name),
+        projectJsonFile;
+    if (Fs.existsSync(projectJsonFile = Path.join(projectDir, '/project.json'))) {
+        project = { name, ...JSON.parse(Fs.readFileSync(projectJsonFile)) };
+    } else {
+        project = { name };
+    }
+    if (withBundles) {
+        var bundleJsonFile,
+            bundleHtmlFile,
+            bundles = {};
+        if (Fs.existsSync(bundleJsonFile = Path.join(projectDir, '/bundle.html.json'))) {
+            bundles.json = JSON.parse(Fs.readFileSync(bundleJsonFile));
+        }
+        if (Fs.existsSync(bundleHtmlFile = Path.join(projectDir, '/bundle.html'))) {
+            bundles.html = Fs.readFileSync(bundleHtmlFile);
+        }
+        project.bundles = bundles;
+        project = {
+            ...project,
+            ...bundles.json,
+        };
+    }
+    return project;
+}
+
+/**
+ * Categorizes the list of projects.
+ * 
+ * @param Object    projectsList
+ * @param String    defaultCategory
+ * 
+ * @returns Array
+ */
+export function categorizeProjectsList(projectsList, defaultCategory = null) {
+    var projectsListCategorized = {};
+    _each(projectsList, (name, project) => {
+        var categories = !project.categories.length && _isString(defaultCategory)
+            ? [defaultCategory] 
+            : project.categories;
+        categories.forEach(c => {
+            if (!projectsListCategorized[c]) {
+                projectsListCategorized[c] = [];
+            }
+            projectsListCategorized[c].push(project);
+        });
+    });
+    return Object.keys(projectsListCategorized).sort((a, b) => a.toLowerCase() === 'featured' || b.toLowerCase() === defaultCategory ? -1 : (a.toLowerCase() === defaultCategory || b.toLowerCase() === 'featured' ? 1 : a < b)).map(name => ({
+        name,
+        title: _toTitle(name),
+        items: projectsListCategorized[name].sort((a, b) => a._before === b.name || a.name === b._after ? -1 : (a._after === b.name || b.name === a._before ? 1 : 0)),
+    }));
+}
+
+/**
+ * Accetps the list of project bundles
+ * and returns a new project list in the same format as @getProjectsList().
+ * 
+ * @param Object    bundlesList
+ * 
+ * @returns Object
+ */
+export function getProjectDetailsFromBundlesEach(bundlesList) {
+    const detailsAll = {};
+    _each(bundlesList, (name, bundle) => {
+        detailsAll[name] = getProjectDetailsFromBundle(name, bundle);
+    });
+    return detailsAll;
+}
+
+/**
+ * Accetps a project bundle
+ * and returns the project in the same format as @getProject().
+ * 
+ * @param String    name
+ * @param Object    bundle
+ * 
+ * @returns Object
+ */
+export function getProjectDetailsFromBundle(name, bundle) {
+    var projectInfo;
+    if ((bundle.meta || {}).readme) {
+        projectInfo = bundle.meta.readme;
+    } else {
+        projectInfo = bundle;
+    }
+    var title = projectInfo.title || (projectInfo.outline || []).length && projectInfo.outline[0].level === 1 ? projectInfo.outline[0].title : _toTitle(name);
     return {
         name,
         title,
-        desc: readme.desc,
-        desc2: readme.desc2,
-        icon: readme.icon,
-        categories: (readme.categories || '').split(',').map(s => s.trim()).filter(s => s),
-        tags: (readme.tags || '').split(',').map(s => s.trim()).filter(s => s),
+        desc: projectInfo.desc,
+        desc2: projectInfo.desc2,
+        icon: projectInfo.icon,
+        categories: (projectInfo.categories || '').split(',').map(s => s.trim()).filter(s => s),
+        tags: (projectInfo.tags || '').split(',').map(s => s.trim()).filter(s => s),
         repo: `webqit/${name}`,
         cta: 'Learn more',
         ctaRef: `/tooling/${name}`,
-        _after: readme._after,
-        _before: readme._before,
+        _after: projectInfo._after,
+        _before: projectInfo._before,
     };
-};
-
-export function detailsAll(projects, categorization = false) {
-    const _detailsAll = {};
-    _each(projects, (name, project) => {
-        var _details = details(name, project);
-        if (categorization) {
-            var categories = !_details.categories.length && _isString(categorization)
-                ? [categorization] 
-                : _details.categories;
-            categories.forEach(c => {
-                if (!_detailsAll[c]) {
-                    _detailsAll[c] = [];
-                }
-                _detailsAll[c].push(_details);
-            });
-        } else {
-            _detailsAll[name] = _details;
-        }
-    });
-    if (categorization) {
-        return Object.keys(_detailsAll).sort((a, b) => a.toLowerCase() === 'featured' || b.toLowerCase() === categorization ? -1 : (a.toLowerCase() === categorization || b.toLowerCase() === 'featured' ? 1 : a < b)).map(name => ({
-            name,
-            title: _toTitle(name),
-            items: _detailsAll[name].sort((a, b) => a._before === b.name || a.name === b._after ? -1 : (a._after === b.name || b.name === a._before ? 1 : 0)),
-        }));
-    }
-    return Object.values(_detailsAll);
 }

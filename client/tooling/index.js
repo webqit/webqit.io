@@ -26,7 +26,6 @@ export default async (request, recieved, next) => {
     if (!cache[pkgName]) {
         cache[pkgName] = await next();
     }
-    console.log(cache[pkgName])
     return cache[pkgName];
 };
 

@@ -48,23 +48,18 @@
 /* ------------------------ */
 
 .readme-footer {
-    padding: 10px;
     background-color: white;
-}
-.footer-nav {
-    padding:0px;
-    list-style: none;
 }
 
 /* ------------------------ */
 
-.readme-container {
+.markdown-body {
     padding: 30px;
     padding-left: 75px;
     padding-right: 75px;
 }
 @media (max-width: 992px) {
-    .readme-container {
+    .markdown-body {
         padding: 20px;
         padding-left: 50px;
         padding-right: 50px;

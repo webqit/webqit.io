@@ -18,31 +18,39 @@ export default class List extends _List {
         }), {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: 1}});
     }
 
-    static fromOutline(outline, detailed = false, parent = null) {
+    static fromOutline(outline, detailed = false, parent = null, i = 0) {
 
         var entries = Object.keys(outline).map(name => {
-            var entry = outline[name];
-            var readme = (entry.meta || {}).readme || {};
-            var title = readme.title || (readme.outline || []).length && readme.outline[0].level === 1 ? readme.outline[0].title : _toTitle(name);
+            var entry = outline[name],
+                projectInfo;
+            if ((entry.meta || {}).readme) {
+                projectInfo = entry.meta.readme;
+            } else {
+                projectInfo = entry;
+            }
+            var title = projectInfo.title || ((projectInfo.outline || []).length && projectInfo.outline[0].level === 1 ? projectInfo.outline[0].title : _toTitle(name));
+            if (i === 2) {
+                title = 'DOCS';
+            }
             var _entry = {
                 title,
                 name,
                 path: (parent ? parent.path : '') + '/' + name,
                 active: false,
-                desc: readme.desc,
-                _before: readme._before,
-                _after: readme._after,
+                desc: projectInfo.desc,
+                _before: projectInfo._before,
+                _after: projectInfo._after,
             };
             // Add parent
             if (detailed) {
-                Object.defineProperty(_entry, 'outline', {value: readme.outline || [], enumerable: false});
+                Object.defineProperty(_entry, 'outline', {value: projectInfo.outline || [], enumerable: false});
                 if (parent) {
                     Object.defineProperty(_entry, 'parent', {value: parent, enumerable: false});
                 }
             }
             // Add subtree
             if (!_isEmpty(entry.subtree)) {
-                _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry);
+                _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry, i + 1);
             }        
             return _entry;
         });

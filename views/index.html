@@ -1,5 +1,111 @@
+<div namespace class="homepage" exportgroup="index">
+    <script type="subscript">
+        if (this.namespace.hero) {
+            this.namespace.hero.setState({
+                title: ['The tooling, cloud,', 'and community for', 'web-native', 'development.'],
+                desc: 'Build modern magic using plain web languages and conventional paradigms!',
+                cta: {text: 'Explore', href: '#tooling',},
+                nav: [{
+                    href: '#tooling',
+                    icon: 'braces',
+                }, {
+                    href: '#cloud',
+                    icon: 'cloud',
+                }, {
+                    href: '#community',
+                    icon: 'flag',
+                }],
+                play: '#',
+            });
+            this.namespace.featured_tooling.setState({items: [{
+                icon: 'layers',
+                title: 'OOHTML',
+                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }]});
+        }
+    </script>
 
-<!-- Main Home View -->
-<div namespace class="homepage">
-    Home
+    <html-import data-id="hero" id="hero" name="type1" template="#layout/hero"></html-import>
+    <html-import data-id="showcase" id="showcase" name="container" template="#layout/showcase"></html-import>
+
+    <section id="tooling" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
+        <h2>Tooling</h2>
+        <p class="section-desc max-wt-half md--max-wt-full">
+            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
+        </p>
+        <html-import data-id="featured_tooling" name="container" template="#layout/grid-4" class="pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray;"></html-import>
+        <a href="/tooling" class="flex-x-center pd-10 pd-x2 border-dashed b">
+            <span class="flex-y-center">
+                <i class="bi bi-arrow-return-right flex-center"></i>
+                <span class="pd-lft-10 pd-x2">WebQit Tooling</span>
+            </span>
+        </a>
+    </section>
+
+    <br />
+    <br />
+    <br />
+
+    <section id="cloud" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
+        <h2>Cloud</h2>
+        <p class="section-desc max-wt-half md--max-wt-full">
+            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
+        </p>
+        <div class="grid-4 pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray; min-height: 200px;">
+        </div>
+        <a href="/cloud" class="flex-x-center pd-10 pd-x2 border-dashed b">
+            <span class="flex-y-center">
+                <i class="bi bi-arrow-return-right flex-center"></i>
+                <span class="pd-lft-10 pd-x2">WebQit Cloud</span>
+            </span>
+        </a>
+    </section>
+
+    <br />
+    <br />
+    <br />
+
+    <section id="community" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
+        <h2>Community</h2>
+        <p class="section-desc max-wt-half md--max-wt-full">
+            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
+        </p>
+        <div class="grid-4 pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray; min-height: 200px;">
+        </div>
+        <a href="/community" class="flex-x-center pd-10 pd-x2 border-dashed b">
+            <span class="flex-y-center">
+                <i class="bi bi-arrow-return-right flex-center"></i>
+                <span class="pd-lft-10 pd-x2">WebQit Community</span>
+            </span>
+        </a>
+    </section>
+
 </div>
