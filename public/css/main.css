@@ -1279,15 +1279,15 @@ body {
     --color-community: #EEDDFF;
 }
 #tooling,
-.route-tooling .category-block {
+#route-tooling .category-block {
     background-color: var(--color-tooling);
 }
 #cloud,
-.route-cloud .category-block {
+#route-cloud .category-block {
     background-color: var(--color-cloud);
 }
 #community,
-.route-community .category-block {
+#route-community .category-block {
     background-color: var(--color-community);
 }
 /* ---------- */

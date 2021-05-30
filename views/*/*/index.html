@@ -1,11 +1,13 @@
 <div namespace class="route-tooling" exportgroup="index">
     <script type="subscript">
-        if (this.namespace.hero) {
+        var app = document.state;
+        if (app.page.projectName) {
+            var project = app.page.outline.subtree[app.page.domain].subtree[app.page.projectName];
             this.namespace.hero.setState({
-                icon: 'layers',
-                title: 'Webflo',
-                desc: 'Build modern magic using plain web languages and conventional paradigms!',
-                cta: {text: 'Get Started', href: '#',},
+                icon: project.icons,
+                title: project.title,
+                desc: project.desc,
+                cta: {text: 'Get Started', href: '/' + app.page.domain + '/' + app.page.projectName + '/docs',},
                 nav: [{
                     href: '#',
                     icon: 'cloud',

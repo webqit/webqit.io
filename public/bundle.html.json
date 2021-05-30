@@ -1,23 +1,6 @@
 {
     "subtree": {
-        "cloud": {
-            "subtree": {
-                "*": {
-                    "meta": {
-                        "index": {}
-                    }
-                }
-            },
-            "meta": {
-                "index": {}
-            }
-        },
-        "community": {
-            "meta": {
-                "index": {}
-            }
-        },
-        "tooling": {
+        "*": {
             "subtree": {
                 "*": {
                     "subtree": {
@@ -33,8 +16,22 @@
                 }
             },
             "meta": {
-                "readme": {},
                 "index": {}
+            }
+        },
+        "cloud": {
+            "meta": {
+                "readme": {}
+            }
+        },
+        "community": {
+            "meta": {
+                "readme": {}
+            }
+        },
+        "tooling": {
+            "meta": {
+                "readme": {}
             }
         }
     },

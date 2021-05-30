@@ -1,20 +1,10 @@
-<div namespace class="route-tooling" exportgroup="index">
+<div namespace exportgroup="index">
 
     <script type="subscript">
         var app = document.state;
-        if (this.namespace.hero) {
-            this.namespace.hero.setState({
-                title: ['The tooling for', 'web-native', 'development.'],
-                desc: 'Build modern magic using plain web languages and conventional paradigms!',
-                cta: {text: 'Explore', href: '#',},
-                nav: [{
-                    href: '#',
-                    icon: 'braces',
-                }],
-                play: '#',
-            });
-        }
-        if (app.page.projects) {
+        if (app.page.domain) {
+            $(this).attr('id', 'route-' + app.page.domain);
+            this.namespace.hero.setState(app.page.hero);
             this.namespace.main.setState({items: app.page.projects});
         }
     </script>
