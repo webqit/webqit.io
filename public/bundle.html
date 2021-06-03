@@ -8,7 +8,8 @@
     
     <script type="subscript">
         let app = document.state;
-        if (app.page.projectName) {
+        if (app.page.domain) {
+            $(this).attr('id', 'route--' + app.page.domain);
             $(this.namespace.project_npm).html('@webqit/' + app.page.projectName);
             $(this.namespace.app_bar_title).html('@webqit/' + app.page.projectName);
             $(this.namespace.app_bar_back).attr('href', '/' + app.page.domain + '/' + app.page.projectName);
@@ -16,7 +17,7 @@
             $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
         if (app.page.nav) {
-            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit.docs.' + app.page.domain + '/edit/master/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
+            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/master/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
             $(this.namespace.doc_tree).itemize(app.page.nav.items);
         }
                 if (app.page.breadcrumb) {
@@ -57,7 +58,7 @@
         });
     </script>
     
-    <div data-id="app_bar" class="pos-rel flex-y-center" style="min-height:70px; z-index: 91; border-bottom: 1px dashed silver; color: white; background-color: blueviolet;">
+    <div data-id="app_bar" class="pos-rel flex-y-center" style="min-height:70px; z-index: 91; border-bottom: 1px dashed silver; c-olor: white; background-color: var(--theme-bg2);">
         
         <a data-id="app_bar_back" class="pd-10 flex-center">
             <i class="bi bi-chevron-left sm pd-10 b"></i>
@@ -119,24 +120,19 @@
     
     <div class="pos-rel flex-y-start">
             
-        <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
-            <div data-id="doc_tree_drawer" class="pd-10 pd-x2 pd-btm-0 d-flex flex-column md--offset-top-60 md--negative-offset overflow-hidden md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; border-right: 1px solid silver; background-color: white;">
+        <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90; border-right: 1px solid silver">
+            <div data-id="doc_tree_drawer" class="pd-10 pd-x2 pd-btm-0 d-flex flex-column md--offset-top-60 md--negative-offset overflow-hidden md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; b-order-right: 1px solid silver; background-color: white;">
                 <div class="col-grows overflow-y-auto">
                     <div class="pd-10 flex-y-center flex-x-separate">
                         <span class="sm b">Pages</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="doc_tree" template="page/*/*/docs/#layout/project-outline" class="project-outline list-style-none"></ul>
                 </div>
-                <div data-id="project_links" class="pd-10 pd-x2 b i flex-y-center flex-x-separate">
-                    <a data-id="project_npm" href="" target="_blank"></a>
-                    <div class="flex-y-center">
-                        <a data-id="edit_link" href="" target="_blank" title="Edit this page on github" class="pd-8 mg-lft-10 flex-y-center radius-10">
-                            <i class="bi bi-pencil xs"></i>
-                        </a>
-                        <a data-id="project_github" href="" target="_blank" class="mg-lft-10">
-                            <i class="bi bi-github xs"></i>
-                        </a>
-                    </div>
+                <div data-id="project_links" class="pd-2 pd-x7 flex-y-center flex-x-separate">
+                    <a data-id="project_npm" href="" target="_blank" title="Go to project on npm" class="b"></a>
+                    <a data-id="project_github" href="" target="_blank" title="Visit project on github" class="mg-lft-10">
+                        <i class="bi bi-github sm"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -146,7 +142,7 @@
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
             <div data-id="page_readme_container" class="col-9 sm--col-12">
-                <html-import name="readme" data-id="main" class="markdown-body" style="min-height: 75vh;">
+                <html-import name="readme" data-id="main" class="doc-readme markdown-body" style="min-height: 75vh;">
                     <div class="flex-center" style="height: 85vh;">
                         <div class="pd-10 pd-x2 txt-align-cntr">
                             <i class="bi bi-emoji-smile-upside-down pd-10 flex-center"></i>
@@ -156,6 +152,13 @@
                         </div>
                     </div>
                 </html-import>
+                <div class="markdown-body pd-top-0 pd-btm-0">
+                    <div class="pd-top-10 pd-btm-10 pd-x2 flex-y-center flex-x-separate" style="border-top: 1px solid silver;">
+                        <a data-id="edit_link" href="" target="_blank" class="flex-y-center b">
+                            <i class="bi bi-pencil xs"></i> <span class="mg-lft-10">Edit this page on github</span>
+                        </a>
+                    </div>
+                </div>
                 <footer class="readme-footer pos-sticky offset-btm-0">
                     <ul data-id="nav" class="footer-nav flex-x-separate flex-y-center pd-10 pd-x2 pd-lft-x3 pd-rt-x3 list-style-none">
                         <li><a href="" data-id="nav_left" class="flex-y-center"><i class="bi bi-arrow-left sm flex-center mg-rt-10"></i> prev</a></li>
@@ -170,8 +173,8 @@
                         <span class="sm b">Outline</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="page_outline" template="page/*/*/docs/#layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
-                    <div class="pd-10 flex-y-center flex-x-separate md--d-none">
-                        <a href="#"><i class="bi bi-chevron-bar-up"></i></a>
+                    <div class="pd-2 pd-x7 flex-y-center flex-x-separate md--d-none">
+                        <a href="#" title="Scroll to top"><i class="bi bi-chevron-bar-up"></i></a>
                     </div>
                 </div>
             </div>
@@ -300,57 +303,80 @@
 			<div namespace class="route-tooling" exportgroup="index">
     <script type="subscript">
         var app = document.state;
-        if (app.page.projectName) {
+        if (app.page.domain) {
+            $(this).attr('id', 'route--' + app.page.domain);
             var project = app.page.outline.subtree[app.page.domain].subtree[app.page.projectName];
+            var docsPage = '/' + app.page.domain + '/' + app.page.projectName + '/docs';
             this.namespace.hero.setState({
-                icon: project.icons,
-                title: project.title,
+                title: [project.title],
                 desc: project.desc,
-                cta: {text: 'Get Started', href: '/' + app.page.domain + '/' + app.page.projectName + '/docs',},
+                ctas: [
+                    {href: '#quickstart', text: 'Quick Start',},
+                    {href: docsPage, icon: 'text-left', text: 'Docs',},
+                ],
                 nav: [{
                     href: '#',
-                    icon: 'cloud',
+                    icon: project.icon,
                 }],
+                play: {
+                    href: '#quickstart',
+                    icon: 'download'
+                }
             });
+            if (project.quickstart) {
+                $(this.namespace.quickstart).attrSync('name', project.quickstart.type);
+                this.namespace.quickstart.setState(project.quickstart);
+            }
         }
-        this.namespace.features.setState({items: [{
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }]});
+        this.namespace.highlights.setState({items: [{
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }],
+            itemsTemplate: 'item', 
+            gridColumns: 4,
+        });
     </script>
 
-    <html-import data-id="hero" id="hero" name="type2" template="#layout/hero"></html-import>
-    <html-import data-id="features" name="container" template="#layout/grid-4" class="horz-padded-layout-section pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="border-color: gray;"></html-import>
-    <html-import name="readme" class="box-padded-layout-section"></html-import>
+    <html-import template="#layout/hero" data-id="hero" id="hero"></html-import>
+
+    <html-import data-id="highlights" name="container" template="#layout/project-listing" class="horz-padded-layout-section pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="border-color: gray;"></html-import>
+    
+    <section id="quickstart" class="box-padded-layout-section b">
+        <html-import data-id="quickstart" template="#layout/quickstart"></html-import>
+    </section>
+
+    <section class="box-padded-layout-section" style="background-color: whitesmoke;">
+        <html-import name="readme" class="additional-readme markdown-body"></html-import>
+    </section>
 
 </div>
 		</template>
@@ -360,16 +386,23 @@
     <script type="subscript">
         var app = document.state;
         if (app.page.domain) {
-            $(this).attr('id', 'route-' + app.page.domain);
+            $(this).attr('id', 'route--' + app.page.domain);
             this.namespace.hero.setState(app.page.hero);
-            this.namespace.main.setState({items: app.page.projects});
+            $(this.namespace.main).class('d-none', !app.page.projects.length);
+            this.namespace.main.setState({
+                items: app.page.projects, 
+                itemsTemplate: 'category', 
+                gridColumns: 2,
+            });
         }
     </script>
 
-    <html-import data-id="hero" id="hero" name="type1" template="#layout/hero"></html-import>
+    <html-import data-id="hero" id="hero" template="#layout/hero"></html-import>
     <html-import data-id="showcase" id="showcase" name="container" template="#layout/showcase"></html-import>
-    <html-import data-id="main" id="main" name="container" template="#layout/large-grid-2" class="layout-section"></html-import>
-    <html-import name="readme" class="box-padded-layout-section"></html-import>
+    <html-import data-id="main" id="main" name="container" template="#layout/project-listing" class="grid-2 layout-section" style="margin-bottom: 15px;"></html-import>
+    <section class="box-padded-layout-section" style="background-color: whitesmoke;">
+        <html-import name="readme" class="additional-readme markdown-body"></html-import>
+    </section>
     
 </div>
 	</template>
@@ -377,7 +410,7 @@
 	<template name="cloud">
 		<div exportgroup="readme">
 
-			<h1 id="webqitcloud">WebQit Cloud</h1>
+			<h2 id="webqitcloud">WebQit Cloud</h2>
 <p>Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. </p>
 <blockquote>
   <p>Write more native, universal, and stable code; enjoy a traditional developer experience. <a href="/tooling/hello">test link</a>.</p>
@@ -390,7 +423,7 @@
 	<template name="community">
 		<div exportgroup="readme">
 
-			<h1 id="webqitcommunity">WebQit Community</h1>
+			<h2 id="webqitcommunity">WebQit Community</h2>
 <p>Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. </p>
 <blockquote>
   <p>Write more native, universal, and stable code; enjoy a traditional developer experience. <a href="/tooling/hello">test link</a>.</p>
@@ -402,120 +435,38 @@
 
 	<div namespace class="homepage" exportgroup="index">
     <script type="subscript">
-        if (this.namespace.hero) {
-            this.namespace.hero.setState({
-                title: ['The tooling, cloud,', 'and community for', 'web-native', 'development.'],
-                desc: 'Build modern magic using plain web languages and conventional paradigms!',
-                cta: {text: 'Explore', href: '#tooling',},
-                nav: [{
-                    href: '#tooling',
-                    icon: 'braces',
-                }, {
-                    href: '#cloud',
-                    icon: 'cloud',
-                }, {
-                    href: '#community',
-                    icon: 'flag',
-                }],
-                play: '#',
-            });
-            this.namespace.featured_tooling.setState({items: [{
-                icon: 'layers',
-                title: 'OOHTML',
-                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }]});
+        var app = document.state;
+        if (app.page.hero) {
+            this.namespace.hero.setState(app.page.hero);
+            this.namespace.tooling.setState(app.page.sections[0]);
+            this.namespace.cloud.setState(app.page.sections[1]);
+            this.namespace.community.setState(app.page.sections[2]);
         }
     </script>
 
-    <html-import data-id="hero" id="hero" name="type1" template="#layout/hero"></html-import>
+    <html-import data-id="hero" id="hero" template="#layout/hero"></html-import>
     <html-import data-id="showcase" id="showcase" name="container" template="#layout/showcase"></html-import>
 
-    <section id="tooling" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
-        <h2>Tooling</h2>
-        <p class="section-desc max-wt-half md--max-wt-full">
-            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
-        </p>
-        <html-import data-id="featured_tooling" name="container" template="#layout/grid-4" class="pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray;"></html-import>
-        <a href="/tooling" class="flex-x-center pd-10 pd-x2 border-dashed b">
-            <span class="flex-y-center">
-                <i class="bi bi-arrow-return-right flex-center"></i>
-                <span class="pd-lft-10 pd-x2">WebQit Tooling</span>
-            </span>
-        </a>
-    </section>
+    <html-import data-id="tooling" id="domain--tooling" template="#layout/domain-block" class="snaps-to-start"></html-import>
 
     <br />
     <br />
     <br />
 
-    <section id="cloud" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
-        <h2>Cloud</h2>
-        <p class="section-desc max-wt-half md--max-wt-full">
-            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
-        </p>
-        <div class="grid-4 pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray; min-height: 200px;">
-        </div>
-        <a href="/cloud" class="flex-x-center pd-10 pd-x2 border-dashed b">
-            <span class="flex-y-center">
-                <i class="bi bi-arrow-return-right flex-center"></i>
-                <span class="pd-lft-10 pd-x2">WebQit Cloud</span>
-            </span>
-        </a>
-    </section>
+    <html-import data-id="cloud" id="domain--cloud" template="#layout/domain-block" class="snaps-to-start"></html-import>
 
     <br />
     <br />
     <br />
 
-    <section id="community" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8 snaps-to-start">
-        <h2>Community</h2>
-        <p class="section-desc max-wt-half md--max-wt-full">
-            Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.
-        </p>
-        <div class="grid-4 pd-top-10 pd-btm-10 pd-x5 border-top-dashed txt-larger" style="border-color: gray; min-height: 200px;">
-        </div>
-        <a href="/community" class="flex-x-center pd-10 pd-x2 border-dashed b">
-            <span class="flex-y-center">
-                <i class="bi bi-arrow-return-right flex-center"></i>
-                <span class="pd-lft-10 pd-x2">WebQit Community</span>
-            </span>
-        </a>
-    </section>
+    <html-import data-id="community" id="domain--community" template="#layout/domain-block" class="snaps-to-start"></html-import>
 
 </div>
 
 	<template name="tooling">
 		<div exportgroup="readme">
 
-			<h1 id="webqittooling">WebQit Tooling</h1>
+			<h2 id="webqittooling">WebQit Tooling</h2>
 <p>Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. </p>
 <blockquote>
   <p>Write more native, universal, and stable code; enjoy a traditional developer experience. <a href="/tooling/hello">test link</a>.</p>

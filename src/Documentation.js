@@ -39,12 +39,40 @@ export default class Documentation {
         var project = {
             name,
             repo: `webqit/${name}`,
-            cta: 'Learn more',
-            ctaRef: `/${this.domain}/${name}`,
         }
         if (Fs.existsSync(projectJsonFile = Path.join(projectDir, '/project.json'))) {
             project = { ...project, ...JSON.parse(Fs.readFileSync(projectJsonFile)) };
         }
+        // ------------
+        if (!project.cta) {
+            project.cta = {};
+        }
+        if (!project.cta.href) {
+            project.cta.href = `/${this.domain}/${name}`;
+        }
+        if (!project.cta.text) {
+            project.cta.text = 'Learn more';
+        }
+        // ------------
+        if (!project.quickstart) {
+            project.quickstart = {};
+        }
+        if (!project.quickstart.type) {
+            project.quickstart.type = 'code';
+        }
+        if (!project.quickstart.directive) {
+            project.quickstart.directive = `npm install @webqit/${name}`;
+        }
+        if (!project.quickstart.cta) {
+            project.quickstart.cta = {};
+        }
+        if (!project.quickstart.cta.href) {
+            project.quickstart.cta.href = `/${this.domain}/${name}/docs`;
+        }
+        if (!project.quickstart.cta.text) {
+            project.quickstart.cta.text = 'Go to docs';
+        }
+        // ------------
         if (withBundles) {
             var bundleJsonFile,
                 bundleHtmlFile,
@@ -139,26 +167,20 @@ export default class Documentation {
      * @returns Object
      */
     getProjectDetailsFromReadme(name, bundle) {
-        var projectInfo;
-        if ((bundle.meta || {}).readme) {
-            projectInfo = bundle.meta.readme;
-        } else {
-            projectInfo = bundle;
-        }
-        var title = projectInfo.title || (projectInfo.outline || []).length && projectInfo.outline[0].level === 1 ? projectInfo.outline[0].title : _toTitle(name);
+        var projectProp = prop => bundle[prop] || ((bundle.meta || {}).readme || {})[prop];
+        var title = projectProp('title') || (projectProp('outline') || []).length && projectProp('outline')[0].level === 1 ? projectProp('outline')[0].title : _toTitle(name);
         return {
             name,
             title,
-            desc: projectInfo.desc,
-            desc2: projectInfo.desc2,
-            icon: projectInfo.icon,
-            categories: (projectInfo.categories || '').split(',').map(s => s.trim()).filter(s => s),
-            tags: (projectInfo.tags || '').split(',').map(s => s.trim()).filter(s => s),
+            desc: projectProp('desc'),
+            desc2: projectProp('desc2'),
+            icon: projectProp('icon'),
+            categories: (projectProp('categories') || '').split(',').map(s => s.trim()).filter(s => s),
+            tags: (projectProp('tags') || '').split(',').map(s => s.trim()).filter(s => s),
             repo: `webqit/${name}`,
-            cta: 'Learn more',
-            ctaRef: `/${this.domain}/${name}`,
-            _after: projectInfo._after,
-            _before: projectInfo._before,
+            cta: {href: `/${this.domain}/${name}`, text: 'Learn more'},
+            _after: projectProp('_after'),
+            _before: projectProp('_before'),
         };
     }
 

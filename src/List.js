@@ -21,14 +21,9 @@ export default class List extends _List {
     static fromOutline(outline, detailed = false, parent = null, i = 0) {
 
         var entries = Object.keys(outline).map(name => {
-            var entry = outline[name],
-                projectInfo;
-            if ((entry.meta || {}).readme) {
-                projectInfo = entry.meta.readme;
-            } else {
-                projectInfo = entry;
-            }
-            var title = projectInfo.title || ((projectInfo.outline || []).length && projectInfo.outline[0].level === 1 ? projectInfo.outline[0].title : _toTitle(name));
+            var entry = outline[name];
+            var projectProp = prop => entry[prop] || ((entry.meta || {}).readme || {})[prop];
+            var title = projectProp('title') || ((projectProp('outline') || []).length && projectProp('outline')[0].level === 1 ? projectProp('outline')[0].title : _toTitle(name));
             if (i === 2) {
                 title = 'DOCS';
             }
@@ -37,13 +32,13 @@ export default class List extends _List {
                 name,
                 path: (parent ? parent.path : '') + '/' + name,
                 active: false,
-                desc: projectInfo.desc,
-                _before: projectInfo._before,
-                _after: projectInfo._after,
+                desc: projectProp('desc'),
+                _before: projectProp('_before'),
+                _after: projectProp('_after'),
             };
             // Add parent
             if (detailed) {
-                Object.defineProperty(_entry, 'outline', {value: projectInfo.outline || [], enumerable: false});
+                Object.defineProperty(_entry, 'outline', {value: projectProp('outline') || [], enumerable: false});
                 if (parent) {
                     Object.defineProperty(_entry, 'parent', {value: parent, enumerable: false});
                 }

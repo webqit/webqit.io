@@ -3,15 +3,22 @@
     <script type="subscript">
         var app = document.state;
         if (app.page.domain) {
-            $(this).attr('id', 'route-' + app.page.domain);
+            $(this).attr('id', 'route--' + app.page.domain);
             this.namespace.hero.setState(app.page.hero);
-            this.namespace.main.setState({items: app.page.projects});
+            $(this.namespace.main).class('d-none', !app.page.projects.length);
+            this.namespace.main.setState({
+                items: app.page.projects, 
+                itemsTemplate: 'category', 
+                gridColumns: 2,
+            });
         }
     </script>
 
-    <html-import data-id="hero" id="hero" name="type1" template="#layout/hero"></html-import>
+    <html-import data-id="hero" id="hero" template="#layout/hero"></html-import>
     <html-import data-id="showcase" id="showcase" name="container" template="#layout/showcase"></html-import>
-    <html-import data-id="main" id="main" name="container" template="#layout/large-grid-2" class="layout-section"></html-import>
-    <html-import name="readme" class="box-padded-layout-section"></html-import>
+    <html-import data-id="main" id="main" name="container" template="#layout/project-listing" class="grid-2 layout-section" style="margin-bottom: 15px;"></html-import>
+    <section class="box-padded-layout-section" style="background-color: whitesmoke;">
+        <html-import name="readme" class="additional-readme markdown-body"></html-import>
+    </section>
     
 </div>

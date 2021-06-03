@@ -22,11 +22,9 @@ export default async function(request, recieved, next) {
     if (!Object.keys(staticPageData).includes(domain)) {
         return next();
     }
-
     var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(this.layout.ROOT, this.layout.PUBLIC_DIR, 'bundle.html.json')) 
         ? JSON.parse(Fs.readFileSync(outlineFile)) 
         : {};
-    
     // ------------
     const data = {
         domain,
@@ -34,16 +32,14 @@ export default async function(request, recieved, next) {
         outline,
     };
     // ------------
-
     const documentation = new Documentation(data.domain);
     if (!outline.subtree[data.domain].subtree) {
         outline.subtree[data.domain].subtree = {};
     }
-
     if (next.pathname) {
         var pathSplit = next.pathname.split('/');
         data.projectName = pathSplit.shift();
-        outline.subtree[data.domain].subtree[data.projectName] = documentation.getProject(data.projectName, pathSplit.length/* withBundles */);
+        outline.subtree[data.domain].subtree[data.projectName] = documentation.getProject(data.projectName, true/* withBundles */);
         if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, outline.subtree[data.domain].subtree[data.projectName].bundles.json)) {
             return;
         }
@@ -78,32 +74,32 @@ export async function render(request, data, next) {
 const staticPageData = {
     tooling: {
         title: ['The tooling for', 'web-native', 'development.'],
-        desc: 'Build modern magic using plain web languages and conventional paradigms!',
-        cta: {text: 'Get Started', href: '#',},
+        desc: 'Opensource tooling that gets things to work \'out of the box\' - for the web-native experience!',
+        ctas: [{href: '#main', text: 'Explore',}],
         nav: [{
             href: '#',
             icon: 'braces',
         }],
-        play: '#',
+        play: {href: '#'},
     },
     cloud: {
         title: ['The cloud for', 'web-native', 'development.'],
-        desc: 'Build modern magic using plain web languages and conventional paradigms!',
-        cta: {text: 'Get Started', href: '#',},
+        desc: 'Instant, auto-scaling, zero-ops infrastructure, built for the web-native experience.',
+        ctas: [{href: '#main', text: 'Get Started',}],
         nav: [{
             href: '#',
             icon: 'cloud',
         }],
-        play: '#',
+        play: {href: '#'},
     },
     community: {
         title: ['The community for', 'web-native', 'development.'],
         desc: 'Build modern magic using plain web languages and conventional paradigms!',
-        cta: {text: 'Get Started', href: '#',},
+        ctas: [{href: '#main', text: 'Get Started',}],
         nav: [{
             href: '#',
             icon: 'flag',
         }],
-        play: '#',
+        play: {href: '#'},
     }
 };

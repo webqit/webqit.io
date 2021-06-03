@@ -1,56 +1,79 @@
 <div namespace class="route-tooling" exportgroup="index">
     <script type="subscript">
         var app = document.state;
-        if (app.page.projectName) {
+        if (app.page.domain) {
+            $(this).attr('id', 'route--' + app.page.domain);
             var project = app.page.outline.subtree[app.page.domain].subtree[app.page.projectName];
+            var docsPage = '/' + app.page.domain + '/' + app.page.projectName + '/docs';
             this.namespace.hero.setState({
-                icon: project.icons,
-                title: project.title,
+                title: [project.title],
                 desc: project.desc,
-                cta: {text: 'Get Started', href: '/' + app.page.domain + '/' + app.page.projectName + '/docs',},
+                ctas: [
+                    {href: '#quickstart', text: 'Quick Start',},
+                    {href: docsPage, icon: 'text-left', text: 'Docs',},
+                ],
                 nav: [{
                     href: '#',
-                    icon: 'cloud',
+                    icon: project.icon,
                 }],
+                play: {
+                    href: '#quickstart',
+                    icon: 'download'
+                }
             });
+            if (project.quickstart) {
+                $(this.namespace.quickstart).attrSync('name', project.quickstart.type);
+                this.namespace.quickstart.setState(project.quickstart);
+            }
         }
-        this.namespace.features.setState({items: [{
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }, {
-            icon: 'layers',
-            title: 'OOHTML',
-            content: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-            cta: {
-                href: '/',
-                text: 'Learn more',
-            }
-        }]});
+        this.namespace.highlights.setState({items: [{
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }, {
+                icon: 'layers',
+                title: 'OOHTML',
+                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                cta: {
+                    href: '/',
+                    text: 'Learn more',
+                }
+            }],
+            itemsTemplate: 'item', 
+            gridColumns: 4,
+        });
     </script>
 
-    <html-import data-id="hero" id="hero" name="type2" template="#layout/hero"></html-import>
-    <html-import data-id="features" name="container" template="#layout/grid-4" class="horz-padded-layout-section pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="border-color: gray;"></html-import>
-    <html-import name="readme" class="box-padded-layout-section"></html-import>
+    <html-import template="#layout/hero" data-id="hero" id="hero"></html-import>
+
+    <html-import data-id="highlights" name="container" template="#layout/project-listing" class="horz-padded-layout-section pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="border-color: gray;"></html-import>
+    
+    <section id="quickstart" class="box-padded-layout-section b">
+        <html-import data-id="quickstart" template="#layout/quickstart"></html-import>
+    </section>
+
+    <section class="box-padded-layout-section" style="background-color: whitesmoke;">
+        <html-import name="readme" class="additional-readme markdown-body"></html-import>
+    </section>
 
 </div>

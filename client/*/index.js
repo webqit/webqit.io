@@ -24,7 +24,7 @@ export default async function(request, recieved, next) {
     if (!['tooling', 'cloud', 'community'].includes(domain)) {
         return next(); 
     }
-    var fetchName = [domain].concat(next.pathname ? next.pathname.split('/').slice(0, 2) : []).join('/');
+    var fetchName = [domain].concat(next.pathname ? next.pathname.split('/')[0] : []).join('/');
     if (!cache[fetchName]) {
         cache[fetchName] = await next();
     }

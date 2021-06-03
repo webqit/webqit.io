@@ -167,7 +167,7 @@
             <div class="layout-section flex-x-separate" style="font-weight: 620; font-family: 'Josefin Sans', sans-serif;">
                 <div class="flex-y-center">
                     <a href="/" class="flex-y-center">
-                        <span class="flex-center" style="width: 54px; height: 47px; border: 1px solid black; font-size: 30px; vertical-align: baseline;">W</span>
+                        <span class="flex-center radius-10" style="width: 54px; height: 47px; border: 1px solid black; font-size: 30px; vertical-align: baseline;">W</span>
                         <span class="pd-lft-10" style="font-size: 24px;">WebQit</span>
                     </a>
                     <a data-id="page_domain" href="/" class="mg-lft-10 mg-x2 pd-8 txt-sm border-solid radius-10 d-none"></a>
@@ -233,20 +233,17 @@
 
                 <!-- -->
 
-                <section exportgroup="type1" namespace class="box-padded-layout-section pos-rel flex-x-separate sm--d-block pd-top-10 pd-btm-10 pd-x8">
-                    <div class="section-left col-4 md--col-6 sm--col-8">
+                <section namespace class="box-padded-layout-section pos-rel flex-x-separate sm--d-block pd-top-10 pd-btm-10 pd-x8">
+                    <div class="section-left col-6 sm--col-8">
                         <h1 data-id="title"></h1>
                         <p data-id="desc" class="section-desc"></p>
-                        <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center h5 b">
-                            <i class="bi bi-arrow-return-right flex-center"></i>
-                            <span data-id="cta_text" class="pd-lft-10 pd-x2" style="font-size: 30px;"></span>
-                        </a>
+                        <div data-id="ctas" template="#layout/hero/cta" style="display: grid; grid-gap: 15px;"></div>
                     </div>
                     <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6">
                         <ul data-id="nav" template="#layout/hero/nav" class="hero-nav with-separator sm--flex-y-center list-style-none"></ul>
                         <div data-id="nav_play_separator" class="hero-nav-play-separator col-grows d-none"></div>
-                        <a data-id="play" href="#" class="wt-60 ht-60 flex-center radius-full border-solid">
-                            <i class="bi bi-play flex-center sm"></i>
+                        <a data-id="play_href" href="#" class="wt-60 ht-60 flex-center radius-full border-solid d-none">
+                            <i data-id="play_icon" class="bi flex-center sm"></i>
                         </a>
                     </div>
                     <script type="subscript">
@@ -255,12 +252,13 @@
                             var titleHtml = heroData.title.map(chunk => '<span' + (chunk === 'web-native' ? ' class="text-gradient text-gradient-2"' : '') + '>' + chunk + '</span>');
                             $(this.namespace.title).html(titleHtml.join(' '));
                             $(this.namespace.desc).html(heroData.desc);
-                            $(this.namespace.cta_href).attr('href', heroData.cta.href);
-                            $(this.namespace.cta_text).text(heroData.cta.text);
+                            $(this.namespace.ctas).itemize(heroData.ctas);
                             $(this.namespace.nav).itemize(heroData.nav);
                             if (heroData.play) {
                                 $(this.namespace.nav_play_separator).class('d-none', false);
-                                $(this.namespace.play).attr('href', heroData.play);
+                                $(this.namespace.play_href).class('d-none', false);
+                                $(this.namespace.play_href).attr('href', heroData.play.href);
+                                $(this.namespace.play_icon).class('bi-' + (heroData.play.icon || 'play'), true);
                             }
                         }
                     </script>
@@ -268,33 +266,19 @@
 
                 <!-- -->
 
-                <section exportgroup="type2" namespace class="box-padded-layout-section pos-rel flex-x-separate sm--d-block pd-top-10 pd-btm-10 pd-x8">
-                    <div class="section-left col-4 md--col-6 sm--col-8">
-                        <h1 class="flex-y-center sm--d-block">
-                            <i data-id="icon" class="bi md d-inline-flex flex-center md--md sm--sm"></i>
-                            <span data-id="title" class="pd-lft-10 pd-x2 sm--d-block sm--pd-lft-0 sm--pd-top-10 sm--pd-x2"></span>
-                        </h1>
-                        <p data-id="desc" class="section-desc"></p>
-                        <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center h5 b">
-                            <i class="bi bi-arrow-return-right flex-center"></i>
-                            <span data-id="cta_text" class="pd-lft-10 pd-x2" style="font-size: 30px;"></span>
-                        </a>
-                    </div>
-                    <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6 sm--d-none">
-                        <ul data-id="nav" template="#layout/hero/nav" class="hero-nav sm--flex-y-center list-style-none"></ul>
-                    </div>
-                    <script type="subscript">
-                        var heroData = this.state;
-                        if (heroData.title) {
-                            $(this.namespace.icon).class('bi-' + heroData.icon, true);
-                            $(this.namespace.title).html(heroData.title);
-                            $(this.namespace.desc).html(heroData.desc);
-                            $(this.namespace.cta_href).attr('href', heroData.cta.href);
-                            $(this.namespace.cta_text).text(heroData.cta.text);
-                            $(this.namespace.nav).itemize(heroData.nav);
-                        }
-                    </script>
-                </section>
+                <template name="cta">
+                    <a namespace href="#" class="cta d-inline-flex flex-y-center h5 b">
+                        <i data-id="icon" class="bi flex-center"></i>
+                        <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 30px;"></span>
+                        <script type="subscript">
+                            if (this.state.href) {
+                                $(this).attr('href', this.state.href);
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
+                                $(this.namespace.text).html(this.state.text);
+                            }
+                        </script>
+                    </a>
+                </template>
 
                 <!-- -->
 
@@ -334,54 +318,99 @@
 
             </template>
 
-            <template name="large-grid-2">
+            <template name="domain-block">
 
                 <!-- -->
 
-                <ul exportgroup="container" template="#layout/large-grid-2" class="grid-2 list-style-none">
+                <section namespace class="layout-section pos-rel">
+                    <div class="box-padded-section pd-btm-0">
+                        <div class="flex-x-separate sm--d-block">
+                            <div class="section-left col-6 md--col-12">
+                                <h1 data-id="title"></h1>
+                                <p data-id="desc" class="section-desc"></p>
+                            </div>
+                            <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6 sm--d-none">
+                                <ul data-id="nav" template="#layout/hero/nav" class="hero-nav sm--flex-y-center list-style-none"></ul>
+                            </div>
+                        </div>
+                        <html-import data-id="featured" name="container" template="#layout/project-listing" class="pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="margin-bottom: 15px; border-color: gray;"></html-import>
+                    </div>
+                    <div class="horz-padded--section">
+                        <a data-id="cta_href" href="" class="cta flex-x-center pd-10 pd-x3 b">
+                            <span class="flex-y-center">
+                                <i class="bi bi-arrow-right flex-center"></i>
+                                <span data-id="cta_text" class="pd-lft-10 pd-x2"></span>
+                            </span>
+                        </a>
+                    </div>
+                    <script type="subscript">
+                        var data = this.state;
+                        if (data.title) {
+                            $(this.namespace.title).html(data.title);
+                            $(this.namespace.desc).html(data.desc);
+                            $(this.namespace.cta_href).attr('href', data.cta.href);
+                            $(this.namespace.cta_text).text(data.cta.text);
+                            $(this.namespace.nav).itemize(data.nav);
+                            this.namespace.featured.setState({
+                                items: data.featured,
+                                itemsTemplate: 'item',
+                                gridColumns: data.featured.length < 3 ? 2 : 4,
+                            });
+                        }
+                    </script>
+                </section>
+
+                <!-- -->
+
+            </template>
+
+            <template name="project-listing">
+
+                <!-- -->
+
+                <ul exportgroup="container" template="#layout/project-listing" class="project-listing list-style-none">
                     <script type="subscript">
                         if (this.state.items) {
-                            $(this).itemize(this.state.items);
+                            $(this).class('grid-' + this.state.gridColumns, true);
+                            $(this).itemize(this.state.items, null, null, {itemExportId: this.state.itemsTemplate});
                         }
                     </script>
                 </ul>
 
                 <!-- -->
 
-                <li namespace class="category-block box-padded-section">
+                <li exportgroup="category" namespace class="project-category box-padded-section">
                     <h3 data-id="title"></h3>
                     <p data-id="desc" class="pd-top-10 pd-btm-10 pd-x4 border-btm-dashed"></p>
-                    <ul data-id="items" play-seq="animIn:fly_bottom; animInAlt:fly_top; duration: 800;" class="project-items pd-top-10 pd-top-x3 list-style-none" template="#layout/large-grid-2"></ul>
+                    <ul data-id="items" template="#layout/project-listing" class="project-listing pd-top-10 pd-top-x3 list-style-none"></ul>
                     <script type="subscript">
                         if (this.state.title) {
                             $(this.namespace.title).html(this.state.title);
                             $(this.namespace.desc).html(this.state.desc);
-                            $(this.namespace.items).itemize(this.state.items, null, null, {itemExportId: 'subitem'});
+                            $(this.namespace.items).itemize(this.state.items, null, null, {itemExportId: 'item'});
                         }
                     </script>
                 </li>
 
                 <!-- -->
 
-                <li exportgroup="subitem" namespace class="project-item">
+                <li exportgroup="item" namespace class="project-item d-flex flex-column">
                     <div class="flex-y-center b">
                         <i data-id="icon" class="subitem-icon bi flex-center"></i>
                         <h4 data-id="title" class="subitem-title pd-lft-10 pd-lft-x2"></h4>
                     </div>
-                    <div data-id="desc" class="subitem-desc pd-top-10 pd-btm-10"></div>
-                    <div data-id="desc2" class="subitem-desc pd-top-10 pd-btm-10 d-none"></div>
-                    <a data-id="ctaRef" href="/" class="subitem-cta d-inline-flex flex-y-center" style="text-decoration: none;">
-                        <i data-id="ctaArrow" class="bi bi-arrow-return-right sm flex-center"></i>
-                        <span data-id="cta" class="pd-lft-10 pd-x2 b">Explore</span>
+                    <div data-id="desc" class="subitem-desc col-grows vertical-fit-content pd-top-10 pd-btm-10"></div>
+                    <a data-id="cta_href" href="/" class="subitem-cta d-inline-flex flex-y-center" style="text-decoration: none;">
+                        <i class="bi bi-arrow-return-right sm flex-center"></i>
+                        <span data-id="cta_text" class="pd-lft-10 pd-x2 b"></span>
                     </a>
                     <script type="subscript">
                         if (!this.state.title) return;
                         $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
                         $(this.namespace.title).html(this.state.title);
                         $(this.namespace.desc).html(this.state.desc);
-                        $(this.namespace.desc2).html(this.state.desc2 || '');
-                        $(this.namespace.ctaRef).attr('href', this.state.ctaRef);
-                        $(this.namespace.cta).html(this.state.cta);
+                        $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                        $(this.namespace.cta_text).html(this.state.cta.text);
                         if (this.state.displayRepetition) {
                             $(this).class('is-display-repetition', true);
                         }
@@ -393,40 +422,47 @@
         
             </template>
 
-            <template name="grid-4">
+            <template name="quickstart">
 
                 <!-- -->
 
-                <ul exportgroup="container" template="#layout/grid-4" class="grid-4 list-style-none">
-                    <script type="subscript">
-                        if (this.state.items) {
-                            $(this).itemize(this.state.items);
-                        }
-                    </script>
-                </ul>
-
-                <!-- -->
-
-                <li namespace>
-                    <h4 class="flex-y-center">
-                        <i data-id="icon" class="bi md"></i>
-                        <span data-id="title" class="pd-lft-10 pd-x2"></span>
-                    </h4>
-                    <p data-id="content" class="pd-top-10 pd-btm-10 pd-x2"></p>
-                    <a data-id="cta_href" href="/" class="d-inline-flex flex-y-center b">
-                        <i class="bi bi-arrow-return-right flex-center sm"></i>
-                        <span data-id="cta_text" class="pd-lft-10 pd-x2"></span>
+                <div exportgroup="code" namespace class="flex-y-stretch flex-wrap sm--d-block">
+                    <span class="flex-y-center no-wrap" style="border-left: 10px solid black; background-color: whitesmoke; overflow-x: auto;">
+                        <code data-id="directive" class="pd-10 pd-lft-x2 pd-rt-x2"></code>
+                    </span>
+                    <a data-id="cta_href" href="#" class="flex-y-center pd-top-10 pd-btm-10">
+                        <i class="bi bi-arrow-right flex-center mg-lft-10 mg-x2 sm--d-none"></i>
+                        <i class="bi bi-arrow-return-right flex-center d-none sm--d-flex"></i>
+                        <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
                     </a>
                     <script type="subscript">
-                        if (this.state.title) {
-                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
-                            $(this.namespace.title).html(this.state.title);
-                            $(this.namespace.content).html(this.state.content);
+                        if (this.state.directive) {
+                            $(this.namespace.directive).html(this.state.directive);
                             $(this.namespace.cta_href).attr('href', this.state.cta.href);
                             $(this.namespace.cta_text).html(this.state.cta.text);
                         }
                     </script>
-                </li>
+                </div>
+
+                <!-- -->
+
+                <form exportgroup="form" namespace class="flex-y-stretch flex-wrap sm--d-block">
+                    <div class="flex-y-center no-wrap" style="min-width: 35%; border-left: 10px solid black; background-color: whitesmoke; overflow-x: auto;">
+                        <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="wt-full pd-10 pd-lft-x2 pd-rt-x2" style="background-color: transparent; border: none;" />
+                    </div>
+                    <button class="flex-y-center pd-top-10 pd-btm-10 cursor-pointer" style="background-color: transparent; border: none; color: blueviolet;">
+                        <i class="bi bi-arrow-right flex-center mg-lft-10 mg-x2 sm--d-none"></i>
+                        <i class="bi bi-arrow-return-right flex-center d-none sm--d-flex"></i>
+                        <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
+                    </button>
+                    <script type="subscript">
+                        if (this.state.directive) {
+                            $(this.namespace.directive).attr('placeholder', this.state.directive);
+                            $(this).attr('action', this.state.cta.href);
+                            $(this.namespace.cta_text).html(this.state.cta.text);
+                        }
+                    </script>
+                </form>
 
                 <!-- -->
 
