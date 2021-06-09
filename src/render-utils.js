@@ -13,9 +13,10 @@ import _last from '@webqit/util/arr/last.js';
  * 
  * @return Object
  */
+var lastData, lastFullNav;
 export function createData(data, next_pathname) {
 
-    const fullNav = List.fromOutline(data.outline.subtree, true);
+    const fullNav = data === lastData ? lastFullNav : List.fromOutline(data.outline.subtree, true);
     const next_pathname_split = next_pathname ? next_pathname.split('/') : [];
     const breadcrumb = next_pathname_split.reduce((breadcrumb, item, i) => {
         var last, itemObj;
@@ -33,6 +34,8 @@ export function createData(data, next_pathname) {
     if (next_pathname_split.length) {
         nav = nav.items.filter(n => n.name === next_pathname_split[0])[0].subtree;
     }
+    lastFullNav = fullNav;
+    lastData = data;
     return {
         fullNav,
         nav,

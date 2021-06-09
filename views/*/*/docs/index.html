@@ -58,7 +58,7 @@
         });
     </script>
     
-    <div data-id="app_bar" class="pos-rel flex-y-center" style="min-height:70px; z-index: 91; border-bottom: 1px dashed silver; c-olor: white; background-color: var(--theme-bg2);">
+    <div data-id="app_bar" class="pos-rel flex-y-center" style="min-height:70px; z-index: 91; border-bottom: 1px dashed silver; c-olor: white; background-color: var(--theme-bg2); background-color: whitesmoke;">
         
         <a data-id="app_bar_back" class="pd-10 flex-center">
             <i class="bi bi-chevron-left sm pd-10 b"></i>
@@ -121,14 +121,14 @@
     <div class="pos-rel flex-y-start">
             
         <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90; border-right: 1px solid silver">
-            <div data-id="doc_tree_drawer" class="pd-10 pd-x2 pd-btm-0 d-flex flex-column md--offset-top-60 md--negative-offset overflow-hidden md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; b-order-right: 1px solid silver; background-color: white;">
+            <div data-id="doc_tree_drawer" class="pd-10 pd-x2 pd-btm-0 d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; b-order-right: 1px solid silver; background-color: white;">
                 <div class="col-grows overflow-y-auto">
                     <div class="pd-10 flex-y-center flex-x-separate">
                         <span class="sm b">Pages</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="doc_tree" template="page/*/*/docs/#layout/project-outline" class="project-outline list-style-none"></ul>
                 </div>
-                <div data-id="project_links" class="pd-2 pd-x7 flex-y-center flex-x-separate">
+                <div data-id="project_links" class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate" style="bottom: 0px; background-color: white;">
                     <a data-id="project_npm" href="" target="_blank" title="Go to project on npm" class="b"></a>
                     <a data-id="project_github" href="" target="_blank" title="Visit project on github" class="mg-lft-10">
                         <i class="bi bi-github sm"></i>
@@ -167,13 +167,13 @@
                 </footer>
             </div>
 
-            <div class="col-3 sm--col-0 sm--flex-x-end pos-sticky overflow-hidden sm--overflow-visible" style="top: 85px; z-index: 90;">
+            <div class="col-3 sm--col-0 sm--flex-x-end pos-sticky sm--overflow-visible" style="top: 85px; z-index: 90;">
                 <div data-id="page_outline_container" class="pos-rel d-flex flex-column col-none pd-10 pd-x2 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
                     <div class="pd-10 flex-y-center flex-x-separate">
                         <span class="sm b">Outline</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="page_outline" template="page/*/*/docs/#layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
-                    <div class="pd-2 pd-x7 flex-y-center flex-x-separate md--d-none">
+                    <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate md--d-none" style="bottom: 0px; background-color: white;">
                         <a href="#" title="Scroll to top"><i class="bi bi-chevron-bar-up"></i></a>
                     </div>
                 </div>

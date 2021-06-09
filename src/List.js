@@ -9,13 +9,13 @@ import { List as _List, Observer } from '@webqit/obs-collection';
 
 export default class List extends _List {
 
-    static create(entries, subtree = null) {
+    static create(entries, subtree = null, multiplicity = 1000) {
         return new this(entries.map(entry => {
             if (subtree && _isArray(entry[subtree])) {
-                entry[subtree] = this.create(entry[subtree], subtree);
+                entry[subtree] = this.create(entry[subtree], subtree, multiplicity);
             }
             return entry;
-        }), {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: 1}});
+        }), {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: multiplicity}});
     }
 
     static fromOutline(outline, detailed = false, parent = null, i = 0) {
