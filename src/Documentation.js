@@ -26,6 +26,22 @@ export default class Documentation {
     }
 
     /**
+     * Gets the sort index for an item relative to another.
+     * 
+     * @param Object a
+     * @param Object b
+     * 
+     * @return Int
+     */
+    getSort(a, b) {
+        return a._index === 'first' || b._index === 'last' ? -1 : (
+            b._index === 'first' || a._index === 'last' ? 1 : (
+                (a._index || 0) < (b._index || 0) || a.title < b.title
+            )
+        );
+    }
+
+    /**
      * Gets a project by the given name.
      * 
      * @param String    name
@@ -95,14 +111,14 @@ export default class Documentation {
     /**
      * Gets the list of projects.
      * 
-     * @param String    domain
      * @param Bool      withBundles
+     * @param Bool      sorted
      * 
      * @uses @getProject()
      * 
      * @returns Object
      */
-    getProjectsList(withBundles = false) {
+    getProjectsList(withBundles = false, sorted = false) {
         var projects = {};
         if (Fs.existsSync(this.baseDir)) {
             Fs.readdirSync(this.baseDir).forEach(name => {
@@ -110,6 +126,13 @@ export default class Documentation {
                 if (Fs.statSync(resource = Path.join(this.baseDir, name)).isDirectory() && !name.startsWith('.')) {
                     projects[name] = this.getProject(name, withBundles);
                 }
+            });
+        }
+        if (sorted) {
+            var _projects = projects,
+                projects = {};
+            Object.values(_projects).sort(this.getSort).forEach(project => {
+                projects[project.name] = projects;
             });
         }
         return projects;
@@ -149,8 +172,14 @@ export default class Documentation {
             return category;
         }).filter(c => c.items && c.items.length);
         if (sorted) {
-            return projectsListCategorized.sort((a, b) => a.title.toLowerCase() === 'featured' || b.title.toLowerCase() === defaultCategory ? -1 : (a.title.toLowerCase() === defaultCategory || b.title.toLowerCase() === 'featured' ? 1 : a.title < b.title)).map(collection => {
-                collection.items = collection.items.sort((a, b) => a._before === b.name || a.name === b._after ? -1 : (a._after === b.name || b.name === a._before ? 1 : 0));
+            return projectsListCategorized.sort((a, b) => {
+                return a._index === 'first' || a.title.toLowerCase() === 'featured' || b._index === 'last' || b.title.toLowerCase() === defaultCategory ? -1 : (
+                    b._index === 'first' || b.title.toLowerCase() === 'featured' || a._index === 'last' || a.title.toLowerCase() === defaultCategory ? 1 : (
+                        (a._index || 0) < (b._index || 0) || a.title < b.title
+                    )
+                );
+            }).map(collection => {
+                collection.items = collection.items.sort(this.getSort);
                 return collection;
             });
         }
@@ -179,8 +208,7 @@ export default class Documentation {
             tags: (projectProp('tags') || '').split(',').map(s => s.trim()).filter(s => s),
             repo: `webqit/${name}`,
             cta: {href: `/${this.domain}/${name}`, text: 'Learn more'},
-            _after: projectProp('_after'),
-            _before: projectProp('_before'),
+            _index: projectProp('_index'),
         };
     }
 

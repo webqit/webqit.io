@@ -33,8 +33,7 @@ export default class List extends _List {
                 path: (parent ? parent.path : '') + '/' + name,
                 active: false,
                 desc: projectProp('desc'),
-                _before: projectProp('_before'),
-                _after: projectProp('_after'),
+                _index: projectProp('_index'),
             };
             // Add parent
             if (detailed) {
@@ -51,13 +50,11 @@ export default class List extends _List {
         });
 
         entries.sort((a, b) => {
-            if (a._before === b.name || b._after === a.name) {
-                return -1;
-            }
-            if (a._after === b.name || b._before === a.name) {
-                return 1;
-            }
-            return 0;
+            return a._index === 'first' || b._index === 'last' ? -1 : (
+                b._index === 'first' || a._index === 'last' ? 1 : (
+                    (a._index || 0) < (b._index || 0) || a.title < b.title
+                )
+            );
         });
 
         if (detailed) {

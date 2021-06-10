@@ -241,14 +241,14 @@
         <li namespace class="pd-top-6 pd-btm-6">
             <div class="flex-y-center">
                 <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
-                    <i data-id="subtree_icon" class="bi bi-dot xs" style="font-size: x-small;"></i>
+                    <i data-id="subtree_icon" class="bi bi-dash xs flex-center" style="font-size: x-small;"></i>
                 </span>
                 <a data-id="link" href="" class="col-grows flex-y-center flex-x-separate">
                     <span data-id="link_text"></span>
                     <i class="bi bi-chevron-right xs flex-y-center pd-lft-8"></i>
                 </a>
             </div>
-            <ul data-id="sub_menu" template="page/*/*/docs/#layout/project-outline" class="project-suboutline pd-lft-6 pd-lft-x2 pd-top-4 pd-btm-4 d-none list-style-none"></ul>
+            <ul data-id="sub_menu" template="page/*/*/docs/#layout/project-outline" class="project-suboutline pd-lft-6 pd-lft-x2 ht-0 overflow-hidden list-style-none"></ul>
             <script type="subscript">
                 var activePath = document.state.url.pathname;
                 if (this.state.title) {
@@ -262,12 +262,18 @@
                     }
                     $(this).class('active', this.state.active);
                     if (this.state.subtree) {
-                        $(this.namespace.sub_menu).class('d-none', !this.state.active);
+                        if (document.state.env === 'client') {
+                            if (this.state.active) {
+                                $(this.namespace.sub_menu).play({height: 'auto', paddingTop: 4, paddingBottom: 4}, {cancelForCss: true});
+                            } else {
+                                $(this.namespace.sub_menu).play({height: 0, paddingTop: 0, paddingBottom: 0}, {cancelForCss: true});
+                            }
+                        }
                         $(this.namespace.sub_menu).itemize(this.state.subtree.items);
                         $(this.namespace.subtree_notch).class('cursor-pointer', true);
-                        $(this.namespace.subtree_icon).class('bi-dot', false);
-                        $(this.namespace.subtree_icon).class('bi-caret-down-fill', this.state.active);
-                        $(this.namespace.subtree_icon).class('bi-caret-right-fill', !this.state.active);
+                        $(this.namespace.subtree_icon).class('bi-dash', false);
+                        $(this.namespace.subtree_icon).class('bi-chevron-down', this.state.active);
+                        $(this.namespace.subtree_icon).class('bi-chevron-right', !this.state.active);
                         $(this.namespace.subtree_notch).on('click', e => {
                             this.state.active = !this.state.active;
                             return false;
