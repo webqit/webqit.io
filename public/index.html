@@ -33,12 +33,10 @@
 
         <!-- JS -->
         <script src="/bundle.js"></script>
-        <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
+        <script src="http://localhost:4000/play-ui/dist/main.js" ssr></script>
         <script>
-            $ = WQ.$;
-            window.WQ.OOHTML.ready.then(() => {
-                document.subscript.bind({}, {update:true});
-            });
+            $ = WebQit.$;
+            document.subscript.bind({}, {update: true});
             // -----------
             toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {
                 const applyBreakpoint = _class => !breakpoint ? _class : _class.split(' ').map(c => breakpoint + '--' + c).join(' ');
@@ -82,7 +80,7 @@
     </head>
 
     <body template="" namespace class="snap-container" play-icon-path="/icon" play-icon-type="bootstrap">
-                
+ 
         <!-- PAGE_PROGRESS_BAR -->
 
         <div class="pos-sticky offset-top-0 wt-full z-index-1000">

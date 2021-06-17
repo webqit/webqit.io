@@ -170,7 +170,7 @@
             <div class="col-3 sm--col-0 sm--flex-x-end pos-sticky sm--overflow-visible" style="top: 85px; z-index: 90;">
                 <div data-id="page_outline_container" class="pos-rel d-flex flex-column col-none pd-10 pd-x2 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
                     <div class="pd-10 flex-y-center flex-x-separate">
-                        <span class="sm b">Outline</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
+                        <span class="sm b">On this page</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="page_outline" template="page/*/*/docs/#layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
                     <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate md--d-none" style="bottom: 0px; background-color: white;">
@@ -238,42 +238,53 @@
     </template>
 
     <template name="project-outline">
-        <li namespace class="pd-top-6 pd-btm-6">
-            <div class="flex-y-center">
-                <span data-id="subtree_notch" class="flex-y-center pd-rt-4">
-                    <i data-id="subtree_icon" class="bi bi-dash xs flex-center" style="font-size: x-small;"></i>
+        <li namespace>
+            <div data-id="item_bar" class="item-bar flex-y-stretch">
+                <span data-id="subtree_notch" class="subtree-notch flex-y-center">
+                    <i data-id="subtree_icon" class="bi bi-dash xs flex-center b" style="font-size: x-small;"></i>
                 </span>
                 <a data-id="link" href="" class="col-grows flex-y-center flex-x-separate">
                     <span data-id="link_text"></span>
                     <i class="bi bi-chevron-right xs flex-y-center pd-lft-8"></i>
                 </a>
             </div>
-            <ul data-id="sub_menu" template="page/*/*/docs/#layout/project-outline" class="project-suboutline pd-lft-6 pd-lft-x2 ht-0 overflow-hidden list-style-none"></ul>
+            <ul data-id="sub_menu" template="page/*/*/docs/#layout/project-outline" class="project-suboutline overflow-hidden list-style-none" style="height: 0px;"></ul>
             <script type="subscript">
                 var activePath = document.state.url.pathname;
                 if (this.state.title) {
-                    var isActivePath = (activePath + '/').startsWith(this.state.path + '/');
                     $(this.namespace.link).attr('href', this.state.path);
                     $(this.namespace.link_text).html(this.state.title);
-                    $(this.namespace.link).class('active', isActivePath);
+                    $(this.namespace.item_bar).class('active', this.state.path === activePath);
                     // Auto-active on path match
-                    if (isActivePath) {
+                    if ((activePath + '/').startsWith(this.state.path + '/')) {
                         this.state.active = true;
                     }
                     $(this).class('active', this.state.active);
                     if (this.state.subtree) {
                         if (document.state.env === 'client') {
+                            var aniParams = {
+                                duration: 300,
+                                easing: 'ease-out', 
+                                cancelForCss: true
+                            };
                             if (this.state.active) {
-                                $(this.namespace.sub_menu).play({height: 'auto', paddingTop: 4, paddingBottom: 4}, {cancelForCss: true});
+                                $(this.namespace.sub_menu).play({
+                                    height: 'auto',
+                                    paddingTop: 4, 
+                                    paddingBottom: 4,
+                                }, aniParams);
                             } else {
-                                $(this.namespace.sub_menu).play({height: 0, paddingTop: 0, paddingBottom: 0}, {cancelForCss: true});
+                                $(this.namespace.sub_menu).play({
+                                    height: 0, 
+                                    paddingTop: 0, 
+                                    paddingBottom: 0,
+                                }, aniParams);
                             }
                         }
                         $(this.namespace.sub_menu).itemize(this.state.subtree.items);
                         $(this.namespace.subtree_notch).class('cursor-pointer', true);
-                        $(this.namespace.subtree_icon).class('bi-dash', false);
-                        $(this.namespace.subtree_icon).class('bi-chevron-down', this.state.active);
-                        $(this.namespace.subtree_icon).class('bi-chevron-right', !this.state.active);
+                        $(this.namespace.subtree_icon).class('bi-dash', this.state.active);
+                        $(this.namespace.subtree_icon).class('bi-plus', !this.state.active);
                         $(this.namespace.subtree_notch).on('click', e => {
                             this.state.active = !this.state.active;
                             return false;
@@ -285,15 +296,22 @@
     </template>
 
     <template name="page-outline">
-        <li namespace class="pd-6">
-            <a data-id="link" href=""></a>
-            <ul data-id="sub_menu" template="page/*/*/docs/#layout/page-outline" class="page-suboutline pd-4 d-none list-style-none"></ul>
+        <li namespace>
+            <div data-id="item_bar" class="item-bar flex-y-stretch">
+                <span data-id="subtree_notch" class="subtree-notch flex-y-center">
+                    <i data-id="subtree_icon" class="bi bi-dash xs flex-center" style="font-size: x-small;"></i>
+                </span>
+                <a data-id="link" href="" class="col-grows">
+                    <span data-id="link_text"></span>
+                </a>
+            </div>
+            <ul data-id="sub_menu" template="page/*/*/docs/#layout/page-outline" class="page-suboutline d-none list-style-none"></ul>
             <script type="subscript">
                 var activeHash = document.state.url.hash;
                 if (this.state.title) {
-                    $(this.namespace.link).html(this.state.title);
                     $(this.namespace.link).attr('href', '#' + this.state.uri);
                     $(this.namespace.link).class('active', activeHash === '#' + this.state.uri);
+                    $(this.namespace.link_text).html(this.state.title);
                     if (this.state.subtree.length) {
                         $(this.namespace.sub_menu).class('d-none', false);
                         $(this.namespace.sub_menu).itemize(this.state.subtree);
@@ -333,43 +351,43 @@
                 $(this.namespace.quickstart).attrSync('name', project.quickstart.type);
                 this.namespace.quickstart.setState(project.quickstart);
             }
+            this.namespace.highlights.setState({items: project.features || [{
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }],
+                itemsTemplate: 'item', 
+                gridColumns: 4,
+            });
         }
-        this.namespace.highlights.setState({items: [{
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }],
-            itemsTemplate: 'item', 
-            gridColumns: 4,
-        });
     </script>
 
     <html-import template="#layout/hero" data-id="hero" id="hero"></html-import>

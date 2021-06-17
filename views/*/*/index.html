@@ -25,43 +25,43 @@
                 $(this.namespace.quickstart).attrSync('name', project.quickstart.type);
                 this.namespace.quickstart.setState(project.quickstart);
             }
+            this.namespace.highlights.setState({items: project.features || [{
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }],
+                itemsTemplate: 'item', 
+                gridColumns: 4,
+            });
         }
-        this.namespace.highlights.setState({items: [{
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }, {
-                icon: 'layers',
-                title: 'OOHTML',
-                desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
-                cta: {
-                    href: '/',
-                    text: 'Learn more',
-                }
-            }],
-            itemsTemplate: 'item', 
-            gridColumns: 4,
-        });
     </script>
 
     <html-import template="#layout/hero" data-id="hero" id="hero"></html-import>

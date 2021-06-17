@@ -17,32 +17,60 @@
  * sm: 768px
  */
 
-.project-suboutline {
-    border-left: 1px dashed silver;
+.project-outline,
+.page-outline {
+    color: black;
 }
-.project-outline li:hover > a > span,
-.project-outline li > a.active > span {
-    border-bottom: 1px dashed currentColor;
-    border-spacing: 1em;
+.project-suboutline,
+.page-suboutline {
+    margin-left: 10px;
+    border-left: 1px dashed gray;
 }
-.project-outline li a.active {
-    color: mediumslateblue;
+/* ------------------------ */
+
+:is(.project-outline, .page-outline) li .subtree-notch {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-weight: bold;
+}
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch,
+:is(.project-outline, .page-outline) li > .item-bar > a {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.project-outline li a .bi {
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 /* ------------------------ */
 
-.page-outline {
+/*
+:is(.project-outline, .page-outline) li > .item-bar > a > span {
+    border-bottom: 1px dashed transparent;
 }
-.page-suboutline {
-    border-left: 1px dashed silver;
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch:hover,
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch {
+    background-color: black;
 }
-.page-outline li:hover > a,
-.page-outline a:target {
-    border-bottom: 1px dashed currentColor;
-    border-spacing: 1em;
+:is(.project-outline, .page-outline) li > .item-bar > a:hover > span,
+:is(.project-outline, .page-outline) li > .item-bar.active > a > span {
+    color: mediumslateblue;
+    border-bottom-color: currentColor;
 }
-.page-outline a:target {
-    color: blue;
+*/
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch.cursor-pointer:hover,
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch.cursor-pointer {
+    text-shadow: 0px 0px 10px black;
+}
+:is(.project-outline, .page-outline) li > .item-bar:hover ,
+:is(.project-outline, .page-outline) li > .item-bar.active {
+    background-color: whitesmoke;
+}
+:is(.project-outline, .page-outline) li > .item-bar.active {
+    color: slateblue;
+    text-shadow: 0px 0px 1px darkslateblue;
+    background-color: var(--theme-bg);
 }
 
 /* ------------------------ */
