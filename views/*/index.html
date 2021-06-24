@@ -12,22 +12,14 @@
                 gridColumns: 2,
             });
         }
-        if (1) {
-            $(this.namespace.quickstart).attrSync('name', 'form');
-            this.namespace.quickstart.setState({directive: 'Enter a username of your choice', cta: {href: '', text: 'Get started for free'}});
-        }
     </script>
 
-    <html-import data-id="hero" id="hero" template="#layout/hero"></html-import>
-    <html-import data-id="showcase" id="showcase" name="container" template="#layout/showcase"></html-import>
-    <html-import data-id="main" id="main" name="container" template="#layout/project-listing" class="grid-2 layout-section"></html-import>
+    <html-import data-id="hero" id="hero" template="@layout/hero"></html-import>
+    <html-import data-id="showcase" id="showcase" name="container" template="@layout/showcase"></html-import>
+    <html-import data-id="main" id="main" name="container" template="@layout/project-listing" class="grid-2 layout-section"></html-import>
     
-    <section id="quickstart" class="box-padded-layout-section b">
-        <html-import data-id="quickstart" template="#layout/quickstart"></html-import>
-    </section>
-
-    <section class="box-padded-layout-section" style="background-color: whitesmoke;">
-        <html-import name="readme" class="additional-readme markdown-body"></html-import>
+    <section class="box-padded-layout-section additional-readme markdown-body">
+        <html-import name="readme"></html-import>
     </section>
     
 </div>

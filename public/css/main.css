@@ -59,25 +59,28 @@ html {
     font-family: 'Inter', sans-serif;
 }
 [id] {
-    scroll-margin-top: 85px;
+    scroll-margin-top: 100px;
 }
 .hero-text,
 .hero-font,
-.additional-readme :is(h2, h3) {
+.additional-readme h2 {
     font-family: Whitney, sans-serif !important;
-    font-weight: bold !important;
+    font-weight: 500 !important;
 }
 .hero-text,
-.additional-readme :is(h2, h3) {
+.additional-readme h2 {
     font-size: 42px !important;
-    /*
+}
+.hero-text:not(h1),
+.additional-readme h2 {
+    font-weight: bold !important;
     color: darkslateblue;
-    */
 }
 .legend-text,
 .legend-font,
 .cta {
-    font-family: 'Prompt', sans-serif;
+    font-family: Whitney, sans-serif;
+    line-height: 1.5;
 }
 .legend-text {
     font-size: 26px !important;;
@@ -85,6 +88,9 @@ html {
 p, .p,
 .content-font {
     font-family: Roboto, 'Noto Sans', sans-serif;
+    line-height: 1.5;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
     font-stretch: normal;
 }
 .vertical-fit-content {
@@ -278,10 +284,13 @@ h1 span {
 h1 .text-gradient {
     font-size: 86px;
     line-height: 100%;
+    font-weight: bold;
     border-bottom: 4px solid mediumslateblue;
 }
 h1 .text-gradient + span {
     line-height: 200%;
+    border-bottom: 3px solid gray;
+    padding-bottom: 10px;
 }
 @media (max-width: 640px) {
     h1 span {
@@ -328,7 +337,7 @@ h1 .text-gradient + span {
     color: mediumslateblue;
 }
 .section-desc {
-    padding-top: 25px;
+    padding-top: 30px;
     padding-bottom: 30px;
 }
 /* ---------- */
@@ -339,7 +348,7 @@ h1 .text-gradient + span {
 */
 #hero::before {
     position: absolute;
-    top: 110px;
+    top: 105px;
     left: 0px;
     width: 65px;
     content: "";
@@ -359,7 +368,7 @@ h1 .text-gradient + span {
     height: 20px;
     content: "";
     display: block;
-    border-left: 3px solid silver;
+    border-left: 1px solid gray;
     border-right: none !important;
 }
 .hero-nav-play-separator::before {
@@ -374,7 +383,7 @@ h1 .text-gradient + span {
         height: 0px;
         top: 30px;
         left: 0px;
-        border-top: 3px solid silver;
+        border-top: 1px solid gray;
         border-bottom: none !important;
     }
     .hero-nav-play-separator::before {
@@ -460,9 +469,17 @@ h1 .text-gradient + span {
     background-color: var(--theme-bg2);
 }
 .project-category {
+    background-color: var(--theme-bg);
+    background-color: whitesmoke;
+    transition: background-color 600ms;
+}
+.additional-readme {
+    margin-top: 15px;
+    /*
     background-color: whitesmoke;
     background-color: var(--theme-bg);
-    transition: background-color 600ms;
+    */
+    border: 1px solid silver;
 }
 /**
 :is(#route--tooling, #route--cloud, #route--community) .project-category:hover {
@@ -490,6 +507,26 @@ h1 .text-gradient + span {
     padding-right: 35px;
     background-color: var(--theme-bg2);
     border-radius: 10px;
+}
+.subitem-icon {
+    position: relative;
+}
+.subitem-icon::before {
+    z-index: 1;
+}
+.subitem-icon::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--theme-bg, lavender);
+}
+#domain--tooling .project-item .subitem-icon::after {
+    background-color: var(--theme-bg2);
 }
 /* ---------- */
 .project-listing {

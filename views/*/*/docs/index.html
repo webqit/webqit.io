@@ -8,7 +8,6 @@
             $(this).attr('id', 'route--' + app.page.domain);
             $(this.namespace.project_npm).html('@webqit/' + app.page.projectName);
             $(this.namespace.app_bar_title).html('@webqit/' + app.page.projectName);
-            $(this.namespace.app_bar_back).attr('href', '/' + app.page.domain + '/' + app.page.projectName);
             $(this.namespace.project_npm).attr('href', 'https://npmjs.com/package/@webqit/' + app.page.projectName);
             $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
@@ -18,16 +17,18 @@
         }
         // ----------
         if (app.page.breadcrumb) {
+            this.namespace.breadcrumb.setState({items: app.page.breadcrumb});
             var currentPage = app.page.breadcrumb[app.page.breadcrumb.length - 1];
             $(this.namespace.page_outline).itemize(currentPage.outline || {});
-            this.namespace.breadcrumb.setState({items: app.page.breadcrumb});
+            $(this.namespace.index_links).class('d-none', !currentPage.subtree);
+            this.namespace.index_links.setState(currentPage);
             // ----------
             $(this.namespace.nav).class('d-none', false);
             $(this.namespace.nav_left).attr('href', currentPage.prev ? currentPage.prev.path : '#');
-            $(this.namespace.nav_left).attr('title', currentPage.prev ? 'Previous: ' + currentPage.prev.title : '');
+            $(this.namespace.nav_left_text).html(currentPage.prev.title || '');
             $(this.namespace.nav_left).class('disabled', !currentPage.prev);
             $(this.namespace.nav_right).attr('href', currentPage.next ? currentPage.next.path : '#');
-            $(this.namespace.nav_right).attr('title', currentPage.next ? 'Next: ' + currentPage.next.title : '');
+            $(this.namespace.nav_right_text).html(currentPage.next.title || '');
             $(this.namespace.nav_right).class('disabled', !currentPage.next);
         }
         // ----------
@@ -58,81 +59,83 @@
         });
     </script>
     
-    <div data-id="app_bar" class="pos-rel flex-y-center" style="min-height:70px; z-index: 91; border-bottom: 1px dashed silver; c-olor: white; background-color: var(--theme-bg2); background-color: whitesmoke;">
+    <div data-id="app_bar" class="pos-rel" style="z-index: 91; border-bottom: 1px dashed silver; background-color: white;">
         
-        <a data-id="app_bar_back" class="pd-10 flex-center">
-            <i class="bi bi-chevron-left sm pd-10 b"></i>
-        </a>
-        <div namespace data-id="breadcrumb" class="col-grows">
-            <ul data-id="main" template="page/*/*/docs/#layout/breadcrumb" class="d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
-                <li namespace class="flex-y-center">
-                    <a data-id="link" class="pd-6 pd-lft-0 no-wrap" href="/">
-                        <i class="bi bi-house-door xs"></i>
-                    </a>
-                </li>
-                <li data-id="overflow" namespace class="overflow-notch d-none" tabindex="0">
-                    <div class="ht-full flex-y-center">
-                        <i class="bi bi-slash xs"></i>
-                        <i class="bi bi-three-dots xs cursor-pointer"></i>
-                    </div>
-                    <div class="overflow ht-0 flex-x-start">
-                        <ul data-id="list" template="page/*/*/docs/#layout/breadcrumb" class="overflow-list pos-abs animation-x-fast anim-fly-top-small list-style-none"></ul>
-                    </div>
-                </li>
-                <li data-id="subtree" namespace class="overflow-notch d-none" tabindex="0">
-                    <div class="ht-full flex-y-center cursor-pointer">
-                        <i class="bi bi-caret-down xs flex-y-center"></i>
-                    </div>
-                    <div class="overflow ht-0 flex-x-end">
-                        <ul data-id="list" template="page/*/*/docs/#layout/breadcrumb" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
-                    </div>
-                </li>
-            </ul>
-            <script type="subscript">
-                var main = this.namespace.main;
-                var overflowNotch = this.namespace.overflow;
-                var overflowList = overflowNotch.namespace.list;
-                var subtreeNotch = this.namespace.subtree;
-                var subtreeList = subtreeNotch.namespace.list;
-                if (this.state.items) {
-                    $(overflowNotch).class('d-none', true);
-                    $(subtreeNotch).class('d-none', false);
-                    $(main).itemize(this.state.items, (e, el, d, k) => {
-                        d.overflowCollapsed = false;
-                        if (k === this.state.items.length - 1) {
-                            $(subtreeList).itemize(d.subtree.items, null, null, {itemExportId: 'subtree'});
-                            main.append(subtreeNotch);
-                            $(subtreeNotch).class('disabled', !d.subtree);
-                        }
-                    }, (e, el, d, k, overflowCount) => {
-                        d.overflowCollapsed = e === 'collapse';
-                        $(overflowNotch).class('d-none', overflowCount === 0);
-                    }, {collapsionPoint: 'start'});
-                    $(overflowList).itemize(this.state.items, null, null, {itemExportId: 'overflow'});
-                }
-            </script>
-        </div>
-        <div data-id="doc_tree_drawer_open" class="mg-lft-10 pd-10 flex-center cursor-pointer d-none md--d-flex">
-            <i class="bi bi-list-nested sm pd-10 b"></i>
+        <div class="layout-section flex-y-center" style="min-height:70px;">
+            <div namespace data-id="breadcrumb" class="col-grows">
+                <ul data-id="main" template="page/*/*/docs/@layout/breadcrumb" class="d-inline-flex flex-y-stretch h5 list-style-none" style="white-space: nowrap;">
+                    <li namespace class="flex-y-center pd-lft-10 pd-lft-x2">
+                        <a data-id="link" class="pd-6 pd-lft-0 no-wrap" href="/">
+                            <i class="bi bi-house-door xs"></i>
+                        </a>
+                    </li>
+                    <li data-id="overflow" namespace class="overflow-notch d-none" tabindex="0">
+                        <div class="ht-full flex-y-center">
+                            <i class="bi bi-slash xs"></i>
+                            <i class="bi bi-three-dots xs cursor-pointer"></i>
+                        </div>
+                        <div class="overflow ht-0 flex-x-start">
+                            <ul data-id="list" template="page/*/*/docs/@layout/breadcrumb#overflow" class="overflow-list pos-abs animation-x-fast anim-fly-top-small list-style-none"></ul>
+                        </div>
+                    </li>
+                    <li data-id="subtree" namespace class="overflow-notch d-none" tabindex="0">
+                        <div class="ht-full flex-y-center cursor-pointer">
+                            <i class="bi bi-caret-down xs flex-y-center"></i>
+                        </div>
+                        <div class="overflow ht-0 flex-x-end">
+                            <ul data-id="list" template="page/*/*/docs/@layout/breadcrumb#subtree" class="overflow-list pos-abs pd-top-8 pd-btm-8 radius-4 drop-shadow animation-x-fast anim-fly-top-small list-style-none"></ul>
+                        </div>
+                    </li>
+                </ul>
+                <script type="subscript">
+                    var main = this.namespace.main;
+                    var overflowNotch = this.namespace.overflow;
+                    var overflowList = overflowNotch.namespace.list;
+                    var subtreeNotch = this.namespace.subtree;
+                    var subtreeList = subtreeNotch.namespace.list;
+                    if (this.state.items) {
+                        $(overflowNotch).class('d-none', true);
+                        $(subtreeNotch).class('d-none', false);
+                        $(main).itemize(this.state.items, (e, el, d, k) => {
+                            d.overflowCollapsed = false;
+                            if (k === this.state.items.length - 1) {
+                                $(subtreeList).itemize(d.subtree.items);
+                                main.append(subtreeNotch);
+                                $(subtreeNotch).class('disabled', !d.subtree);
+                            }
+                        }, (e, el, d, k, overflowCount) => {
+                            d.overflowCollapsed = e === 'collapse';
+                            $(overflowNotch).class('d-none', overflowCount === 0);
+                        }, {collapsionPoint: 'start'});
+                        $(overflowList).itemize(this.state.items);
+                    }
+                </script>
+            </div>
+            <div data-id="doc_tree_drawer_open" class="mg-lft-10 pd-10 flex-center cursor-pointer d-none md--d-flex">
+                <i class="bi bi-list-nested sm pd-10 b"></i>
+            </div>
         </div>
 
     </div>
     
-    <div class="pos-rel flex-y-start">
+    <div class="pos-rel flex-y-start layout-section" style="border-left: 1px solid silver;  border-right: 1px solid silver;">
             
-        <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90; border-right: 1px solid silver">
-            <div data-id="doc_tree_drawer" class="pd-10 pd-x2 pd-btm-0 d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; b-order-right: 1px solid silver; background-color: white;">
-                <div class="col-grows overflow-y-auto">
-                    <div class="pd-10 flex-y-center flex-x-separate">
-                        <span class="sm b">Pages</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
+        <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
+            <div data-id="doc_tree_drawer" class="d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; background-color: white;">
+                <div class="col-grows pd-10 overflow-y-auto">
+                    <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
+                        <span class="sm">Pages</span>
+                        <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
-                    <ul data-id="doc_tree" template="page/*/*/docs/#layout/project-outline" class="project-outline list-style-none"></ul>
+                    <ul data-id="doc_tree" template="page/*/*/docs/@layout/project-outline" class="project-outline list-style-none"></ul>
                 </div>
-                <div data-id="project_links" class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate" style="bottom: 0px; background-color: white;">
-                    <a data-id="project_npm" href="" target="_blank" title="Go to project on npm" class="b"></a>
-                    <a data-id="project_github" href="" target="_blank" title="Visit project on github" class="mg-lft-10">
-                        <i class="bi bi-github sm"></i>
-                    </a>
+                <div data-id="project_links" class="pos-sticky pd-lft-10 pd-rt-10 pd-x2" style="bottom: 0px; background-color: white;">
+                    <div class="pd-top-2 pd-btm-2 pd-x9 flex-y-center flex-x-separate" style="b-order-top: 1px solid silver;">
+                        <a data-id="project_npm" href="" target="_blank" title="Go to project on npm" class="b"></a>
+                        <a data-id="project_github" href="" target="_blank" title="Visit project on github" class="mg-lft-10">
+                            <i class="bi bi-github sm"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -141,42 +144,57 @@
 
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
-            <div data-id="page_readme_container" class="col-9 sm--col-12">
-                <html-import name="readme" data-id="main" class="doc-readme markdown-body" style="min-height: 75vh;">
-                    <div class="flex-center" style="height: 85vh;">
-                        <div class="pd-10 pd-x2 txt-align-cntr">
-                            <i class="bi bi-emoji-smile-upside-down pd-10 flex-center"></i>
-                            <span>Not found! </span>
-                            <br /><br />
-                            (<span>Also, we're gradually rolling out DOCS.</span> <a href="/#waitlist">Get Notified</a>)                            
-                        </div>
-                    </div>
-                </html-import>
-                <div class="markdown-body pd-top-0 pd-btm-0">
-                    <div class="pd-top-10 pd-btm-10 pd-x2 flex-y-center flex-x-separate" style="border-top: 1px solid silver;">
-                        <a data-id="edit_link" href="" target="_blank" class="flex-y-center b">
-                            <i class="bi bi-pencil xs"></i> <span class="mg-lft-10">Edit this page on github</span>
-                        </a>
-                    </div>
-                </div>
-                <footer class="readme-footer pos-sticky offset-btm-0">
-                    <ul data-id="nav" class="footer-nav flex-x-separate flex-y-center pd-10 pd-x2 pd-lft-x3 pd-rt-x3 list-style-none">
-                        <li><a href="" data-id="nav_left" class="flex-y-center"><i class="bi bi-arrow-left sm flex-center mg-rt-10"></i> prev</a></li>
-                        <li><a href="" data-id="nav_right" class="flex-y-center">next <i class="bi bi-arrow-right sm flex-center mg-lft-10"></i></a></li>
-                    </ul>
-                </footer>
-            </div>
-
             <div class="col-3 sm--col-0 sm--flex-x-end pos-sticky sm--overflow-visible" style="top: 85px; z-index: 90;">
-                <div data-id="page_outline_container" class="pos-rel d-flex flex-column col-none pd-10 pd-x2 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
-                    <div class="pd-10 flex-y-center flex-x-separate">
-                        <span class="sm b">On this page</span> <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
+                <div data-id="page_outline_container" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
+                    <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
+                        <span class="sm">On this page</span>
+                        <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
-                    <ul data-id="page_outline" template="page/*/*/docs/#layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
+                    <ul data-id="page_outline" template="page/*/*/docs/@layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
                     <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate md--d-none" style="bottom: 0px; background-color: white;">
                         <a href="#" title="Scroll to top"><i class="bi bi-chevron-bar-up"></i></a>
                     </div>
                 </div>
+            </div>
+
+            <div data-id="page_readme_container" class="flex-order-first col-9 sm--col-12">
+                <div class="doc-readme markdown-body" style="min-height: 75vh;">
+                    <html-import name="readme" data-id="main">
+                        <div class="flex-center" style="height: 85vh;">
+                            <div class="pd-10 pd-x2 txt-align-cntr">
+                                <i class="bi bi-emoji-smile-upside-down pd-10 flex-center"></i>
+                                <span>Not found! </span>
+                                <br /><br />
+                                (<span>Also, we're gradually rolling out DOCS.</span> <a href="/#waitlist">Get Notified</a>)                            
+                            </div>
+                        </div>
+                    </html-import>
+                    <ul data-id="index_links" template="page/*/*/docs/@layout/index_links#item" class="pd-top-10 pd-btm-10 pd-x2 pd-lft-0 list-style-none d-none" style="border-top: 1px dashed silver;">
+                        <script type="subscript">
+                            if (this.state.subtree) {
+                                $(this).itemize(this.state.subtree.items, null, null, {itemExportId: this.state._subtreeType});
+                            }
+                        </script>
+                    </ul>
+                </div>
+                <div class="markdown-body pd-top-0 pd-btm-0">
+                    <div class="pd-top-10 pd-btm-10 pd-x2 flex-y-center flex-x-separate" style="border-top: 1px dashed silver;">
+                        <a href=".#" class="flex-y-center">
+                            <i class="bi bi-chevron-left xs flex-center"></i>
+                            <span class="mg-lft-10">Parent page</span>
+                        </a>
+                        <a data-id="edit_link" href="" target="_blank" class="flex-y-center">
+                            <span class="mg-rt-10">Edit this page on github</span>
+                            <i class="bi bi-box-arrow-up-right xs flex-center"></i>
+                        </a>
+                    </div>
+                </div>
+                <footer class="readme-footer pos-sticky offset-btm-0 pd-lft-10 pd-rt-10 pd-x3">
+                    <ul data-id="nav" class="footer-nav pd-10 pd-top-x2 pd-btm-x2 flex-y-center list-style-none" style="border-top: 1px solid silver;">
+                        <li class="col-6 pd-rt-10 flex-x-start"><a href="" data-id="nav_left" class="flex-y-center max-wt-full radius-10 radius-x4" style="color: blue;"><i class="bi bi-arrow-left sm flex-center mg-rt-10 mg-rt-x2"></i> <span data-id="nav_left_text" class="txt-overflow-rt"></span></a></li>
+                        <li class="col-6 pd-lft-10 flex-x-end"><a href="" data-id="nav_right" class="flex-y-center max-wt-full radius-10 radius-x4" style="color: blue;"><span data-id="nav_right_text" class="txt-overflow-rt"></span> <i class="bi bi-arrow-right sm flex-center mg-lft-10 mg-lft-x2"></i></a></li>
+                    </ul>
+                </footer>
             </div>
 
             <div class="d-none sm--d-inline-block" style="position: fixed; bottom: 60px; right: 10px;">
@@ -196,7 +214,7 @@
 
 <!-- TEMPLATES -->
 
-<template name="#layout">
+<template name="@layout">
 
     <template name="breadcrumb">
         <li namespace class="flex-y-center">
@@ -238,6 +256,18 @@
     </template>
 
     <template name="project-outline">
+
+        <li exportgroup="category" namespace class="category">
+            <div data-id="legend" class="pd-6 pd-x3 pd-lft-x5 txt-sm" style="color: gray;"></div>
+            <ul data-id="items" template="page/*/*/docs/@layout/project-outline" class="list-style-none"></ul>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.legend).html(this.state.title.toUpperCase());
+                    $(this.namespace.items).itemize(this.state.subtree.items);
+                }
+            </script>
+        </li>
+
         <li namespace>
             <div data-id="item_bar" class="item-bar flex-y-stretch">
                 <span data-id="subtree_notch" class="subtree-notch flex-y-center">
@@ -248,19 +278,30 @@
                     <i class="bi bi-chevron-right xs flex-y-center pd-lft-8"></i>
                 </a>
             </div>
-            <ul data-id="sub_menu" template="page/*/*/docs/#layout/project-outline" class="project-suboutline overflow-hidden list-style-none" style="height: 0px;"></ul>
+            <div data-id="sub_menu_container" class="flex-y-center overflow-hidden" style="height: 0px;">
+                <ul data-id="sub_menu" template="page/*/*/docs/@layout/project-outline" class="project-suboutline list-style-none"></ul>
+            </div>
             <script type="subscript">
-                var activePath = document.state.url.pathname;
+                var activePathSlash = document.state.url.pathname + '/';
                 if (this.state.title) {
                     $(this.namespace.link).attr('href', this.state.path);
                     $(this.namespace.link_text).html(this.state.title);
-                    $(this.namespace.item_bar).class('active', this.state.path === activePath);
+
                     // Auto-active on path match
-                    if ((activePath + '/').startsWith(this.state.path + '/')) {
-                        this.state.active = true;
+                    var thisPathSlash = this.state.path + '/';
+                    var isActivePathMatch = activePathSlash.startsWith(thisPathSlash);
+                    var childIsActivePathMatchStr = activePathSlash.substr(thisPathSlash.length);
+                    var childIsActivePathMatch = isActivePathMatch && childIsActivePathMatchStr && childIsActivePathMatchStr.indexOf('/') > 0;
+                    $(this.namespace.item_bar).class('active', isActivePathMatch && !childIsActivePathMatch);
+                    if (document.state.env === 'client' && isActivePathMatch && !childIsActivePathMatch) {
+                        this.namespace.link.focus();
                     }
-                    $(this).class('active', this.state.active);
+
+                    // Expanding and collapsing
                     if (this.state.subtree) {
+                        if (this.state.isRoot || childIsActivePathMatch) {
+                            this.state.active = true;
+                        }
                         if (document.state.env === 'client') {
                             var aniParams = {
                                 duration: 300,
@@ -268,20 +309,21 @@
                                 cancelForCss: true
                             };
                             if (this.state.active) {
-                                $(this.namespace.sub_menu).play({
+                                $(this.namespace.sub_menu_container).play({
                                     height: 'auto',
                                     paddingTop: 4, 
                                     paddingBottom: 4,
                                 }, aniParams);
                             } else {
-                                $(this.namespace.sub_menu).play({
+                                $(this.namespace.sub_menu_container).play({
                                     height: 0, 
                                     paddingTop: 0, 
                                     paddingBottom: 0,
                                 }, aniParams);
                             }
                         }
-                        $(this.namespace.sub_menu).itemize(this.state.subtree.items);
+
+                        $(this.namespace.sub_menu).itemize(this.state.subtree.items, null, null, {itemExportId: this.state._subtreeType});
                         $(this.namespace.subtree_notch).class('cursor-pointer', true);
                         $(this.namespace.subtree_icon).class('bi-dash', this.state.active);
                         $(this.namespace.subtree_icon).class('bi-plus', !this.state.active);
@@ -305,7 +347,7 @@
                     <span data-id="link_text"></span>
                 </a>
             </div>
-            <ul data-id="sub_menu" template="page/*/*/docs/#layout/page-outline" class="page-suboutline d-none list-style-none"></ul>
+            <ul data-id="sub_menu" template="page/*/*/docs/@layout/page-outline" class="page-suboutline d-none list-style-none"></ul>
             <script type="subscript">
                 var activeHash = document.state.url.hash;
                 if (this.state.title) {
@@ -316,6 +358,34 @@
                         $(this.namespace.sub_menu).class('d-none', false);
                         $(this.namespace.sub_menu).itemize(this.state.subtree);
                     }
+                }
+            </script>
+        </li>
+    </template>
+
+    <template name="index_links">
+        <li exportgroup="category" namespace>
+            <div data-id="legend" class="pd-6 pd-lft-10 pd-rt-10 pd-x3 txt-sm" style="color: gray;"></div>
+            <ul data-id="items" template="page/*/*/docs/@layout/index_links#item" class="pd-lft-0 list-style-none"></ul>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.legend).html(this.state.title.toUpperCase());
+                    $(this.namespace.items).itemize(this.state.subtree.items);
+                }
+            </script>
+        </li>
+        <li exportgroup="item" namespace class="flex-y-start">
+            <span class="d-inline-flex flex-y-center">
+                <i class="bi bi-chevron-right flex-center xs mg-rt-10"></i>
+                <a data-id="link" href=""></a>
+                <span class="mg-lft-10">-</span>
+            </span>
+            <span data-id="desc" class="mg-lft-10"></span>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.link).html(this.state.title);
+                    $(this.namespace.desc).html(this.state.desc || '');
+                    $(this.namespace.link).attr('href', this.state.path);
                 }
             </script>
         </li>

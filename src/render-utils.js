@@ -34,6 +34,9 @@ export function createData(data, next_pathname) {
     if (next_pathname_split.length) {
         nav = nav.items.filter(n => n.name === next_pathname_split[0])[0].subtree;
     }
+    nav.items.forEach(item => {
+        item.isRoot = true;
+    });
     lastFullNav = fullNav;
     lastData = data;
     return {

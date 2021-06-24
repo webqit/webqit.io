@@ -36,7 +36,7 @@ export default class Documentation {
     getSort(a, b) {
         return a._index === 'first' || b._index === 'last' ? -1 : (
             b._index === 'first' || a._index === 'last' ? 1 : (
-                (a._index || 0) < (b._index || 0) || a.title < b.title
+                parseFloat(a._index || 1000) < parseFloat(b._index || 1000) || a.title < b.title ? -1 : 1
             )
         );
     }
@@ -76,6 +76,7 @@ export default class Documentation {
         if (!project.quickstart.type) {
             project.quickstart.type = 'code';
         }
+        var docsUrl = `/${this.domain}/${name}/docs`;
         if (!project.quickstart.directive) {
             project.quickstart.directive = `npm install @webqit/${name}`;
         }
@@ -83,7 +84,7 @@ export default class Documentation {
             project.quickstart.cta = {};
         }
         if (!project.quickstart.cta.href) {
-            project.quickstart.cta.href = `/${this.domain}/${name}/docs`;
+            project.quickstart.cta.href = docsUrl;
         }
         if (!project.quickstart.cta.text) {
             project.quickstart.cta.text = 'Go to docs';
@@ -175,7 +176,7 @@ export default class Documentation {
             return projectsListCategorized.sort((a, b) => {
                 return a._index === 'first' || a.title.toLowerCase() === 'featured' || b._index === 'last' || b.title.toLowerCase() === defaultCategory ? -1 : (
                     b._index === 'first' || b.title.toLowerCase() === 'featured' || a._index === 'last' || a.title.toLowerCase() === defaultCategory ? 1 : (
-                        (a._index || 0) < (b._index || 0) || a.title < b.title
+                        parseFloat(a._index || 1000) < parseFloat(b._index || 1000) || a.title < b.title ? -1 : 1
                     )
                 );
             }).map(collection => {

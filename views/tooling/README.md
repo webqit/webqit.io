@@ -1,6 +1,5 @@
 ## WebQit Tooling
-Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. 
 
-> Write more native, universal, and stable code; enjoy a traditional developer experience. [test link](../hello/README.md).
+This is an ecosystem of open source tooling that provides a holistic approach to engineering modern web applications. Take home all the goodness of the web-native approach - where every challenge is met first with just the conventional web languages and APIs that have historically been obscured or even sometimes completely traded.
 
-<html-import name="ul" template="page/tooling/#layout/projects-listing"></html-import>
+Contributions are welcome on each project! Help report typos and bugs via github issues, or submit a fix. Contributions are taken promptly and are well-acknowledged!

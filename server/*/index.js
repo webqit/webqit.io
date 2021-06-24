@@ -74,8 +74,8 @@ export async function render(request, data, next) {
 const staticPageData = {
     tooling: {
         title: ['The tooling for', 'web-native', 'development.'],
-        desc: 'Leverage opensource web tooling that gets you working in plain web languages and conventional paradigms!',
-        ctas: [{href: '#main', text: 'Explore',}],
+        desc: 'Leverage open source tooling that meets the challenge with just conventional web languages and APIs!',
+        quickstart: {type: 'code', directive: '#HTML, #CSS, #JS, #SQL', cta: {href: '#main', text: 'Explore',}},
         nav: [{
             href: '#',
             icon: 'braces',
@@ -84,8 +84,8 @@ const staticPageData = {
     },
     cloud: {
         title: ['The cloud for', 'web-native', 'development.'],
-        desc: 'Jump on an instant, auto-scaling and zero-ops infrastructure built for the web-native experience!',
-        ctas: [{href: '#main', text: 'Explore',}],
+        desc: 'Jump on an instant, zero-ops and auto-scaling infrastructure built for the web-native experience!',
+        quickstart: {type: 'code', directive: '#Compute, #Database', cta: {href: '#main', text: 'Explore',}},
         nav: [{
             href: '#',
             icon: 'cloud',
@@ -94,8 +94,8 @@ const staticPageData = {
     },
     community: {
         title: ['The community for', 'web-native', 'development.'],
-        desc: 'Join the support system for web-native development where a native-first approach meets the challenge!',
-        ctas: [{href: '#main', text: 'Get Started',}],
+        desc: 'Join the dev community\'s springboard and support system for web-native development!',
+        quickstart: {type: 'code', directive: '#Web-Native, #WICG', cta: {href: '#main', text: 'Explore',}},
         nav: [{
             href: '#',
             icon: 'flag',

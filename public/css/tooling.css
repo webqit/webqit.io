@@ -24,23 +24,22 @@
 .project-suboutline,
 .page-suboutline {
     margin-left: 10px;
-    border-left: 1px dashed gray;
 }
 /* ------------------------ */
 
 :is(.project-outline, .page-outline) li .subtree-notch {
-    padding-left: 3px;
-    padding-right: 3px;
+    padding-left: 4px;
+    padding-right: 4px;
     font-weight: bold;
 }
 :is(.project-outline, .page-outline) li > .item-bar > .subtree-notch,
 :is(.project-outline, .page-outline) li > .item-bar > a {
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 .project-outline li a .bi {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* ------------------------ */
@@ -63,14 +62,19 @@
 :is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch.cursor-pointer {
     text-shadow: 0px 0px 10px black;
 }
-:is(.project-outline, .page-outline) li > .item-bar:hover ,
-:is(.project-outline, .page-outline) li > .item-bar.active {
+:is(.project-outline, .page-outline) li > .item-bar {
+    border-left: 2px solid gainsboro;
+}
+:is(.project-outline, .page-outline) li > .item-bar:hover {
+    border-left: 2px solid silver;
     background-color: whitesmoke;
 }
 :is(.project-outline, .page-outline) li > .item-bar.active {
-    color: slateblue;
-    text-shadow: 0px 0px 1px darkslateblue;
-    background-color: var(--theme-bg);
+    border-left: 2px solid slateblue !important;
+}
+:is(.project-outline, .page-outline) li > .item-bar.active a {
+    color: slateblue !important;
+    text-shadow: 0px 0px 1px slateblue;
 }
 
 /* ------------------------ */
@@ -82,15 +86,15 @@
 /* ------------------------ */
 
 .markdown-body:not(.additional-readme) {
-    padding: 30px;
+    padding: 10px;
     padding-left: 50px;
     padding-right: 50px;
 }
 @media (max-width: 992px) {
     .markdown-body:not(.additional-readme) {
-        padding: 20px;
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 /**

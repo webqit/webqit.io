@@ -29,8 +29,8 @@ export default async (request, recieved, next) => {
         title: 'The WebQit Project',
         hero: {
             title: ['The tooling, cloud,', 'and community for', 'web-native', 'development.'],
-            desc: 'Introducing the path of least engineering with plain web languages and conventional paradigms!',
-            ctas: [{href: '#domain--tooling', text: 'Explore',}],
+            desc: 'Introducing the path of least engineering with just conventional web languages and APIs!',
+            quickstart: {type: 'code', directive: '#Tooling, #Cloud, #Community', cta: {href: '#domain--tooling', text: 'Explore',}},
             nav: [{
                 href: '#domain--tooling',
                 icon: 'braces',
@@ -46,21 +46,21 @@ export default async (request, recieved, next) => {
         sections: [{
             name: 'tooling',
             title: 'Tooling',
-            desc: 'Opensource web tooling that gets you working in plain web languages and conventional paradigms!',
+            desc: 'Open source tooling that meets the challenge with just conventional web languages and APIs!',
             nav: [{href: '#domain--tooling', icon: 'braces',}],
             cta: {href: '/tooling', text: 'WebQit Tooling',},
             featured: getFeatured('tooling'),
         }, {
             name: 'cloud',
             title: 'Cloud',
-            desc: 'Instant, auto-scaling and zero-ops infrastructure built for the web-native experience!',
+            desc: 'Instant, zero-ops and auto-scaling infrastructure built for the web-native experience!',
             nav: [{href: '#domain--cloud', icon: 'cloud',}],
             cta: {href: '/cloud', text: 'WebQit Cloud',},
             featured: getFeatured('cloud'),
         }, {
             name: 'community',
             title: 'Community',
-            desc: 'The support system for web-native development where a native-first approach meets the challenge!',
+            desc: 'The dev community\'s springboard and support system for web-native development.',
             nav: [{href: '#domain--community', icon: 'flag',}],
             cta: {href: '/community', text: 'WebQit Community',},
             featured: getFeatured('community'),
