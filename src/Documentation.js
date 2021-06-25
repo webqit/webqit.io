@@ -176,7 +176,7 @@ export default class Documentation {
             return projectsListCategorized.sort((a, b) => {
                 return a._index === 'first' || a.title.toLowerCase() === 'featured' || b._index === 'last' || b.title.toLowerCase() === defaultCategory ? -1 : (
                     b._index === 'first' || b.title.toLowerCase() === 'featured' || a._index === 'last' || a.title.toLowerCase() === defaultCategory ? 1 : (
-                        parseFloat(a._index || 1000) < parseFloat(b._index || 1000) || a.title < b.title ? -1 : 1
+                        parseFloat(a._index || 1000) < parseFloat(b._index || 1000)  ? -1 : (a.title < b.title ? -1 : 1)
                     )
                 );
             }).map(collection => {
