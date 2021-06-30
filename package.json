@@ -1,6 +1,6 @@
 {
   "name": "@webqit/webqit.io",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The webqit.io website",
   "type": "module",
   "main": "index.js",
