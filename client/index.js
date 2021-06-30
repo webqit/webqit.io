@@ -3,7 +3,7 @@
  * @imports
  */
 import '@webqit/play-sequence/src/browser-entry.js';
-import List from '../src/List.js';
+import '../src/wc.js';
 
 /**
  * @var Object

@@ -10,19 +10,18 @@
         let app = document.state;
         if (app.page.domain) {
             $(this).attr('id', 'route--' + app.page.domain);
-            $(this.namespace.project_npm).html('@webqit/' + app.page.projectName);
-            $(this.namespace.app_bar_title).html('@webqit/' + app.page.projectName);
-            $(this.namespace.project_npm).attr('href', 'https://npmjs.com/package/@webqit/' + app.page.projectName);
-            $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
+            $(this.namespace.doc_tree.namespace.project_npm).html('@webqit/' + app.page.projectName);
+            $(this.namespace.doc_tree.namespace.project_npm).attr('href', 'https://npmjs.com/package/@webqit/' + app.page.projectName);
+            $(this.namespace.doc_tree.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
         if (app.page.nav) {
-            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/master/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
-            $(this.namespace.doc_tree).itemize(app.page.nav.items);
+            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/next/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
+            $(this.namespace.doc_tree.namespace.main).itemize(app.page.nav.items);
         }
                 if (app.page.breadcrumb) {
             this.namespace.breadcrumb.setState({items: app.page.breadcrumb});
             var currentPage = app.page.breadcrumb[app.page.breadcrumb.length - 1];
-            $(this.namespace.page_outline).itemize(currentPage.outline || {});
+            $(this.namespace.page_outline.namespace.main).itemize(currentPage.outline || {});
             $(this.namespace.index_links).class('d-none', !currentPage.subtree);
             this.namespace.index_links.setState(currentPage);
                         $(this.namespace.nav).class('d-none', false);
@@ -33,29 +32,11 @@
             $(this.namespace.nav_right_text).html(currentPage.next.title || '');
             $(this.namespace.nav_right).class('disabled', !currentPage.next);
         }
-                var doc_tree_drawer_open = false;
-        $(this.namespace.doc_tree_drawer_open).on('click', () => {
-            if (!doc_tree_drawer_open) {
-                toggleDrawer(this.namespace.doc_tree_drawer, this.namespace.main_backdrop2, true, 'md');
-                doc_tree_drawer_open = true;
-            } else {
-                toggleDrawer(this.namespace.doc_tree_drawer, this.namespace.main_backdrop2, false, 'md');
-                doc_tree_drawer_open = false;
-            }
+                $(this.namespace.doc_tree_drawer_open).on('click', () => {
+            this.namespace.doc_tree.toggle();
         });
-        $(this.namespace.main_backdrop2).on('click', () => {
-            if (doc_tree_drawer_open) {
-                toggleDrawer(this.namespace.doc_tree_drawer, this.namespace.main_backdrop2, false, 'md');
-                doc_tree_drawer_open = false;
-            }
-        });
-                $(this.namespace.page_outline_control).on('click', () => {
-            $(this.namespace.page_outline_container).class('sm--d-none', false);
-            $(this.namespace.main_backdrop2).class('sm--d-block', true);
-        });
-        $(this.namespace.main_backdrop2).on('click', () => {
-            $(this.namespace.page_outline_container).class('sm--d-none', true);
-            $(this.namespace.main_backdrop2).class('sm--d-block', false);
+        $(this.namespace.page_outline_control).on('click', () => {
+            this.namespace.page_outline.open();
         });
     </script>
     
@@ -96,17 +77,25 @@
                     if (this.state.items) {
                         $(overflowNotch).class('d-none', true);
                         $(subtreeNotch).class('d-none', false);
-                        $(main).itemize(this.state.items, (e, el, d, k) => {
-                            d.overflowCollapsed = false;
-                            if (k === this.state.items.length - 1) {
-                                $(subtreeList).itemize(d.subtree.items);
-                                main.append(subtreeNotch);
-                                $(subtreeNotch).class('disabled', !d.subtree);
-                            }
-                        }, (e, el, d, k, overflowCount) => {
-                            d.overflowCollapsed = e === 'collapse';
-                            $(overflowNotch).class('d-none', overflowCount === 0);
-                        }, {collapsionPoint: 'start'});
+                                                $(main.parentNode).class('overflow-hidden', true);
+                        $(main).itemize(this.state.items, {
+                            renderCallback: (e, el, d, k) => {
+                                d.overflowCollapsed = false;
+                                if (k === this.state.items.length - 1) {
+                                    $(subtreeList).itemize(d.subtree.items);
+                                    main.append(subtreeNotch);
+                                    $(subtreeNotch).class('disabled', !d.subtree);
+                                }
+                            },
+                            overflowCallback: (e, el, d, k, overflowCount) => {
+                                d.overflowCollapsed = e === 'collapse';
+                                $(overflowNotch).class('d-none', overflowCount === 0);
+                            },
+                            overflowContainerCallback: (e, container) => {
+                                                                $(container.parentNode).class('overflow-hidden', e);
+                            },
+                            collapsionPoint: 'start',
+                        });
                         $(overflowList).itemize(this.state.items);
                     }
                 </script>
@@ -119,15 +108,16 @@
     </div>
     
     <div class="pos-rel flex-y-start layout-section" style="border-left: 1px solid silver;  border-right: 1px solid silver;">
-            
-        <div class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
-            <div data-id="doc_tree_drawer" class="d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; background-color: white;">
+        
+        <div is="webqit-app-drawer" drawer-breakpoint="md" namespace data-id="doc_tree" class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
+            <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
+            <div data-id="drawer" class="d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; background-color: white;  z-index: 100">
                 <div class="col-grows pd-10 overflow-y-auto">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
                         <span class="sm">Pages</span>
                         <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
-                    <ul data-id="doc_tree" template="page/*/*/docs/@layout/project-outline" class="project-outline list-style-none"></ul>
+                    <ul data-id="main" template="page/*/*/docs/@layout/project-outline" class="project-outline list-style-none"></ul>
                 </div>
                 <div data-id="project_links" class="pos-sticky pd-lft-10 pd-rt-10 pd-x2" style="bottom: 0px; background-color: white;">
                     <div class="pd-top-2 pd-btm-2 pd-x9 flex-y-center flex-x-separate" style="b-order-top: 1px solid silver;">
@@ -140,17 +130,17 @@
             </div>
         </div>
 
-        <div data-id="main_backdrop2" class="pos-abs cover d-none" style="background-color: rgba(0, 0, 0, 0.125);; z-index: 75"></div>
 
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
-            <div class="col-3 sm--col-0 sm--flex-x-end pos-sticky sm--overflow-visible" style="top: 85px; z-index: 90;">
-                <div data-id="page_outline_container" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
+            <div is="webqit-app-drawer" drawer-rtl drawer-breakpoint="sm" namespace data-id="page_outline" class="col-3 sm--col-0 sm--flex-x-end pos-sticky" style="top: 85px; z-index: 70;">
+                <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
+                <div data-id="drawer" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
-                    <ul data-id="page_outline" template="page/*/*/docs/@layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
+                    <ul data-id="main" template="page/*/*/docs/@layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
                     <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate md--d-none" style="bottom: 0px; background-color: white;">
                         <a href="#" title="Scroll to top"><i class="bi bi-chevron-bar-up"></i></a>
                     </div>
@@ -172,7 +162,9 @@
                     <ul data-id="index_links" template="page/*/*/docs/@layout/index_links#item" class="pd-top-10 pd-btm-10 pd-x2 pd-lft-0 list-style-none d-none" style="border-top: 1px dashed silver;">
                         <script type="subscript">
                             if (this.state.subtree) {
-                                $(this).itemize(this.state.subtree.items, null, null, {itemExportId: this.state._subtreeType});
+                                $(this).itemize(this.state.subtree.items, {
+                                    itemExportId: this.state._subtreeType,
+                                });
                             }
                         </script>
                     </ul>
@@ -198,10 +190,10 @@
             </div>
 
             <div class="d-none sm--d-inline-block" style="position: fixed; bottom: 60px; right: 10px;">
-                <div data-id="page_outline_control" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: blueviolet; color: white;">
+                <div data-id="page_outline_control" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
                     <i class="bi bi-diagram-2 flex-center sm"></i>
                 </div>
-                <a href="#"" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: blueviolet; color: white;">
+                <a href="#"" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
                     <i class="bi bi-chevron-bar-up flex-center sm"></i>
                 </a>
             </div>
@@ -268,7 +260,7 @@
             </script>
         </li>
 
-        <li namespace>
+        <li namespace is="webqit-tree-item-link">
             <div data-id="item_bar" class="item-bar flex-y-stretch">
                 <span data-id="subtree_notch" class="subtree-notch flex-y-center">
                     <i data-id="subtree_icon" class="bi bi-dash xs flex-center b" style="font-size: x-small;"></i>
@@ -279,66 +271,13 @@
                 </a>
             </div>
             <div data-id="sub_menu_container" class="flex-y-center overflow-hidden" style="height: 0px;">
-                <ul data-id="sub_menu" template="page/*/*/docs/@layout/project-outline" class="col-12 project-suboutline list-style-none"></ul>
+                <ul data-id="sub_menu" template="page/*/*/docs/@layout/project-outline" class="wt-full project-suboutline list-style-none"></ul>
             </div>
-            <script type="subscript">
-                var activePathSlash = document.state.url.pathname + '/';
-                if (this.state.title) {
-                    $(this.namespace.link).attr('href', this.state.path);
-                    $(this.namespace.link_text).html(this.state.title);
-
-                    // Auto-active on path match
-                    var thisPathSlash = this.state.path + '/';
-                    var isActivePathMatch = activePathSlash.startsWith(thisPathSlash);
-                    var childIsActivePathMatchStr = activePathSlash.substr(thisPathSlash.length);
-                    var childIsActivePathMatch = isActivePathMatch && childIsActivePathMatchStr && childIsActivePathMatchStr.indexOf('/') > 0;
-                    $(this.namespace.item_bar).class('active', isActivePathMatch && !childIsActivePathMatch);
-                    if (document.state.env === 'client' && isActivePathMatch && !childIsActivePathMatch) {
-                        this.namespace.link.focus();
-                    }
-
-                    // Expanding and collapsing
-                    if (this.state.subtree) {
-                        if (this.state.isRoot || childIsActivePathMatch) {
-                            this.state.active = true;
-                        }
-                        if (document.state.env === 'client') {
-                            var aniParams = {
-                                duration: 300,
-                                easing: 'ease-out', 
-                                cancelForCss: true
-                            };
-                            if (this.state.active) {
-                                $(this.namespace.sub_menu_container).play({
-                                    height: 'auto',
-                                    paddingTop: 4, 
-                                    paddingBottom: 4,
-                                }, aniParams);
-                            } else {
-                                $(this.namespace.sub_menu_container).play({
-                                    height: 0, 
-                                    paddingTop: 0, 
-                                    paddingBottom: 0,
-                                }, aniParams);
-                            }
-                        }
-
-                        $(this.namespace.sub_menu).itemize(this.state.subtree.items, null, null, {itemExportId: this.state._subtreeType});
-                        $(this.namespace.subtree_notch).class('cursor-pointer', true);
-                        $(this.namespace.subtree_icon).class('bi-dash', this.state.active);
-                        $(this.namespace.subtree_icon).class('bi-plus', !this.state.active);
-                        $(this.namespace.subtree_notch).on('click', e => {
-                            this.state.active = !this.state.active;
-                            return false;
-                        });
-                    }
-                }
-            </script>
         </li>
     </template>
 
     <template name="page-outline">
-        <li namespace>
+        <li namespace is="webqit-outline-item-link">
             <div data-id="item_bar" class="item-bar flex-y-stretch">
                 <span data-id="subtree_notch" class="subtree-notch flex-y-center">
                     <i data-id="subtree_icon" class="bi bi-dash xs flex-center" style="font-size: x-small;"></i>
@@ -348,18 +287,6 @@
                 </a>
             </div>
             <ul data-id="sub_menu" template="page/*/*/docs/@layout/page-outline" class="page-suboutline d-none list-style-none"></ul>
-            <script type="subscript">
-                var activeHash = document.state.url.hash;
-                if (this.state.title) {
-                    $(this.namespace.link).attr('href', '#' + this.state.uri);
-                    $(this.namespace.link).class('active', activeHash === '#' + this.state.uri);
-                    $(this.namespace.link_text).html(this.state.title);
-                    if (this.state.subtree.length) {
-                        $(this.namespace.sub_menu).class('d-none', false);
-                        $(this.namespace.sub_menu).itemize(this.state.subtree);
-                    }
-                }
-            </script>
         </li>
     </template>
 
@@ -394,7 +321,7 @@
 </template>
 			</template>
 
-			<div namespace class="route-tooling" exportgroup="index">
+			<div namespace exportgroup="index">
     <script type="subscript">
         var app = document.state;
         if (app.page.domain) {

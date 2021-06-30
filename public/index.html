@@ -37,26 +37,6 @@
         <script>
             $ = WebQit.$;
             document.subscript.bind({}, {update: true});
-            // -----------
-            toggleDrawer = (drawer, backdrop, open, breakpoint = '') => {
-                const applyBreakpoint = _class => !breakpoint ? _class : _class.split(' ').map(c => breakpoint + '--' + c).join(' ');
-                $(drawer).class(applyBreakpoint('d-none'), false);
-                $(drawer).class(applyBreakpoint('wt-40 wt-x8'), true);
-                $(drawer).play([{transform: 'translate(-400px)'}, {transform: 'translate(0px)'}], {duration: 200, reverse: !open}).then(el => {
-                    if (!open) {
-                        $(el).class(applyBreakpoint('d-none'), true);
-                        $(el).class(applyBreakpoint('wt-40 wt-x8'), false);
-                    }
-                });
-                $(backdrop).class(applyBreakpoint('d-none'), false);
-                $(backdrop).class(applyBreakpoint('d-block'), true);
-                $(backdrop).play([{opacity: 0}, {opacity: 1}], {duration: 300, reverse: !open}).then(el => {
-                    if (!open) {
-                        $(el).class(applyBreakpoint('d-none'), true);
-                        $(el).class(applyBreakpoint('d-block'), false);
-                    }
-                });
-            };
         </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -79,6 +59,37 @@
     </head>
 
     <body template="" namespace class="snap-container" play-icon-path="/icon" play-icon-type="bootstrap">
+
+        <script type="subscript">
+            let app = document.state;
+            $(this.namespace.page_domain).class('d-none', !app.page.domain);
+            $(this.namespace.page_domain).attr('href', '/' + app.page.domain);
+            $(this.namespace.page_domain).html(app.page.domain);
+            $(this.namespace.app_drawer_open).on('click', () => {
+                this.namespace.side_menu.open();
+            });
+            $([this.namespace.side_menu.namespace.main, this.namespace.menu_bar]).itemize([{
+                items: [{
+                    icon: 'braces',
+                    title: 'Tooling',
+                    href: '/tooling',
+                }, {
+                    icon: 'cloud',
+                    title: 'Cloud',
+                    href: '/cloud',
+                }, {
+                    icon: 'flag',
+                    title: 'Community',
+                    href: '/community',
+                }]
+            }, {
+                items: [{
+                    icon: 'house',
+                    title: 'My Qit',
+                    href: '/',
+                }]
+            }]);
+        </script>
  
         <!-- PAGE_PROGRESS_BAR -->
 
@@ -96,67 +107,18 @@
 
         <!-- OVERLAY_MENU -->
 
-        <div data-id="app_drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid white; z-index: 160;">
-
-            <div class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column b">
-
-                <ul class="pd-top-10 pd-btm-10 list-style-none">
-                    <li>
-                        <a href="/" class="flex-y-center">
-                            <i class="bi bi-house sm flex-center pd-10"></i>
-                            <span class="pd-10">Home</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="site-menu pd-top-10 pd-btm-10 list-style-none" style="border-top: 1px dashed silver;">
-                    <li>
-                        <a href="/tooling" class="flex-y-center">
-                            <i class="bi bi-braces sm flex-center pd-lft-10 pd-rt-10"></i>
-                            <span class="pd-10">Tooling</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/cloud" class="flex-y-center">
-                            <i class="bi bi-cloud sm flex-center pd-lft-10 pd-rt-10"></i>
-                            <span class="pd-10">Cloud</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/community" class="flex-y-center">
-                            <i class="bi bi-flag sm flex-center pd-lft-10 pd-rt-10"></i>
-                            <span class="pd-10">Community</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="pd-top-10 pd-btm-10 list-style-none" style="border-top: 1px dashed silver">
-                    <li>
-                        <a href="/my-qit" class="flex-y-center">
-                            <i class="bi bi-box-arrow-in-right sm flex-center pd-10"></i>
-                            <span class="pd-10">My Qit</span>
-                        </a>
-                    </li>
-                </ul>
-
+        <div is="webqit-app-drawer" data-id="side_menu" namespace>
+            <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2); z-index: 150;"></div>
+            <div data-id="drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid white; z-index: 160;">
+                <div data-id="main" template="@layout/menu#vert_group" class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column b"></div>
+                <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
+                    <a href="/" target="_blank" class="d-none">About</a>
+                    <a href="https://github.com/webqit" target="_blank" class="d-none">
+                        <i class="bi bi-github sm"></i>
+                    </a>
+                </div>
             </div>
-
-            <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
-                <a href="/" target="_blank" class="d-none">About</a>
-                <a href="https://github.com/webqit" target="_blank" class="d-none">
-                    <i class="bi bi-github sm"></i>
-                </a>
-            </div>
-
         </div>
-        <div data-id="main_backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.125); z-index: 150;"></div>
-
-        <script type="subscript">
-            let app = document.state;
-            $(this.namespace.page_domain).class('d-none', !app.page.domain);
-            $(this.namespace.page_domain).attr('href', '/' + app.page.domain);
-            $(this.namespace.page_domain).html(app.page.domain);
-            $(this.namespace.app_drawer_open).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, true));
-            $(this.namespace.main_backdrop).on('click', () => toggleDrawer(this.namespace.app_drawer, this.namespace.main_backdrop, false));
-        </script>
 
         <!-- HEADER -->
 
@@ -169,24 +131,10 @@
                     </a>
                     <a data-id="page_domain" href="/" class="mg-lft-10 mg-x2 pd-8 txt-sm border-solid radius-10 d-none"></a>
                 </div>
-                <ul class="menu-bar flex-y-center sm--d-none list-style-none" style="font-size: 18px;">
-                    <li>
-                        <a href="/tooling">Tooling</a>
-                    </li>
-                    <li>
-                        <a href="/cloud">Cloud</a>
-                    </li>
-                    <li>
-                        <a href="/community">Community</a>
-                    </li>
-                    <li style="font-weight: normal;">|</li>
-                    <li>
-                        <a href="#" class="flex-y-center">My Qit <span class="pd-lft-10"><i class="bi-caret-down flex-center xs"></i></span></a>
-                    </li>
-                </ul>
-                <a href="#" data-id="app_drawer_open" class="d-none sm--d-flex">
+                <ul data-id="menu_bar" template="@layout/menu#horz_group" class="menu-bar flex-y-center sm--d-none list-style-none" style="font-size: 18px;"></ul>
+                <span data-id="app_drawer_open" class="cursor-pointer d-none sm--d-flex">
                     <i class="bi bi-filter-right flex-center md"></i>
-                </a>
+                </span>
             </div>
         </header>
         
@@ -226,19 +174,11 @@
                     </script>
                 </ul>
                 
-                <li exportgroup="horz" namespace>
+                <li exportgroup="horz" namespace is="webqit-list-item-link">
                     <a data-id="link" href="#"></a>
-                    <script type="subscript">
-                        var activePath = document.state.url.pathname;
-                        if (this.state.href) {
-                            $(this.namespace.link).attr('href', this.state.href);
-                            $(this.namespace.link).html(this.state.text);
-                            $(this).class('active', (activePath + '/').startsWith(this.state.href + '/'));
-                        }
-                    </script>
                 </li>
 
-                <ul exportgroup="vert_group" template="@layout/menu#vert" class="pd-top-10 pd-btm-10 list-style-none">
+                <ul exportgroup="vert_group" template="@layout/menu#vert" class="menu-panel list-style-none">
                     <script type="subscript">
                         if (this.state.items) {
                             $(this).itemize(this.state.items);
@@ -246,20 +186,11 @@
                     </script>
                 </ul>
 
-                <li exportgroup="vert" namespace>
-                    <a data-id="href" href="#" class="flex-y-center">
+                <li exportgroup="vert" namespace is="webqit-list-item-link">
+                    <a data-id="link" href="#" class="flex-y-center">
                         <i data-id="icon" class="bi sm flex-center pd-lft-10 pd-rt-10"></i>
-                        <span data-id="text" class="pd-10"></span>
+                        <span data-id="link_text" class="pd-10"></span>
                     </a>
-                    <script type="subscript">
-                        var activePath = document.state.url.pathname;
-                        if (this.state.href) {
-                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
-                            $(this.namespace.href).attr('href', this.state.href);
-                            $(this.namespace.text).html(this.state.text);
-                            $(this).class('active', (activePath + '/').startsWith(this.state.href + '/'));
-                        }
-                    </script>
                 </li>
 
             </template>
@@ -420,7 +351,9 @@
                     <script type="subscript">
                         if (this.state.items) {
                             $(this).class('grid-' + this.state.gridColumns, true);
-                            $(this).itemize(this.state.items, null, null, {itemExportId: this.state.itemsTemplate});
+                            $(this).itemize(this.state.items, {
+                                itemExportId: this.state.itemsTemplate,
+                            });
                         }
                     </script>
                 </ul>
@@ -482,7 +415,7 @@
                     <script type="subscript">
                         if (this.state.cta) {
                             $(this).attr('href', this.state.cta.href);
-                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
+                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'box-arrow-in-down-right'), true);
                             $(this.namespace.cta_text).html(this.state.cta.text);
                         }
                     </script>
@@ -495,12 +428,13 @@
                         <code data-id="directive" class="pd-10 pd-lft-x2 pd-rt-x2"></code>
                     </div>
                     <a data-id="cta_href" href="#" class="cta flex-center pd-top-10 pd-btm-10 sm--pd-10 sm--mg-top-10 sm--border-solid">
-                        <i class="bi bi-arrow-right flex-center mg-lft-10 mg-x2 sm--mg-lft-0"></i>
+                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--mg-lft-0"></i>
                         <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
                     </a>
                     <script type="subscript">
                         if (this.state.directive) {
                             $(this.namespace.directive).html(this.state.directive);
+                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
                             $(this.namespace.cta_href).attr('href', this.state.cta.href);
                             $(this.namespace.cta_text).html(this.state.cta.text);
                         }
@@ -514,13 +448,14 @@
                         <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="wt-full pd-10 pd-lft-x2 pd-rt-x2" style="background-color: transparent; border: none;" />
                     </div>
                     <button class="cta flex-y-center pd-top-10 pd-btm-10 cursor-pointer" style="background-color: transparent; border: none; color: blueviolet;">
-                        <i class="bi bi-arrow-right flex-center mg-lft-10 mg-x2 sm--d-none"></i>
+                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--d-none"></i>
                         <i class="bi bi-arrow-return-right flex-center d-none sm--d-flex"></i>
                         <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
                     </button>
                     <script type="subscript">
                         if (this.state.directive) {
                             $(this.namespace.directive).attr('placeholder', this.state.directive);
+                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
                             $(this.namespace.directive).attr('size', this.state.directive.length);
                             $(this).attr('action', this.state.cta.href);
                             $(this.namespace.cta_text).html(this.state.cta.text);

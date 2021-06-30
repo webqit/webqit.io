@@ -7,12 +7,12 @@
 
  @font-face {
     font-family: 'League Spartan';
-    src: url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot');
-    src: url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
-         url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.woff2') format('woff2'),
-         url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.woff') format('woff'),
-         url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.ttf') format('truetype'),
-         url('league-spartan/league-spartan-master/webfonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
+    src: url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot');
+    src: url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.woff2') format('woff2'),
+         url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.woff') format('woff'),
+         url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.ttf') format('truetype'),
+         url('fonts/league-spartan/league-spartan-master/webfonts/leaguespartan-bold.svg#league_spartanbold') format('svg');
     font-weight: bold;
     font-style: normal;
 
@@ -302,6 +302,18 @@ h1 .text-gradient + span {
 }
 
 /* ---------- */
+.menu-panel {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.menu-panel + .menu-panel {
+    margin-top: 26px;
+    border-top: 1px dashed gray;
+}
+.menu-bar + .menu-bar {
+    margin-left: 26px;
+    border-left: 1px dashed gray;
+}
 .menu-bar li {
     padding-left: 26px;
     vertical-align: baseline;

@@ -2,20 +2,14 @@
 /**
  * @imports
  */
-import _isArray from '@webqit/util/js/isArray.js';
 import _isEmpty from '@webqit/util/js/isEmpty.js';
 import _toTitle from '@webqit/util/str/toTitle.js';
-import { List as _List, Observer } from '@webqit/obs-collection';
+import { List as _List, Observer } from '@webqit/obsv-collection';
 
 export default class List extends _List {
 
-    static create(entries, subtree = null, multiplicity = 1000) {
-        return new this(entries.map(entry => {
-            if (subtree && _isArray(entry[subtree])) {
-                entry[subtree] = this.create(entry[subtree], subtree, multiplicity);
-            }
-            return entry;
-        }), {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: multiplicity}});
+    static createTree(entries, subtree = null, multiplicity = 1000) {
+        return super.createTree(entries, subtree, {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: multiplicity}});
     }
 
     static fromOutline(outline, detailed = false, parent = null, i = 0) {
@@ -73,7 +67,7 @@ export default class List extends _List {
             }, null);
         }
 
-        return this.create(entries);
+        return this.createTree(entries);
     }
 
     advance(dir, loop = false) {
