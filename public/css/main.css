@@ -62,17 +62,14 @@ html {
     scroll-margin-top: 100px;
 }
 .hero-text,
-.hero-font,
-.additional-readme h2 {
+.hero-font {
     font-family: Whitney, sans-serif !important;
     font-weight: 500 !important;
 }
-.hero-text,
-.additional-readme h2 {
+.hero-text {
     font-size: 42px !important;
 }
-.hero-text:not(h1),
-.additional-readme h2 {
+.hero-text:not(h1) {
     font-weight: bold !important;
     color: darkslateblue;
 }
@@ -113,6 +110,15 @@ p, .p,
 }
 .no-wrap {
     white-space: nowrap;
+}
+@media (max-width: 760px) {
+    .breadcrumb.reflowing {
+        overflow: hidden;
+    }
+    .breadcrumb.reflowing > ul > li:nth-child(n+3) {
+        opacity: 0.15;
+        filter: blur(2px);
+    }
 }
 
 /* ------------------ */
@@ -485,13 +491,13 @@ h1 .text-gradient + span {
     background-color: whitesmoke;
     transition: background-color 600ms;
 }
-.additional-readme {
+.additional-readme:not(.main-project-readme) {
     margin-top: 15px;
-    /*
-    background-color: whitesmoke;
-    background-color: var(--theme-bg);
-    */
     border: 1px solid silver;
+}
+.main-project-readme {
+    background-color: var(--theme-bg);
+    background-color: whitesmoke;
 }
 /**
 :is(#route--tooling, #route--cloud, #route--community) .project-category:hover {

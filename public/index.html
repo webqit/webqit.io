@@ -5,7 +5,7 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="oohtml" content="isomorphic=1;script.autorun=false;attr.id=data-id;element.import=html-import;element.export=html-export;" />
+        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;" />
 
         <base data-id="base" />
         <title data-id="title"></title>
@@ -36,7 +36,7 @@
         <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
             $ = WebQit.$;
-            document.subscript.bind({}, {update: true});
+            //document.subscript.bind({}, {update: true});
         </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -66,7 +66,7 @@
             $(this.namespace.page_domain).attr('href', '/' + app.page.domain);
             $(this.namespace.page_domain).html(app.page.domain);
             $(this.namespace.app_drawer_open).on('click', () => {
-                this.namespace.side_menu.open();
+                this.namespace.side_menu.draw(true);
             });
             $([this.namespace.side_menu.namespace.main, this.namespace.menu_bar]).itemize([{
                 items: [{
@@ -90,20 +90,6 @@
                 }]
             }]);
         </script>
- 
-        <!-- PAGE_PROGRESS_BAR -->
-
-        <div class="pos-sticky offset-top-0 wt-full z-index-1000">
-            <div role="progressbar" class="wt-full overflow-hidden d-none" dramatic-linearprogress="true" indeterminate="true" style="position: absolute; background-color: rgba(150, 150, 150, 0.25); height: 3px !important;">
-                <div class="progressbar-indicator-a progressbar-trail" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
-                <div class="progressbar-indicator-b" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
-                <script type="subscript">
-                    let app = document.state;
-                    $(this).class('d-none', !app.network.progress.active);
-                    $(this).css('color', app.network.error ? 'red' : 'blueviolet');
-                </script>
-            </div>
-        </div>
 
         <!-- OVERLAY_MENU -->
 
@@ -118,6 +104,9 @@
                     </a>
                 </div>
             </div>
+            <script type="subscript">
+                if (this.collapseWith) this.collapseWith(this.namespace.backdrop, this.namespace.main);
+            </script>
         </div>
 
         <!-- HEADER -->
@@ -136,11 +125,25 @@
                     <i class="bi bi-filter-right flex-center md"></i>
                 </span>
             </div>
+    
+            <!-- PAGE_PROGRESS_BAR -->
+
+            <div class="pos-abs offset-lft-0 offset-btm-0 wt-full z-index-1000">
+                <div role="progressbar" class="wt-full overflow-hidden d-none" dramatic-linearprogress="true" indeterminate="true" style="position: absolute; background-color: rgba(150, 150, 150, 0.25); height: 2px !important;">
+                    <div class="progressbar-indicator-a progressbar-trail" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
+                    <div class="progressbar-indicator-b" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
+                    <script type="subscript">
+                        let app = document.state;
+                        $(this).class('d-none', !app.network.progress.active);
+                        $(this).css('color', app.network.error ? 'red' : 'blueviolet');
+                    </script>
+                </div>
+            </div>
         </header>
         
         <!-- PAGE -->
 
-        <html-import name="index" template-specificity="3-10" class="pd-10">
+        <html-import name="index:super(3-10)" class="pd-10">
             <div class="flex-center" style="min-height: 100vh; background-color: whitesmoke;">
                 <div namespace class="pd-10 pd-x3 txt-align-cntr b anim-fade-in">
                     <div data-id="error"></div>
@@ -174,8 +177,14 @@
                     </script>
                 </ul>
                 
-                <li exportgroup="horz" namespace is="webqit-list-item-link">
+                <li exportgroup="horz" namespace is="webqit-li-link">
                     <a data-id="link" href="#"></a>
+                    <script type="subscript">
+                        if (!this.state.title) return;
+                        $(this.namespace.link).attr('href', this.state.href);
+                        $(this.namespace.link).html(this.state.title);
+                        if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
+                    </script>
                 </li>
 
                 <ul exportgroup="vert_group" template="@layout/menu#vert" class="menu-panel list-style-none">
@@ -186,11 +195,18 @@
                     </script>
                 </ul>
 
-                <li exportgroup="vert" namespace is="webqit-list-item-link">
+                <li exportgroup="vert" namespace is="webqit-li-link">
                     <a data-id="link" href="#" class="flex-y-center">
                         <i data-id="icon" class="bi sm flex-center pd-lft-10 pd-rt-10"></i>
                         <span data-id="link_text" class="pd-10"></span>
                     </a>
+                    <script type="subscript">
+                        if (!this.state.title) return;
+                        $(this.namespace.link).attr('href', this.state.href);
+                        $(this.namespace.link_text).html(this.state.title);
+                        $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                        if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
+                    </script>
                 </li>
 
             </template>

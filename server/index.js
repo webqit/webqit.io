@@ -4,7 +4,7 @@
  */
 import _toTitle from '@webqit/util/str/toTitle.js';
 import Documentation from '../src/Documentation.js';
-import List from '../src/List.js';
+import _delay from '@webqit/util/js/delay.js';
 
 /**
  * Handles main HTTP process.
@@ -24,7 +24,8 @@ export default async (request, recieved, next) => {
         const documentation = new Documentation(domain);
         return Object.values(documentation.getProjectsList()).filter(a => (a.categories || []).map(c => c.toLowerCase()).includes('featured'));
     };
-
+    
+    await _delay(2000);
     return {
         title: 'The WebQit Project',
         hero: {
