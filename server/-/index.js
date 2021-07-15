@@ -45,7 +45,7 @@ export default async function(request, recieved, next) {
         }
     } else {
         var projects = documentation.getProjectsList();
-        data.projects = documentation.categorizeProjectsList(projects, 'categories', 'more');
+        data.projects = documentation.categorizeProjectsList(projects, 'categories', 'more', false);
         data.outline.subtree[data.domain].subtree = projects;
         data.hero = staticPageData[data.domain];
     }

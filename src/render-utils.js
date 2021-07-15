@@ -58,11 +58,11 @@ export function createData(data, next_pathname) {
  * @return Void
  */
 export function createNewOnlyTemplates(window, data, next_pathname) {
-    var bundles, domainTemp, tempApp = window.document.templates.page;
+    var bundles, domainTemp, tempApp = window.document.templates.get('page');
     if (data.projectName 
     && (bundles = data.outline.subtree[data.domain].subtree[data.projectName].bundles)
-    && (domainTemp = tempApp.templates[data.domain]) 
-    && !domainTemp.templates[data.projectName]) {
+    && (domainTemp = tempApp.templates.get(data.domain)) 
+    && !domainTemp.templates.get(data.projectName)) {
         var tempPackage = window.document.createElement('template');
         tempPackage.setAttribute('name', data.projectName);
         tempPackage.innerHTML = bundles.html;

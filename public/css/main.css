@@ -324,6 +324,30 @@ h1 .text-gradient + span {
     padding-left: 26px;
     vertical-align: baseline;
 }
+.quickstart .directive-container {
+    max-width: 50%;
+    border-left: 5px solid black;
+    background-color: whitesmoke;
+}
+.quickstart .cta {
+    color: blueviolet;
+    text-decoration: none !important;
+}
+.additional-readme .quickstart {
+    position: relative;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 50%;
+}
+@media (max-width: 640px) {
+    .additional-readme .quickstart {
+        max-width: none;
+    }
+    .quickstart .directive-container {
+        border-left-color:silver;
+    }
+}
+
 /* ---------- */
 
 .layout-section,
@@ -346,6 +370,7 @@ h1 .text-gradient + span {
 .vert-padded-section {
     padding-top: 80px;
     padding-bottom: 80px;
+    border-radius: 10px;
 }
 /* ---------- */
 .box-padded-layout-section a,
@@ -479,6 +504,8 @@ h1 .text-gradient + span {
 }
 #domain--tooling, #domain--cloud, #domain--community {
     background-color: var(--theme-bg);
+    border-radius: 10px;
+    overflow: hidden;
 }
 :is(#domain--tooling, #domain--cloud, #domain--community) .cta {
     transition: background-color 600ms;
@@ -490,14 +517,21 @@ h1 .text-gradient + span {
     background-color: var(--theme-bg);
     background-color: whitesmoke;
     transition: background-color 600ms;
+    /**
+    border: 1px solid silver;
+    */
 }
-.additional-readme:not(.main-project-readme) {
-    margin-top: 15px;
+.additional-readme {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    /**
+    background-color: whitesmoke;
+    background-color: var(--theme-bg);
+    */
     border: 1px solid silver;
 }
 .main-project-readme {
-    background-color: var(--theme-bg);
-    background-color: whitesmoke;
+    margin-top: 0px;
 }
 /**
 :is(#route--tooling, #route--cloud, #route--community) .project-category:hover {

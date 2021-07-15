@@ -36,7 +36,7 @@
         <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
             $ = WebQit.$;
-            //document.subscript.bind({}, {update: true});
+            currentYear = (new Date).getFullYear();
         </script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -159,6 +159,28 @@
             </div>
         </html-import>
 
+        <footer namespace style="border-top: 1px solid silver;">
+            <div class="layout-section flex-y-start flex-wrap sm--pd-10 color-gray sm--txt-align-cntr" style="padding-top: 20px; padding-bottom: 20px;">
+                <div data-id="copyright" class="pd-10"></div>
+                <div class="col-grows flex-x-separate flex-wrap sm--col-12 sm--flex-order-first">
+                    <ul class="flex-y-center flex-x-start flex-wrap list-style-none">
+                        <li class="pd-10"><a href="https://github.com/webqit">Github</a></li>
+                        <li class="pd-10"><a href="https://twitter.com/@Web_Qit">Twitter</a></li>
+                        <li class="pd-10"><a href="/about">About</a></li>
+                    </ul>
+                    <ul class="flex-y-center flex-wrap list-style-none">
+                        <li class="pd-10 flex-y-center">
+                            <i class="bi bi-heart sm flex-center"></i>
+                            <span class="mg-lft-10">Made in WebQit</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <script type="subscript">
+                $(this.namespace.copyright).html('&copy; ' + currentYear + ' WebQit Inc.');
+            </script>
+        </footer>
+
         <!-- CODE HIGHLIGHTING -->
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
         <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
@@ -246,7 +268,7 @@
                             var titleHtml = heroData.title.map(chunk => '<span' + (chunk === 'web-native' ? ' class="text-gradient text-gradient-1"' : '') + '>' + chunk + '</span>');
                             $(this.namespace.title).html(titleHtml.join(' '));
                             $(this.namespace.desc).html(heroData.desc);
-                            $(this.namespace.quickstart).attrSync('name', heroData.quickstart.type || 'link');
+                            $(this.namespace.quickstart).attr('name', heroData.quickstart.type || 'link');
                             this.namespace.quickstart.setState(heroData.quickstart);
                             $(this.namespace.nav).itemize(heroData.nav);
                             if (heroData.play) {
@@ -439,11 +461,13 @@
 
                 <!-- -->
 
-                <div exportgroup="code" namespace class="quickstart flex-y-stretch flex-wrap sm--d-block b">
-                    <div class="flex-y-center no-wrap max-wt-half sm--max-wt-none sm--ht-5 sm--ht-x10" style="border-left: 5px solid black; background-color: whitesmoke; overflow-x: auto;">
-                        <code data-id="directive" class="pd-10 pd-lft-x2 pd-rt-x2"></code>
+                <div exportgroup="code" namespace class="quickstart flex-y-stretch flex-wrap b">
+                    <div class="directive-container flex-y-center sm--col-12 no-wrap max-wt-100 max-wt-x3 pd-10 pd-lft-x2 pd-rt-x2 sm--pd-10 sm--pd-x2 sm--pd-top-x3 sm--pd-btm-x3 sm--max-wt-none overflow-hidden">
+                        <div data-id="directive" class="overflow-x-auto">
+                            <code data-id="directive"></code>
+                        </div>
                     </div>
-                    <a data-id="cta_href" href="#" class="cta flex-center pd-top-10 pd-btm-10 sm--pd-10 sm--mg-top-10 sm--border-solid">
+                    <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center pd-top-10 pd-btm-10 sm--pd-top-10 sm--pd-btm-10 sm--pd-x2">
                         <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--mg-lft-0"></i>
                         <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
                     </a>
@@ -459,13 +483,12 @@
 
                 <!-- -->
 
-                <form exportgroup="form" namespace class="quickstart flex-y-stretch flex-wrap sm--d-block b">
-                    <div class="flex-y-center no-wrap" style="max-width: 50%; border-left: 5px solid black; background-color: whitesmoke;">
-                        <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="wt-full pd-10 pd-lft-x2 pd-rt-x2" style="background-color: transparent; border: none;" />
+                <form exportgroup="form" namespace class="quickstart flex-y-stretch flex-wrap b">
+                    <div class="directive-container flex-y-center sm--col-12 max-wt-100 max-wt-x3 sm--max-wt-none">
+                        <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="wt-full pd-10 pd-lft-x2 pd-rt-x2 sm--pd-10 sm--pd-x2 sm--pd-top-x3 sm--pd-btm-x3" style="background-color: transparent; border: none;" />
                     </div>
-                    <button class="cta flex-y-center pd-top-10 pd-btm-10 cursor-pointer" style="background-color: transparent; border: none; color: blueviolet;">
-                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--d-none"></i>
-                        <i class="bi bi-arrow-return-right flex-center d-none sm--d-flex"></i>
+                    <button class="cta d-inline-flex flex-y-center pd-top-10 pd-btm-10 sm--pd-top-10 sm--pd-btm-10 sm--pd-x2 sm--wt-full cursor-pointer" style="background-color: transparent; border: none;">
+                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--mg-lft-0"></i>
                         <span data-id="cta_text" class="mg-lft-10 mg-x2"></span>
                     </button>
                     <script type="subscript">
