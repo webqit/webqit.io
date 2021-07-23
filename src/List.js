@@ -16,6 +16,9 @@ export default class List extends _List {
 
         var entries = Object.keys(outline).map(name => {
             var entry = outline[name];
+            if (!(entry.meta || {}).readme) {
+                return;
+            }
             var projectProp = prop => entry[prop] || ((entry.meta || {}).readme || {})[prop];
             var title = projectProp('title') || ((projectProp('outline') || []).length && projectProp('outline')[0].level === 1 ? projectProp('outline')[0].title : _toTitle(name));
             if (i === 2) {
@@ -43,7 +46,7 @@ export default class List extends _List {
                 _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry, i + 1);
             }        
             return _entry;
-        });
+        }).filter(e => e);
 
         entries.sort((a, b) => {
             return a._index === 'first' || b._index === 'last' ? -1 : (

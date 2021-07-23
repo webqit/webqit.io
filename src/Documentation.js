@@ -78,7 +78,10 @@ export default class Documentation {
         }
         var docsUrl = `/${this.domain}/${name}/docs`;
         if (!project.quickstart.directive) {
-            project.quickstart.directive = `npm install @webqit/${name}`;
+            project.quickstart.directive = `npm i${project.quickstart.global ? ' -g' : ''} @webqit/${name}`;
+            if (project.quickstart.cdn) {
+                project.quickstart.directive += `; or CDN: https://unpkg.com/@webqit/${name}/dist/main.js`;
+            }
         }
         if (!project.quickstart.cta) {
             project.quickstart.cta = {};

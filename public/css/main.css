@@ -533,6 +533,9 @@ h1 .text-gradient + span {
 .main-project-readme {
     margin-top: 0px;
 }
+.markdown-body img {
+    border-radius: 6px;
+}
 /**
 :is(#route--tooling, #route--cloud, #route--community) .project-category:hover {
 }

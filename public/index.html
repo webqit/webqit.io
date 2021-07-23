@@ -33,7 +33,7 @@
 
         <!-- JS -->
         <script src="/bundle.js"></script>
-        <script src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
+        <script crossorigin src="https://unpkg.com/@webqit/play-ui/dist/main.js" ssr></script>
         <script>
             $ = WebQit.$;
             currentYear = (new Date).getFullYear();
@@ -182,7 +182,7 @@
         </footer>
 
         <!-- CODE HIGHLIGHTING -->
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
+        <link rel="stylesheet" crossorigin href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
         <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
 
         <template name="@layout">

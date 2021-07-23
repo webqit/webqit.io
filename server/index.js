@@ -25,7 +25,7 @@ export default async (request, recieved, next) => {
         return Object.values(documentation.getProjectsList()).filter(a => (a.categories || []).map(c => c.toLowerCase()).includes('featured'));
     };
     
-    await _delay(2000);
+    //await _delay(2000);
     return {
         title: 'The WebQit Project',
         hero: {

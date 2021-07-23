@@ -102,7 +102,7 @@
                 </script>
             </div>
             <div data-id="doc_tree_drawer_open" class="mg-lft-10 pd-10 flex-center cursor-pointer d-none md--d-flex">
-                <i class="bi bi-list-nested sm pd-10 b"></i>
+                <i class="bi bi-text-indent-left sm pd-10 b"></i>
             </div>
         </div>
 
@@ -111,7 +111,7 @@
     <div class="pos-rel flex-y-start layout-section" style="border-left: 1px solid silver;  border-right: 1px solid silver;">
         
         <div is="webqit-app-drawer" drawer-breakpoint="md" namespace data-id="doc_tree" class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
-            <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
+            <div data-id="backdrop" class="pos-abs cover d-none" style="width: 100vw; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
             <div data-id="drawer" class="d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; background-color: white;  z-index: 100">
                 <div class="col-grows pd-10 overflow-y-auto">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
@@ -138,15 +138,17 @@
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
             <div is="webqit-app-drawer" drawer-rtl drawer-breakpoint="sm" namespace data-id="page_outline" class="col-3 sm--col-0 sm--flex-x-end pos-sticky" style="top: 85px; z-index: 70;">
-                <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
+                <div data-id="backdrop" class="pos-abs d-none" style="width: 100vw; top: 0px; bottom: 0px; right: 0px; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
                 <div data-id="drawer" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
                     </div>
                     <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline col-grows overflow-y-auto list-style-none"></ul>
-                    <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-separate md--d-none" style="bottom: 0px; background-color: white;">
-                        <a href="#" title="Scroll to top"><i class="bi bi-chevron-bar-up"></i></a>
+                    <div class="pos-sticky pd-2 pd-x7 flex-y-center flex-x-end md--d-none" style="bottom: 0px; background-color: white;">
+                        <a href="#" title="Scroll to top" class="radius-full drop-shadow d-inline-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
+                            <i class="bi bi-chevron-bar-up flex-center sm"></i>
+                        </a>
                     </div>
                 </div>
                 <script type="subscript">
@@ -166,7 +168,7 @@
                             </div>
                         </div>
                     </html-import>
-                    <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="pd-top-10 pd-btm-10 pd-x2 pd-lft-0 list-style-none d-none" style="border-top: 1px dashed silver;">
+                    <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="pd-top-10 pd-btm-10 pd-x2 pd-lft-0 index-links list-style-none d-none" style="border-top: 1px dashed silver;">
                         <script type="subscript">
                             if (this.state.subtree) {
                                 $(this).itemize(this.state.subtree.items, {
@@ -189,20 +191,20 @@
                     </div>
                 </div>
                 <footer class="readme-footer pos-sticky offset-btm-0 pd-lft-10 pd-rt-10 pd-x3">
-                    <ul data-id="nav" class="footer-nav pd-10 pd-top-x2 pd-btm-x2 flex-y-center list-style-none" style="border-top: 1px solid silver;">
+                    <div class="d-none sm--d-block txt-align-rt">
+                        <div data-id="page_outline_control" class="mg-10 radius-full drop-shadow d-inline-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
+                            <i class="bi bi-text-indent-right flex-center sm"></i>
+                        </div>
+                        <br />
+                        <a href="#" class="mg-10 radius-full drop-shadow d-inline-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
+                            <i class="bi bi-chevron-bar-up flex-center sm"></i>
+                        </a>
+                    </div>
+                    <ul data-id="nav" class="footer-nav pd-10 pd-top-x2 pd-btm-x2 flex-y-center list-style-none" style="background-color: white; border-top: 1px solid silver;">
                         <li class="col-6 pd-rt-10 flex-x-start"><a href="" data-id="nav_left" class="flex-y-center max-wt-full radius-10 radius-x4" style="color: blue;"><i class="bi bi-chevron-left sm flex-center mg-rt-10"></i> <span data-id="nav_left_text" class="txt-overflow-rt"></span></a></li>
                         <li class="col-6 pd-lft-10 flex-x-end"><a href="" data-id="nav_right" class="flex-y-center max-wt-full radius-10 radius-x4" style="color: blue;"><span data-id="nav_right_text" class="txt-overflow-rt"></span> <i class="bi bi-chevron-right sm flex-center mg-lft-10"></i></a></li>
                     </ul>
                 </footer>
-            </div>
-
-            <div class="d-none sm--d-inline-block" style="position: fixed; bottom: 60px; right: 10px;">
-                <div data-id="page_outline_control" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
-                    <i class="bi bi-diagram-2 flex-center sm"></i>
-                </div>
-                <a href="#"" class="mg-10 radius-full drop-shadow flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
-                    <i class="bi bi-chevron-bar-up flex-center sm"></i>
-                </a>
             </div>
 
         </main>
@@ -338,7 +340,7 @@
     <template name="index_links">
         <li exportgroup="category" namespace>
             <div data-id="legend" class="pd-6 pd-lft-10 pd-rt-10 pd-x3 txt-sm" style="color: gray;"></div>
-            <ul data-id="items" template="page/-/-/docs/@layout/index_links#item" class="pd-lft-0 list-style-none"></ul>
+            <ul data-id="items" template="page/-/-/docs/@layout/index_links#item" class="pd-lft-0 index-links list-style-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).html(this.state.title.toUpperCase());
@@ -346,13 +348,13 @@
                 }
             </script>
         </li>
-        <li exportgroup="item" namespace class="flex-y-start">
-            <span class="d-inline-flex flex-y-center">
-                <i class="bi bi-chevron-right flex-center xs mg-rt-10"></i>
+        <li exportgroup="item" namespace class="index-link flex-y-start pd-4 pd-lft-0">
+            <i class="bi bi-chevron-right flex-center xs mg-rt-10 pd-top-4"></i>
+            <span>
                 <a data-id="link" href=""></a>
                 <span class="mg-lft-10">-</span>
+                <span data-id="desc" class="mg-lft-10"></span>
             </span>
-            <span data-id="desc" class="mg-lft-10"></span>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.link).htmlAsync(this.state.title);

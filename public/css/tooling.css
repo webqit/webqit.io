@@ -25,6 +25,9 @@
 .page-suboutline {
     margin-left: 10px;
 }
+.index-links .index-link:nth-of-type(odd) {
+    background-color: ghostwhite;
+}
 /* ------------------------ */
 
 :is(.project-outline, .page-outline) li .subtree-notch {
@@ -77,11 +80,6 @@
     text-shadow: 0px 0px 1px slateblue;
 }
 
-/* ------------------------ */
-
-.readme-footer {
-    background-color: white;
-}
 
 /* ------------------------ */
 
