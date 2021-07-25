@@ -22,7 +22,7 @@ export default class Documentation {
      */
     constructor(domain) {
         this.domain = domain;
-        this.baseDir = Path.resolve(Url.fileURLToPath(import.meta.url), `../../views/${domain}/.docs`);
+        this.baseDir = Path.resolve(Path.dirname(Url.fileURLToPath(import.meta.url)), `../views/${domain}/.docs`);
     }
 
     /**

@@ -308,6 +308,7 @@ h1 .text-gradient + span {
 }
 
 /* ---------- */
+
 .menu-panel {
     padding-top: 16px;
     padding-bottom: 16px;
@@ -316,14 +317,26 @@ h1 .text-gradient + span {
     margin-top: 26px;
     border-top: 1px dashed gray;
 }
+.menu-panel li.active {
+    background-color: whitesmoke;
+    border-right: 2px solid black;
+}
 .menu-bar + .menu-bar {
     margin-left: 26px;
     border-left: 1px dashed gray;
 }
 .menu-bar li {
-    padding-left: 26px;
+    padding: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
     vertical-align: baseline;
 }
+.menu-bar li.active {
+    border-bottom: 2px solid black;
+}
+
+/* ---------- */
+
 .quickstart .directive-container {
     max-width: 50%;
     border-left: 5px solid black;
@@ -490,6 +503,14 @@ h1 .text-gradient + span {
     }
 }
 /* ---------- */
+.domain-block {
+    background-color: var(--theme-bg);
+    border-radius: 10px;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+.domain-block:last-of-type() {
+}
 #domain--tooling, #route--tooling {
     --theme-bg: #DCEAFF;
     --theme-bg2: #c7deff;
@@ -502,94 +523,30 @@ h1 .text-gradient + span {
     --theme-bg: #EEDDFF;
     --theme-bg2: #e3c7ff;
 }
-#domain--tooling, #domain--cloud, #domain--community {
-    background-color: var(--theme-bg);
-    border-radius: 10px;
-    overflow: hidden;
-}
-:is(#domain--tooling, #domain--cloud, #domain--community) .cta {
-    transition: background-color 600ms;
-}
-:is(#domain--tooling, #domain--cloud, #domain--community) .cta:hover {
-    background-color: var(--theme-bg2);
-}
-.project-category {
-    background-color: var(--theme-bg);
-    background-color: whitesmoke;
-    transition: background-color 600ms;
-    /**
-    border: 1px solid silver;
-    */
-}
-.additional-readme {
-    margin-top: 80px;
-    margin-bottom: 30px;
-    /**
-    background-color: whitesmoke;
-    background-color: var(--theme-bg);
-    */
-    border: 1px solid silver;
-}
-.main-project-readme {
-    margin-top: 0px;
-}
-.markdown-body img {
-    border-radius: 6px;
-}
-/**
-:is(#route--tooling, #route--cloud, #route--community) .project-category:hover {
-}
-*/
-/* ---------- */
-.project-listing {
-    font-family: whitney, sans-serif;
-}
-/*
-#domain--cloud .project-listing {
-    grid-column-gap: 50px;
-}
-*/
-.project-category .project---item {
-    padding: 10px;
-    border-radius: 5px;
-}
-.project-category .project---item:hover {
-    background-color: var(--theme-bg2);
-}
-#domain--cloud .project-item {
+.domain-block .grid-2 .project-item {
     padding: 25px;
     padding-left: 35px;
     padding-right: 35px;
+    /**
     background-color: var(--theme-bg2);
+    */
+    border: 1px dashed gray;
     border-radius: 10px;
+    transition: background-color 600ms;
 }
-.subitem-icon {
-    position: relative;
+.domain-block .grid-2 .project-item:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-color: transparent;
 }
-.subitem-icon::before {
-    z-index: 1;
+.domain-block .cta {
+    transition: background-color 600ms;
 }
-.subitem-icon::after {
-    position: absolute;
-    display: block;
-    content: "";
-    top: 0px;
-    left: -10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    background-color: var(--theme-bg, lavender);
-}
-#domain--tooling .project-item .subitem-icon::after {
+.domain-block .cta:hover {
     background-color: var(--theme-bg2);
 }
-/* ---------- */
-.project-listing {
-    display: grid;
-}
-.project-category .project-listing {
-    grid-row-gap: 40px;
-}
+
+
+
 .grid-2 {
     display: grid;
     grid-gap: 15px;
@@ -618,6 +575,60 @@ h1 .text-gradient + span {
         grid-template-columns: repeat(1, 1fr);
     }
 }
+
+/* ---------- */
+
+.additional-readme {
+    margin-bottom: 30px;
+    /**
+    background-color: whitesmoke;
+    background-color: var(--theme-bg);
+    */
+    border: 1px solid silver;
+}
+.main-project-readme {
+    margin-top: 0px;
+}
+.markdown-body img {
+    border-radius: 6px;
+}
+
+/* ---------- */
+
+.project-category {
+    background-color: var(--theme-bg);
+    background-color: whitesmoke;
+    transition: background-color 600ms;
+    /**
+    border: 1px solid silver;
+    */
+}
+.project-listing {
+    display: grid;
+    font-family: whitney, sans-serif;
+}
+.project-category .project-listing {
+    grid-row-gap: 40px;
+}
+
+.subitem-icon {
+    position: relative;
+}
+.subitem-icon::before {
+    z-index: 1;
+}
+.subitem-icon::after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0px;
+    left: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--theme-bg2, lavender);
+}
+
 
 /*
  * ---------

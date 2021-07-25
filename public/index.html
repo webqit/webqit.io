@@ -62,9 +62,8 @@
 
         <script type="subscript">
             let app = document.state;
-            $(this.namespace.page_domain).class('d-none', !app.page.domain);
-            $(this.namespace.page_domain).attr('href', '/' + app.page.domain);
-            $(this.namespace.page_domain).html(app.page.domain);
+            $(this.namespace.page_superscript).html(app.page.projectTitle || app.page.domain || 'beta');
+            $(this.namespace.page_superscript).attr('href', '/' + [app.page.domain, app.page.projectName].filter(a => a).join('/'));
             $(this.namespace.app_drawer_open).on('click', () => {
                 this.namespace.side_menu.draw(true);
             });
@@ -84,9 +83,9 @@
                 }]
             }, {
                 items: [{
-                    icon: 'house',
-                    title: 'My Qit',
-                    href: '/',
+                    icon: 'dot',
+                    title: '#',
+                    href: '#',
                 }]
             }]);
         </script>
@@ -111,19 +110,21 @@
 
         <!-- HEADER -->
 
-        <header class="page-header pos-sticky offset-top-0 pd-10 pd-x2 h5" style="border-bottom: 1px solid silver; background-color: white; z-index: 100;">
-            <div class="layout-section flex-x-separate b" style="font-family: 'Josefin Sans', sans-serif;">
+        <header class="page-header pos-sticky offset-top-0 pd-lft-10 pd-rt-10 pd-x2 h5" style="border-bottom: 1px solid silver; background-color: white; z-index: 100;">
+            <div class="layout-section flex-y-stretch flex-x-separate b" style="font-family: 'Josefin Sans', sans-serif; height: 75px;">
                 <div class="flex-y-center">
                     <a href="/" class="flex-y-center">
                         <span class="flex-center radius-10" style="width: 54px; height: 47px; border: 1px solid black; font-size: 30px; vertical-align: baseline;">W</span>
                         <span class="pd-lft-10" style="font-size: 24px;">WebQit</span>
                     </a>
-                    <a data-id="page_domain" href="/" class="mg-lft-10 mg-x2 pd-8 txt-sm border-solid radius-10 d-none"></a>
+                    <a data-id="page_superscript" href="/" class="mg-lft-10 mg-x2 pd-8 txt-sm border-solid radius-10"></a>
                 </div>
-                <ul data-id="menu_bar" template="@layout/menu#horz_group" class="menu-bar flex-y-center sm--d-none list-style-none" style="font-size: 18px;"></ul>
-                <span data-id="app_drawer_open" class="cursor-pointer d-none sm--d-flex">
-                    <i class="bi bi-filter-right flex-center md"></i>
-                </span>
+                <ul data-id="menu_bar" template="@layout/menu#horz_group" class="menu-bar flex-y-stretch flex-x-end col-grows sm--d-none list-style-none" style="font-size: 18px;"></ul>
+                <div class="flex-y-center">
+                    <span data-id="app_drawer_open" class="cursor-pointer d-none sm--d-flex">
+                        <i class="bi bi-filter-right flex-center md"></i>
+                    </span>
+                </div>
             </div>
     
             <!-- PAGE_PROGRESS_BAR -->
@@ -143,7 +144,7 @@
         
         <!-- PAGE -->
 
-        <html-import name="index:super(3-10)" class="pd-10">
+        <html-import name="index:search(3-10)" class="pd-10">
             <div class="flex-center" style="min-height: 100vh; background-color: whitesmoke;">
                 <div namespace class="pd-10 pd-x3 txt-align-cntr b anim-fade-in">
                     <div data-id="error"></div>
@@ -191,7 +192,7 @@
 
             <template name="menu">
 
-                <ul exportgroup="horz_group" template="@layout/menu#horz" class="menu-bar flex-y-center sm--d-none list-style-none" style="font-size: 18px;">
+                <ul exportgroup="horz_group" template="@layout/menu#horz" class="menu-bar flex-y-stretch sm--d-none list-style-none" style="font-size: 18px;">
                     <script type="subscript">
                         if (this.state.items) {
                             $(this).itemize(this.state.items);
@@ -199,14 +200,15 @@
                     </script>
                 </ul>
                 
-                <li exportgroup="horz" namespace is="webqit-li-link">
-                    <a data-id="link" href="#"></a>
+                <li exportgroup="horz" namespace is="webqit-li-link" class="flex-y-stretch">
+                    <a data-id="link" href="#" class="flex-y-center"></a>
                     <script type="subscript">
                         if (!this.state.title) return;
                         $(this.namespace.link).attr('href', this.state.href);
                         $(this.namespace.link).html(this.state.title);
                         if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
-                    </script>
+                        $(this).classAsync('active', this.state.activePage);
+                        </script>
                 </li>
 
                 <ul exportgroup="vert_group" template="@layout/menu#vert" class="menu-panel list-style-none">
@@ -228,6 +230,7 @@
                         $(this.namespace.link_text).html(this.state.title);
                         $(this.namespace.icon).class('bi-' + this.state.icon, true);
                         if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
+                        $(this).classAsync('active', this.state.activePage);
                     </script>
                 </li>
 
@@ -339,7 +342,7 @@
 
                 <!-- -->
 
-                <section namespace class="layout-section pos-rel">
+                <section namespace class="layout-section domain-block pos-rel">
                     <div class="box-padded-section pd-btm-0">
                         <div class="flex-x-separate sm--d-block">
                             <div class="section-left col-6 md--col-12">
@@ -371,7 +374,7 @@
                             this.namespace.featured.setState({
                                 items: data.featured,
                                 itemsTemplate: 'item',
-                                gridColumns: data.featured.length < 3 ? 2 : 4,
+                                gridColumns: data.featured.length < 3 ? 2 : 2,
                             });
                         }
                     </script>

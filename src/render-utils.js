@@ -29,22 +29,26 @@ export function createData(data, next_pathname) {
         }
         return breadcrumb.concat(null);
     }, fullNav.items.filter(item => item.name === data.domain)).filter(a => a);
-    const title = breadcrumb.slice().reverse().map(item => !item ? '' : item.title).join(' | ');
     var nav = fullNav.items.filter(n => n.name === data.domain)[0].subtree;
+    var breadcrumbMin = breadcrumb.reduce((build, item, i) => build.concat(i === 0 ? `WebQit ${item.title}` : (i === 1 || i === breadcrumb.length - 1 ? item.title : null)), []).filter(a => a);
+    var projectTitle = breadcrumbMin[1], title = breadcrumbMin.reverse().join(' | ');
     if (next_pathname_split.length) {
         nav = nav.items.filter(n => n.name === next_pathname_split[0])[0].subtree;
     }
-    nav.items.forEach(item => {
-        item.isRoot = true;
-    });
+    if (nav) {
+        nav.items.forEach(item => {
+            item.isRoot = true;
+        });
+    }
     lastFullNav = fullNav;
     lastData = data;
     return {
-        fullNav,
         nav,
+        fullNav,
         breadcrumb,
+        ...data,
+        projectTitle,
         title,
-        ...data
     };
 };
 

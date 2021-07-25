@@ -41,7 +41,7 @@ export default async function(request, recieved, next) {
         data.projectName = pathSplit.shift();
         outline.subtree[data.domain].subtree[data.projectName] = documentation.getProject(data.projectName, true/* withBundles */);
         if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, outline.subtree[data.domain].subtree[data.projectName].bundles.json)) {
-            return;
+            return next();
         }
     } else {
         var projects = documentation.getProjectsList();

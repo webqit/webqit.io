@@ -13,3 +13,11 @@ Play UI maintains a native-centric approach of letting vanilla JavaScript (and E
 + A web-native performance.
 
 We thought to revisit much of the assumptions that brought us here.
+
+Today's demands are simply not met by yesterday’s software architectures.
+
+The web for the rest of us.
+
+By web-native, we mean something more empowering than being just a cousin to a framework! Web-native tooling lets you work ALSO in vanilla JavaScript, not TIE you up to a framework.
+
+Developers are tying their whole world - applications/careers - to a framework, with both immediate and long-term consequences. Web-native is a term for tooling with design and architecture that maintains cousinship to none of a framework but native web platform APIs and paradigms; that hold true universally.

@@ -110,9 +110,9 @@
     
     <div class="pos-rel flex-y-start layout-section" style="border-left: 1px solid silver;  border-right: 1px solid silver;">
         
-        <div is="webqit-app-drawer" drawer-breakpoint="md" namespace data-id="doc_tree" class="col-3 pos-sticky md--col-0" style="top: 85px; z-index: 90;">
+        <div is="webqit-app-drawer" drawer-breakpoint="md" namespace data-id="doc_tree" class="col-3 pos-sticky md--col-0" style="top: 75px; z-index: 90;">
             <div data-id="backdrop" class="pos-abs cover d-none" style="width: 100vw; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
-            <div data-id="drawer" class="d-flex flex-column md--offset-top-60 md--negative-offset md--d-none" style="height: 100vh; height: calc(100vh - 85px); max-width: 70vw; background-color: white;  z-index: 100">
+            <div data-id="drawer" class="d-flex flex-column md--d-none" style="height: 100vh; height: calc(100vh - 75px); max-width: 70vw; background-color: white;  z-index: 100">
                 <div class="col-grows pd-10 overflow-y-auto">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
                         <span class="sm">Pages</span>
@@ -137,9 +137,9 @@
 
         <main class="col-grows md--col-12 flex-y-start flex-wrap">
 
-            <div is="webqit-app-drawer" drawer-rtl drawer-breakpoint="sm" namespace data-id="page_outline" class="col-3 sm--col-0 sm--flex-x-end pos-sticky" style="top: 85px; z-index: 70;">
+            <div is="webqit-app-drawer" drawer-rtl drawer-breakpoint="sm" namespace data-id="page_outline" class="col-3 sm--col-0 sm--flex-x-end pos-sticky" style="top: 75px; z-index: 70;">
                 <div data-id="backdrop" class="pos-abs d-none" style="width: 100vw; top: 0px; bottom: 0px; right: 0px; background-color: rgba(0, 0, 0, 0.2);; z-index: -1"></div>
-                <div data-id="drawer" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 85px); max-width: 50vw;">
+                <div data-id="drawer" class="pos-rel d-flex flex-column col-none pd-10 pd-btm-0 sm--wt-100 sm--wt-x2 sm--pd-10 sm--pd-btm-0 drop-shadow sm--d-none" style="background-color: white; height: 100vh; height: calc(100vh - 75px); max-width: 50vw;">
                     <div class="pd-10 pd-lft-x3 flex-y-center flex-x-separate">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center radius-4 mg-lft-10" style="width: 30px; height: 30px; border: 1px dashed black;"></i>
@@ -289,9 +289,9 @@
                 if (!this.state.title) return;
                 $(this.namespace.link).attrAsync('href', this.state.path);
                 $(this.namespace.link_text).htmlAsync(this.state.title);
-                $(this.namespace.item_bar).classAsync('active', this.state.activePage);
                 if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.path, true);
                 if (this.state.activePage) this.namespace.link.focus();
+                $(this.namespace.item_bar).classAsync('active', this.state.activePage);
                 // Subtree
                 if (!this.state.subtree) return;
                 $(this.namespace.sub_menu).itemize(this.state.subtree.items, {
@@ -326,8 +326,8 @@
                 // Main
                 $(this.namespace.link).attrAsync('href', '#' + this.state.uri);
                 $(this.namespace.link_text).htmlAsync(this.state.title);
-                $(this.namespace.item_bar).classAsync('active', this.state.activePage);
                 if (this.isActivePage) this.isActivePage(document.state.url.hash, '#' + this.state.uri);
+                $(this.namespace.item_bar).classAsync('active', this.state.activePage);
                 // Subtree
                 if (this.state.subtree) {
                     $(this.namespace.sub_menu).classAsync('d-none', false);
