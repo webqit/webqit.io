@@ -17,7 +17,7 @@ export default class List extends _List {
         var entries = Object.keys(outline).map(name => {
             var entry = outline[name];
             if (!(entry.meta || {}).readme) {
-                return;
+                //return;
             }
             var projectProp = prop => entry[prop] || ((entry.meta || {}).readme || {})[prop];
             var title = projectProp('title') || ((projectProp('outline') || []).length && projectProp('outline')[0].level === 1 ? projectProp('outline')[0].title : _toTitle(name));

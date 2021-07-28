@@ -24,13 +24,22 @@
             $(this.namespace.page_outline.namespace.main).itemize(currentPage.outline || {});
             $(this.namespace.index_links).class('d-none', !currentPage.subtree);
             this.namespace.index_links.setState(currentPage);
-                        $(this.namespace.nav).class('d-none', false);
-            $(this.namespace.nav_left).attr('href', currentPage.prev ? currentPage.prev.path : '#');
-            $(this.namespace.nav_left_text).html(currentPage.prev.title || '');
-            $(this.namespace.nav_left).class('disabled', !currentPage.prev);
-            $(this.namespace.nav_right).attr('href', currentPage.next ? currentPage.next.path : '#');
-            $(this.namespace.nav_right_text).html(currentPage.next.title || '');
-            $(this.namespace.nav_right).class('disabled', !currentPage.next);
+            
+            $(this.namespace.nav).class('d-none', false);
+            var navPrevious = currentPage.prev || (currentPage.parent || {}).prev;
+            var navNext = currentPage.next || (currentPage.parent || {}).next;
+
+            $(this.namespace.nav_left).attr('href', navPrevious ? navPrevious.path : '#');
+            $(this.namespace.nav_left_text).html(navPrevious ? navPrevious.title : '');
+            $(this.namespace.nav_left_icon).class('bi-chevron-compact-left', navPrevious === currentPage.prev);
+            $(this.namespace.nav_left_icon).class('bi-chevron-expand', navPrevious !== currentPage.prev);
+            $(this.namespace.nav_left).class('disabled', !navPrevious);
+
+            $(this.namespace.nav_right).attr('href', navNext ? navNext.path : '#');
+            $(this.namespace.nav_right_text).html(navNext ? navNext.title : '');
+            $(this.namespace.nav_right_icon).class('bi-chevron-compact-right', navNext === currentPage.next);
+            $(this.namespace.nav_right_icon).class('bi-chevron-expand', navNext !== currentPage.next);
+            $(this.namespace.nav_right).class('disabled', !navNext);
         }
                 $(this.namespace.doc_tree_drawer_open).on('click', () => {
             this.namespace.doc_tree.toggle();
@@ -186,8 +195,8 @@
                 </div>
                 <footer class="readme-footer pos-sticky offset-btm-0 pd-lft-10 pd-rt-10 pd-x3">
                     <ul data-id="nav" class="footer-nav pd-10 flex-y-center list-style-none" style="height: 75px; background-color: white; border-top: 1px solid silver;">
-                        <li class="col-6 pd-rt-10 flex-x-start"><a href="" data-id="nav_left" class="flex-y-center max-wt-full radius-10 radius-x4"><i class="bi bi-arrow-left sm flex-center mg-rt-10"></i> <span data-id="nav_left_text" class="txt-overflow-rt"></span></a></li>
-                        <li class="col-6 pd-lft-10 flex-x-end"><a href="" data-id="nav_right" class="flex-y-center max-wt-full radius-10 radius-x4"><span data-id="nav_right_text" class="txt-overflow-rt"></span> <i class="bi bi-arrow-right sm flex-center mg-lft-10"></i></a></li>
+                        <li class="col-6 pd-rt-10 flex-x-start"><a href="" data-id="nav_left" class="flex-y-center max-wt-full radius-10 radius-x4"><i data-id="nav_left_icon" class="bi sm flex-center mg-rt-10"></i> <span data-id="nav_left_text" class="txt-overflow-rt"></span></a></li>
+                        <li class="col-6 pd-lft-10 flex-x-end"><a href="" data-id="nav_right" class="flex-y-center max-wt-full radius-10 radius-x4"><span data-id="nav_right_text" class="txt-overflow-rt"></span> <i data-id="nav_right_icon" class="bi sm flex-center mg-lft-10"></i></a></li>
                     </ul>
                 </footer>
             </div>
@@ -196,15 +205,15 @@
 
     </div>
 
-    <div class="pos-sticky ht-0 flex-end" style="bottom: 75px; z-index: 91;">
+    <div class="pos-sticky ht-0 flex-end" style="bottom: 0px; z-index: 91;">
         <div class="col-1 md--col-3 sm--max-wt-80 mg-rt-10 mg-rt-x2 pointer-events-none kids--pointer-events">
-            <div data-id="doc_tree_drawer_open" class="mg-10 radius-full drop-shadow d-none md--d-inline-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
+            <span data-id="doc_tree_drawer_open" class="mg-10 radius-full drop-shadow d-none md--d-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
                 <i class="bi bi-text-indent-left flex-center sm"></i>
-            </div>
-            <br />
-            <a href="#" class="mg-10 radius-full drop-shadow d-inline-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
+            </span>
+            <a href="#" class="mg-10 radius-full drop-shadow d-flex flex-center cursor-pointer" style="width: 50px; height: 50px; background-color: black; color: silver;">
                 <i class="bi bi-chevron-bar-up flex-center sm"></i>
             </a>
+            <span class="pointer-events-none d-block sm--ht-80"></span>
         </div>    
     </div>
 
