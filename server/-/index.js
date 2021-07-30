@@ -94,8 +94,8 @@ const staticPageData = {
     },
     community: {
         title: ['The community for', 'web-native', 'development.'],
-        desc: 'Join the dev community\'s springboard and support system for web-native development!',
-        quickstart: {type: 'code', directive: '#Web-Native, #WICG', cta: {href: '#main', text: 'Explore',}},
+        desc: 'Meet the community-wide initiatives, resources and support system for web-native development!',
+        quickstart: {type: 'code', directive: '#Web-Native, #WICG', cta: {href: '#readme', text: 'Explore',}},
         nav: [{
             href: '#',
             icon: 'flag',

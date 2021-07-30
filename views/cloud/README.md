@@ -1,6 +1,7 @@
-## WebQit Cloud
-Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. 
+## Simplistic. Powerful. Developer-Centric.
 
-> Write more native, universal, and stable code; enjoy a traditional developer experience. [test link](../hello/README.md).
+Come into the simplistic, powerful developer cloud. Save money, increase efficiency, and optimize spend with solutions that take away the process and cut the long story short.
 
-<html-import name="ul" template="page/tooling/@layout/projects-listing"></html-import>
+Ride more on open source with our commitment to open source. WebQit Cloud lets you build on open technologies that you can always bank on.
+
+Ready for a stress-free go-live experience? Watch this space for when we come in beta.

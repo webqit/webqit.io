@@ -61,7 +61,7 @@ export default async (request, recieved, next) => {
         }, {
             name: 'community',
             title: 'Community',
-            desc: 'The dev community\'s springboard and support system for web-native development.',
+            desc: 'The community-wide initiatives, resources and support system for web-native development.',
             nav: [{href: '#domain--community', icon: 'flag',}],
             cta: {href: '/community', text: 'WebQit Community',},
             featured: getFeatured('community'),
