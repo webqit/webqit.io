@@ -1,11 +1,11 @@
 {
   "name": "@webqit/webqit.io",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "The webqit.io website",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "WebQit Tooling",
@@ -16,12 +16,11 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
     "@webqit/backpack": "0.0.3",
-    "@webqit/obs-client-query": "0.0.3",
-    "@webqit/obs-collection": "0.0.9",
+    "@webqit/obsv-collection": "^0.0.8",
     "@webqit/play-icon": "0.0.2",
     "@webqit/play-sequence": "^0.1.7",
-    "@webqit/util": "^0.7.0",
-    "@webqit/webflo": "file:../webflo",
+    "@webqit/pseudo-browser": "^0.3.12",
+    "@webqit/util": "^0.7.1",
     "bootstrap-icons": "^1.1.0"
   }
 }

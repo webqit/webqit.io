@@ -1,0 +1,73 @@
+<div namespace>
+    <script type="subscript">
+        var app = document.state;
+        if (app.page.domain) {
+            $(this).attr('id', 'route--' + app.page.domain);
+            var project = app.page.outline.subtree[app.page.domain].subtree[app.page.projectName];
+            var docsPage = '/' + app.page.domain + '/' + app.page.projectName + '/docs';
+            this.namespace.hero.setState({
+                title: [project.title],
+                desc: project.desc,
+                quickstart: project.quickstart,
+                nav: [{
+                    href: '#',
+                    icon: project.icon,
+                }],
+                play: {
+                    href: '#quickstart',
+                    icon: 'download'
+                }
+            });
+            if (this.namespace.quickstart) {
+                $(this.namespace.quickstart).attr('name', project.quickstart.type || 'link');
+                this.namespace.quickstart.setState(project.quickstart);
+            }
+            this.namespace.highlights.setState({items: project.features || [{
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }, {
+                    icon: 'layers',
+                    title: 'OOHTML',
+                    desc: 'Opensource web tooling - with an obsessive focus on conventional, native paradigms, and less engineering.',
+                    cta: {
+                        href: '/',
+                        text: 'Learn more',
+                    }
+                }],
+                itemsTemplate: 'item', 
+                gridColumns: 4,
+            });
+        }
+    </script>
+
+    <html-import template="@layout/hero" data-id="hero" id="hero"></html-import>
+
+    <html-import data-id="highlights" name="container" template="@layout/project-listing" class="horz-padded-layout-section pd-top-10 pd-btm-10 pd-x5" style="border-top: 1px solid silver;"></html-import>
+
+    <section class="box-padded-layout-section pd-btm-10 pd-btm-x2 additional-readme main-project-readme markdown-body">
+        <h2 id="readme" class="hero-text">ReadMe</h2>
+        <html-import name="readme"></html-import>
+    </section>
+
+</div>

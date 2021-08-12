@@ -3,7 +3,7 @@
  * @imports
  */
 import '@webqit/play-sequence/src/browser-entry.js';
-import List from '../src/List.js';
+import '../src/wc.js';
 
 /**
  * @var Object
@@ -39,12 +39,5 @@ export default async (request, recieved, next) => {
  * @return window
  */
 export async function render(request, data, next) {
-    if (!next.pathname) {
-        if (!data.fromCache) {
-            data.sections.forEach(s => {
-                s.featured = List.create(s.featured.map((item, i) => ({active: i === 0, overflowCollapsed: false, ...item})));
-            });
-        }
-    }
     return next(data);
 }

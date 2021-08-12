@@ -1,6 +1,7 @@
-# WebQit Tooling
-Explore an ecosystem of web-native tooling and other libraries that fascilitate web-native development. 
+## Open Source. Web-Native. Futuristic.
 
-> Write more native, universal, and stable code; enjoy a traditional developer experience.
+Taste the future today from an ecosystem of open source tooling that explores the [web-native](/community#web-native---a-community-wide-realization) approach to engineering modern web applications. It comes bringing all of the goodness of the native web platform and the traditional paradigms that have historically been traded.
 
-<html-import name="ul" template="page/tooling/#layout/projects-listing"></html-import>
+We're iterating really fast - fast going from experimental to stable - on all the new possibilities we are exploring around conventional web languages and APIs, and the traditional web. 
+
+Contributions are welcome on each project! Help report typos and bugs via github issues, or submit a fix. Contributions are taken promptly and are well-acknowledged!

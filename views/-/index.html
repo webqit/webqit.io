@@ -1,0 +1,26 @@
+<div namespace>
+
+    <script type="subscript">
+        var app = document.state;
+        if (app.page.domain) {
+            $(this).attr('id', 'route--' + app.page.domain);
+            this.namespace.hero.setState(app.page.hero);
+            $(this.namespace.main).class('d-none', !app.page.projects.length);
+            this.namespace.main.setState({
+                items: app.page.projects, 
+                itemsTemplate: 'category', 
+                gridColumns: 2,
+            });
+        }
+    </script>
+
+    <html-import data-id="hero" id="hero" template="@layout/hero"></html-import>
+    <html-import data-id="showcase" id="showcase" name="container" template="@layout/showcase"></html-import>
+    <html-import data-id="main" id="main" name="container" template="@layout/project-listing" class="grid-2 layout-section" style="margin-bottom: 80px;"></html-import>
+    
+    <section class="box-padded-layout-section additional-readme markdown-body">
+        <h2 id="readme" class="hero-text">ReadMe</h2>
+        <html-import name="readme"></html-import>
+    </section>
+    
+</div>

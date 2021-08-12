@@ -1,0 +1,50 @@
+<html>
+
+    <head>
+        <title>Tooling In OOHTML</title>
+        <meta name="oohtml" content="attr.id=data-id" />
+        
+        <script src="https://unpkg.com/@webqit/playui-js@0.3.13/dist/main.js"></script>
+        <script src="https://unpkg.com/@webqit/oohtml@1.8.13/dist/main.js"></script>
+    </head>
+            
+    <body>
+
+        <div id="alert" namespace>
+            <div data-id="message"></div>
+            <script type="subscript">
+                // The .htmlAsync() method is asynchronous
+                if (!this.state.message) return;
+                $(this.namespace.message).htmlAsync(this.state.message).then(() => {
+                    // Do something sync
+                });
+            </script>
+        </div>
+
+        <script>
+            // Make PlayUI available globally
+            window.$ = window.WebQit.$;
+
+            $(document.body).class({
+                one: true,
+                two: true,
+                three: true,
+            });
+            // The alert
+            setTimeout(() => {
+                $(document.body).class({
+                    one: true,
+                    two: false,
+                });
+            }, 3000);
+            // The alert
+            setTimeout(() => {
+                document.querySelector('#alert').setState({
+                    message: 'This task is now complete!',
+                });
+            }, 3000);
+        </script>
+
+    </body>
+    
+</html>

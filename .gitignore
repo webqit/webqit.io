@@ -1,6 +1,6 @@
-.*
-!/.gitignore
-!.webflo
-!.oohtml-cli
-!.docs
 node_modules
+.*
+!.webqit/**/**.example.json
+!.env.example
+!.docs
+!.gitignore

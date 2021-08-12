@@ -2,59 +2,58 @@
 /**
  * @imports
  */
-import _isArray from '@webqit/util/js/isArray.js';
 import _isEmpty from '@webqit/util/js/isEmpty.js';
 import _toTitle from '@webqit/util/str/toTitle.js';
-import { List as _List, Observer } from '@webqit/obs-collection';
+import { List as _List, Observer } from '@webqit/obsv-collection';
 
 export default class List extends _List {
 
-    static create(entries, subtree = null) {
-        return new this(entries.map(entry => {
-            if (subtree && _isArray(entry[subtree])) {
-                entry[subtree] = this.create(entry[subtree], subtree);
-            }
-            return entry;
-        }), {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: 1}});
+    static createTree(entries, subtree = null, multiplicity = 1000) {
+        return super.createTree(entries, subtree, {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: multiplicity}});
     }
 
-    static fromOutline(outline, detailed = false, parent = null) {
+    static fromOutline(outline, detailed = false, parent = null, i = 0) {
 
         var entries = Object.keys(outline).map(name => {
             var entry = outline[name];
-            var readme = (entry.meta || {}).readme || {};
-            var title = readme.title || (readme.outline || []).length && readme.outline[0].level === 1 ? readme.outline[0].title : _toTitle(name);
+            if (!(entry.meta || {}).readme) {
+                //return;
+            }
+            var projectProp = prop => entry[prop] || ((entry.meta || {}).readme || {})[prop];
+            var title = projectProp('title') || ((projectProp('outline') || []).length && projectProp('outline')[0].level === 1 ? projectProp('outline')[0].title : _toTitle(name));
+            if (i === 2) {
+                title = 'DOCS';
+            }
             var _entry = {
                 title,
                 name,
                 path: (parent ? parent.path : '') + '/' + name,
                 active: false,
-                desc: readme.desc,
-                _before: readme._before,
-                _after: readme._after,
+                desc: projectProp('desc'),
+                tags: projectProp('tags'),
+                _index: projectProp('_index'),
+                _subtreeType: projectProp('_subtreeType'),
             };
             // Add parent
             if (detailed) {
-                Object.defineProperty(_entry, 'outline', {value: readme.outline || [], enumerable: false});
+                Object.defineProperty(_entry, 'outline', {value: projectProp('outline') || [], enumerable: false});
                 if (parent) {
                     Object.defineProperty(_entry, 'parent', {value: parent, enumerable: false});
                 }
             }
             // Add subtree
             if (!_isEmpty(entry.subtree)) {
-                _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry);
+                _entry.subtree = this.fromOutline(entry.subtree, detailed, _entry, i + 1);
             }        
             return _entry;
-        });
+        }).filter(e => e);
 
         entries.sort((a, b) => {
-            if (a._before === b.name || b._after === a.name) {
-                return -1;
-            }
-            if (a._after === b.name || b._before === a.name) {
-                return 1;
-            }
-            return 0;
+            return a._index === 'first' || b._index === 'last' ? -1 : (
+                b._index === 'first' || a._index === 'last' ? 1 : (
+                    parseFloat(a._index || 1000) < parseFloat(b._index || 1000) || a.title < b.title ? -1 : 1
+                )
+            );
         });
 
         if (detailed) {
@@ -71,7 +70,7 @@ export default class List extends _List {
             }, null);
         }
 
-        return this.create(entries);
+        return this.createTree(entries);
     }
 
     advance(dir, loop = false) {

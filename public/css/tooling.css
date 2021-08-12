@@ -17,56 +17,90 @@
  * sm: 768px
  */
 
-.project-suboutline {
-    border-left: 1px dashed silver;
-}
-.project-outline li:hover > a > span,
-.project-outline li > a.active > span {
-    border-bottom: 1px dashed currentColor;
-    border-spacing: 1em;
-}
-.project-outline li a.active {
-    color: mediumslateblue;
-}
-
-/* ------------------------ */
-
+.project-outline,
 .page-outline {
+    color: black;
 }
+.project-suboutline,
 .page-suboutline {
-    border-left: 1px dashed silver;
+    margin-left: 10px;
 }
-.page-outline li:hover > a,
-.page-outline a:target {
-    border-bottom: 1px dashed currentColor;
-    border-spacing: 1em;
+.index-links .index-link:nth-of-type(odd) {
+    background-color: ghostwhite;
 }
-.page-outline a:target {
-    color: blue;
+/* ------------------------ */
+
+:is(.project-outline, .page-outline) li .subtree-notch {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+}
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch,
+:is(.project-outline, .page-outline) li > .item-bar > a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+.project-outline li a .bi {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* ------------------------ */
 
-.readme-footer {
+/*
+:is(.project-outline, .page-outline) li > .item-bar > a > span {
+    border-bottom: 1px dashed transparent;
+}
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch:hover,
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch {
+    background-color: black;
+}
+:is(.project-outline, .page-outline) li > .item-bar > a:hover > span,
+:is(.project-outline, .page-outline) li > .item-bar.active > a > span {
+    color: mediumslateblue;
+    border-bottom-color: currentColor;
+}
+*/
+:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch.cursor-pointer:hover,
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch.cursor-pointer {
+    text-shadow: 0px 0px 10px black;
+}
+:is(.project-outline, .page-outline) li > .item-bar {
+    border-left: 2px solid gainsboro;
+}
+:is(.project-outline, .page-outline) li > .item-bar:hover {
+    border-left: 2px solid silver;
+    background-color: whitesmoke;
+}
+:is(.project-outline, .page-outline) li > .item-bar.active {
+    border-left: 2px solid slateblue !important;
+}
+:is(.project-outline, .page-outline) li > .item-bar.active a {
+    color: slateblue !important;
+    text-shadow: 0px 0px 1px slateblue;
+}
+
+
+/* ------------------------ */
+
+.markdown-body:not(.additional-readme) {
     padding: 10px;
-    background-color: white;
-}
-.footer-nav {
-    padding:0px;
-    list-style: none;
-}
-
-/* ------------------------ */
-
-.readme-container {
-    padding: 30px;
-    padding-left: 75px;
-    padding-right: 75px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 @media (max-width: 992px) {
-    .readme-container {
-        padding: 20px;
-        padding-left: 50px;
-        padding-right: 50px;
+    .markdown-body:not(.additional-readme) {
+        padding: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
+/**
+.markdown-body .highlight pre,
+.markdown-body pre {
+    background-color: lavender !important;
+}
+.markdown-body blockquote {
+    border-left-color: silver !important;
+}
+*/
