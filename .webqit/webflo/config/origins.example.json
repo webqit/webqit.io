@@ -8,7 +8,7 @@
             "deploy_path": ".",
             "autodeploy": true,
             "autodeploy_secret": "",
-            "ondeploy": "npm i && playui build",
+            "ondeploy": "npm i && webflo build && playui bundle",
             "ondeploy_autoexit": true
         }, 
         {
