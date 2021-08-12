@@ -24,7 +24,7 @@
         {
             "src": "/img/logo/logo.670x670.png",
             "type": "image/png",
-            "sizes": "670x670"
+            "sizes": "670x670" 
         }
     ],
     "display": "standalone",
