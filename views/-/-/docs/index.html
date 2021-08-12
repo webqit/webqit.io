@@ -11,7 +11,7 @@
             $(this.namespace.doc_tree.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
         if (app.page.nav) {
-            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/next/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
+            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/dev/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
             $(this.namespace.doc_tree.namespace.main).itemize(app.page.nav.items);
         }
         // ----------
