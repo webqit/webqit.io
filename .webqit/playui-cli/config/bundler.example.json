@@ -1,0 +1,28 @@
+{
+    "ENTRY_DIR": "./views",
+    "OUTPUT_FILE": "./public/bundle.html",
+    "ASSETS_PUBLIC_BASE": "/",
+    "MAX_DATA_URL_SIZE": 1024,
+    "LOADERS": [
+        {
+            "name": "default:md-loader",
+            "argument/flag": true,
+            "args": {
+                "base_url": "/tooling/",
+                "flavor": "github"
+            }
+        }
+    ],
+    "IGNORE_FOLDERS_BY_PREFIX": [
+        "."
+    ],
+    "CREATE_OUTLINE_FILE": "create",
+    "TEMPLATE_EXT": "",
+    "MODULE_ID_ATTR": "name",
+    "EXPORT_MODE": "attribute",
+    "EXPORT_GROUP_ATTR": "exportgroup",
+    "EXPORT_ELEMENT": "html-export",
+    "EXPORT_ID_ATTR": "name",
+    "loader": true,
+    "__advanced": false
+}
