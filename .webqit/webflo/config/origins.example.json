@@ -1,0 +1,35 @@
+{
+    "entries": [
+        {
+            "host": "github",
+            "repo": "webqit/webqit.io",
+            "branch": "master",
+            "tag": "root",
+            "deploy_path": ".",
+            "autodeploy": true,
+            "autodeploy_secret": "",
+            "ondeploy": ""
+        }, 
+        {
+            "host": "github",
+            "repo": "webqit/webqit-tooling.docs",
+            "branch": "master",
+            "tag": "docs",
+            "deploy_path": "./views/tooling/.docs",
+            "autodeploy": true,
+            "autodeploy_secret": "",
+            "ondeploy": "playui bundle"
+        },
+        {
+            "host": "github",
+            "repo": "webqit/webqit-cloud.docs",
+            "branch": "master",
+            "tag": "docs",
+            "deploy_path": "./views/cloud/.docs",
+            "autodeploy": true,
+            "autodeploy_secret": "",
+            "ondeploy": "playui bundle"
+        }
+    ],
+    "repository": true
+}
