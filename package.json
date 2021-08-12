@@ -16,7 +16,7 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
     "@webqit/backpack": "0.0.3",
-    "@webqit/obsv-collection": "^0.0.8",
+    "@webqit/obsv-collection": "^0.0.9",
     "@webqit/play-icon": "0.0.2",
     "@webqit/play-sequence": "^0.1.7",
     "@webqit/pseudo-browser": "^0.3.12",
