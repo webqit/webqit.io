@@ -8,7 +8,8 @@
             "deploy_path": ".",
             "autodeploy": true,
             "autodeploy_secret": "",
-            "ondeploy": ""
+            "ondeploy": "npm i && playui build",
+            "ondeploy_autoexit": true
         }, 
         {
             "host": "github",
@@ -18,7 +19,8 @@
             "deploy_path": "./views/tooling/.docs",
             "autodeploy": true,
             "autodeploy_secret": "",
-            "ondeploy": "playui bundle"
+            "ondeploy": "playui bundle",
+            "ondeploy_autoexit": true
         },
         {
             "host": "github",
@@ -28,7 +30,8 @@
             "deploy_path": "./views/cloud/.docs",
             "autodeploy": true,
             "autodeploy_secret": "",
-            "ondeploy": "playui bundle"
+            "ondeploy": "playui bundle",
+            "ondeploy_autoexit": true
         }
     ],
     "repository": true
