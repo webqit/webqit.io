@@ -1,6 +1,6 @@
 {
     "ENTRY_DIR": "./views",
-    "OUTPUT_FILE": "./public/bundle.html",
+    "OUTPUT_FILE": "../public/bundle.html",
     "ASSETS_PUBLIC_BASE": "/",
     "MAX_DATA_URL_SIZE": 1024,
     "LOADERS": [

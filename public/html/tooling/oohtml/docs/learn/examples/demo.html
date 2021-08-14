@@ -1,0 +1,21 @@
+<html>
+
+    <head>
+
+        <title>An SPA with remote data In OOHTML</title>
+        <meta name="oohtml" content="element.import=html-import" />
+        <script src="https://unpkg.com/@webqit/oohtml@1.8.19/dist/main.js"></script>
+
+        <script>
+            const { Observer } = window.WebQit;
+            Observer.observe(document.state, e => {
+                alert();
+            });
+            Observer.set(document.state, 'title', 'dddd');
+        </script>
+    </head>
+
+    <body template="pages/tooling">
+    </body>
+
+</html>
