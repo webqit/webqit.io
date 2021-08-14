@@ -1,0 +1,83 @@
+<html>
+
+    <head>
+
+        <title>An SPA with remote data In OOHTML</title>
+        <meta name="oohtml" content="element.import=html-import" />
+        
+        <script src="https://unpkg.com/@webqit/oohtml@1.8.19/dist/main.js"></script>
+
+        <template name="pages">
+
+            <!-- "home" page module -->
+            <template name="tooling">
+                <h1 exportgroup="headline">
+                    Welcome to Tooling Page!
+                </h1>
+                <p exportgroup="content">
+                    <a href="#/cloud">Go to Cloud page</a>
+                </p>
+            </template>
+
+            <!-- "about" page module -->
+            <template name="cloud">
+                <h1 exportgroup="headline">
+                    Welcome to Cloud Page!
+                </h1>
+                <p exportgroup="content">
+                    <a href="#/tooling">Back to Tooling page</a>
+                </p>
+            </template>
+
+        </template>
+        <script>
+            const { Observer } = window.WebQit;
+            Observer.observe(document.state, e => {
+                alert();
+            });
+            Observer.set(document.state, 'title', 'dddd');
+        </script>
+    </head>
+
+    <body template="pages/tooling">
+
+        <header></header>
+
+        <main>
+            <div>
+                <html-import name="headline">404</html-import>
+            </div>
+            <div>
+                <html-import name="content">Page not Found!</html-import>
+            </div>
+        </main>
+ 
+        <footer></footer>
+
+        <!--
+        <script>
+            window.addEventListener('popstate', e => {
+                let path = document.location.hash.substr(1);
+                document.body.setAttribute('template', 'pages' + path);
+            });
+        </script>
+        -->
+
+        <script>
+
+            const apiUrls = {
+                '/tooling': 'http://localhost:3000/tooling',
+                '/cloud': 'http://localhost:3000/cloud',
+            };
+
+            window.addEventListener('popstate', e => {
+                let path = document.location.hash.substr(1);
+                fetch(apiUrls[path], { headers: { accept: 'application/json' } }).then(response => response.json()).then(response => {
+                    document.state.title = response.title;
+                    document.body.setAttribute('template', 'pages' + path);
+                });
+            });
+        </script>
+    </body>
+
+</html>
