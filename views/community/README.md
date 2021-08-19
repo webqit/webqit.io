@@ -6,8 +6,8 @@
 
 We're beginning this initiative by giving mentions to the *actionable discussions from around the web* that are painting this future of the web. It'll be nice to see the whole picture from one place.
 
-+ Propose new mentions by editing this page. Simply [create a pull request](https://github.com/webqit/webqit.io/edit/next/views/community/README.md).
-+ To have your logo on this page, please [create a pull request](https://github.com/webqit/webqit.io/edit/next/views/community/LOGOS.md).
++ Propose new mentions by editing this page. Simply [create a pull request](https://github.com/webqit/webqit.io/edit/dev/views/community/README.md).
++ To have your logo on this page, please [create a pull request](https://github.com/webqit/webqit.io/edit/dev/views/community/LOGOS.md).
 
 ## W3C Community Groups
 
