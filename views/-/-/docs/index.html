@@ -12,13 +12,13 @@
         }
         if (app.page.nav) {
             $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.domain + '.docs/edit/dev/' + document.state.url.pathname.replace('/' + app.page.domain + '/', '') + '/README.md');
-            $(this.namespace.doc_tree.namespace.main).itemize(app.page.nav.items);
+            $(this.namespace.doc_tree.namespace.main).list(app.page.nav.items);
         }
         // ----------
         if (app.page.breadcrumb) {
             this.namespace.breadcrumb.setState({items: app.page.breadcrumb});
             var currentPage = app.page.breadcrumb[app.page.breadcrumb.length - 1];
-            $(this.namespace.page_outline.namespace.main).itemize(currentPage.outline || {});
+            $(this.namespace.page_outline.namespace.main).list(currentPage.outline || {});
             $(this.namespace.index_links).class('d-none', !currentPage.subtree);
             this.namespace.index_links.setState(currentPage);
             // ----------
@@ -87,11 +87,11 @@
                         $(subtreeNotch).classAsync('d-none', false);
                         // Prevent flickering before overflow reflow
                         $(main.parentNode).classAsync('reflowing', true);
-                        $(main).itemize(this.state.items, {
+                        $(main).list(this.state.items, {
                             renderCallback: (e, el, d, k) => {
                                 d.overflowCollapsed = false;
                                 if (k === this.state.items.length - 1) {
-                                    $(subtreeList).itemize(d.subtree.items);
+                                    $(subtreeList).list(d.subtree.items);
                                     main.append(subtreeNotch);
                                     $(subtreeNotch).classAsync('disabled', !d.subtree);
                                 }
@@ -106,7 +106,7 @@
                             },
                             collapsionPoint: 'start',
                         });
-                        $(overflowList).itemize(this.state.items);
+                        $(overflowList).list(this.state.items);
                     }
                 </script>
             </div>
@@ -175,7 +175,7 @@
                     <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="pd-top-10 pd-btm-10 pd-x2 pd-lft-0 index-links list-style-none d-none" style="border-top: 1px dashed silver;">
                         <script type="subscript">
                             if (this.state.subtree) {
-                                $(this).itemize(this.state.subtree.items, {
+                                $(this).list(this.state.subtree.items, {
                                     itemExportId: this.state._subtreeType,
                                 });
                             }
@@ -271,7 +271,7 @@
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());
-                    $(this.namespace.items).itemize(this.state.subtree.items);
+                    $(this.namespace.items).list(this.state.subtree.items);
                 }
             </script>
         </li>
@@ -301,7 +301,7 @@
                 $(this.namespace.item_bar).classAsync('active', this.state.activePage);
                 // Subtree
                 if (!this.state.subtree) return;
-                $(this.namespace.sub_menu).itemize(this.state.subtree.items, {
+                $(this.namespace.sub_menu).list(this.state.subtree.items, {
                     itemExportId: this.state._subtreeType
                 });
                 $(this.namespace.subtree_notch).classAsync('cursor-pointer', true);
@@ -338,7 +338,7 @@
                 // Subtree
                 if (this.state.subtree) {
                     $(this.namespace.sub_menu).classAsync('d-none', false);
-                    $(this.namespace.sub_menu).itemize(this.state.subtree);
+                    $(this.namespace.sub_menu).list(this.state.subtree);
                 }
             </script>
         </li>
@@ -351,7 +351,7 @@
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).html(this.state.title.toUpperCase());
-                    $(this.namespace.items).itemize(this.state.subtree.items);
+                    $(this.namespace.items).list(this.state.subtree.items);
                 }
             </script>
         </li>
