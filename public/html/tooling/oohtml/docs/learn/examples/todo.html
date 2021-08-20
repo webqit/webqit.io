@@ -59,7 +59,7 @@
 
             <script type="subscript">
                 this.namespace.title.innerHTML = title;
-                $(this.namespace.items).itemize(document.state.todo);
+                $(this.namespace.items).list(document.state.todo);
                 this.namespace.adder.addEventListener('click', () => {
                     Observer.proxy(document.state.todo).push({desc: prompt('Task description', 'Task-' + (document.state.todo.length + 1)), active: true});
                 });

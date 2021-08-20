@@ -33,7 +33,7 @@
 
         <!-- JS -->
         <script src="/bundle.js"></script>
-        <script crossorigin src="https://unpkg.com/@webqit/playui-js/dist/main.js" ssr></script>
+        <script crossorigin src="https://unpkg.com/@webqit/playui-js@0.3.15/dist/main.js" ssr></script>
         <script>
             $ = WebQit.$;
             currentYear = (new Date).getFullYear();
@@ -67,7 +67,7 @@
             $(this.namespace.app_drawer_open).on('click', () => {
                 this.namespace.side_menu.draw(true);
             });
-            $([this.namespace.side_menu.namespace.main, this.namespace.menu_bar]).itemize([{
+            $([this.namespace.side_menu.namespace.main, this.namespace.menu_bar]).list([{
                 items: [{
                     icon: 'braces',
                     title: 'Tooling',
@@ -195,7 +195,7 @@
                 <ul exportgroup="horz_group" template="@layout/menu#horz" class="menu-bar flex-y-stretch sm--d-none list-style-none" style="font-size: 18px;">
                     <script type="subscript">
                         if (this.state.items) {
-                            $(this).itemize(this.state.items);
+                            $(this).list(this.state.items);
                         }
                     </script>
                 </ul>
@@ -214,7 +214,7 @@
                 <ul exportgroup="vert_group" template="@layout/menu#vert" class="menu-panel list-style-none">
                     <script type="subscript">
                         if (this.state.items) {
-                            $(this).itemize(this.state.items);
+                            $(this).list(this.state.items);
                         }
                     </script>
                 </ul>
@@ -273,7 +273,7 @@
                             $(this.namespace.desc).html(heroData.desc);
                             $(this.namespace.quickstart).attr('name', heroData.quickstart.type || 'link');
                             this.namespace.quickstart.setState(heroData.quickstart);
-                            $(this.namespace.nav).itemize(heroData.nav);
+                            $(this.namespace.nav).list(heroData.nav);
                             if (heroData.play) {
                                 $(this.namespace.nav_play_separator).class('d-none', false);
                                 $(this.namespace.play_href).class('d-none', false);
@@ -364,7 +364,7 @@
                             $(this.namespace.desc).html(data.desc);
                             $(this.namespace.cta_href).attr('href', data.cta.href);
                             $(this.namespace.cta_text).text(data.cta.text);
-                            $(this.namespace.nav).itemize(data.nav);
+                            $(this.namespace.nav).list(data.nav);
                             this.namespace.featured.setState({
                                 items: data.featured,
                                 itemsTemplate: 'item',
@@ -386,7 +386,7 @@
                     <script type="subscript">
                         if (this.state.items) {
                             $(this).class('grid-' + this.state.gridColumns, true);
-                            $(this).itemize(this.state.items, {
+                            $(this).list(this.state.items, {
                                 itemExportId: this.state.itemsTemplate,
                             });
                         }
@@ -403,7 +403,7 @@
                         if (this.state.title) {
                             $(this.namespace.title).html(this.state.title);
                             $(this.namespace.desc).html(this.state.desc);
-                            $(this.namespace.items).itemize(this.state.items);
+                            $(this.namespace.items).list(this.state.items);
                         }
                     </script>
                 </li>
