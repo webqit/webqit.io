@@ -30,8 +30,8 @@ export default async (request, recieved, next) => {
         title: 'The WebQit Project',
         hero: {
             title: ['The tooling, cloud,', 'and community for', 'web-native', 'development.'],
-            desc: 'Introducing the path of least engineering with just conventional web languages and APIs!',
-            quickstart: {type: 'code', directive: '#Tooling, #Cloud, #Community', cta: {href: '#domain--tooling', text: 'Explore',}},
+            desc: 'Bank your life\'s work on web standards and ride less on abstractions! We make it easier!',
+            quickstart: {type: 'code', directive: '#WebNative, #OpenSource, #DevTools', cta: {href: '#domain--tooling', text: 'Explore',}},
             nav: [{
                 href: '#domain--tooling',
                 icon: 'braces',
@@ -47,7 +47,7 @@ export default async (request, recieved, next) => {
         sections: [{
             name: 'tooling',
             title: 'Tooling',
-            desc: 'Open source tooling that meets the challenge with just conventional web languages and APIs!',
+            desc: 'Open source tooling that meets the challenge with native APIs and open web standards!',
             nav: [{href: '#domain--tooling', icon: 'braces',}],
             cta: {href: '/tooling', text: 'WebQit Tooling',},
             featured: getFeatured('tooling'),
@@ -61,7 +61,7 @@ export default async (request, recieved, next) => {
         }, {
             name: 'community',
             title: 'Community',
-            desc: 'The community-wide initiatives, resources and support system for web-native development.',
+            desc: 'Community-wide initiatives, resources and support system for web-native development.',
             nav: [{href: '#domain--community', icon: 'flag',}],
             cta: {href: '/community', text: 'WebQit Community',},
             featured: getFeatured('community'),
