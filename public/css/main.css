@@ -420,7 +420,7 @@ h1 .text-gradient + span {
     width: 65px;
     content: "";
     display: inline-block;
-    border-top: 3px solid black;
+    border-top: 3px solid thistle;
 }
 .hero-nav-item a {
     width: 60px;
