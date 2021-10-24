@@ -355,7 +355,7 @@ h1 .text-gradient + span {
     font-size: larger;
 }
 .quickstart .cta:active {
-    background-color: lightskyblue;
+    background-color: lavender;
 }
 .additional-readme .quickstart {
     position: relative;
