@@ -538,18 +538,19 @@ h1 .text-gradient + span {
     padding: 25px;
     padding-left: 35px;
     padding-right: 35px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 10px -5px black;
-    transition: background-color 600ms;
+    transition: all 600ms;
 }
 .domain-block .grid-2 .project-item:hover {
     background-color: var(--theme-bg2);
-    border-color: transparent;
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.8);
 }
 .domain-block .cta {
     transition: background-color 600ms;
 }
 .domain-block .cta:hover {
+    background-color: white;
+}
+.domain-block .project-item .cta:hover {
     background-color: white;
 }
 
