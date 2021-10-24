@@ -363,6 +363,9 @@ h1 .text-gradient + span {
     max-width: 50%;
 }
 @media (max-width: 640px) {
+    .quickstart .directive-container {
+	border-left-width: 1px;
+    }
     .additional-readme .quickstart {
         max-width: none;
     }
