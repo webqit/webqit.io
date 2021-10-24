@@ -299,7 +299,7 @@ h1 .text-gradient {
     border-bottom: 4px solid mediumslateblue;
 }
 h1 .text-gradient + span {
-    line-height: 200%;
+    line-height: 230%;
     border-bottom: 3px solid gray;
     padding-bottom: 10px;
 }
