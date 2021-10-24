@@ -74,7 +74,7 @@ export async function render(request, data, next) {
 const staticPageData = {
     tooling: {
         title: ['The tooling for', 'web-native', 'development.'],
-        desc: 'Leverage open source tooling that meets the challenge with just conventional web languages and APIs!',
+        desc: 'Leverage open source tooling that meets the challenge with native APIs and open web standards!',
         quickstart: {type: 'code', directive: '#HTML, #CSS, #JS, #SQL', cta: {href: '#main', text: 'Explore',}},
         nav: [{
             href: '#',
@@ -94,7 +94,7 @@ const staticPageData = {
     },
     community: {
         title: ['The community for', 'web-native', 'development.'],
-        desc: 'Meet the community-wide initiatives, resources and support system for web-native development!',
+        desc: 'Meet community-wide initiatives, resources and support system for web-native development!',
         quickstart: {type: 'code', directive: '#Web-Native, #WICG', cta: {href: '#readme', text: 'Explore',}},
         nav: [{
             href: '#',
