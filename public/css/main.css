@@ -305,6 +305,9 @@ h1 .text-gradient + span {
     padding-bottom: 10px;
 }
 @media (max-width: 640px) {
+    h1 span:only-child {
+        white-space: normal;
+    }
     h1 .text-gradient {
         font-size: 64px;
     }
