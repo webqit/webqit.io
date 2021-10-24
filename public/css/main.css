@@ -352,6 +352,10 @@ h1 .text-gradient + span {
 .quickstart .cta {
     color: blueviolet;
     text-decoration: none !important;
+    font-size: larger;
+}
+.quickstart .cta:active {
+    background-color: lightskyblue;
 }
 .additional-readme .quickstart {
     position: relative;
@@ -544,7 +548,7 @@ h1 .text-gradient + span {
     transition: background-color 600ms;
 }
 .domain-block .cta:hover {
-    background-color: var(--theme-bg2);
+    background-color: white;
 }
 .domain-block .project-item .cta:hover {
     background-color: white;
