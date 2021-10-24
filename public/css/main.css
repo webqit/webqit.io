@@ -548,7 +548,7 @@ h1 .text-gradient + span {
     transition: background-color 600ms;
 }
 .domain-block .cta:hover {
-    background-color: white;
+    background-color: var(--theme-bg2);
 }
 .domain-block .project-item .cta:hover {
     background-color: white;
