@@ -367,6 +367,9 @@ h1 .text-gradient + span {
 	max-width: 80%;
 	border-left-width: 0px;
     }
+    .quickstart .cta {
+        border: 1px dashed hotpink;
+    }
     .additional-readme .quickstart {
         max-width: none;
     }
