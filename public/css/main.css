@@ -59,7 +59,7 @@ html {
     font-family: 'Inter', sans-serif;
 }
 [id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 120px;
 }
 .hero-text,
 .hero-font {
@@ -353,7 +353,7 @@ h1 .text-gradient + span {
     text-decoration: none !important;
     font-size: larger;
 }
-.quickstart .cta:active {
+.quickstart .cta:is(:active, :focus) {
     background-color: lavender;
 }
 .additional-readme .quickstart {
@@ -447,6 +447,9 @@ h1 .text-gradient + span {
     border-left-style: dashed;
 }
 @media (max-width: 640px) {
+    #hero {
+        text-align: center;
+    }
     .hero-nav.with-separator .hero-nav-item + .hero-nav-item::before,
     .hero-nav-play-separator::before {
         width: 20px;
