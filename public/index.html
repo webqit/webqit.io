@@ -63,7 +63,8 @@
 
         <script type="subscript">
             let app = document.state;
-            $(this.namespace.page_superscript).html((app.page.projectTitle || '').replace('(Coming Soon)', '') || (app.page.domain || '').toUpperCase() || 'BETA');
+            let sup = app.page.projectTitle ? app.page.projectTitle.replace('(Coming Soon)', '') : (app.page.domain ? app.page.domain.toUpperCase() : 'BETA');
+            $(this.namespace.page_superscript).html(sup);
             $(this.namespace.page_superscript).attr('href', '/' + [app.page.domain, app.page.projectName].filter(a => a).join('/'));
             $(this.namespace.app_drawer_open).on('click', () => {
                 this.namespace.side_menu.draw(true);
