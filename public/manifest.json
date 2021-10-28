@@ -12,17 +12,17 @@
     "background_color": "white",
     "icons": [
         {
-            "src": "/img/logo/logo-a-500x500.fw.png",
+            "src": "/img/logo/logo-a-500x500.bg.fw.png",
             "type": "image/png",
             "sizes": "130x130"
         },
         {
-            "src": "/img/logo/logo-a-500x500.fw.png",
+            "src": "/img/logo/logo-a-500x500.bg.fw.png",
             "type": "image/png",
             "sizes": "200x200"
         },
         {
-            "src": "/img/logo/logo-b-500x500.fw.png",
+            "src": "/img/logo/logo-a-500x500.bg.fw.png",
             "type": "image/png",
             "sizes": "670x670" 
         }
