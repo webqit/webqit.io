@@ -63,7 +63,7 @@
 
         <script type="subscript">
             let app = document.state;
-            $(this.namespace.page_superscript).html(app.page.projectTitle || app.page.domain || 'beta');
+            $(this.namespace.page_superscript).html((app.page.projectTitle || '').replace('(Coming Soon)', '') || (app.page.domain || '').toUpperCase() || 'BETA');
             $(this.namespace.page_superscript).attr('href', '/' + [app.page.domain, app.page.projectName].filter(a => a).join('/'));
             $(this.namespace.app_drawer_open).on('click', () => {
                 this.namespace.side_menu.draw(true);
@@ -121,7 +121,7 @@
                         </span>
                         <span style="font-size: 24px;">WebQit</span>
                     </a>
-                    <a data-id="page_superscript" href="/" class="mg-lft-10 mg-x2 pd-8 txt-sm border-solid radius-10"></a>
+                    <a data-id="page_superscript" href="/" class="mg-lft-10 mg-lft-x2 mg-rt-10 pd-8 txt-sm border-solid radius-10"></a>
                 </div>
                 <ul data-id="menu_bar" template="@layout/menu#horz_group" class="menu-bar flex-y-stretch flex-x-end col-grows sm--d-none list-style-none" style="font-size: 18px;"></ul>
                 <div class="flex-y-center">
