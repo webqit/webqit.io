@@ -1,26 +1,72 @@
 <div namespace>
 
     <script type="subscript">
-        var app = document.state;
-        if (app.page.domain) {
-            $(this).attr('id', 'route--' + app.page.domain);
-            this.namespace.hero.setState(app.page.hero);
-            $(this.namespace.main).class('d-none', !app.page.projects.length);
-            this.namespace.main.setState({
-                items: app.page.projects, 
-                itemsTemplate: 'category', 
-                gridColumns: 2,
-            });
-        }
+        let app = document.state.page;
+        $(this.namespace.wbdivIcon).class({
+            'bi-braces': app.wbdiv === 'tooling',
+            'bi-cloud': app.wbdiv === 'cloud',
+            'bi-flag': app.wbdiv === 'community',
+        });
+        $(this.namespace.wbdivName).html(app.wbdivName);
+        $(this.namespace.headline).html(app.headline);
+        $(this.namespace.intro).html(app.intro);
+        $(this.namespace.projectsFilter).list(app.projectsFilter);
+        $(this.namespace.projectsBody).list(app.projectsBody);
+        // -----------
+        $(this.namespace.gridCtas).list([
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+        ]);
+        // -----------
+        $(this.namespace.ideaStart_a).html(app.ideaStart[0]);
+        $(this.namespace.ideaStart_b).html(app.ideaStart[1]);
+        $(this.namespace.ideaBody).list(app.ideaBody);
+        $(this.namespace.ideaEnd_a).html(app.ideaEnd[0]);
+        $(this.namespace.ideaEnd_b).html(app.ideaEnd[1]);
     </script>
 
-    <html-import data-id="hero" id="hero" template="@layout/hero"></html-import>
-    <html-import data-id="showcase" id="showcase" name="container" template="@layout/showcase-" style="margin-bottom: 80px"></html-import>
-    <html-import data-id="main" id="main" name="container" template="@layout/project-listing" class="grid-2 layout-section" style="margin-bottom: 80px;"></html-import>
-    
-    <section class="box-padded-layout-section additional-readme markdown-body">
-        <h2 id="readme" class="hero-text">ReadMe</h2>
-        <html-import name="readme"></html-import>
-    </section>
+    <div class="relative hero-no-cta p-28 pb-16 flex items-end">
+        <div class="wbdiv-icon w-1/4 mb-4 flex items-center">
+            <span class="git-tee"></span>
+            <i data-id="wbdivIcon" class="bi w-11 h-11 flex-center radius-125 bg-wbdiv-color2 text-white font-bold drop-shadoww"></i>
+            <span data-id="wbdivName" class="ml-4"></span>
+        </div>
+        <h1 data-id="headline" class="w-2/4 text-center"></h1>
+        <div class="w-1/4"></div>
+    </div>
+
+    <main class="bg-white dark:bg-black dark:text-gray-300">
+        <section class="main-main">
+            <p data-id="intro" class="w-1/3 p-28 pb-0 pr-20 text-2xl"></p>
+            <!-- <html-import name="projects" class=""></html-import> -->
+            <div class="flex items-start pt-16 pb-20">
+                <ul data-id="projectsFilter" template="@layout/project-listing/filter" class="projects-filter list-none"></ul>
+                <ul data-id="projectsBody" template="@layout/project-listing/a" class="projects-grid-a list-none"></ul>
+            </div>
+        </section>
+        <section class="px-28 py-8 pre-bar text-center border border-x-0 border-dashed border-gray-500 dark:border-gray-800">
+            <div class="px-16 py-28 text-white bg-wbdiv-color2 dark:bg-wbdiv-color2-dim shadow-xl">
+                <h2>Try This</h2>
+                <p class="w-3/6 m-auto p-10 pb-0 text-2xl">
+                    We provision an open source cloud that gifts instant infrastructure to web-native apps
+                </p>
+                <ul data-id="gridCtas" template="@layout/landing-page-grid-ctas" class="pt-16 grid grid-cols-3 gap-x-10 gap-y-8 list-none"></ul>
+            </div>
+        </section>
+        <section class="p-20 pre-bar text-center">
+            <h2>The whole idea</h2>
+            <p data-id="ideaStart_a" class="w-3/6 m-auto p-10 pt-6 pb-4 text-2xl"></p>
+            <p data-id="ideaStart_b" class="w-3/6 m-auto p-10 pt-4 text-2xl"></p>
+            <ul data-id="ideaBody" template="@layout/features-lineup" class="features-lineup list-none"></ul>
+            <p data-id="ideaEnd_a" class="w-3/6 m-auto p-10 pt-4 text-2xl"></p>
+            <p data-id="ideaEnd_b" class="w-3/6 m-auto p-10 pt-0 text-2xl"></p>
+        </section>
+    </main>
     
 </div>

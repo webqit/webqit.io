@@ -40,7 +40,7 @@ export default async function(request, recieved, next) {
  * 
  * @return window
  */
-export async function render(request, data, next) {
+export async function render_(request, data, next) {
     const window = await next(createData(data, next.pathname));
     createNewOnlyTemplates(window, data, next.pathname);
     return window;

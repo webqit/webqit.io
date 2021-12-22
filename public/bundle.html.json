@@ -21,24 +21,31 @@
         },
         "cloud": {
             "meta": {
-                "readme": {}
+                "ideas": {},
+                "readme": {},
+                "projects": {}
             }
         },
         "community": {
             "meta": {
                 "logos": {},
-                "readme": {}
+                "readme": {},
+                "projects": {}
             }
         },
         "tooling": {
             "meta": {
-                "": {},
-                "readme": {}
+                "readme": {},
+                "projects": {}
+            }
+        },
+        "web-native": {
+            "meta": {
+                "index": {}
             }
         }
     },
     "meta": {
-        "": {},
         "index": {}
     }
 }

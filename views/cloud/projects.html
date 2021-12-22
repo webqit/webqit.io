@@ -1,0 +1,30 @@
+<div namespace class="flex items-start">
+    <ul data-id="projectsFilter" template="@layout/project-listing/filter" class="projects-filter list-none"></ul>
+    <ul data-id="gridProjects" template="@layout/project-listing/a" class="projects-grid-a justify-center list-none"></ul>
+    <script type="subscript">
+        $(this.namespace.projectsFilter).list([
+            {
+                icon: 'braces',
+                title: 'All',
+                href: '#tooling',
+            }, {
+                icon: 'braces',
+                title: 'Compute',
+                href: '#compute',
+            }, {
+                icon: 'braces',
+                title: 'Storage',
+                href: '#storage',
+            }, {
+                icon: 'braces',
+                title: 'Auth',
+                href: '#auth',
+            }
+        ]);
+        $(this.namespace.gridProjects).list([
+            {},
+            {},
+            {}
+        ]);
+    </script>
+</div>
