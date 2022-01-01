@@ -3410,6 +3410,10 @@ section.pre-bar::after {
     pointer-events: auto;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:inline {
     display: inline;
   }
