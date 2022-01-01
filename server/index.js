@@ -30,7 +30,7 @@ export default async (request, recieved, next) => {
         title: 'The WebQit Project',
         hero: {
             title: ['The tooling, cloud,', 'and community for', 'web-native', 'development.'],
-            desc: 'Bank your life\'s work on web standards and ride less on abstractions! We make it fun!',
+            desc: 'Bank your life\'s work on open web standards; ride less on abstractions! We make all of that fun!',
             quickstart: {type: 'code', directive: '#WebNative, #OpenSource, #DevTools', cta: {href: '#domain--tooling', text: 'Explore',}},
             nav: [{
                 href: '#domain--tooling',
