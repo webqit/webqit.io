@@ -59,7 +59,7 @@ html {
     font-family: 'Inter', sans-serif;
 }
 [id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 120px;
 }
 .hero-text,
 .hero-font {
@@ -289,8 +289,7 @@ p, .p,
 */
 
 h1 span {
-    line-height: 120%;
-    line-height: 100%;
+    line-height: 135%;
     white-space: nowrap;
 }
 h1 .text-gradient {
@@ -300,7 +299,7 @@ h1 .text-gradient {
     border-bottom: 4px solid mediumslateblue;
 }
 h1 .text-gradient + span {
-    line-height: 200%;
+    line-height: 230%;
     border-bottom: 3px solid gray;
     padding-bottom: 10px;
 }
@@ -346,16 +345,16 @@ h1 .text-gradient + span {
 .quickstart .directive-container {
     max-width: 50%;
     border-left: 5px solid black;
-    background-color: whitesmoke;
+    background-color: lavender;
     box-shadow: 0px 5px 10px -5px black;
 }
 .quickstart .cta {
-    color: blueviolet;
+    color: mediumslateblue;
     text-decoration: none !important;
     font-size: larger;
 }
-.quickstart .cta:active {
-    background-color: lavender;
+.quickstart .cta:is(:active, :focus) {
+    background-color: whitesmoke;
 }
 .additional-readme .quickstart {
     position: relative;
@@ -364,11 +363,16 @@ h1 .text-gradient + span {
     max-width: 50%;
 }
 @media (max-width: 640px) {
+    .quickstart .directive-container {
+	max-width: 80%;
+	border-left-width: 0px;
+    }
+    .quickstart .cta {
+        text-align: center;
+        border: 1px dashed silver;
+    }
     .additional-readme .quickstart {
         max-width: none;
-    }
-    .quickstart .directive-container {
-        border-left-color:silver;
     }
 }
 
@@ -404,8 +408,8 @@ h1 .text-gradient + span {
     color: mediumslateblue;
 }
 .section-desc {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 25px;
+    padding-bottom: 35px;
 }
 /* ---------- */
 /*
@@ -420,7 +424,7 @@ h1 .text-gradient + span {
     width: 65px;
     content: "";
     display: inline-block;
-    border-top: 3px solid black;
+    border-top: 3px solid thistle;
 }
 .hero-nav-item a {
     width: 60px;
@@ -444,6 +448,9 @@ h1 .text-gradient + span {
     border-left-style: dashed;
 }
 @media (max-width: 640px) {
+    #hero {
+        text-align: center;
+    }
     .hero-nav.with-separator .hero-nav-item + .hero-nav-item::before,
     .hero-nav-play-separator::before {
         width: 20px;
@@ -538,11 +545,9 @@ h1 .text-gradient + span {
     padding: 25px;
     padding-left: 35px;
     padding-right: 35px;
-    transition: all 600ms;
 }
 .domain-block .grid-2 .project-item:hover {
     background-color: var(--theme-bg2);
-    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.8);
 }
 .domain-block .cta {
     transition: background-color 600ms;
