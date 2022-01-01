@@ -1,0 +1,1 @@
+//!this.breakpoint ? _class : _class.split(' ').map(c => this.breakpoint + '--' + c).join(' ');

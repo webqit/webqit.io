@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;" />
 
-        <base data-id="base" />
         <title data-id="title"></title>
 
         <meta name="description" content="The tooling, cloud, and community for web-native development" />
@@ -25,8 +24,12 @@
         <link rel="stylesheet" href="https://use.typekit.net/zux1blc.css" />
         <link type="text/css" rel="stylesheet" crossorigin="" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
         <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
+        <link rel="stylesheet" crossorigin="" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
+        <!--
+            <link rel="stylesheet" type="text/css" href="/css/sunburst.css">
+        -->
+        <link rel="stylesheet" type="text/css" href="/css/github-markdown.css">
         <link type="text/css" rel="stylesheet" crossorigin href="/css/tailwind.css" />
-        <link type="text/css" rel="stylesheet" href="/css/tooling.css" />
 
         <!-- JS -->
         <script type="module" src="/bundle.js"></script>
@@ -59,147 +62,285 @@
         <template name="@layout">
             <template name="menu-x">
 
-                <ul is="playui-list-ul" template="@layout/menu-x#item" class="flex px-4 space-x-5 list-none"></ul>
-                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wbdiv-color2" data-treeactive>
+                <ul is="playui-list-ul" template="@layout/menu-x#item" overflow-visibility="1" class="flex px-4 space-x-5 list-none"></ul>
+                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wbdiv-color2" treewatch>
                     <a href="#" class="whitespace-nowrap"></a>
                 </li>
 
             </template>
-            <template name="homepage-section-intro">
+            <template name="menu-y">
 
-                <div class="flex">
-                    <span class="page-pad-l"></span>
-                    <div class="flex-grow flex items-end p-12 pt-24 pb-20">
-                        <div class="wbdiv-icon w-1/3 flex items-center">
-                            <span class="git-tee"></span>
+                <ul is="playui-list-ul" template="@layout/menu-y#item" overflow-visibility="0" class="py-4 list-none"></ul>
+                <li is="playui-linkitem-li" exportgroup="item" class="hover:bg-gray-200 active:text-wbdiv-color2 active2:text-wbdiv-color2" treewatch>
+                    <a href="#" class="block p-3 px-6 whitespace-nowrap"></a>
+                </li>
+
+            </template>
+            <template name="footer-menu">
+
+                <li is="playui-linkitem-li" exportgroup="group" namespace>
+                    <div data-id="legend" class="mb-4 font-bold text-gray-400"></div>
+                    <ul data-id="items" template="@layout/footer-menu#item" class="list-none"></ul>
+                    <script type="subscript">
+                        $(this.namespace.legend).html(this.state.legend);
+                        $(this.namespace.items).list(this.state.items);
+                    </script>
+                </li>
+                <li is="playui-linkitem-li" exportgroup="item" class="mt-1 hover:text-[blue]" treewatch>
+                    <a href="#"></a>
+                </li>
+
+            </template>
+            <template name="home">
+
+                <div exportgroup="section-intro" class="flex">
+                    <span class="page-pad-l hidden lg:block"></span>
+                    <div class="grow lg:flex items-end p-12 pt-24 pb-10 lg:pb-20">
+                        <div class="wbdiv-icon mb-8 lg:mb-0 lg:w-1/3 flex items-center">
+                            <span class="git-tee hidden lg:block"></span>
                             <i data-id="landingIcon" class="bi w-11 h-11 flex-center radius-125 bg-wbdiv-color2 text-white font-bold drop-shadoww"></i>
                             <span data-id="landingName" class="ml-4"></span>
                         </div>
-                        <p data-id="intro" class="w-1/3 text-center text-2xl"></p>
-                        <div class="w-1/3 flex items-center justify-end ">
-                            <a data-id="href" href="">
-                                <i class="bi bi-arrow-right text-2xl w-11 h-11"></i>
+                        <p data-id="intro" class="lg:w-1/3 lg:text-center text-2xl"></p>
+                        <div class="mt-4 lg:mt-0 lg:w-1/3 flex items-center lg:justify-end ">
+                            <a data-id="href" href="" class="relative -left-2.5 lg:left-0 lg:-bottom-2.5 w-16 h-16 flex-center border border-gray-300 hover:bg-gray-200 rounded-full">
+                                <i class="bi bi-arrow-right text-4xl"></i>
                             </a>
                         </div>
                     </div>
-                    <span class="page-pad-r"></span>
+                    <span class="page-pad-r hidden lg:block"></span>
                 </div>
 
             </template>
-            <template name="landing-page-grid-ctas">
+            <template name="landing1">
+                <template name="projects-section">
+                    
+                    <template name="filters">
 
-                <li><a href="" class="p-5 flex items-center justify-between border-l-[6px] border-[lavender] hover:border-wbdiv-color2 bg-gray-100 transform hover:translate-x-0 transition-all font-bold hover:text-wbdiv-color2 rounded shadow-md">
-                    <span>Open source tools</span>
-                    <i class="bi bi-chevron-right text-2xl"></i>
-                </a></li>
+                        <li exportgroup="item" is="playui-linkitem-li" defaultactive class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
+                            <a href=""></a>
+                        </li>
+                    
+                    </template>
 
-            </template>
-            <template name="project-listing">
-                <template name="filter">
-
-                    <li is="playui-linkitem-li" class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black first:text-black dark:hover:text-gray-300 dark:first:text-gray-300 hover:border-black first:border-black dark:hover:border-gray-400 dark:first:border-gray-400 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
-                        <a href="" class="block px-6 py-3"></a>
-                    </li>
-                
-                </template>
-                <template name="a">
-
-                    <li class="item group border-4 border-transparent hover:bg-wbdiv-color2">
-                        <a href="" class="p-14 pb-10 block">
-                            <span class="h-10 w-10 rounded-full inline-flex text-wbdiv-color2 flex-center transform group-hover:scale-75 transition-all">
+                    <li exportgroup="item" namespace class="item group overflow-hidden rounded-xl hover:rounded-none transition transition-all">
+                        <a data-id="href" href="" class="p-14 pb-10 h-full block rounded">
+                            <span class="icon h-10 w-10 rounded-xl inline-flex border-2 border-transparent group-hover:border-wbdiv-color2 text-wbdiv-color2 flex-center transition-all">
                                 <!--<img src="/icon/optimized-for-seo.svg" />-->
-                                <i class="bi bi-app-indicator flex-center text-4xl"></i>
+                                <i data-id="icon" class="bi flex-center text-4xl transform group-hover:scale-50 transition-all"></i>
                             </span>
-                            <h3 class="py-4 font-black">Webflo</h3>
-                            <p>
-                                Source content faster. Compile and build faster. Build the fastest websites on the web…faster.
-                            </p>
+                            <h3 data-id="title" class="py-4 font-black"></h3>
+                            <p data-id="desc"></p>
                             <span class="relative pt-4 font-bold flex items-center text-wbdiv-color2 text-2xl">
                                 <i class="bi flex-center bi-dash w-0 group-hover:w-2 transition-all"></i><i class="bi flex-center bi-arrow-right"></i>
                             </span>
                         </a>
-                        <div class="absolute right-10 top-28 inline-flex">
+                        <div data-id="promoteContainer" class="hidden absolute right-10 top-14 mt-1 inline-flex">
                             <span class="transform scale-0 group-hover:scale-100 transition-all group-hover:delay-500">
-                                <a href="" class="flex items-center p-2 px-4 text-xs font-bold rounded-xl shadow-lg hover:text-white hover:bg-wbdiv-color2 border border-gray-500 dark:border-gray-500 hover:border-transparent dark:hover:border-transparent">
+                                <a data-id="promote" target="_blank" href="" class="flex items-center p-2 px-4 text-xs font-bold rounded-xl shadow-lg hover:text-white hover:bg-wbdiv-color2 border border-gray-500 dark:border-gray-500 hover:border-transparent dark:hover:border-transparent">
                                     <i class="bi bi-github flex-center"></i> <span class="ml-2">star</span>
                                 </a>
                             </span>
                         </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.href).attr('href', this.state.cta.href);
+                            $(this).class('pointer-events-none scale-50', this.state.categoryMismatch);
+                            $(this.namespace.promoteContainer).class('hidden', !this.state.cta.href.startsWith('/tooling'));
+                            $(this.namespace.promote).attr('href', 'https://github.com/webqit/' + this.state.cta.href.replace('/tooling', ''));
+                            //$(this).class('hidden', this.state.categoryMismatch);
+                        </script>
+                    </li>
+                    
+                </template>
+                <template name="start-section">
+
+                    <li exportgroup="item" namespace class="text-left text-wbdiv-color2 bg-gray-300 hover:bg-gray-200 transform md:hover:-translate-y-1 transition-all rounded-lg">
+                        <a data-id="href" href="" class="block h-full">
+                            <div class="flex items-center justify-between p-5 font-bold border-l-[6px] border-white">
+                                <span data-id="title"></span>
+                                <i class="bi bi-chevron-right text-2xl text-wbdiv-color2-dim"></i>
+                            </div>
+                            <p data-id="desc" class="p-5"></p>
+                        </a>
+                        <script type="subscript">
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.href).attr('href', this.state.href || '');
+                        </script>
                     </li>
 
                 </template>
-                <template name="b"> 
+                <template name="highlights-section">
 
-                    <li class="relative group border-4 border-dashed border-gray-200 hover:border-solid hover:border-wbdiv-color2 transition-all">
-                        <a href="" class="p-10 px-12 block">
-                            <span class="h-16 w-16 rounded-full inline-flex flex-center transform group-hover:-translate-y-3 transition-all">
-                                <img src="/icon/optimized-for-seo.svg" />
-                            </span>
-                            <h3 class="pt-5 pb-2 font-black">Webflo</h3>
-                            <p class="transform group-hover:translate-y-1 transition-all">Source content faster. Compile and build faster. Build the fastest websites on the web…faster.</p>
-                        </a>
-                        <div class="absolute w-full left-0 -bottom-9 text-center h-0 overflow-hidden px-2 group-hover:h-16 group-hover:pb-4 transition-all delay-200">
-                            <div class="inline-flex rounded-xl bg-wbdiv-color2 text-white font-bold drop-shadowww overflow-hidden">
-                                <a href="" class="flex items-center p-2 px-4 hover:bg-black hover:text-gray-200">
-                                    <i class="bi bi-arrow-right flex-center"></i> <span class="ml-2">try now</span>
-                                </a>
+                    <li exportgroup="item" namespace>
+                        <div class="text">
+                            <div class="content">
+                                <h3 data-id="title" class="font-bold">Connect your favorite tools</h3>
+                                <p data-id="intro" class="py-2 italic">Build the way that works best for you with support for all your</p>
+                                <p data-id="content">Build the way that works best for you with support for all your go-to integrations, including Slack, Jira, and more.</p>
                             </div>
                         </div>
+                        <div class="dot"></div>
+                        <div class="img flex-center">
+                            <div class="w-1/2 border-t-2 border-dashed border-gray-300 dark:border-gray-800"></div>
+                            <img data-id="img" />
+                        </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.intro).html(this.state.intro);
+                            $(this.namespace.img).attr('src', this.state.img);
+                            $(this.namespace.img).class('dark:invert', this.state.invertOnDark);
+                            if (this.state.content) {
+                                $(this.namespace.content).html(this.state.content);
+                            }
+                        </script>
                     </li>
 
                 </template>
-                <template name="c">
 
-                    <li class="relative max-w-5/12 hover:text-white hover:bg-wbdiv-color2 group transform transition-all">
-                        <a href="" class="flex items-center p-6 px-12 block">
-                            <span class="h-16 w-16 flex-shrink-0 rounded-full inline-flex flex-center">
-                                <img src="/icon/optimized-for-seo.svg" />
-                            </span>
-                            <div class="pt-5 pl-5">
-                                <h3 class="font-black">Web Native Community Group</h3>
-                                <p>Source content faster. Compile and build faster. Build the fastest websites on the web…faster.</p>
-                                <i class="relative mt-6 text-2xl bi bi-arrow-right"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                </template>
             </template>
-            <template name="features-lineup">
+            <template name="landing2">
+                <template name="quickstart">
 
-                <li namespace>
-                    <div class="text">
-                        <div class="content">
-                            <h3 data-id="title" class="font-bold">Connect your favorite tools</h3>
-                            <p data-id="intro" class="py-2 italic">Build the way that works best for you with support for all your</p>
-                            <p data-id="content">Build the way that works best for you with support for all your go-to integrations, including Slack, Jira, and more.</p>
+                    <div exportgroup="link" namespace class="quickstart font-bold">
+                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </a>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
+                    </div>
+
+                    <div exportgroup="code" namespace class="quickstart font-bold">
+                        <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200">
+                            <div class="flex items-center overflow-x-auto scrollbar-thin">
+                                <code data-id="directive" class="whitespace-nowrap"></code>
+                            </div>
                         </div>
+                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </a>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.directive).html(this.state.directive);
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
                     </div>
-                    <div class="img">
-                        <img src="/img/illu/access.webp" />
-                    </div>
-                    <script type="subscript">
-                        if (!this.state.title) return;
-                        $(this.namespace.title).html(this.state.title);
-                        $(this.namespace.intro).html(this.state.intro);
-                        if (this.state.content) {
-                            $(this.namespace.content).html(this.state.content);
-                        }
-                    </script>
-                </li>
 
+                    <form exportgroup="form" namespace class="quickstart font-bold">
+                        <div class="flex items-stretch h-16 rounded-xl bg-gray-200 overflow-hidden">
+                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none;" />
+                        </div>
+                        <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </button>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.directive).attr('placeholder', this.state.directive);
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.directive).attr('size', this.state.directive.length);
+                                $(this).attr('action', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
+                    </form>
+
+                </template>
+                <template name="hero-section">
+
+                    <template name="cta">
+                        <a namespace href="#" class="cta d-inline-flex flex-y-center b">
+                            <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
+                            <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
+                            <script type="subscript">
+                                if (this.state.href) {
+                                    $(this).attr('href', this.state.href);
+                                    $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
+                                    $(this.namespace.text).html(this.state.text);
+                                }
+                            </script>
+                        </a>
+                    </template>
+
+                    <template name="nav">
+                        <li namespace class="hero-nav-item sm--d-flex">
+                            <a data-id="href" href="" class="flex-center radius-full border-solid">
+                                <i data-id="icon" class="bi flex-center sm"></i>
+                            </a>
+                            <script type="subscript">
+                                if (this.state.href) {
+                                    $(this.namespace.href).attr('href', this.state.href);
+                                    $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                                }
+                            </script>
+                        </li>
+                    </template>
+                    
+                </template>
+                <template name="highlights-section">
+    
+                    <li exportgroup="item" namespace class="project-item lg:text-center flex flex-col bg-gray-100 dark:bg-gray-950 rounded-xl">
+                        <div class="px-8 pb-3 pt-10 border-b border-dashed border-gray-500 dark:border-gray-800 font-bold">
+                            <i data-id="icon" class="subitem-icon bi inline-flex flex-center text-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"></i>
+                            <h4 data-id="title" class="subitem-title pt-2"></h4>
+                        </div>
+                        <p data-id="desc" class="subitem-desc grow h-fit px-8 py-3"></p>
+                        <div class="px-8 pt-3 pb-10">
+                            <a data-id="cta_href" href="/" class="cta subitem-cta py-1 text-wbdiv-color2 dark:text-wbdiv-color2-dim-text rounded-xl rounded-tl-none bold inline-flex items-center" style="text-decoration: none;">
+                                <i class="bi bi-arrow-return-right font-bold flex-center"></i>
+                                <span data-id="cta_text" class="pl-4"></span>
+                            </a>
+                        </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                            $(this.namespace.cta_text).html(this.state.cta.text);
+                            if (this.state.displayRepetition) {
+                                $(this).class('is-display-repetition', true);
+                            }
+                            //let github = 'https':
+                        </script>
+                    </li>
+
+                </template>
+                <template name="showcase-section">
+
+                    <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
+                        <img src="/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
+                    </section>
+
+                </template>
             </template>
         </template>
     
     </head>
 
-    <body template="" namespace class="font-noto text-lg">
+    <body template="" namespace class="dark font-noto text-lg">
 
         <script type="subscript">
             let app = document.state;
             let urlPath = app.url.pathname || '';
             $(this).attr('wbdiv', urlPath.length < 2 ? 'home' : urlPath.split('/')[1]);
-            $([this.namespace.menuX]).list([{
+            $(this).class('docs', urlPath.split('/').length > 3);
+            let items = [{
                 items: [{
                     icon: 'braces',
                     title: 'Tooling',
@@ -217,47 +358,128 @@
                 items: [{
                     icon: 'dot',
                     title: 'Sign In',
-                    href: '/tooling/oohtml',
+                    href: '#',
                 }]
-            }]);
+            }];
+            $(this.namespace.menuY).list(items);
+            $(this.namespace.menuX).list(items, {
+                renderCallback: (e, el, d, k) => {
+                    d.overflowCollapsed = false;
+                },
+                overflowCallback: (e, el, d, k, overflowCount) => {
+                    d.overflowCollapsed = e === 'collapse';
+                },
+                collapsionPoint: 'end',
+            });
+            let footerLinks = [{
+                legend: 'Tooling',
+                items: [{
+                    title: 'Projects',
+                    href: '/tooling',
+                }, {
+                    title: 'Quick Start',
+                    href: '/tooling#start',
+                }, {
+                    title: 'Contribute',
+                    href: 'https://github.com/webqit',
+                }, {
+                    title: 'Sponsor',
+                    href: 'https://github.com/webqit',
+                }]
+            }, {
+                legend: 'Cloud',
+                items: [{
+                    title: 'Platform',
+                    href: '/cloud',
+                }, {
+                    title: 'Quick Start',
+                    href: '/cloud#start',
+                }, {
+                    title: 'Pricing',
+                    href: '#',
+                }, {
+                    title: 'support',
+                    href: '#',
+                }, {
+                    title: 'Sign in',
+                    href: '#',
+                }]
+            }, {
+                legend: 'Community',
+                items: [{
+                    title: 'Communities',
+                    href: '/community',
+                }, {
+                    title: 'WebQit',
+                    href: '/community/webqit',
+                }, {
+                    title: 'Web-Native',
+                    href: '/community/web-native-cg',
+                }, {
+                    title: 'Partners',
+                    href: '#',
+                }]
+            }, {
+                legend: 'Company',
+                items: [{
+                    title: "We're in Beta",
+                    href: '#',
+                }, {
+                    title: 'About',
+                    href: '#',
+                }, {
+                    title: 'Contact',
+                    href: '#',
+                }, {
+                    title: 'Join',
+                    href: '#',
+                }]
+            }];
+            $(this.namespace.footerLinks).list(footerLinks);
         </script>
 
         <!-- HEADER -->
 
         <header class="flex items-end">
-            <span class="page-pad-l"></span>
-            <div class="flex-grow flex items-center p-7 px-10">
-                <div class="w-1/3">
-                    <a href="/" class="flex items-center">
-                        <img src="/img/logo/logo-130x130.png" class="w-12" />
-                        <span class="ml-4">WebQit</span> 
+            <span class="page-pad-l hidden lg:block"></span>
+            <div class="grow flex items-center p-7 pl-10 pr-10 lg:pr-10">
+                <div class="grow flex items-center">
+                    <a href="/" class="inline-flex items-center">
+                        <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1" />
+                        <span class="ml-4">WebQit</span>  <span class="ml-2">(Beta)</span>
                     </a>
                 </div>
-                <div class="w-1/3">
+                <div class="w-1/3 hidden lg:block">
                     <form class="flex max-w-sm items-center rounded-full px-4 bg-black bg-opacity-10 hover:bg-opacity-20 focus-within:bg-opacity-20">
                         <i class="px-2 bi bi-search flex-center"></i>
-                        <input class="flex-grow py-3 bg-transparent" placeholder="Search..." />
+                        <input class="grow py-3 bg-transparent" placeholder="Search..." />
                     </form>
                 </div>
-                <div data-id="menuX" template="@layout/menu-x" class="w-1/3 flex items-center justify-end divide-x-2 divide-gray-400"></div>
+                <div template="@layout/menu-x" class="w-0 lg:w-1/3 flex items-center justify-end">
+                    <div data-id="menuX" template="@layout/menu-x" class="flex items-center divide-x-2 divide-gray-400"></div>
+                </div>
+                <i class="bi bi-search flex-center lg:hidden" style="cursor: pointer;"></i>
             </div>
-            <span class="page-pad-r relative px-4 self-center group" tabindex="-1">
-                <i class="bi bi-three-dots-vertical flex-center text-xl font-bold p-2 hover:bg-black hover:text-white" style="cursor: pointer;"></i>
-                <ul class="absolute right-2 -top-5 text-sm font-bold py-4 hidden group-focus-within:block rounded-xl shadow-xl bg-white">
-                    <li class="flex items-center hover:bg-gray-100 p-3 px-6 dark:bg-black dark:text-white dark:hover:bg-gray-850" style="cursor: default;" onclick="document.body.classList.toggle('dark');">
-                        <span class="pr-4">Light/Dark</span>
-                        <i class="bi bi-circle-half flex-center"></i>
-                    </li>
-                </ul>
+            <span class="page-pad-r relative self-center group" tabindex="-1">
+                <i class="bi bi-three-dots-vertical relative w-10 -left-4 flex-center border-2 border-black md:border-0 text-xl font-bold py-2 hover:bg-black hover:text-white" style="cursor: pointer;"></i>
+                <div class="fixed top-3 right-4 lg:right-8 text-sm font-bold hidden group-focus-within:block rounded-xl shadow-xl bg-white divide-y-2 divide-gray-300" style="z-index: 1000;">
+                    <div data-id="menuY" template="@layout/menu-y" class="divide-y-2 divide-gray-300"></div>
+                    <ul class="w-full order-last py-4 list-none">
+                        <li class="flex items-center hover:bg-gray-200 p-3 px-6 dark:text-[blue] whitespace-nowrap" style="cursor: default;" onclick="document.body.classList.toggle('dark');">
+                            <span class="pr-4">Dark Mode</span>
+                            <i class="bi bi-circle-half flex-center"></i>
+                        </li>
+                    </ul>
+                </div>
             </span>
-        </header>
+        </header>   
 
         <html-import name="index:search(3-10)" class="pd-10">
             <div class="flex-center" style="min-height: 100vh; background-color: whitesmoke;">
                 <div namespace class="pd-10 pd-x3 txt-align-cntr b anim-fade-in">
                     <div data-id="error"></div>
                     <br />
-                    <div class="anim-flash">(Also, we're gradually rolling out pages. <a href="/#waitlist" class="color-1">Get Notified</a>)</div>
+                    <div class="anim-flash">(BTW, we're gradually rolling out pages.)</div>
                     <br />
                     <a href="/" class="color-1">&leftarrow; Back to Home</a>
                     <script type="subscript">
@@ -269,9 +491,33 @@
         </html-import>
         
         <footer>
-            <div class="flex">
-                <span class="page-pad-l"></span>
-                <div class="h-64"></div>
+            <div class="flex py-10">
+                <span class="page-pad-l hidden lg:block border-r-0"></span>
+                <div class="grow sm:flex">
+                    <div class="sm:w-3/12 p-10">
+                        <a class="inline-flex items-center hover:text-[blue]" href="/">
+                            <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1 mr-4" />
+                            WebQit, Inc.
+                        </a>
+                        <p class="flex mt-5">
+                            <i class="bi bi-chevron-right -ml-6 mr-3"></i>
+                            651 N Broad St #206, Middletown, DE 19709
+                        </p>
+                        <div class="flex mt-5 hover:text-black">
+                            <i class="bi bi-chevron-right -ml-6 text-black"></i>
+                            <div class="flex pl-3">
+                                <a target="_blank" href="https://github.com/webqit" class="mr-3"><i class="bi bi-github"></i></a>
+                                <a target="_blank" href="https://twitter.com/@Web_Qit" class="mr-3"><i class="bi bi-twitter"></i></a>
+                                <a target="_blank" href="https://linkedin.com/web-qit" class="mr-3"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <ul data-id="footerLinks" template="@layout/footer-menu#group" class="sm:w-9/12 p-10 grid md:grid-cols-3 xl:grid-cols-4 gap-10 list-none"></ul>
+                </div>
+                <span class="page-pad-r hidden lg:block"></span>
+            </div>
+            <div class="py-10 border-t-4 border-gray-400 border-dotted text-center">
+                &copy 2022 WebQit, Inc.
             </div>
         </footer>
 

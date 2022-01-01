@@ -19,16 +19,22 @@ const cache = {};
  * 
  * @return object
  */
-export default async function(request, recieved, next) {
-    const domain = this.pathname.split('/').pop();
-    if (!['tooling', 'cloud', 'community'].includes(domain)) {
+export default async function(event, recieved, next) {
+    const pathSplit = this.pathname.split('/');
+    const wbdiv = pathSplit.pop();
+    if (!['tooling', 'cloud', 'community'].includes(wbdiv)) {
         return next(); 
     }
-    var fetchName = [domain].concat(next.pathname ? next.pathname.split('/')[0] : []).join('/');
+    var fetchName = [wbdiv].concat(next.pathname ? next.pathname.split('/')[0] : []).join('/');
     if (!cache[fetchName]) {
-        cache[fetchName] = await next();
+        cache[fetchName] = await ( await next() ).json();
     }
-    return cache[fetchName];
+    if (['tooling', 'cloud', 'community'].includes(wbdiv) && !next.pathname) {
+        cache[fetchName].projectsBody.forEach(item => {
+            item.categoryMismatch = event.url.query.category && !item.categories.includes(event.url.query.category);
+        });
+    }
+    return JSON.parse(JSON.stringify(cache[fetchName]));
 }
 
 /**
@@ -40,7 +46,7 @@ export default async function(request, recieved, next) {
  * 
  * @return window
  */
-export async function render_(request, data, next) {
+export async function render(request, data, next) {
     const window = await next(createData(data, next.pathname));
     createNewOnlyTemplates(window, data, next.pathname);
     return window;

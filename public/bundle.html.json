@@ -21,27 +21,18 @@
         },
         "cloud": {
             "meta": {
-                "ideas": {},
-                "readme": {},
-                "projects": {}
+                "readme": {}
             }
         },
         "community": {
             "meta": {
                 "logos": {},
-                "readme": {},
-                "projects": {}
+                "readme": {}
             }
         },
         "tooling": {
             "meta": {
-                "readme": {},
-                "projects": {}
-            }
-        },
-        "web-native": {
-            "meta": {
-                "index": {}
+                "readme": {}
             }
         }
     },
