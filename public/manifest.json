@@ -8,8 +8,8 @@
         "WebQit Community",
         "Web-Native"
     ],
-    "theme_color": "lavender",
-    "background_color": "white",
+    "theme_color": "#cce6ff",
+    "background_color": "#cce6ff",
     "icons": [
         {
             "src": "/img/logo/logo-130x130.png",
