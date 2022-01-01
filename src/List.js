@@ -8,8 +8,14 @@ import { List as _List, Observer } from '@webqit/obsv-collection';
 
 export default class List extends _List {
 
-    static createTree(entries, subtree = null, multiplicity = 1000) {
-        return super.createTree(entries, subtree, {itemStates: ['active'], boolishStateTest: true, multiplicity: {active: multiplicity}});
+    get params() {
+        return {
+            itemStates: ['active'],
+            boolishStateTest: true,
+            multiplicity: {
+                active: 1000,
+            }
+        };
     }
 
     static fromOutline(outline, detailed = false, parent = null, i = 0) {
@@ -27,7 +33,7 @@ export default class List extends _List {
             var _entry = {
                 title,
                 name,
-                path: (parent ? parent.path : '') + '/' + name,
+                href: (parent ? parent.href : '') + '/' + name,
                 active: false,
                 desc: projectProp('desc'),
                 tags: projectProp('tags'),
@@ -36,9 +42,9 @@ export default class List extends _List {
             };
             // Add parent
             if (detailed) {
-                Object.defineProperty(_entry, 'outline', {value: projectProp('outline') || [], enumerable: false});
+                Object.defineProperty(_entry, 'outline', { value: projectProp('outline') || [], enumerable: false });
                 if (parent) {
-                    Object.defineProperty(_entry, 'parent', {value: parent, enumerable: false});
+                    Object.defineProperty(_entry, 'parent', { value: parent, enumerable: false });
                 }
             }
             // Add subtree

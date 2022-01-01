@@ -136,7 +136,7 @@ export default class Documentation {
             var _projects = projects,
                 projects = {};
             Object.values(_projects).sort(this.getSort).forEach(project => {
-                projects[project.name] = projects;
+                projects[project.name] = project;
             });
         }
         return projects;
@@ -211,7 +211,7 @@ export default class Documentation {
             categories: (projectProp('categories') || '').split(',').map(s => s.trim()).filter(s => s),
             tags: (projectProp('tags') || '').split(',').map(s => s.trim()).filter(s => s),
             repo: `webqit/${name}`,
-            cta: {href: `/${this.domain}/${name}`, text: 'Learn more'},
+            cta: { href: `/${this.domain}/${name}`, text: 'Learn more' },
             _index: projectProp('_index'),
         };
     }

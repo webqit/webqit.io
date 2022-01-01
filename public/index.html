@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="scroll-behavior: smooth;">
     
     <head>
 
@@ -7,7 +7,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;" />
 
-        <base data-id="base" />
         <title data-id="title"></title>
 
         <link rel="icon" href="/img/logo/logo.ico" type="image/x-icon" />
@@ -21,20 +20,24 @@
         <link rel="apple-touch-icon" href="/img/logo/logo-200x200.png" />
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" crossorigin href="https://unpkg.com/@webqit/playui-css/src/resets.css" /> <!-- first -->
-        <link type="text/css" rel="stylesheet" crossorigin href="https://unpkg.com/@webqit/playui-css/src/vector/canvas.css" /> <!-- second -->
-        <link type="text/css" rel="stylesheet" crossorigin href="https://unpkg.com/@webqit/playui-css/src/animation/keyframes.css" />
-        <link type="text/css" rel="stylesheet" crossorigin href="https://unpkg.com/@webqit/playui-css/src/animation/classes.css" />
-        <link type="text/css" rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link type="text/css" rel="stylesheet" crossorigin href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
+        <link type="text/css" rel="stylesheet" crossorigin href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
+        <link rel="stylesheet" href="https://use.typekit.net/zux1blc.css" />
+        <link type="text/css" rel="stylesheet" crossorigin="" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
         <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
-        <link type="text/css" rel="stylesheet" href="/css/main.css" />
-        <link type="text/css" rel="stylesheet" href="/css/tooling.css" />
+        <link rel="stylesheet" crossorigin="" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
+        <!--
+            <link rel="stylesheet" type="text/css" href="/css/sunburst.css">
+        -->
+        <link rel="stylesheet" type="text/css" href="/css/github-markdown.css">
+        <link type="text/css" rel="stylesheet" crossorigin href="/css/tailwind.css" />
 
         <!-- JS -->
-        <script src="/bundle.js"></script>
+        <script type="module" src="/bundle.js"></script>
         <script crossorigin src="https://unpkg.com/@webqit/playui-js@0.3.15/dist/main.js" ssr></script>
+        <!--
+        <script src="http://localhost:4000/playui-js/dist/main.js" ssr></script>
+        -->
         <script>
             $ = WebQit.$;
             currentYear = (new Date).getFullYear();
@@ -52,24 +55,293 @@
 
         <script type="subscript">
             let app = document.state;
-            if (app.page.title) {
-                $(document.namespace.title).html(app.page.title);
-            }
+            $(document.namespace.title).html(app.page.titleBar || '');
         </script>
+
+        <!-- TEMPLATES -->
+        <template name="page" src="/bundle.html"></template>
+        <template name="@layout">
+            <template name="menu-x">
+
+                <ul is="playui-list-ul" template="@layout/menu-x#item" overflow-visibility="1" class="flex px-4 space-x-5 list-none"></ul>
+                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wbdiv-color2" treewatch>
+                    <a href="#" class="whitespace-nowrap"></a>
+                </li>
+
+            </template>
+            <template name="menu-y">
+
+                <ul is="playui-list-ul" template="@layout/menu-y#item" overflow-visibility="0" class="py-4 list-none"></ul>
+                <li is="playui-linkitem-li" exportgroup="item" class="hover:bg-gray-200 active:text-wbdiv-color2 active2:text-wbdiv-color2" treewatch>
+                    <a href="#" class="block p-3 px-6 whitespace-nowrap"></a>
+                </li>
+
+            </template>
+            <template name="footer-menu">
+
+                <li is="playui-linkitem-li" exportgroup="group" namespace>
+                    <div data-id="legend" class="mb-4 font-bold text-gray-400"></div>
+                    <ul data-id="items" template="@layout/footer-menu#item" class="list-none"></ul>
+                    <script type="subscript">
+                        $(this.namespace.legend).html(this.state.legend);
+                        $(this.namespace.items).list(this.state.items);
+                    </script>
+                </li>
+                <li is="playui-linkitem-li" exportgroup="item" class="mt-1">
+                    <a href="#" class="hover:text-[blue]"></a>
+                </li>
+
+            </template>
+            <template name="home">
+
+                <div exportgroup="section-intro" class="flex">
+                    <span class="page-pad-l hidden lg:block"></span>
+                    <div class="grow lg:flex items-end p-12 pt-24 pb-10 lg:pb-20">
+                        <div class="wbdiv-icon mb-8 lg:mb-0 lg:w-1/3 flex items-center">
+                            <span class="git-tee hidden lg:block"></span>
+                            <i data-id="landingIcon" class="bi w-11 h-11 flex-center radius-125 bg-wbdiv-color2 text-white font-bold drop-shadoww"></i>
+                            <span data-id="landingName" class="ml-4"></span>
+                        </div>
+                        <p data-id="intro" class="lg:w-1/3 lg:text-center text-2xl"></p>
+                        <div class="mt-4 lg:mt-0 lg:w-1/3 flex items-center lg:justify-end ">
+                            <a data-id="href" href="" class="relative -left-2.5 lg:left-0 lg:-bottom-2.5 w-16 h-16 flex-center border border-gray-300 hover:bg-gray-200 rounded-full">
+                                <i class="bi bi-arrow-right text-4xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <span class="page-pad-r hidden lg:block"></span>
+                </div>
+
+            </template>
+            <template name="landing1">
+                <template name="projects-section">
+                    
+                    <template name="filters">
+
+                        <li exportgroup="item" is="playui-linkitem-li" defaultactive class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
+                            <a href=""></a>
+                        </li>
+                    
+                    </template>
+
+                    <li exportgroup="item" namespace class="item group overflow-hidden rounded-xl hover:rounded-none transition transition-all">
+                        <a data-id="href" href="" class="p-14 pb-10 h-full block rounded">
+                            <span class="icon h-10 w-10 rounded-xl inline-flex border-2 border-transparent group-hover:border-wbdiv-color2 text-wbdiv-color2 flex-center transition-all">
+                                <!--<img src="/icon/optimized-for-seo.svg" />-->
+                                <i data-id="icon" class="bi flex-center text-4xl transform group-hover:scale-50 transition-all"></i>
+                            </span>
+                            <h3 data-id="title" class="py-4 font-black"></h3>
+                            <p data-id="desc"></p>
+                            <span class="relative pt-4 font-bold flex items-center text-wbdiv-color2 text-2xl">
+                                <i class="bi flex-center bi-dash w-0 group-hover:w-2 transition-all"></i><i class="bi flex-center bi-arrow-right"></i>
+                            </span>
+                        </a>
+                        <div data-id="promoteContainer" class="hidden absolute right-10 top-14 mt-1 inline-flex">
+                            <span class="transform scale-0 group-hover:scale-100 transition-all group-hover:delay-500">
+                                <a data-id="promote" target="_blank" href="" class="flex items-center p-2 px-4 text-xs font-bold rounded-xl shadow-lg hover:text-white hover:bg-wbdiv-color2 border border-gray-500 dark:border-gray-500 hover:border-transparent dark:hover:border-transparent">
+                                    <i class="bi bi-github flex-center"></i> <span class="ml-2">star</span>
+                                </a>
+                            </span>
+                        </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.href).attr('href', this.state.cta.href);
+                            $(this).class('pointer-events-none scale-50', this.state.categoryMismatch);
+                            $(this.namespace.promoteContainer).class('hidden', !this.state.cta.href.startsWith('/tooling'));
+                            $(this.namespace.promote).attr('href', 'https://github.com/webqit/' + this.state.cta.href.replace('/tooling', ''));
+                            //$(this).class('hidden', this.state.categoryMismatch);
+                        </script>
+                    </li>
+                    
+                </template>
+                <template name="start-section">
+
+                    <li exportgroup="item" namespace class="text-left text-wbdiv-color2 bg-gray-300 hover:bg-gray-200 transform md:hover:-translate-y-1 transition-all rounded-lg">
+                        <a data-id="href" href="" class="block h-full">
+                            <div class="flex items-center justify-between p-5 font-bold border-l-[6px] border-white">
+                                <span data-id="title"></span>
+                                <i class="bi bi-chevron-right text-2xl text-wbdiv-color2-dim"></i>
+                            </div>
+                            <p data-id="desc" class="p-5"></p>
+                        </a>
+                        <script type="subscript">
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.href).attr('href', this.state.href || '');
+                        </script>
+                    </li>
+
+                </template>
+                <template name="highlights-section">
+
+                    <li exportgroup="item" namespace>
+                        <div class="text">
+                            <div class="content">
+                                <h3 data-id="title" class="font-bold">Connect your favorite tools</h3>
+                                <p data-id="intro" class="py-2 italic">Build the way that works best for you with support for all your</p>
+                                <p data-id="content">Build the way that works best for you with support for all your go-to integrations, including Slack, Jira, and more.</p>
+                            </div>
+                        </div>
+                        <div class="dot"></div>
+                        <div class="img flex-center">
+                            <div class="w-1/2 border-t-2 border-dashed border-gray-300 dark:border-gray-800"></div>
+                            <img data-id="img" />
+                        </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.intro).html(this.state.intro);
+                            $(this.namespace.img).attr('src', this.state.img);
+                            $(this.namespace.img).class('dark:invert', this.state.invertOnDark);
+                            if (this.state.content) {
+                                $(this.namespace.content).html(this.state.content);
+                            }
+                        </script>
+                    </li>
+
+                </template>
+
+            </template>
+            <template name="landing2">
+                <template name="quickstart">
+
+                    <div exportgroup="link" namespace class="quickstart font-bold">
+                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </a>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
+                    </div>
+
+                    <div exportgroup="code" namespace class="quickstart font-bold">
+                        <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200">
+                            <div class="flex items-center overflow-x-auto scrollbar-thin">
+                                <code data-id="directive" class="whitespace-nowrap"></code>
+                            </div>
+                        </div>
+                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </a>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.directive).html(this.state.directive);
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
+                    </div>
+
+                    <form exportgroup="form" namespace class="quickstart font-bold">
+                        <div class="flex items-stretch h-16 rounded-xl bg-gray-200 overflow-hidden">
+                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none;" />
+                        </div>
+                        <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
+                            <span data-id="cta_text" class="whitespace-nowrap"></span>
+                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        </button>
+                        <script type="subscript">
+                            if (this.state.directive) {
+                                $(this.namespace.directive).attr('placeholder', this.state.directive);
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
+                                $(this.namespace.directive).attr('size', this.state.directive.length);
+                                $(this).attr('action', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                            }
+                        </script>
+                    </form>
+
+                </template>
+                <template name="hero-section">
+
+                    <template name="cta">
+                        <a namespace href="#" class="cta d-inline-flex flex-y-center b">
+                            <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
+                            <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
+                            <script type="subscript">
+                                if (this.state.href) {
+                                    $(this).attr('href', this.state.href);
+                                    $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
+                                    $(this.namespace.text).html(this.state.text);
+                                }
+                            </script>
+                        </a>
+                    </template>
+
+                    <template name="nav">
+                        <li namespace class="hero-nav-item sm--d-flex">
+                            <a data-id="href" href="" class="flex-center radius-full border-solid">
+                                <i data-id="icon" class="bi flex-center sm"></i>
+                            </a>
+                            <script type="subscript">
+                                if (this.state.href) {
+                                    $(this.namespace.href).attr('href', this.state.href);
+                                    $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                                }
+                            </script>
+                        </li>
+                    </template>
+                    
+                </template>
+                <template name="highlights-section">
+    
+                    <li exportgroup="item" namespace class="project-item lg:text-center flex flex-col bg-gray-100 dark:bg-gray-950 rounded-xl">
+                        <div class="px-8 pb-3 pt-10 border-b border-dashed border-gray-500 dark:border-gray-800 font-bold">
+                            <i data-id="icon" class="subitem-icon bi inline-flex flex-center text-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"></i>
+                            <h4 data-id="title" class="subitem-title pt-2"></h4>
+                        </div>
+                        <p data-id="desc" class="subitem-desc grow h-fit px-8 py-3"></p>
+                        <div class="px-8 pt-3 pb-10">
+                            <a data-id="cta_href" href="/" class="cta subitem-cta py-1 text-wbdiv-color2 dark:text-wbdiv-color2-dim-text rounded-xl rounded-tl-none bold inline-flex items-center" style="text-decoration: none;">
+                                <i class="bi bi-arrow-return-right font-bold flex-center"></i>
+                                <span data-id="cta_text" class="pl-4"></span>
+                            </a>
+                        </div>
+                        <script type="subscript">
+                            if (!this.state.title) return;
+                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
+                            $(this.namespace.title).html(this.state.title);
+                            $(this.namespace.desc).html(this.state.desc);
+                            $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                            $(this.namespace.cta_text).html(this.state.cta.text);
+                            if (this.state.displayRepetition) {
+                                $(this).class('is-display-repetition', true);
+                            }
+                            //let github = 'https':
+                        </script>
+                    </li>
+
+                </template>
+                <template name="showcase-section">
+
+                    <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
+                        <img src="/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
+                    </section>
+
+                </template>
+            </template>
+        </template>
     
     </head>
 
-    <body template="" namespace class="snap-container" play-icon-path="/icon" play-icon-type="bootstrap">
+    <body template="" namespace class="dark font-noto text-lg">
 
         <script type="subscript">
             let app = document.state;
-            let sup = app.page.projectTitle ? app.page.projectTitle.replace('(Coming soon)', '') : (app.page.domain ? app.page.domain.toUpperCase() : 'BETA');
-            $(this.namespace.page_superscript).html(sup);
-            $(this.namespace.page_superscript).attr('href', '/' + [app.page.domain, app.page.projectName].filter(a => a).join('/'));
-            $(this.namespace.app_drawer_open).on('click', () => {
-                this.namespace.side_menu.draw(true);
-            });
-            $([this.namespace.side_menu.namespace.main, this.namespace.menu_bar]).list([{
+            let urlPath = app.url.pathname || '';
+            $(this).attr('wbdiv', urlPath.length < 2 ? 'home' : urlPath.split('/')[1]);
+            $(this).class('docs', urlPath.split('/').length > 3);
+            let items = [{
                 items: [{
                     icon: 'braces',
                     title: 'Tooling',
@@ -86,75 +358,129 @@
             }, {
                 items: [{
                     icon: 'dot',
-                    title: '<i class="bi flex-y-center bi-three-dots"></i>',
+                    title: 'Sign In',
                     href: '#',
                 }]
-            }]);
+            }];
+            $(this.namespace.menuY).list(items);
+            $(this.namespace.menuX).list(items, {
+                renderCallback: (e, el, d, k) => {
+                    d.overflowCollapsed = false;
+                },
+                overflowCallback: (e, el, d, k, overflowCount) => {
+                    d.overflowCollapsed = e === 'collapse';
+                },
+                collapsionPoint: 'end',
+            });
+            let footerLinks = [{
+                legend: 'Tooling',
+                items: [{
+                    title: 'Projects',
+                    href: '/tooling',
+                }, {
+                    title: 'Quick Start',
+                    href: '/tooling#start',
+                }, {
+                    title: 'Contribute',
+                    href: 'https://github.com/webqit',
+                }, {
+                    title: 'Sponsor',
+                    href: 'https://github.com/webqit',
+                }]
+            }, {
+                legend: 'Cloud',
+                items: [{
+                    title: 'Platform',
+                    href: '/cloud',
+                }, {
+                    title: 'Quick Start',
+                    href: '/cloud#start',
+                }, {
+                    title: 'Pricing',
+                    href: '#',
+                }, {
+                    title: 'support',
+                    href: '#',
+                }, {
+                    title: 'Sign in',
+                    href: '#',
+                }]
+            }, {
+                legend: 'Community',
+                items: [{
+                    title: 'Communities',
+                    href: '/community',
+                }, {
+                    title: 'WebQit',
+                    href: '/community/webqit',
+                }, {
+                    title: 'Web-Native',
+                    href: '/community/web-native-cg',
+                }, {
+                    title: 'Partners',
+                    href: '#',
+                }]
+            }, {
+                legend: 'Company',
+                items: [{
+                    title: "We're in Beta",
+                    href: '#',
+                }, {
+                    title: 'About',
+                    href: '#',
+                }, {
+                    title: 'Contact',
+                    href: '#',
+                }, {
+                    title: 'Join',
+                    href: '#',
+                }]
+            }];
+            $(this.namespace.footerLinks).list(footerLinks);
         </script>
-
-        <!-- OVERLAY_MENU -->
-
-        <div is="webqit-app-drawer" data-id="side_menu" namespace>
-            <div data-id="backdrop" class="cover d-none" style="position: fixed; background-color: rgba(0, 0, 0, 0.2); z-index: 150; backdrop-filter: blur(5px);"></div>
-            <div data-id="drawer" class="d-flex flex-column overflow-hidden d-none" style="position: fixed; height: 100vh; max-width: 70vw; background-color: ghostwhite; border-right: 1px solid white; z-index: 160;">
-                <div data-id="main" template="@layout/menu#vert_group" class="col-grows pd-10 pd-x2 pd-btm-0 d-flex flex-column b"></div>
-                <div class="pd-10 pd-x2 flex-y-center flex-x-separate">
-                    <a href="/" target="_blank" class="d-none">About</a>
-                    <a href="https://github.com/webqit" target="_blank" class="d-none">
-                        <i class="bi bi-github sm"></i>
-                    </a>
-                </div>
-            </div>
-            <script type="subscript">
-                if (this.collapseWith) this.collapseWith(this.namespace.backdrop, this.namespace.main);
-            </script>
-        </div>
 
         <!-- HEADER -->
 
-        <header class="page-header pos-sticky offset-top-0 pd-lft-10 pd-rt-10 pd-x2 h5" style="background-color: rgba(255, 255, 255, 0.75); z-index: 100; backdrop-filter: blur(10px);">
-            <div class="layout-section flex-y-stretch flex-x-separate b" style="font-family: Whitney, sans-serif; height: 85px;">
-
-                <div class="flex-y-center">
-                    <a href="/" class="flex-y-center">
-                        <span class="flex-center" style="width: 55px; height: 47px; font-size: 30px; vertical-align: baseline;">
-                            <img src="/img/logo/logo-130x130.png" style="max-width: 80%" />
-                        </span>
-                        <span style="font-size: 24px;">WebQit</span>
+        <header class="flex items-end">
+            <span class="page-pad-l hidden lg:block"></span>
+            <div class="grow flex items-center p-7 pl-10 pr-10 lg:pr-10">
+                <div class="grow flex items-center">
+                    <a href="/" class="inline-flex items-center">
+                        <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1" />
+                        <span class="ml-4">WebQit</span>  <span class="ml-2">(Beta)</span>
                     </a>
-                    <a data-id="page_superscript" href="/" class="mg-lft-10 mg-lft-x2 mg-rt-10 pd-8 txt-sm border-solid radius-10"></a>
                 </div>
-                <ul data-id="menu_bar" template="@layout/menu#horz_group" class="menu-bar flex-y-stretch flex-x-end col-grows sm--d-none list-style-none" style="font-size: 18px;"></ul>
-                <div class="flex-y-center">
-                    <span data-id="app_drawer_open" class="pd-lft-10 pd-rt-10 cursor-pointer d-none sm--d-flex">
-                        <i class="bi bi-filter-right flex-center"></i>
-                    </span>
+                <div class="w-1/3 hidden lg:block">
+                    <form class="flex max-w-sm items-center rounded-full px-4 bg-black bg-opacity-10 hover:bg-opacity-20 focus-within:bg-opacity-20">
+                        <i class="px-2 bi bi-search flex-center"></i>
+                        <input class="grow py-3 bg-transparent" placeholder="Search..." />
+                    </form>
                 </div>
+                <div template="@layout/menu-x" class="w-0 lg:w-1/3 flex items-center justify-end">
+                    <div data-id="menuX" template="@layout/menu-x" class="flex items-center divide-x-2 divide-gray-400"></div>
+                </div>
+                <i class="bi bi-search flex-center lg:hidden" style="cursor: pointer;"></i>
             </div>
-    
-            <!-- PAGE_PROGRESS_BAR -->
-
-            <div class="pos-abs offset-lft-0 offset-btm-0 wt-full z-index-1000">
-                <div role="progressbar" class="wt-full overflow-hidden d-none" dramatic-linearprogress="true" indeterminate="true" style="position: absolute; background-color: rgba(150, 150, 150, 0.25); height: 2px !important;">
-                    <div class="progressbar-indicator-a progressbar-trail" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
-                    <div class="progressbar-indicator-b" style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 1px solid rgba(255, 255, 255, 0.5);"></div>
-                    <script type="subscript">
-                        let app = document.state;
-                        $(this).class('d-none', !app.network.progress.active);
-                        $(this).css('color', app.network.error ? 'red' : 'blueviolet');
-                    </script>
+            <span class="page-pad-r relative self-center group" tabindex="-1">
+                <i class="bi bi-three-dots-vertical relative w-10 -left-4 flex-center border-2 border-black md:border-0 text-xl font-bold py-2 hover:bg-black hover:text-white" style="cursor: pointer;"></i>
+                <div class="fixed top-3 right-4 lg:right-8 text-sm font-bold hidden group-focus-within:block rounded-xl shadow-xl bg-white divide-y-2 divide-gray-300" style="z-index: 1000;">
+                    <div data-id="menuY" template="@layout/menu-y" class="divide-y-2 divide-gray-300"></div>
+                    <ul class="w-full order-last py-4 list-none">
+                        <li class="flex items-center hover:bg-gray-200 p-3 px-6 dark:text-[blue] whitespace-nowrap" style="cursor: default;" onclick="document.body.classList.toggle('dark');">
+                            <span class="pr-4">Dark Mode</span>
+                            <i class="bi bi-circle-half flex-center"></i>
+                        </li>
+                    </ul>
                 </div>
-            </div>
-        </header>
-        
-        <!-- PAGE -->
+            </span>
+        </header>   
 
         <html-import name="index:search(3-10)" class="pd-10">
             <div class="flex-center" style="min-height: 100vh; background-color: whitesmoke;">
                 <div namespace class="pd-10 pd-x3 txt-align-cntr b anim-fade-in">
                     <div data-id="error"></div>
                     <br />
-                    <div class="anim-flash">(Also, we're gradually rolling out pages. <a href="/#waitlist" class="color-1">Get Notified</a>)</div>
+                    <div class="anim-flash">(BTW, we're gradually rolling out pages.)</div>
                     <br />
                     <a href="/" class="color-1">&leftarrow; Back to Home</a>
                     <script type="subscript">
@@ -164,355 +490,37 @@
                 </div>
             </div>
         </html-import>
-
-        <footer namespace style="border-top: 1px solid silver;">
-            <div class="layout-section flex-y-start flex-wrap sm--pd-10 color-gray sm--txt-align-cntr" style="padding-top: 20px; padding-bottom: 20px;">
-                <div data-id="copyright" class="pd-10"></div>
-                <div class="col-grows flex-x-separate flex-wrap sm--col-12 sm--flex-order-first">
-                    <ul class="flex-y-center flex-x-start flex-wrap list-style-none">
-                        <li class="pd-10"><a href="https://github.com/webqit">Github</a></li>
-                        <li class="pd-10"><a href="https://twitter.com/@Web_Qit">Twitter</a></li>
-                    </ul>
-                    <ul class="flex-y-center flex-wrap list-style-none">
-                        <li class="pd-10 flex-y-center">
-                            <i class="bi bi-heart xs flex-center"></i>
-                            <span class="mg-lft-10">Made in WebQit</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <script type="subscript">
-                $(this.namespace.copyright).html('&copy; ' + currentYear + ' WebQit, Inc. <span class="pd-lft-10 pd-rt-10 i">651 N Broad St #206, Middletown, DE 19709</span>');
-            </script>
-        </footer>
-
-        <!-- CODE HIGHLIGHTING -->
-        <link rel="stylesheet" crossorigin href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
-        <link rel="stylesheet" type="text/css" href="/css/github-markdown.css" />
-
-        <template name="@layout">
-
-            <!-- -->
-
-            <template name="menu">
-
-                <ul exportgroup="horz_group" template="@layout/menu#horz" class="menu-bar flex-y-stretch sm--d-none list-style-none" style="font-size: 18px;">
-                    <script type="subscript">
-                        if (this.state.items) {
-                            $(this).list(this.state.items);
-                        }
-                    </script>
-                </ul>
-                
-                <li exportgroup="horz" namespace is="webqit-li-link" class="flex-y-stretch">
-                    <a data-id="link" href="#" class="flex-y-center"></a>
-                    <script type="subscript">
-                        if (!this.state.title) return;
-                        $(this.namespace.link).attr('href', this.state.href);
-                        $(this.namespace.link).html(this.state.title);
-                        if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
-                        $(this).classAsync('active', this.state.activePage);
-                        </script>
-                </li>
-
-                <ul exportgroup="vert_group" template="@layout/menu#vert" class="menu-panel list-style-none">
-                    <script type="subscript">
-                        if (this.state.items) {
-                            $(this).list(this.state.items);
-                        }
-                    </script>
-                </ul>
-
-                <li exportgroup="vert" namespace is="webqit-li-link">
-                    <a data-id="link" href="#" class="flex-y-center">
-                        <i data-id="icon" class="bi sm flex-center pd-lft-10 pd-rt-10"></i>
-                        <span data-id="link_text" class="pd-10"></span>
-                    </a>
-                    <script type="subscript">
-                        if (!this.state.title) return;
-                        $(this.namespace.link).attr('href', this.state.href);
-                        $(this.namespace.link_text).html(this.state.title);
-                        $(this.namespace.icon).class('bi-' + this.state.icon, true);
-                        if (this.isActivePage) this.isActivePage(document.state.url.pathname, this.state.href);
-                        $(this).classAsync('active', this.state.activePage);
-                    </script>
-                </li>
-
-            </template>
-
-            <!-- -->
-
-            <a exportgroup="logo_nav" href="/" class="brand-container flex-y-center h5">
-                <img alt="WebQit logo" data-id="logo" src="/img/logo/logo.130x130.fw.png" class="sm--wt-40 wt-5 wt-x10" style="display: block; color: transparent; background: none;" />
-                <div class="pd-10">
-                    <div class="txt-lg b">WebQit</div>
-                    <div style="color: slateblue;">go --native</div>
-                </div>
-            </a>
-
-            <!-- -->
-
-            <template name="hero">
-
-                <!-- -->
-
-                <section namespace class="pos-rel box-padded-layout-section flex-x-separate flex-wrap pd-top-10 pd-btm-10 pd-x8">
-                    <span class="d-none radius-top-lft-none sm--offset-lft-10 sm--offset-lft-x3" style="position: absolute; top: 10px; left: 65px; padding:10px; padding-left: 20px; padding-right: 20px; color: gray; background-color: whitesmoke; font-size: smaller; font-weight: bold; border-radius: 10px; border: 2px solid lightskyblue;">WebQit's work in progress</span>
-                    <div class="section-left col-5 sm--col-12">
-                        <h1 data-id="title" class="hero-text"></h1>
-                        <p data-id="desc" class="section-desc legend-text"></p>
-                        <html-import data-id="quickstart" template="@layout/quickstart"></html-import>
-                    </div>
-                    <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6 sm--d-none">
-                        <ul data-id="nav" template="@layout/hero/nav" class="hero-nav with-separator sm--flex-y-center list-style-none"></ul>
-                        <div data-id="nav_play_separator" class="hero-nav-play-separator col-grows d-none"></div>
-                        <a data-id="play_href" href="#" class="wt-60 ht-60 flex-center radius-full border-dashed d-none">
-                            <i data-id="play_icon" class="bi flex-center sm"></i>
-                        </a>
-                    </div>
-                    <script type="subscript">
-                        var heroData = this.state;
-                        if (heroData.title) {
-                            var titleHtml = heroData.title.map(chunk => '<span' + (chunk === 'web-native' ? ' class="text-gradient text-gradient-1"' : '') + '>' + chunk + '</span>');
-                            $(this.namespace.title).html(titleHtml.join(' '));
-                            $(this.namespace.desc).html(heroData.desc);
-                            $(this.namespace.quickstart).attr('name', heroData.quickstart.type || 'link');
-                            this.namespace.quickstart.setState(heroData.quickstart);
-                            $(this.namespace.nav).list(heroData.nav);
-                            if (heroData.play) {
-                                $(this.namespace.nav_play_separator).class('d-none', false);
-                                $(this.namespace.play_href).class('d-none', false);
-                                $(this.namespace.play_href).attr('href', heroData.play.href);
-                                $(this.namespace.play_icon).class('bi-' + (heroData.play.icon || 'play'), true);
-                            }
-                        }
-                    </script>
-                </section>
-
-                <!-- -->
-
-                <template name="cta">
-                    <a namespace href="#" class="cta d-inline-flex flex-y-center b">
-                        <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
-                        <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
-                        <script type="subscript">
-                            if (this.state.href) {
-                                $(this).attr('href', this.state.href);
-                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
-                                $(this.namespace.text).html(this.state.text);
-                            }
-                        </script>
-                    </a>
-                </template>
-
-                <!-- -->
-
-                <template name="nav">
-                    <li namespace class="hero-nav-item sm--d-flex">
-                        <a data-id="href" href="" class="flex-center radius-full border-solid">
-                            <i data-id="icon" class="bi flex-center sm"></i>
-                        </a>
-                        <script type="subscript">
-                            if (this.state.href) {
-                                $(this.namespace.href).attr('href', this.state.href);
-                                $(this.namespace.icon).class('bi-' + this.state.icon, true);
-                            }
-                        </script>
-                    </li>
-                </template>
-                
-                <!-- -->
-
-            </template>
-
-            <template name="showcase">
-
-                <!-- -->
-
-                <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
-                    <img src="/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
-                </section>
-
-                <!-- -->
-
-            </template>
-
-            <template name="domain-block">
-
-                <!-- -->
-
-                <section namespace class="layout-section domain-block pos-rel">
-                    <div class="box-padded-section pd-btm-0">
-                        <div class="flex-x-separate sm--d-block">
-                            <div class="section-left col-6 md--col-12">
-                                <h2 data-id="title" class="hero-text"></h2>
-                                <p data-id="desc" class="section-desc legend-text"></p>
-                            </div>
-                            <div class="section-right d-flex flex-column sm--flex-row b sm--pd-top-10 sm--pd-top-x6 sm--d-none">
-                                <ul data-id="nav" template="@layout/hero/nav" class="hero-nav sm--flex-y-center list-style-none"></ul>
-                            </div>
-                        </div>
-                        <html-import data-id="featured" name="container" template="@layout/project-listing" class="pd-top-10 pd-btm-10 pd-x5 border-top-dashed border-btm-dashed txt-larger" style="margin-bottom: 15px; border-color: gray;"></html-import>
-                    </div>
-                    <div class="horz-padded--section">
-                        <a data-id="cta_href" href="" class="cta flex-x-center pd-10 pd-x3 b">
-                            <span class="flex-y-center">
-                                <i class="bi bi-arrow-right flex-center"></i>
-                                <span data-id="cta_text" class="pd-lft-10 pd-x2"></span>
-                            </span>
-                        </a>
-                    </div>
-                    <script type="subscript">
-                        var data = this.state;
-                        if (data.title) {
-                            $(this.namespace.title).html(data.title);
-                            $(this.namespace.desc).html(data.desc);
-                            $(this.namespace.cta_href).attr('href', data.cta.href);
-                            $(this.namespace.cta_text).text(data.cta.text);
-                            $(this.namespace.nav).list(data.nav);
-                            this.namespace.featured.setState({
-                                items: data.featured,
-                                itemsTemplate: 'item',
-                                gridColumns: data.featured.length < 3 ? 2 : 2,
-                            });
-                        }
-                    </script>
-                </section>
-
-                <!-- -->
-
-            </template>
-
-            <template name="project-listing">
-
-                <!-- -->
-
-                <ul exportgroup="container" template="@layout/project-listing" class="project-listing list-style-none">
-                    <script type="subscript">
-                        if (this.state.items) {
-                            $(this).class('grid-' + this.state.gridColumns, true);
-                            $(this).list(this.state.items, {
-                                itemExportId: this.state.itemsTemplate,
-                            });
-                        }
-                    </script>
-                </ul>
-
-                <!-- -->
-
-                <li exportgroup="category" namespace class="project-category box-padded-section">
-                    <h2 data-id="title" class="hero-text"></h2>
-                    <p data-id="desc" class="legend-font pd-top-10 pd-btm-10 pd-x2 border-btm-dashed"></p>
-                    <ul data-id="items" template="@layout/project-listing#item" class="project-listing pd-top-10 pd-top-x3 list-style-none"></ul>
-                    <script type="subscript">
-                        if (this.state.title) {
-                            $(this.namespace.title).html(this.state.title);
-                            $(this.namespace.desc).html(this.state.desc);
-                            $(this.namespace.items).list(this.state.items);
-                        }
-                    </script>
-                </li>
-
-                <!-- -->
-
-                <li exportgroup="item" namespace class="project-item d-flex flex-column">
-                    <div class="flex-y-center">
-                        <i data-id="icon" class="subitem-icon bi flex-center"></i>
-                        <h4 data-id="title" class="subitem-title pd-lft-10 pd-lft-x2"></h4>
-                    </div>
-                    <p data-id="desc" class="subitem-desc col-grows vertical-fit-content pd-top-10 pd-btm-10"></p>
-                    <div>
-                        <a data-id="cta_href" href="/" class="cta subitem-cta pd-4 pd-lft-0 pd-rt-x3 radius-10 radius-top-lft-none b d-inline-flex flex-y-center" style="text-decoration: none;">
-                            <i class="bi bi-arrow-return-right sm flex-center"></i>
-                            <span data-id="cta_text" class="pd-lft-10 pd-x2"></span>
-                        </a>
-                    </div>
-                    <script type="subscript">
-                        if (!this.state.title) return;
-                        $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
-                        $(this.namespace.title).html(this.state.title);
-                        $(this.namespace.desc).html(this.state.desc);
-                        $(this.namespace.cta_href).attr('href', this.state.cta.href);
-                        $(this.namespace.cta_text).html(this.state.cta.text);
-                        if (this.state.displayRepetition) {
-                            $(this).class('is-display-repetition', true);
-                        }
-                        //let github = 'https':
-                    </script>
-                </li>
-
-                <!-- -->
         
-            </template>
-
-            <template name="quickstart">
-
-                <!-- -->
-
-                <a exportgroup="link" namespace href="#" class="quickstart cta d-inline-flex flex-y-center b">
-                    <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
-                    <span data-id="cta_text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
-                    <script type="subscript">
-                        if (this.state.cta) {
-                            $(this).attr('href', this.state.cta.href);
-                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'box-arrow-in-down-right'), true);
-                            $(this.namespace.cta_text).html(this.state.cta.text);
-                        }
-                    </script>
-                </a>
-
-                <!-- -->
-
-                <div exportgroup="code" namespace class="quickstart flex-y-stretch flex-wrap b">
-                    <div class="directive-container flex-y-center sm--col-12 no-wrap max-wt-100 max-wt-x3 pd-10 pd-lft-x2 pd-rt-x2 sm--pd-10 sm--pd-x2 sm--max-wt-none overflow-hidden">
-                        <div data-id="directive" class="overflow-x-auto">
-                            <code data-id="directive"></code>
+        <footer>
+            <div class="flex py-10">
+                <span class="page-pad-l hidden lg:block border-r-0"></span>
+                <div class="grow sm:flex">
+                    <div class="sm:w-3/12 p-10">
+                        <a class="inline-flex items-center hover:text-[blue]" href="/">
+                            <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1 mr-4" />
+                            WebQit, Inc.
+                        </a>
+                        <p class="flex mt-5">
+                            <i class="bi bi-chevron-right -ml-6 mr-3"></i>
+                            651 N Broad St #206, Middletown, DE 19709
+                        </p>
+                        <div class="flex mt-5 hover:text-black">
+                            <i class="bi bi-chevron-right -ml-6 text-black"></i>
+                            <div class="flex pl-3">
+                                <a target="_blank" href="https://github.com/webqit" class="mr-3"><i class="bi bi-github"></i></a>
+                                <a target="_blank" href="https://twitter.com/@Web_Qit" class="mr-3"><i class="bi bi-twitter"></i></a>
+                                <a target="_blank" href="https://linkedin.com/web-qit" class="mr-3"><i class="bi bi-linkedin"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <a data-id="cta_href" href="#" class="cta d-inline-flex flex-y-center sm--flex-y-center pd-10 pd-lft-0 pd-rt-x3 sm--col-12 sm--mg-top-10 sm--radius-10 sm--radius-top-lft-none">
-                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--d-none"></i>
-                        <i class="bi bi-arrow-return-right flex-center d-none sm--d-inline-flex"></i>
-                        <span data-id="cta_text" class="mg-lft-8 mg-x2"></span>
-                    </a>
-                    <script type="subscript">
-                        if (this.state.directive) {
-                            $(this.namespace.directive).html(this.state.directive);
-                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
-                            $(this.namespace.cta_href).attr('href', this.state.cta.href);
-                            $(this.namespace.cta_text).html(this.state.cta.text);
-                        }
-                    </script>
+                    <ul data-id="footerLinks" template="@layout/footer-menu#group" class="sm:w-9/12 p-10 grid md:grid-cols-3 xl:grid-cols-4 gap-10 list-none"></ul>
                 </div>
-
-                <!-- -->
-
-                <form exportgroup="form" namespace class="quickstart flex-y-stretch flex-wrap b">
-                    <div class="directive-container flex-y-center sm--col-12 max-wt-100 max-wt-x3 sm--max-wt-none">
-                        <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="wt-full pd-10 pd-lft-x2 pd-rt-x2 sm--pd-10 sm--pd-x2" style="background-color: transparent; border: none;" />
-                    </div>
-                    <button class="cta d-inline-flex flex-y-center sm--flex-y-center pd-10 pd-lft-0 pd-rt-x3 sm--col-12 sm--mg-top-10 sm--radius-10 sm--radius-top-lft-none cursor-pointer" style="background-color: transparent; border: none;">
-                        <i data-id="icon" class="bi flex-center mg-lft-10 mg-x2 sm--d-none"></i>
-                        <i class="bi bi-arrow-return-right flex-center d-none sm--d-inline-flex"></i>
-                        <span data-id="cta_text" class="mg-lft-8 mg-x2"></span>
-                    </button>
-                    <script type="subscript">
-                        if (this.state.directive) {
-                            $(this.namespace.directive).attr('placeholder', this.state.directive);
-                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
-                            $(this.namespace.directive).attr('size', this.state.directive.length);
-                            $(this).attr('action', this.state.cta.href);
-                            $(this.namespace.cta_text).html(this.state.cta.text);
-                        }
-                    </script>
-                </form>
-
-                <!-- -->
-
-            </template>
-
-        </template>
-
-        <template name="page" src="/bundle.html"></template>
+                <span class="page-pad-r hidden lg:block"></span>
+            </div>
+            <div class="py-10 border-t-4 border-gray-400 border-dotted text-center">
+                &copy 2022 WebQit, Inc.
+            </div>
+        </footer>
 
     </body>
 
