@@ -222,7 +222,7 @@ const staticPageData = {
     },
     community: {
         headline: 'Community initiatives for web-native development',
-        intro: 'Join in the conversations and community-wide initiatives for web-native development!',
+        intro: 'Join in the conversation and community-wide initiatives for web-native development!',
         startersTitle: 'Quick Start',
         startersIntro: 'Join the web-native movement!',
         starters: [{
