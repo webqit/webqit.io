@@ -451,6 +451,7 @@
         $(this.namespace.projectsBody).list(app.projectsBody);
                 $(this.namespace.startersTitle).html(app.startersTitle);
         $(this.namespace.startersIntro).html(app.startersIntro);
+        $(this.namespace.startersIntro2).html(app.startersIntro2);
         $(this.namespace.starters).list(app.starters);
                 $(this.namespace.ideaStart_a).html(app.ideaStart[0]);
         $(this.namespace.ideaStart_b).html(app.ideaStart[1]);
@@ -477,14 +478,17 @@
                 <ul data-id="projectsBody" template="@layout/landing1/projects-section#item" class="projects-grid-a grid md:grid-cols-2 lg:grid-cols-3 list-none"></ul>
             </div>
         </section>
-        <section id="start" class="py-8 xl:px-28 pre-bar text-center border border-x-0 border-dashed border-gray-500 dark:border-gray-800">
-            <div class="px-10 xl:px-16 pt-28 pb-16 md:shadow-xl dark:md:bg-gray-950">
-                <h2 data-id="startersTitle" class="">Examples to try now</h2>
-                <p data-id="startersIntro" class="pt-6 pb-20 text-2xl"></p>
-                <ul data-id="starters" template="@layout/landing1/start-section#item" class="py-4 md:py-6 grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8 list-none"></ul>
+        <section id="start" class="xl:px-28 pre-bar text-center md:bg-gray-50 dark:bg-black border border-x-0 border-dashed border-gray-500 dark:border-gray-800">
+            <div class="py-28 px-4 md:px-0">
+                <h2 data-id="startersTitle" class="px-6 pb-6">Examples to try now</h2>
+                <p data-id="startersIntro" class="px-6 pb-16 text-2xl"></p>
+                <div class="px-10 xl:px-20 py-20 bg-white md:shadow-lg dark:bg-gray-950">
+                    <p data-id="startersIntro2" class="pb-20">...</p>
+                    <ul data-id="starters" template="@layout/landing1/start-section#item" class="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8 list-none"></ul>
+                </div>
             </div>
         </section>
-        <section id="highlights" class="py-20 px-4 xl:px-20 pre-bar text-center">
+        <section id="highlights" class="py-20 px-4 xl:px-20 pre-bar md:bg-gray-50 dark:bg-black text-center">
             <h2>The whole idea</h2>
             <p data-id="ideaStart_a" class="lg:w-3/6 m-auto p-10 pt-6 pb-4 text-2xl"></p>
             <p data-id="ideaStart_b" class="lg:w-3/6 m-auto p-10 pt-4 text-2xl"></p>

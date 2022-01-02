@@ -813,17 +813,12 @@ section.pre-bar::after {
 
 .projects-filter .item {
   white-space: nowrap;
-  border-bottom-width: 1px;
   border-style: solid;
 }
 
 @media (min-width: 1280px) {
   .projects-filter .item {
     white-space: normal;
-  }
-
-  .projects-filter .item {
-    border-bottom-width: 0px;
   }
 
   .projects-filter .item {
@@ -1995,11 +1990,6 @@ section.pre-bar::after {
   padding-right: 2rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -2018,6 +2008,11 @@ section.pre-bar::after {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-2 {
@@ -2111,16 +2106,16 @@ section.pre-bar::after {
   padding-bottom: 5rem;
 }
 
+.pb-6 {
+  padding-bottom: 1.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
 
 .pt-0 {
   padding-top: 0px;
-}
-
-.pb-6 {
-  padding-bottom: 1.5rem;
 }
 
 .pr-10 {
@@ -3533,6 +3528,11 @@ section.pre-bar::after {
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
+  .md\:bg-gray-50 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+  }
+
   .md\:px-14 {
     padding-left: 3.5rem;
     padding-right: 3.5rem;
@@ -3543,9 +3543,9 @@ section.pre-bar::after {
     padding-right: 7rem;
   }
 
-  .md\:py-6 {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .md\:text-center {
@@ -3557,9 +3557,9 @@ section.pre-bar::after {
     line-height: 2.5rem;
   }
 
-  .md\:shadow-xl {
-    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  .md\:shadow-lg {
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
@@ -3580,11 +3580,6 @@ section.pre-bar::after {
   .md\:hover\:-translate-y-1:hover {
     --tw-translate-y: -0.25rem;
     transform: var(--tw-transform);
-  }
-
-  .dark .dark\:md\:bg-gray-950 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(15 15 15 / var(--tw-bg-opacity));
   }
 }
 
@@ -3734,11 +3729,6 @@ section.pre-bar::after {
   .xl\:px-28 {
     padding-left: 7rem;
     padding-right: 7rem;
-  }
-
-  .xl\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
   }
 
   .xl\:px-20 {

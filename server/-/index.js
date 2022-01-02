@@ -78,7 +78,8 @@ const staticPageData = {
         headline: 'Open source tooling for web-native development',
         intro: 'Explore the complete JavaScript stack for developing future-facing, web-native applications.',
         startersTitle: 'Quick Start',
-        startersIntro: 'Check out some quick examples to get started!<br /><i>(All coming soon)</i>',
+        startersIntro: 'Check out some quick examples to get started!',
+        startersIntro2: '<i>(All coming soon)</i>',
         starters: [{
             title: 'Hello frontend',
             desc: 'Demos of plain HTML, CSS, and JavaScript, with some of <i>OOHTML</i> and <i>Play UI</i>',
@@ -154,7 +155,8 @@ const staticPageData = {
         headline: 'Instant, open source cloud for web-native apps',
         intro: 'Go live on an instant, zero-ops infrastructure built for the web-native experience!',
         startersTitle: 'Quick Start',
-        startersIntro: 'Run a quick sample to see what it feels like!<br /><i>(All coming soon)</i>',
+        startersIntro: 'Run a quick sample on WebQit Cloud to get started!',
+        startersIntro2: '<i>(All coming soon)</i>',
         starters: [{
             title: 'Realtime chat app',
             desc: 'Click to view and deploy - chat app as a Progressive Web App',
@@ -225,6 +227,7 @@ const staticPageData = {
         intro: 'Join in the conversation and community-wide initiatives for web-native development!',
         startersTitle: 'Quick Start',
         startersIntro: 'Join the web-native movement!',
+        startersIntro2: '<i>(More coming soon)</i>',
         starters: [{
             title: 'WebQit Github',
             desc: 'Click to follow us and our open source work on Github! Ask questions, raise issues, make pull requests.',
