@@ -1995,14 +1995,19 @@ section.pre-bar::after {
   padding-right: 2rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-20 {
   padding-top: 5rem;
   padding-bottom: 5rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .py-16 {
@@ -2013,11 +2018,6 @@ section.pre-bar::after {
 .py-10 {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .py-2 {
@@ -2103,8 +2103,8 @@ section.pre-bar::after {
   padding-right: 5rem;
 }
 
-.pl-12 {
-  padding-left: 3rem;
+.pl-10 {
+  padding-left: 2.5rem;
 }
 
 .pb-20 {
@@ -2149,10 +2149,6 @@ section.pre-bar::after {
 
 .pl-4 {
   padding-left: 1rem;
-}
-
-.pl-10 {
-  padding-left: 2.5rem;
 }
 
 .pr-4 {
@@ -3363,11 +3359,6 @@ section.pre-bar::after {
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
 }
 
-.dark .dark\:border-gray-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-
 .dark .dark\:bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -3558,6 +3549,11 @@ section.pre-bar::after {
   .md\:px-28 {
     padding-left: 7rem;
     padding-right: 7rem;
+  }
+
+  .md\:py-6 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .md\:text-center {
