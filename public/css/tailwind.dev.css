@@ -225,7 +225,7 @@
 
 
   .projects-grid-a {
-    @apply relative xl:w-7.5/10 p-10 grid gap-4 md:gap-2 text-lg;
+    @apply relative xl:w-7.5/10 py-10 px-4 md:px-10 grid gap-4 md:gap-2 text-lg;
     /*
     background-color: black;
     color: silver;
@@ -244,10 +244,7 @@
     @apply absolute block h-16 w-16 rounded-full -z-10 bg-gray-500 opacity-10 dark:opacity-20 blur bg-wbdiv-color2;
   }
   .projects-grid-a > .item {
-    @apply bg-gray-100 dark:bg-gray-950 hover:bg-gray-200 dark:hover:bg-gray-850 md:hover:bg-gray-100 md:dark:hover:bg-gray-950 md:rounded-xl md:hover:rounded-none;
-  }
-  .projects-grid-a > .item:nth-child(even) {
-    @apply md:bg-gray-200 md:dark:bg-gray-850;
+    @apply bg-white dark:bg-gray-950 hover:shadow-lg md:hover:shadow-none dark:hover:bg-gray-850 md:odd:bg-gray-100 md:even:bg-gray-200 md:dark:odd:bg-gray-950 md:dark:even:bg-gray-850 md:rounded-xl md:hover:rounded-none;
   }
   
   /* ------------ */
@@ -293,7 +290,7 @@
     @apply py-10 px-5 md:px-10;
   }
   .landing1-highlight > li .content {
-    @apply relative rounded-md shadow-lg p-10 border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 w-11/12;
+    @apply relative rounded-xl shadow-lg p-10 border-2 border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 w-11/12;
   }
 
 

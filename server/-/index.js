@@ -48,7 +48,7 @@ export default async function(event, recieved, next) {
         return data;
     }
     data.projectsBody = Object.values(documentation.getProjectsList(false, true));
-    data.projectsFilter = [{ title: 'All', href: '?category=' }].concat(_unique(data.projectsBody.reduce((categories, item) => categories.concat(item.categories), [])).map(category => ({
+    data.projectsFilter = [{ title: 'All Types', href: '?category=' }].concat(_unique(data.projectsBody.reduce((categories, item) => categories.concat(item.categories), [])).map(category => ({
         title: category,
         href: '?category=' + category,
     })));
@@ -78,7 +78,7 @@ const staticPageData = {
         headline: 'Open source tooling for web-native development',
         intro: 'Explore the complete JavaScript stack for developing future-facing, web-native applications.',
         startersTitle: 'Quick Start',
-        startersIntro: 'Try the web-native approach with real-world examples!',
+        startersIntro: 'Check out some quick examples to get started!<br /><i>(All coming soon)</i>',
         starters: [{
             title: 'Hello frontend',
             desc: 'Demos of plain HTML, CSS, and JavaScript, with some of <i>OOHTML</i> and <i>Play UI</i>',
@@ -154,7 +154,7 @@ const staticPageData = {
         headline: 'Instant, open source cloud for web-native apps',
         intro: 'Go live on an instant, zero-ops infrastructure built for the web-native experience!',
         startersTitle: 'Quick Start',
-        startersIntro: 'Try going live with a sample web-native application!',
+        startersIntro: 'Run a quick sample to see what it feels like!<br /><i>(All coming soon)</i>',
         starters: [{
             title: 'Realtime chat app',
             desc: 'Click to view and deploy - chat app as a Progressive Web App',
