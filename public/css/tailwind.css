@@ -731,7 +731,7 @@ h1 .wn {
   display: block;
   content: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
   --tw-text-opacity: 1;
-  color: rgb(55 65 81 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 /* ------------ */
@@ -1239,6 +1239,14 @@ section.pre-bar::after {
   top: 1.5rem;
 }
 
+.-bottom-1 {
+  bottom: -0.25rem;
+}
+
+.right-2 {
+  right: 0.5rem;
+}
+
 .-left-2\.5 {
   left: -0.625rem;
 }
@@ -1428,6 +1436,10 @@ section.pre-bar::after {
   height: 560px;
 }
 
+.h-1 {
+  height: 0.25rem;
+}
+
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -1472,6 +1484,10 @@ section.pre-bar::after {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-1 {
+  width: 0.25rem;
 }
 
 .w-1\/2 {
@@ -2160,6 +2176,11 @@ section.pre-bar::after {
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 
 .text-lg {
