@@ -162,13 +162,13 @@
                 </template>
                 <template name="start-section">
 
-                    <li exportgroup="item" namespace class="group text-left bg-gray-300 transform md:hover:-translate-y-1 transition-all rounded-xl">
-                        <a data-id="href" href="" class="block h-full">
-                            <div class="flex items-center justify-between p-5 font-bold border-l-4 border-black text-black">
+                    <li exportgroup="item" namespace class="group text-left pl-4 border-t-4 border-wbdiv-color2 transform md:hover:-translate-y-1 transition-transform">
+                        <a data-id="href" href="" class="block h-full transform md:group-hover:translate-y-0.5 transition-transform">
+                            <div class="flex items-center justify-between py-5 font-bold">
                                 <span data-id="title"></span>
-                                <i class="bi bi-chevron-right text-2xl text-black"></i>
+                                <i class="bi bi-chevron-right text-2xl text-gray-500 group-hover:text-wbdiv-color2"></i>
                             </div>
-                            <p data-id="desc" class="p-6 text-gray-700 group-hover:text-gray-800"></p>
+                            <p data-id="desc" class="pb-5 text-gray-500 group-hover:text-gray-600"></p>
                         </a>
                         <script type="subscript">
                             $(this.namespace.title).html(this.state.title);
