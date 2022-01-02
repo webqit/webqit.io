@@ -3404,9 +3404,9 @@ section.pre-bar::after {
   filter: var(--tw-filter);
 }
 
-.dark .group:hover .dark\:group-hover\:text-gray-600 {
+.dark .group:hover .dark\:group-hover\:text-gray-500 {
   --tw-text-opacity: 1;
-  color: rgb(75 85 99 / var(--tw-text-opacity));
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .dark .dark\:active2\:border-gray-400.active {
