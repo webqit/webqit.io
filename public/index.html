@@ -127,7 +127,7 @@
                     
                     </template>
 
-                    <li exportgroup="item" namespace class="item group overflow-hidden rounded-xl hover:rounded-none transition transition-all">
+                    <li exportgroup="item" namespace class="item group overflow-hidden rounded-xl md:hover:rounded-none transition transition-all">
                         <a data-id="href" href="" class="p-14 pb-10 h-full block rounded">
                             <span class="icon h-10 w-10 rounded-xl inline-flex border-2 border-transparent group-hover:border-wbdiv-color2 text-wbdiv-color2 flex-center transition-all">
                                 <!--<img src="/icon/optimized-for-seo.svg" />-->
@@ -162,13 +162,13 @@
                 </template>
                 <template name="start-section">
 
-                    <li exportgroup="item" namespace class="text-left text-wbdiv-color2 bg-gray-300 hover:bg-gray-200 transform md:hover:-translate-y-1 transition-all rounded-lg">
+                    <li exportgroup="item" namespace class="group text-left bg-gray-300 transform md:hover:-translate-y-1 transition-all rounded-xl">
                         <a data-id="href" href="" class="block h-full">
-                            <div class="flex items-center justify-between p-5 font-bold border-l-[6px] border-white">
+                            <div class="flex items-center justify-between p-5 font-bold border-l-4 border-black text-black">
                                 <span data-id="title"></span>
-                                <i class="bi bi-chevron-right text-2xl text-wbdiv-color2-dim"></i>
+                                <i class="bi bi-chevron-right text-2xl text-black"></i>
                             </div>
-                            <p data-id="desc" class="p-5"></p>
+                            <p data-id="desc" class="p-6 text-gray-700 group-hover:text-gray-800"></p>
                         </a>
                         <script type="subscript">
                             $(this.namespace.title).html(this.state.title);

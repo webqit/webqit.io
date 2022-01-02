@@ -894,7 +894,6 @@ section.pre-bar::after {
 }
 
 .projects-grid-a > .item:hover {
-  border-color: var(--wbdiv-color2-dim);
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
 }
@@ -1610,10 +1609,6 @@ section.pre-bar::after {
   gap: 0.5rem;
 }
 
-.gap-4 {
-  gap: 1rem;
-}
-
 .gap-10 {
   gap: 2.5rem;
 }
@@ -1747,8 +1742,8 @@ section.pre-bar::after {
   border-bottom-width: 4px;
 }
 
-.border-l-\[6px\] {
-  border-left-width: 6px;
+.border-l-4 {
+  border-left-width: 4px;
 }
 
 .border-t-2 {
@@ -1818,11 +1813,6 @@ section.pre-bar::after {
 
 .border-transparent {
   border-color: transparent;
-}
-
-.border-white {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
 .bg-gray-200 {
@@ -2245,6 +2235,11 @@ section.pre-bar::after {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-gray-100 {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
 .text-rd {
   --tw-text-opacity: 1;
   color: rgb(255 0 0 / var(--tw-text-opacity));
@@ -2260,13 +2255,14 @@ section.pre-bar::after {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.text-wbdiv-color2-dim {
-  color: var(--wbdiv-color2-dim);
-}
-
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
@@ -3234,6 +3230,11 @@ section.pre-bar::after {
   border-color: var(--wbdiv-color2);
 }
 
+.group:hover .group-hover\:text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:delay-500 {
   transition-delay: 500ms;
 }
@@ -3270,10 +3271,6 @@ section.pre-bar::after {
 
 .group.active .group-active2\:opacity-60 {
   opacity: 0.6;
-}
-
-.hover\:rounded-none:hover {
-  border-radius: 0px;
 }
 
 .hover\:border-black:hover {
@@ -3535,6 +3532,10 @@ section.pre-bar::after {
   .md\:hover\:-translate-y-1:hover {
     --tw-translate-y: -0.25rem;
     transform: var(--tw-transform);
+  }
+
+  .md\:hover\:rounded-none:hover {
+    border-radius: 0px;
   }
 }
 
