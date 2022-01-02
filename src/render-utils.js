@@ -20,7 +20,7 @@ export function createData(data, next_pathname) {
     const next_pathname_split = next_pathname ? next_pathname.split('/') : [];
     const breadcrumb = next_pathname_split.reduce((breadcrumb, item, i) => {
         var last, itemObj;
-        if ((last = _last(breadcrumb)) && (itemObj = ((last.subtree || {}).items || []).filter(_item => _item.name === item)[0])) {
+        if ((last = _last(breadcrumb)) && (itemObj = (last.subtree || []).filter(_item => _item.name === item)[0])) {
             if (i === 0) {
                 last.overflowCollapsed = false;
             }
@@ -28,15 +28,15 @@ export function createData(data, next_pathname) {
             return breadcrumb.concat(itemObj);
         }
         return breadcrumb.concat(null);
-    }, fullNav.items.filter(item => item.name === data.domain)).filter(a => a);
-    var nav = fullNav.items.filter(n => n.name === data.domain)[0].subtree;
+    }, fullNav.filter(item => item.name === data.wbdiv)).filter(a => a);
+    var nav = fullNav.filter(n => n.name === data.wbdiv)[0].subtree;
     var breadcrumbMin = breadcrumb.reduce((build, item, i) => build.concat(i === 0 ? `WebQit ${item.title}` : (i === 1 || i === breadcrumb.length - 1 ? item.title : null)), []).filter(a => a);
     var projectTitle = breadcrumbMin[1], title = breadcrumbMin.reverse().join(' | ');
     if (next_pathname_split.length) {
-        nav = nav.items.filter(n => n.name === next_pathname_split[0])[0].subtree;
+        nav = nav.filter(n => n.name === next_pathname_split[0])[0].subtree;
     }
     if (nav) {
-        nav.items.forEach(item => {
+        nav.forEach(item => {
             item.isRoot = true;
         });
     }
@@ -62,14 +62,14 @@ export function createData(data, next_pathname) {
  * @return Void
  */
 export function createNewOnlyTemplates(window, data, next_pathname) {
-    var bundles, domainTemp, tempApp = window.document.templates['page'];
+    var bundles, wbdivTemp, tempApp = window.document.templates['page'];
     if (data.projectName 
-    && (bundles = data.outline.subtree[data.domain].subtree[data.projectName].bundles)
-    && (domainTemp = tempApp.templates[data.domain]) 
-    && !domainTemp.templates[data.projectName]) {
+    && (bundles = data.outline.subtree[data.wbdiv].subtree[data.projectName].bundles)
+    && (wbdivTemp = tempApp.templates[data.wbdiv]) 
+    && !wbdivTemp.templates[data.projectName]) {
         var tempPackage = window.document.createElement('template');
         tempPackage.setAttribute('name', data.projectName);
         tempPackage.innerHTML = bundles.html;
-        domainTemp.content.append(tempPackage);
+        wbdivTemp.content.append(tempPackage);
     }
 };

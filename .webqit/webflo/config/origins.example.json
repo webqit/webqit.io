@@ -32,6 +32,17 @@
             "autodeploy_secret": "",
             "ondeploy": "playui bundle",
             "ondeploy_autoexit": true
+        },
+        {
+            "host": "github",
+            "repo": "webqit/webqit-community.docs",
+            "branch": "master",
+            "tag": "docs-community",
+            "deploy_path": "./views/community/.docs",
+            "autodeploy": true,
+            "autodeploy_secret": "",
+            "ondeploy": "playui bundle",
+            "ondeploy_autoexit": true
         }
     ],
     "repository": true
