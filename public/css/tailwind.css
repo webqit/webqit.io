@@ -3293,10 +3293,6 @@ section.pre-bar::after {
   border-color: transparent;
 }
 
-.hover\:border-wbdiv-color2:hover {
-  border-color: var(--wbdiv-color2);
-}
-
 .hover\:bg-gray-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -3436,10 +3432,6 @@ section.pre-bar::after {
   border-color: transparent;
 }
 
-.dark .dark\:hover\:border-wbdiv-color2:hover {
-  border-color: var(--wbdiv-color2);
-}
-
 .dark .dark\:hover\:text-gray-300:hover {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
@@ -3565,6 +3557,12 @@ section.pre-bar::after {
     line-height: 2.5rem;
   }
 
+  .md\:shadow-xl {
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  }
+
   .md\:transition-none {
     transition-property: none;
   }
@@ -3582,6 +3580,11 @@ section.pre-bar::after {
   .md\:hover\:-translate-y-1:hover {
     --tw-translate-y: -0.25rem;
     transform: var(--tw-transform);
+  }
+
+  .dark .dark\:md\:bg-gray-950 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 15 15 / var(--tw-bg-opacity));
   }
 }
 
