@@ -222,27 +222,29 @@
   .projects-filter .item a {
     @apply block px-6 xl:pl-0 py-6 xl:py-3;
   }
-  .projects-grid-a, .projects-grid-b, .projects-grid-c {
-    @apply relative xl:w-7.5/10 p-10 grid gap-10 md:gap-2 text-lg;
+
+
+  .projects-grid-a {
+    @apply relative xl:w-7.5/10 p-10 grid gap-4 md:gap-2 text-lg;
     /*
     background-color: black;
     color: silver;
     */
   }
-  :is(.projects-grid-a, .projects-grid-b, .projects-grid-c) > li {
+ .projects-grid-a > li {
     position: relative;
     z-index: 1;
     text-align: left;
   }
   .projects-grid-a > .item {
-    @apply relative border border-gray-800 md:border-0 text-xl hover:text-gray-700 dark:hover:text-gray-300;
+    @apply relative text-xl hover:text-gray-700 dark:hover:text-gray-300;
   }
   .projects-grid-a > .item .icon:after {
     content: "";
     @apply absolute block h-16 w-16 rounded-full -z-10 bg-gray-500 opacity-10 dark:opacity-20 blur bg-wbdiv-color2;
   }
   .projects-grid-a > .item {
-    @apply bg-gray-100 dark:bg-gray-950;
+    @apply bg-gray-100 dark:bg-gray-950 hover:bg-gray-200 dark:hover:bg-gray-850 md:hover:bg-gray-100 md:dark:hover:bg-gray-950 md:rounded-xl md:hover:rounded-none;
   }
   .projects-grid-a > .item:nth-child(even) {
     @apply md:bg-gray-200 md:dark:bg-gray-850;

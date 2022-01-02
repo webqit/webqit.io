@@ -850,35 +850,35 @@ section.pre-bar::after {
   }
 }
 
-.projects-grid-a, .projects-grid-b, .projects-grid-c {
+.projects-grid-a {
   position: relative;
   display: grid;
-  gap: 2.5rem;
+  gap: 1rem;
   padding: 2.5rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
 @media (min-width: 768px) {
-  .projects-grid-a, .projects-grid-b, .projects-grid-c {
+  .projects-grid-a {
     gap: 0.5rem;
   }
 }
 
 @media (min-width: 1280px) {
-  .projects-grid-a, .projects-grid-b, .projects-grid-c {
+  .projects-grid-a {
     width: 75%;
   }
 }
 
-.projects-grid-a, .projects-grid-b, .projects-grid-c {
+.projects-grid-a {
   /*
     background-color: black;
     color: silver;
     */
 }
 
-:is(.projects-grid-a, .projects-grid-b, .projects-grid-c) > li {
+.projects-grid-a > li {
   position: relative;
   z-index: 1;
   text-align: left;
@@ -886,9 +886,6 @@ section.pre-bar::after {
 
 .projects-grid-a > .item {
   position: relative;
-  border-width: 1px;
-  --tw-border-opacity: 1;
-  border-color: rgb(31 41 55 / var(--tw-border-opacity));
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
@@ -901,12 +898,6 @@ section.pre-bar::after {
 .dark .projects-grid-a > .item:hover {
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
-}
-
-@media (min-width: 768px) {
-  .projects-grid-a > .item {
-    border-width: 0px;
-  }
 }
 
 .projects-grid-a > .item .icon:after {
@@ -933,12 +924,40 @@ section.pre-bar::after {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.projects-grid-a > .item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+}
+
 .dark .projects-grid-a > .item {
   --tw-bg-opacity: 1;
   background-color: rgb(15 15 15 / var(--tw-bg-opacity));
 }
 
+.dark .projects-grid-a > .item:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 31 31 / var(--tw-bg-opacity));
+}
+
 @media (min-width: 768px) {
+  .projects-grid-a > .item {
+    border-radius: 0.75rem;
+  }
+
+  .projects-grid-a > .item:hover {
+    border-radius: 0px;
+  }
+
+  .projects-grid-a > .item:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  }
+
+  .dark .projects-grid-a > .item:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(15 15 15 / var(--tw-bg-opacity));
+  }
+
   .projects-grid-a > .item:nth-child(even) {
     --tw-bg-opacity: 1;
     background-color: rgb(229 231 235 / var(--tw-bg-opacity));
@@ -1959,11 +1978,6 @@ section.pre-bar::after {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .py-10 {
@@ -3555,10 +3569,6 @@ section.pre-bar::after {
   .md\:hover\:-translate-y-1:hover {
     --tw-translate-y: -0.25rem;
     transform: var(--tw-transform);
-  }
-
-  .md\:hover\:rounded-none:hover {
-    border-radius: 0px;
   }
 }
 
