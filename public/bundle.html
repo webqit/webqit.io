@@ -126,7 +126,7 @@
         
         <div drawer-breakpoint="md" namespace data-id="doc_tree" class="group w-0 lg:w-1/5 sticky" style="top: 60px; z-index: 90;">
             <div data-id="backdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
-            <div data-id="drawer" class="w-96 scale-0 pointer-events-none md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none flex flex-col py-3 px-6 md:border-r-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="height: 100vh; height: calc(100vh - 60px); max-width: 70vw;  z-index: 100">
+            <div data-id="drawer" class="w-96 h-[calc(100vh-120px)] md:h-[calc(100vh-60px)] scale-0 pointer-events-none md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none flex flex-col py-3 px-6 md:border-r-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="max-width: 70vw;  z-index: 100">
                 <div class="grow overflow-y-auto scrollbar-thin">
                     <div class="p-2.5 pl-7.5 flex items-center justify-between text-gray-500 dark:text-gray-500">
                         <span class="sm">Pages</span>
@@ -149,7 +149,7 @@
 
             <div namespace data-id="page_outline" class="group w-0 md:w-3/12 sticky flex justify-end" style="top: 60px; z-index: 89;">
                 <div data-id="backdrop" class="absolute inset-y-0 right-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
-                <div data-id="drawer" class="w-96 scale-0 pointer-events-none overflow-hidden md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 flex flex-col py-3 px-6 md:border-l-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="height: 100vh; height: calc(100vh - 60px); max-width: 70vw;">
+                <div data-id="drawer" class="w-96 h-[calc(100vh-120px)] md:h-[calc(100vh-60px)] scale-0 pointer-events-none overflow-hidden md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 flex flex-col py-3 px-6 md:border-l-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="max-width: 70vw;">
                     <div class="p-2.5 pl-7.5 flex items-center justify-between text-gray-500 dark:text-gray-500">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
@@ -189,20 +189,20 @@
                             <span class="ml-2.5">Parent page</span>
                         </a>
                         <a data-id="edit_link" href="" target="_blank" class="flex items-center text-gray-600 dark:text-gray-500">
-                            <span class="mr-2.5">Edit this page on github</span>
+                            <span class="mr-4 flex items-center"><i class="bi bi-github mr-2"></i> Edit</span>
                             <i class="bi bi-box-arrow-up-right flex-center"></i>
                         </a>
                     </div>
                 </div>
-                <footer class="readme-footer sticky bottom-0">
+                <footer class="readme-footer sticky bottom-0 z-[100]">
                     <div class="h-0 flex-center">
-                        <span data-id="doc_tree_drawer_open" class="h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-0 transition-all font-bold rounded-full drop-shadoww flex flex-center md:hidden cursor-pointer">
+                        <span data-id="doc_tree_drawer_open" class="h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center md:hidden cursor-pointer">
                             <i class="bi bi-text-indent-left flex-center text-2xl"></i>
                         </span>
                     </div>
                     <ul data-id="nav" class="footer-nav p-2.5 px-6 flex items-center list-none bg-white dark:bg-gray-850 border-t border-gray-300 dark:border-black" style="height: 60px;">
-                        <li class="w-6/12 pr-2.5 flex justify-start"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span class="md:hidden">PREV</span> <span data-id="nav_left_text" class="hidden md:inline truncate text-ellipsis"></span></a></li>
-                        <li class="w-6/12 pl-2.5 flex justify-end"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline truncate text-ellipsis"></span> <span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
+                        <li class="w-6/12 pr-2.5 flex justify-start"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="truncate text-ellipsis"></span></a></li>
+                        <li class="w-6/12 pl-2.5 flex justify-end"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="truncate text-ellipsis"></span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                     </ul>
                 </footer>
             </div>
