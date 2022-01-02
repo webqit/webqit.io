@@ -813,12 +813,17 @@ section.pre-bar::after {
 
 .projects-filter .item {
   white-space: nowrap;
+  border-bottom-width: 1px;
   border-style: solid;
 }
 
 @media (min-width: 1280px) {
   .projects-filter .item {
     white-space: normal;
+  }
+
+  .projects-filter .item {
+    border-bottom-width: 0px;
   }
 
   .projects-filter .item {

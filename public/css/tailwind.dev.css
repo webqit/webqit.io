@@ -217,7 +217,7 @@
     @apply xl:w-1.25/10 sticky flex xl:block top-0 xl:top-28 xl:my-10 text-right px-4 xl:px-6 z-10 overflow-x-auto xl:overflow-x-visible bg-white dark:bg-black;
   }
   .projects-filter .item {
-    @apply xl:border-r-4 border-solid whitespace-nowrap xl:whitespace-normal;
+    @apply border-b xl:border-b-0 xl:border-r-4 border-solid whitespace-nowrap xl:whitespace-normal;
   }
   .projects-filter .item a {
     @apply block px-6 xl:pl-0 py-6 xl:py-3;
