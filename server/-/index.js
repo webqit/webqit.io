@@ -48,7 +48,7 @@ export default async function(event, recieved, next) {
         return data;
     }
     data.projectsBody = Object.values(documentation.getProjectsList(false, true));
-    data.projectsFilter = [{ title: 'All Types', href: '?category=' }].concat(_unique(data.projectsBody.reduce((categories, item) => categories.concat(item.categories), [])).map(category => ({
+    data.projectsFilter = [{ title: 'All Categories', href: '?category=' }].concat(_unique(data.projectsBody.reduce((categories, item) => categories.concat(item.categories), [])).map(category => ({
         title: category,
         href: '?category=' + category,
     })));
