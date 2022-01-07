@@ -4,18 +4,14 @@
 			<template name="docs">
 				<!-- Main Home View -->
 
-<div namespace class="relative dark:text-gray-400" exportgroup="index">
+<div namespace class="relative bg-gray-100 dark:bg-black dark:text-gray-400" exportgroup="index">
     
     <script type="subscript">
         let app = document.state;
-        if (document.body.classList.contains('dark')) {
-            document.body.classList.remove('dark');
-            document.body.classList.add('dark-x');
-        }
+        
         if (app.page.wbdiv) {
-            $(this).attr('id', 'route--' + app.page.wbdiv);
-            $(this.namespace.doc_tree.namespace.project_npm).html('@webqit/' + app.page.projectName);
-            $(this.namespace.doc_tree.namespace.project_npm).attr('href', 'https://npmjs.com/package/@webqit/' + app.page.projectName);
+            $(this.namespace.doc_tree.namespace.project_npm).html(app.page.projectTitle);
+            $(this.namespace.doc_tree.namespace.project_npm).attr('href', '/' + app.page.wbdiv + '/' + app.page.projectName);
             $(this.namespace.doc_tree.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
         if (app.page.nav) {
@@ -25,7 +21,10 @@
                 if (app.page.breadcrumb) {
             this.namespace.breadcrumb.setState({ entries: app.page.breadcrumb });
             var currentPage = app.page.breadcrumb[app.page.breadcrumb.length - 1];
-            $(this.namespace.page_outline.namespace.main).list(currentPage.outline || {});
+            setTimeout(() => {
+                this.namespace.markdownBody.bindIndicators(currentPage.outline || []);
+                $(this.namespace.page_outline.namespace.main).list(currentPage.outline || []);
+            }, 0, currentPage.outline);
             $(this.namespace.index_links).class('hidden', !currentPage.subtree);
             this.namespace.index_links.setState(currentPage);
             
@@ -55,112 +54,109 @@
         });
     </script>
     
-    <div data-id="app_bar" class="absolute w-full pointer-events-none" style="top: 0px; height: calc(100% - 100vh + 60px); z-index: 91;">
-        
-        <div class="layout-section sticky flex items-center border-y-2 border-gray-300 dark:border-gray-850 pointer-events-auto bg-gray-200 dark:bg-black" style="top: 0px;">
-            <div namespace data-id="breadcrumb" class="breadcrumb grow">
-                <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="inline-flex pe-4 list-none" style="height: 60px; white-space: nowrap;">
-                    <li namespace class="flex items-center pl-5 hover:text-gray-700 dark:hover:text-gray-300">
-                        <a data-id="href" class="p-1.5 pl-0 whitespace-nowrap" href="/">
-                            <i class="bi bi-house-door xs"></i>
-                        </a>
-                    </li>
-                    <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
-                        <div class="h-full flex items-center">
-                            <i class="bi bi-slash xs"></i>
-                            <i class="bi bi-three-dots xs cursor-pointer"></i>
-                        </div>
-                        <div class="overflow h-0 flex justify-start">
-                            <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list absolute animation-x-fast anim-fly-top-small list-none"></ul>
-                        </div>
-                    </li>
-                    <li data-id="subtree" namespace class="overflow-notch hidden" tabindex="0">
-                        <div class="h-full flex items-center cursor-pointer">
-                            <i class="bi bi-caret-down xs flex items-center"></i>
-                        </div>
-                        <div class="overflow h-0 flex justify-end">
-                            <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list absolute pt-2 pb-2 rounded drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
-                        </div>
-                    </li>
-                </ul>
-                <script type="subscript">
-                    var main = this.namespace.main;
-                    var overflowNotch = this.namespace.overflow;
-                    var overflowList = overflowNotch.namespace.list;
-                    var subtreeNotch = this.namespace.subtree;
-                    var subtreeList = subtreeNotch.namespace.list;
-                    if (this.state.entries) {
-                        $(overflowNotch).classAsync('hidden', true);
-                        $(subtreeNotch).classAsync('hidden', false);
-                                                $(main.parentNode).classAsync('reflowing', true);
-                        $(main).list(this.state.entries, {
-                            renderCallback: (e, el, d, k) => {
-                                d.overflowCollapsed = false;
-                                if (k === this.state.entries.length - 1) {
-                                    $(subtreeList).list(d.subtree);
-                                    main.append(subtreeNotch);
-                                    $(subtreeNotch).classAsync('disabled', !d.subtree);
-                                }
-                            },
-                            overflowCallback: (e, el, d, k, overflowCount) => {
-                                d.overflowCollapsed = e === 'collapse';
-                                $(overflowNotch).class('hidden', overflowCount === 0);
-                            },
-                            overflowContainerCallback: (e, container) => {
-                                                                $(container.parentNode).classAsync('reflowing', e);
-                            },
-                            collapsionPoint: 'start',
-                        });
-                        $(overflowList).list(this.state.entries);
-                    }
-                </script>
-            </div>
-            <div data-id="page_outline_control" class="ml-2.5 p-2.5 flex flex-center active2:text-wbdiv-color2 dark:active2:text-wbdiv-color2-dim-text cursor-pointer md:hidden">
-                <i class="bi bi-text-indent-right sm p-2.5 font-bold text-xl"></i>
-            </div>
-        </div>
-
-    </div>
     
-    <div class="relative flex items-start layout-section bg-white dark:bg-gray-850" style="padding-top: 60px;">
+    <div class="relative flex items-start layout-section">
         
-        <div drawer-breakpoint="md" namespace data-id="doc_tree" class="group w-0 lg:w-1/5 sticky" style="top: 60px; z-index: 90;">
+        <div drawer-breakpoint="md" namespace data-id="doc_tree" class="group w-0 lg:w-1/5 sticky" style="top: 0px; z-index: 101;">
             <div data-id="backdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
-            <div data-id="drawer" class="w-96 h-[calc(100vh-120px)] mb-[60px] md:h-[calc(100vh-60px)] md:mb-0 scale-0 pointer-events-none md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none flex flex-col py-3 px-6 md:border-r-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="max-width: 70vw;  z-index: 100">
-                <div class="grow overflow-y-auto scrollbar-thin">
-                    <div class="p-2.5 pl-7.5 flex items-center justify-between text-gray-500 dark:text-gray-500">
-                        <span class="sm">Pages</span>
-                        <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
-                    </div>
-                    <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline pb-10 list-none"></ul>
+            <div data-id="drawer" class="w-96 md:w-full max-w-[70vw] h-[100vh] p-3 scale-0 md:scale-100 pointer-events-none md:pointer-events-auto overflow-y-auto scrollbar-thin group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 md:border-r border-gray-300 dark:border-gray-900 bg-gray-100 dark:bg-black">
+                <div class="sticky py-5 px-3 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
+                    <a data-id="project_npm" href="" class="font-bold whitespace-nowrap hover:text-gray-700 dark:hover:text-gray-300"></a>
+                    <a data-id="project_github" href="" target="_blank" class="hover:text-gray-700 dark:hover:text-gray-300">
+                        <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
+                    </a>
                 </div>
-                <div data-id="project_links" class="sticky px-5 bg-white dark:bg-gray-850" style="bottom: 0px;">
-                    <div class="flex items-center justify-between" style="height: 60px;">
-                        <a data-id="project_npm" href="" target="_blank" title="Go to project on npm" class="b"></a>
-                        <a data-id="project_github" href="" target="_blank" title="Visit project on github" class="ml-2.5">
-                            <i class="bi bi-github sm"></i>
-                        </a>
-                    </div>
-                </div>
+                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline py-3 mb-10 list-none"></ul>
             </div>
         </div>
 
         <main class="w-full lg:w-4/5 flex items-start flex-wrap">
 
-            <div namespace data-id="page_outline" class="group w-0 md:w-3/12 sticky flex justify-end" style="top: 60px; z-index: 89;">
+            <div namespace data-id="page_outline" class="group w-0 md:w-3/12 sticky flex justify-end" style="top: 0px; z-index: 100;">
                 <div data-id="backdrop" class="absolute inset-y-0 right-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
-                <div data-id="drawer" class="w-96 h-[calc(100vh-120px)] mb-[60px] md:h-[calc(100vh-60px)] md:mb-0 scale-0 pointer-events-none overflow-hidden md:w-full md:scale-100 md:pointer-events-auto group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 flex flex-col py-3 px-6 md:border-l-2 border-gray-300 dark:border-black bg-white dark:bg-gray-850" style="max-width: 70vw;">
-                    <div class="p-2.5 pl-7.5 flex items-center justify-between text-gray-500 dark:text-gray-500">
+                <div data-id="drawer" class="w-96 md:w-full max-w-[70vw] h-[100vh] p-3 scale-0 md:scale-100 pointer-events-none md:pointer-events-auto overflow-y-auto scrollbar-thin group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 md:border-l border-gray-300 dark:border-gray-900 bg-gray-100 dark:bg-black">
+                    <div class="sticky py-5 px-3 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
                     </div>
-                    <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline pb-10 grow overflow-y-auto scrollbar-thin list-none"></ul>
-                    <div class="sticky flex items-end justify-between bg-white dark:bg-gray-850" style="bottom: 0px; height: 60px;"></div>
+                    <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline py-3 mb-10 list-none"></ul>
                 </div>
             </div>
 
-            <div data-id="page_readme_container" class="order-first w-full md:w-9/12">
-                <div class="doc-readme markdown-body py-14 px-11 md:px-14" style="min-height: 75vh;">
+            <div data-id="page_readme_container" class="relative order-first w-full md:w-9/12" style="padding-top: 75px;">
+                
+                <div data-id="app_bar" class="absolute w-full pointer-events-none" style="top: 0px; height: calc(100% - 100vh + 92px); z-index: 91;">
+        
+                    <div class="layout-section py-4 px-2 md:px-6 sticky flex items-center  pointer-events-auto text-gray-500" style="top: 0px; backdrop-filter: blur(10px);">
+                        <div data-id="doc_tree_drawer_open" class="p-4 flex flex-center active2:text-wbdiv-color2 dark:active2:text-wbdiv-color2-dim-text border-r border-gray-300 dark:border-gray-900 cursor-pointer md:hidden">
+                            <i class="bi bi-text-indent-left font-bold text-2xl"></i>
+                        </div>
+                        <div namespace data-id="breadcrumb" class="breadcrumb grow">
+                            <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="inline-flex list-none" style="height: 60px; white-space: nowrap;">
+                                <li namespace class="flex items-center hover:text-gray-700 dark:hover:text-gray-300">
+                                    <a class="p-1.5 mx-1 whitespace-nowrap" href=".#">
+                                        <i class="bi bi-arrow-left font-bold" style="font-size: larger;"></i>
+                                    </a>
+                                </li>
+                                <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
+                                    <div class="h-full flex items-center">
+                                        <i class="bi bi-slash xs"></i>
+                                        <i class="bi bi-three-dots xs cursor-pointer"></i>
+                                    </div>
+                                    <div class="overflow h-0 flex justify-start">
+                                        <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list absolute animation-x-fast anim-fly-top-small list-none"></ul>
+                                    </div>
+                                </li>
+                                <li data-id="subtree" namespace class="overflow-notch hidden" tabindex="0">
+                                    <div class="h-full flex items-center cursor-pointer">
+                                        <i class="bi bi-caret-down xs flex items-center"></i>
+                                    </div>
+                                    <div class="overflow h-0 flex justify-end">
+                                        <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list absolute pt-2 pb-2 rounded drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
+                                    </div>
+                                </li>
+                            </ul>
+                            <script type="subscript">
+                                var main = this.namespace.main;
+                                var overflowNotch = this.namespace.overflow;
+                                var overflowList = overflowNotch.namespace.list;
+                                var subtreeNotch = this.namespace.subtree;
+                                var subtreeList = subtreeNotch.namespace.list;
+                                if (this.state.entries) {
+                                    $(overflowNotch).classAsync('hidden', true);
+                                    $(subtreeNotch).classAsync('hidden', false);
+                                                                        $(main.parentNode).classAsync('reflowing', true);
+                                    $(main).list(this.state.entries, {
+                                        renderCallback: (e, el, d, k) => {
+                                            d.overflowCollapsed = false;
+                                            if (k === this.state.entries.length - 1) {
+                                                $(subtreeList).list(d.subtree);
+                                                main.append(subtreeNotch);
+                                                $(subtreeNotch).classAsync('disabled', !d.subtree);
+                                            }
+                                        },
+                                        overflowCallback: (e, el, d, k, overflowCount) => {
+                                            d.overflowCollapsed = e === 'collapse';
+                                            $(overflowNotch).class('hidden', overflowCount === 0);
+                                        },
+                                        overflowContainerCallback: (e, container) => {
+                                                                                        $(container.parentNode).classAsync('reflowing', e);
+                                        },
+                                        collapsionPoint: 'start',
+                                    });
+                                    $(overflowList).list(this.state.entries);
+                                }
+                            </script>
+                        </div>
+                        <a data-id="edit_link" href="" target="_blank" class="mx-3 px-3 border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-300" title="Edit this page on github">
+                            <span class="mr-4 hidden md:block flex items-center">Edit</span>
+                            <i class="bi bi-pencil flex-center"></i>
+                        </a>
+                    </div>
+            
+                </div>
+                
+                <div is="playui-scrollspy-div" data-id="markdownBody" class="doc-readme markdown-body py-10 px-11 md:px-16" style="min-height: 75vh;">
                     <html-import name="readme" data-id="main" class="overflow-hidden">
                         <div class="flex-center" style="height: 85vh;">
                             <div class="p-5 text-center">
@@ -182,27 +178,16 @@
                         </script>
                     </ul>
                 </div>
-                <div>
-                    <div class="pt-4 pb-10 px-6 flex items-center justify-between text-sm border-t border-gray-300 dark:border-black">
-                        <a href=".#" class="flex items-center text-gray-600 dark:text-gray-500">
-                            <i class="bi bi-chevron-left flex-center"></i>
-                            <span class="ml-2.5">Parent page</span>
-                        </a>
-                        <a data-id="edit_link" href="" target="_blank" class="flex items-center text-gray-600 dark:text-gray-500">
-                            <span class="mr-4 flex items-center"><i class="bi bi-github mr-2"></i> Edit</span>
-                            <i class="bi bi-box-arrow-up-right flex-center"></i>
-                        </a>
-                    </div>
-                </div>
+
                 <footer class="readme-footer sticky bottom-0 z-[100]">
-                    <div class="h-0 flex-center">
-                        <span data-id="doc_tree_drawer_open" class="h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center md:hidden cursor-pointer">
-                            <i class="bi bi-text-indent-left flex-center text-2xl"></i>
+                    <div class="relative h-0 flex-center z-10">
+                        <span data-id="page_outline_control" class="h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center md:hidden cursor-pointer">
+                            <i class="bi bi-text-indent-right flex-center text-2xl"></i>
                         </span>
                     </div>
-                    <ul data-id="nav" class="footer-nav p-2.5 px-6 flex items-center list-none bg-white dark:bg-gray-850 border-t border-gray-300 dark:border-black" style="height: 60px;">
-                        <li class="w-6/12 pr-2.5 flex justify-start"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="truncate text-ellipsis"></span></a></li>
-                        <li class="w-6/12 pl-2.5 flex justify-end"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="truncate text-ellipsis"></span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
+                    <ul data-id="nav" class="footer-nav p-2.5 px-6 flex items-center list-none bg-gray-100 dark:bg-black" style="height: 75px;">
+                        <li class="w-6/12 pr-5 flex justify-start"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="truncate text-ellipsis"></span></a></li>
+                        <li class="w-6/12 pl-5 flex justify-end"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="truncate text-ellipsis"></span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                     </ul>
                 </footer>
             </div>
@@ -259,8 +244,8 @@
     <template name="project-outline">
 
         <li exportgroup="category" namespace class="category">
-            <div data-id="legend" class="py-8 px-5 text-sm text-gray-500 dark:text-gray-600"></div>
-            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="rounded-lg list-none"></ul>
+            <div data-id="legend" class="legend relative py-6 px-5 text-sm text-gray-500 dark:text-gray-600"></div>
+            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 bg-white dark:bg-gray-850 rounded-lg list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());
@@ -270,10 +255,8 @@
         </li>
 
         <li namespace is="playui-linkitem-li" class="group">
-            <div data-id="item_bar" class="item-bar flex">
-                <span data-id="subtree_notch" class="subtree-notch flex items-center">
-                    <i data-id="subtree_icon" class="bi bi-dash flex-center font-bold" style="font-size: x-small;"></i>
-                </span>
+            <div data-id="item_bar" class="item-bar flex px-3">
+                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
                 <a data-id="href" href="" class="grow flex items-center justify-between">
                     <span data-id="text"></span>
                     <i class="bi bi-chevron-right flex items-center pl-2"></i>
@@ -283,20 +266,12 @@
                 <ul data-id="sub_menu" template="page/-/-/docs/@layout/project-outline" class="w-full project-suboutline list-none"></ul>
             </div>
             <script type="subscript">
-                // Epxand/Collapse control
                 if (this.toggleWith) this.toggleWith(this.namespace.subtree_notch);
-                // Main
-                if (!this.state.title) return;
-                if (this.state.activePage) this.namespace.href.focus();
-                // Subtree
+                if (this.state.activePage && this.state.exactActive) this.namespace.href.focus();
                 if (!this.state.subtree) return;
-                $(this.namespace.sub_menu).list(this.state.subtree, {
-                    itemExportId: this.state._subtreeType
-                });
-                $(this.namespace.subtree_notch).classAsync('cursor-pointer', true);
-                var plusIcon = this.state.subtree && !this.state.expanded;
-                $(this.namespace.subtree_icon).classAsync('bi-plus', plusIcon);
-                $(this.namespace.subtree_icon).classAsync('bi-dash', !plusIcon);
+                $(this).classAsync('has-subtree', true);
+                $(this).classAsync('expanded', this.state.expanded);
+                $(this.namespace.sub_menu).list(this.state.subtree, { itemExportId: this.state._subtreeType });
                 $(this.namespace.sub_menu_container).play({height: this.state.expanded ? 'auto' : 0}, {
                     duration: 300,
                     easing: 'ease-out', 
@@ -308,10 +283,8 @@
 
     <template name="page-outline">
         <li namespace is="playui-linkitem-li" class="group">
-            <div data-id="item_bar" class="item-bar flex">
-                <span data-id="subtree_notch" class="subtree-notch flex items-center">
-                    <i data-id="subtree_icon" class="bi bi-dash flex-center font-bold" style="font-size: x-small;"></i>
-                </span>
+            <div data-id="item_bar" class="item-bar flex px-3">
+                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
                 <a data-id="href" href="" class="grow text-inherit">
                     <span data-id="text"></span>
                 </a>
@@ -319,12 +292,6 @@
             <ul data-id="sub_menu" template="page/-/-/docs/@layout/page-outline" class="page-suboutline hidden list-none"></ul>
             <script type="subscript">
                 if (!this.state.title) return;
-                // Main
-                //$(this.namespace.href).attrAsync('href', '#' + this.state.uri);
-                $(this.namespace.text).htmlAsync(this.state.title);
-                if (this.isActivePage) this.isActivePage(document.state.url.hash, '#' + this.state.uri);
-                $(this.namespace.item_bar).classAsync('active', this.state.activePage);
-                // Subtree
                 if (this.state.subtree) {
                     $(this.namespace.sub_menu).classAsync('hidden', false);
                     $(this.namespace.sub_menu).list(this.state.subtree);
@@ -576,7 +543,7 @@ Enter your logo URL in a new list item in the format:
             <div class="block lg:flex items-end">
                 <div class="w-48 h-48 hidden md:block rounded-3xl bg-white shadow-xl"></div>
                 <div class="grow py-10 lg:pl-10 lg:pr-4 mt-10 lg:mt-0 lg:flex justify-between">
-                    <p class="pb-6 max-w-4/5 border-b-4 border-black">Build <span class="text-rd">products</span> that leverage web standards!</p>
+                    <p class="pb-6 max-w-4/5 border-b-4 border-black">We facilitate building products <span class="text-rd">that leverage web standards</span>!</p>
                     <button class="relative mt-10 lg:mt-0 w-10 h-10 flex-center bg-white rounded-full shadow-xl">
                         <i class="bi bi-play-fill text-2xl flex-center"></i>
                     </button>

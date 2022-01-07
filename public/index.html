@@ -29,7 +29,7 @@
         <!--
             <link rel="stylesheet" type="text/css" href="/css/sunburst.css">
         -->
-        <link rel="stylesheet" type="text/css" href="/css/github-markdown.css">
+        <link rel="stylesheet" type="text/css" href="/css/base16-phd.css">
         <link type="text/css" rel="stylesheet" crossorigin href="/css/tailwind.css" />
 
         <!-- JS -->
@@ -441,6 +441,18 @@
             }];
             $(this.namespace.footerLinks).list(footerLinks);
         </script>
+        
+        <!-- PAGE_PROGRESS_BAR -->
+
+        <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed left-0 top-0 w-full border-t border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.75)] z-10 overflow-hidden hidden" style="height: 3px;">
+            <div class="progressbar-indicator-a progressbar-trail" style="background-color: red;"></div>
+            <div class="progressbar-indicator-b" style="background-color: blue;"></div>
+            <script type="subscript">
+                let app = document.state;
+                $(this).class('hidden', !app.network.progress.active);
+                $(this).css('color', app.network.error ? 'red' : 'blueviolet');
+            </script>
+        </div>
 
         <!-- HEADER -->
 
@@ -466,11 +478,11 @@
             </div>
             <span class="page-pad-r relative self-center group" tabindex="-1">
                 <i class="bi bi-three-dots-vertical relative w-10 -left-4 flex-center border-2 border-black md:border-0 text-xl font-bold py-2 hover:bg-black hover:text-white" style="cursor: pointer;"></i>
-                <div class="fixed top-3 right-4 lg:right-8 text-sm font-bold hidden group-focus-within:block rounded shadow-xl bg-white divide-y-2 divide-gray-300" style="z-index: 1000;">
+                <div class="fixed top-3 right-4 lg:right-8 text-sm font-bold hidden group-focus-within:block rounded-lg shadow-xl bg-white divide-y-2 divide-gray-300" style="z-index: 1000;">
                     <div data-id="menuY" template="@layout/menu-y" class="divide-y-2 divide-gray-300"></div>
                     <ul class="w-full order-last py-4 list-none">
                         <li class="flex items-center hover:bg-gray-200 p-3 px-6 dark:text-[blue] whitespace-nowrap" style="cursor: default;" onclick="document.body.classList.toggle('dark');">
-                            <span class="pr-4">Dark Mode</span>
+                            <span class="pr-4 grow">Dark Mode</span>
                             <i class="bi bi-circle-half flex-center"></i>
                         </li>
                     </ul>

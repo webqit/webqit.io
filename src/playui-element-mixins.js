@@ -3,6 +3,7 @@
  * @imports
  */
 import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
+const { Observer } = window.WebQit;
 
 /**
  * ---------------------------
@@ -52,6 +53,101 @@ export const _ScrollTimeline = __ScrollTimeline => class extends _Root(__ScrollT
 
 /**
  * @ParentRoot Element
+ * @extends _Root() -> __ScrollSpy
+ */
+export const _ScrollSpy = __ScrollSpy => class extends _Root(__ScrollSpy) {
+
+    bindIndicators(indicatorTree) {
+        if (this.observer) {
+            this.observer.disconnect();
+        }
+        this.headings = [];
+
+        Array.from(this.querySelectorAll('h1,h2,h3,h4,h5,h6')).reduce((prev, el) => {
+            var level = parseInt(el.nodeName.substr(1));
+            let heading = { el, level };
+            if (prev) {
+                if (prev.level === heading.level) {
+                    heading.parent = prev.parent;
+                } else if (prev.level < heading.level) {
+                    heading.parent = prev;
+                } else if (prev.level > heading.level) {
+                    let _prev = prev;
+                    while((_prev = _prev.parent) && !heading.parent) {
+                        if (_prev.level === heading.level) {
+                            heading.parent = _prev.parent;
+                        }
+                    }
+                }
+            }
+            this.headings.push(heading);
+            return heading;
+        }, null);
+
+        let setState = (heading, state) => {
+            Observer.set(heading, 'active', state);
+            if (heading.parent) {
+                setState(heading.parent, state ? 2 : state);
+            }
+        };
+
+        let callback = (entries) => {
+            let preMatch = entries.reduce((match, entry) => {
+                // On bottom-up intersection...
+                if (entry.isIntersecting && entry.boundingClientRect.top > 0) {
+                    return { el: entry.target, event: 'entry'};
+                }
+                // On top-down de-intersection...
+                if (entry.boundingClientRect.top > 0 && !match) {
+                    return { el: entry.target, event: 'exit'};
+                }
+                return match;
+            }, null);
+            if (preMatch) {
+                let match;
+                this.headings.reduce((prev, heading) => {
+                    if (heading.el === preMatch.el) {
+                        if (preMatch.event === 'entry') {
+                            match = heading;
+                        } else {
+                            match = prev;
+                            setState(heading, 0);
+                        }
+                    } else {
+                        setState(heading, 0);
+                    }
+                    return heading;
+                }, null);
+                if (match) {
+                    setState(match, 1);
+                }
+            }
+        };
+
+        let options = { threshold: 0, rootMargin: '0px 0px -50% 0px' };
+        this.observer = new IntersectionObserver(callback, options);
+        this.headings.forEach(heading => this.observer.observe(heading.el));
+
+        let bind = tree => {
+            tree.forEach(item => {
+                let hash = item.uri || (item.href ? item.href.split('#').pop() : '');
+                this.headings.forEach(heading => {
+                    if (heading.el.id === hash) {
+                        Observer.set(item, 'scrollSpy', heading);
+                    }
+                });
+                if (item.subtree) {
+                    bind(item.subtree);
+                }
+            });
+        };
+        bind(indicatorTree);
+    }
+
+};
+
+/**
+ * @ParentRoot Element
  * @extends _Root() -> __List
  */
 export const _List = __List => class extends _Root(__List) {
@@ -80,7 +176,6 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
 
     connectedCallback() {
         super.connectedCallback();
-        this.treewatch = this.hasAttribute('treewatch');
         this.defaultActive = this.hasAttribute('defaultactive');
         this.hasOverflowVisibility = this.getAttribute('overflow-visibility');
         this.overflowVisibility = !!parseInt(this.hasOverflowVisibility);
@@ -97,20 +192,28 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     }
 
     _matchQueryHash() {
+        if (this.state.scrollSpy) {
+            return {
+                active: this.state.scrollSpy.active,
+                hasActive: this.state.scrollSpy.active === 2,
+            };
+        }
         let hash = this.state.uri || (this.state.href ? this.state.href.split('#').pop() : '');
-        return ('#' + hash === document.state.url.hash) || (!hash && !document.state.url.hash && this.defaultActive);
+        return {
+            active: ('#' + hash === document.state.url.hash) || (!hash && !document.state.url.hash && this.defaultActive),
+        };
     }
 
     _matchQueryParams() {
         var href = this.state.href;
-        return href.split('?').pop().split('&').reduce((prev, q) => {
+        return { active: href.split('?').pop().split('&').reduce((prev, q) => {
             if (prev) return;
             q = q.split('=');
             if ((document.state.url.query[q[0]] === q[1]) || (!q[1] && !(q[0] in document.state.url.query) && this.defaultActive)) {
                 return true;
             }
             return false;
-        }, false);
+        }, false) };
     }
 
     _matchQueryPath() {
@@ -119,24 +222,28 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         var thisPathSlash = href + '/';
         var isActivePathMatch = activePathSlash.startsWith(thisPathSlash);
         var childIsActivePathMatchStr = activePathSlash.substr(thisPathSlash.length);
+        if (isActivePathMatch)
         var childIsActivePathMatch = isActivePathMatch && childIsActivePathMatchStr && childIsActivePathMatchStr.indexOf('/') > 0;
         return {
-            activePage: isActivePathMatch && (this.treewatch || !childIsActivePathMatch),
+            active: isActivePathMatch,
+            hasActive: childIsActivePathMatch,
             expanded: this.state.subtree && (this.state.isRoot || childIsActivePathMatch),
         }
     }
 
-    isActivePage(href = this.state.href, uri = this.state.uri, documentUrl = document.state.url, documentUrlHref = document.state.url?.href) {
+    isActivePage(href = this.state.href, uri = this.state.uri, documentUrl = document.state.url, documentUrlHref = document.state.url?.href, scrollSpyActive = this.state.scrollSpy?.active) {
         if ((!href && !uri) || !documentUrlHref) return;
+        let match;
         if (uri || href.includes('#')) {
-            this.state.activePage = this._matchQueryHash();
+            match = this._matchQueryHash();
         } else if (href.includes('?')) {
-            this.state.activePage = this._matchQueryParams();
+            match = this._matchQueryParams();
         } else if (documentUrl.pathname) {
-            let match = this._matchQueryPath();
-            this.state.activePage = match.activePage;
-            this.state.expanded = match.expanded;
+            match = this._matchQueryPath();
         }
+        this.state.active = match.active;
+        this.state.hasActive = match.hasActive;
+        this.state.expanded = match.expanded;
     }
 
     render() {
@@ -145,7 +252,8 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         if (!this.state.title) return;
         $(hrefElement).attr('href', this.state.href || '#' + this.state.uri);
         $(textElement).html(this.state.title);
-        $(this).classAsync('active', this.state.activePage);
+        $(this).classAsync('active', this.state.active);
+        $(this).classAsync('has-active', this.state.hasActive);
         $(this).classAsync('expanded', this.state.expanded);
         if (this.hasOverflowVisibility) {
             $(this).classAsync('hidden', this.state.overflowCollapsed === this.overflowVisibility);

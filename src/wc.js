@@ -20,6 +20,10 @@ customElements.define('playui-scrolltimeline-ul', ScrollTimelineUlWidget, { exte
 const ScrollTimelineLiWidget = class extends WidgetElements._ScrollTimeline(WebQit.SubscriptElement(HTMLLIElement)) {};
 customElements.define('playui-scrolltimeline-li', ScrollTimelineLiWidget, { extends: 'li' });
 
+// ScrollSpy
+const ScrollSpyDivWidget = class extends WidgetElements._ScrollSpy(WebQit.SubscriptElement(HTMLDivElement)) {};
+customElements.define('playui-scrollspy-div', ScrollSpyDivWidget, { extends: 'div' });
+
 // list
 const ListUlWidget = class extends WidgetElements._List(WebQit.SubscriptElement(HTMLUListElement)) {};
 customElements.define('playui-list-ul', ListUlWidget, { extends: 'ul' });

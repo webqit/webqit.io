@@ -52,6 +52,7 @@ export default async function(event, recieved, next) {
         title: category,
         href: '?category=' + category,
     })));
+    //await new Promise((res, rej) => setTimeout(res, 2000));
     return { ...data, ...staticPageData[data.wbdiv] };
 }
 

@@ -182,7 +182,7 @@
     text-align: right !important;
     display: block;
     content: "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20";
-    @apply text-gray-600;
+    @apply text-gray-400;
   }
 
   /* ------------ */
@@ -405,28 +405,54 @@
 /* ------------------------ */
 
 :is(.project-outline, .page-outline) li > .item-bar {
-  @apply relative text-gray-600 dark:text-gray-400;
+  @apply relative;
 }
 :is(.project-suboutline, .page-suboutline)  {
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
 /* ---------- */
 
-:is(.project-outline, .page-outline) li > .item-bar {
-  border-left: 1px solid;
-  @apply border-gray-300 dark:border-gray-700;
+:is(.project-outline, .page-outline) li .subtree-notch {
+  padding-left: 4px;
+  padding-right: 4px;
+  font-weight: bold;
 }
-:is(.project-outline, .page-outline) li > .item-bar:hover,
-:is(.project-outline, .page-outline) li.active > .item-bar {
-  border-color: currentColor;
-  @apply text-wbdiv-color2 dark:text-wbdiv-color2-dim-text;
+:is(.project-outline, .page-outline) li > .item-bar > a {
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
-
-/* ---------- */
-
+:is(.project-outline, .page-outline) li.has-subtree > .item-bar > .subtree-notch {
+  cursor: pointer;
+}
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty) {
   position: relative;
+}
+
+/* ---------- */
+
+:is(.project-outline, .page-outline) li > .item-bar .subtree-notch {
+  border-left: 1px solid;
+}
+:is(.project-outline, .page-outline) li .subtree-notch:before,
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):before,
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
+  display: block;
+  content: "";
+}
+:is(.project-outline, .page-outline) li .subtree-notch:before {
+  position: relative;
+  height: 10px;
+  width: 10px;
+  border: 2px solid;
+  left: -9.5px;
+  @apply bg-white dark:bg-gray-850 rounded-full;
+}
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):before,
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
+  position: absolute;
+  width: 8px;
+  left: 4px;
 }
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty):before  {
   top: 0px;
@@ -436,35 +462,34 @@
   bottom: 0px;
   border-bottom: 1px solid;
 }
+
+/* ---------- */
+
+:is(.project-outline, .page-outline) li > .item-bar:hover,
+:is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
+  @apply text-wbdiv-color2 dark:text-wbdiv-color2-dim-text;
+}
+:is(.project-outline, .page-outline) li > .item-bar .subtree-notch,
+:is(.project-outline, .page-outline) li .subtree-notch:before,
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty):before,
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
-  position: absolute;
-  content: "";
-  display: block;
-  left: -10px;
-  width: 10px;
-  @apply border-gray-300 dark:border-gray-800;
+  @apply border-gray-400 dark:border-gray-600;
 }
+:is(.project-outline, .page-outline) li:hover > .item-bar .subtree-notch,
+:is(.project-outline, .page-outline) li.active > .item-bar .subtree-notch,
+:is(.project-outline, .page-outline) li:hover > .item-bar > .subtree-notch:before,
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch:before,
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:before,
-:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after {
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after,
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before,
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
   @apply border-wbdiv-color2 dark:border-wbdiv-color2-dim-text;
 }
-
-:is(.project-outline, .page-outline) li .subtree-notch {
-  padding-left: 4px;
-  padding-right: 4px;
-  font-weight: bold;
-}
-:is(.project-outline, .page-outline) li > .item-bar > .subtree-notch,
-:is(.project-outline, .page-outline) li > .item-bar > a {
-  margin-top: 2px;
-  margin-bottom: 2px;
-}
-.project-outline li a .bi {
-  padding-left: 10px;
-  padding-right: 10px;
+:is(.project-outline, .page-outline) li.has-subtree:not(.expanded) > .item-bar > .subtree-notch:before {
+  background-color: currentColor !important;
 }
 
+/* ---------- */
 
 .markdown-body {
   font-family: inherit;
@@ -497,10 +522,10 @@
   @apply mt-6 rounded-lg overflow-hidden;
 }
 /*
-.markdown-body pre code {
-  @apply bg-gray-800 p-6;
-}
 */
+.markdown-body pre code {
+  @apply p-6 bg-gray-850;
+}
 .markdown-body blockquote {
   @apply border-l-4 border-gray-300 dark:border-gray-700;
 }
@@ -508,6 +533,9 @@
   padding-left: 22px;
   list-style-type: disc;
   @apply mt-6;
+}
+.markdown-body [id] {
+  scroll-margin-top: 85px;
 }
 
 /*
