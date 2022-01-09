@@ -245,7 +245,7 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
             console.log('::::::::::::documentUrl.pathname', documentUrl.pathname);
             match = this._matchQueryPath();
         }
-        console.log('::::::::::::match', match);
+        console.log('::::::::::::match', match, this);
         this.state.active = match.active;
         this.state.hasActive = match.hasActive;
         this.state.expanded = match.expanded;
