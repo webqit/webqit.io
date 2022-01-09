@@ -232,8 +232,8 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     }
 
     isActivePage(href = this.state.href, uri = this.state.uri, documentUrl = document.state.url, documentUrlHref = document.state.url?.href, scrollSpyActive = this.state.scrollSpy?.active) {
+        console.log('::::::::::::href', href, this);
         if ((!href && !uri) || !documentUrlHref) {
-            console.log('::::::::::::href', href, '::::::::::::uri', uri, '::::::::::::documentUrlHref', documentUrlHref);
             return;
         };
         let match;
@@ -242,10 +242,8 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         } else if (href.includes('?')) {
             match = this._matchQueryParams();
         } else if (documentUrl.pathname) {
-            console.log('::::::::::::documentUrl.pathname', documentUrl.pathname);
             match = this._matchQueryPath();
         }
-        console.log('::::::::::::match', match, this);
         this.state.active = match.active;
         this.state.hasActive = match.hasActive;
         this.state.expanded = match.expanded;
