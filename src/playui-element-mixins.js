@@ -232,7 +232,6 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     }
 
     isActivePage(href = this.state.href, uri = this.state.uri, documentUrl = document.state.url, documentUrlHref = document.state.url?.href, scrollSpyActive = this.state.scrollSpy?.active) {
-
         if ((!href && !uri) || !documentUrlHref) {
             return;
         };
