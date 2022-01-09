@@ -257,11 +257,11 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         if (!this.state.title) return;
         $(hrefElement).attr('href', this.state.href || '#' + this.state.uri);
         $(textElement).html(this.state.title);
-        $(this).classAsync('active', this.state.active);
-        $(this).classAsync('has-active', this.state.hasActive);
-        $(this).classAsync('expanded', this.state.expanded);
+        $(this).class('active', this.state.active);
+        $(this).class('has-active', this.state.hasActive);
+        $(this).class('expanded', this.state.expanded);
         if (this.hasOverflowVisibility) {
-            $(this).classAsync('hidden', this.state.overflowCollapsed === this.overflowVisibility);
+            $(this).class('hidden', this.state.overflowCollapsed === this.overflowVisibility);
         }
     }
 
