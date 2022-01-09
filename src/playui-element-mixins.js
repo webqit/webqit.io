@@ -192,6 +192,7 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     }
 
     _matchQueryHash() {
+        if (!this.state.uri && !this.state.href?.includes('#')) return;
         if (this.state.scrollSpy) {
             return {
                 active: this.state.scrollSpy.active,
@@ -200,11 +201,12 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         }
         let hash = this.state.uri || (this.state.href ? this.state.href.split('#').pop() : '');
         return {
-            active: ('#' + hash === document.state.url.hash) || (!hash && !document.state.url.hash && this.defaultActive),
+            active: ('#' + hash === document.state?.url?.hash) || (!hash && !document.state?.url?.hash && this.defaultActive),
         };
     }
 
     _matchQueryParams() {
+        if (!this.state.href?.includes('?')) return;
         var href = this.state.href;
         return { active: href.split('?').pop().split('&').reduce((prev, q) => {
             if (prev) return;
@@ -217,6 +219,7 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     }
 
     _matchQueryPath() {
+        if (!document.state.url?.pathname) return;
         var href = this.state.href;
         var activePathSlash = document.state.url.pathname + '/';
         var thisPathSlash = href + '/';
@@ -231,18 +234,8 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         }
     }
 
-    isActivePage(href = this.state.href, uri = this.state.uri, documentUrl = document.state.url, documentUrlHref = document.state.url?.href, scrollSpyActive = this.state.scrollSpy?.active) {
-        if ((!href && !uri) || !documentUrlHref) {
-            return;
-        };
-        let match;
-        if (uri || href.includes('#')) {
-            match = this._matchQueryHash();
-        } else if (href.includes('?')) {
-            match = this._matchQueryParams();
-        } else if (documentUrl.pathname) {
-            match = this._matchQueryPath();
-        }
+    isActivePage(scrollSpyActive = this.state.scrollSpy?.active, documentUrl = document.state.url?.href) {
+        let match = this._matchQueryHash(scrollSpyActive) || this._matchQueryParams(documentUrl) || this._matchQueryPath(documentUrl) || {};
         this.state.active = match.active;
         this.state.hasActive = match.hasActive;
         this.state.expanded = match.expanded;
