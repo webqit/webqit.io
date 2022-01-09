@@ -57,7 +57,7 @@
     
     <div class="relative flex items-start layout-section">
         
-        <div drawer-breakpoint="md" namespace data-id="doc_tree" class="group w-0 lg:w-1/5 sticky" style="top: 0px; z-index: 101;">
+        <div drawer-breakpoint="md" namespace data-id="doc_tree" class="docs-left-menu group w-0 lg:w-1/5 sticky" style="top: 0px; z-index: 101;">
             <div data-id="backdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
             <div data-id="drawer" class="w-96 md:w-full max-w-[70vw] h-[100vh] p-3 scale-0 md:scale-100 pointer-events-none md:pointer-events-auto overflow-y-auto scrollbar-thin group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 md:border-r border-gray-300 dark:border-gray-900 bg-gray-100 dark:bg-black">
                 <div class="sticky py-5 px-3 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
@@ -66,20 +66,20 @@
                         <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
                     </a>
                 </div>
-                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline py-3 mb-10 list-none"></ul>
+                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline py-3 mb-16 list-none"></ul>
             </div>
         </div>
 
         <main class="w-full lg:w-4/5 flex items-start flex-wrap">
 
-            <div namespace data-id="page_outline" class="group w-0 md:w-3/12 sticky flex justify-end" style="top: 0px; z-index: 100;">
+            <div namespace data-id="page_outline" class="docs-right-menu group w-0 md:w-3/12 sticky flex justify-end" style="top: 0px; z-index: 100;">
                 <div data-id="backdrop" class="absolute inset-y-0 right-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
                 <div data-id="drawer" class="w-96 md:w-full max-w-[70vw] h-[100vh] p-3 scale-0 md:scale-100 pointer-events-none md:pointer-events-auto overflow-y-auto scrollbar-thin group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 md:border-l border-gray-300 dark:border-gray-900 bg-gray-100 dark:bg-black">
                     <div class="sticky py-5 px-3 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
                         <span class="sm">On this page</span>
                         <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
                     </div>
-                    <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline py-3 mb-10 list-none"></ul>
+                    <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline py-3 mb-16 list-none"></ul>
                 </div>
             </div>
 
@@ -245,7 +245,7 @@
 
         <li exportgroup="category" namespace class="category">
             <div data-id="legend" class="legend relative py-6 px-5 text-sm text-gray-500 dark:text-gray-600"></div>
-            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 bg-white dark:bg-gray-850 rounded-lg list-none"></ul>
+            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 bg-white dark:bg-gray-950 rounded-lg list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());

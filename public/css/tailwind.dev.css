@@ -489,6 +489,20 @@
   background-color: currentColor !important;
 }
 
+
+:is(.docs-left-menu, .docs-right-menu):after {
+  position: sticky;
+  display: block;
+  content: "";
+  height: 50px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
 /* ---------- */
 
 .markdown-body {
@@ -509,11 +523,14 @@
   @apply text-3xl md:text-4xl mt-10;
   line-height: 1.5;
 }
+.markdown-body :is(h3, h4, h5, h6) {
+  @apply mt-6;
+}
 .markdown-body a {
   @apply text-wbdiv-color2 hover:text-wbdiv-color2-dim dark:text-wbdiv-color2-dim-text dark:hover:text-gray-400;
 }
 .markdown-body hr {
-  @apply text-gray-300 dark:text-gray-900;
+  @apply mt-6 text-gray-300 dark:text-gray-900;
 }
 .markdown-body p {
   @apply mt-6;
@@ -527,7 +544,7 @@
   @apply p-6 bg-gray-850;
 }
 .markdown-body blockquote {
-  @apply border-l-4 border-gray-300 dark:border-gray-700;
+  @apply pl-6 border-l-4 border-gray-300 dark:border-gray-700 text-gray-500;
 }
 .markdown-body ul:not(.list-none) {
   padding-left: 22px;

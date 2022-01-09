@@ -1373,8 +1373,8 @@ section.pre-bar::after {
   margin-left: 0.5rem;
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mr-4 {
@@ -2563,6 +2563,21 @@ section.pre-bar::after {
   background-color: currentColor !important;
 }
 
+:is(.docs-left-menu, .docs-right-menu):after {
+  position: -webkit-sticky;
+  position: sticky;
+  display: block;
+  content: "";
+  height: 50px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  pointer-events: none;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 10;
+}
+
 /* ---------- */
 
 .markdown-body {
@@ -2615,6 +2630,10 @@ section.pre-bar::after {
   line-height: 1.5;
 }
 
+.markdown-body :is(h3, h4, h5, h6) {
+  margin-top: 1.5rem;
+}
+
 .markdown-body a {
   color: var(--wbdiv-color2);
 }
@@ -2633,6 +2652,7 @@ section.pre-bar::after {
 }
 
 .markdown-body hr {
+  margin-top: 1.5rem;
   --tw-text-opacity: 1;
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
@@ -2665,6 +2685,9 @@ section.pre-bar::after {
   border-left-width: 4px;
   --tw-border-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
+  padding-left: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .dark .markdown-body blockquote {
@@ -3429,14 +3452,14 @@ section.pre-bar::after {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-gray-850 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 31 31 / var(--tw-bg-opacity));
-}
-
 .dark .dark\:bg-gray-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(15 15 15 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-gray-850 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 31 31 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-gray-400 {
