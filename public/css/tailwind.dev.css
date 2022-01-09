@@ -489,7 +489,6 @@
   background-color: currentColor !important;
 }
 
-
 :is(.docs-left-menu, .docs-right-menu):after {
   position: sticky;
   display: block;
