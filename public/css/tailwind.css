@@ -1884,9 +1884,9 @@ section.pre-bar::after {
   border-color: rgba(255,255,255,0.75);
 }
 
-.bg-gray-100 {
+.bg-gray-50 {
   --tw-bg-opacity: 1;
-  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  background-color: rgb(249 250 251 / var(--tw-bg-opacity));
 }
 
 .bg-gray-300 {
@@ -1901,6 +1901,11 @@ section.pre-bar::after {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-200 {
@@ -2631,7 +2636,7 @@ section.pre-bar::after {
 }
 
 .markdown-body :is(h3, h4, h5, h6) {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
 }
 
 .markdown-body a {
@@ -2652,14 +2657,14 @@ section.pre-bar::after {
 }
 
 .markdown-body hr {
-  margin-top: 1.5rem;
-  --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  margin-top: 2.5rem;
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
 .dark .markdown-body hr {
-  --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  --tw-border-opacity: 1;
+  border-color: rgb(31 41 55 / var(--tw-border-opacity));
 }
 
 .markdown-body p {

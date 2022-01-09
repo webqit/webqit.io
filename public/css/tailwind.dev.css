@@ -523,13 +523,13 @@
   line-height: 1.5;
 }
 .markdown-body :is(h3, h4, h5, h6) {
-  @apply mt-6;
+  @apply mt-10;
 }
 .markdown-body a {
   @apply text-wbdiv-color2 hover:text-wbdiv-color2-dim dark:text-wbdiv-color2-dim-text dark:hover:text-gray-400;
 }
 .markdown-body hr {
-  @apply mt-6 text-gray-300 dark:text-gray-900;
+  @apply mt-10 border-gray-400 dark:border-gray-800;
 }
 .markdown-body p {
   @apply mt-6;
