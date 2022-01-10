@@ -10,9 +10,8 @@
         let app = document.state;
         
         if (app.page.wbdiv) {
-            $(this.namespace.doc_tree.namespace.project_npm).html(app.page.projectTitle);
-            $(this.namespace.doc_tree.namespace.project_npm).attr('href', '/' + app.page.wbdiv + '/' + app.page.projectName);
-            $(this.namespace.doc_tree.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
+            $(this.namespace.doc_tree.namespace.project_title).html(app.page.projectTitle);
+                        $(this.namespace.doc_tree.namespace.project_github).attr('href', 'https://github.com/webqit/' + app.page.projectName);
         }
         if (app.page.nav) {
             $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + app.page.wbdiv + '.docs/edit/dev/' + document.state.url.pathname.replace('/' + app.page.wbdiv + '/', '') + '/README.md');
@@ -61,7 +60,7 @@
             <div data-id="backdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all md:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
             <div data-id="drawer" class="w-96 md:w-full max-w-[70vw] h-[100vh] p-3 scale-0 md:scale-100 pointer-events-none md:pointer-events-auto overflow-y-auto scrollbar-thin group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform md:transition-none shrink-0 md:border-r border-gray-300 dark:border-gray-900 bg-gray-50 dark:bg-black">
                 <div class="sticky py-5 px-3 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
-                    <a data-id="project_npm" href="" class="font-bold whitespace-nowrap hover:text-gray-700 dark:hover:text-gray-300"></a>
+                    <div data-id="project_title" class="font-bold whitespace-nowrap"></div>
                     <a data-id="project_github" href="" target="_blank" class="hover:text-gray-700 dark:hover:text-gray-300">
                         <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
                     </a>
