@@ -78,7 +78,7 @@ const staticPageData = {
     tooling: {
         headline: 'Open source tooling for web-native development',
         intro: 'Explore the complete JavaScript stack for developing future-facing, web-native applications.',
-        startersTitle: 'Quick Start',
+        startersTitle: 'QuickStarts',
         startersIntro: 'Check out some quick examples to get started!',
         startersIntro2: '<i>(All coming soon)</i>',
         starters: [{
@@ -155,7 +155,7 @@ const staticPageData = {
     cloud: {
         headline: 'Instant, open source cloud for web-native apps',
         intro: 'Go live on an instant, zero-ops infrastructure built for the web-native experience!',
-        startersTitle: 'Quick Start',
+        startersTitle: 'QuickStarts',
         startersIntro: 'Run a quick sample on WebQit Cloud to get started!',
         startersIntro2: '<i>(All coming soon)</i>',
         starters: [{
@@ -226,7 +226,7 @@ const staticPageData = {
     community: {
         headline: 'Community initiatives for web-native development',
         intro: 'Join in the conversation and community-wide initiatives for web-native development!',
-        startersTitle: 'Quick Start',
+        startersTitle: 'QuickStarts',
         startersIntro: 'Join the web-native movement!',
         startersIntro2: '<i>(More coming soon)</i>',
         starters: [{
