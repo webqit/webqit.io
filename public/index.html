@@ -26,17 +26,18 @@
         <link type="text/css" rel="stylesheet" crossorigin="" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
         <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
         <link rel="stylesheet" crossorigin="" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/github.min.css">
-        <!--
-            <link rel="stylesheet" type="text/css" href="/css/sunburst.css">
-        -->
         <link rel="stylesheet" type="text/css" href="/css/base16-phd.css">
         <link type="text/css" rel="stylesheet" crossorigin href="/css/tailwind.css" />
 
         <!-- JS -->
+        <script src="http://localhost:4000/oohtml/dist/main.js" ssr></script>
+        <script src="http://localhost:4000/play-ui/packages/playui-js/dist/main.js" ssr></script>
         <script type="module" src="/bundle.js"></script>
-        <script crossorigin src="https://unpkg.com/@webqit/playui-js@0.3.15/dist/main.js" ssr></script>
+        <script src="http://localhost:4000/prism.js"></script>
+        <script src="http://localhost:4000/subscript/dist/console-element.js"></script>
+        <script src="http://localhost:4000/subscript/dist/player-element.js"></script>
         <!--
-        <script src="http://localhost:4000/playui-js/dist/main.js" ssr></script>
+        <script crossorigin src="https://unpkg.com/@webqit/playui-js@0.3.15/dist/main.js" ssr></script>
         -->
         <script>
             $ = WebQit.$;
@@ -55,7 +56,7 @@
 
         <script type="subscript">
             let app = document.state;
-            $(document.namespace.title).html(app.page.titleBar || '');
+            $(document.namespace.title).html(app.page?.titleBar || '');
         </script>
 
         <!-- TEMPLATES -->
@@ -105,7 +106,7 @@
                             <i data-id="landingIcon" class="bi w-11 h-11 flex-center radius-125 bg-wbdiv-color2 text-white font-bold drop-shadoww"></i>
                             <span data-id="landingName" class="ml-4"></span>
                         </div>
-                        <p data-id="intro" class="lg:w-1/3 lg:text-center text-2xl"></p>
+                        <p data-id="introText" class="lg:w-1/3 lg:text-center text-2xl"></p>
                         <div class="mt-4 lg:mt-0 lg:w-1/3 flex items-center lg:justify-end ">
                             <a data-id="href" href="" class="relative -left-2.5 lg:left-0 lg:-bottom-2.5 w-16 h-16 flex-center border border-gray-300 hover:bg-gray-200 rounded-full">
                                 <i class="bi bi-arrow-right text-4xl"></i>
@@ -147,15 +148,16 @@
                             </span>
                         </div>
                         <script type="subscript">
-                            if (!this.state.title) return;
-                            $(this.namespace.icon).class('bi-' + this.state.icon, true);
-                            $(this.namespace.title).html(this.state.title);
-                            $(this.namespace.desc).html(this.state.desc);
-                            $(this.namespace.href).attr('href', this.state.cta.href);
-                            $(this).class('pointer-events-none scale-50', this.state.categoryMismatch);
-                            $(this.namespace.promoteContainer).class('hidden', !this.state.cta.href.startsWith('/tooling'));
-                            $(this.namespace.promote).attr('href', 'https://github.com/webqit/' + this.state.cta.href.replace('/tooling', ''));
-                            //$(this).class('hidden', this.state.categoryMismatch);
+                            if (this.state.title) {
+                                $(this.namespace.icon).class('bi-' + this.state.icon, true);
+                                $(this.namespace.title).html(this.state.title);
+                                $(this.namespace.desc).html(this.state.desc);
+                                $(this.namespace.href).attr('href', this.state.cta.href);
+                                $(this).class('pointer-events-none scale-50', this.state.categoryMismatch);
+                                $(this.namespace.promoteContainer).class('hidden', !this.state.cta.href.startsWith('/tooling'));
+                                $(this.namespace.promote).attr('href', 'https://github.com/webqit/' + this.state.cta.href.replace('/tooling', ''));
+                                //$(this).class('hidden', this.state.categoryMismatch);
+                            }
                         </script>
                     </li>
                     
@@ -194,13 +196,14 @@
                             <img data-id="img" />
                         </div>
                         <script type="subscript">
-                            if (!this.state.title) return;
-                            $(this.namespace.title).html(this.state.title);
-                            $(this.namespace.intro).html(this.state.intro);
-                            $(this.namespace.img).attr('src', this.state.img);
-                            $(this.namespace.img).class('dark:invert', this.state.invertOnDark);
-                            if (this.state.content) {
-                                $(this.namespace.content).html(this.state.content);
+                            if (this.state.title) {
+                                $(this.namespace.title).html(this.state.title);
+                                $(this.namespace.intro).html(this.state.intro);
+                                $(this.namespace.img).attr('src', this.state.img);
+                                $(this.namespace.img).class('dark:invert', this.state.invertOnDark);
+                                if (this.state.content) {
+                                    $(this.namespace.content).html(this.state.content);
+                                }
                             }
                         </script>
                     </li>
@@ -226,7 +229,7 @@
                     </div>
 
                     <div exportgroup="code" namespace class="quickstart font-bold">
-                        <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200">
+                        <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200 border border-gray-400">
                             <div class="flex items-center overflow-x-auto scrollbar-thin">
                                 <code data-id="directive" class="whitespace-nowrap"></code>
                             </div>
@@ -246,7 +249,7 @@
                     </div>
 
                     <form exportgroup="form" namespace class="quickstart font-bold">
-                        <div class="flex items-stretch h-16 rounded-xl bg-gray-200 overflow-hidden">
+                        <div class="flex items-stretch h-16 rounded-xl bg-gray-200 border border-gray-400 overflow-hidden">
                             <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none;" />
                         </div>
                         <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
@@ -311,16 +314,17 @@
                             </a>
                         </div>
                         <script type="subscript">
-                            if (!this.state.title) return;
-                            $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
-                            $(this.namespace.title).html(this.state.title);
-                            $(this.namespace.desc).html(this.state.desc);
-                            $(this.namespace.cta_href).attr('href', this.state.cta.href);
-                            $(this.namespace.cta_text).html(this.state.cta.text);
-                            if (this.state.displayRepetition) {
-                                $(this).class('is-display-repetition', true);
+                            if (this.state.title) {
+                                $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
+                                $(this.namespace.title).html(this.state.title);
+                                $(this.namespace.desc).html(this.state.desc);
+                                $(this.namespace.cta_href).attr('href', this.state.cta.href);
+                                $(this.namespace.cta_text).html(this.state.cta.text);
+                                if (this.state.displayRepetition) {
+                                    $(this).class('is-display-repetition', true);
+                                }
+                                //let github = 'https':
                             }
-                            //let github = 'https':
                         </script>
                     </li>
 
@@ -341,107 +345,82 @@
 
         <script type="subscript">
             let app = document.state;
-            let urlPath = app.url.pathname || '';
+            let urlPath = app.url?.pathname || '';
             $(this).attr('wbdiv', urlPath.length < 2 ? 'home' : urlPath.split('/')[1]);
             $(this).class('docs', urlPath.split('/').length > 3);
             let items = [{
                 items: [{
-                    icon: 'braces',
-                    title: 'Tooling',
-                    href: '/tooling',
+                    icon: 'braces', title: 'Tooling', href: '/tooling',
                 }, {
-                    icon: 'cloud',
-                    title: 'Cloud',
-                    href: '/cloud',
+                    icon: 'cloud', title: 'Cloud', href: '/cloud',
                 }, {
-                    icon: 'flag',
-                    title: 'Community',
-                    href: '/community',
+                    icon: 'flag', title: 'Community', href: '/community',
                 }]
             }, {
                 items: [{
-                    icon: 'dot',
-                    title: 'Sign In',
-                    href: '#',
+                    icon: 'dot', title: 'Sign In', href: '#',
                 }]
             }];
             $(this.namespace.menuY).list(items);
             $(this.namespace.menuX).list(items, {
                 renderCallback: (e, el, d, k) => {
-                    d.overflowCollapsed = false;
+                    WebQit.Observer.set(d, 'overflowCollapsed', false);
                 },
                 overflowCallback: (e, el, d, k, overflowCount) => {
-                    d.overflowCollapsed = e === 'collapse';
+                    WebQit.Observer.set(d, 'overflowCollapsed', e === 'collapse');
                 },
                 collapsionPoint: 'end',
             });
             let footerLinks = [{
                 legend: 'Tooling',
                 items: [{
-                    title: 'Projects',
-                    href: '/tooling',
+                    title: 'Projects', href: '/tooling',
                 }, {
-                    title: 'Quick Start',
-                    href: '/tooling#start',
+                    title: 'Quick Start', href: '/tooling#start',
                 }, {
-                    title: 'Contribute',
-                    href: 'https://github.com/webqit',
+                    title: 'Contribute', href: 'https://github.com/webqit',
                 }, {
-                    title: 'Sponsor',
-                    href: 'https://github.com/webqit',
+                    title: 'Sponsor', href: 'https://github.com/webqit',
                 }]
             }, {
                 legend: 'Cloud',
                 items: [{
-                    title: 'Platform',
-                    href: '/cloud',
+                    title: 'Platform', href: '/cloud',
                 }, {
-                    title: 'Quick Start',
-                    href: '/cloud#start',
+                    title: 'Quick Start', href: '/cloud#start', 
                 }, {
-                    title: 'Pricing',
-                    href: '#',
+                    title: 'Pricing', href: '#',
                 }, {
-                    title: 'support',
-                    href: '#',
+                    title: 'support',  href: '#',
                 }, {
-                    title: 'Sign in',
-                    href: '#',
+                    title: 'Sign in', href: '#',
                 }]
             }, {
                 legend: 'Community',
                 items: [{
-                    title: 'Communities',
-                    href: '/community',
+                    title: 'Communities', href: '/community',
                 }, {
-                    title: 'WebQit',
-                    href: '/community/webqit',
+                    title: 'WebQit', href: '/community/webqit',
                 }, {
-                    title: 'Web-Native',
-                    href: '/community/web-native-cg',
+                    title: 'Web-Native', href: '/community/web-native-cg',
                 }, {
-                    title: 'Partners',
-                    href: '#',
+                    title: 'Partners', href: '#',
                 }]
             }, {
                 legend: 'Company',
                 items: [{
-                    title: "We're in Beta",
-                    href: '#',
+                    title: "We're in Beta", href: '#',
                 }, {
-                    title: 'About',
-                    href: '#',
+                    title: 'About', href: '#',
                 }, {
-                    title: 'Contact',
-                    href: '#',
+                    title: 'Contact', href: '#',
                 }, {
-                    title: 'Join',
-                    href: '#',
+                    title: 'Join', href: '#',
                 }]
             }];
             $(this.namespace.footerLinks).list(footerLinks);
         </script>
-        
+
         <!-- PAGE_PROGRESS_BAR -->
 
         <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed left-0 top-0 w-full border-t border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.75)] z-10 overflow-hidden hidden" style="height: 3px;">
@@ -449,8 +428,8 @@
             <div class="progressbar-indicator-b" style="background-color: blue;"></div>
             <script type="subscript">
                 let app = document.state;
-                $(this).class('hidden', !app.network.progress.active);
-                $(this).css('color', app.network.error ? 'red' : 'blueviolet');
+                $(this).class('hidden', !app.network?.progress.active);
+                $(this).css('color', app.network?.error ? 'red' : 'blueviolet');
             </script>
         </div>
 
@@ -500,7 +479,7 @@
                     <a href="/" class="color-1">&leftarrow; Back to Home</a>
                     <script type="subscript">
                         let app = document.state;
-                        $(this.namespace.error).html(app.network.error ? (app.network.online ? 'Network Error - ' : "You're Offline - ") + app.network.error : '404 - Not Found!');
+                        $(this.namespace.error).html(app.network?.error ? (app.network?.online ? 'Network Error - ' : "You're Offline - ") + app.network?.error : '404 - Not Found!');
                     </script>
                 </div>
             </div>

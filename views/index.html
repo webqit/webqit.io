@@ -1,12 +1,12 @@
 <div namespace class="homepage">
     
     <script type="subscript">
-        var app = document.state;
-        if (app.page.hero) {
-            this.namespace.hero.setState(app.page.hero);
-            this.namespace.tooling.setState(app.page.sections[0]);
-            this.namespace.cloud.setState(app.page.sections[1]);
-            this.namespace.community.setState(app.page.sections[2]);
+        var page = document.state.page || {};
+        if (page.hero) {
+            this.namespace.hero?.setState(page.hero);
+            this.namespace.tooling?.setState(page.sections[0]);
+            this.namespace.cloud?.setState(page.sections[1]);
+            this.namespace.community?.setState(page.sections[2]);
         }
     </script>
 
@@ -41,16 +41,33 @@
         <section namespace>
 
             <html-import data-id="intro" name="section-intro" template="@layout/home"></html-import>
-            <div class="mx-5 h-[560px] flex-center relative bg-black dark::bg-gray-500 dark::text-gray-200 shadow-xl code-numbers">
-                <a href="/tooling" class="relative pb-10 text-3xl md:text-4xl border-b-4 border-current text-gray-300 text-center z-10">
-                    WebQit<br >Tooling
-                    <i class="bi bi-chevron-right text-5xl font-bold w-1 h-1 flex-center absolute -bottom-1 right-2"></i>
-                </a>
+            <div class="mx-5 lg:flex relative shadow-xl">
+                <div class="relative lg:w-1/2">
+                    <subscript-player auto-mode="play" class="pb-14 md:pb-2 layout2 md:h-[560px] p-2 bg-[dimgray] dark:bg-black" style="--active-bg-color: rgb(30,30,30);">
+                        /**
+                        * Announcing Subscript
+                        * a reactivity runtime for JavaScript delivered in a function!
+                        */
+                        let count = 10, doubleCount = count * 2, quadCount = doubleCount * 2;
+                        console.log( count, doubleCount, quadCount );
+                    </subscript-player>
+                    <a href="/tooling/subscript" class="absolute inline-flex left-24 bottom-6 text-gray-400 hover:text-gray-300 sm">
+                        <i class="bi bi-arrow-return-right mr-3"></i> <span>/Tooling/Subscript</span>
+                    </a>
+                </div>
+                <div class="flex-center h-0 lg:h-auto lg:w-0">
+                </div>
+                <div class="lg:w-1/2 min-h-[250px] flex-center bg-[dimgray] dark:bg-black dark::text-gray-200">
+                    <a href="/tooling" class="relative pb-10 text-3xl md:text-4xl border-b-4 border-current text-gray-200 hover:text-gray-300 dark:text-gray-400 dark:hover:text-gray-500 text-center z-10">
+                        WebQit<br >Tooling
+                        <i class="bi bi-chevron-right text-5xl font-bold w-1 h-1 flex-center absolute -bottom-1 right-2"></i>
+                    </a>
+                </div>
             </div>
             <script type="subscript">
                 $(this.namespace.landingIcon).class('bi-braces', true);
                 $(this.namespace.landingName).html('Tooling');
-                $(this.namespace.intro).html('We do open source work around web standards, to simplify developing web-native apps');
+                $(this.namespace.introText).html('We do open source work around web standards, to simplify developing web-native apps');
                 $(this.namespace.href).attr('href', '/tooling');
             </script>
 
@@ -78,19 +95,21 @@
                     <i class="bi bi-chevron-right text-5xl font-bold w-1 h-1 flex-center absolute -bottom-1 right-2"></i>
                 </a>
                 <script type="subscript">
-                    $(this.namespace.parallax).play([{
-                        transform: 'translate(0, 100%)'
-                    }, {
-                        transform: 'translate(0, 0px)'
-                    }], {
-                        timeline: this.scrollTimeline()
-                    });
+                    if (this.scrollTimeline) {
+                        $(this.namespace.parallax).play([{
+                            transform: 'translate(0, 100%)'
+                        }, {
+                            transform: 'translate(0, 0px)'
+                        }], {
+                            timeline: this.scrollTimeline()
+                        });
+                    }
                 </script>
             </div>
             <script type="subscript">
                 $(this.namespace.landingIcon).class('bi-cloud', true);
                 $(this.namespace.landingName).html('Cloud');
-                $(this.namespace.intro).html('We built an open source cloud that gives an instant infrastructure to web-native apps');
+                $(this.namespace.introText).html('We built an open source cloud that gives an instant infrastructure to web-native apps');
                 $(this.namespace.href).attr('href', '/cloud');
             </script>
 
@@ -107,7 +126,7 @@
             <script type="subscript">
                 $(this.namespace.landingIcon).class('bi-flag', true);
                 $(this.namespace.landingName).html('Community');
-                $(this.namespace.intro).html('We do community work that louds the voice on web standards and web-native development');
+                $(this.namespace.introText).html('We do community work that louds the voice on web standards and web-native development');
                 $(this.namespace.href).attr('href', '/community');
             </script>
 

@@ -4,15 +4,15 @@
             document.body.classList.remove('dark-x');
             document.body.classList.add('dark');
         }
-        var app = document.state.page;
+        var page = document.state.page || {};
         $(this.namespace.wbdivIcon).class({
-            'bi-braces': app.wbdiv === 'tooling',
-            'bi-cloud': app.wbdiv === 'cloud',
-            'bi-flag': app.wbdiv === 'community',
+            'bi-braces': page.wbdiv === 'tooling',
+            'bi-cloud': page.wbdiv === 'cloud',
+            'bi-flag': page.wbdiv === 'community',
         });
-        $(this.namespace.wbdivName).html(app.wbdivName);
-        var project = app.outline.subtree[app.wbdiv].subtree[app.projectName];
-        var docsPage = '/' + app.wbdiv + '/' + app.projectName + '/docs';
+        $(this.namespace.wbdivName).html(page.wbdivName);
+        var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName] || {};
+        var docsPage = '/' + page.wbdiv + '/' + page.projectName + '/docs';
         if (project.title) {
             $(this.namespace.title).html(project.title);
             $(this.namespace.desc).html(project.desc);
@@ -21,10 +21,10 @@
             //this.namespace.quickstart.setState(project.quickstart);
         }
 
-        if (app.wbdiv) {
-            $(this).attr('id', 'route--' + app.wbdiv);
-            var project = app.outline.subtree[app.wbdiv].subtree[app.projectName];
-            var docsPage = '/' + app.wbdiv + '/' + app.projectName + '/docs';
+        if (page.wbdiv) {
+            $(this).attr('id', 'route--' + page.wbdiv);
+            var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName];
+            var docsPage = '/' + page.wbdiv + '/' + page.projectName + '/docs';
             if (this.namespace.quickstart) {
                 $(this.namespace.quickstart).attr('name', project.quickstart.type || 'link');
                 this.namespace.quickstart.setState(project.quickstart);

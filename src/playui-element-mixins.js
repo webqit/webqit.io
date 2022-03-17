@@ -17,7 +17,7 @@ const { Observer } = window.WebQit;
  */
 export const _Root = __Root => class extends (__Root || HTMLElement) {
 
-    static get subscriptBlocks() {
+    static get subscriptMethods() {
         return [ 'render' ];
     }
 
@@ -36,6 +36,7 @@ export const _ScrollTimeline = __ScrollTimeline => class extends _Root(__ScrollT
         const getScrollOffset = i => scrollOffsets[i] instanceof CSSStyleValue ? scrollOffsets[i] : (
             typeof scrollOffsets[i] === 'string' ? CSSStyleValue.parse(scrollOffsets[i]) : { target: this, edge: i === 0 ? 'end' : 'start', threshold: 0, ...(scrollOffsets[i] || {}) }
         );
+        if (typeof ScrollTimeline === 'undefined') return document.timeline;
         const scrollTimeline = new ScrollTimeline({
             scrollSource: opts.source || opts.scrollSource || document.documentElement,
             timeRange: opts.timeRange || 1,
@@ -156,13 +157,15 @@ export const _List = __List => class extends _Root(__List) {
         super.connectedCallback();
         this.hasOverflowVisibility = this.getAttribute('overflow-visibility');
         this.overflowVisibility = !!parseInt(this.hasOverflowVisibility);
+        this.render();
     }
 
     render() {
-        if (!this.state.items) return;
-        $(this).list(this.state.items);
-        if (this.hasOverflowVisibility) {
-            $(this).classAsync('hidden', this.state.overflowCollapsed === this.overflowVisibility);
+        if (this.state.items) {
+            $(this).list(this.state.items);
+            if (this.hasOverflowVisibility) {
+                $(this).classAsync('hidden', this.state.overflowCollapsed === this.overflowVisibility);
+            }
         }
     }
 
@@ -179,6 +182,8 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         this.defaultActive = this.hasAttribute('defaultactive');
         this.hasOverflowVisibility = this.getAttribute('overflow-visibility');
         this.overflowVisibility = !!parseInt(this.hasOverflowVisibility);
+        this.isActivePage();
+        this.render();
     }
 
     toggle() {
@@ -195,12 +200,14 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         if (!this.state.uri && !this.state.href?.includes('#')) return;
         if (this.state.scrollSpy) {
             return {
+                type: 'scrollspy',
                 active: this.state.scrollSpy.active,
                 hasActive: this.state.scrollSpy.active === 2,
             };
         }
         let hash = this.state.uri || (this.state.href ? this.state.href.split('#').pop() : '');
         return {
+            type: 'hash',
             active: ('#' + hash === document.state?.url?.hash) || (!hash && !document.state?.url?.hash && this.defaultActive),
         };
     }
@@ -208,14 +215,17 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
     _matchQueryParams() {
         if (!this.state.href?.includes('?')) return;
         var href = this.state.href;
-        return { active: href.split('?').pop().split('&').reduce((prev, q) => {
-            if (prev) return;
-            q = q.split('=');
-            if ((document.state.url.query[q[0]] === q[1]) || (!q[1] && !(q[0] in document.state.url.query) && this.defaultActive)) {
-                return true;
-            }
-            return false;
-        }, false) };
+        return {
+            type: 'params',
+            active: href.split('?').pop().split('&').reduce((prev, q) => {
+                if (prev) return;
+                q = q.split('=');
+                if ((document.state.url.query[q[0]] === q[1]) || (!q[1] && !(q[0] in document.state.url.query) && this.defaultActive)) {
+                    return true;
+                }
+                return false;
+            }, false),
+        };
     }
 
     _matchQueryPath() {
@@ -224,43 +234,43 @@ export const _LinkItem = __LinkItem => class extends _Root(__LinkItem) {
         var activePathSlash = document.state.url.pathname + '/';
         var thisPathSlash = href + '/';
         var isActivePathMatch = activePathSlash.startsWith(thisPathSlash);
-        var childIsActivePathMatchStr = activePathSlash.substr(thisPathSlash.length);
-        if (isActivePathMatch)
+        var childIsActivePathMatchStr = activePathSlash.substring(thisPathSlash.length);
         var childIsActivePathMatch = isActivePathMatch && childIsActivePathMatchStr && childIsActivePathMatchStr.indexOf('/') > 0;
         return {
+            type: 'path',
             active: isActivePathMatch,
             hasActive: childIsActivePathMatch,
             expanded: this.state.subtree && (this.state.isRoot || childIsActivePathMatch),
         }
     }
 
-    isActivePage(scrollSpyActive = this.state.scrollSpy?.active, documentUrl = document.state.url?.href) {
-        let match = this._matchQueryHash(scrollSpyActive) || this._matchQueryParams(documentUrl) || this._matchQueryPath(documentUrl) || {};
+    isActivePage() {
+        let scrollSpyActive = this.state.scrollSpy?.active;
+        let documentUrl = document.state.url?.href;
+        let match = this._matchQueryHash(scrollSpyActive) || this._matchQueryParams(documentUrl) || this._matchQueryPath() || {};
         this.state.active = match.active;
         this.state.hasActive = match.hasActive;
         this.state.expanded = match.expanded;
+        return match;
     }
 
     render() {
         let hrefElement = this.namespace.href || this.querySelector('a');
         let textElement = this.namespace.text || hrefElement;
-        if (!this.state.title) return;
-        $(hrefElement).attr('href', this.state.href || '#' + this.state.uri);
-        $(textElement).html(this.state.title);
-        $(this).class('active', this.state.active);
-        $(this).class('has-active', this.state.hasActive);
-        $(this).class('expanded', this.state.expanded);
-        if (this.hasOverflowVisibility) {
-            $(this).class('hidden', this.state.overflowCollapsed === this.overflowVisibility);
+        if (this.state.title) {
+            $(hrefElement).attr('href', this.state.href || '#' + this.state.uri);
+            $(textElement).html(this.state.title);
+            $(this).class('active', this.state.active);
+            $(this).class('has-active', this.state.hasActive);
+            $(this).class('expanded', this.state.expanded);
+            if (this.hasOverflowVisibility) {
+                $(this).class('hidden', this.state.overflowCollapsed === this.overflowVisibility);
+            }
         }
     }
-
-    static get subscriptParameterBlocks() {
-        return [ 'isActivePage' ];
-    }
     
-    static get subscriptBlocks() {
-        return [ 'render' ];
+    static get subscriptMethods() {
+        return [ 'isActivePage', 'render' ];
     }
 
 };

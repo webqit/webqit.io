@@ -5,28 +5,30 @@
             document.body.classList.remove('dark-x');
             document.body.classList.add('dark');
         }
-        let app = document.state.page;
+        let page = document.state.page || {};
         $(this.namespace.wbdivIcon).class({
-            'bi-braces': app.wbdiv === 'tooling',
-            'bi-cloud': app.wbdiv === 'cloud',
-            'bi-flag': app.wbdiv === 'community',
+            'bi-braces': page.wbdiv === 'tooling',
+            'bi-cloud': page.wbdiv === 'cloud',
+            'bi-flag': page.wbdiv === 'community',
         });
-        $(this.namespace.wbdivName).html(app.wbdivName);
-        $(this.namespace.headline).html(app.headline);
-        $(this.namespace.intro).html(app.intro);
-        $(this.namespace.projectsFilter).list(app.projectsFilter);
-        $(this.namespace.projectsBody).list(app.projectsBody);
+        $(this.namespace.wbdivName).html(page.wbdivName);
+        $(this.namespace.headline).html(page.headline);
+        $(this.namespace.intro).html(page.intro);
+        $(this.namespace.projectsFilter).list(page.projectsFilter);
+        $(this.namespace.projectsBody).list(page.projectsBody);
         // -----------
-        $(this.namespace.startersTitle).html(app.startersTitle);
-        $(this.namespace.startersIntro).html(app.startersIntro);
-        $(this.namespace.startersIntro2).html(app.startersIntro2);
-        $(this.namespace.starters).list(app.starters);
+        $(this.namespace.startersTitle).html(page.startersTitle);
+        $(this.namespace.startersIntro).html(page.startersIntro);
+        $(this.namespace.startersIntro2).html(page.startersIntro2);
+        $(this.namespace.starters).list(page.starters);
         // -----------
-        $(this.namespace.ideaStart_a).html(app.ideaStart[0]);
-        $(this.namespace.ideaStart_b).html(app.ideaStart[1]);
-        $(this.namespace.ideaBody).list(app.ideaBody);
-        $(this.namespace.ideaEnd_a).html(app.ideaEnd[0]);
-        $(this.namespace.ideaEnd_b).html(app.ideaEnd[1]);
+        if ( page.ideaStart && page.ideaEnd ) {
+            $(this.namespace.ideaStart_a).html(page.ideaStart[0]);
+            $(this.namespace.ideaStart_b).html(page.ideaStart[1]);
+            $(this.namespace.ideaBody).list(page.ideaBody);
+            $(this.namespace.ideaEnd_a).html(page.ideaEnd[0]);
+            $(this.namespace.ideaEnd_b).html(page.ideaEnd[1]);
+        }
     </script>
 
     <div id="hero" class="relative hero-no-cta pt-28 pb-16 px-10 lg:px-28 lg:flex items-start">
