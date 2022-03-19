@@ -41,8 +41,10 @@ export default async function(event, recieved, next) {
     if (next.pathname) {
         var pathSplit = next.pathname.split('/');
         data.projectName = pathSplit.shift();
-        outline.subtree[data.wbdiv].subtree[data.projectName] = documentation.getProject(data.projectName, true/* withBundles */);
-        if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, outline.subtree[data.wbdiv].subtree[data.projectName].bundles.json)) {
+        let projectData = documentation.getProject(data.projectName, true/* withBundles */);;
+        outline.subtree[data.wbdiv].subtree[data.projectName] = projectData;
+        data.projectIcon = projectData.icon;
+        if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, projectData.bundles.json)) {
             return next();
         }
         return data;

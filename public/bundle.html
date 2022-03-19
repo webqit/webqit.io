@@ -17,9 +17,9 @@
         }
         */
         if (page.wbdiv) {
-            $(this.namespace.projectNav.namespace.project_icon).class(page.projectIcon, true);
+            $(this.namespace.projectNav.namespace.project_icon).class('bi-' + page.projectIcon, true);
             $(this.namespace.projectNav.namespace.project_title).html(page.projectTitle);
-            //$(this.namespace.projectNav.namespace.project_title).attr('href', '/' + page.wbdiv + '/' + page.projectName);
+            //$(this.namespace.projectNav.namespace.project_url).attr('href', '/' + page.wbdiv + '/' + page.projectName);
             $(this.namespace.projectNav.namespace.project_github).attr('href', 'https://github.com/webqit/' + page.projectName);
         }
         if (page.nav) {
@@ -55,6 +55,12 @@
             $(this.namespace.nav_right).class('disabled', !navNext);
         }
         // ----------
+        if (document.state.url?.pathname) {
+            setTimeout(() => {
+                this.namespace.nav_control?.classList.remove('active');
+                this.namespace.nav?.classList.remove('active');
+            }, 300);
+        }
         $([this.namespace.nav_control, this.namespace.navBackdrop]).on('click', () => {
             this.namespace.nav_control.classList.toggle('active');
             this.namespace.nav.classList.toggle('active');
@@ -64,35 +70,38 @@
     
     <div class="relative flex items-start layout-section">
         
-        <div drawer-breakpoint="md" data-id="nav" class="docs-left-menu flex justify-between group w-0 lg:w-2/5 h-[100vh] pointer-events-none lg:pointer-events-auto dark:text-gray-300 shadow-lg dark:shadow-2xl sticky" style="top: 0px; z-index: 90;">
+        <div drawer-breakpoint="md" data-id="nav" class="docs-left-menu flex justify-between group w-0 lg:w-2/5 h-[100vh] pointer-events-none lg:pointer-events-auto sticky top-0" style="z-index: 90;">
             <div data-id="navBackdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all lg:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
             
-            <div namespace data-id="projectNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 bg-white dark:bg-gray-850">
-                <div class="sticky p-5 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
-                    <div class="flex bold whitespace-nowrap">
-                        <i data-id="project_icon" class="bi mr-2 flex-center"></i>
+            <div namespace data-id="projectNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl">
+                <div class="sticky top-0 h-24 p-7 flex text-gray-500 border-b border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
+                    <a data-id="project_url" href="" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
                         <span data-id="project_title"></span>
-                    </div>
-                    <a data-id="project_github" href="" target="_blank" class="hover:text-gray-700 dark:hover:text-gray-300">
+                        <i data-id="project_icon" class="bi flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
+                    </a>
+                </div>
+                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline px-4 py-5 list-none"></ul>
+                <div class="sticky bottom-0 h-24 p-7 flex text-gray-500 border-t border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
+                    <a data-id="project_github" href="" target="_blank" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
+                        <span>Visit on GitHub</span>
                         <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
                     </a>
                 </div>
-                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline px-4 py-5 mb-16 list-none"></ul>
             </div>
 
-            <div namespace data-id="pageNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 lg:border-l border-gray-400 dark:border-gray-700 bg-white dark:bg-gray-850">
-                <div class="sticky p-5 flex items-center justify-between text-gray-500 z-10" style="top: 0px; backdrop-filter: blur(10px);">
+            <div namespace data-id="pageNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 bg-gray-200 dark:bg-black dark:text-gray-500">
+                <div class="sticky top-0 h-24 p-7 flex items-center justify-between text-gray-500 z-10 backdrop-blur-md">
                     <span class="sm bold">On this page</span>
                     <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
                 </div>
-                <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline px-4 py-5 mb-16 list-none"></ul>
+                <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline px-4 py-5 list-none"></ul>
             </div>
 
         </div>
 
-        <main data-id="page_readme_container" class="relative w-full lg:w-3/5 bg-gray-100 dark:bg-black dark:text-gray-400">
+        <main data-id="page_readme_container" class="relative w-full lg:w-3/5 bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl">
                             
-            <header class="layout-section py-4 px-2 md:px-6 stick-y flex items-center pointer-events-auto text-gray-500 md:border-b border-gray-400 dark:border-gray-700">
+            <header class="layout-section h-24 px-2 md:px-6 stick-y top-0 flex items-center pointer-events-auto text-gray-500 border-b border-gray-400 dark:border-gray-600 b-g-white dark:b-g-gray-850 z-10 backdrop-blur-md">
                 <div namespace data-id="breadcrumb" class="breadcrumb grow">
                     <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="inline-flex list-none" style="height: 60px; white-space: nowrap;">
                         <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
@@ -101,7 +110,7 @@
                                 <i class="bi bi-three-dots xs cursor-pointer"></i>
                             </div>
                             <div class="overflow h-0 flex justify-start">
-                                <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list absolute animation-x-fast anim-fly-top-small list-none"></ul>
+                                <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute animation-x-fast anim-fly-top-small list-none"></ul>
                             </div>
                         </li>
                         <li data-id="subtree" namespace class="overflow-notch hidden" tabindex="0">
@@ -109,7 +118,7 @@
                                 <i class="bi bi-caret-down xs flex items-center"></i>
                             </div>
                             <div class="overflow h-0 flex justify-end">
-                                <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list absolute pt-2 pb-2 rounded drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
+                                <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute pt-2 pb-2 rounded drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
                             </div>
                         </li>
                     </ul>
@@ -147,7 +156,7 @@
                         }
                     </script>
                 </div>
-                <a data-id="edit_link" href="" target="_blank" class="mx-3 px-3 border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-300" title="Edit this page on github">
+                <a data-id="edit_link" href="" target="_blank" class="mx-3 px-3 border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-400" title="Edit this page on github">
                     <span class="mr-4 hidden md:block flex items-center">Edit</span>
                     <i class="bi bi-pencil flex-center"></i>
                 </a>
@@ -176,15 +185,15 @@
                 </ul>
             </div>
 
-            <div class="sticky bottom-0 z-[100] bottom-8 pb-8 h-0 flex-center">
-                <span data-id="nav_control" class="h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+            <div class="sticky bottom-0 z-[100] bottom-8 pb-8 h-0 flex-center pointer-events-none">
+                <span data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
                     <i class="bi bi-text-indent-right flex-center text-2xl"></i>
                 </span>
             </div>
             <footer class="readme-footer sticky bottom-0 z-[80]">
-                <ul class="relative footer-nav px-6 flex justify-between items-center list-none bg-gray-100 lg:bg-transparent dark:bg-black dark:lg:bg-transparent">
-                    <li class="max-w-6/12 p-5 flex justify-start rounded-lg" style="backdrop-filter: blur(10px);"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="truncate text-ellipsis"></span></a></li>
-                    <li class="max-w-6/12 p-5 flex justify-end rounded-lg" style="backdrop-filter: blur(10px);"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="truncate text-ellipsis"></span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
+                <ul class="relative footer-nav px-6 flex justify-between items-center bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                    <li class="max-w-6/12 p-5 flex justify-start border border-gray-400 dark:border-gray-600 rounded-lg backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
+                    <li class="max-w-6/12 p-5 flex justify-end border border-gray-400 dark:border-gray-600 rounded-lg backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                 </ul>
             </footer>
 
@@ -201,7 +210,7 @@
     <template name="breadcrumb">
         <li namespace class="flex items-center">
             <i class="bi bi-slash xs"></i>
-            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-700 dark:hover:text-gray-300" href="" style="font-size: smaller;"></a>
+            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-700 dark:hover:text-gray-400" href="" style="font-size: smaller;"></a>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.href).htmlAsync(this.state.title);
@@ -240,7 +249,7 @@
     <template name="project-outline">
 
         <li exportgroup="category" namespace class="category">
-            <div data-id="legend" class="legend relative p-5 text-sm text-gray-500"></div>
+            <div data-id="legend" class="legend relative p-5 py-4 text-sm text-gray-500"></div>
             <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 bg-white dark:bg-gray-850 rounded-lg list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
@@ -298,7 +307,7 @@
 
     <template name="index_links">
         <li exportgroup="category" namespace>
-            <div data-id="legend" class="py-8 px-4 text-xs text-gray-500 dark:text-gray-600"></div>
+            <div data-id="legend" class="py-8 px-4 text-xs text-gray-500"></div>
             <ul data-id="entries" template="page/-/-/docs/@layout/index_links#item" class="index-links list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
