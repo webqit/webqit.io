@@ -557,7 +557,7 @@ code:not(pre code) {
   @apply mt-6;
 }
 .markdown-body [id] {
-  scroll-margin-top: 10px;
+  scroll-margin-top: 24px;
 }
 :is([data-id="nav_left_text"],[data-id="nav_right_text"]):empty + span {
   display: none !important;

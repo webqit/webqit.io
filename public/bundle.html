@@ -45,13 +45,13 @@
             $(this.namespace.nav_left).attr('href', navPrevious ? navPrevious.href : '#');
             $(this.namespace.nav_left_text).html(navPrevious ? navPrevious.title : '');
             $(this.namespace.nav_left_icon).class('bi-chevron-compact-left', navPrevious === currentPage.prev);
-            $(this.namespace.nav_left_icon).class('bi-chevron-expand', navPrevious !== currentPage.prev);
+            $(this.namespace.nav_left_icon).class('bi-asterisk', navPrevious !== currentPage.prev);
             $(this.namespace.nav_left).class('disabled', !navPrevious);
 
             $(this.namespace.nav_right).attr('href', navNext ? navNext.href : '#');
             $(this.namespace.nav_right_text).html(navNext ? navNext.title : '');
             $(this.namespace.nav_right_icon).class('bi-chevron-compact-right', navNext === currentPage.next);
-            $(this.namespace.nav_right_icon).class('bi-chevron-expand', navNext !== currentPage.next);
+            $(this.namespace.nav_right_icon).class('bi-asterisk', navNext !== currentPage.next);
             $(this.namespace.nav_right).class('disabled', !navNext);
         }
         // ----------
@@ -164,13 +164,10 @@
 
             <div is="playui-scrollspy-div" data-id="markdownBody" class="doc-readme markdown-body py-10 px-11 md:px-16" style="min-height: 78vh;">
                 <html-import name="readme" data-id="main" class="overflow-hidden">
-                    <div class="flex-center" style="height: 85vh;">
-                        <div class="p-5 text-center">
-                            <i class="bi bi-emoji-smile-upside-down p-2.5 flex-center"></i>
-                            <span>Not found! </span>
-                            <br /><br />
-                            (<span>Also, we're gradually rolling out DOCS.</span> <a href="/#waitlist">Get Notified</a>)                            
-                        </div>
+                    <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="height: 85vh;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+                        </svg>
                     </div>
                 </html-import>
                 <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
@@ -191,7 +188,7 @@
                 </button>
             </div>
             <footer class="readme-footer sticky bottom-0 z-[80]">
-                <ul class="relative footer-nav p-3 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                <ul class="relative footer-nav py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
                     <li class="max-w-6/12 p-4 flex justify-start border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
                     <li class="max-w-6/12 p-4 flex justify-end border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                 </ul>

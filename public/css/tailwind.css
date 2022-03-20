@@ -1928,22 +1928,6 @@ section.pre-bar::after {
   padding: 1.75rem;
 }
 
-.p-5 {
-  padding: 1.25rem;
-}
-
-.p-2\.5 {
-  padding: 0.625rem;
-}
-
-.p-2 {
-  padding: 0.5rem;
-}
-
-.p-3 {
-  padding: 0.75rem;
-}
-
 .p-4 {
   padding: 1rem;
 }
@@ -1956,6 +1940,10 @@ section.pre-bar::after {
   padding: 0.25rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
@@ -1966,6 +1954,14 @@ section.pre-bar::after {
 
 .p-12 {
   padding: 3rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .p-14 {
@@ -2002,14 +1998,14 @@ section.pre-bar::after {
   padding-right: 2.75rem;
 }
 
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 .py-8 {
@@ -2737,7 +2733,7 @@ code:not(pre code) {
 }
 
 .markdown-body [id] {
-  scroll-margin-top: 10px;
+  scroll-margin-top: 24px;
 }
 
 :is([data-id="nav_left_text"],[data-id="nav_right_text"]):empty + span {
