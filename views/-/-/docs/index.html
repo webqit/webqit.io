@@ -15,7 +15,7 @@
         if (page.wbdiv) {
             $(this.namespace.projectNav.namespace.project_icon).class('bi-' + page.projectIcon, true);
             $(this.namespace.projectNav.namespace.project_title).html(page.projectTitle);
-            //$(this.namespace.projectNav.namespace.project_url).attr('href', '/' + page.wbdiv + '/' + page.projectName);
+            $(this.namespace.projectNav.namespace.project_url).attr('href', '/' + page.wbdiv + '/' + page.projectName);
             $(this.namespace.projectNav.namespace.project_github).attr('href', 'https://github.com/webqit/' + page.projectName);
         }
         if (page.nav) {
@@ -99,7 +99,7 @@
                             
             <header class="layout-section h-24 px-2 md:px-6 stick-y top-0 flex items-center pointer-events-auto text-gray-500 border-b border-gray-400 dark:border-gray-600 b-g-white dark:b-g-gray-850 z-10 backdrop-blur-md">
                 <div namespace data-id="breadcrumb" class="breadcrumb grow">
-                    <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="inline-flex list-none" style="height: 60px; white-space: nowrap;">
+                    <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="pl-2 inline-flex list-none" style="height: 60px; white-space: nowrap;">
                         <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
                             <div class="h-full flex items-center">
                                 <i class="bi bi-slash xs"></i>
@@ -187,7 +187,7 @@
                 </span>
             </div>
             <footer class="readme-footer sticky bottom-0 z-[80]">
-                <ul class="relative footer-nav px-6 flex justify-between items-center bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                <ul class="relative footer-nav p-2 px-6 flex justify-between items-center bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
                     <li class="max-w-6/12 p-5 flex justify-start border border-gray-400 dark:border-gray-600 rounded-lg backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
                     <li class="max-w-6/12 p-5 flex justify-end border border-gray-400 dark:border-gray-600 rounded-lg backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                 </ul>
