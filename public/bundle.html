@@ -359,9 +359,9 @@
 
         if (page.wbdiv) {
             $(this).attr('id', 'route--' + page.wbdiv);
-            var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName];
+            var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName] || {};
             var docsPage = '/' + page.wbdiv + '/' + page.projectName + '/docs';
-            if (this.namespace?.quickstart) {
+            if (this.namespace.quickstart) {
                 $(this.namespace.quickstart).attr('name', project.quickstart.type || 'link');
                 this.namespace.quickstart.setState(project.quickstart);
             }
