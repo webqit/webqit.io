@@ -1744,10 +1744,6 @@ section.pre-bar::after {
   border-radius: 0.25rem;
 }
 
-.rounded-sm {
-  border-radius: 0.125rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -2405,23 +2401,16 @@ html:not(.scroll-reset) {
 
 .overflow-notch .overflow-list {
   max-width: 200px;
-  color: black;
-  background-color: white;
   display: none;
-  border: 1px solid silver;
   padding-top: 15px;
   padding-bottom: 15px;
-  border-radius: 15px;
+  border-radius: 5px;
   box-shadow: 0px 10px 20px -10px rgba(0, 0, 0, 0.5);
 }
 
 .overflow-notch .overflow-list li:active,
 .overflow-notch .overflow-list li.active {
   border-left: 3px solid black;
-}
-
-.overflow-notch .overflow-list li:hover {
-  background-color: gainsboro;
 }
 
 .overflow-notch:focus-within .overflow-list {
