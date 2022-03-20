@@ -73,14 +73,14 @@
                 <div class="sticky font-bold top-0 h-24 p-7 flex text-gray-500 border-b border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
                     <a data-id="project_url" href="" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
                         <span data-id="project_title"></span>
-                        <i data-id="project_icon" class="bi flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
+                        <i data-id="project_icon" class="bi flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
                     </a>
                 </div>
                 <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline px-4 py-5 list-none"></ul>
                 <div class="sticky font-bold bottom-0 h-24 p-7 flex text-gray-500 border-t border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
                     <a data-id="project_github" href="" target="_blank" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
                         <span>Visit on GitHub</span>
-                        <i class="bi bi-github flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
+                        <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
                     </a>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                 </div>
                 <a data-id="edit_link" href="" target="_blank" class="mx-3 px-3 border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-400" title="Edit this page on github">
                     <span class="mr-3 hidden md:block flex items-center">Edit</span>
-                    <i class="bi bi-pencil flex-center" style="font-size: smaller;"></i>
+                    <i class="bi bi-pencil flex-center border md:border-none border-dashed border-current" style="width: 30px; height: 30px; font-size: smaller;"></i>
                 </a>
             </header>
 
@@ -181,10 +181,10 @@
                 </ul>
             </div>
 
-            <div class="sticky bottom-0 z-[100] bottom-10 pb-8 h-0 flex-center pointer-events-none">
-                <span data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2 border-y border-wbdiv-color2-dim-text text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+            <div class="sticky bottom-0 z-[100] pb-8 h-0 flex-center pointer-events-none">
+                <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2 border-none text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
                     <i class="bi bi-text-indent-right flex-center text-2xl"></i>
-                </span>
+                </button>
             </div>
             <footer class="readme-footer sticky bottom-0 z-[80]">
                 <ul class="relative footer-nav p-3 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
