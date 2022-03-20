@@ -103,7 +103,7 @@
                         <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
                             <div class="h-full flex items-center">
                                 <i class="bi bi-slash xs"></i>
-                                <i class="bi bi-three-dots xs cursor-pointer"></i>
+                                <i class="bi bi-caret-down xs cursor-pointer"></i>
                             </div>
                             <div class="overflow h-0 flex justify-start">
                                 <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute animation-x-fast anim-fly-top-small list-none"></ul>
@@ -135,7 +135,7 @@
                                     if (k === this.state.entries.length - 1) {
                                         $(subtreeList).list(d.subtree);
                                         main.append(subtreeNotch);
-                                        $(subtreeNotch).classAsync('disabled', !d.subtree);
+                                        $(subtreeNotch).classAsync('hidden', !d.subtree);
                                     }
                                 },
                                 overflowCallback: (e, el, d, k, overflowCount) => {

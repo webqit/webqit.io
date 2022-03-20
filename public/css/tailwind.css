@@ -2684,16 +2684,13 @@ html:not(.scroll-reset) {
 }
 
 code:not(pre code) {
+  background-color: rgba(125,125,125,0.2);
   border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
 
 .dark code:not(pre code) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
