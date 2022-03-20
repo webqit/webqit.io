@@ -473,14 +473,17 @@
         <html-import name="index:search(3-10)" class="pd-10">
             <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="min-height: 100vh;">
                 <div namespace class="pd-10 pd-x3 text-center b anim-fade-in">
-                    <i class="bi bi-activity"></i>
+                    <i class="bi bi-globe"></i>
                     <br />
                     <div data-id="error"></div>
-                    <br />
+                    <i class="bi bi-three-dots"></i><br />
                     <a href="/" class="color-1">&leftarrow; Back to Home</a>
                     <script type="subscript">
                         let app = document.state;
-                        $(this.namespace.error).html(app.network?.error ? (app.network?.online ? 'Network Error - ' : "You're Offline - ") + app.network?.error : '404 - Not Found!');
+                        let cause = app.network?.error ? (app.network?.online ? 'Network Error - ' : "You're Offline - ") + app.network?.error : '404 - Not Found!';
+                        setTimeout(() => {
+                            $(this.namespace.error).html(cause);
+                        }, 200);
                     </script>
                 </div>
             </div>
