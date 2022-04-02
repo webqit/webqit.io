@@ -81,7 +81,7 @@
     
     <div class="relative flex layout-section border-t border-gray-400">
         
-        <div data-id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none" style="z-index: 90;">
+        <div data-id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none z-[100]">
             
             <div class="w-[75vw] lg:w-full h-20 flex items-center justify-between px-5 bg-[rgb(215,230,250)] lg:px-0 lg:bg-transparent z-10">
                 <a data-id="project_url" href="" class="flex items-center hover:text-gray-800">
@@ -108,7 +108,7 @@
                         <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
                             <div class="h-full flex items-center">
                                 <i class="bi bi-slash xs"></i>
-                                <i class="bi bi-caret-down xs cursor-pointer"></i>
+                                <i class="bi bi-three-dots text-2xl cursor-pointer"></i>
                             </div>
                             <div class="overflow h-0 flex justify-start">
                                 <ul data-id="list" template="page/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute animation-x-fast anim-fly-top-small list-none"></ul>
@@ -164,13 +164,13 @@
             </header>
 
             <div class="relative bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl lg:rounded-r-lg">
-                <div data-id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-60 active2:pointer-events-auto transition-all bg-gray-300 dark:bg-black z-10"></div>
+                <div data-id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-60 active2:pointer-events-auto transition-all bg-gray-300 dark:bg-black z-[90]"></div>
                 
-                <div data-id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[81]">
+                <div data-id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[95]">
                     <div class="sticky top-0 overflow-hidden">
                         <div class="relative flex flex-col h-[100vh] pb-10 translate-x-[100%] group-active2:translate-x-0 pointer-events-auto transition-transform bg-gray-200 dark:bg-gray-850 rounded-r-lg">
                             <div data-id="nav_control2" class="absolute right-[100%] p-6 cursor-pointer rounded-lg shadow-2xl backdrop-blur-md">
-                                <i class="bi bi-text-indent-right flex-center lg text-3xl"></i>
+                                <i class="bi bi-text-indent-right flex-center text-2xl"></i>
                             </div>
                             <div class="w-full h-12 shrink-0 px-7 py-10 flex items-center justify-between text-gray-500">
                                 <span class="sm">On this page</span>
@@ -203,13 +203,13 @@
                     </ul>
                 </div>
 
-                <div class="sticky bottom-12 pb-8 h-0 flex-center pointer-events-none z-[100]">
-                    <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2-dim-text border-none text-black active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
-                        <i class="bi bi-text-indent-left flex-center text-2xl"></i>
-                    </button>
-                </div>
-                <footer class="readme-footer sticky bottom-0 z-[80]">
-                    <ul class="relative footer-nav py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                <footer class="readme-footer sticky bottom-0 pointer-events-none z-[80]">
+                    <div class="relative h-0 flex-center z-10">
+                        <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2-dim-text border-none text-black active2:scale-0 transition-transform delay-75 font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+                            <i class="bi bi-cursor flex-center text-3xl"></i>
+                        </button>
+                    </div>
+                    <ul class="relative footer-nav pointer-events-auto py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
                         <li class="max-w-6/12 p-4 flex justify-start border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
                         <li class="max-w-6/12 p-4 flex justify-end border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
                     </ul>
