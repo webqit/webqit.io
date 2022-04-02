@@ -17,7 +17,7 @@
             $(this.namespace.title).html(project.title);
             $(this.namespace.desc).html(project.desc);
             $(this.namespace.highlights).list(project.features);
-            //$(this.namespace.quickstart).attr('name', project.quickstart.type || 'link');
+            //$(this.namespace.quickstart).attr('name', project.quickstart?.type || 'link');
             //this.namespace.quickstart.setState(project.quickstart);
         }
 
@@ -25,8 +25,8 @@
             $(this).attr('id', 'route--' + page.wbdiv);
             var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName] || {};
             var docsPage = '/' + page.wbdiv + '/' + page.projectName + '/docs';
-            if (this.namespace.quickstart) {
-                $(this.namespace.quickstart).attr('name', project.quickstart.type || 'link');
+            if (this.namespace.quickstart && project.quickstart) {
+                $(this.namespace.quickstart).attr('name', project.quickstart.type);
                 this.namespace.quickstart.setState(project.quickstart);
             }
         }

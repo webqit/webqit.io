@@ -18,7 +18,7 @@
     --wbdiv-color2: blue;
     --wbdiv-color2-dim: mediumblue;
     --wbdiv-color2-dim2: mediumblue;
-    --wbdiv-color2-dim-text: cornflowerblue;
+    --wbdiv-color2-dim-text: deepskyblue;
   }
   [wbdiv="cloud"] {
     --wbdiv-color2: red;
@@ -407,6 +407,7 @@ html:not(.scroll-reset) {
 
 :is(.project-outline, .page-outline) li > .item-bar {
   @apply relative;
+  line-height: 1.3em;
 }
 :is(.project-suboutline, .page-suboutline)  {
   margin-left: 8px;
@@ -420,8 +421,8 @@ html:not(.scroll-reset) {
   font-weight: bold;
 }
 :is(.project-outline, .page-outline) li > .item-bar > a {
-  margin-top: 3px;
-  margin-bottom: 3px;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
 }
 :is(.project-outline, .page-outline) li.has-subtree > .item-bar > .subtree-notch {
   cursor: pointer;
@@ -466,12 +467,17 @@ html:not(.scroll-reset) {
 
 /* ---------- */
 
-.project-outline li > .item-bar:hover {
-  @apply text-gray-800 dark:text-gray-400;
+.project-outline .legend {
+  @apply p-3 text-sm text-gray-500 dark:text-gray-400;
+}
+.tab.active,
+.project-outline :is(li > .item-bar:hover, li.active:not(.has-active) > .item-bar) {
+  @apply bg-[aliceblue] dark:bg-gray-800;
 }
 .page-outline li > .item-bar:hover {
   @apply text-gray-800 dark:text-gray-400;
 }
+.tab.active,
 :is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
   @apply text-wbdiv-color2 dark:text-wbdiv-color2-dim-text;
 }

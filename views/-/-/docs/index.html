@@ -13,22 +13,23 @@
         }
         */
         if (page.wbdiv) {
-            $(this.namespace.projectNav.namespace.project_icon).class('bi-' + page.projectIcon, true);
-            $(this.namespace.projectNav.namespace.project_title).html(page.projectTitle);
-            $(this.namespace.projectNav.namespace.project_url).attr('href', '/' + page.wbdiv + '/' + page.projectName);
-            $(this.namespace.projectNav.namespace.project_github).attr('href', 'https://github.com/webqit/' + page.projectName);
+            $(this.namespace.project_icon).class('bi-' + page.projectIcon, true);
+            $(this.namespace.project_title).html(page.projectTitle);
+            $(this.namespace.project_url).attr('href', '/' + page.wbdiv + '/' + page.projectName);
+            $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + page.projectName);
         }
         if (page.nav) {
             $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + page.wbdiv + '.docs/edit/dev/' + document.state.url.pathname.replace('/' + page.wbdiv + '/', '') + '/README.md');
-            $(this.namespace.projectNav.namespace.main).list(page.nav);
+            $(this.namespace.primaryNavTabs).list(page.nav);
+            $(this.namespace.primaryNav).list(page.nav);
         }
         // ----------
         if (page.breadcrumb) {
             this.namespace.breadcrumb.setState({ entries: page.breadcrumb });
             var currentPage = page.breadcrumb[page.breadcrumb.length - 1];
             setTimeout(() => {
-                this.namespace.markdownBody.bindIndicators(currentPage.outline || []);
-                $(this.namespace.pageNav.namespace.main).list(currentPage.outline || []);
+                this.namespace.readmeBody.bindIndicators(currentPage.outline || []);
+                $(this.namespace.secondaryNav).list(currentPage.outline || []);
             }, 0, currentPage.outline);
             $(this.namespace.index_links).class('hidden', !currentPage.subtree);
             this.namespace.index_links.setState(currentPage);
@@ -51,54 +52,57 @@
             $(this.namespace.nav_right).class('disabled', !navNext);
         }
         // ----------
-        if (document.state.url?.pathname) {
-            setTimeout(() => {
-                this.namespace.nav_control?.classList.remove('active');
-                this.namespace.nav?.classList.remove('active');
-            }, 300);
+        let backdrop = () => {
+            let panelsActive = this.namespace.pageLeft?.classList.contains('active') || this.namespace.pageRight?.classList.contains('active');
+            $(this.namespace.readmeBackdrop).class('active', panelsActive);
+            $(this.namespace.nav_control).class('active', panelsActive);
+        };
+        let panelsClose = () => {
+            this.namespace.nav_control?.classList.remove('active');
+            this.namespace.nav_control2?.classList.remove('active');
+            this.namespace.pageLeft?.classList.remove('active');
+            this.namespace.pageRight?.classList.remove('active');
+            backdrop();
         }
-        $([this.namespace.nav_control, this.namespace.navBackdrop]).on('click', () => {
-            this.namespace.nav_control.classList.toggle('active');
-            this.namespace.nav.classList.toggle('active');
+        if (document.state.url?.pathname) {
+            setTimeout(panelsClose, 300);
+        }
+        $(this.namespace.readmeBackdrop).on('click', panelsClose);
+        $(this.namespace.nav_control).on('click', () => {
+            this.namespace.pageLeft.classList.toggle('active');
+            backdrop();
+        });
+        $([this.namespace.nav_control2, this.namespace.nav_control2_b]).on('click', () => {
+            this.namespace.pageRight.classList.toggle('active');
+            backdrop();
         });
     </script>
     
     
-    <div class="relative flex items-start layout-section">
+    <div class="relative flex layout-section border-t border-gray-400">
         
-        <div drawer-breakpoint="md" data-id="nav" class="docs-left-menu flex justify-between group w-0 lg:w-2/5 h-[100vh] pointer-events-none lg:pointer-events-auto sticky top-0" style="z-index: 90;">
-            <div data-id="navBackdrop" class="absolute inset-y-0 left-0 opacity-0 pointer-events-none group-active2:opacity-60 group-active2:pointer-events-auto transition-all lg:hidden bg-gray-300 dark:bg-black" style="width: 100vw; z-index: -1;"></div>
+        <div data-id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none" style="z-index: 90;">
             
-            <div namespace data-id="projectNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl">
-                <div class="sticky font-bold top-0 h-24 p-7 flex text-gray-500 border-b border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
-                    <a data-id="project_url" href="" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
-                        <span data-id="project_title"></span>
-                        <i data-id="project_icon" class="bi flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
-                    </a>
-                </div>
-                <ul data-id="main" template="page/-/-/docs/@layout/project-outline" class="project-outline px-4 py-5 list-none"></ul>
-                <div class="sticky font-bold bottom-0 h-24 p-7 flex text-gray-500 border-t border-gray-400 dark:border-gray-600 z-10 b-g-white dark:b-g-gray-850 backdrop-blur-md">
-                    <a data-id="project_github" href="" target="_blank" class="flex w-full items-center justify-between hover:text-gray-700 dark:hover:text-gray-400">
-                        <span>Visit on GitHub</span>
-                        <i class="bi bi-github flex-center rounded ml-2.5" style="width: 30px; height: 30px;"></i>
-                    </a>
-                </div>
+            <div class="w-[75vw] lg:w-full h-20 flex items-center justify-between px-5 bg-[rgb(215,230,250)] lg:px-0 lg:bg-transparent z-10">
+                <a data-id="project_url" href="" class="flex items-center hover:text-gray-800">
+                    <i data-id="project_icon" class="bi flex-center font-bold h-8 w-8 rounded-lg mr-2.5 border border border-current"></i>
+                    <span data-id="project_title"></span>
+                </a>
+                <a data-id="project_github" href="" target="_blank" class="flex items-center hover:text-gray-800">
+                    <i class="bi bi-github flex-center h-8 w-8 ml-2.5"></i>
+                </a>
             </div>
-
-            <div namespace data-id="pageNav" class="w-[50vw] lg:w-1/2 overflow-y-auto scrollbar-thin scale-0 lg:scale-100 group-active2:scale-100 group-active2:pointer-events-auto transform transition-transform lg:transition-none shrink-0 bg-gray-200 dark:bg-black dark:text-gray-500">
-                <div class="sticky font-bold top-0 h-24 p-7 flex items-center justify-between text-gray-500 z-10 backdrop-blur-md">
-                    <span class="sm">On this page</span>
-                    <i class="bi bi-list-nested xs flex-center rounded ml-2.5 border border-dashed border-current" style="width: 30px; height: 30px;"></i>
-                </div>
-                <ul data-id="main" template="page/-/-/docs/@layout/page-outline" class="page-outline px-4 py-5 list-none"></ul>
+            <div class="sticky top-[-59px] w-[75vw] lg:w-full bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl lg:rounded-l-lg z-10">
+                <ul data-id="primaryNavTabs" template="page/-/-/docs/@layout/project-outline#tab" class="px-8 flex list-none"></ul>
+                <div data-id="primaryNav" template="page/-/-/docs/@layout/project-outline#tabBody" class="project-outline h-[100vh] overflow-y-auto scrollbar-thin"></div>
             </div>
 
         </div>
 
-        <main data-id="page_readme_container" class="relative w-full lg:w-3/5 bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl">
+        <main data-id="pageMain" class="relative w-full lg:w-9/12">
             <span data-viewport-top tabindex="-1"></span>
                             
-            <header class="layout-section h-24 px-2 md:px-6 stick-y top-0 flex items-center font-bold pointer-events-auto text-gray-500 border-b border-gray-400 dark:border-gray-600 b-g-white dark:b-g-gray-850 z-10 backdrop-blur-md">
+            <header class="layout-section relative flex items-center h-20 px-2 md:px-0 z-10">
                 <div namespace data-id="breadcrumb" class="breadcrumb grow">
                     <ul data-id="main" template="page/-/-/docs/@layout/breadcrumb" class="pl-2 inline-flex list-none" style="height: 60px; white-space: nowrap;">
                         <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
@@ -153,43 +157,64 @@
                         }
                     </script>
                 </div>
-                <a data-id="edit_link" href="" target="_blank" class="mx-3 px-3 border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-400" title="Edit this page on github">
+                <a data-id="edit_link" href="" target="_blank" class="ml-3 px-3 lg:border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700 dark:hover:text-gray-400" title="Edit this page on github">
                     <span class="mr-3 hidden md:block flex items-center">Edit</span>
-                    <i class="bi bi-pencil flex-center rounded border md:border-none border-dashed border-current" style="width: 30px; height: 30px; font-size: smaller;"></i>
+                    <i class="bi bi-pencil flex-center rounded-lg border md:border-none border-dashed border-current" style="width: 30px; height: 30px; font-size: smaller;"></i>
                 </a>
             </header>
 
-            <div is="playui-scrollspy-div" data-id="markdownBody" class="doc-readme markdown-body py-10 px-11 md:px-16" style="min-height: 78vh;">
-                <html-import name="readme" data-id="main" class="overflow-hidden">
-                    <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="height: 85vh;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
-                        </svg>
+            <div class="relative bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl lg:rounded-r-lg">
+                <div data-id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-60 active2:pointer-events-auto transition-all bg-gray-300 dark:bg-black z-10"></div>
+                
+                <div data-id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[81]">
+                    <div class="sticky top-0 overflow-hidden">
+                        <div class="relative flex flex-col h-[100vh] pb-10 translate-x-[100%] group-active2:translate-x-0 pointer-events-auto transition-transform bg-gray-200 dark:bg-gray-850 rounded-r-lg">
+                            <div data-id="nav_control2" class="absolute right-[100%] p-6 cursor-pointer rounded-lg shadow-2xl backdrop-blur-md">
+                                <i class="bi bi-list flex-center lg text-3xl"></i>
+                            </div>
+                            <div class="w-full h-12 shrink-0 px-7 py-10 flex items-center justify-between text-gray-500">
+                                <span class="sm">On this page</span>
+                                <i data-id="nav_control2_b" class="bi bi-list-nested h-8 w-8 xs flex-center rounded ml-2.5 border border-dashed border-current cursor-pointer"></i>
+                            </div>
+                            <ul data-id="secondaryNav" template="page/-/-/docs/@layout/page-outline" class="page-outline grow px-4 list-none overflow-y-auto scrollbar-thin dark:text-gray-400"></ul>
+                        </div>
                     </div>
-                </html-import>
-                <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
-                    <script type="subscript">
-                        if (this.state.subtree) {
-                            $(this).list(this.state.subtree, {
-                                itemExportId: this.state._subtreeType,
-                                clearDOM: true,
-                            });
-                        }
-                    </script>
-                </ul>
-            </div>
+                </div>
+                
+                <div is="playui-scrollspy-div" data-id="readmeBody" class="relative doc-readme markdown-body py-10 px-11 md:px-16 min-h-[100vh]">
 
-            <div class="sticky bottom-12 z-[100] pb-8 h-0 flex-center pointer-events-none">
-                <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2 border-none text-gray-200 hover:text-white active2:scale-75 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
-                    <i class="bi bi-columns-gap flex-center text-2xl"></i>
-                </button>
+                    <html-import name="readme" data-id="main" class="overflow-hidden">
+                        <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="height: 85vh;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+                            </svg>
+                        </div>
+                    </html-import>
+
+                    <ul data-id="index_links" template="page/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
+                        <script type="subscript">
+                            if (this.state.subtree) {
+                                $(this).list(this.state.subtree, {
+                                    itemExportId: this.state._subtreeType,
+                                    clearDOM: true,
+                                });
+                            }
+                        </script>
+                    </ul>
+                </div>
+
+                <div class="sticky bottom-12 pb-8 h-0 flex-center pointer-events-none z-[100]">
+                    <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-wbdiv-color2 border-none text-gray-200 hover:text-white active2:scale-50 transition-all font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+                        <i class="bi bi-columns-gap flex-center text-2xl"></i>
+                    </button>
+                </div>
+                <footer class="readme-footer sticky bottom-0 z-[80]">
+                    <ul class="relative footer-nav py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                        <li class="max-w-6/12 p-4 flex justify-start border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
+                        <li class="max-w-6/12 p-4 flex justify-end border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
+                    </ul>
+                </footer>
             </div>
-            <footer class="readme-footer sticky bottom-0 z-[80]">
-                <ul class="relative footer-nav py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
-                    <li class="max-w-6/12 p-4 flex justify-start border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
-                    <li class="max-w-6/12 p-4 flex justify-end border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
-                </ul>
-            </footer>
 
         </main>
 
@@ -204,7 +229,7 @@
     <template name="breadcrumb">
         <li namespace class="flex items-center">
             <i class="bi bi-slash xs"></i>
-            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-700 dark:hover:text-gray-400" href="" style="font-size: smaller;"></a>
+            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-700" href="" style="font-size: smaller;"></a>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.href).htmlAsync(this.state.title);
@@ -214,7 +239,7 @@
             </script>
         </li>
         <li exportgroup="overflow" namespace class="hidden">
-            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-2.5" href="">
+            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
                 <i class="bi bi-arrow-return-right xs p-1"></i>
                 <span data-id="text" class="p-1" style="word-break: break-word;"></span>
             </a>
@@ -227,7 +252,7 @@
             </script>
         </li>
         <li exportgroup="subtree" namespace>
-            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-2.5" href="">
+            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
                 <i class="bi bi-chevron-right xs p-1" style="font-size: smaller;"></i>
                 <span data-id="text" class="p-1" style="word-break: break-word;"></span>
             </a>
@@ -242,9 +267,24 @@
 
     <template name="project-outline">
 
+        <li exportgroup="tab" namespace is="playui-linkitem-li" class="tab active2:border-b border-current">
+            <a data-id="href" class="p-4 block">
+                <span data-id="text"></span>
+            </a>
+        </li>
+
+        <ul exportgroup="tabBody" namespace is="playui-linkitem-ul" template="page/-/-/docs/@layout/project-outline" class="p-6 list-none hidden">
+            <script type="subscript">
+                $(this).class('hidden', !this.state.active && !this.state.hasActive);
+                if (this.state.subtree) {
+                    $(this).list(this.state.subtree, { itemExportId: this.state._subtreeType });
+                }
+            </script>
+        </ul>
+
         <li exportgroup="category" namespace class="category">
-            <div data-id="legend" class="legend relative p-5 py-4 text-sm text-gray-500"></div>
-            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 bg-white dark:bg-gray-850 rounded-lg list-none"></ul>
+            <div data-id="legend" class="legend relative"></div>
+            <ul data-id="entries" template="page/-/-/docs/@layout/project-outline" class="py-4 list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {
                     $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());
@@ -301,7 +341,7 @@
 
     <template name="index_links">
         <li exportgroup="category" namespace>
-            <div data-id="legend" class="py-8 px-4 text-xs text-gray-500"></div>
+            <div data-id="legend" class="p-3 text-xs text-gray-500"></div>
             <ul data-id="entries" template="page/-/-/docs/@layout/index_links#item" class="index-links list-none"></ul>
             <script type="subscript">
                 if (this.state.title) {

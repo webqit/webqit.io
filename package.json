@@ -7,8 +7,9 @@
   "scripts": {
     "postversion": "git push && git push --tags",
     "build-css": "tailwindcss -c ./public/css/tailwind.config.cjs -i ./public/css/tailwind.dev.css -o ./public/css/tailwind.css",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && webflo build",
-    "start": "npm run build-css && webflo start"
+    "build-html": "playui bundle",
+    "build-js": "export NODE_OPTIONS=--openssl-legacy-provider && webflo build",
+    "start": "npm run build-html && npm run build-css && webflo start"
   },
   "keywords": [
     "WebQit Tooling",
