@@ -3426,9 +3426,9 @@ code:not(pre code) {
   transform: var(--tw-transform);
 }
 
-.active2\:scale-50.active {
-  --tw-scale-x: .5;
-  --tw-scale-y: .5;
+.active2\:scale-75.active {
+  --tw-scale-x: .75;
+  --tw-scale-y: .75;
   transform: var(--tw-transform);
 }
 
