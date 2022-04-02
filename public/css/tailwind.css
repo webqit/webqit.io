@@ -1921,8 +1921,9 @@ section.pre-bar::after {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.bg-wbdiv-color2-dim-text {
-  background-color: var(--wbdiv-color2-dim-text);
+.bg-gray-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .bg-gray-100 {
@@ -2286,9 +2287,8 @@ section.pre-bar::after {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+.text-wbdiv-color2-dim-text {
+  color: var(--wbdiv-color2-dim-text);
 }
 
 .text-inherit {
@@ -2327,6 +2327,11 @@ section.pre-bar::after {
 .text-gray-200 {
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .opacity-0 {
