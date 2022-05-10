@@ -29,10 +29,10 @@
         <link rel="stylesheet" type="text/css" href="/css/prism.css">
         <link rel="stylesheet" type="text/css" href="/css/vs-code-dark.css">
 
-        <!-- JS -->
         <script crossorigin src="https://unpkg.com/@webqit/playui-js/dist/main.js" ssr></script>
-        <script crossorigin src="https://unpkg.com/@webqit/oohtml/dist/main.js" ssr></script>
-        <script type="module" src="/bundle.js"></script>
+         <script type="module" src="/bundle.js"></script>
+       <script crossorigin src="https://unpkg.com/@webqit/subscript/dist/console-element.js"></script>
+        <script crossorigin src="https://unpkg.com/@webqit/subscript/dist/player-element.js"></script>
         <script>
             window.Prism = window.Prism || {};
             window.Prism.manual = true;
@@ -42,8 +42,6 @@
         <!--
         <script src="/prism.js" data-manual></script>
         -->
-        <script crossorigin src="https://unpkg.com/@webqit/subscript/dist/console-element.js"></script>
-        <script crossorigin src="https://unpkg.com/@webqit/subscript/dist/player-element.js"></script>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YMML9GXC1"></script>
@@ -56,8 +54,8 @@
         </script>
 
         <script type="subscript">
-            let $app = document.state;
-            $(document.namespace.title).html($app.page?.titleBar || '');
+            let app = document.state;
+            $(document.namespace.title).html(app.page?.titleBar || '');
         </script>
 
         <!-- TEMPLATES -->
@@ -232,7 +230,7 @@
                     <div exportgroup="code" namespace class="quickstart font-bold">
                         <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200 border border-gray-500">
                             <div class="flex items-center overflow-x-auto scrollbar-thin">
-                                <code data-id="directive" class="whitespace-nowrap bg-transparent"></code>
+                                <code data-id="directive" class="whitespace-nowrap bg-transparent" style="color: black;"></code>
                             </div>
                         </div>
                         <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
@@ -251,7 +249,7 @@
 
                     <form exportgroup="form" namespace class="quickstart font-bold">
                         <div class="flex items-stretch h-16 rounded-xl bg-gray-200 border border-gray-500 overflow-hidden">
-                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none;" />
+                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none; color: black;" />
                         </div>
                         <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
                             <span data-id="cta_text" class="whitespace-nowrap"></span>
@@ -425,12 +423,12 @@
 
         <!-- PAGE_PROGRESS_BAR -->
 
-        <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed left-0 top-0 w-full border-t border-[rgba(255,255,255,0.75)] bg-[rgba(255,255,255,0.75)] z-10 overflow-hidden hidden" style="height: 3px;">
+        <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed left-0 top-0 w-full z-10 overflow-hidden hidden" style="height: 2px;">
             <div class="progressbar-indicator-a progressbar-trail" style="background-color: red;"></div>
             <div class="progressbar-indicator-b" style="background-color: blue;"></div>
             <script type="subscript">
                 let app = document.state;
-                $(this).class('hidden', !app.network?.progress.active);
+                $(this).class('hidden', !app.network?.remote);
                 $(this).css('color', app.network?.error ? 'red' : 'blueviolet');
             </script>
         </div>
@@ -484,7 +482,7 @@
                         let cause = app.network?.error ? (app.network?.online ? 'Network Error - ' : "You're Offline - ") + app.network?.error : '404 - Not Found!';
                         setTimeout(() => {
                             $(this.namespace.error).html(cause);
-                        }, 200);
+                        }, 600);
                     </script>
                 </div>
             </div>

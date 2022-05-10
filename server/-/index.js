@@ -23,7 +23,7 @@ export default async function(event, recieved, next) {
     if (!Object.keys(staticPageData).includes(wbdiv)) {
         return next();
     }
-    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join(this.layout.ROOT, this.layout.PUBLIC_DIR, 'bundle.html.json')) 
+    var outlineFile, outline = Fs.existsSync(outlineFile = Path.join('', './public', 'bundle.html.json')) 
         ? JSON.parse(Fs.readFileSync(outlineFile)) 
         : {};
     // ------------

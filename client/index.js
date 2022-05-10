@@ -2,7 +2,6 @@
 /**
  * @imports
  */
-import '@webqit/play-sequence/src/browser-entry.js';
 import '../src/wc.js';
 
 /**

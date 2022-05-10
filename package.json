@@ -1,14 +1,17 @@
 {
   "name": "@webqit/webqit.io",
+  "title": "WebQit.io",
   "version": "0.0.1",
   "description": "The webqit.io website",
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "test": "mocha --extension .test.js --exit",
+    "test:coverage": "c8 --reporter=text-lcov npm run test | coveralls",
     "postversion": "git push && git push --tags",
     "build-css": "tailwindcss -c ./public/css/tailwind.config.cjs -i ./public/css/tailwind.dev.css -o ./public/css/tailwind.css",
     "build-html": "playui bundle",
-    "build-js": "export NODE_OPTIONS=--openssl-legacy-provider && webflo build",
+    "build-js": "webflo generate::client",
     "start": "npm run build-html && npm run build-css && webflo start"
   },
   "keywords": [
@@ -19,17 +22,15 @@
   "author": "Oxford Harrison <oxharris.dev@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
-    "@webqit/backpack": "0.0.3",
-    "@webqit/observer": "^1.7.5",
     "@webqit/obsv-collection": "^0.0.16",
-    "@webqit/play-icon": "0.0.2",
-    "@webqit/play-sequence": "^0.1.7",
-    "@webqit/pseudo-browser": "^0.3.12",
     "@webqit/util": "^0.7.1",
-    "bootstrap-icons": "^1.1.0"
+    "@webqit/webflo": "^0.10.0"
   },
   "devDependencies": {
+    "@webqit/playui-cli": "^0.1.33",
     "autoprefixer": "^10.4.0",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
     "postcss": "^8.4.4",
     "tailwind-scrollbar": "^1.3.1",
     "tailwindcss": "^3.0.7"

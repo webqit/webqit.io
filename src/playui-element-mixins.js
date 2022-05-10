@@ -33,8 +33,11 @@ export const _ScrollTimeline = __ScrollTimeline => class extends _Root(__ScrollT
 
     scrollTimeline(opts = {}, useState = null) {
         const scrollOffsets = opts.scrollOffsets || [];
-        const getScrollOffset = i => scrollOffsets[i] instanceof CSSStyleValue ? scrollOffsets[i] : (
-            typeof scrollOffsets[i] === 'string' ? CSSStyleValue.parse(scrollOffsets[i]) : { target: this, edge: i === 0 ? 'end' : 'start', threshold: 0, ...(scrollOffsets[i] || {}) }
+        const supportsCSSStyleValue = typeof CSSStyleValue !== 'undefined';
+        const getScrollOffset = i => supportsCSSStyleValue && (scrollOffsets[i] instanceof CSSStyleValue) ? scrollOffsets[i] : (
+            typeof scrollOffsets[i] === 'string' && supportsCSSStyleValue ? CSSStyleValue.parse(scrollOffsets[i]) : (
+                { target: this, edge: i === 0 ? 'end' : 'start', threshold: 0, ...(scrollOffsets[i] || {}) }
+            )
         );
         if (typeof ScrollTimeline === 'undefined') return document.timeline;
         const scrollTimeline = new ScrollTimeline({

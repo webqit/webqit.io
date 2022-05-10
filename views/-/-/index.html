@@ -17,15 +17,13 @@
             $(this.namespace.title).html(project.title);
             $(this.namespace.desc).html(project.desc);
             $(this.namespace.highlights).list(project.features);
-            //$(this.namespace.quickstart).attr('name', project.quickstart?.type || 'link');
-            //this.namespace.quickstart.setState(project.quickstart);
         }
 
         if (page.wbdiv) {
             $(this).attr('id', 'route--' + page.wbdiv);
             var project = page.outline?.subtree[page.wbdiv].subtree[page.projectName] || {};
             var docsPage = '/' + page.wbdiv + '/' + page.projectName + '/docs';
-            if (this.namespace.quickstart && project.quickstart) {
+            if (this.namespace.quickstart && project.quickstart?.type) {
                 $(this.namespace.quickstart).attr('name', project.quickstart.type);
                 this.namespace.quickstart.setState(project.quickstart);
             }
@@ -41,7 +39,7 @@
         <div class="lg:w-4/6 md:text-center">
             <h1 data-id="title"></h1>
             <p data-id="desc" class="pt-6 text-2xl"></p>
-            <div class="relative top-6">
+            <div data-id="ee" class="relative top-6">
                 <html-import data-id="quickstart" template="@layout/landing2/quickstart"></html-import>
             </div>
         </div>
