@@ -1,0 +1,41 @@
+{
+    "title": "Subscript",
+    "icon": "terminal",
+    "desc": "A reactivity runtime for JavaScript, offered in an ordinary JavaScript function! With Subscript we introduce <i>dependency threads</i> for JavaScript!.",
+    "categories": ["JavaScript Libraries"],
+    "tags": ["OOHTML", "UI", "Reactivity", "Dependency Threads"],
+    "quickstart": {"cdn": true},
+    "features": [{
+        "icon": "percent",
+        "title": "No Additives; Just JavaScript!",
+        "desc": "Try a new approach to reactivity that is based on nothing at all but just JavaScript!.",
+        "cta": {
+            "href": "/tooling/subscript/docs",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "diagram-2",
+        "title": "Performant JavaScript",
+        "desc": "An insane focus on pure JavaScript syntax - to keep its footprint, and your footprint, ridiculously small!",
+        "cta": {
+            "href": "/tooling/subscript/docs",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "cpu",
+        "title": "Developer \"Joooy\"",
+        "desc": "Write your code however you enjoy it; forget about hooks and a complex toolchain, and a required build step!",
+        "cta": {
+            "href": "/tooling/subscript/docs",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "plug",
+        "title": "Progressive Development",
+        "desc": "Try turning reactivity on and off on an existing code base, in an afterthought! Go \"progressive\" with Subscript Functions!",
+        "cta": {
+            "href": "/tooling/subscript/docs",
+            "text": "Learn more"
+        }
+    }]
+}

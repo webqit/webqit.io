@@ -1,23 +1,20 @@
-<!DOCTYPE html>
-<html>
-    
-    <head>
+<!DOCTYPE html><html><head>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;">
 
         <title data-id="title"></title>
 
-        <link rel="icon" href="/img/logo/logo.ico" type="image/x-icon" />
-        <meta name="description" content="The tooling, cloud, and community for web-native development" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#cce6ff" />
+        <link rel="icon" href="/assets/img/logo/logo.ico" type="image/x-icon">
+        <meta name="description" content="The tooling, cloud, and community for web-native development">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="theme-color" content="#cce6ff">
         
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-title" content="WebQit" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="#cce6ff" />
-        <link rel="apple-touch-icon" href="/img/logo/logo-200x200.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="WebQit">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#cce6ff">
+        <link rel="apple-touch-icon" href="/assets/img/logo/logo-200x200.png">
 
         <!-- CSS -->
         <!--
@@ -26,16 +23,19 @@
         <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
         -->
 
-        <link crossorigin defer type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
-        <link rel="stylesheet" href="https://use.typekit.net/zux1blc.css" />
-        <link type="text/css" rel="stylesheet" href="/css/tailwind.css" />
-        <link defer rel="stylesheet" type="text/css" href="/css/prism.css">
-        <link defer rel="stylesheet" type="text/css" href="/css/vs-code-dark.css">
+        <link crossorigin="" defer="" type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://use.typekit.net/zux1blc.css">
+        <link type="text/css" rel="stylesheet" href="/assets/css/tailwind.css">
+        <link defer="" rel="stylesheet" type="text/css" href="/assets/css/prism.css">
+        <link defer="" rel="stylesheet" type="text/css" href="/assets/css/vs-code-dark.css">
 
-        <script crossorigin ssr src="https://unpkg.com/@webqit/playui-js/dist/main.js"></script>
-        <script type="module" src="/bundle.js"></script>
-        <script crossorigin defer src="https://unpkg.com/@webqit/subscript/dist/console-element.js"></script>
-        <script crossorigin defer src="https://unpkg.com/@webqit/subscript/dist/player-element.js"></script>
+        
+		<script type="module" src="/bundle.js" by="webflo"></script>
+		<script crossorigin="" ssr="" src="https://unpkg.com/@webqit/playui-js/dist/main.js"></script>
+        
+		<script type="module" src="/bundle.js"></script>
+        <script crossorigin="" defer="" src="https://unpkg.com/@webqit/subscript/dist/console-element.js"></script>
+        <script crossorigin="" defer="" src="https://unpkg.com/@webqit/subscript/dist/player-element.js"></script>
 
         <script>
             window.Prism = window.Prism || {};
@@ -44,11 +44,11 @@
             currentYear = (new Date).getFullYear();
         </script>
         <!--
-        <script src="/prism.js" data-manual></script>
+        <script src="/assets/prism.js" data-manual></script>
         -->
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YMML9GXC1"></script>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9YMML9GXC1"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -58,17 +58,16 @@
         </script>
 
         <script type="subscript">
-            let app = document.state;
-            $(document.namespace.title).html(app.page?.titleBar || '');
+            let { titleBar } = document.state.data || {};
+            $(document.namespace.title).html(titleBar || '');
         </script>
 
         <!-- TEMPLATES -->
-        <template name="page" src="/bundle.html"></template>
         <template name="@layout">
             <template name="menu-x">
 
                 <ul is="playui-list-ul" template="@layout/menu-x#item" overflow-visibility="1" class="flex px-4 space-x-5 list-none"></ul>
-                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wbdiv-color2" treewatch>
+                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wbdiv-color2" treewatch="">
                     <a href="#" class="whitespace-nowrap"></a>
                 </li>
 
@@ -76,7 +75,7 @@
             <template name="menu-y">
 
                 <ul is="playui-list-ul" template="@layout/menu-y#item" overflow-visibility="0" class="py-4 list-none"></ul>
-                <li is="playui-linkitem-li" exportgroup="item" namespace class="hover:bg-gray-200 active:text-wbdiv-color2 active2:text-wbdiv-color2" treewatch>
+                <li is="playui-linkitem-li" exportgroup="item" namespace="" class="hover:bg-gray-200 active:text-wbdiv-color2 active2:text-wbdiv-color2" treewatch="">
                     <a href="#" class="p-3 px-6 flex items-center justify-between">
                         <span data-id="text" class="whitespace-nowrap pr-10"></span>
                         <i class="bi bi-chevron-right"></i>
@@ -86,7 +85,7 @@
             </template>
             <template name="footer-menu">
 
-                <li is="playui-linkitem-li" exportgroup="group" namespace>
+                <li is="playui-linkitem-li" exportgroup="group" namespace="">
                     <div data-id="legend" class="mb-4 font-bold text-gray-400"></div>
                     <ul data-id="items" template="@layout/footer-menu#item" class="list-none"></ul>
                     <script type="subscript">
@@ -125,16 +124,16 @@
                     
                     <template name="filters">
 
-                        <li exportgroup="item" is="playui-linkitem-li" defaultactive class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
+                        <li exportgroup="item" is="playui-linkitem-li" defaultactive="" class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
                             <a href=""></a>
                         </li>
                     
                     </template>
 
-                    <li exportgroup="item" namespace class="item group overflow-hidden transition transition-all">
+                    <li exportgroup="item" namespace="" class="item group overflow-hidden transition transition-all">
                         <a data-id="href" href="" class="p-14 pb-10 h-full block rounded">
                             <span class="icon h-10 w-10 rounded-xl inline-flex border-2 border-transparent group-hover:border-wbdiv-color2 text-wbdiv-color2 flex-center transition-all">
-                                <!--<img src="/icon/optimized-for-seo.svg" />-->
+                                <!--<img src="/assets/icon/optimized-for-seo.svg" />-->
                                 <i data-id="icon" class="bi flex-center text-4xl transform group-hover:scale-50 transition-all"></i>
                             </span>
                             <h3 data-id="title" class="py-4 font-black"></h3>
@@ -167,7 +166,7 @@
                 </template>
                 <template name="start-section">
 
-                    <li exportgroup="item" namespace class="group text-left border-t-4 border-wbdiv-color2 transform md:hover:-translate-y-1 transition-transform">
+                    <li exportgroup="item" namespace="" class="group text-left border-t-4 border-wbdiv-color2 transform md:hover:-translate-y-1 transition-transform">
                         <a data-id="href" href="" class="block h-full transform md:group-hover:translate-y-0.5 transition-transform">
                             <div class="flex items-center justify-between py-5">
                                 <span data-id="title" class="text-gray-600 dark:text-gray-300"></span>
@@ -185,7 +184,7 @@
                 </template>
                 <template name="highlights-section">
 
-                    <li exportgroup="item" namespace>
+                    <li exportgroup="item" namespace="">
                         <div class="text">
                             <div class="content">
                                 <h3 data-id="title" class="font-bold">Connect your favorite tools</h3>
@@ -196,7 +195,7 @@
                         <div class="dot"></div>
                         <div class="img flex-center">
                             <div class="w-1/2 border-t-2 border-dashed border-gray-300 dark:border-gray-800"></div>
-                            <img data-id="img" />
+                            <img data-id="img">
                         </div>
                         <script type="subscript">
                             if (this.state.title) {
@@ -217,7 +216,7 @@
             <template name="landing2">
                 <template name="quickstart">
 
-                    <div exportgroup="link" namespace class="quickstart font-bold">
+                    <div exportgroup="link" namespace="" class="quickstart font-bold">
                         <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white">
                             <span data-id="cta_text" class="whitespace-nowrap"></span>
                             <i data-id="icon" class="bi flex-center relative ml-4"></i>
@@ -231,7 +230,7 @@
                         </script>
                     </div>
 
-                    <div exportgroup="code" namespace class="quickstart font-bold">
+                    <div exportgroup="code" namespace="" class="quickstart font-bold">
                         <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200 border border-gray-500">
                             <div class="flex items-center overflow-x-auto scrollbar-thin">
                                 <code data-id="directive" class="whitespace-nowrap bg-transparent" style="color: black;"></code>
@@ -251,9 +250,9 @@
                         </script>
                     </div>
 
-                    <form exportgroup="form" namespace class="quickstart font-bold">
+                    <form exportgroup="form" namespace="" class="quickstart font-bold">
                         <div class="flex items-stretch h-16 rounded-xl bg-gray-200 border border-gray-500 overflow-hidden">
-                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none; color: black;" />
+                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none; color: black;">
                         </div>
                         <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wbdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
                             <span data-id="cta_text" class="whitespace-nowrap"></span>
@@ -274,7 +273,7 @@
                 <template name="hero-section">
 
                     <template name="cta">
-                        <a namespace href="#" class="cta d-inline-flex flex-y-center b">
+                        <a namespace="" href="#" class="cta d-inline-flex flex-y-center b">
                             <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
                             <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
                             <script type="subscript">
@@ -288,7 +287,7 @@
                     </template>
 
                     <template name="nav">
-                        <li namespace class="hero-nav-item sm--d-flex">
+                        <li namespace="" class="hero-nav-item sm--d-flex">
                             <a data-id="href" href="" class="flex-center radius-full border-solid">
                                 <i data-id="icon" class="bi flex-center sm"></i>
                             </a>
@@ -304,7 +303,7 @@
                 </template>
                 <template name="highlights-section">
     
-                    <li exportgroup="item" namespace class="project-item lg:text-center flex flex-col bg-gray-100 dark:bg-gray-950 rounded-xl">
+                    <li exportgroup="item" namespace="" class="project-item lg:text-center flex flex-col bg-gray-100 dark:bg-gray-950 rounded-xl">
                         <div class="px-8 pb-3 pt-10 border-b border-dashed border-gray-500 dark:border-gray-800 font-bold">
                             <i data-id="icon" class="subitem-icon bi inline-flex flex-center text-2xl text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"></i>
                             <h4 data-id="title" class="subitem-title pt-2"></h4>
@@ -335,16 +334,17 @@
                 <template name="showcase-section">
 
                     <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
-                        <img src="/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
+                        <img src="/assets/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
                     </section>
 
                 </template>
             </template>
         </template>
+		<template name="routes" src="/bundle.html" by="oohtml-cli"></template>
     
     </head>
 
-    <body template="" namespace class="dark font-noto text-lg">
+    <body template="" namespace="" class="dark font-noto text-lg">
         <span data-id="top" aria-hidden="true"></span>
 
         <script type="subscript">
@@ -444,14 +444,14 @@
             <div class="grow flex items-center p-7 pl-10 pr-10 lg:pr-10">
                 <div class="grow flex items-center">
                     <a href="/" class="inline-flex items-center">
-                        <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1" />
+                        <img src="/assets/img/logo/logo-130x130.png" class="w-12 -ml-1">
                         <span class="ml-4">WebQit</span>  <span class="ml-2">(Beta)</span>
                     </a>
                 </div>
                 <div class="w-1/3 hidden lg:block">
                     <form class="flex max-w-sm items-center rounded-full px-4 bg-black bg-opacity-10 hover:bg-opacity-20 focus-within:bg-opacity-20">
                         <i class="px-2 bi bi-search flex-center"></i>
-                        <input class="grow py-3 bg-transparent" placeholder="Search..." />
+                        <input class="grow py-3 bg-transparent" placeholder="Search...">
                     </form>
                 </div>
                 <div template="@layout/menu-x" class="w-0 lg:w-1/3 flex items-center justify-end">
@@ -473,14 +473,14 @@
             </span>
         </header>   
 
-        <html-import name="index:search(3-10)" class="pd-10">
+        <html-import name="main.html:search(3-10)" class="pd-10">
             <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="min-height: 100vh;">
-                <div namespace class="pd-10 pd-x3 text-center b anim-fade-in">
+                <div namespace="" class="pd-10 pd-x3 text-center b anim-fade-in">
                     <i class="bi bi-globe"></i>
-                    <br /><br />
+                    <br><br>
                     <div data-id="error"></div>
-                    <i class="bi bi-three-dots"></i><br />
-                    <a href="/" class="color-1">&leftarrow; Back to Home</a>
+                    <i class="bi bi-three-dots"></i><br>
+                    <a href="/" class="color-1">← Back to Home</a>
                     <script type="subscript">
                         let app = document.state;
                         let cause = app.network?.error ? (app.network?.online ? 'Network Error - ' : "You're Offline - ") + app.network?.error : '404 - Not Found!';
@@ -498,7 +498,7 @@
                 <div class="grow sm:flex">
                     <div class="sm:w-3/12 p-10">
                         <a class="inline-flex items-center hover:text-[blue]" href="/">
-                            <img src="/img/logo/logo-130x130.png" class="w-12 -ml-1 mr-4" />
+                            <img src="/assets/img/logo/logo-130x130.png" class="w-12 -ml-1 mr-4">
                             WebQit, Inc.
                         </a>
                         <p class="flex mt-5">
@@ -519,10 +519,11 @@
                 <span class="page-pad-r hidden lg:block"></span>
             </div>
             <div class="py-10 border-t-4 border-gray-400 border-dotted text-center">
-                &copy 2022 WebQit, Inc.
+                © 2022 WebQit, Inc.
             </div>
         </footer>
 
-    </body>
+    
 
-</html>
+
+</body></html>

@@ -1,0 +1,372 @@
+
+<!-- Main Home View -->
+<div namespace class="relative m-auto max-w-[1400px] rounded">
+    
+    <script type="subscript">
+        let { wbdiv, projectIcon, projectName, projectTitle, nav, breadcrumb } = document.state.data || {};
+        
+        /*
+        if (document.body.classList.contains('dark')) {Lol
+
+            document.body.classList.remove('dark');
+            document.body.classList.add('dark-x');
+        }
+        */
+        if (wbdiv) {
+            $(this.namespace.project_icon).class('bi-' + projectIcon, true);
+            $(this.namespace.project_title).html(projectTitle);
+            $(this.namespace.project_url).attr('href', '/' + wbdiv + '/' + projectName);
+            $(this.namespace.project_github).attr('href', 'https://github.com/webqit/' + projectName);
+        }
+        if (nav) {
+            $(this.namespace.edit_link).attr('href', 'https://github.com/webqit/webqit-' + wbdiv + '.docs/edit/dev/' + document.state.url.pathname.replace('/' + wbdiv + '/', '') + '/README.md');
+            $(this.namespace.primaryNavTabs).list(nav);
+            $(this.namespace.primaryNav).list(nav);
+        }
+        // ----------
+        if (breadcrumb) {
+            this.namespace.breadcrumb.setState({ entries: breadcrumb });
+            var currentPage = breadcrumb[breadcrumb.length - 1];
+            setTimeout(() => {
+                if (this.namespace.readmeBody.bindIndicators) {
+                    this.namespace.readmeBody.bindIndicators(currentPage.outline || []);
+                }
+                $(this.namespace.secondaryNav).list(currentPage.outline || []);
+            }, 0, currentPage.outline);
+            $(this.namespace.index_links).class('hidden', !currentPage.subtree);
+            this.namespace.index_links.setState(currentPage);
+            // ----------
+
+            $(this.namespace.nav).class('hidden', false);
+            var navPrevious = currentPage.prev || (currentPage.parent || {}).prev;
+            var navNext = currentPage.next || (currentPage.parent || {}).next;
+
+            $(this.namespace.nav_left).attr('href', navPrevious ? navPrevious.href : '#');
+            $(this.namespace.nav_left_text).html(navPrevious ? navPrevious.title : '');
+            $(this.namespace.nav_left_icon).class('bi-chevron-compact-left', navPrevious === currentPage.prev);
+            $(this.namespace.nav_left_icon).class('bi-asterisk', navPrevious !== currentPage.prev);
+            $(this.namespace.nav_left).class('disabled', !navPrevious);
+
+            $(this.namespace.nav_right).attr('href', navNext ? navNext.href : '#');
+            $(this.namespace.nav_right_text).html(navNext ? navNext.title : '');
+            $(this.namespace.nav_right_icon).class('bi-chevron-compact-right', navNext === currentPage.next);
+            $(this.namespace.nav_right_icon).class('bi-asterisk', navNext !== currentPage.next);
+            $(this.namespace.nav_right).class('disabled', !navNext);
+        }
+        // ----------
+        let backdrop = () => {
+            let panelsActive = this.namespace.pageLeft?.classList.contains('active') || this.namespace.pageRight?.classList.contains('active');
+            $(this.namespace.readmeBackdrop).class('active', panelsActive);
+            $(this.namespace.nav_control).class('active', panelsActive);
+        };
+        let panelsClose = () => {
+            this.namespace.nav_control?.classList.remove('active');
+            this.namespace.nav_control2?.classList.remove('active');
+            this.namespace.pageLeft?.classList.remove('active');
+            this.namespace.pageRight?.classList.remove('active');
+            backdrop();
+        }
+        if (document.state.url?.pathname) {
+            setTimeout(panelsClose, 300);
+        }
+        $(this.namespace.readmeBackdrop).on('click', panelsClose);
+        $(this.namespace.nav_control).on('click', () => {
+            this.namespace.pageLeft.classList.toggle('active');
+            backdrop();
+        });
+        $([this.namespace.nav_control2, this.namespace.nav_control2_b]).on('click', () => {
+            this.namespace.pageRight.classList.toggle('active');
+            backdrop();
+        });
+    </script>
+    
+    
+    <div class="relative flex layout-section border-t border-gray-400">
+        
+        <div data-id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none z-[100]">
+            
+            <div class="w-[75vw] lg:w-full h-20 flex items-center justify-between px-5 bg-[rgb(215,230,250)] lg:px-0 lg:bg-transparent shadow-2xl lg:shadow-none z-10">
+                <a data-id="project_url" href="" class="flex items-center hover:text-gray-800">
+                    <i data-id="project_icon" class="bi flex-center font-bold h-8 w-8 rounded-lg mr-2.5 border border border-current"></i>
+                    <span data-id="project_title"></span>
+                </a>
+                <a data-id="project_github" href="" target="_blank" class="flex items-center hover:text-gray-800">
+                    <i class="bi bi-github flex-center h-8 w-8 ml-2.5"></i>
+                </a>
+            </div>
+            <div class="sticky top-[-59px] w-[75vw] lg:w-full bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl lg:rounded-l-lg z-10">
+                <ul data-id="primaryNavTabs" template="routes/-/-/docs/@layout/project-outline#tab" class="px-8 flex list-none"></ul>
+                <div data-id="primaryNav" template="routes/-/-/docs/@layout/project-outline#tabBody" class="project-outline h-[100vh] overflow-y-auto scrollbar-thin"></div>
+            </div>
+
+        </div>
+
+        <main data-id="pageMain" class="relative w-full lg:w-9/12">
+            <span data-viewport-top tabindex="-1"></span>
+                            
+            <header class="layout-section relative flex items-center h-20 px-2 md:px-0 z-10">
+                <div namespace data-id="breadcrumb" class="breadcrumb grow">
+                    <ul data-id="main" template="routes/-/-/docs/@layout/breadcrumb" class="pl-2 inline-flex list-none" style="height: 60px; white-space: nowrap;">
+                        <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
+                            <div class="h-full flex items-center">
+                                <i class="bi bi-slash xs"></i>
+                                <i class="bi bi-three-dots text-2xl cursor-pointer"></i>
+                            </div>
+                            <div class="overflow h-0 flex justify-start">
+                                <ul data-id="list" template="routes/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute animation-x-fast anim-fly-top-small list-none"></ul>
+                            </div>
+                        </li>
+                        <li data-id="subtree" namespace class="overflow-notch hidden" tabindex="0">
+                            <div class="h-full flex items-center cursor-pointer">
+                                <i class="bi bi-caret-down xs flex items-center"></i>
+                            </div>
+                            <div class="overflow h-0 flex justify-end">
+                                <ul data-id="list" template="routes/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list bg-white dark:bg-gray-800 dark:text-gray-300 absolute pt-2 pb-2 drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <script type="subscript">
+                        var main = this.namespace.main;
+                        var overflowNotch = this.namespace.overflow;
+                        var overflowList = overflowNotch.namespace.list;
+                        var subtreeNotch = this.namespace.subtree;
+                        var subtreeList = subtreeNotch.namespace.list;
+                        if (this.state.entries) {
+                            $(overflowNotch).classAsync('hidden', true);
+                            $(subtreeNotch).classAsync('hidden', false);
+                            // Prevent flickering before overflow reflow
+                            $(main.parentNode).classAsync('reflowing', true);
+                            $(main).list(this.state.entries, {
+                                renderCallback: (e, el, d, k) => {
+                                    WebQit.Observer.set(d, 'overflowCollapsed', false);
+                                    if (k === this.state.entries.length - 1) {
+                                        $(subtreeList).list(d.subtree);
+                                        main.append(subtreeNotch);
+                                        $(subtreeNotch).classAsync('hidden', !d.subtree);
+                                    }
+                                },
+                                overflowCallback: (e, el, d, k, overflowCount) => {
+                                    WebQit.Observer.set(d, 'overflowCollapsed', e === 'collapse');
+                                    $(overflowNotch).class('hidden', overflowCount === 0);
+                                },
+                                overflowContainerCallback: (e, container) => {
+                                    // Hold/release "prevent flickering before overflow reflow"
+                                    $(container.parentNode).classAsync('reflowing', e);
+                                },
+                                collapsionPoint: 'start',
+                            });
+                            $(overflowList).list(this.state.entries);
+                        }
+                    </script>
+                </div>
+                <a data-id="edit_link" href="" target="_blank" class="ml-3 pl-4 lg:border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-700" title="Edit this page on github">
+                    <span class="mr-2 hidden md:block flex items-center">Edit</span>
+                    <i class="bi bi-pencil flex-center rounded-lg border md:border-none border-dashed border-current" style="width: 30px; height: 30px; font-size: smaller;"></i>
+                </a>
+            </header>
+
+            <div class="relative bg-white dark:bg-gray-850 dark:text-gray-300 shadow-lg dark:shadow-2xl lg:rounded-r-lg">
+                <div data-id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-60 active2:pointer-events-auto transition-all bg-gray-300 dark:bg-black z-[90]"></div>
+                
+                <div data-id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[95]">
+                    <div class="sticky top-0 overflow-hidden">
+                        <div class="relative flex flex-col h-[100vh] pb-10 translate-x-[100%] group-active2:translate-x-0 pointer-events-auto transition-transform bg-white dark:bg-gray-850 shadow-lg dark:shadow-2xl rounded-r-lg">
+                            <div data-id="nav_control2" class="absolute right-[100%] p-6 cursor-pointer rounded-lg shadow-2xl backdrop-blur-md">
+                                <i class="bi bi-text-indent-right flex-center text-2xl"></i>
+                            </div>
+                            <div class="w-full h-12 shrink-0 px-7 py-10 flex items-center justify-between text-gray-500">
+                                <span class="sm">On this page</span>
+                                <i data-id="nav_control2_b" class="bi bi-chevron-right h-8 w-8 xs flex-center rounded ml-2.5 border border-dashed border-current cursor-pointer"></i>
+                            </div>
+                            <ul data-id="secondaryNav" template="routes/-/-/docs/@layout/page-outline" class="page-outline grow px-4 list-none overflow-y-auto scrollbar-thin dark:text-gray-400"></ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div is="playui-scrollspy-div" data-id="readmeBody" class="relative doc-readme markdown-body py-10 px-11 md:px-16 min-h-[100vh]">
+
+                    <html-import name="readme.md" data-id="main" class="overflow-hidden">
+                        <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="height: 85vh;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-body-text" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 0 .5Zm0 2A.5.5 0 0 1 .5 2h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm9 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-9 2A.5.5 0 0 1 .5 4h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm5 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5Zm-12 2A.5.5 0 0 1 .5 6h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5Zm8 0a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm-8 2A.5.5 0 0 1 .5 8h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm7 0a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm-7 2a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5Zm0 2a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+                            </svg>
+                        </div>
+                    </html-import>
+
+                    <ul data-id="index_links" template="routes/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
+                        <script type="subscript">
+                            if (this.state.subtree) {
+                                $(this).list(this.state.subtree, {
+                                    itemExportId: this.state._subtreeType,
+                                    clearDOM: true,
+                                });
+                            }
+                        </script>
+                    </ul>
+                </div>
+
+                <footer class="readme-footer sticky bottom-0 pointer-events-none z-[80]">
+                    <div class="relative h-0 flex-center z-10">
+                        <button data-id="nav_control" class="pointer-events-auto h-14 w-14 bg-gray-700 text-wbdiv-color2-dim-text border-none active2:scale-0 transition-transform delay-75 font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+                            <i class="bi bi-cursor flex-center text-3xl"></i>
+                        </button>
+                    </div>
+                    <ul class="relative footer-nav pointer-events-auto py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-850 dark:lg:bg-transparent">
+                        <li class="max-w-6/12 p-4 flex justify-start border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
+                        <li class="max-w-6/12 p-4 flex justify-end border border-gray-400 dark:border-gray-600 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center max-w-full rounded-2xl text-gray-500 hover:text-wbdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi sm flex-center ml-2.5"></i></a></li>
+                    </ul>
+                </footer>
+            </div>
+
+        </main>
+
+    </div>
+
+</div>
+
+<!-- TEMPLATES -->
+
+<template name="@layout">
+
+    <template name="breadcrumb">
+        <li namespace class="flex items-center">
+            <i class="bi bi-slash xs"></i>
+            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-700" href="" style="font-size: smaller;"></a>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.href).htmlAsync(this.state.title);
+                    $(this.namespace.href).attrAsync('href', this.state.href);
+                    $(this).classAsync('hidden', this.state.overflowCollapsed);
+                }
+            </script>
+        </li>
+        <li exportgroup="overflow" namespace class="hidden">
+            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
+                <i class="bi bi-arrow-return-right xs p-1"></i>
+                <span data-id="text" class="p-1" style="word-break: break-word;"></span>
+            </a>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.text).htmlAsync(this.state.title);
+                    $(this.namespace.href).attrAsync('href', this.state.href);
+                    $(this).classAsync('hidden', !this.state.overflowCollapsed);
+                }
+            </script>
+        </li>
+        <li exportgroup="subtree" namespace>
+            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
+                <i class="bi bi-chevron-right xs p-1" style="font-size: smaller;"></i>
+                <span data-id="text" class="p-1" style="word-break: break-word;"></span>
+            </a>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.text).htmlAsync(this.state.title);
+                    $(this.namespace.href).attrAsync('href', this.state.href);
+                }
+            </script>
+        </li>
+    </template>
+
+    <template name="project-outline">
+
+        <li exportgroup="tab" namespace is="playui-linkitem-li" class="tab active2:border-b border-current">
+            <a data-id="href" class="p-4 block">
+                <span data-id="text"></span>
+            </a>
+        </li>
+
+        <ul exportgroup="tabBody" namespace is="playui-linkitem-ul" template="routes/-/-/docs/@layout/project-outline" class="p-6 list-none hidden">
+            <script type="subscript">
+                $(this).class('hidden', !this.state.active && !this.state.hasActive);
+                if (this.state.subtree) {
+                    $(this).list(this.state.subtree, { itemExportId: this.state._subtreeType });
+                }
+            </script>
+        </ul>
+
+        <li exportgroup="category" namespace class="category">
+            <div data-id="legend" class="legend relative"></div>
+            <ul data-id="entries" template="routes/-/-/docs/@layout/project-outline" class="py-4 list-none"></ul>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());
+                    $(this.namespace.entries).list(this.state.subtree);
+                }
+            </script>
+        </li>
+
+        <li namespace is="playui-linkitem-li" class="group">
+            <div data-id="item_bar" class="item-bar flex px-3">
+                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
+                <a data-id="href" href="" class="grow flex items-center justify-between">
+                    <span data-id="text"></span>
+                    <i class="bi bi-chevron-right flex items-center pl-2"></i>
+                </a>
+            </div>
+            <div data-id="sub_menu_container" class="flex items-center overflow-hidden" style="height: 0px;">
+                <ul data-id="sub_menu" template="routes/-/-/docs/@layout/project-outline" class="w-full project-suboutline list-none"></ul>
+            </div>
+            <script type="subscript">
+                if (this.toggleWith) this.toggleWith(this.namespace.subtree_notch);
+                if (this.state.active && !this.state.hasActive) this.namespace.href.focus();
+                if (this.state.subtree) {
+                    $(this).classAsync('has-subtree', true);
+                    $(this).classAsync('expanded', this.state.expanded);
+                    $(this.namespace.sub_menu).list(this.state.subtree, { itemExportId: this.state._subtreeType });
+                    $(this.namespace.sub_menu_container).play({height: this.state.expanded ? 'auto' : 0}, {
+                        duration: 300,
+                        easing: 'ease-out', 
+                        cancelForCss: true
+                    });
+                }
+            </script>
+        </li>
+    </template>
+
+    <template name="page-outline">
+        <li namespace is="playui-linkitem-li" class="group">
+            <div data-id="item_bar" class="item-bar flex px-3">
+                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
+                <a data-id="href" href="" class="grow text-inherit">
+                    <span data-id="text"></span>
+                </a>
+            </div>
+            <ul data-id="sub_menu" template="routes/-/-/docs/@layout/page-outline" class="page-suboutline hidden list-none"></ul>
+            <script type="subscript">
+                if (this.state.subtree) {
+                    $(this.namespace.sub_menu).classAsync('hidden', false);
+                    $(this.namespace.sub_menu).list(this.state.subtree);
+                }
+            </script>
+        </li>
+    </template>
+
+    <template name="index_links">
+        <li exportgroup="category" namespace>
+            <div data-id="legend" class="p-3 text-xs text-gray-500"></div>
+            <ul data-id="entries" template="routes/-/-/docs/@layout/index_links#item" class="index-links list-none"></ul>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.legend).html(this.state.title.toUpperCase());
+                    $(this.namespace.entries).list(this.state.subtree);
+                }
+            </script>
+        </li>
+        <li exportgroup="item" namespace class="flex items-start index-link py-0.5">
+            <i class="bi bi-chevron-right relative -left-3 w-4 text-gray-800 dark:text-gray-500"></i>
+            <span>
+                <a data-id="href" href="" class="text-wbdiv-color2 dark:text-wbdiv-color2-dim-text"></a>
+                <span class="ml-1">-</span>
+                <span data-id="desc" class="ml-1"></span>
+            </span>
+            <script type="subscript">
+                if (this.state.title) {
+                    $(this.namespace.href).htmlAsync(this.state.title);
+                    $(this.namespace.desc).htmlAsync(this.state.desc || '');
+                    $(this.namespace.href).attrAsync('href', this.state.href);
+                }
+            </script>
+        </li>
+    </template>
+
+</template>

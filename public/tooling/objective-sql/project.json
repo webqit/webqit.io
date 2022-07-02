@@ -1,0 +1,41 @@
+{
+    "title": "Objective SQL",
+    "icon": "layers",
+    "desc": "The object-oriented, adaptive SQL for modern apps - query anything from the plain JSON object, to the client-side IndexedDB, to the server-side DB.",
+    "categories": ["SQL Libraries"],
+    "tags": ["SQL", "Indexed DB", "In-Memory Store", "Object Store"],
+    "quickstart": {"cdn": true},
+    "features": [{
+        "icon": "arrows-angle-contract",
+        "title": "Meet ArrowJoins!",
+        "desc": "Write better <code>JOINS</code> with the shorter and self-documenting, bidirectional arrow syntax!",
+        "cta": {
+            "href": "/tooling/objective-sql/docs/getting-started/overview#arrow-joins",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "layers",
+        "title": "The Fullstack Data QL",
+        "desc": "Speak the same familiar SQL both on the server side and, this time, on the client side.",
+        "cta": {
+            "href": "/tooling/objective-sql/docs/getting-started/overview#the-fullstack-data-ql",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "toggle-on",
+        "title": "The Adaptive Data QL",
+        "desc": "Switch between data structures without rewriting a line of query. Stay consistent!",
+        "cta": {
+            "href": "/tooling/objective-sql/docs/getting-started/overview#the-adaptive-data-ql",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "cursor",
+        "title": "Or Speak Programmatically",
+        "desc": "...with the powerful set of succint, promise-based APIs that do the job!",
+        "cta": {
+            "href": "/tooling/objective-sql/docs/getting-started/overview#the-programmatic-apis",
+            "text": "Learn more"
+        }
+    }]
+}

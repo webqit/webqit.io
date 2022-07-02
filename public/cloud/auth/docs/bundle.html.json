@@ -1,0 +1,113 @@
+{
+    "README.md": {
+        "icon": "app-indicator",
+        "desc": "The universal JavaScript framework for Web, Mobile, and API Backends; one tool for every step of the way - from development, to deployment, to continous delivery.",
+        "desc2": "Start on a clean slate, in zero-abstraction, zero-config, and zero-dependency. Develop and deploy anything from a simple <code>'Hello World!'</code> to a rich web and mobile experience.",
+        "categories": "Featured, Frameworks",
+        "tags": "Web, Mobile, API Backends, Dev Server, Production Server, GIT Workflow",
+        "_after": "oohtml",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Webflo",
+                "uri": "webflo",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Prerequisites",
+                        "uri": "prerequisites",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Concepts",
+                        "uri": "concepts",
+                        "subtree": [
+                            {
+                                "level": 3,
+                                "title": "Project Layout",
+                                "uri": "project-layout",
+                                "subtree": [
+                                    {
+                                        "level": 4,
+                                        "title": "The /public Directory",
+                                        "uri": "the-public-directory",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 4,
+                                        "title": "The /server Directory",
+                                        "uri": "the-server-directory",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 4,
+                                        "title": "The /client Directory",
+                                        "uri": "the-client-directory",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 4,
+                                        "title": "The /worker Directory",
+                                        "uri": "the-worker-directory",
+                                        "subtree": []
+                                    }
+                                ]
+                            },
+                            {
+                                "level": 3,
+                                "title": "Routing",
+                                "uri": "routing",
+                                "subtree": [
+                                    {
+                                        "level": 4,
+                                        "title": "Vertical Routing Layers",
+                                        "uri": "vertical-routing-layers",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 4,
+                                        "title": "Horizontal Routing Steps",
+                                        "uri": "horizontal-routing-steps",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 4,
+                                        "title": "Route Handlers",
+                                        "uri": "route-handlers",
+                                        "subtree": [
+                                            {
+                                                "level": 5,
+                                                "title": "Flow Control",
+                                                "uri": "flow-control",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 5,
+                                                "title": "Parameter Passing",
+                                                "uri": "parameter-passing",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 5,
+                                                "title": "The process Object",
+                                                "uri": "the-process-object",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "level": 3,
+                                "title": "HTTP Requests and Responses",
+                                "uri": "http-requests-and-responses",
+                                "subtree": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

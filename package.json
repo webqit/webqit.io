@@ -8,11 +8,11 @@
   "scripts": {
     "test": "mocha --extension .test.js --exit",
     "test:coverage": "c8 --reporter=text-lcov npm run test | coveralls",
-    "postversion": "git push && git push --tags",
-    "build-css": "tailwindcss -c ./public/css/tailwind.config.cjs -i ./public/css/tailwind.dev.css -o ./public/css/tailwind.css",
-    "build-html": "playui bundle",
-    "build-js": "webflo generate::client",
-    "start": "npm run build-html && npm run build-css && webflo start"
+    "build:html": "oohtml bundle --recursive --auto-embed=routes",
+    "build:css": "tailwindcss -c ./public/assets/css/tailwind.config.cjs -i ./public/assets/css/tailwind.dev.css -o ./public/assets/css/tailwind.css",
+    "build:js": "webflo generate::client --recursive --compression --auto-embed",
+    "build": "npm run build:css && npm run build:html && npm run build:js",
+    "start": "npm run build && webflo start"
   },
   "keywords": [
     "WebQit Tooling",
@@ -23,8 +23,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
     "@webqit/obsv-collection": "^0.0.16",
-    "@webqit/util": "^0.7.1",
-    "@webqit/webflo": "^0.10.0"
+    "@webqit/oohtml-cli": "file:../oohtml-cli",
+    "@webqit/util": "^0.7.1"
   },
   "devDependencies": {
     "@webqit/playui-cli": "^0.1.33",

@@ -1,42 +1,91 @@
 {
-    "subtree": {
+    "-": {
         "-": {
-            "subtree": {
-                "-": {
-                    "subtree": {
-                        "docs": {
-                            "meta": {
-                                "index": {}
-                            }
-                        }
-                    },
-                    "meta": {
-                        "index": {}
-                    }
-                }
-            },
-            "meta": {
-                "index": {}
-            }
-        },
-        "cloud": {
-            "meta": {
-                "readme": {}
-            }
-        },
-        "community": {
-            "meta": {
-                "logos": {},
-                "readme": {}
-            }
-        },
-        "tooling": {
-            "meta": {
-                "readme": {}
-            }
+            "docs": {}
         }
     },
-    "meta": {
-        "index": {}
+    "cloud": {
+        "README.md": {
+            "outline": []
+        },
+        "auth": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/cloud/auth/docs/bundle.html.json"
+        },
+        "objective-db": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/cloud/objective-db/docs/bundle.html.json"
+        },
+        "webflo-runtime": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/cloud/webflo-runtime/docs/bundle.html.json"
+        }
+    },
+    "community": {
+        "LOGOS.md": {
+            "outline": []
+        },
+        "README.md": {
+            "outline": []
+        },
+        "web-native-cg": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/community/web-native-cg/docs/bundle.html.json"
+        },
+        "webqit": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/community/webqit/docs/bundle.html.json"
+        }
+    },
+    "tooling": {
+        "README.md": {
+            "outline": []
+        },
+        "objective-sql": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/objective-sql/docs/bundle.html.json"
+        },
+        "observer": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/observer/docs/bundle.html.json"
+        },
+        "oohtml": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/oohtml/docs/bundle.html.json"
+        },
+        "play-ui": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/play-ui/docs/bundle.html.json"
+        },
+        "subscript": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/subscript/docs/bundle.html.json"
+        },
+        "webflo": {
+            "README.md": {
+                "outline": []
+            },
+            "docs": "/tooling/webflo/docs/bundle.html.json"
+        }
     }
 }

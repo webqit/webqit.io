@@ -12,17 +12,17 @@
     "background_color": "#cce6ff",
     "icons": [
         {
-            "src": "/img/logo/logo-130x130.png",
+            "src": "/assets/img/logo/logo-130x130.png",
             "type": "image/png",
             "sizes": "130x130"
         },
         {
-            "src": "/img/logo/logo-200x200.png",
+            "src": "/assets/img/logo/logo-200x200.png",
             "type": "image/png",
             "sizes": "200x200"
         },
         {
-            "src": "/img/logo/logo-try-670x670.png",
+            "src": "/assets/img/logo/logo-try-670x670.png",
             "type": "image/png",
             "sizes": "670x670" 
         }

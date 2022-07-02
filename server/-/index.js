@@ -4,21 +4,21 @@
  */
 import Fs from 'fs';
 import Path from 'path';
-import _toTitle from '@webqit/util/str/toTitle.js';
-import _unique from '@webqit/util/arr/unique.js';
-import Documentation from '../../src/Documentation.js';
-import { createData, createNewOnlyTemplates } from '../../src/render-utils.js';
+import { _toTitle } from '@webqit/util/str/index.js';
+import { _unique } from '@webqit/util/arr/index.js';
+import { createData, createNewOnlyTemplates } from './render-utils.js';
+import Documentation from '../Documentation.js';
 
 /**
  * Handles main HTTP process.
  * 
- * @param Request   event
- * @param any       recieved
- * @param function  next
+ * @param HttpEvent     httpEvent
+ * @param any           context
+ * @param function      next
  * 
  * @return object
  */
-export default async function(event, recieved, next) {
+export default async function(httpEvent, context, next) {
     const wbdiv = this.pathname.split('/').pop(), wbdivName = _toTitle(wbdiv);
     if (!Object.keys(staticPageData).includes(wbdiv)) {
         return next();
@@ -35,14 +35,14 @@ export default async function(event, recieved, next) {
     };
     // ------------
     const documentation = new Documentation(data.wbdiv);
-    if (!outline.subtree[data.wbdiv].subtree) {
-        outline.subtree[data.wbdiv].subtree = {};
+    if (!outline[data.wbdiv].subtree) {
+        outline[data.wbdiv].subtree = {};
     }
     if (next.pathname) {
         var pathSplit = next.pathname.split('/');
         data.projectName = pathSplit.shift();
         let projectData = documentation.getProject(data.projectName, true/* withBundles */);;
-        outline.subtree[data.wbdiv].subtree[data.projectName] = projectData;
+        outline[data.wbdiv].subtree[data.projectName] = projectData;
         data.projectIcon = projectData.icon;
         if (pathSplit.length && !pathSplit.reduce((tree, seg) => tree && tree.subtree ? tree.subtree[seg] : null, projectData.bundles.json)) {
             return next();
@@ -54,6 +54,7 @@ export default async function(event, recieved, next) {
         title: category,
         href: '?category=' + category,
     })));
+    console.log('------------', data);
     //await new Promise((res, rej) => setTimeout(res, 2000));
     return { ...data, ...staticPageData[data.wbdiv] };
 }
@@ -67,7 +68,7 @@ export default async function(event, recieved, next) {
  * 
  * @return window
  */
-export async function render(request, data, next) {
+export async function render___________(request, data, next) {
     const window = await next(createData(data, next.pathname));
     createNewOnlyTemplates(window, data, next.pathname);
     return window;

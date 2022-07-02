@@ -1,0 +1,45 @@
+{
+    "title": "Auth (Coming Soon)",
+    "icon": "shield-lock",
+    "desc": "A complete User Management system that works without any additional tools; fully integrated with your database instance; ready with social logins!",
+    "categories": ["Auth"],
+    "tags": [],
+    "_index": "last",
+    "quickstart": {
+        "type": "link", 
+        "cta": {"href": "#readme", "text": "Learn more"}
+    },
+    "features": [{
+        "icon": "cloud-haze",
+        "title": "OAuth2 &amp; Social Logins",
+        "desc": "Google, Facebook, GitHub, Azure, Gitlab, Twitter, Discord, and Bitbucket.",
+        "cta": {
+            "href": "#",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "app-indicator",
+        "title": "Client-Side &amp; Server-Side Libraries",
+        "desc": "Incredibly simple APIs! With powerful libraries that work on client and server-side applications.",
+        "cta": {
+            "href": "#",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "recycle",
+        "title": "Fully integrated",
+        "desc": "Instant Authentication, Authorization, and User Management system on top of your database instance.",
+        "cta": {
+            "href": "#",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "hdd-network",
+        "title": "Robust. Auto-Scaling.",
+        "desc": "Think big on an enterprise-ready infrastructure! Scale up with no extra effort.",
+        "cta": {
+            "href": "#",
+            "text": "Learn more"
+        }
+    }]
+}

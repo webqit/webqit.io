@@ -2,30 +2,26 @@
 /**
  * @imports
  */
-import _toTitle from '@webqit/util/str/toTitle.js';
-import Documentation from '../src/Documentation.js';
-import _delay from '@webqit/util/js/delay.js';
+import { _toTitle } from '@webqit/util/str/index.js';
+import Documentation from './Documentation.js';
 
 /**
  * Handles main HTTP process.
  * 
- * @param Request   request
- * @param Any       recieved
- * @param Function  next
+ * @param HttpEvent     httpEvent
+ * @param Any           context
+ * @param Function      next
  * 
  * @return object
  */
-export default async (request, recieved, next) => {
+export default async (httpEvent, context, next) => {
     if (next.pathname) {
         return next();
     }
-
     const getFeatured = domain => {
         const documentation = new Documentation(domain);
         return Object.values(documentation.getProjectsList()).filter(a => (a.categories || []).map(c => c.toLowerCase()).includes('featured'));
     };
-    
-    //await _delay(2000);
     return {
         title: 'The WebQit Project',
         hero: {
@@ -78,6 +74,6 @@ export default async (request, recieved, next) => {
  * 
  * @return window
  */
-export async function render(request, data, next) {
+export async function render____(request, data, next) {
     return next(data);
 }
