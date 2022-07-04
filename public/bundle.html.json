@@ -4,88 +4,310 @@
             "docs": {}
         }
     },
-    "cloud": {
-        "README.md": {
-            "outline": []
+    "assets": {
+        "css": {
+            "fonts": {
+                "Whitney-Font": {},
+                "league-spartan": {
+                    "league-spartan-master": {
+                        "webfonts": {}
+                    }
+                }
+            }
         },
+        "icon": {
+            "bootstrap-icons": {
+                "icons": {}
+            }
+        },
+        "img": {
+            "featured": {},
+            "illu": {},
+            "logo": {
+                "prev": {}
+            }
+        }
+    },
+    "cloud": {
         "auth": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/cloud/auth/docs/bundle.html.json"
+            "docs": {}
         },
         "objective-db": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/cloud/objective-db/docs/bundle.html.json"
+            "docs": {}
         },
         "webflo-runtime": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/cloud/webflo-runtime/docs/bundle.html.json"
+            "docs": {}
         }
     },
     "community": {
-        "LOGOS.md": {
-            "outline": []
-        },
-        "README.md": {
-            "outline": []
-        },
         "web-native-cg": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/community/web-native-cg/docs/bundle.html.json"
+            "docs": {}
         },
         "webqit": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/community/webqit/docs/bundle.html.json"
+            "docs": {}
         }
     },
     "tooling": {
-        "README.md": {
-            "outline": []
-        },
         "objective-sql": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/objective-sql/docs/bundle.html.json"
+            "docs": {
+                "getting-started": {
+                    "download": {},
+                    "overview": {}
+                },
+                "public": {
+                    "tooling": {
+                        "objective-sql": {
+                            "docs": {}
+                        }
+                    }
+                }
+            }
         },
         "observer": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/observer/docs/bundle.html.json"
+            "docs": {
+                "api": {
+                    "actions": {
+                        "defineProperty": {},
+                        "deleteProperty": {},
+                        "get": {},
+                        "has": {},
+                        "ownKeys": {},
+                        "set": {}
+                    },
+                    "actors": {
+                        "accessorize": {},
+                        "proxy": {},
+                        "unaccessorize": {},
+                        "unproxy": {}
+                    },
+                    "connectors": {
+                        "build": {},
+                        "link": {},
+                        "unlink": {}
+                    },
+                    "core": {
+                        "Action": {},
+                        "Event": {},
+                        "Mutation": {},
+                        "OperatorParams": {}
+                    },
+                    "reactions": {
+                        "closure": {},
+                        "intercept": {},
+                        "observe": {},
+                        "unintercept": {},
+                        "unobserve": {}
+                    }
+                },
+                "getting-started": {
+                    "download": {},
+                    "explainer": {},
+                    "overview": {}
+                }
+            }
         },
         "oohtml": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/oohtml/docs/bundle.html.json"
+            "docs": {
+                "getting-started": {
+                    "explainer": {},
+                    "overview": {},
+                    "polyfill": {}
+                },
+                "learn": {
+                    "examples": {
+                        "spa": {},
+                        "todo": {},
+                        "tooling": {}
+                    }
+                },
+                "resources": {
+                    "ecosystem": {},
+                    "meta-tag": {},
+                    "the-observer-api": {}
+                },
+                "spec": {
+                    "html-imports": {},
+                    "html-modules": {},
+                    "namespaced-html": {},
+                    "subscript": {},
+                    "the-state-api": {}
+                }
+            }
         },
         "play-ui": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/play-ui/docs/bundle.html.json"
+            "docs": {
+                "api": {
+                    "css": {
+                        "classes": {
+                            "TransformRule": {}
+                        },
+                        "css": {},
+                        "cssAsync": {},
+                        "cssSync": {},
+                        "cssTransaction": {}
+                    },
+                    "data": {
+                        "data": {},
+                        "list": {}
+                    },
+                    "dom": {
+                        "append": {},
+                        "appendAsync": {},
+                        "appendSync": {},
+                        "appendToSync": {},
+                        "attr": {},
+                        "attrAsync": {},
+                        "attrSync": {},
+                        "class": {},
+                        "classAsync": {},
+                        "classSync": {},
+                        "getTextNodes": {},
+                        "html": {},
+                        "htmlAsync": {},
+                        "htmlSync": {},
+                        "initialization": {},
+                        "itemize": {},
+                        "prepend": {},
+                        "prependAsync": {},
+                        "prependSync": {},
+                        "prependToAsync": {},
+                        "prependToSync": {},
+                        "text": {},
+                        "textAsync": {},
+                        "textSync": {}
+                    },
+                    "misc": {
+                        "classes": {
+                            "Transaction": {
+                                "apply": {},
+                                "commit": {},
+                                "rollback": {},
+                                "savepoint": {}
+                            }
+                        },
+                        "transaction": {}
+                    },
+                    "ui": {
+                        "classes": {
+                            "Animation": {
+                                "cancel": {},
+                                "finish": {},
+                                "oncancel": {},
+                                "onfinish": {},
+                                "pause": {},
+                                "play": {},
+                                "progress": {},
+                                "ready": {},
+                                "reverse": {},
+                                "seek": {}
+                            },
+                            "Event": {},
+                            "Listener": {},
+                            "Timeline": {
+                                "add": {},
+                                "cancel": {},
+                                "clear": {},
+                                "finish": {},
+                                "oncancel": {},
+                                "onfinish": {},
+                                "pause": {},
+                                "play": {},
+                                "progress": {},
+                                "remove": {},
+                                "reverse": {},
+                                "seek": {}
+                            },
+                            "UIRect": {}
+                        },
+                        "custom-events": {},
+                        "off": {},
+                        "on": {},
+                        "play": {},
+                        "rect": {},
+                        "trigger": {}
+                    }
+                },
+                "cli": {
+                    "bundle": {
+                        "loaders": {}
+                    },
+                    "config": {},
+                    "help": {}
+                },
+                "getting-started": {
+                    "download": {},
+                    "overview": {}
+                }
+            }
         },
         "subscript": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/subscript/docs/bundle.html.json"
+            "docs": {
+                "concepts": {
+                    "conditionals-and-logic": {},
+                    "functions": {},
+                    "loops": {},
+                    "references-and-bindings": {},
+                    "thread-events": {}
+                },
+                "spec": {
+                    "api": {},
+                    "download": {}
+                },
+                "usage": {
+                    "subscript-element": {}
+                }
+            }
         },
         "webflo": {
-            "README.md": {
-                "outline": []
-            },
-            "docs": "/tooling/webflo/docs/bundle.html.json"
+            "docs": {
+                "api": {
+                    "route-handlers": {
+                        "NavigationEvent": {},
+                        "Request": {},
+                        "Response": {},
+                        "URL": {}
+                    }
+                },
+                "build-system": {
+                    "javascript": {},
+                    "static-build": {}
+                },
+                "cli": {
+                    "build": {},
+                    "cert": {},
+                    "config": {},
+                    "deploy": {},
+                    "help": {},
+                    "server": {}
+                },
+                "client-runtime": {
+                    "navigation": {},
+                    "pwa": {}
+                },
+                "deployment": {
+                    "managed-hosting": {},
+                    "self-hosting": {}
+                },
+                "fundamentals": {
+                    "rendering": {},
+                    "requests-and-responses": {},
+                    "routing": {},
+                    "templating": {}
+                },
+                "getting-started": {
+                    "installation": {},
+                    "overview": {}
+                },
+                "server-runtime": {
+                    "dns": {},
+                    "processes": {}
+                },
+                "workflow": {
+                    "dev-mode": {},
+                    "git-flow": {},
+                    "testing": {}
+                }
+            }
         }
     }
 }
