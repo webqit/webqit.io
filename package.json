@@ -8,7 +8,7 @@
   "scripts": {
     "test": "mocha --extension .test.js --exit",
     "test:coverage": "c8 --reporter=text-lcov npm run test | coveralls",
-    "build:html": "cd ./public && oohtml bundle --recursive --auto-embed=routes",
+    "build:html": "oohtml bundle --recursive --auto-embed=routes",
     "build:css": "tailwindcss -c ./public/assets/css/tailwind.config.cjs -i ./public/assets/css/tailwind.dev.css -o ./public/assets/css/tailwind.css",
     "build:js": "webflo generate::client --recursive --compression --auto-embed",
     "build": "npm run build:css && npm run build:html && npm run build:js",
@@ -26,7 +26,7 @@
     "@webqit/util": "^0.7.1"
   },
   "devDependencies": {
-    "@webqit/oohtml-cli": "^0.2.9",
+    "@webqit/oohtml-cli": "^0.2.17",
     "autoprefixer": "^10.4.0",
     "chai": "^4.3.6",
     "mocha": "^10.0.0",

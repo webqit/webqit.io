@@ -1,0 +1,495 @@
+
+<div class="line-numbers match-braces" exportgroup="README.md">
+	<!-- BADGES/ -->
+	<p><span class="badge-npmversion"><a href="https://npmjs.org/package/@webqit/objective-sql" title="View this project on NPM"><img src="https://img.shields.io/npm/v/@webqit/objective-sql.svg" alt="NPM version"></a></span> <span class="badge-npmdownloads"><a href="https://npmjs.org/package/@webqit/objective-sql" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/@webqit/objective-sql.svg" alt="NPM downloads"></a></span></p>
+	<!-- /BADGES -->
+	<h2 id="simpler-sql-everywhere">Simpler SQL Everywhere!</h2>
+	<p>Speak one familiar language everywhere, this time, with object-oriented conventions for relationships. Or query your data programmatically using a succinct API.</p>
+	<h2 id="getting-started">Getting Started</h2>
+	<ul>
+	<li><a href="/tooling/objective-sql/docs">Visit the docs</a> for an overview, the commands and usage guides.</li>
+	<li>Also, <a href="https://github.com/webqit/objective-sql/discussions">join the Github Discussions</a> for Objective SQL.</li>
+	</ul>
+	<h2 id="contributing-to-the-project">Contributing to the Project</h2>
+	<p>Help report bugs, or request features; or join in the development.</p>
+	<ul>
+	<li><a href="https://github.com/webqit/objective-sql">Visit this project on github</a>.</li>
+	<li><a href="https://github.com/webqit/webqit-tooling.docs/edit/master/objective-sql/docs">Contribute to the docs on github</a>.</li>
+	</ul>
+	<h2 id="license">License</h2>
+	<p>The MIT license.</p>
+</div>
+<template name="docs">
+    <div class="line-numbers match-braces" exportgroup="README.md">
+    	<h1 id="objective-sql-documentation">Objective-SQL Documentation</h1>
+    	<p>Welcome to the Objective-SQL documentation. We hope you find it easy to understand and navigate.</p>
+    	<p>If you have questions about anything related to the Objective-SQL, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
+    	<h2 id="explore-the-docs">Explore the Docs</h2>
+    </div>
+    <div class="line-numbers match-braces" exportgroup="README.md">
+    	<h1 id="objective-sql-documentation">Objective-SQL Documentation</h1>
+    	<p>Welcome to the Objective-SQL documentation. We hope you find it easy to understand and navigate.</p>
+    	<p>If you have questions about anything related to the Objective-SQL, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
+    	<h2 id="explore-the-docs">Explore the Docs</h2>
+    </div>
+    <template name="getting-started">
+        <div class="line-numbers match-braces" exportgroup="README.md">
+        	<h1 id="getting-started">Getting Started</h1>
+        </div>
+        <template name="download">
+            <div class="line-numbers match-braces" exportgroup="README.md">
+            	<h1 id="download-options">Download Options</h1>
+            	<p>Objective SQL can be used either from a CDN or as an npm package.</p>
+            	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
+            	<p>Add the following script tag to your page to include the all-in-one Objective SQL module:</p>
+            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@webqit/objective-sql/dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+            	<p>The above tag loads Objective SQL into a global "WebQit" object.</p>
+            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+            	    <span class="token keyword">const</span> ObjSQL <span class="token operator">=</span> window<span class="token punctuation">.</span>WebQit<span class="token punctuation">.</span>ObjectiveSQL<span class="token punctuation">;</span>
+            	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+            	<h2 id="option-2-as-an-npm-package">Option 2: As an npm Package</h2>
+            	<p>With <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm available on your terminal</a>, run the following command to install Observer:</p>
+            	<pre class="language-text" tabindex="0"><code class="text language-text">$ npm i @webqit/objective-sql</code></pre>
+            	<p>Import the installed package:</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the initializer</span>
+            	<span class="token keyword">import</span> ObjSQL <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
+            	<h2 id="next-steps">Next Steps</h2>
+            	<p>Continue to <a href="/tooling/objective-sql/docs/public/tooling/objective-sql/docs/learn">learning the API</a>.</p>
+            </div>
+        </template>
+        <template name="overview">
+            <div class="line-numbers match-braces" exportgroup="README.md">
+            	<h1 id="overview">Overview</h1>
+            	<p>Objective SQL is a query client that wraps powerful concepts in a simple, succint API.</p>
+            	<ol>
+            	<li>It lets you query different types of databases using one consistent syntax and API.<ol>
+            	<li>Both SQL databases (like MySQL, PostgreSQL) and client-side, non-SQL databases (like <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>).</li>
+            	<li>One syntax and API to rule them all!</li></ol></li>
+            	<li>It implements a superset of the SQL language that lets you access relationships without constructing JOINS.<ol>
+            	<li>Goodbye query complexity!</li>
+            	<li>Goodbye ORMs!</li></ol></li>
+            	</ol>
+            	<p>Take a one-minute overview of Objective SQL.</p>
+            	<h2 id="basic-usage">Basic Usage</h2>
+            	<p>Obtain an Objective SQL query client for your target database:</p>
+            	<ol>
+            	<li><p>For SQL databases, import and instantiate the <em>SQL</em> language driver. (You'll pass in the name of an appropriate database connection driver that works for your database.)</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import SQL</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">SQL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Using the 'mysql2' connector (npm install mysql2)</span>
+            	<span class="token keyword">const</span> connectionDriver <span class="token operator">=</span> <span class="token string">'mysql2'</span><span class="token punctuation">;</span>
+            	<span class="token keyword">const</span> connectionParams <span class="token operator">=</span> <span class="token punctuation">{</span>
+            	    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+            	    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+            	    <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance by calling .connect().</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token constant">SQL</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Or by using the 'new' keyword.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SQL</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>For the client-side <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"><em>IndexedDB</em></a> database, import and instantiate the <em>IDB</em> language driver.</p>
+            	<blockquote>
+            	  <p>IndexedDB is a low-level API for client-side storage.</p>
+            	</blockquote>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">IDB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IDB</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>To work with Objective SQL's in-memory object storage, import and instantiate the <em>ODB</em> language driver.</p>
+            	<blockquote>
+            	  <p>This is an environment-agnostic in-memory store.</p>
+            	</blockquote>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">ODB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ODB</span><span class="token punctuation">;</span></code></pre></li>
+            	</ol>
+            	<p>All <code>client</code> instances above implement the same interface:</p>
+            	<ol>
+            	<li><p>The <code>client.query()</code> method lets you run any SQL query on your database.</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Run a query</span>
+            	client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT fname, lname FROM users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            	    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>Other methods give us a programmatic way to manipulate or query the database. (Docs coming soon.)</p>
+            	<ol>
+            	<li>The <code>client.createDatabase()</code> and <code>client.createDatabaseIfNotExists()</code> methods. (Returning a <code>Database</code> instance (<code>database</code>).)</li>
+            	<li>The <code>client.dropDatabase()</code> and <code>client.dropDatabaseIfExists()</code> methods.</li>
+            	<li>The <code>client.databases()</code> method - for listing databases, and the <code>client.database(name)</code> method - for obtaining a <code>Database</code> instance (<code>database</code>).</li>
+            	<li>The <code>database.createTable()</code>, <code>database.alterTable()</code>, and <code>database.dropTable()</code> methods.</li>
+            	<li>The <code>database.tables()</code> method - for listing tables, the <code>database.table(name)</code> method - for obtaining a <code>Table</code> instance (<code>table</code>).</li>
+            	<li>The <code>table.getAll()</code> method - for listing entries, the <code>table.get(id)</code> method - for obtaining an entry, the <code>table.count()</code> method - for count.</li>
+            	<li>The <code>table.addAll()</code> and <code>table.add()</code> methods.</li>
+            	<li>The <code>table.putAll()</code> and <code>table.put()</code> methods.</li>
+            	<li>The <code>table.deleteAll()</code> and <code>table.delete()</code> methods.</li></ol></li>
+            	</ol>
+            	<p><a href="/tooling/objective-sql/docs/public/tooling/objective-sql/docs/getting-started/learn/the-api">Learn more about the API</a>. (DOCS coming soon.)</p>
+            	<h2 id="what-about-relationships---the-language">What About Relationships? - The Language</h2>
+            	<p>Objective SQL is a superset of the same familiar, powerful SQL language you know…</p>
+            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, users.fname AS author_name FROM posts
+            	LEFT JOIN users ON users.id = posts.author_id;</code></pre>
+            	<p>…with an object-oriented syntax for relationships, built into the language…</p>
+            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
+            	<p>…and that's SQL without the query complexity!</p>
+            	<p><a href="/tooling/objective-sql/docs/public/tooling/objective-sql/docs/getting-started/learn/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+            </div>
+        </template>
+    </template>
+    <template name="public">
+        <template name="tooling">
+            <template name="objective-sql">
+                <template name="docs">
+                    <div class="line-numbers match-braces" exportgroup="README.md">
+                    	<h1 id="objective-sql-documentation">Objective-SQL Documentation</h1>
+                    	<p>Welcome to the Objective-SQL documentation. We hope you find it easy to understand and navigate.</p>
+                    	<p>If you have questions about anything related to the Objective-SQL, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
+                    	<h2 id="explore-the-docs">Explore the Docs</h2>
+                    </div>
+                    <template name="getting-started">
+                        <div class="line-numbers match-braces" exportgroup="README.md">
+                        	<h1 id="getting-started">Getting Started</h1>
+                        </div>
+                        <template name="download">
+                            <div class="line-numbers match-braces" exportgroup="README.md">
+                            	<h1 id="download-options">Download Options</h1>
+                            	<p>Objective SQL can be used either from a CDN or as an npm package.</p>
+                            	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
+                            	<p>Add the following script tag to your page to include the all-in-one Objective SQL module:</p>
+                            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@webqit/objective-sql/dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                            	<p>The above tag loads Objective SQL into a global "WebQit" object.</p>
+                            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+                            	    <span class="token keyword">const</span> ObjSQL <span class="token operator">=</span> window<span class="token punctuation">.</span>WebQit<span class="token punctuation">.</span>ObjectiveSQL<span class="token punctuation">;</span>
+                            	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                            	<h2 id="option-2-as-an-npm-package">Option 2: As an npm Package</h2>
+                            	<p>With <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm available on your terminal</a>, run the following command to install Observer:</p>
+                            	<pre class="language-text" tabindex="0"><code class="text language-text">$ npm i @webqit/objective-sql</code></pre>
+                            	<p>Import the installed package:</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the initializer</span>
+                            	<span class="token keyword">import</span> ObjSQL <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
+                            	<h2 id="next-steps">Next Steps</h2>
+                            	<p>Continue to <a href="/tooling/public/tooling/objective-sql/docs/learn">learning the API</a>.</p>
+                            </div>
+                        </template>
+                        <template name="overview">
+                            <div class="line-numbers match-braces" exportgroup="README.md">
+                            	<h1 id="overview">Overview</h1>
+                            	<p>Objective SQL is a query client that wraps powerful concepts in a simple, succint API.</p>
+                            	<ol>
+                            	<li>It lets you query different types of databases using one consistent syntax and API.<ol>
+                            	<li>Both SQL databases (like MySQL, PostgreSQL) and client-side, non-SQL databases (like <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>).</li>
+                            	<li>One syntax and API to rule them all!</li></ol></li>
+                            	<li>It implements a superset of the SQL language that lets you access relationships without constructing JOINS.<ol>
+                            	<li>Goodbye query complexity!</li>
+                            	<li>Goodbye ORMs!</li></ol></li>
+                            	</ol>
+                            	<p>Take a one-minute overview of Objective SQL.</p>
+                            	<h2 id="basic-usage">Basic Usage</h2>
+                            	<p>Obtain an Objective SQL query client for your target database:</p>
+                            	<ol>
+                            	<li><p>For SQL databases, import and instantiate the <em>SQL</em> language driver. (You'll pass in the name of an appropriate database connection driver that works for your database.)</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import SQL</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">SQL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Using the 'mysql2' connector (npm install mysql2)</span>
+                            	<span class="token keyword">const</span> connectionDriver <span class="token operator">=</span> <span class="token string">'mysql2'</span><span class="token punctuation">;</span>
+                            	<span class="token keyword">const</span> connectionParams <span class="token operator">=</span> <span class="token punctuation">{</span>
+                            	    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+                            	    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+                            	    <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+                            	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance by calling .connect().</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token constant">SQL</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Or by using the 'new' keyword.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SQL</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>For the client-side <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"><em>IndexedDB</em></a> database, import and instantiate the <em>IDB</em> language driver.</p>
+                            	<blockquote>
+                            	  <p>IndexedDB is a low-level API for client-side storage.</p>
+                            	</blockquote>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">IDB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IDB</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>To work with Objective SQL's in-memory object storage, import and instantiate the <em>ODB</em> language driver.</p>
+                            	<blockquote>
+                            	  <p>This is an environment-agnostic in-memory store.</p>
+                            	</blockquote>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">ODB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ODB</span><span class="token punctuation">;</span></code></pre></li>
+                            	</ol>
+                            	<p>All <code>client</code> instances above implement the same interface:</p>
+                            	<ol>
+                            	<li><p>The <code>client.query()</code> method lets you run any SQL query on your database.</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Run a query</span>
+                            	client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT fname, lname FROM users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                            	    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>Other methods give us a programmatic way to manipulate or query the database. (Docs coming soon.)</p>
+                            	<ol>
+                            	<li>The <code>client.createDatabase()</code> and <code>client.createDatabaseIfNotExists()</code> methods. (Returning a <code>Database</code> instance (<code>database</code>).)</li>
+                            	<li>The <code>client.dropDatabase()</code> and <code>client.dropDatabaseIfExists()</code> methods.</li>
+                            	<li>The <code>client.databases()</code> method - for listing databases, and the <code>client.database(name)</code> method - for obtaining a <code>Database</code> instance (<code>database</code>).</li>
+                            	<li>The <code>database.createTable()</code>, <code>database.alterTable()</code>, and <code>database.dropTable()</code> methods.</li>
+                            	<li>The <code>database.tables()</code> method - for listing tables, the <code>database.table(name)</code> method - for obtaining a <code>Table</code> instance (<code>table</code>).</li>
+                            	<li>The <code>table.getAll()</code> method - for listing entries, the <code>table.get(id)</code> method - for obtaining an entry, the <code>table.count()</code> method - for count.</li>
+                            	<li>The <code>table.addAll()</code> and <code>table.add()</code> methods.</li>
+                            	<li>The <code>table.putAll()</code> and <code>table.put()</code> methods.</li>
+                            	<li>The <code>table.deleteAll()</code> and <code>table.delete()</code> methods.</li></ol></li>
+                            	</ol>
+                            	<p><a href="/tooling/public/tooling/objective-sql/docs/getting-started/learn/the-api">Learn more about the API</a>. (DOCS coming soon.)</p>
+                            	<h2 id="what-about-relationships---the-language">What About Relationships? - The Language</h2>
+                            	<p>Objective SQL is a superset of the same familiar, powerful SQL language you know…</p>
+                            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, users.fname AS author_name FROM posts
+                            	LEFT JOIN users ON users.id = posts.author_id;</code></pre>
+                            	<p>…with an object-oriented syntax for relationships, built into the language…</p>
+                            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
+                            	<p>…and that's SQL without the query complexity!</p>
+                            	<p><a href="/tooling/public/tooling/objective-sql/docs/getting-started/learn/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+            </template>
+        </template>
+    </template>
+    <template name="getting-started">
+        <div class="line-numbers match-braces" exportgroup="README.md">
+        	<h1 id="getting-started">Getting Started</h1>
+        </div>
+        <template name="download">
+            <div class="line-numbers match-braces" exportgroup="README.md">
+            	<h1 id="download-options">Download Options</h1>
+            	<p>Objective SQL can be used either from a CDN or as an npm package.</p>
+            	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
+            	<p>Add the following script tag to your page to include the all-in-one Objective SQL module:</p>
+            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@webqit/objective-sql/dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+            	<p>The above tag loads Objective SQL into a global "WebQit" object.</p>
+            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+            	    <span class="token keyword">const</span> ObjSQL <span class="token operator">=</span> window<span class="token punctuation">.</span>WebQit<span class="token punctuation">.</span>ObjectiveSQL<span class="token punctuation">;</span>
+            	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+            	<h2 id="option-2-as-an-npm-package">Option 2: As an npm Package</h2>
+            	<p>With <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm available on your terminal</a>, run the following command to install Observer:</p>
+            	<pre class="language-text" tabindex="0"><code class="text language-text">$ npm i @webqit/objective-sql</code></pre>
+            	<p>Import the installed package:</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the initializer</span>
+            	<span class="token keyword">import</span> ObjSQL <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
+            	<h2 id="next-steps">Next Steps</h2>
+            	<p>Continue to <a href="/learn">learning the API</a>.</p>
+            </div>
+        </template>
+        <template name="overview">
+            <div class="line-numbers match-braces" exportgroup="README.md">
+            	<h1 id="overview">Overview</h1>
+            	<p>Objective SQL is a query client that wraps powerful concepts in a simple, succint API.</p>
+            	<ol>
+            	<li>It lets you query different types of databases using one consistent syntax and API.<ol>
+            	<li>Both SQL databases (like MySQL, PostgreSQL) and client-side, non-SQL databases (like <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>).</li>
+            	<li>One syntax and API to rule them all!</li></ol></li>
+            	<li>It implements a superset of the SQL language that lets you access relationships without constructing JOINS.<ol>
+            	<li>Goodbye query complexity!</li>
+            	<li>Goodbye ORMs!</li></ol></li>
+            	</ol>
+            	<p>Take a one-minute overview of Objective SQL.</p>
+            	<h2 id="basic-usage">Basic Usage</h2>
+            	<p>Obtain an Objective SQL query client for your target database:</p>
+            	<ol>
+            	<li><p>For SQL databases, import and instantiate the <em>SQL</em> language driver. (You'll pass in the name of an appropriate database connection driver that works for your database.)</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import SQL</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">SQL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Using the 'mysql2' connector (npm install mysql2)</span>
+            	<span class="token keyword">const</span> connectionDriver <span class="token operator">=</span> <span class="token string">'mysql2'</span><span class="token punctuation">;</span>
+            	<span class="token keyword">const</span> connectionParams <span class="token operator">=</span> <span class="token punctuation">{</span>
+            	    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+            	    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+            	    <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+            	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance by calling .connect().</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token constant">SQL</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Or by using the 'new' keyword.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SQL</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>For the client-side <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"><em>IndexedDB</em></a> database, import and instantiate the <em>IDB</em> language driver.</p>
+            	<blockquote>
+            	  <p>IndexedDB is a low-level API for client-side storage.</p>
+            	</blockquote>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">IDB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IDB</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>To work with Objective SQL's in-memory object storage, import and instantiate the <em>ODB</em> language driver.</p>
+            	<blockquote>
+            	  <p>This is an environment-agnostic in-memory store.</p>
+            	</blockquote>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">ODB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+            	
+            	<span class="token comment">// Create an instance.</span>
+            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ODB</span><span class="token punctuation">;</span></code></pre></li>
+            	</ol>
+            	<p>All <code>client</code> instances above implement the same interface:</p>
+            	<ol>
+            	<li><p>The <code>client.query()</code> method lets you run any SQL query on your database.</p>
+            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Run a query</span>
+            	client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT fname, lname FROM users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            	    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+            	<li><p>Other methods give us a programmatic way to manipulate or query the database. (Docs coming soon.)</p>
+            	<ol>
+            	<li>The <code>client.createDatabase()</code> and <code>client.createDatabaseIfNotExists()</code> methods. (Returning a <code>Database</code> instance (<code>database</code>).)</li>
+            	<li>The <code>client.dropDatabase()</code> and <code>client.dropDatabaseIfExists()</code> methods.</li>
+            	<li>The <code>client.databases()</code> method - for listing databases, and the <code>client.database(name)</code> method - for obtaining a <code>Database</code> instance (<code>database</code>).</li>
+            	<li>The <code>database.createTable()</code>, <code>database.alterTable()</code>, and <code>database.dropTable()</code> methods.</li>
+            	<li>The <code>database.tables()</code> method - for listing tables, the <code>database.table(name)</code> method - for obtaining a <code>Table</code> instance (<code>table</code>).</li>
+            	<li>The <code>table.getAll()</code> method - for listing entries, the <code>table.get(id)</code> method - for obtaining an entry, the <code>table.count()</code> method - for count.</li>
+            	<li>The <code>table.addAll()</code> and <code>table.add()</code> methods.</li>
+            	<li>The <code>table.putAll()</code> and <code>table.put()</code> methods.</li>
+            	<li>The <code>table.deleteAll()</code> and <code>table.delete()</code> methods.</li></ol></li>
+            	</ol>
+            	<p><a href="/getting-started/learn/the-api">Learn more about the API</a>. (DOCS coming soon.)</p>
+            	<h2 id="what-about-relationships---the-language">What About Relationships? - The Language</h2>
+            	<p>Objective SQL is a superset of the same familiar, powerful SQL language you know…</p>
+            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, users.fname AS author_name FROM posts
+            	LEFT JOIN users ON users.id = posts.author_id;</code></pre>
+            	<p>…with an object-oriented syntax for relationships, built into the language…</p>
+            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
+            	<p>…and that's SQL without the query complexity!</p>
+            	<p><a href="/getting-started/learn/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+            </div>
+        </template>
+    </template>
+    <template name="public">
+        <template name="tooling">
+            <template name="objective-sql">
+                <template name="docs">
+                    <div class="line-numbers match-braces" exportgroup="README.md">
+                    	<h1 id="objective-sql-documentation">Objective-SQL Documentation</h1>
+                    	<p>Welcome to the Objective-SQL documentation. We hope you find it easy to understand and navigate.</p>
+                    	<p>If you have questions about anything related to the Objective-SQL, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
+                    	<h2 id="explore-the-docs">Explore the Docs</h2>
+                    </div>
+                    <template name="getting-started">
+                        <div class="line-numbers match-braces" exportgroup="README.md">
+                        	<h1 id="getting-started">Getting Started</h1>
+                        </div>
+                        <template name="download">
+                            <div class="line-numbers match-braces" exportgroup="README.md">
+                            	<h1 id="download-options">Download Options</h1>
+                            	<p>Objective SQL can be used either from a CDN or as an npm package.</p>
+                            	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
+                            	<p>Add the following script tag to your page to include the all-in-one Objective SQL module:</p>
+                            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@webqit/objective-sql/dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                            	<p>The above tag loads Objective SQL into a global "WebQit" object.</p>
+                            	<pre class="language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+                            	    <span class="token keyword">const</span> ObjSQL <span class="token operator">=</span> window<span class="token punctuation">.</span>WebQit<span class="token punctuation">.</span>ObjectiveSQL<span class="token punctuation">;</span>
+                            	</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
+                            	<h2 id="option-2-as-an-npm-package">Option 2: As an npm Package</h2>
+                            	<p>With <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm available on your terminal</a>, run the following command to install Observer:</p>
+                            	<pre class="language-text" tabindex="0"><code class="text language-text">$ npm i @webqit/objective-sql</code></pre>
+                            	<p>Import the installed package:</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the initializer</span>
+                            	<span class="token keyword">import</span> ObjSQL <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
+                            	<h2 id="next-steps">Next Steps</h2>
+                            	<p>Continue to <a href="/tooling/public/tooling/objective-sql/docs/learn">learning the API</a>.</p>
+                            </div>
+                        </template>
+                        <template name="overview">
+                            <div class="line-numbers match-braces" exportgroup="README.md">
+                            	<h1 id="overview">Overview</h1>
+                            	<p>Objective SQL is a query client that wraps powerful concepts in a simple, succint API.</p>
+                            	<ol>
+                            	<li>It lets you query different types of databases using one consistent syntax and API.<ol>
+                            	<li>Both SQL databases (like MySQL, PostgreSQL) and client-side, non-SQL databases (like <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>).</li>
+                            	<li>One syntax and API to rule them all!</li></ol></li>
+                            	<li>It implements a superset of the SQL language that lets you access relationships without constructing JOINS.<ol>
+                            	<li>Goodbye query complexity!</li>
+                            	<li>Goodbye ORMs!</li></ol></li>
+                            	</ol>
+                            	<p>Take a one-minute overview of Objective SQL.</p>
+                            	<h2 id="basic-usage">Basic Usage</h2>
+                            	<p>Obtain an Objective SQL query client for your target database:</p>
+                            	<ol>
+                            	<li><p>For SQL databases, import and instantiate the <em>SQL</em> language driver. (You'll pass in the name of an appropriate database connection driver that works for your database.)</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import SQL</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">SQL</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Using the 'mysql2' connector (npm install mysql2)</span>
+                            	<span class="token keyword">const</span> connectionDriver <span class="token operator">=</span> <span class="token string">'mysql2'</span><span class="token punctuation">;</span>
+                            	<span class="token keyword">const</span> connectionParams <span class="token operator">=</span> <span class="token punctuation">{</span>
+                            	    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span>
+                            	    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>
+                            	    <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+                            	<span class="token punctuation">}</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance by calling .connect().</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token constant">SQL</span><span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Or by using the 'new' keyword.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SQL</span><span class="token punctuation">(</span>connectionDriver<span class="token punctuation">,</span> connectionParams<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>For the client-side <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API"><em>IndexedDB</em></a> database, import and instantiate the <em>IDB</em> language driver.</p>
+                            	<blockquote>
+                            	  <p>IndexedDB is a low-level API for client-side storage.</p>
+                            	</blockquote>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">IDB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">IDB</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>To work with Objective SQL's in-memory object storage, import and instantiate the <em>ODB</em> language driver.</p>
+                            	<blockquote>
+                            	  <p>This is an environment-agnostic in-memory store.</p>
+                            	</blockquote>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import IDB</span>
+                            	<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">ODB</span> <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+                            	
+                            	<span class="token comment">// Create an instance.</span>
+                            	<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ODB</span><span class="token punctuation">;</span></code></pre></li>
+                            	</ol>
+                            	<p>All <code>client</code> instances above implement the same interface:</p>
+                            	<ol>
+                            	<li><p>The <code>client.query()</code> method lets you run any SQL query on your database.</p>
+                            	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Run a query</span>
+                            	client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT fname, lname FROM users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                            	    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            	<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
+                            	<li><p>Other methods give us a programmatic way to manipulate or query the database. (Docs coming soon.)</p>
+                            	<ol>
+                            	<li>The <code>client.createDatabase()</code> and <code>client.createDatabaseIfNotExists()</code> methods. (Returning a <code>Database</code> instance (<code>database</code>).)</li>
+                            	<li>The <code>client.dropDatabase()</code> and <code>client.dropDatabaseIfExists()</code> methods.</li>
+                            	<li>The <code>client.databases()</code> method - for listing databases, and the <code>client.database(name)</code> method - for obtaining a <code>Database</code> instance (<code>database</code>).</li>
+                            	<li>The <code>database.createTable()</code>, <code>database.alterTable()</code>, and <code>database.dropTable()</code> methods.</li>
+                            	<li>The <code>database.tables()</code> method - for listing tables, the <code>database.table(name)</code> method - for obtaining a <code>Table</code> instance (<code>table</code>).</li>
+                            	<li>The <code>table.getAll()</code> method - for listing entries, the <code>table.get(id)</code> method - for obtaining an entry, the <code>table.count()</code> method - for count.</li>
+                            	<li>The <code>table.addAll()</code> and <code>table.add()</code> methods.</li>
+                            	<li>The <code>table.putAll()</code> and <code>table.put()</code> methods.</li>
+                            	<li>The <code>table.deleteAll()</code> and <code>table.delete()</code> methods.</li></ol></li>
+                            	</ol>
+                            	<p><a href="/tooling/public/tooling/objective-sql/docs/getting-started/learn/the-api">Learn more about the API</a>. (DOCS coming soon.)</p>
+                            	<h2 id="what-about-relationships---the-language">What About Relationships? - The Language</h2>
+                            	<p>Objective SQL is a superset of the same familiar, powerful SQL language you know…</p>
+                            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, users.fname AS author_name FROM posts
+                            	LEFT JOIN users ON users.id = posts.author_id;</code></pre>
+                            	<p>…with an object-oriented syntax for relationships, built into the language…</p>
+                            	<pre class="language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
+                            	<p>…and that's SQL without the query complexity!</p>
+                            	<p><a href="/tooling/public/tooling/objective-sql/docs/getting-started/learn/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+                            </div>
+                        </template>
+                    </template>
+                </template>
+            </template>
+        </template>
+    </template>
+</template>

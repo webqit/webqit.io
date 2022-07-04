@@ -1,0 +1,3627 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "Why Play UI",
+                "uri": "why-play-ui",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Getting Started",
+                        "uri": "getting-started",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Contributing to the Project",
+                        "uri": "contributing-to-the-project",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "License",
+                        "uri": "license",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "docs": {
+        "README.md": {
+            "_subtreeType": "category",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Play UI Documentation",
+                    "uri": "play-ui-documentation",
+                    "subtree": [
+                        {
+                            "level": 2,
+                            "title": "Explore the Docs",
+                            "uri": "explore-the-docs",
+                            "subtree": []
+                        }
+                    ]
+                }
+            ]
+        },
+        "api": {
+            "README.md": {
+                "desc": "The API Reference",
+                "_index": "1",
+                "_subtreeType": "category",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "API Reference",
+                        "uri": "api-reference",
+                        "subtree": []
+                    }
+                ]
+            },
+            "css": {
+                "README.md": {
+                    "title": "CSS",
+                    "desc": "CSS manipulation utilities.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "API Category: CSS",
+                            "uri": "api-category-css",
+                            "subtree": []
+                        }
+                    ]
+                },
+                "classes": {
+                    "README.md": {
+                        "desc": "Classes in this category.",
+                        "_index": "last",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Classes",
+                                "uri": "classes",
+                                "subtree": []
+                            }
+                        ]
+                    },
+                    "TransformRule": {
+                        "README.md": {
+                            "title": "TransformRule",
+                            "desc": "The TransformRule class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class TransformRule {}",
+                                    "uri": "class-transformrule-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "Syntax",
+                                                    "uri": "syntax",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "Usage",
+                                                    "uri": "usage",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "static parse()",
+                                            "uri": "static-parse",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "Syntax",
+                                                    "uri": "syntax-1",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Usage",
+                                            "uri": "usage-1",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "static parseMatrix()",
+                                            "uri": "static-parsematrix",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "Syntax",
+                                                    "uri": "syntax-2",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Usage",
+                                            "uri": "usage-2",
+                                            "subtree": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "css": {
+                    "README.md": {
+                        "desc": "Alias of the .cssSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".css()",
+                                "uri": "css",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "cssAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously set or get one or more style properties for the given element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".cssAsync()",
+                                "uri": "cssasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set CSS Properties",
+                                        "uri": "a-set-css-properties",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get CSS Properties",
+                                        "uri": "b-get-css-properties",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "cssSync": {
+                    "README.md": {
+                        "desc": "Set or get one or more style properties for the given element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".cssSync()",
+                                "uri": "csssync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set CSS Properties",
+                                        "uri": "a-set-css-properties",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get CSS Properties",
+                                        "uri": "b-get-css-properties",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "cssTransaction": {
+                    "README.md": {
+                        "desc": "Start a transaction on an element for CSS operations that eventually might need to be rolled back.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".cssTransaction()",
+                                "uri": "csstransaction",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "data": {
+                "README.md": {
+                    "title": "Data",
+                    "desc": "Data manipulation utilities.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "API Category: Data",
+                            "uri": "api-category-data",
+                            "subtree": []
+                        }
+                    ]
+                },
+                "data": {
+                    "README.md": {
+                        "desc": "Store and manage arbitrary data with a data store internally associated with an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".data()",
+                                "uri": "data",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set Data",
+                                        "uri": "a-set-data",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get Data",
+                                        "uri": "b-get-data",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "c. Unset Data",
+                                        "uri": "c-unset-data",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-3",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "list": {
+                    "README.md": {
+                        "desc": "Create a live list within an element in an OOHTML-based document.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".list()",
+                                "uri": "list",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "dom": {
+                "README.md": {
+                    "title": "DOM",
+                    "desc": "DOM manipulation utilities.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "API Category: DOM",
+                            "uri": "api-category-dom",
+                            "subtree": []
+                        }
+                    ]
+                },
+                "append": {
+                    "README.md": {
+                        "desc": "Alias of the .appendSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".append()",
+                                "uri": "append",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "appendAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously append content to an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".appendAsync()",
+                                "uri": "appendasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "appendSync": {
+                    "README.md": {
+                        "desc": "Append content to an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".appendSync()",
+                                "uri": "appendsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "appendToSync": {
+                    "README.md": {
+                        "desc": "Append matched elements to target elements.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".appendToSync()",
+                                "uri": "appendtosync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "attr": {
+                    "README.md": {
+                        "desc": "Alias of the .attrSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".attr()",
+                                "uri": "attr",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "attrAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously set or get an element's attribute.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".attrAsync()",
+                                "uri": "attrasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set Attributes",
+                                        "uri": "a-set-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get Attributes",
+                                        "uri": "b-get-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "c. Unset Attributes",
+                                        "uri": "c-unset-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "d. Modyfying Delimited Attributes",
+                                        "uri": "d-modyfying-delimited-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-3",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-3",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-4",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "attrSync": {
+                    "README.md": {
+                        "desc": "Set or get an element's attribute.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".attrSync()",
+                                "uri": "attrsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set Attributes",
+                                        "uri": "a-set-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get Attributes",
+                                        "uri": "b-get-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "c. Unset Attributes",
+                                        "uri": "c-unset-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "d. Modyfying Delimited Attributes",
+                                        "uri": "d-modyfying-delimited-attributes",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-3",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-3",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-4",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "class": {
+                    "README.md": {
+                        "desc": "Alias of the .classSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".class()",
+                                "uri": "class",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "classAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously modify or match an element's class list.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".classAsync()",
+                                "uri": "classasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Modify Class List",
+                                        "uri": "a-modify-class-list",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Match Class List",
+                                        "uri": "b-match-class-list",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "classSync": {
+                    "README.md": {
+                        "desc": "Modify or match an element's class list.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".classSync()",
+                                "uri": "classsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Modify Class List",
+                                        "uri": "a-modify-class-list",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Match Class List",
+                                        "uri": "b-match-class-list",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "getTextNodes": {
+                    "README.md": {
+                        "desc": "Get all text nodes within an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".getTextNodes()",
+                                "uri": "gettextnodes",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "html": {
+                    "README.md": {
+                        "desc": "Alias of the .htmlSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".html()",
+                                "uri": "html",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "htmlAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously set or get an element's HTML/XML content.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".htmlAsync()",
+                                "uri": "htmlasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set HTML Content",
+                                        "uri": "a-set-html-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get HTML Content",
+                                        "uri": "b-get-html-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "htmlSync": {
+                    "README.md": {
+                        "desc": "Set or get an element's HTML/XML content.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".htmlSync()",
+                                "uri": "htmlsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set HTML Content",
+                                        "uri": "a-set-html-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get HTML Content",
+                                        "uri": "b-get-html-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "initialization": {
+                    "README.md": {
+                        "title": "<code>¨D()</code>",
+                        "desc": "The Play UI Constructor.",
+                        "_index": "first",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "The Play UI Constructor",
+                                "uri": "the-play-ui-constructor",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Derive Elements By Query",
+                                        "uri": "a-derive-elements-by-query",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Derive Elements By Markup",
+                                        "uri": "b-derive-elements-by-markup",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "c. Accept Actual Element Instances",
+                                        "uri": "c-accept-actual-element-instances",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "itemize": {
+                    "README.md": {
+                        "desc": "Alias of the .list() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".itemize()",
+                                "uri": "itemize",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "prepend": {
+                    "README.md": {
+                        "desc": "Alias of the .prependSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".prepend()",
+                                "uri": "prepend",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "prependAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously prepend content to an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".prependAsync()",
+                                "uri": "prependasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "prependSync": {
+                    "README.md": {
+                        "desc": "Prepend content to an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".prependSync()",
+                                "uri": "prependsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "prependToAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously prepend matched elements to target elements.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".prependToAsync()",
+                                "uri": "prependtoasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "prependToSync": {
+                    "README.md": {
+                        "desc": "Prepend matched elements to target elements.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".prependToSync()",
+                                "uri": "prependtosync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "text": {
+                    "README.md": {
+                        "desc": "Alias of the .textSync() method.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".text()",
+                                "uri": "text",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "textAsync": {
+                    "README.md": {
+                        "desc": "Asynchronously set or get an element's text content.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".textAsync()",
+                                "uri": "textasync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set Text Content",
+                                        "uri": "a-set-text-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get Text Content",
+                                        "uri": "b-get-text-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "textSync": {
+                    "README.md": {
+                        "desc": "Set or get an element's text content.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".textSync()",
+                                "uri": "textsync",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "a. Set Text Content",
+                                        "uri": "a-set-text-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "b. Get Text Content",
+                                        "uri": "b-get-text-content",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-2",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "misc": {
+                "README.md": {
+                    "title": "Misc",
+                    "desc": "General Utilities.",
+                    "_index": "last",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "API Category: Miscellaneous",
+                            "uri": "api-category-miscellaneous",
+                            "subtree": []
+                        }
+                    ]
+                },
+                "classes": {
+                    "README.md": {
+                        "desc": "Classes in this category.",
+                        "_index": "last",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Classes",
+                                "uri": "classes",
+                                "subtree": []
+                            }
+                        ]
+                    },
+                    "Transaction": {
+                        "README.md": {
+                            "title": "Transaction",
+                            "desc": "The Transaction class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class Transaction {}",
+                                    "uri": "class-transaction-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Usage",
+                                            "uri": "usage",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Properties",
+                                            "uri": "properties",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Methods",
+                                            "uri": "methods",
+                                            "subtree": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "apply": {
+                            "README.md": {
+                                "desc": "Apply a new state to the element in a transaction.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".apply()",
+                                        "uri": "apply",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "commit": {
+                            "README.md": {
+                                "desc": "Commit up to a savepoint in a transaction.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".commit()",
+                                        "uri": "commit",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "rollback": {
+                            "README.md": {
+                                "desc": "Roll back up to a savepoint in a transaction.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".rollback()",
+                                        "uri": "rollback",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "savepoint": {
+                            "README.md": {
+                                "desc": "Create a savepoint from the current state of an element in a transaction.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".savepoint()",
+                                        "uri": "savepoint",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                },
+                "transaction": {
+                    "README.md": {
+                        "desc": "Start a transaction on an element for operations that eventually might need to be rolled back.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".transaction()",
+                                "uri": "transaction",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "ui": {
+                "README.md": {
+                    "title": "UI",
+                    "desc": "UI manipulation methods.",
+                    "_index": "last",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "API Category: UI",
+                            "uri": "api-category-ui",
+                            "subtree": []
+                        }
+                    ]
+                },
+                "classes": {
+                    "Animation": {
+                        "README.md": {
+                            "title": "Animation",
+                            "desc": "The Animation class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class Animation {}",
+                                    "uri": "class-animation-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Usage",
+                                            "uri": "usage",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Features",
+                                            "uri": "features",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Methods",
+                                            "uri": "methods",
+                                            "subtree": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "cancel": {
+                            "README.md": {
+                                "desc": "Cancel an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".cancel()",
+                                        "uri": "cancel",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "finish": {
+                            "README.md": {
+                                "desc": "Force an animation to the finished state.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".finish()",
+                                        "uri": "finish",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "oncancel": {
+                            "README.md": {
+                                "desc": "Bind a handler to the 'cancelled' state of an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".oncancel()",
+                                        "uri": "oncancel",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "onfinish": {
+                            "README.md": {
+                                "desc": "Bind a handler to the 'finished' state of an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".onfinish()",
+                                        "uri": "onfinish",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "pause": {
+                            "README.md": {
+                                "desc": "Pause an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".pause()",
+                                        "uri": "pause",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "play": {
+                            "README.md": {
+                                "desc": "Play an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".play()",
+                                        "uri": "play",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "progress": {
+                            "README.md": {
+                                "desc": "Get the percentage progress of an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".progress()",
+                                        "uri": "progress",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "ready": {
+                            "README.md": {
+                                "desc": "Bind a handler to the 'ready' state of an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".ready()",
+                                        "uri": "ready",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "reverse": {
+                            "README.md": {
+                                "desc": "Reverse an animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".reverse()",
+                                        "uri": "reverse",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "seek": {
+                            "README.md": {
+                                "desc": "Seek to a percentage point in animation.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".seek()",
+                                        "uri": "seek",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "Event": {
+                        "README.md": {
+                            "title": "Event",
+                            "desc": "The Event class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class Event {}",
+                                    "uri": "class-event-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Properties",
+                                            "uri": "properties",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Instance Methods",
+                                            "uri": "instance-methods",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "event.preventDefault()",
+                                                    "uri": "eventpreventdefault",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "event.stopPropagation()",
+                                                    "uri": "eventstoppropagation",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "event.promise()",
+                                                    "uri": "eventpromise",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "event.response()",
+                                                    "uri": "eventresponse",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "Listener": {
+                        "README.md": {
+                            "title": "Listener",
+                            "desc": "The Listener class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class Listener {}",
+                                    "uri": "class-listener-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Instance Methods",
+                                            "uri": "instance-methods",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "listener.disconnect()",
+                                                    "uri": "listenerdisconnect",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "listener.fire()",
+                                                    "uri": "listenerfire",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "README.md": {
+                        "desc": "Classes in this category.",
+                        "_index": "last",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Classes",
+                                "uri": "classes",
+                                "subtree": []
+                            }
+                        ]
+                    },
+                    "Timeline": {
+                        "README.md": {
+                            "titlw": "Timeline",
+                            "desc": "The Timeline class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "Timeline",
+                                    "uri": "timeline",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Usage",
+                                            "uri": "usage",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Features",
+                                            "uri": "features",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Methods",
+                                            "uri": "methods",
+                                            "subtree": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "add": {
+                            "README.md": {
+                                "desc": "Add an animation to the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".add()",
+                                        "uri": "add",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "cancel": {
+                            "README.md": {
+                                "desc": "Cancel all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".cancel()",
+                                        "uri": "cancel",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "clear": {
+                            "README.md": {
+                                "desc": "Cancel all animations from off the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".clear()",
+                                        "uri": "clear",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "finish": {
+                            "README.md": {
+                                "desc": "Finish all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".finish()",
+                                        "uri": "finish",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "oncancel": {
+                            "README.md": {
+                                "desc": "Bind a handler to the 'cancelled' state of all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".oncancel()",
+                                        "uri": "oncancel",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "onfinish": {
+                            "README.md": {
+                                "desc": "Bind a handler to the 'finished' state of all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".onfinish()",
+                                        "uri": "onfinish",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "pause": {
+                            "README.md": {
+                                "desc": "Pause all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".pause()",
+                                        "uri": "pause",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "play": {
+                            "README.md": {
+                                "desc": "Play all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".play()",
+                                        "uri": "play",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "progress": {
+                            "README.md": {
+                                "desc": "Get the average percentage progress of all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".progress()",
+                                        "uri": "progress",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "remove": {
+                            "README.md": {
+                                "desc": "Remove an animation from the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".remove()",
+                                        "uri": "remove",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "reverse": {
+                            "README.md": {
+                                "desc": "Reverse all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".reverse()",
+                                        "uri": "reverse",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        "seek": {
+                            "README.md": {
+                                "desc": "Seek to a percentage point in all animations in the timeline.",
+                                "outline": [
+                                    {
+                                        "level": 1,
+                                        "title": ".seek()",
+                                        "uri": "seek",
+                                        "subtree": [
+                                            {
+                                                "level": 2,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 2,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "UIRect": {
+                        "README.md": {
+                            "title": "UIRect",
+                            "desc": "The UIRect class.",
+                            "outline": [
+                                {
+                                    "level": 1,
+                                    "title": "class UIRect {}",
+                                    "uri": "class-uirect-",
+                                    "subtree": [
+                                        {
+                                            "level": 2,
+                                            "title": "Constructor",
+                                            "uri": "constructor-NaN",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Properties",
+                                            "uri": "properties",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Static Methods",
+                                            "uri": "static-methods",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "UIRect.calculate(element[, params = {}])",
+                                                    "uri": "uirectcalculateelement-params--",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 2,
+                                            "title": "Instance Methods",
+                                            "uri": "instance-methods",
+                                            "subtree": [
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.intersectionWith()",
+                                                    "uri": "rectintersectionwith",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.unionWith()",
+                                                    "uri": "rectunionwith",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.angleWith()",
+                                                    "uri": "rectanglewith",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.proximityWith()",
+                                                    "uri": "rectproximitywith",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.rotationTo()",
+                                                    "uri": "rectrotationto",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.scaleTo()",
+                                                    "uri": "rectscaleto",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 3,
+                                                    "title": "rect.translationTo()",
+                                                    "uri": "recttranslationto",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                },
+                "custom-events": {
+                    "README.md": {
+                        "desc": "Play UI's custom events system.",
+                        "_index": "last",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Custom Events",
+                                "uri": "custom-events",
+                                "subtree": []
+                            }
+                        ]
+                    }
+                },
+                "off": {
+                    "README.md": {
+                        "desc": "Unbind event or gesture handlers previously bound to an element using on().",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".off()",
+                                "uri": "off",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Matching By Tags",
+                                        "uri": "matching-by-tags",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "on": {
+                    "README.md": {
+                        "desc": "Bind event or gesture handlers to an element.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".on()",
+                                "uri": "on",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Tagging a Listener",
+                                        "uri": "tagging-a-listener",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Gestures",
+                                        "uri": "gestures",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "play": {
+                    "README.md": {
+                        "desc": "Create and play an animation.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".play()",
+                                "uri": "play",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "rect": {
+                    "README.md": {
+                        "desc": "Obtain the rendered rectangle of an element in the UI for manipualtion.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".rect()",
+                                "uri": "rect",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "trigger": {
+                    "README.md": {
+                        "desc": "Trigger event or gesture handlers previously bound to an element using on().",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": ".trigger()",
+                                "uri": "trigger",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Syntax",
+                                        "uri": "syntax",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Static Usage",
+                                        "uri": "static-usage",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Import",
+                                                "uri": "import",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "cli": {
+            "README.md": {
+                "_index": "2",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Command Line",
+                        "uri": "command-line",
+                        "subtree": []
+                    }
+                ]
+            },
+            "bundle": {
+                "README.md": {
+                    "desc": "Automatically bundle static HTML files from the filesystem into HTML Modules.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "$ playui bundle",
+                            "uri": "-playui-bundle",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Overview",
+                                    "uri": "overview",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Options",
+                                            "uri": "options",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "[ENTRY_DIR]",
+                                                    "uri": "entry_dir",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[OUTPUT_FILE]",
+                                                    "uri": "output_file",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[ASSETS_STORAGE_BASE]",
+                                                    "uri": "assets_storage_base",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[ASSETS_PUBLIC_BASE]",
+                                                    "uri": "assets_public_base",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[MAX_DATA_URL_SIZE]",
+                                                    "uri": "max_data_url_size",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[LOADERS]",
+                                                    "uri": "loaders",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Advanced Options",
+                                            "uri": "advanced-options",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "[IGNORE_FOLDERS_BY_PREFIX]",
+                                                    "uri": "ignore_folders_by_prefix",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[CREATE_OUTLINE_FILE]",
+                                                    "uri": "create_outline_file",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "OOHTML-Related Options",
+                                            "uri": "oohtml-related-options",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "[MODULE_EXT]",
+                                                    "uri": "module_ext",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[MODULE_ID_ATTR]",
+                                                    "uri": "module_id_attr",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[EXPORT_MODE]",
+                                                    "uri": "export_mode",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[EXPORT_GROUP_ATTR]",
+                                                    "uri": "export_group_attr",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[EXPORT_ELEMENT]",
+                                                    "uri": "export_element",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "[EXPORT_ID_ATTR]",
+                                                    "uri": "export_id_attr",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Bundling Assets",
+                                    "uri": "bundling-assets",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Further Reading",
+                                    "uri": "further-reading",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "loaders": {
+                    "README.md": {
+                        "title": "Loaders",
+                        "desc": "Packages that extend the capabilities of the OOHTML Bundler.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Loaders",
+                                "uri": "loaders",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Overview",
+                                        "uri": "overview",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Built-Ins",
+                                        "uri": "built-ins",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "md-loader",
+                                                "uri": "md-loader",
+                                                "subtree": [
+                                                    {
+                                                        "level": 4,
+                                                        "title": "Arguments/Flags",
+                                                        "uri": "argumentsflags",
+                                                        "subtree": []
+                                                    },
+                                                    {
+                                                        "level": 4,
+                                                        "title": "Other",
+                                                        "uri": "other",
+                                                        "subtree": []
+                                                    },
+                                                    {
+                                                        "level": 4,
+                                                        "title": "Usage",
+                                                        "uri": "usage",
+                                                        "subtree": []
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Custom Loaders",
+                                        "uri": "custom-loaders",
+                                        "subtree": [
+                                            {
+                                                "level": 3,
+                                                "title": "Syntax",
+                                                "uri": "syntax",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Error Handling",
+                                                "uri": "error-handling",
+                                                "subtree": []
+                                            },
+                                            {
+                                                "level": 3,
+                                                "title": "Usage",
+                                                "uri": "usage-1",
+                                                "subtree": []
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "config": {
+                "README.md": {
+                    "desc": "Configure an Play UI command or feature.",
+                    "_index": "1001",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "$ playui config",
+                            "uri": "-playui-config",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Overview",
+                                    "uri": "overview",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "help": {
+                "README.md": {
+                    "desc": "Show available Play UI commands.",
+                    "_index": "last",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "$ playui help",
+                            "uri": "-playui-help",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Overview",
+                                    "uri": "overview",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "getting-started": {
+            "README.md": {
+                "_index": "first",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Getting Started",
+                        "uri": "getting-started",
+                        "subtree": []
+                    }
+                ]
+            },
+            "download": {
+                "README.md": {
+                    "title": "Download",
+                    "desc": "Play UI's download options",
+                    "_index": "1",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "Download Options",
+                            "uri": "download-options",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Play UI JavaScript",
+                                    "uri": "play-ui-javascript",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Option 1: From a CDN",
+                                            "uri": "option-1-from-a-cdn",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Option 2: As an npm Package",
+                                            "uri": "option-2-as-an-npm-package",
+                                            "subtree": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Play UI Command Line",
+                                    "uri": "play-ui-command-line",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Next Steps",
+                                    "uri": "next-steps",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "overview": {
+                "README.md": {
+                    "desc": "An overview of Play UI.",
+                    "_index": "first",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "Overview",
+                            "uri": "overview",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Play UI JavaScript",
+                                    "uri": "play-ui-javascript",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Use as You Would jQuery",
+                                            "uri": "use-as-you-would-jqueryhttpsjquerycom",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Use With Server-Side DOM Instances",
+                                            "uri": "use-with-server-side-dom-instances",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Use as Descrete Utilities",
+                                            "uri": "use-as-descrete-utilities",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Meet Async UI",
+                                            "uri": "meet-async-ui",
+                                            "subtree": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Play UI Command Line",
+                                    "uri": "play-ui-command-line",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "HTML Modules Bundling",
+                                            "uri": "html-modules-bundling",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Subscript-to-WC Compilation",
+                                            "uri": "subscript-to-wc-compilation",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "HTML-to-CSS Aggregation",
+                                            "uri": "html-to-css-aggregation",
+                                            "subtree": []
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Next Steps",
+                                    "uri": "next-steps",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
