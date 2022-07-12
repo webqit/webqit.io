@@ -90,12 +90,5 @@
                 ]
             }
         }
-    },
-    "public": {
-        "tooling": {
-            "objective-sql": {
-                "docs": {}
-            }
-        }
     }
 }

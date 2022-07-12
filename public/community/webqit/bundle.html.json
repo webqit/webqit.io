@@ -1,0 +1,61 @@
+{
+    "README.md": {
+        "outline": []
+    },
+    "docs": "/community/webqit/docs/bundle.html.json",
+    "summary.json": {
+        "title": "WebQit Community",
+        "icon": "globe2",
+        "desc": "Meet WebQit across developer platforms. Stay open to events happening around your favourite topics. We're welcoming early developers like you!",
+        "categories": [
+            "WebQit Community"
+        ],
+        "tags": [],
+        "_index": "first",
+        "quickstart": {
+            "type": "link",
+            "cta": {
+                "href": "#highlights",
+                "text": "Join one"
+            }
+        },
+        "features": [
+            {
+                "icon": "github",
+                "title": "Github",
+                "desc": "- Follow <b>webqit</b> on github. <br />- Find and <i class=\"bi bi-star\"></i> <i>star</i> your favorite WebQit project. Join the Github Discussions, report bugs make Pull Requests.",
+                "cta": {
+                    "href": "https://github.com/webqit",
+                    "text": "Go"
+                }
+            },
+            {
+                "icon": "twitter",
+                "title": "Twitter",
+                "desc": "- Follow <b>@Web_Qit</b> on twitter. <br />- Add to the conversation from anywhere using the hashtags <i>#GoWebNative</i>, <i>#JustUseThePlatform</i>",
+                "cta": {
+                    "href": "https://twitter.com/@Web_Qit",
+                    "text": "Follow"
+                }
+            },
+            {
+                "icon": "linkedin",
+                "title": "LinkedIn",
+                "desc": "- Follow <b>WebQit, Inc.</b> for corporate and career news. <br /> - Engage with, and facilitate, conversations with hashtags <i>#GoWebNative</i>, <i>#Opensource</i>",
+                "cta": {
+                    "href": "https://linkedin.com/company/web-qit",
+                    "text": "Follow"
+                }
+            },
+            {
+                "icon": "hash",
+                "title": "DEV Community",
+                "desc": "Join the topics around WebQit and Web-Native development. Follow, or make your own, posts with the <i>#webqit</i> and <i>#webnative</i> tags.",
+                "cta": {
+                    "href": "https://dev.to/t/webqit",
+                    "text": "#WebQit"
+                }
+            }
+        ]
+    }
+}

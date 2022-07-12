@@ -1,0 +1,73 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "Objective DB",
+                "uri": "objective-db",
+                "subtree": []
+            }
+        ]
+    },
+    "docs": "/cloud/objective-db/docs/bundle.html.json",
+    "summary.json": {
+        "title": "Objective DB (Coming Soon)",
+        "icon": "layers",
+        "desc": "Objective SQL on tap in highly-available, dedicated PostgreSQL instances. Get instant data APIs for your serverless app. Scale to millions.",
+        "categories": [
+            "Database"
+        ],
+        "tags": [
+            "SQL",
+            "Indexed DB",
+            "In-Memory Store",
+            "Object Store"
+        ],
+        "quickstart": {
+            "type": "form",
+            "directive": "Enter an instance name",
+            "cta": {
+                "href": "#readme",
+                "text": "Create for free"
+            }
+        },
+        "features": [
+            {
+                "icon": "braces",
+                "title": "Object-Oriented in the CLoud",
+                "desc": "Interact with remote data in the same object-oriented paradigm as your code.",
+                "cta": {
+                    "href": "#",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "app-indicator",
+                "title": "Iterative Schemas. Instant APIs.",
+                "desc": "Get auto-generated APIs (plus documentation) as you update your schema.",
+                "cta": {
+                    "href": "#",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "recycle",
+                "title": "Auto-Backups. Fully-Managed.",
+                "desc": "Take advantage of a fully managed platform to keep you focused on your app!",
+                "cta": {
+                    "href": "#",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "hdd-network",
+                "title": "Robust. Auto-Scaling.",
+                "desc": "Think big on an enterprise-ready infrastructure! Scale up with no extra effort.",
+                "cta": {
+                    "href": "#",
+                    "text": "Learn more"
+                }
+            }
+        ]
+    }
+}

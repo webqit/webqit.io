@@ -1,0 +1,80 @@
+{
+    "headline": "Open source tooling for web-native development",
+    "intro": "Explore the complete JavaScript stack for developing future-facing, web-native applications.",
+    "quickstartsTitle": "QuickStarts",
+    "quickstartsIntro": ["Check out some quick examples to get started!","<i>(All coming soon)</i>"],
+    "quickstarts": [
+        {
+            "title": "Hello frontend",
+            "desc": "Demos of plain HTML, CSS, and JavaScript, with some of <i>OOHTML</i> and <i>Play UI</i>"
+        },
+        {
+            "title": "Hello backend",
+            "desc": "Demos of NodeJS and <i>Webflo</i> - covering API backends, Server-Side Rendering, Integrations, etc."
+        },
+        {
+            "title": "Hello fullstack",
+            "desc": "Demos of fullstack code - same HTML, CSS, and JavaScript running everywhere (frontend and backend)"
+        },
+        {
+            "title": "All things data",
+            "desc": "Demos of both data APIs and plain SQL (frontend and backend), with some of <i>Objective SQL</i>"
+        },
+        {
+            "title": "An application",
+            "desc": "Full-code demos of an application"
+        }
+    ],
+    "ideaStart": [
+        "Now that web standards are rising fast to solve our toughest problems natively, <a target=\"_blank\" href=\"https://dev.to/fredericbonnet/the-third-age-of-web-development-kgj\">a new direction for the web</a> is clear: <b>web-native<sup><a href=\"/web-native\"><i class=\"bi bi-info-square\"></i></a></sup> development</b>! For all we've bet on <i>custom</i> tooling, we must now explore new ways to leverage and extend what's <i>natively</i> available!",
+        "Here's to that a brief tour 👇"
+    ],
+    "idea": [
+        {
+            "title": "Meet Web Components",
+            "intro": "<a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/Web_Components\">WCs</a> are the web's native \"UI component\" technology",
+            "content": "Already a fan? Try authoring simpler components with <b><a href=\"/tooling/oohtml/docs/spec/subscript#subscript-element-mixin\">Subscript Element</a></b> - a base class for WCs that adds <i>reactivity</i> to your <i>static WC code</i> without itself acting as a \"framework\".",
+            "img": ""
+        },
+        {
+            "title": "Meet Progressive Web Apps",
+            "intro": "<a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps\">PWAs</a> are the web's standard for cross-platform apps",
+            "content": "In the time it takes to learn anything else, you would have just written some HTML, CSS and JS and come off with a Progressive Web App!<br />- <i><a href=\"/tooling/webflo\">Simplicity by <b>Webflo</b></a></i>.",
+            "img": ""
+        },
+        {
+            "title": "Meet the Fetch Standard",
+            "intro": "<a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API\">Fetch</a> is the web's \"request/response\" spec and API",
+            "content": "Build your app's concept of requests and responses on the fetch standard! Just use <b>Webflo</b> - to do this in a <a href=\"/tooling/webflo\">unified routing experience</a> - one standard, frontend and backend!",
+            "img": ""
+        },
+        {
+            "title": "Meet the Open API Specification",
+            "intro": "<a target=\"_blank\" href=\"https://www.openapis.org/\">OAS</a> is the community standard for REST API schemas",
+            "content": "In just a schema, your backend can be up for discoverability and integrations, and a whole world of cool automations - e.g: <a href=\"#\">schema-based routing</a>, <a href=\"#\">schema-generated UI forms</a>, etc.",
+            "img": ""
+        },
+        {
+            "title": "Meet SQL (in unlikely places too!)",
+            "intro": "<a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/SQL\">SQL</a> is the web's standard language for relational DBs",
+            "content": "Already a fan? Try sticking to just SQL and eliminating the ORM - here's <a href=\"/tooling/objective-sql//docs/getting-started/overview#what-about-relationships---the-language\">arrow-joins for relationships</a>!😎 Plus, ever need to work with the client-side <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API\">Indexed DB</a>? <a href=\"/tooling/objective-sql/docs/getting-started/overview#basic-usage\">Bring your SQL here too!</a>",
+            "img": ""
+        },
+        {
+            "title": "Meet the ES6+ series",
+            "intro": "<a target=\"_blank\" href=\"https://www.w3schools.com/js/js_es6.asp\">ES6</a> is the beginning of JavaScript's ultra-modern era",
+            "content": "Immerse in JavaScript's cool language features. You can also find some of it's <i>low-level</i> primitives abstracted away with higher-level APIs (E.g: <a href=\"/tooling/observer\">the Observer API</a> over <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy\">ES6 Proxies</a> &amp; <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors\">object accessors</a>)",
+            "img": ""
+        },
+        {
+            "title": "Meet browser APIs, simplified",
+            "intro": "<a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/API\">Browser APIs</a> are ready-to-use features in browsers",
+            "content": "Try <a href=\"/tooling/play-ui/docs/api/ui/play\"><code>$.play()</code>-ing</a> away in the <a target=\"_blank\" href=\"https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API\">Web Animations API</a>, or <a href=\"#\">binding your page</a> to the <a target=\"_blank\" href=\"https://webmonetization.org/\">Web Monetization API</a> - just to mention a few ways to consume browser APIs with zero boilerplate!",
+            "img": ""
+        }
+    ],
+    "ideaEnd": [
+        "It's <i>an entirely clean fabric</i> for writing code in the syntax of web standards and for making better web apps that we'll call <i>web-native apps</i>!",
+        "Get your life's work off to a good start - here!"
+    ]
+}

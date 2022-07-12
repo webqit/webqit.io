@@ -1,5 +1,5 @@
 
-<div class="line-numbers match-braces" exportgroup="README.md">
+<div exportgroup="README.md">
 	<h1 id="webflo">Webflo</h1>
 	<!-- BADGES/ -->
 	<p><span class="badge-npmversion"><a href="https://npmjs.org/package/@webqit/webflo" title="View this project on NPM"><img src="https://img.shields.io/npm/v/@webqit/webflo.svg" alt="NPM version"></a></span><br>
@@ -12,14 +12,14 @@
 	</blockquote>
 	<h2 id="prerequisites">Prerequisites</h2>
 	<p>Webflo is a command-line tool for developing and running your application. It is recommended you install it globally on your machine.</p>
-	<pre class="language-bash" tabindex="0"><code class="bash language-bash">npm install -g @webqit/webflo</code></pre>
+<pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">npm install -g @webqit/webflo</code></pre>
 	<p>We can now use the <code>webflo</code> command from any location in the terminal. To test, run <code>webflo help</code>; an overview of available commands will be shown.</p>
 	<p>Webflo is so simple to use that you do not need any starter tool like <code>create-webflo-app</code>. It's strengths actually lie in letting you hand-craft your app!</p>
 	<h2 id="concepts">Concepts</h2>
 	<p>Every project starts on an empty directory that you can create anywhere on your machine. And every file you will create here is going to be all about your application; Webflo doesn't even own a footprint on your project.</p>
 	<p>Just for the examples below, create a directory named <code>webflo-app</code> and navigate there from your terminal:</p>
-	<pre class="language-bash" tabindex="0"><code class="bash language-bash">mkdir webflo-app
-	cd webflo-app</code></pre>
+<pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">mkdir webflo-app
+cd webflo-app</code></pre>
 	<p>We should now learn the following concepts on which Webflo is built:</p>
 	<ul>
 	<li><a href="#project-layout">Project Layout</a></li>
@@ -43,7 +43,7 @@
 	<li><code>/index.html</code> - <em>Try add some Hello World greeting.</em></li></ul></li>
 	</ul>
 	<p>Now, when you start the Webflo server and navigate to <code>http://localhost:3000/</code> (or <code>http://localhost:3000/index.html</code>) on your browser, the start page is shown.</p>
-	<pre class="language-bash" tabindex="0"><code class="bash language-bash">webflo start</code></pre>
+<pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">webflo start</code></pre>
 	<blockquote>
 	  <p>Ensure that you are at your project root <code>webflo-app</code> in the terminal to run the above Webflo command, and subsequent ones.</p>
 	</blockquote>
@@ -66,7 +66,7 @@
 	<p>So, route handlers can both return <em>response data</em> of their own and act as a gateway for the request/response flow. As we will see shortly, response data returned from route handlers can either serve as <em>automatic JSON (API) responses</em> or get rendered into the default <code>/public/index.html</code> file and returned as a rendered <em>HTML response</em>.</p>
 	<p>So far, with just two files - <code>/public/index.html</code> and <code>/server/index.js</code> - we can already return either of three responses for the URL <code>http://localhost:3000/</code>: a JSON API response, a static HTML response, or a dynamically-rendered HTML response. Code examples ahead.</p>
 	<blockquote>
-	  <p>Now, if all you're creating is a traditional server-side application or simply an API backend, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/public/cloud/webflo-runtime/docs/learn/server-side-routing">here</a> are server-side routing examples.</p>
+	  <p>Now, if all you're creating is a traditional server-side application or simply an API backend, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/learn/server-side-routing">here</a> are server-side routing examples.</p>
 	</blockquote>
 	<h4 id="the-client-directory">The <code>/client</code> Directory</h4>
 	<p>If you intend to have JavaScript files that handle routing (e.g navigation requests) in the browser, place them in this directory.</p>
@@ -75,7 +75,7 @@
 	<li><code>/index.js</code> - <em>This is a client-side route handler.</em></li></ul></li>
 	</ul>
 	<p>Next, run a Webflo command that automatically <em>builds</em> these files into a single script that you can include on your <code>/public/index.html</code> page.</p>
-	<pre class="language-bash" tabindex="0"><code class="bash language-bash">webflo build</code></pre>
+<pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">webflo build</code></pre>
 	<blockquote>
 	  <p>Client builds are covered later on. But let's assume for now that the generated JavaScript file is now included in the HTML page.</p>
 	</blockquote>
@@ -90,7 +90,7 @@
 	<p>As we will see, being able to either return an in-browser response data or act as a gateway for the request/response flow is a powerful way to create fast and smooth client-side experiences.</p>
 	<p>At this point, with just three files - <code>/public/index.html</code>, <code>/server/index.js</code> and <code>/client/index.js</code> - we can already have either a static site, an API backend, a server-side app, a client-side app, or a combination of all of these. Code examples ahead.</p>
 	<blockquote>
-	  <p>Okay, if all you're creating is a client-side application, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/public/cloud/webflo-runtime/docs/learn/client-side-routing">here</a> are client-side routing examples.</p>
+	  <p>Okay, if all you're creating is a client-side application, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/learn/client-side-routing">here</a> are client-side routing examples.</p>
 	</blockquote>
 	<h4 id="the-worker-directory">The <code>/worker</code> Directory</h4>
 	<p>What happens here is quite advanced and you can ignore this until you really need it. But if you already know about application Service Workers and intend to enhance your app's client-side experience with Service Workers, Webflo lets you implement routing at the service-worker level, and you place your route handlers in this directory.</p>
@@ -99,7 +99,7 @@
 	<li><code>/index.js</code> - <em>This is a worker-level route handler.</em></li></ul></li>
 	</ul>
 	<p>Next, run a Webflo command that automatically <em>builds</em> these files into a single script that will form part of the service worker file for your page.</p>
-	<pre class="language-bash" tabindex="0"><code class="bash language-bash">webflo build</code></pre>
+<pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">webflo build</code></pre>
 	<blockquote>
 	  <p>Worker builds are covered later on. But let's assume for now that the generated JavaScript file is now part of the service worker file for your page.</p>
 	</blockquote>
@@ -115,7 +115,7 @@
 	</ul>
 	<p>Woohoo! With a combition of just four files - <code>/public/index.html</code>, <code>/server/index.js</code>, <code>/client/index.js</code> and <code>/worker/index.js</code> - we can already have any type of application with great offline experiences.</p>
 	<blockquote>
-	  <p>It is even just possible to build an entire app out of the <code>/worker</code> directory alone, if all you're building is a client-side, offline-capable app! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/public/cloud/webflo-runtime/docs/learn/worker-level-routing">here</a> are worker-level routing examples. Service Workers are covered in detail in <a href="/cloud/webflo-runtime/docs/public/cloud/webflo-runtime/docs/learn/progressive-web-apps">the Progressive Web Apps (PWA) tutorial</a>.</p>
+	  <p>It is even just possible to build an entire app out of the <code>/worker</code> directory alone, if all you're building is a client-side, offline-capable app! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/webflo-runtime/docs/learn/worker-level-routing">here</a> are worker-level routing examples. Service Workers are covered in detail in <a href="/cloud/webflo-runtime/docs/learn/progressive-web-apps">the Progressive Web Apps (PWA) tutorial</a>.</p>
 	</blockquote>
 	<h3 id="routing">Routing</h3>
 	<p>As seen, Webflo lets us follow the traditional filesystem layout for a project. The concept of routing is simply drawn on this layout. It is all about the <em>request/response flow and what happens along the path it takes</em>. Webflo's <em>skillfulness with flows</em> is probabbly the best thing about its name.</p>
@@ -147,8 +147,8 @@
 	<p>This is called <em>step routing</em>, and its the most-empowering way to orchestrate routes. </p>
 	<h4 id="route-handlers">Route Handlers</h4>
 	<p>Route handlers are <code>index.js</code> files that are laid out in the routing directory to handle the application's request/response flow. The most important content of these files are a simple function that is exported as the <em>default export</em> of the file.</p>
-	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">flo<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">flo<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
 	<p>This function is what is called when a request flow hits a route.</p>
 	<p>Of the three parameters of a route handler, the <code>next</code> parameter is what it uses to forward a request, if it chooses to. This is the concept of flow control.</p>
 	<h5 id="flow-control">Flow Control</h5>
@@ -161,19 +161,19 @@
 	</ul>
 	<p>Here is how our route handlers could look:</p>
 	<p><code>file: /server/index.js</code></p>
-	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	    <span class="token punctuation">}</span>
-	    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 	<p><code>file: /server/products/index.js</code></p>
-	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	    <span class="token punctuation">}</span>
-	    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Our Products'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Our Products'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 	<p>In the first handler, we started by asking if the route path has another step ahead. For a path like <code>/products</code>, the answer is yes, and the flow is forwarded to the next handler in the path.</p>
 	<p>In the second handler, we again started by asking if the route path has another step ahead. This time, the answer is no, and <em>reponse data</em> is returned here for the request.</p>
 	<p>Flow control is especially important for root-level handlers, i.e handlers that handle the application's root URL <code>/</code>, since they act as the <em>gateway</em> to all of the application's routes - both static and dynamic routes.</p>
@@ -234,23 +234,23 @@
 	<h5 id="parameter-passing">Parameter Passing</h5>
 	<p>While being used to forward a request, the <code>next()</code> function can help to pass on anything to the next handler.</p>
 	<p><code>file: /server/index.js</code></p>
-	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-	    <span class="token punctuation">}</span>
-	    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">userId</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Hello World'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 	<p><code>file: /server/products/index.js</code></p>
-	<pre class="language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span>recieved<span class="token punctuation">)</span><span class="token punctuation">;</span>
-	    <span class="token punctuation">}</span>
-	    <span class="token keyword">if</span> <span class="token punctuation">(</span>recieved<span class="token punctuation">.</span>userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-	        <span class="token comment">// Show recommended products</span>
-	        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Recommended Products For You'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	    <span class="token punctuation">}</span>
-	    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Our Products'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
-	<span class="token punctuation">}</span></code></pre>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">process<span class="token punctuation">,</span> recieved<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>next<span class="token punctuation">.</span>pathname<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span>recieved<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>recieved<span class="token punctuation">.</span>userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// Show recommended products</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Recommended Products For You'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span> <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Our Products'</span><span class="token punctuation">,</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 	<p>In the first handler, we passed an object via the <code>next()</code> function. In the second handler, we recieved it on the <code>recieved</code> parameter.</p>
 	<p>Parameter passing is a great way to implement one source of truth for subsequent handlers in the route hierarchy. Think authentication, certain database or external API queries, etc. Doing these at the earliest level in the route hierarchy and passing tokens or objects down is a perfect way to avoid repeating code down the hierarchy.</p>
 	<h5 id="the-process-object">The <code>process</code> Object</h5>
