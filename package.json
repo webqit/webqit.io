@@ -12,7 +12,7 @@
     "build:css": "tailwindcss -c ./public/assets/css/tailwind.config.cjs -i ./public/assets/css/tailwind.dev.css -o ./public/assets/css/tailwind.css",
     "build:js": "webflo generate::client --recursive --compression --auto-embed",
     "build": "npm run build:css && npm run build:html && npm run build:js",
-    "start": "webflo start"
+    "start": "npm i && webflo start"
   },
   "keywords": [
     "WebQit Tooling",
