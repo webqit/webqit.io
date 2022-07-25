@@ -1,0 +1,24 @@
+{
+    "entry_dir": "./public",
+    "output_dir": "./public",
+    "filename": "./bundle.html",
+    "plugins": [{
+        "name": "default:json-loader",
+        "args": {
+            "only": "summary.json"
+        }
+    }],
+    "public_base_url": "/",
+    "max_data_url_size": 1024,
+    "submodules_srcmode": "lazy",
+    "ignore_folders_by_prefix": [
+        ".", "assets"
+    ],
+    "create_outline_file": "create",
+    "module_ext": "",
+    "module_id_attr": "name",
+    "export_mode": "attribute",
+    "export_group_attr": "exportgroup",
+    "export_element": "html-export",
+    "export_id_attr": "export"
+}
