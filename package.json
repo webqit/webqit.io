@@ -6,13 +6,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --extension .test.js --exit",
+    "--test": "mocha --extension .test.js --exit",
     "test:coverage": "c8 --reporter=text-lcov npm run test | coveralls",
     "build:html": "oohtml bundle --recursive --auto-embed=routes",
     "build:css": "tailwindcss -c ./public/assets/css/tailwind.config.cjs -i ./public/assets/css/tailwind.dev.css -o ./public/assets/css/tailwind.css",
     "build:js": "webflo generate::client --recursive --compression --auto-embed",
     "build": "npm run build:css && npm run build:html && npm run build:js",
-    "start": "npm i && webflo start"
+    "start": "webflo start"
   },
   "keywords": [
     "WebQit Tooling",
