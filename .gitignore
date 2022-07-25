@@ -1,5 +1,5 @@
 node_modules
 .*
-!.webqit/**/*.example.json
+!**/*.example.json
 !.env.example
 !.gitignore
