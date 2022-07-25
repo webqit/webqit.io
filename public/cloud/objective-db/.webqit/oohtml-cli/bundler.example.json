@@ -1,0 +1,29 @@
+{
+    "entry_dir": "./",
+    "output_dir": "./",
+    "filename": "./bundle.html",
+    "plugins": [{
+        "name": "default:json-loader"
+    }, {
+        "name": "default:md-loader",
+        "argument/flag": true,
+        "args": {
+            "outline_generation": true,
+            "code_highlighting": true,
+            "flavor": "github"
+        }
+    }],
+    "public_base_url": "",
+    "max_data_url_size": 1024,
+    "submodules_srcmode": "lazy",
+    "ignore_folders_by_prefix": [
+        ".", "assets"
+    ],
+    "create_outline_file": "create",
+    "module_ext": "",
+    "module_id_attr": "name",
+    "export_mode": "attribute",
+    "export_group_attr": "exportgroup",
+    "export_element": "html-export",
+    "export_id_attr": "export"
+}
