@@ -5,7 +5,7 @@
     "categories": ["Frameworks"],
     "_index": "first",
     "tags": ["Web", "Mobile", "API Backends", "DevTool", "DevOps", "Dev Server", "Production Server", "GIT Workflow"],
-    "quickstart": {"global": true},
+    "quickstart": {"global": true, "cta":{"href":"http://github.com/webqit/webflo"}},
     "features": [{
         "icon": "percent",
         "title": "A Least-Footprint Rule!",

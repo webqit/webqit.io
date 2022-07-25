@@ -4,7 +4,7 @@
     "desc": "A reactivity runtime for JavaScript, offered in an ordinary JavaScript function! With Subscript we introduce <i>dependency threads</i> for JavaScript!.",
     "categories": ["JavaScript Libraries"],
     "tags": ["OOHTML", "UI", "Reactivity", "Dependency Threads"],
-    "quickstart": {"cdn": true},
+    "quickstart": {"cdn": true, "cta":{"href":"http://github.com/webqit/subscript"}},
     "features": [{
         "icon": "percent",
         "title": "No Additives; Just JavaScript!",

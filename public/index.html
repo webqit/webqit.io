@@ -145,13 +145,13 @@
 
         <!-- PAGE_PROGRESS_BAR -->
 
-        <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed left-0 top-0 w-full z-10 overflow-hidden hidden" style="height: 2px;">
-            <div class="progressbar-indicator-a progressbar-trail" style="background-color: red;"></div>
-            <div class="progressbar-indicator-b" style="background-color: blue;"></div>
+        <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed group left-0 top-0 w-full z-10 overflow-hidden" style="height: 2px;">
+            <div class="progressbar-indicator-a progressbar-trail hidden group-active2:block" style="background-color: red;"></div>
+            <div class="progressbar-indicator-b hidden group-active2:block" style="background-color: blue;"></div>
             <script type="subscript">
-                let app = document.state;
-                $(this).class('hidden', !app.network?.remote);
-                $(this).css('color', app.network?.error ? 'red' : 'blueviolet');
+                let { network, data } = document.state;
+                $(this).class('hidden', network?.requesting || network?.redirecting);
+                $(this).css('color', network?.error ? 'red' : 'blueviolet');
             </script>
         </div>
 

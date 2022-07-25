@@ -48,7 +48,10 @@
             "GIT Workflow"
         ],
         "quickstart": {
-            "global": true
+            "global": true,
+            "cta": {
+                "href": "http://github.com/webqit/webflo"
+            }
         },
         "features": [
             {

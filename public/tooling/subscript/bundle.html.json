@@ -43,7 +43,10 @@
             "Dependency Threads"
         ],
         "quickstart": {
-            "cdn": true
+            "cdn": true,
+            "cta": {
+                "href": "http://github.com/webqit/subscript"
+            }
         },
         "features": [
             {
