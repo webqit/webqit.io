@@ -4,31 +4,7 @@
             "docs": {}
         }
     },
-    "cloud": {
-        "auth": {
-            "docs": {}
-        },
-        "objective-db": {
-            "docs": {}
-        },
-        "webflo-runtime": {
-            "docs": {}
-        }
-    },
-    "community": {
-        "web-native-cg": {
-            "docs": {}
-        },
-        "webqit": {
-            "docs": {}
-        }
-    },
-    "tooling": {
-        "objective-sql": "/tooling/objective-sql/bundle.html.json",
-        "observer": "/tooling/observer/bundle.html.json",
-        "oohtml": "/tooling/oohtml/bundle.html.json",
-        "play-ui": "/tooling/play-ui/bundle.html.json",
-        "subscript": "/tooling/subscript/bundle.html.json",
-        "webflo": "/tooling/webflo/bundle.html.json"
-    }
+    "cloud": "/cloud/bundle.html.json",
+    "community": "/community/bundle.html.json",
+    "tooling": "/tooling/bundle.html.json"
 }

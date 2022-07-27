@@ -1,16 +1,6 @@
 
 <div namespace class="homepage">
     
-    <script type="subscript">
-        let { hero, sections } = document.state.data || {};
-        if (hero) {
-            this.namespace.hero?.setState(hero);
-            this.namespace.tooling?.setState(sections[0]);
-            this.namespace.cloud?.setState(sections[1]);
-            this.namespace.community?.setState(sections[2]);
-        }
-    </script>
-
     <div class="flex">
         <span class="page-pad-l hidden lg:block"></span>
         <div class="grow p-12">
@@ -38,7 +28,7 @@
         <span class="page-pad-r hidden lg:block"></span>
     </div>
 
-    <main class="bg-white" wbdiv="tooling">
+    <main class="bg-white" wqdiv="tooling">
         <section namespace>
 
             <html-import data-id="intro" name="section-intro" template="@layout/home"></html-import>
@@ -77,10 +67,10 @@
             </script>
 
         </section>
-        <section namespace wbdiv="cloud">
+        <section namespace wqdiv="cloud">
 
             <html-import data-id="intro" name="section-intro" template="@layout/home"></html-import>
-            <div is="playui-scrolltimeline-div" namespace class="mx-5 h-[560px] relative flex-center bg-white dark::bg-black radius-125 border-4 border-wbdiv-color2 dark::border-wbdiv-color2-dim">
+            <div is="playui-scrolltimeline-div" namespace class="mx-5 h-[560px] relative flex-center bg-white dark::bg-black radius-125 border-4 border-wqdiv-color2 dark::border-wqdiv-color2-dim">
                 <div class="absolute parallax-container flex items-end inset-0 rounded-inherit z-0 overflow-hidden">
                     <ul data-id="parallax" class="w-full parallax grid grid-flow-col list-none" style="grid-template-columns: repeat(2, 50%); grid-template-rows: repeat(5, 400px)">
                         <li class="transform scale-50 md:scale-70 lg:scale-100 place-self-center"></li>
@@ -95,7 +85,7 @@
                         <li class="transform scale-50 md:scale-70 lg:scale-100 place-self-center"></li>
                     </ul>
                 </div>
-                <a href="/cloud" class="relative pb-10 text-3xl md:text-4xl border-b-4 border-current text-wbdiv-color2 text-center z-10">
+                <a href="/cloud" class="relative pb-10 text-3xl md:text-4xl border-b-4 border-current text-wqdiv-color2 text-center z-10">
                     WebQit<br >Cloud
                     <i class="bi bi-chevron-right text-5xl font-bold w-1 h-1 flex-center absolute -bottom-1 right-2"></i>
                 </a>
@@ -119,10 +109,10 @@
             </script>
 
         </section>
-        <section namespace wbdiv="community">
+        <section namespace wqdiv="community">
 
             <html-import data-id="intro" name="section-intro" template="@layout/home"></html-import>
-            <div class="mx-5 h-[560px] relative flex-center radius-125 bg-wbdiv-color2 dark::bg-wbdiv-color2-dim">
+            <div class="mx-5 h-[560px] relative flex-center radius-125 bg-wqdiv-color2 dark::bg-wqdiv-color2-dim">
                 <a href="/community" class="relative pb-10 text-3xl md:text-4xl border-b-4 border-current text-white text-center z-10">
                     WebQit<br >Community
                     <i class="bi bi-chevron-right text-5xl font-bold w-1 h-1 flex-center absolute -bottom-1 right-2"></i>

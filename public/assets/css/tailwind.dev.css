@@ -9,31 +9,31 @@
     background-color: #CDEDFF;
     background-color: azure;
     background-image: linear-gradient(to bottom right, #cce6ff, #F0DDFF);
-    --wbdiv-color1: darkgray;
-    --wbdiv-color2-dim: gray;
-    --wbdiv-color2-dim2: dimgray;
-    --wbdiv-color2-dim-text: gainsboro;
+    --wqdiv-color1: darkgray;
+    --wqdiv-color2-dim: gray;
+    --wqdiv-color2-dim2: dimgray;
+    --wqdiv-color2-dim-text: gainsboro;
   }
-  [wbdiv="tooling"] {
-    --wbdiv-color2: blue;
-    --wbdiv-color2-dim: mediumblue;
-    --wbdiv-color2-dim2: mediumblue;
-    --wbdiv-color2-dim-text: deepskyblue;
+  [wqdiv="tooling"] {
+    --wqdiv-color2: blue;
+    --wqdiv-color2-dim: mediumblue;
+    --wqdiv-color2-dim2: mediumblue;
+    --wqdiv-color2-dim-text: deepskyblue;
   }
-  [wbdiv="cloud"] {
-    --wbdiv-color2: red;
-    --wbdiv-color2-dim: darkred;
-    --wbdiv-color2-dim2: #4a0000;
-    --wbdiv-color2-dim-text: #ff7777;
+  [wqdiv="cloud"] {
+    --wqdiv-color2: red;
+    --wqdiv-color2-dim: darkred;
+    --wqdiv-color2-dim2: #4a0000;
+    --wqdiv-color2-dim-text: #ff7777;
   }
-  [wbdiv="community"] {
-    --wbdiv-color2: blueviolet;
-    --wbdiv-color2-dim: indigo;
-    --wbdiv-color2-dim2: #200030;
-    --wbdiv-color2-dim-text: blueviolet;
+  [wqdiv="community"] {
+    --wqdiv-color2: blueviolet;
+    --wqdiv-color2-dim: indigo;
+    --wqdiv-color2-dim2: #200030;
+    --wqdiv-color2-dim-text: blueviolet;
   }
   :is(h1, h2, h3, h4, h5, h6, p, ul:not(.list-none)) a {
-    @apply text-wbdiv-color2 hover:text-wbdiv-color2-dim dark:text-wbdiv-color2-dim-text dark:hover:text-gray-400;
+    @apply text-wqdiv-color2 hover:text-wqdiv-color2-dim dark:text-wqdiv-color2-dim-text dark:hover:text-gray-400;
   }
   .flex-center {
     @apply flex items-center justify-center;
@@ -86,24 +86,24 @@
     position: relative;
     height: 54px;
   }
-  body:not([wbdiv="home"]) footer .page-pad-l {
+  body:not([wqdiv="home"]) footer .page-pad-l {
     @apply border-r-transparent;
   }
 
   /* ----- */
 
-  .wbdiv-icon {
+  .wqdiv-icon {
     @apply relative;
   }
   header .page-pad-l::before,
-  .wbdiv-icon .git-tee::before,
-  .wbdiv-icon .git-tee::after {
+  .wqdiv-icon .git-tee::before,
+  .wqdiv-icon .git-tee::after {
     display: block;
     content: "";
     z-index: 1;
   }
   header .page-pad-l::before,
-  .wbdiv-icon .git-tee {
+  .wqdiv-icon .git-tee {
     @apply absolute w-3 h-3 border-4 -left-12 top-1/2 -ml-2 -mt-1;
   }
   header .page-pad-l::before {
@@ -112,26 +112,26 @@
   body.docs header .page-pad-l::before {
     @apply -ml-2 -mt-2;
   }
-  main .wbdiv-icon .git-tee {
+  main .wqdiv-icon .git-tee {
     @apply bg-white /*dark:bg-black*/;
   }
-  .wbdiv-icon .git-tee::before,
-  .wbdiv-icon .git-tee::after {
+  .wqdiv-icon .git-tee::before,
+  .wqdiv-icon .git-tee::after {
     @apply absolute w-1 border-t-4 top-1/2 -mt-0.5;
   }
-  .wbdiv-icon .git-tee::before {
+  .wqdiv-icon .git-tee::before {
     @apply -left-2;
   }
-  .wbdiv-icon .git-tee::after {
+  .wqdiv-icon .git-tee::after {
     @apply -right-2;
   }
   .page-pad-l,
   header .page-pad-l::before,
-  body:not([wbdiv="home"]) header .page-pad-l::after,
-  .wbdiv-icon .git-tee,
-  .wbdiv-icon .git-tee::before,
-  .wbdiv-icon .git-tee::after {
-    @apply border-wbdiv-color2 /*dark:border-wbdiv-color2-dim*/;
+  body:not([wqdiv="home"]) header .page-pad-l::after,
+  .wqdiv-icon .git-tee,
+  .wqdiv-icon .git-tee::before,
+  .wqdiv-icon .git-tee::after {
+    @apply border-wqdiv-color2 /*dark:border-wqdiv-color2-dim*/;
   }
 
   /* ------------ */
@@ -159,7 +159,7 @@
   h2 {
     /*
     @apply font-bold;
-    @apply text-wbdiv-color2;
+    @apply text-wqdiv-color2;
     */
   }
   h1 span {
@@ -211,7 +211,7 @@
     height: 4px;
     top: -2px;
     left: calc(50% - 37.5px);
-    @apply bg-wbdiv-color2;
+    @apply bg-wqdiv-color2;
   }
 
   /* ------------ */
@@ -244,7 +244,7 @@
   }
   .projects-grid-a > .item .icon:after {
     content: "";
-    @apply absolute block h-16 w-16 rounded-full -z-10 bg-gray-500 opacity-10 dark:opacity-20 blur bg-wbdiv-color2;
+    @apply absolute block h-16 w-16 rounded-full -z-10 bg-gray-500 opacity-10 dark:opacity-20 blur bg-wqdiv-color2;
   }
   .projects-grid-a > .item {
     @apply bg-white dark:bg-gray-950 hover:shadow-lg md:hover:shadow-none dark:hover:bg-gray-850 md:odd:bg-gray-100 md:even:bg-gray-200 md:dark:odd:bg-gray-950 md:dark:even:bg-gray-850 md:rounded-xl md:hover:rounded-none;
@@ -467,19 +467,22 @@ html:not(.scroll-reset) {
 
 /* ---------- */
 
+.project-outline .category.active:not(.has-active) > .legend {
+  @apply border-current;
+}
 .project-outline .legend {
-  @apply p-3 text-sm text-gray-500 dark:text-gray-400;
+  @apply p-3 text-sm text-gray-400 dark:text-gray-500;
 }
 .tab.active,
 .project-outline :is(li > .item-bar:hover, li.active:not(.has-active) > .item-bar) {
-  @apply bg-[aliceblue] dark:bg-gray-800;
+  @apply bg-gray-300 dark:bg-gray-800;
 }
 .page-outline li > .item-bar:hover {
   @apply text-gray-800 dark:text-gray-400;
 }
 .tab.active,
 :is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
-  @apply text-wbdiv-color2 dark:text-wbdiv-color2-dim-text;
+  @apply text-black dark:text-wqdiv-color2-dim-text;
 }
 :is(.project-outline, .page-outline) li > .item-bar .subtree-notch,
 :is(.project-outline, .page-outline) li .subtree-notch:before,
@@ -495,7 +498,7 @@ html:not(.scroll-reset) {
 :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after,
 :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before,
 :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
-  @apply border-wbdiv-color2 dark:border-wbdiv-color2-dim-text;
+  @apply border-wqdiv-color2 dark:border-wqdiv-color2-dim-text;
 }
 :is(.project-outline, .page-outline) li.has-subtree:not(.expanded) > .item-bar > .subtree-notch:before {
   background-color: currentColor !important;
@@ -531,7 +534,7 @@ html:not(.scroll-reset) {
   @apply mt-10;
 }
 .markdown-body a {
-  @apply text-wbdiv-color2 hover:text-wbdiv-color2-dim dark:text-wbdiv-color2-dim-text dark:hover:text-gray-400;
+  @apply text-wqdiv-color2 hover:text-wqdiv-color2-dim dark:text-wqdiv-color2-dim-text dark:hover:text-gray-400;
 }
 .markdown-body hr {
   @apply mt-10 border-gray-400 dark:border-gray-800;
@@ -540,12 +543,12 @@ html:not(.scroll-reset) {
   @apply mt-6;
 }
 .markdown-body pre {
-  @apply rounded-lg dark:border dark:border-gray-600;
+  @apply rounded-2xl dark:bg-gray-950 dark:border dark:border-gray-800;
   margin-top: 24px !important;
 }
 code:not(pre code) {
-  background-color: rgba(125,125,125,0.2);
-  @apply dark:text-gray-400 px-2 rounded-lg;
+  background-color: rgba(150,150,150,0.2);
+  @apply py-1 px-2 rounded-xl;
 }
 /*
 */

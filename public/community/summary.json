@@ -1,0 +1,32 @@
+{
+    "headline": "Community initiatives for web-native development",
+    "intro": "Join in the conversation and community-wide initiatives for web-native development!",
+    "quickstartsTitle": "QuickStarts",
+    "quickstartsIntro": ["Join the web-native movement!","<i>(More coming soon)</i>"],
+    "quickstarts": [
+        {
+            "title": "WebQit Github",
+            "desc": "Click to follow us and our open source work on Github! Ask questions, raise issues, make pull requests.",
+            "href": "https://github.com/webqit"
+        },
+        {
+            "title": "WebQit Twitter",
+            "desc": "Click to follow WebQit on Twitter. Join conversations with hashtags #GoWebNative, #JustUseThePlatform!",
+            "href": "https://twitter.com/@Web_Qit"
+        },
+        {
+            "title": "The Web-Native CG",
+            "desc": "Click to join the Web-Native Community Group. It's free and open!",
+            "href": "https://w3.org/community/web-native"
+        }
+    ],
+    "ideaStart": [
+        "The conversation around web-native development is happening right now - more than ever before - across blogs, twitter, etc! But the path to making it ubiquitous and something that is everyone's winning culture might still be a long way ahead! We'll need focused initiatives to facilitate it all - through participation, education, etc!",
+        "We're happy to join forces with you to develop initiatives that move the web forward 🤝"
+    ],
+    "idea": [],
+    "ideaEnd": [
+        "#GoWebNative, #JustUseThePlatform",
+        "Follow WebQit, Inc. - <a href=\"https://twitter.com/@Web_Qit\" target=\"_blank\"><i class=\"bi bi-twitter\"></i> @Web_Qit</a>"
+    ]
+}

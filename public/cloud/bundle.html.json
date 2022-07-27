@@ -1,0 +1,92 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "Simplistic. Powerful. Developer-Centric.",
+                "uri": "simplistic-powerful-developer-centric",
+                "subtree": []
+            }
+        ]
+    },
+    "auth": "/cloud/auth/bundle.html.json",
+    "objective-db": "/cloud/objective-db/bundle.html.json",
+    "summary.json": {
+        "headline": "Instant, open source cloud for web-native apps",
+        "intro": "Go live on an instant, zero-ops infrastructure built for the web-native experience!",
+        "quickstartsTitle": "QuickStarts",
+        "quickstartsIntro": [
+            "Run a quick sample on WebQit Cloud to get started!",
+            "<i>(All coming soon)</i>"
+        ],
+        "quickstarts": [
+            {
+                "title": "Realtime chat app",
+                "desc": "Click to view and deploy - chat app as a Progressive Web App"
+            },
+            {
+                "title": "Audio books database",
+                "desc": "Click to view and deploy - a database instance for an audio book app, with instant REST API"
+            },
+            {
+                "title": "Subscription and Auth",
+                "desc": "Click to view and deploy - an Stripe subscription app with OAuth2 flow"
+            },
+            {
+                "title": "Online store",
+                "desc": "Click to view and deploy - a mini online store with subscription and auth"
+            },
+            {
+                "title": "Online store (micro services)",
+                "desc": "Click to view and deploy - a mini online store in  Micro Services architecture"
+            }
+        ],
+        "ideaStart": [
+            "Provisioning and \"baby-sitting\" infrastructure can be a terrible job! Modern wisdom is to find a leverage - this time, on a <i>Web-Native</i>-ready cloud that's designed to give you <i>the speedpoints</i> you'll need on every dev &amp; deployment cycle, and to give your end-users <i>the most realtime experience</i> on their every touchpoint!",
+            "Here's your ideal infrastructure 👇"
+        ],
+        "idea": [
+            {
+                "title": "Instant by design",
+                "intro": "Comes fully Web-Native-ready",
+                "content": "Skip all the work with orchestrating containers and the total list of your backend software! Get your services running in the same tick as a (<a href=\"#\">UI</a>) click, or (<a href=\"#\">Terminal</a>) command, or (<a href=\"#\">API</a>) call.",
+                "img": ""
+            },
+            {
+                "title": "ZeroOps by design",
+                "intro": "Gets it all going totally hands-free",
+                "content": "Staying awake to keep infrastructure awake is non-trivial business... that starves the main business! A better idea is to get your service lifecycle <a href=\"#\">fully monitored and managed</a>!",
+                "img": ""
+            },
+            {
+                "title": "Auto-scaling by design",
+                "intro": "Auto-allocates resources based on runtime demands",
+                "content": "Think big on an enterprise-ready infrastructure but keep things streamlined when workloads are small, or just periodic! Your services are dynamically-scaled for optimal uptime and speed!",
+                "img": ""
+            },
+            {
+                "title": "Distributed by design",
+                "intro": "Gets your web-native app distributed for speeeed",
+                "content": "This takes advantage of the simple, static nature of Web-Native frontends. Each deploy sends off your <code>/public</code> directory into a Content Delivery Network (CDN) to be served close to your users.",
+                "img": ""
+            },
+            {
+                "title": "Git-based by design",
+                "intro": "Comes fully integrated into your Git workflow",
+                "content": "Just code and <i>git</i>-push, and see every update roll - from your repository to the cloud, to your users! You simply connect your repo... and a fully-featured CI/CD pipeline kicks in!",
+                "img": ""
+            },
+            {
+                "title": "Open source by design",
+                "intro": "Sits on the freedom of open source software",
+                "content": "An open source philosophy gives you the perfect extension of the freedom and decentralization of web-native development! You're welcome home with your web-native app!",
+                "img": ""
+            }
+        ],
+        "ideaEnd": [
+            "It's the path of least engineering with multiple <i>developer leveragepoints</i>, <i>enterprise-level guarantees</i>, and <i>user experience wins</i>!",
+            "Get overnight ideas launched by morning - here!"
+        ]
+    },
+    "webflo-runtime": "/cloud/webflo-runtime/bundle.html.json"
+}

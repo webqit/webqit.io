@@ -1,0 +1,25 @@
+{
+    "README.md": {
+        "outline": []
+    },
+    "docs": "/community/web-native-cg/docs/bundle.html.json",
+    "summary.json": {
+        "title": "Web-Native CG",
+        "icon": "signpost",
+        "desc": "Join the Web-Native (W3C) Community Group - the official W3C Community Group for web-native developers.",
+        "categories": [
+            "Community Group"
+        ],
+        "tags": [],
+        "_index": "first",
+        "quickstart": {
+            "type": "code",
+            "directive": "(Learn more: <a target=\"_blank\" href=\"https://w3.org/community/web-native\">https://w3.org/community/web-native</a>",
+            "cta": {
+                "href": "https://w3.org/community/web-native",
+                "text": "Join now"
+            }
+        },
+        "features": []
+    }
+}

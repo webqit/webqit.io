@@ -28,388 +28,63 @@
             }
         ]
     },
-    "docs": {
-        "README.md": {
-            "_subtreeType": "category",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "An Overview",
-                    "uri": "an-overview",
-                    "subtree": [
-                        {
-                            "level": 2,
-                            "title": "What's A Dependency Thread?",
-                            "uri": "whats-a-dependency-thread",
-                            "subtree": []
-                        },
-                        {
-                            "level": 2,
-                            "title": "What Is Subscript?",
-                            "uri": "what-is-subscript",
-                            "subtree": []
-                        },
-                        {
-                            "level": 2,
-                            "title": "Explore the Docs",
-                            "uri": "explore-the-docs",
-                            "subtree": []
-                        }
-                    ]
-                }
-            ]
-        },
-        "concepts": {
-            "README.md": {
-                "_index": "first",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Concepts",
-                        "uri": "concepts",
-                        "subtree": []
-                    }
-                ]
-            },
-            "conditionals-and-logic": {
-                "README.md": {
-                    "desc": "About Conditionals And Logic.",
-                    "_index": "3",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Conditionals And Logic",
-                            "uri": "conditionals-and-logic",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "\"If/Else\" Statements",
-                                    "uri": "ifelse-statements",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "\"Switch\" Statements",
-                                    "uri": "switch-statements",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Logical And Ternary Expressions",
-                                    "uri": "logical-and-ternary-expressions",
-                                    "subtree": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            },
-            "functions": {
-                "README.md": {
-                    "desc": "About Functions.",
-                    "_index": "5",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Functions",
-                            "uri": "functions",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "Side Effects",
-                                    "uri": "side-effects",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Subscript Function Syntax (**)",
-                                    "uri": "subscript-function-syntax-",
-                                    "subtree": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            },
-            "loops": {
-                "README.md": {
-                    "desc": "About Loops.",
-                    "_index": "4",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Loops",
-                            "uri": "loops",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "A for Loop, while And do … while Loop",
-                                    "uri": "a-for-loop-while-and-do-…-while-loop",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "A for … of Loop",
-                                    "uri": "a-for-…-of-loop",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "A for … in Loop",
-                                    "uri": "a-for-…-in-loop",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Iteration States",
-                                    "uri": "iteration-states",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Breakouts",
-                                    "uri": "breakouts",
-                                    "subtree": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            },
-            "references-and-bindings": {
-                "README.md": {
-                    "desc": "About References And Bindings.",
-                    "_index": "2",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "References And Bindings",
-                            "uri": "references-and-bindings",
-                            "subtree": []
-                        }
-                    ]
-                }
-            },
-            "thread-events": {
-                "README.md": {
-                    "desc": "About Thread Events.",
-                    "_index": "first",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Thread Events",
-                            "uri": "thread-events",
-                            "subtree": []
-                        }
-                    ]
-                }
+    "docs": "/tooling/subscript/docs/bundle.html.json",
+    "summary.json": {
+        "title": "Subscript",
+        "icon": "terminal",
+        "desc": "A reactivity runtime for JavaScript, offered in an ordinary JavaScript function! With Subscript we introduce <i>dependency threads</i> for JavaScript!.",
+        "categories": [
+            "JavaScript Libraries"
+        ],
+        "tags": [
+            "OOHTML",
+            "UI",
+            "Reactivity",
+            "Dependency Threads"
+        ],
+        "quickstart": {
+            "cdn": true,
+            "cta": {
+                "href": "http://github.com/webqit/subscript"
             }
         },
-        "spec": {
-            "README.md": {
-                "title": "SPEC",
-                "desc": "Download and API.",
-                "_index": "1",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "SPEC",
-                        "uri": "spec",
-                        "subtree": []
-                    }
-                ]
-            },
-            "api": {
-                "README.md": {
-                    "title": "API",
-                    "desc": "The SubscriptFunction API.",
-                    "_index": "2",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "API",
-                            "uri": "api",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "SubscriptFunction",
-                                    "uri": "subscriptfunction",
-                                    "subtree": [
-                                        {
-                                            "level": 3,
-                                            "title": "Syntax",
-                                            "uri": "syntax",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Parameters",
-                                            "uri": "parameters",
-                                            "subtree": [
-                                                {
-                                                    "level": 4,
-                                                    "title": "arg1, ... argN",
-                                                    "uri": "arg1--argn",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 4,
-                                                    "title": "functionBody",
-                                                    "uri": "functionbody",
-                                                    "subtree": []
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Return Value",
-                                            "uri": "return-value",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "The this Binding",
-                                            "uri": "the-this-binding",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "The subscrFunction.thread() Method",
-                                            "uri": "the-subscrfunctionthread-method",
-                                            "subtree": [
-                                                {
-                                                    "level": 5,
-                                                    "title": "Syntax",
-                                                    "uri": "syntax-1",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 5,
-                                                    "title": "Parameters",
-                                                    "uri": "parameters-1",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 5,
-                                                    "title": "path1, ... pathN",
-                                                    "uri": "path1--pathn",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 4,
-                                                    "title": "Return Value",
-                                                    "uri": "return-value-1",
-                                                    "subtree": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "SubscriptClass",
-                                    "uri": "subscriptclass",
-                                    "subtree": [
-                                        {
-                                            "level": 3,
-                                            "title": "Syntax",
-                                            "uri": "syntax-2",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Parameters",
-                                            "uri": "parameters-2",
-                                            "subtree": [
-                                                {
-                                                    "level": 4,
-                                                    "title": "BaseClass",
-                                                    "uri": "baseclass",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 4,
-                                                    "title": "methodName, ... methodNameN",
-                                                    "uri": "methodname--methodnamen",
-                                                    "subtree": []
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Return Value",
-                                            "uri": "return-value-2",
-                                            "subtree": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
+        "features": [
+            {
+                "icon": "percent",
+                "title": "No Additives; Just JavaScript!",
+                "desc": "Try a new approach to reactivity that is based on nothing at all but just JavaScript!.",
+                "cta": {
+                    "href": "/tooling/subscript/docs",
+                    "text": "Learn more"
                 }
             },
-            "download": {
-                "README.md": {
-                    "title": "Download",
-                    "desc": "Follow the download options to add Subscript to your project.",
-                    "_index": "first",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Download Options",
-                            "uri": "download-options",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "Option 1: From a CDN",
-                                    "uri": "option-1-from-a-cdn",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Option 2: As an npm Package",
-                                    "uri": "option-2-as-an-npm-package",
-                                    "subtree": []
-                                }
-                            ]
-                        }
-                    ]
+            {
+                "icon": "diagram-2",
+                "title": "Performant JavaScript",
+                "desc": "An insane focus on pure JavaScript syntax - to keep its footprint, and your footprint, ridiculously small!",
+                "cta": {
+                    "href": "/tooling/subscript/docs",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "cpu",
+                "title": "Developer \"Joooy\"",
+                "desc": "Write your code however you enjoy it; forget about hooks and a complex toolchain, and a required build step!",
+                "cta": {
+                    "href": "/tooling/subscript/docs",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "plug",
+                "title": "Progressive Development",
+                "desc": "Try turning reactivity on and off on an existing code base, in an afterthought! Go \"progressive\" with Subscript Functions!",
+                "cta": {
+                    "href": "/tooling/subscript/docs",
+                    "text": "Learn more"
                 }
             }
-        },
-        "usage": {
-            "README.md": {
-                "desc": "Usage",
-                "_index": "3",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Usage",
-                        "uri": "usage",
-                        "subtree": []
-                    }
-                ]
-            },
-            "subscript-element": {
-                "README.md": {
-                    "desc": "Subscript Element.",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Subscript Element",
-                            "uri": "subscript-element",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "A Custom Element Example",
-                                    "uri": "a-custom-element-example",
-                                    "subtree": []
-                                }
-                            ]
-                        }
-                    ]
-                }
-            }
-        }
+        ]
     }
 }
