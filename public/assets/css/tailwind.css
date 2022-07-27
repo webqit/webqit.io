@@ -1,6 +1,6 @@
 /* ./src/tailwind.css */
 
-/* ! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com */
+/* ! tailwindcss v3.1.6 | MIT License | https://tailwindcss.com */
 
 /*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -187,6 +187,8 @@ textarea {
   /* 1 */
   font-size: 100%;
   /* 1 */
+  font-weight: inherit;
+  /* 1 */
   line-height: inherit;
   /* 1 */
   color: inherit;
@@ -353,13 +355,6 @@ input::-moz-placeholder, textarea::-moz-placeholder {
   /* 2 */
 }
 
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -415,20 +410,108 @@ video {
   height: auto;
 }
 
-/*
-Ensure the default browser behavior of the `hidden` attribute.
-*/
-
-[hidden] {
-  display: none;
-}
-
 * {
   scrollbar-color: initial;
   scrollbar-width: initial;
 }
 
 *, ::before, ::after {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::-webkit-backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+::backdrop {
+  --tw-border-spacing-x: 0;
+  --tw-border-spacing-y: 0;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -543,15 +626,15 @@ body {
   color: var(--wqdiv-color2);
 }
 
-:is(h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover, ul:not(.list-none)) a:hover {
+:is(h1, h2, h3, h4, h5, h6, p, ul:not(.list-none)) a:hover {
   color: var(--wqdiv-color2-dim);
 }
 
-.dark :is(h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6, .dark p, .dark ul:not(.list-none)) a {
+.dark :is(h1, h2, h3, h4, h5, h6, p, ul:not(.list-none)) a {
   color: var(--wqdiv-color2-dim-text);
 }
 
-.dark :is(h1:hover, .dark h2:hover, .dark h3:hover, .dark h4:hover, .dark h5:hover, .dark h6:hover, .dark p:hover, .dark ul:not(.list-none)) a:hover {
+.dark :is(h1, h2, h3, h4, h5, h6, p, ul:not(.list-none)) a:hover {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
@@ -621,7 +704,8 @@ header .page-pad-l::before,
   z-index: 1;
 }
 
-header .page-pad-l::before, .wqdiv-icon .git-tee {
+header .page-pad-l::before, 
+  .wqdiv-icon .git-tee {
   position: absolute;
   left: -3rem;
   top: 50%;
@@ -650,7 +734,8 @@ main .wqdiv-icon .git-tee {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.wqdiv-icon .git-tee::before, .wqdiv-icon .git-tee::after {
+.wqdiv-icon .git-tee::before, 
+  .wqdiv-icon .git-tee::after {
   position: absolute;
   top: 50%;
   margin-top: -0.125rem;
@@ -666,7 +751,12 @@ main .wqdiv-icon .git-tee {
   right: -0.5rem;
 }
 
-.page-pad-l, header .page-pad-l::before, body:not([wqdiv="home"]) header .page-pad-l::after, .wqdiv-icon .git-tee, .wqdiv-icon .git-tee::before, .wqdiv-icon .git-tee::after {
+.page-pad-l, 
+  header .page-pad-l::before, 
+  body:not([wqdiv="home"]) header .page-pad-l::after, 
+  .wqdiv-icon .git-tee, 
+  .wqdiv-icon .git-tee::before, 
+  .wqdiv-icon .git-tee::after {
   border-color: var(--wqdiv-color2);
 }
 
@@ -693,12 +783,12 @@ ul.parallax li:nth-child(even) {
   margin-top: 50px;
 }
 
-h1, h2 {
+h1,  h2 {
   font-size: 2.75rem;
 }
 
 @media (min-width: 768px) {
-  h1, h2 {
+  h1,  h2 {
     font-size: 3rem;
     line-height: 1;
   }
@@ -1013,7 +1103,8 @@ section.pre-bar::after {
   z-index: 0;
 }
 
-.dark .landing1-highlight > li::before, .dark .landing1-highlight > li .dot::before {
+.dark .landing1-highlight > li::before, .dark 
+  .landing1-highlight > li .dot::before {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
@@ -1039,7 +1130,8 @@ section.pre-bar::after {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.landing1-highlight > li > .text, .landing1-highlight > li > .img {
+.landing1-highlight > li > .text, 
+  .landing1-highlight > li > .img {
   position: relative;
   z-index: 10;
   display: flex;
@@ -1048,7 +1140,8 @@ section.pre-bar::after {
 }
 
 @media (min-width: 1024px) {
-  .landing1-highlight > li > .text, .landing1-highlight > li > .img {
+  .landing1-highlight > li > .text, 
+  .landing1-highlight > li > .img {
     width: 50%;
   }
 }
@@ -1111,7 +1204,8 @@ section.pre-bar::after {
   border: 10px solid white;
 }
 
-.dark .landing1-highlight > li .content::before, .dark .landing1-highlight > li .content::after {
+.dark .landing1-highlight > li .content::before, .dark 
+  .landing1-highlight > li .content::after {
   --tw-border-opacity: 1;
   border-color: rgb(15 15 15 / var(--tw-border-opacity));
 }
@@ -2542,12 +2636,14 @@ html:not(.scroll-reset) {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.tab.active, .project-outline :is(li > .item-bar:hover, li.active:not(.has-active) > .item-bar) {
+.tab.active, 
+.project-outline :is(li > .item-bar:hover, li.active:not(.has-active) > .item-bar) {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
-.dark .tab.active, .dark .project-outline :is(li > .item-bar:hover, .dark li.active:not(.has-active) > .item-bar) {
+.dark .tab.active, .dark 
+.project-outline :is(li > .item-bar:hover, li.active:not(.has-active) > .item-bar) {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
@@ -2562,30 +2658,52 @@ html:not(.scroll-reset) {
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.tab.active, :is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
+.tab.active, 
+:is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
-.dark .tab.active, .dark :is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
+.dark .tab.active, .dark 
+:is(.project-outline, .page-outline) li.active:not(.has-active) > .item-bar {
   color: var(--wqdiv-color2-dim-text);
 }
 
-:is(.project-outline, .page-outline) li > .item-bar .subtree-notch, :is(.project-outline, .page-outline) li .subtree-notch:before, :is(.project-outline li > div, .page-outline li) > ul:not(:empty):before, :is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
+:is(.project-outline, .page-outline) li > .item-bar .subtree-notch, 
+:is(.project-outline, .page-outline) li .subtree-notch:before, 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):before, 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
 }
 
-.dark :is(.project-outline, .page-outline) li > .item-bar .subtree-notch, .dark :is(.project-outline, .page-outline) li .subtree-notch:before, .dark :is(.project-outline li > div, .page-outline li) > ul:not(:empty):before, .dark :is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
+.dark :is(.project-outline, .page-outline) li > .item-bar .subtree-notch, .dark 
+:is(.project-outline, .page-outline) li .subtree-notch:before, .dark 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):before, .dark 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):after {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
 
-:is(.project-outline, .page-outline) li:hover > .item-bar .subtree-notch, :is(.project-outline, .page-outline) li.active > .item-bar .subtree-notch, :is(.project-outline, .page-outline) li:hover > .item-bar > .subtree-notch:before, :is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch:before, :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:before, :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after, :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before, :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
+:is(.project-outline, .page-outline) li:hover > .item-bar .subtree-notch, 
+:is(.project-outline, .page-outline) li.active > .item-bar .subtree-notch, 
+:is(.project-outline, .page-outline) li:hover > .item-bar > .subtree-notch:before, 
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch:before, 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:before, 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after, 
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before, 
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
   border-color: var(--wqdiv-color2);
 }
 
-.dark :is(.project-outline, .page-outline) li:hover > .item-bar .subtree-notch, .dark :is(.project-outline, .page-outline) li.active > .item-bar .subtree-notch, .dark :is(.project-outline, .page-outline) li:hover > .item-bar > .subtree-notch:before, .dark :is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch:before, .dark :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:before, .dark :is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after, .dark :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before, .dark :is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
+.dark :is(.project-outline, .page-outline) li:hover > .item-bar .subtree-notch, .dark 
+:is(.project-outline, .page-outline) li.active > .item-bar .subtree-notch, .dark 
+:is(.project-outline, .page-outline) li:hover > .item-bar > .subtree-notch:before, .dark 
+:is(.project-outline, .page-outline) li.active > .item-bar > .subtree-notch:before, .dark 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:before, .dark 
+:is(.project-outline li > div, .page-outline li) > ul:not(:empty):hover:after, .dark 
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):before, .dark 
+:is(.project-outline li.active.has-active > div, .page-outline li.active.has-active) > ul:not(:empty):after {
   border-color: var(--wqdiv-color2-dim-text);
 }
 
@@ -2608,7 +2726,9 @@ html:not(.scroll-reset) {
   border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 
-.dark .markdown-body h1, .dark .markdown-body h2, .dark .markdown-body h3 {
+.dark .markdown-body h1, .dark 
+.markdown-body h2, .dark 
+.markdown-body h3 {
   --tw-border-opacity: 1;
   border-color: rgb(17 24 39 / var(--tw-border-opacity));
 }
