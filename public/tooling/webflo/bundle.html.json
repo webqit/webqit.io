@@ -1,0 +1,99 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "For a Full Development Story!",
+                "uri": "for-a-full-development-story",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Getting Started",
+                        "uri": "getting-started",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Contributing to the Project",
+                        "uri": "contributing-to-the-project",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "License",
+                        "uri": "license",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "docs": "/tooling/webflo/docs/bundle.html.json",
+    "summary.json": {
+        "title": "Webflo",
+        "icon": "app-indicator",
+        "desc": "The universal JavaScript framework for Web, Mobile, and API Backends. Webflo takes you from development, to deployment, to continous delivery.",
+        "categories": [
+            "Frameworks"
+        ],
+        "_index": "first",
+        "tags": [
+            "Web",
+            "Mobile",
+            "API Backends",
+            "DevTool",
+            "DevOps",
+            "Dev Server",
+            "Production Server",
+            "GIT Workflow"
+        ],
+        "quickstart": {
+            "global": true,
+            "cta": {
+                "href": "http://github.com/webqit/webflo"
+            }
+        },
+        "features": [
+            {
+                "icon": "percent",
+                "title": "A Least-Footprint Rule!",
+                "desc": "Being carbon-neutral is a rare feat? Meet the Least-Footprint rule in Webflo!",
+                "desc2": "CLI-based, u dont see the framework",
+                "cta": {
+                    "href": "/tooling/webflo/docs/getting-started/overview#the-least-footprint-rule",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "app-indicator",
+                "title": "Web. Mobile. API Backends.",
+                "desc": "...all wholistically reimagined and factored into Webflo! Write one code for everything!",
+                "desc2": "We let traitional paradigms dictate/ modeled after traitional paradigms. Web. Mobile. API Backends. without actually building three things. Reduce the coupling complexities. handler() and render() are loosely-coupled but works together.",
+                "cta": {
+                    "href": "/tooling/webflo/docs/getting-started/overview#web-mobile-api-backends",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "arrows-collapse",
+                "title": "Traditional. Modern. Futuristic.",
+                "desc": "All the goodness of the traditional web returned with a bunch of modern magic!",
+                "desc2": "All the goodness of a server-rendered app, with the slick navigation of an SPA.",
+                "cta": {
+                    "href": "/tooling/webflo/docs/getting-started/overview#traditional-modern-futuristic",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "terminal",
+                "title": "A Dev(Ops)Tool. A Blend!",
+                "desc": "A sense of completeness right on your terminal! <i><code>webflo build</code>,  <code>webflo deploy</code>, <code>webf...</code></i>",
+                "desc2": "Completely bendable!",
+                "cta": {
+                    "href": "/tooling/webflo/docs/getting-started/overview#a-dev-ops-tool-a-blend",
+                    "text": "Learn more"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "Why Play UI",
+                "uri": "why-play-ui",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Getting Started",
+                        "uri": "getting-started",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Contributing to the Project",
+                        "uri": "contributing-to-the-project",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "License",
+                        "uri": "license",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "docs": "/tooling/play-ui/docs/bundle.html.json",
+    "summary.json": {
+        "title": "Play UI",
+        "icon": "play",
+        "desc": "A family of tools that brings a utility-based approach to UI development along with a full development story. Try an empowering way to build modern UIs",
+        "categories": [
+            "UI Libraries"
+        ],
+        "tags": [
+            "Async-DOM",
+            "Animations",
+            "Events",
+            "Gestures",
+            "UI Geometry",
+            "CSS framework"
+        ],
+        "quickstart": {
+            "cdn": true
+        },
+        "features": [
+            {
+                "icon": "heart",
+                "title": "Succinct API",
+                "desc": "Love the succintness of the jQuery library? Play UI looks and feels just like it.",
+                "cta": {
+                    "href": "/tooling/play-ui/docs/getting-started/overview#use-as-you-would-jqueryhttpsjquerycom",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "soundwave",
+                "title": "Async UI",
+                "desc": "Build automatically resilient UIs even without knowing it with Play UI's <i>Async UI</i> strategy.",
+                "cta": {
+                    "href": "/tooling/play-ui/docs/getting-started/overview#meet-async-ui",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "hash",
+                "title": "Descrete",
+                "desc": "Use as all-in-one (<code>$(el).xyz()</code>) or via descrete modules (<code>import { xyz } from '...'</code>).",
+                "cta": {
+                    "href": "/tooling/play-ui/docs/getting-started/overview#use-as-descrete-utilities",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "brightness-high",
+                "title": "Universal",
+                "desc": "Use in the browser and in node.js, and alongside the UI technologies of your choice.",
+                "cta": {
+                    "href": "/tooling/play-ui/docs/getting-started/overview#use-with-server-side-dom-instances",
+                    "text": "Learn more"
+                }
+            }
+        ]
+    }
+}

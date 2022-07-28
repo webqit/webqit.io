@@ -1,0 +1,87 @@
+{
+    "README.md": {
+        "outline": [
+            {
+                "level": 2,
+                "title": "Robust, Web-Native UI Development",
+                "uri": "robust-web-native-ui-development",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Getting Started",
+                        "uri": "getting-started",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Contributing to the Project",
+                        "uri": "contributing-to-the-project",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "License",
+                        "uri": "license",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "docs": "/tooling/oohtml/docs/bundle.html.json",
+    "summary.json": {
+        "title": "OOHTML",
+        "icon": "code-slash",
+        "desc": "A suite of new DOM features that lets us write modular, reusable, and reactive HTML, offering robust UI development with none of a framework.",
+        "categories": [
+            "Browser APIs"
+        ],
+        "tags": [
+            "OOHTML",
+            "Web-Native",
+            "WICG Proposal",
+            "CHTML"
+        ],
+        "quickstart": {
+            "cdn": true
+        },
+        "features": [
+            {
+                "icon": "arrow-repeat",
+                "title": "Reusable HTML",
+                "desc": "Write once, use everywhere with the all-new <i>HTML module</i>, <i>export</i> and <i>import</i> paradigm.",
+                "cta": {
+                    "href": "/tooling/oohtml/docs/getting-started/overview#html-modules",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "lightning-charge",
+                "title": "Reactive HTML",
+                "desc": "Get the plain old HTML kicking in sync with your application state, entirely within markup.",
+                "cta": {
+                    "href": "/tooling/oohtml/docs/getting-started/overview#subscript",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "diagram-2",
+                "title": "Namespaced HTML",
+                "desc": "Write collision-free IDs with HTML namespaces; meet the hack-free approach.",
+                "cta": {
+                    "href": "/tooling/oohtml/docs/getting-started/overview#namespaced-html",
+                    "text": "Learn more"
+                }
+            },
+            {
+                "icon": "soundwave",
+                "title": "All On the Fly!",
+                "desc": "Ditch the compile step! Just code and preview. Even edit from your browser console.",
+                "cta": {
+                    "href": "/tooling/oohtml/docs/getting-started/overview",
+                    "text": "Learn more"
+                }
+            }
+        ]
+    }
+}

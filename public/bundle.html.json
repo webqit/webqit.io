@@ -1,42 +1,10 @@
 {
-    "subtree": {
+    "-": {
         "-": {
-            "subtree": {
-                "-": {
-                    "subtree": {
-                        "docs": {
-                            "meta": {
-                                "index": {}
-                            }
-                        }
-                    },
-                    "meta": {
-                        "index": {}
-                    }
-                }
-            },
-            "meta": {
-                "index": {}
-            }
-        },
-        "cloud": {
-            "meta": {
-                "readme": {}
-            }
-        },
-        "community": {
-            "meta": {
-                "logos": {},
-                "readme": {}
-            }
-        },
-        "tooling": {
-            "meta": {
-                "readme": {}
-            }
+            "docs": {}
         }
     },
-    "meta": {
-        "index": {}
-    }
+    "cloud": "/cloud/bundle.html.json",
+    "community": "/community/bundle.html.json",
+    "tooling": "/tooling/bundle.html.json"
 }

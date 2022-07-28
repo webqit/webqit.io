@@ -1,0 +1,59 @@
+{
+    "title": "The Observer API",
+    "icon": "braces",
+    "desc": "The web-native, JavaScript reactivity API for observing and intercepting JavaScript objects and arrays, and achieving the reactive everything!",
+    "categories": ["JavaScript Libraries"],
+    "tags": ["reactivity", "proxies", "accessors"],
+    "quickstart": {"cdn": true},
+    "features": [{
+        "icon": "braces",
+        "title": "The Reactive Everything",
+        "desc": "True reactivity with even plain objects <code>{}</code>; no special classes or object wrappers!",
+        "desc-ideas": "No re-defining and messing around object properties; no wrapping and messing around object identity; that leave your code unnatural. This is utility-first/based not wrapper/encapsulation/observable-based.",
+        "desc-ideas2": "No object re-writing or encapsulation trick; everything kicks even with object literals: <code>Observer.observe({}, callback);</code>. adds observable capabilities to existing data structures like objects, arrays and class instances",
+        "cta": {
+            "href": "/tooling/observer/docs/js/quickstart#use-as-you-would-jqueryhttpsjquerycom",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "bullseye",
+        "icon-ideas": "diagram-2 bullseye broadcast",
+        "title": "Deeeep-Tree Bangs",
+        "desc": "Observe deep object-tree operations! Optionally specify paths and even depths.",
+        "cta": {
+            "href": "/tooling/observer/docs/js/concepts#async-ui",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "globe",
+        "title": "Web-Native",
+        "desc": "No framework tie-up! Enjoy an architectural <i>cousinship with native JavaScript</i>!",
+        "desc-ideas": "No framework cousinship! Get away with <i>reactive development even in vanilla JavaScript</i>!",
+        "desc-ideas2": "No framework affiliations, cousinship, sistership, brothership, tie-up! | Equal-opportunity...",
+        "cta": {
+            "href": "/tooling/observer/docs/intro/explainer#web-native",
+            "text": "Learn more"
+        }
+    }, {
+        "icon": "arrows-fullscreen",
+        "title": "For Ambitions",
+        "desc": "A feather-weight, low-level API for designing higher-level APIs and the next reactivity magic!",
+        "desc-ideas": "We either want to highlight: its low-level APIship, synchronousity, transparent functional reactive programming, lightweight and barebones",
+        "desc-ideas2": "None of the cost of trying to usecases/featureset. Usecase-specific - gives you the primitves to build your own. Extend it to derive your own ",
+        "cta": {
+            "href": "/tooling/observer/docs/js/quickstart#use-as-descrete-utilities",
+            "text": "Learn more"
+        }
+    }],
+    "more-features": [{
+        "icon": "braces",
+        "title": "Synchronous Delivery",
+        "desc": "True reactivity with even object literals <code>{}</code> - without the object -wrapping or -rewriting tricks!",
+        "desc-ideas": "No re-defining and messing around object properties; no wrapping and messing around object identity; that leave your code unnatural. This is utility-first/based not wrapper/encapsulation/observable-based.",
+        "desc-ideas2": "No object re-writing or encapsulation trick; everything kicks even with object literals: <code>Observer.observe({}, callback);</code>. adds observable capabilities to existing data structures like objects, arrays and class instances",
+        "cta": {
+            "href": "/tooling/observer/docs/js/quickstart#use-as-you-would-jqueryhttpsjquerycom",
+            "text": "Learn more"
+        }
+    }]
+}

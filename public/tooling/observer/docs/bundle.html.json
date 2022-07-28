@@ -1,0 +1,1144 @@
+{
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Observer API Documentation",
+                "uri": "observer-api-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "api": {
+        "README.md": {
+            "desc": "The API Reference.",
+            "_index": "last",
+            "_subtreeType": "category",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "API Reference",
+                    "uri": "api-reference",
+                    "subtree": []
+                }
+            ]
+        },
+        "actions": {
+            "README.md": {
+                "desc": "Reflect-like actions.",
+                "_index": "1",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Actions",
+                        "uri": "actions",
+                        "subtree": []
+                    }
+                ]
+            },
+            "defineProperty": {
+                "README.md": {
+                    "desc": "Reactively define a property on an object or array or reconfigures an existing property.",
+                    "_index": "4",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".defineProperty()",
+                            "uri": "defineproperty",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's defineProperty Handler",
+                                    "uri": "usage-as-a-traps-defineproperty-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.defineProperty()",
+                                    "uri": "intercepting-observerdefineproperty",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "deleteProperty": {
+                "README.md": {
+                    "desc": "Reactively delete a property from an object.",
+                    "_index": "3",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".deleteProperty()",
+                            "uri": "deleteproperty",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's \"deleteProperty\" Handler",
+                                    "uri": "usage-as-a-traps-deleteproperty-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.deleteProperty()",
+                                    "uri": "intercepting-observerdeleteproperty",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "get": {
+                "README.md": {
+                    "desc": "Return the value of a property.",
+                    "_index": "1",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".get()",
+                            "uri": "get",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's \"get\" Handler",
+                                    "uri": "usage-as-a-traps-get-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage with Property Getters",
+                                    "uri": "usage-with-property-getters",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.get()",
+                                    "uri": "intercepting-observerget",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "has": {
+                "README.md": {
+                    "desc": "Test property presence on an object.",
+                    "_index": "2",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".has()",
+                            "uri": "has",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's \"has\" Handler",
+                                    "uri": "usage-as-a-traps-has-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.has()",
+                                    "uri": "intercepting-observerhas",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "ownKeys": {
+                "README.md": {
+                    "desc": "Get an object's list of direct properties.",
+                    "_index": "5",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".ownKeys()",
+                            "uri": "ownkeys",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's \"ownKeys\" Handler",
+                                    "uri": "usage-as-a-traps-ownkeys-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.ownKeys()",
+                                    "uri": "intercepting-observerownkeys",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "set": {
+                "README.md": {
+                    "desc": "Reactively set the value of an object's property.",
+                    "_index": "first",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".set()",
+                            "uri": "set",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage as a Trap's \"set\" Handler",
+                                    "uri": "usage-as-a-traps-set-handler",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage with Property Setters",
+                                    "uri": "usage-with-property-setters",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Intercepting Observer.set()",
+                                    "uri": "intercepting-observerset",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "actors": {
+            "README.md": {
+                "desc": "Methods for creating reactive actors for actions.",
+                "_index": "2",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Actors",
+                        "uri": "actors",
+                        "subtree": []
+                    }
+                ]
+            },
+            "accessorize": {
+                "README.md": {
+                    "desc": "Create property accessors that use the Observer API behind the scenes.",
+                    "_index": "6",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".accessorize()",
+                            "uri": "accessorize",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "proxy": {
+                "README.md": {
+                    "desc": "Wrap an object or array in a reactive proxy.",
+                    "_index": "8",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".proxy()",
+                            "uri": "proxy",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "unaccessorize": {
+                "README.md": {
+                    "desc": "Restore an object's accessorized properties to their original state.",
+                    "_index": "7",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".unaccessorize()",
+                            "uri": "unaccessorize",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "unproxy": {
+                "README.md": {
+                    "desc": "Obtain the original object or array of the current proxy.",
+                    "_index": "9",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".unproxy()",
+                            "uri": "unproxy",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "connectors": {
+            "README.md": {
+                "desc": "Methods for building object hierarchies.",
+                "_index": "3",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Connectors",
+                        "uri": "connectors",
+                        "subtree": []
+                    }
+                ]
+            },
+            "build": {
+                "README.md": {
+                    "desc": "Explicitly create event links between a parent object and each of its children objects.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".build()",
+                            "uri": "build",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Notes",
+                                    "uri": "notes",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "link": {
+                "README.md": {
+                    "desc": "Explicitly establish an event link between a parent and a child object.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".link()",
+                            "uri": "link",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Notes",
+                                    "uri": "notes",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "unlink": {
+                "README.md": {
+                    "desc": "Explicitly break the event link between a parent and a child object.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".unlink()",
+                            "uri": "unlink",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Notes",
+                                    "uri": "notes",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "core": {
+            "Action": {
+                "README.md": {
+                    "title": "Action",
+                    "desc": "The Action class.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "class Action {}",
+                            "uri": "class-action-",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Constructor",
+                                    "uri": "constructor-NaN",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Properties",
+                                    "uri": "properties",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Event": {
+                "README.md": {
+                    "title": "Event",
+                    "desc": "The Event class.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "class Event {}",
+                            "uri": "class-event-",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Constructor",
+                                    "uri": "constructor-NaN",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Properties",
+                                    "uri": "properties",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Instance Methods",
+                                    "uri": "instance-methods",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Negotiating With Operators",
+                                    "uri": "negotiating-with-operators",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Mutation": {
+                "README.md": {
+                    "title": "Mutation",
+                    "desc": "The Mutation class.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "class Mutation {}",
+                            "uri": "class-mutation-",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Constructor",
+                                    "uri": "constructor-NaN",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Properties",
+                                    "uri": "properties",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "OperatorParams": {
+                "README.md": {
+                    "title": "OperatorParams",
+                    "desc": "The OperatorParams object.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "OperatorParams {}",
+                            "uri": "operatorparams-",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Properties",
+                                    "uri": "properties",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Passing a Value to Observers",
+                                    "uri": "passing-a-value-to-observers",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "README.md": {
+                "desc": "Core classes.",
+                "_index": "last",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Core",
+                        "uri": "core",
+                        "subtree": []
+                    }
+                ]
+            }
+        },
+        "reactions": {
+            "README.md": {
+                "desc": "Methods for reacting to actions.",
+                "_index": "first",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Reactions",
+                        "uri": "reactions",
+                        "subtree": []
+                    }
+                ]
+            },
+            "closure": {
+                "README.md": {
+                    "desc": "Create a reactive context under which to execute code.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".closure()",
+                            "uri": "closure",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "intercept": {
+                "README.md": {
+                    "desc": "Intercept operations performed on an object or array.",
+                    "_index": "2",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".intercept()",
+                            "uri": "intercept",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Handler Return Value",
+                                    "uri": "handler-return-value",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Tagging an Interceptor",
+                                    "uri": "tagging-an-interceptor",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Cascading Multiple Interceptors",
+                                    "uri": "cascading-multiple-interceptors",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "The Returned Interceptor Instance",
+                                    "uri": "the-returned-interceptor-instance",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "observe": {
+                "README.md": {
+                    "desc": "Observe operations on an object or array.",
+                    "_index": "first",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".observe()",
+                            "uri": "observe",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "a. Observe All Properties",
+                                    "uri": "a-observe-all-properties",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Syntax",
+                                            "uri": "syntax",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Usage",
+                                            "uri": "usage",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "Using the params.subtree Parameter",
+                                                    "uri": "using-the-paramssubtree-parameter",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "b. Observe a Path",
+                                    "uri": "b-observe-a-path",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Syntax",
+                                            "uri": "syntax-1",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Usage",
+                                            "uri": "usage-1",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "Using the params.subtree Parameter",
+                                                    "uri": "using-the-paramssubtree-parameter-1",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "Using the params.suptree Parameter",
+                                                    "uri": "using-the-paramssuptree-parameter",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "c. Observe Multiple Paths",
+                                    "uri": "c-observe-multiple-paths",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Syntax",
+                                            "uri": "syntax-2",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Usage",
+                                            "uri": "usage-2",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "Using Wildcard Paths",
+                                                    "uri": "using-wildcard-paths",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Specifying Mutation Types",
+                                    "uri": "specifying-mutation-types",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Tagging an Observer",
+                                    "uri": "tagging-an-observer",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "The Returned Observer Instance",
+                                    "uri": "the-returned-observer-instance",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "unintercept": {
+                "README.md": {
+                    "desc": "Unbind interceptors previously bound with <code>Observer.intercept()</code>.",
+                    "_index": "3",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".unintercept()",
+                            "uri": "unintercept",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "unobserve": {
+                "README.md": {
+                    "desc": "Unbind observers previously bound with <code>Observer.observe()</code>.",
+                    "_index": "1",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": ".unobserve()",
+                            "uri": "unobserve",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Syntax",
+                                    "uri": "syntax",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Usage",
+                                    "uri": "usage",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Related Methods",
+                                    "uri": "related-methods",
+                                    "subtree": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "getting-started": {
+        "README.md": {
+            "_index": "first",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Getting Started",
+                    "uri": "getting-started",
+                    "subtree": []
+                }
+            ]
+        },
+        "download": {
+            "README.md": {
+                "title": "Download",
+                "desc": "Follow the download options to add the Observer API to your project.",
+                "_index": "last",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Download Options",
+                        "uri": "download-options",
+                        "subtree": [
+                            {
+                                "level": 2,
+                                "title": "Option 1: From a CDN",
+                                "uri": "option-1-from-a-cdn",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Option 2: As an npm Package",
+                                "uri": "option-2-as-an-npm-package",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Next Steps",
+                                "uri": "next-steps",
+                                "subtree": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "explainer": {
+            "README.md": {
+                "title": "Explainer",
+                "desc": "The design and architectural concepts.",
+                "_index": "1",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Explainer [TODO]",
+                        "uri": "explainer-todo",
+                        "subtree": []
+                    }
+                ]
+            }
+        },
+        "overview": {
+            "README.md": {
+                "desc": "Take a one-minute overview of the Observer API.",
+                "_index": "first",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Overview",
+                        "uri": "overview",
+                        "subtree": [
+                            {
+                                "level": 2,
+                                "title": "Observe",
+                                "uri": "observe",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Mutate",
+                                "uri": "mutate",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Intercept",
+                                "uri": "intercept",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Pass Some Detail to Observers",
+                                "uri": "pass-some-detail-to-observers",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Negotiate with Observers",
+                                "uri": "negotiate-with-observers",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "Clean Up Anytime",
+                                "uri": "clean-up-anytime",
+                                "subtree": []
+                            },
+                            {
+                                "level": 2,
+                                "title": "The End?",
+                                "uri": "the-end",
+                                "subtree": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

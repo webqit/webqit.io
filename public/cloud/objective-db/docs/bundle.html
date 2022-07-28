@@ -1,0 +1,79 @@
+
+<div exportgroup="README.md">
+	<h1 id="objective-sql">Objective SQL</h1>
+	<!-- BADGES/ -->
+	<p><span class="badge-npmversion"><a href="https://npmjs.org/package/@webqit/objective-sql" title="View this project on NPM"><img src="https://img.shields.io/npm/v/@webqit/objective-sql.svg" alt="NPM version"></a></span><br>
+	<span class="badge-npmdownloads"><a href="https://npmjs.org/package/@webqit/objective-sql" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/@webqit/objective-sql.svg" alt="NPM downloads"></a></span></p>
+	<!-- /BADGES -->
+	<p><a href="https://github.com/webqit/objective-sql">Objective SQL</a> is a fullstack, object-oriented SQL for modern apps; one language and one API over diverse data storage technologies - from in-memory storage, to the client-side IndexedDB, to the server-side database like MySQL.</p>
+	<p><em>Speak the same familiar SQL language, this time, with an object-oriented convention for relationships. Or query your data programmatically using a succinct API.</em></p>
+	<blockquote>
+	  <p><a href="https://github.com/webqit/objective-sql">Visit project repo</a>.</p>
+	</blockquote>
+	<h2 id="basic-usage">Basic Usage</h2>
+	<p>Objective SQL works both in node.js and in the browser. Here's a node.js example:</p>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the inbuilt Object Storage library as the query client</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> <span class="token constant">ODB</span> <span class="token keyword">as</span> Client <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Run a query</span>
+Client<span class="token punctuation">.</span><span class="token function">query</span><span class="token punctuation">(</span><span class="token string">'SELECT fname, lname FROM users'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<h2 id="the-language">The Language</h2>
+	<p>Objective SQL is the same familiar, powerful SQL language you know…</p>
+<pre class="line-numbers match-braces language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, users.fname AS author_name FROM posts
+LEFT JOIN users ON users.id = posts.author_id;</code></pre>
+	<p>…but with an object-oriented syntax for relationships, built into the language…</p>
+<pre class="line-numbers match-braces language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
+	<p>…and that's SQL without the query complexity!</p>
+	<p><a href="/cloud/objective-db/docs/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+	<h2 id="the-api">The API</h2>
+	<p>Objective SQL also lets us work programmatically using a promise-based API.</p>
+	<p>Here's the API version of the <em><a href="#basic-usage">Basic Usage</a></em> query we started with:</p>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// The Client.open() method below opens the "default" database at version "0"</span>
+<span class="token comment">// More on this in the docs</span>
+Client<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token parameter"><span class="token constant">DB</span></span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+
+    <span class="token comment">// We get a handle to the "users" store (or table)</span>
+    <span class="token keyword">let</span> userStore <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token constant">DB</span><span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Then we run a query</span>
+    <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> userStore<span class="token punctuation">.</span><span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p><a href="/cloud/objective-db/docs/the-api">Learn more about the API</a> and see just what's possible. (DOCS coming soon.)</p>
+	<h2 id="storage">Storage</h2>
+	<p>Objective SQL lets us decide between underlying storage technologies without changing code.</p>
+	<p>While we've used the inbuilt in-memory store in the examples above, we could easily switch to a persistent storage engine, like the IndexedDB that ships with browsers, by simply swiping in the appropriate client in the <code>import</code> statement…</p>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+    <span class="token comment">//ODB as Client,</span>
+    <span class="token constant">IDB</span> <span class="token keyword">as</span> Client<span class="token punctuation">,</span>
+    <span class="token comment">//SQL as Client,</span>
+<span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
+	<p>…and the rest of the code can go on "as is". </p>
+	<p><a href="/cloud/objective-db/docs/storage">Learn more about Storage</a> and see just what's possible. (DOCS coming soon.)</p>
+	<h2 id="schemas">Schemas</h2>
+	<p>Objective SQL completely embraces the schema idea of SQL, and offers one simple, universal way to write these schemas that describe your data - whatever the underlying storage engine.</p>
+	<p>Schema declaration is usually the first step to working with SQL. So, the <code>users</code> table we've used in the examples above should already have been declared. Here's how easy it is to do that:</p>
+<pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token constant">DB</span> <span class="token operator">=</span> <span class="token keyword">await</span> Client<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'users'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">primaryKey</span><span class="token operator">:</span> <span class="token string">'id'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">autoIncrement</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">fields</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">fname</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">lname</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span><span class="token punctuation">{</span><span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'int'</span><span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span><span class="token number">0</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">uniqueKeys</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'email'</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'posts'</span><span class="token punctuation">,</span>
+        <span class="token operator">...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Schema created. DB ready for use...</span>
+    <span class="token comment">// So we populate with data... programmatically or via queries</span>
+    <span class="token keyword">let</span> userStore <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token constant">DB</span><span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'users'</span><span class="token punctuation">,</span> <span class="token string">'readwrite'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    userStore<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+        <span class="token punctuation">{</span><span class="token literal-property property">fname</span><span class="token operator">:</span> <span class="token string">'John'</span><span class="token punctuation">,</span> <span class="token literal-property property">lname</span><span class="token operator">:</span> <span class="token string">'Doe'</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'john.doe@example.com'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">33</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span><span class="token literal-property property">fname</span><span class="token operator">:</span> <span class="token string">'James'</span><span class="token punctuation">,</span> <span class="token literal-property property">lname</span><span class="token operator">:</span> <span class="token string">'Smith'</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'john.doe@example.com'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+	<p><a href="/cloud/objective-db/docs/schemas">Learn more about Schemas</a> and see just what's possible. (DOCS coming soon.)</p>
+</div>

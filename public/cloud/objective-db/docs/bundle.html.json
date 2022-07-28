@@ -1,0 +1,49 @@
+{
+    "README.md": {
+        "icon": "layers",
+        "desc": "Fullstack, object-oriented SQL for modern apps; one language and one API over diverse data storage technologies - from in-memory storage, to the client-side IndexedDB, to the server-side database like MySQL.",
+        "desc2": "Speak the same familiar, powerful SQL language now with object-oriented conventions for relationships. Or query your data programmatically using a succinct API.",
+        "categories": "Featured, Libraries",
+        "tags": "SQL, Indexed DB, In-Memory Store, Object Store",
+        "_after": "webflo",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Objective SQL",
+                "uri": "objective-sql",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Basic Usage",
+                        "uri": "basic-usage",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "The Language",
+                        "uri": "the-language",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "The API",
+                        "uri": "the-api",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Storage",
+                        "uri": "storage",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Schemas",
+                        "uri": "schemas",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    }
+}
