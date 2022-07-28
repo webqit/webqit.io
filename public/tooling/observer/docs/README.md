@@ -1,4 +1,5 @@
 ---
+title:DOCS
 _subtreeType: category
 ---
 # Observer API Documentation
