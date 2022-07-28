@@ -1,4 +1,5 @@
 ---
+title:DOCS
 _subtreeType: category
 ---
 # Play UI Documentation
