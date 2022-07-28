@@ -11,7 +11,7 @@ Start on a clean slate, in zero-abstraction, zero-config, and zero-dependency. D
 
 ## Getting Started
 
-+ [Visit the docs](docs) for an overview, the commands and usage guides.
++ [Visit the docs](http://github.com/webqit/webflo) for an overview, the commands and usage guides.
 + Also, [join the Github Discussions](https://github.com/webqit/webflo/discussions) for Webflo.
 
 ## Contributing to the Project

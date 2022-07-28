@@ -1,7 +1,7 @@
 {
     "headline": "Open source tooling for web-native development",
     "intro": "Explore the complete JavaScript stack for developing future-facing, web-native applications.",
-    "quickstartsTitle": "QuickStarts",
+    "quickstartsTitle": "Quickstarts",
     "quickstartsIntro": ["Check out some quick examples to get started!","<i>(All coming soon)</i>"],
     "quickstarts": [
         {
