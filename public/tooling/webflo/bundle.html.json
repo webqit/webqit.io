@@ -1,4 +1,5 @@
 {
+    "docs": "\\tooling\\webflo\\docs\\bundle.html.json",
     "README.md": {
         "outline": [
             {
@@ -28,7 +29,6 @@
             }
         ]
     },
-    "docs": "/tooling/webflo/docs/bundle.html.json",
     "summary.json": {
         "title": "Webflo",
         "icon": "app-indicator",
@@ -60,7 +60,7 @@
                 "desc": "Being carbon-neutral is a rare feat? Meet the Least-Footprint rule in Webflo!",
                 "desc2": "CLI-based, u dont see the framework",
                 "cta": {
-                    "href": "/tooling/webflo/docs/getting-started/overview#the-least-footprint-rule",
+                    "href": "http://github.com/webqit/webflo",
                     "text": "Learn more"
                 }
             },
@@ -70,7 +70,7 @@
                 "desc": "...all wholistically reimagined and factored into Webflo! Write one code for everything!",
                 "desc2": "We let traitional paradigms dictate/ modeled after traitional paradigms. Web. Mobile. API Backends. without actually building three things. Reduce the coupling complexities. handler() and render() are loosely-coupled but works together.",
                 "cta": {
-                    "href": "/tooling/webflo/docs/getting-started/overview#web-mobile-api-backends",
+                    "href": "http://github.com/webqit/webflo",
                     "text": "Learn more"
                 }
             },
@@ -80,7 +80,7 @@
                 "desc": "All the goodness of the traditional web returned with a bunch of modern magic!",
                 "desc2": "All the goodness of a server-rendered app, with the slick navigation of an SPA.",
                 "cta": {
-                    "href": "/tooling/webflo/docs/getting-started/overview#traditional-modern-futuristic",
+                    "href": "http://github.com/webqit/webflo",
                     "text": "Learn more"
                 }
             },
@@ -90,7 +90,7 @@
                 "desc": "A sense of completeness right on your terminal! <i><code>webflo build</code>,  <code>webflo deploy</code>, <code>webf...</code></i>",
                 "desc2": "Completely bendable!",
                 "cta": {
-                    "href": "/tooling/webflo/docs/getting-started/overview#a-dev-ops-tool-a-blend",
+                    "href": "http://github.com/webqit/webflo",
                     "text": "Learn more"
                 }
             }

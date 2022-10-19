@@ -1,0 +1,7 @@
+{
+    "port": 4000,
+    "domains": ["webqit.ioo"],
+    "https": {
+        "port": 5000
+    }
+} 

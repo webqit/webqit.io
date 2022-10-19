@@ -1,46 +1,5 @@
 {
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "An Overview",
-                "uri": "an-overview",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "What's A Dependency Thread?",
-                        "uri": "whats-a-dependency-thread",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "What Is Subscript?",
-                        "uri": "what-is-subscript",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "concepts": {
-        "README.md": {
-            "_index": "first",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Concepts",
-                    "uri": "concepts",
-                    "subtree": []
-                }
-            ]
-        },
         "conditionals-and-logic": {
             "README.md": {
                 "desc": "About Conditionals And Logic.",
@@ -146,6 +105,17 @@
                 ]
             }
         },
+        "README.md": {
+            "_index": "first",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Concepts",
+                    "uri": "concepts",
+                    "subtree": []
+                }
+            ]
+        },
         "references-and-bindings": {
             "README.md": {
                 "desc": "About References And Bindings.",
@@ -175,20 +145,37 @@
             }
         }
     },
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "An Overview",
+                "uri": "an-overview",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "What's A Dependency Thread?",
+                        "uri": "whats-a-dependency-thread",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "What Is Subscript?",
+                        "uri": "what-is-subscript",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
     "spec": {
-        "README.md": {
-            "title": "SPEC",
-            "desc": "Download and API.",
-            "_index": "1",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "SPEC",
-                    "uri": "spec",
-                    "subtree": []
-                }
-            ]
-        },
         "api": {
             "README.md": {
                 "title": "API",
@@ -345,6 +332,19 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "title": "SPEC",
+            "desc": "Download and API.",
+            "_index": "1",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "SPEC",
+                    "uri": "spec",
+                    "subtree": []
+                }
+            ]
         }
     },
     "usage": {

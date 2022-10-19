@@ -1,8 +1,8 @@
 {
+    "docs": "\\community\\web-native-cg\\docs\\bundle.html.json",
     "README.md": {
         "outline": []
     },
-    "docs": "/community/web-native-cg/docs/bundle.html.json",
     "summary.json": {
         "title": "Web-Native CG",
         "icon": "signpost",

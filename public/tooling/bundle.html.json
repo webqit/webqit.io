@@ -1,4 +1,8 @@
 {
+    "objective-sql": "\\tooling\\objective-sql\\bundle.html.json",
+    "observer": "\\tooling\\observer\\bundle.html.json",
+    "oohtml": "\\tooling\\oohtml\\bundle.html.json",
+    "play-ui": "\\tooling\\play-ui\\bundle.html.json",
     "README.md": {
         "outline": [
             {
@@ -9,15 +13,11 @@
             }
         ]
     },
-    "objective-sql": "/tooling/objective-sql/bundle.html.json",
-    "observer": "/tooling/observer/bundle.html.json",
-    "oohtml": "/tooling/oohtml/bundle.html.json",
-    "play-ui": "/tooling/play-ui/bundle.html.json",
-    "subscript": "/tooling/subscript/bundle.html.json",
+    "subscript": "\\tooling\\subscript\\bundle.html.json",
     "summary.json": {
         "headline": "Open source tooling for web-native development",
         "intro": "Explore the complete JavaScript stack for developing future-facing, web-native applications.",
-        "quickstartsTitle": "QuickStarts",
+        "quickstartsTitle": "Quickstarts",
         "quickstartsIntro": [
             "Check out some quick examples to get started!",
             "<i>(All coming soon)</i>"
@@ -97,5 +97,5 @@
             "Get your life's work off to a good start - here!"
         ]
     },
-    "webflo": "/tooling/webflo/bundle.html.json"
+    "webflo": "\\tooling\\webflo\\bundle.html.json"
 }

@@ -1,49 +1,6 @@
 {
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "Play UI Documentation",
-                "uri": "play-ui-documentation",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "api": {
-        "README.md": {
-            "desc": "The API Reference",
-            "_index": "1",
-            "_subtreeType": "category",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "API Reference",
-                    "uri": "api-reference",
-                    "subtree": []
-                }
-            ]
-        },
         "css": {
-            "README.md": {
-                "title": "CSS",
-                "desc": "CSS manipulation utilities.",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "API Category: CSS",
-                        "uri": "api-category-css",
-                        "subtree": []
-                    }
-                ]
-            },
             "classes": {
                 "README.md": {
                     "desc": "Classes in this category.",
@@ -349,21 +306,21 @@
                         }
                     ]
                 }
-            }
-        },
-        "data": {
+            },
             "README.md": {
-                "title": "Data",
-                "desc": "Data manipulation utilities.",
+                "title": "CSS",
+                "desc": "CSS manipulation utilities.",
                 "outline": [
                     {
                         "level": 1,
-                        "title": "API Category: Data",
-                        "uri": "api-category-data",
+                        "title": "API Category: CSS",
+                        "uri": "api-category-css",
                         "subtree": []
                     }
                 ]
-            },
+            }
+        },
+        "data": {
             "data": {
                 "README.md": {
                     "desc": "Store and manage arbitrary data with a data store internally associated with an element.",
@@ -498,21 +455,21 @@
                         }
                     ]
                 }
-            }
-        },
-        "dom": {
+            },
             "README.md": {
-                "title": "DOM",
-                "desc": "DOM manipulation utilities.",
+                "title": "Data",
+                "desc": "Data manipulation utilities.",
                 "outline": [
                     {
                         "level": 1,
-                        "title": "API Category: DOM",
-                        "uri": "api-category-dom",
+                        "title": "API Category: Data",
+                        "uri": "api-category-data",
                         "subtree": []
                     }
                 ]
-            },
+            }
+        },
+        "dom": {
             "append": {
                 "README.md": {
                     "desc": "Alias of the .appendSync() method.",
@@ -1646,6 +1603,18 @@
                     ]
                 }
             },
+            "README.md": {
+                "title": "DOM",
+                "desc": "DOM manipulation utilities.",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "API Category: DOM",
+                        "uri": "api-category-dom",
+                        "subtree": []
+                    }
+                ]
+            },
             "text": {
                 "README.md": {
                     "desc": "Alias of the .textSync() method.",
@@ -1823,19 +1792,6 @@
             }
         },
         "misc": {
-            "README.md": {
-                "title": "Misc",
-                "desc": "General Utilities.",
-                "_index": "last",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "API Category: Miscellaneous",
-                        "uri": "api-category-miscellaneous",
-                        "subtree": []
-                    }
-                ]
-            },
             "classes": {
                 "README.md": {
                     "desc": "Classes in this category.",
@@ -1850,43 +1806,6 @@
                     ]
                 },
                 "Transaction": {
-                    "README.md": {
-                        "title": "Transaction",
-                        "desc": "The Transaction class.",
-                        "outline": [
-                            {
-                                "level": 1,
-                                "title": "class Transaction {}",
-                                "uri": "class-transaction-",
-                                "subtree": [
-                                    {
-                                        "level": 2,
-                                        "title": "Constructor",
-                                        "uri": "constructor-NaN",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Usage",
-                                        "uri": "usage",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Properties",
-                                        "uri": "properties",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Methods",
-                                        "uri": "methods",
-                                        "subtree": []
-                                    }
-                                ]
-                            }
-                        ]
-                    },
                     "apply": {
                         "README.md": {
                             "desc": "Apply a new state to the element in a transaction.",
@@ -1938,6 +1857,43 @@
                                 }
                             ]
                         }
+                    },
+                    "README.md": {
+                        "title": "Transaction",
+                        "desc": "The Transaction class.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "class Transaction {}",
+                                "uri": "class-transaction-",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Constructor",
+                                        "uri": "constructor-NaN",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Properties",
+                                        "uri": "properties",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Methods",
+                                        "uri": "methods",
+                                        "subtree": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     "rollback": {
                         "README.md": {
@@ -1993,6 +1949,19 @@
                     }
                 }
             },
+            "README.md": {
+                "title": "Misc",
+                "desc": "General Utilities.",
+                "_index": "last",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "API Category: Miscellaneous",
+                        "uri": "api-category-miscellaneous",
+                        "subtree": []
+                    }
+                ]
+            },
             "transaction": {
                 "README.md": {
                     "desc": "Start a transaction on an element for operations that eventually might need to be rolled back.",
@@ -2039,59 +2008,22 @@
                 }
             }
         },
+        "README.md": {
+            "desc": "The API Reference",
+            "_index": "1",
+            "_subtreeType": "category",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "API Reference",
+                    "uri": "api-reference",
+                    "subtree": []
+                }
+            ]
+        },
         "ui": {
-            "README.md": {
-                "title": "UI",
-                "desc": "UI manipulation methods.",
-                "_index": "last",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "API Category: UI",
-                        "uri": "api-category-ui",
-                        "subtree": []
-                    }
-                ]
-            },
             "classes": {
                 "Animation": {
-                    "README.md": {
-                        "title": "Animation",
-                        "desc": "The Animation class.",
-                        "outline": [
-                            {
-                                "level": 1,
-                                "title": "class Animation {}",
-                                "uri": "class-animation-",
-                                "subtree": [
-                                    {
-                                        "level": 2,
-                                        "title": "Constructor",
-                                        "uri": "constructor-NaN",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Usage",
-                                        "uri": "usage",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Features",
-                                        "uri": "features",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Methods",
-                                        "uri": "methods",
-                                        "subtree": []
-                                    }
-                                ]
-                            }
-                        ]
-                    },
                     "cancel": {
                         "README.md": {
                             "desc": "Cancel an animation.",
@@ -2273,6 +2205,43 @@
                                 }
                             ]
                         }
+                    },
+                    "README.md": {
+                        "title": "Animation",
+                        "desc": "The Animation class.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "class Animation {}",
+                                "uri": "class-animation-",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Constructor",
+                                        "uri": "constructor-NaN",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Features",
+                                        "uri": "features",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Methods",
+                                        "uri": "methods",
+                                        "subtree": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     "ready": {
                         "README.md": {
@@ -2464,43 +2433,6 @@
                     ]
                 },
                 "Timeline": {
-                    "README.md": {
-                        "titlw": "Timeline",
-                        "desc": "The Timeline class.",
-                        "outline": [
-                            {
-                                "level": 1,
-                                "title": "Timeline",
-                                "uri": "timeline",
-                                "subtree": [
-                                    {
-                                        "level": 2,
-                                        "title": "Constructor",
-                                        "uri": "constructor-NaN",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Usage",
-                                        "uri": "usage",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Features",
-                                        "uri": "features",
-                                        "subtree": []
-                                    },
-                                    {
-                                        "level": 2,
-                                        "title": "Methods",
-                                        "uri": "methods",
-                                        "subtree": []
-                                    }
-                                ]
-                            }
-                        ]
-                    },
                     "add": {
                         "README.md": {
                             "desc": "Add an animation to the timeline.",
@@ -2734,6 +2666,43 @@
                                 }
                             ]
                         }
+                    },
+                    "README.md": {
+                        "titlw": "Timeline",
+                        "desc": "The Timeline class.",
+                        "outline": [
+                            {
+                                "level": 1,
+                                "title": "Timeline",
+                                "uri": "timeline",
+                                "subtree": [
+                                    {
+                                        "level": 2,
+                                        "title": "Constructor",
+                                        "uri": "constructor-NaN",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Usage",
+                                        "uri": "usage",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Features",
+                                        "uri": "features",
+                                        "subtree": []
+                                    },
+                                    {
+                                        "level": 2,
+                                        "title": "Methods",
+                                        "uri": "methods",
+                                        "subtree": []
+                                    }
+                                ]
+                            }
+                        ]
                     },
                     "remove": {
                         "README.md": {
@@ -3073,6 +3042,19 @@
                     ]
                 }
             },
+            "README.md": {
+                "title": "UI",
+                "desc": "UI manipulation methods.",
+                "_index": "last",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "API Category: UI",
+                        "uri": "api-category-ui",
+                        "subtree": []
+                    }
+                ]
+            },
             "rect": {
                 "README.md": {
                     "desc": "Obtain the rendered rectangle of an element in the UI for manipualtion.",
@@ -3168,18 +3150,85 @@
         }
     },
     "cli": {
-        "README.md": {
-            "_index": "2",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Command Line",
-                    "uri": "command-line",
-                    "subtree": []
-                }
-            ]
-        },
         "bundle": {
+            "loaders": {
+                "README.md": {
+                    "title": "Loaders",
+                    "desc": "Packages that extend the capabilities of the OOHTML Bundler.",
+                    "outline": [
+                        {
+                            "level": 1,
+                            "title": "Loaders",
+                            "uri": "loaders",
+                            "subtree": [
+                                {
+                                    "level": 2,
+                                    "title": "Overview",
+                                    "uri": "overview",
+                                    "subtree": []
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Built-Ins",
+                                    "uri": "built-ins",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "md-loader",
+                                            "uri": "md-loader",
+                                            "subtree": [
+                                                {
+                                                    "level": 4,
+                                                    "title": "Arguments/Flags",
+                                                    "uri": "argumentsflags",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "Other",
+                                                    "uri": "other",
+                                                    "subtree": []
+                                                },
+                                                {
+                                                    "level": 4,
+                                                    "title": "Usage",
+                                                    "uri": "usage",
+                                                    "subtree": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "level": 2,
+                                    "title": "Custom Loaders",
+                                    "uri": "custom-loaders",
+                                    "subtree": [
+                                        {
+                                            "level": 3,
+                                            "title": "Syntax",
+                                            "uri": "syntax",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Error Handling",
+                                            "uri": "error-handling",
+                                            "subtree": []
+                                        },
+                                        {
+                                            "level": 3,
+                                            "title": "Usage",
+                                            "uri": "usage-1",
+                                            "subtree": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
             "README.md": {
                 "desc": "Automatically bundle static HTML files from the filesystem into HTML Modules.",
                 "outline": [
@@ -3321,84 +3370,6 @@
                         ]
                     }
                 ]
-            },
-            "loaders": {
-                "README.md": {
-                    "title": "Loaders",
-                    "desc": "Packages that extend the capabilities of the OOHTML Bundler.",
-                    "outline": [
-                        {
-                            "level": 1,
-                            "title": "Loaders",
-                            "uri": "loaders",
-                            "subtree": [
-                                {
-                                    "level": 2,
-                                    "title": "Overview",
-                                    "uri": "overview",
-                                    "subtree": []
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Built-Ins",
-                                    "uri": "built-ins",
-                                    "subtree": [
-                                        {
-                                            "level": 3,
-                                            "title": "md-loader",
-                                            "uri": "md-loader",
-                                            "subtree": [
-                                                {
-                                                    "level": 4,
-                                                    "title": "Arguments/Flags",
-                                                    "uri": "argumentsflags",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 4,
-                                                    "title": "Other",
-                                                    "uri": "other",
-                                                    "subtree": []
-                                                },
-                                                {
-                                                    "level": 4,
-                                                    "title": "Usage",
-                                                    "uri": "usage",
-                                                    "subtree": []
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "level": 2,
-                                    "title": "Custom Loaders",
-                                    "uri": "custom-loaders",
-                                    "subtree": [
-                                        {
-                                            "level": 3,
-                                            "title": "Syntax",
-                                            "uri": "syntax",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Error Handling",
-                                            "uri": "error-handling",
-                                            "subtree": []
-                                        },
-                                        {
-                                            "level": 3,
-                                            "title": "Usage",
-                                            "uri": "usage-1",
-                                            "subtree": []
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
             }
         },
         "config": {
@@ -3454,20 +3425,20 @@
                     }
                 ]
             }
-        }
-    },
-    "getting-started": {
+        },
         "README.md": {
-            "_index": "first",
+            "_index": "2",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Getting Started",
-                    "uri": "getting-started",
+                    "title": "Command Line",
+                    "uri": "command-line",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "getting-started": {
         "download": {
             "README.md": {
                 "title": "Download",
@@ -3591,6 +3562,35 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "first",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Getting Started",
+                    "uri": "getting-started",
+                    "subtree": []
+                }
+            ]
         }
+    },
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Play UI Documentation",
+                "uri": "play-ui-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
     }
 }

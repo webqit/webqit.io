@@ -1,8 +1,8 @@
 {
+    "docs": "\\community\\webqit\\docs\\bundle.html.json",
     "README.md": {
         "outline": []
     },
-    "docs": "/community/webqit/docs/bundle.html.json",
     "summary.json": {
         "title": "WebQit Community",
         "icon": "globe2",

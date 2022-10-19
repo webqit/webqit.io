@@ -1,94 +1,4 @@
 {
-    "README-1.md": {
-        "outline": [
-            {
-                "level": 1,
-                "title": "Project Layout",
-                "uri": "project-layout",
-                "subtree": [
-                    {
-                        "level": 3,
-                        "title": "The /public Directory",
-                        "uri": "the-public-directory",
-                        "subtree": []
-                    },
-                    {
-                        "level": 3,
-                        "title": "The /server Directory",
-                        "uri": "the-server-directory",
-                        "subtree": []
-                    },
-                    {
-                        "level": 3,
-                        "title": "The /client Directory",
-                        "uri": "the-client-directory",
-                        "subtree": []
-                    },
-                    {
-                        "level": 3,
-                        "title": "The /worker Directory",
-                        "uri": "the-worker-directory",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "Vertical Routing Layers",
-                        "uri": "vertical-routing-layers",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "Horizontal Routing Steps",
-                        "uri": "horizontal-routing-steps",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "Route Handlers",
-                        "uri": "route-handlers",
-                        "subtree": []
-                    },
-                    {
-                        "level": 2,
-                        "title": "Flow Control",
-                        "uri": "flow-control",
-                        "subtree": [
-                            {
-                                "level": 3,
-                                "title": "Parameter Passing",
-                                "uri": "parameter-passing",
-                                "subtree": []
-                            },
-                            {
-                                "level": 3,
-                                "title": "The process Object",
-                                "uri": "the-process-object",
-                                "subtree": []
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "Webflo Documentation",
-                "uri": "webflo-documentation",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "api": {
         "README.md": {
             "_index": "7",
@@ -304,17 +214,6 @@
         }
     },
     "build-system": {
-        "README.md": {
-            "_index": "4",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Build System",
-                    "uri": "build-system",
-                    "subtree": []
-                }
-            ]
-        },
         "javascript": {
             "README.md": {
                 "desc": "Application JavaScript builds.",
@@ -328,6 +227,17 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "4",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Build System",
+                    "uri": "build-system",
+                    "subtree": []
+                }
+            ]
         },
         "static-build": {
             "README.md": {
@@ -345,17 +255,6 @@
         }
     },
     "cli": {
-        "README.md": {
-            "_index": "last",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Command-Line",
-                    "uri": "command-line",
-                    "subtree": []
-                }
-            ]
-        },
         "build": {
             "README.md": {
                 "desc": "The <code>webflo config</code> command.",
@@ -426,6 +325,17 @@
                 ]
             }
         },
+        "README.md": {
+            "_index": "last",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Command-Line",
+                    "uri": "command-line",
+                    "subtree": []
+                }
+            ]
+        },
         "server": {
             "README.md": {
                 "desc": "The <code>webflo :server</code> command.",
@@ -442,17 +352,6 @@
         }
     },
     "client-runtime": {
-        "README.md": {
-            "_index": "3",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Client Runtime",
-                    "uri": "client-runtime",
-                    "subtree": []
-                }
-            ]
-        },
         "navigation": {
             "README.md": {
                 "desc": "Client navigation system.",
@@ -480,20 +379,20 @@
                     }
                 ]
             }
-        }
-    },
-    "deployment": {
+        },
         "README.md": {
-            "_index": "6",
+            "_index": "3",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Deployment",
-                    "uri": "deployment",
+                    "title": "Client Runtime",
+                    "uri": "client-runtime",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "deployment": {
         "managed-hosting": {
             "README.md": {
                 "desc": "Managed hosting guide.",
@@ -507,6 +406,17 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "6",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Deployment",
+                    "uri": "deployment",
+                    "subtree": []
+                }
+            ]
         },
         "self-hosting": {
             "README.md": {
@@ -703,17 +613,6 @@
         }
     },
     "getting-started": {
-        "README.md": {
-            "_index": "first",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Getting Started",
-                    "uri": "getting-started",
-                    "subtree": []
-                }
-            ]
-        },
         "installation": {
             "README.md": {
                 "desc": "Webflo installation guide.",
@@ -798,20 +697,111 @@
                     }
                 ]
             }
-        }
-    },
-    "server-runtime": {
+        },
         "README.md": {
-            "_index": "2",
+            "_index": "first",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Server Runtime",
-                    "uri": "server-runtime",
+                    "title": "Getting Started",
+                    "uri": "getting-started",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "README-1.md": {
+        "outline": [
+            {
+                "level": 1,
+                "title": "Project Layout",
+                "uri": "project-layout",
+                "subtree": [
+                    {
+                        "level": 3,
+                        "title": "The /public Directory",
+                        "uri": "the-public-directory",
+                        "subtree": []
+                    },
+                    {
+                        "level": 3,
+                        "title": "The /server Directory",
+                        "uri": "the-server-directory",
+                        "subtree": []
+                    },
+                    {
+                        "level": 3,
+                        "title": "The /client Directory",
+                        "uri": "the-client-directory",
+                        "subtree": []
+                    },
+                    {
+                        "level": 3,
+                        "title": "The /worker Directory",
+                        "uri": "the-worker-directory",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Vertical Routing Layers",
+                        "uri": "vertical-routing-layers",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Horizontal Routing Steps",
+                        "uri": "horizontal-routing-steps",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Route Handlers",
+                        "uri": "route-handlers",
+                        "subtree": []
+                    },
+                    {
+                        "level": 2,
+                        "title": "Flow Control",
+                        "uri": "flow-control",
+                        "subtree": [
+                            {
+                                "level": 3,
+                                "title": "Parameter Passing",
+                                "uri": "parameter-passing",
+                                "subtree": []
+                            },
+                            {
+                                "level": 3,
+                                "title": "The process Object",
+                                "uri": "the-process-object",
+                                "subtree": []
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "README.md": {
+        "title": "DOCS",
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Webflo Documentation",
+                "uri": "webflo-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
+    "server-runtime": {
         "dns": {
             "README.md": {
                 "desc": "Application host resolution.",
@@ -839,20 +829,20 @@
                     }
                 ]
             }
-        }
-    },
-    "workflow": {
+        },
         "README.md": {
-            "_index": "5",
+            "_index": "2",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Workflow",
-                    "uri": "workflow",
+                    "title": "Server Runtime",
+                    "uri": "server-runtime",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "workflow": {
         "dev-mode": {
             "README.md": {
                 "desc": "Dev-mode workflows.",
@@ -880,6 +870,17 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "5",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Workflow",
+                    "uri": "workflow",
+                    "subtree": []
+                }
+            ]
         },
         "testing": {
             "README.md": {

@@ -22,7 +22,7 @@
     "summary.json": {
         "headline": "Community initiatives for web-native development",
         "intro": "Join in the conversation and community-wide initiatives for web-native development!",
-        "quickstartsTitle": "QuickStarts",
+        "quickstartsTitle": "Quickstarts",
         "quickstartsIntro": [
             "Join the web-native movement!",
             "<i>(More coming soon)</i>"
@@ -54,6 +54,6 @@
             "Follow WebQit, Inc. - <a href=\"https://twitter.com/@Web_Qit\" target=\"_blank\"><i class=\"bi bi-twitter\"></i> @Web_Qit</a>"
         ]
     },
-    "web-native-cg": "/community/web-native-cg/bundle.html.json",
-    "webqit": "/community/webqit/bundle.html.json"
+    "web-native-cg": "\\community\\web-native-cg\\bundle.html.json",
+    "webqit": "\\community\\webqit\\bundle.html.json"
 }

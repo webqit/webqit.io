@@ -1,4 +1,6 @@
 {
+    "auth": "\\cloud\\auth\\bundle.html.json",
+    "objective-db": "\\cloud\\objective-db\\bundle.html.json",
     "README.md": {
         "outline": [
             {
@@ -9,12 +11,10 @@
             }
         ]
     },
-    "auth": "/cloud/auth/bundle.html.json",
-    "objective-db": "/cloud/objective-db/bundle.html.json",
     "summary.json": {
         "headline": "Instant, open source cloud for web-native apps",
         "intro": "Go live on an instant, zero-ops infrastructure built for the web-native experience!",
-        "quickstartsTitle": "QuickStarts",
+        "quickstartsTitle": "Quickstarts",
         "quickstartsIntro": [
             "Run a quick sample on WebQit Cloud to get started!",
             "<i>(All coming soon)</i>"
@@ -88,5 +88,5 @@
             "Get overnight ideas launched by morning - here!"
         ]
     },
-    "webflo-runtime": "/cloud/webflo-runtime/bundle.html.json"
+    "webflo-runtime": "\\cloud\\webflo-runtime\\bundle.html.json"
 }

@@ -26,7 +26,7 @@ LEFT JOIN users ON users.id = posts.author_id;</code></pre>
 	<p>…but with an object-oriented syntax for relationships, built into the language…</p>
 <pre class="line-numbers match-braces language-sql" tabindex="0"><code class="sql language-sql">SELECT post_title, author_id-&gt;fname AS author_name FROM posts;</code></pre>
 	<p>…and that's SQL without the query complexity!</p>
-	<p><a href="/cloud/objective-db/docs/the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
+	<p><a href="\cloud\objective-db\docs\the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
 	<h2 id="the-api">The API</h2>
 	<p>Objective SQL also lets us work programmatically using a promise-based API.</p>
 	<p>Here's the API version of the <em><a href="#basic-usage">Basic Usage</a></em> query we started with:</p>
@@ -41,7 +41,7 @@ Client<span class="token punctuation">.</span><span class="token function">open<
     <span class="token keyword">let</span> result <span class="token operator">=</span> <span class="token keyword">await</span> userStore<span class="token punctuation">.</span><span class="token function">getAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p><a href="/cloud/objective-db/docs/the-api">Learn more about the API</a> and see just what's possible. (DOCS coming soon.)</p>
+	<p><a href="\cloud\objective-db\docs\the-api">Learn more about the API</a> and see just what's possible. (DOCS coming soon.)</p>
 	<h2 id="storage">Storage</h2>
 	<p>Objective SQL lets us decide between underlying storage technologies without changing code.</p>
 	<p>While we've used the inbuilt in-memory store in the examples above, we could easily switch to a persistent storage engine, like the IndexedDB that ships with browsers, by simply swiping in the appropriate client in the <code>import</code> statement…</p>
@@ -51,7 +51,7 @@ Client<span class="token punctuation">.</span><span class="token function">open<
     <span class="token comment">//SQL as Client,</span>
 <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/objective-sql'</span><span class="token punctuation">;</span></code></pre>
 	<p>…and the rest of the code can go on "as is". </p>
-	<p><a href="/cloud/objective-db/docs/storage">Learn more about Storage</a> and see just what's possible. (DOCS coming soon.)</p>
+	<p><a href="\cloud\objective-db\docs\storage">Learn more about Storage</a> and see just what's possible. (DOCS coming soon.)</p>
 	<h2 id="schemas">Schemas</h2>
 	<p>Objective SQL completely embraces the schema idea of SQL, and offers one simple, universal way to write these schemas that describe your data - whatever the underlying storage engine.</p>
 	<p>Schema declaration is usually the first step to working with SQL. So, the <code>users</code> table we've used in the examples above should already have been declared. Here's how easy it is to do that:</p>
@@ -75,5 +75,5 @@ Client<span class="token punctuation">.</span><span class="token function">open<
         <span class="token punctuation">{</span><span class="token literal-property property">fname</span><span class="token operator">:</span> <span class="token string">'James'</span><span class="token punctuation">,</span> <span class="token literal-property property">lname</span><span class="token operator">:</span> <span class="token string">'Smith'</span><span class="token punctuation">,</span> <span class="token literal-property property">email</span><span class="token operator">:</span> <span class="token string">'john.doe@example.com'</span><span class="token punctuation">,</span> <span class="token literal-property property">age</span><span class="token operator">:</span> <span class="token number">40</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-	<p><a href="/cloud/objective-db/docs/schemas">Learn more about Schemas</a> and see just what's possible. (DOCS coming soon.)</p>
+	<p><a href="\cloud\objective-db\docs\schemas">Learn more about Schemas</a> and see just what's possible. (DOCS coming soon.)</p>
 </div>

@@ -1,34 +1,5 @@
 {
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "Objective-SQL Documentation",
-                "uri": "objective-sql-documentation",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "getting-started": {
-        "README.md": {
-            "_index": "first",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Getting Started",
-                    "uri": "getting-started",
-                    "subtree": []
-                }
-            ]
-        },
         "download": {
             "README.md": {
                 "title": "Download",
@@ -89,6 +60,35 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "first",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Getting Started",
+                    "uri": "getting-started",
+                    "subtree": []
+                }
+            ]
         }
+    },
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Objective-SQL Documentation",
+                "uri": "objective-sql-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
     }
 }

@@ -1,49 +1,6 @@
 {
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "Observer API Documentation",
-                "uri": "observer-api-documentation",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "api": {
-        "README.md": {
-            "desc": "The API Reference.",
-            "_index": "last",
-            "_subtreeType": "category",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "API Reference",
-                    "uri": "api-reference",
-                    "subtree": []
-                }
-            ]
-        },
         "actions": {
-            "README.md": {
-                "desc": "Reflect-like actions.",
-                "_index": "1",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Actions",
-                        "uri": "actions",
-                        "subtree": []
-                    }
-                ]
-            },
             "defineProperty": {
                 "README.md": {
                     "desc": "Reactively define a property on an object or array or reconfigures an existing property.",
@@ -275,6 +232,18 @@
                     ]
                 }
             },
+            "README.md": {
+                "desc": "Reflect-like actions.",
+                "_index": "1",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Actions",
+                        "uri": "actions",
+                        "subtree": []
+                    }
+                ]
+            },
             "set": {
                 "README.md": {
                     "desc": "Reactively set the value of an object's property.",
@@ -328,18 +297,6 @@
             }
         },
         "actors": {
-            "README.md": {
-                "desc": "Methods for creating reactive actors for actions.",
-                "_index": "2",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Actors",
-                        "uri": "actors",
-                        "subtree": []
-                    }
-                ]
-            },
             "accessorize": {
                 "README.md": {
                     "desc": "Create property accessors that use the Observer API behind the scenes.",
@@ -405,6 +362,18 @@
                         }
                     ]
                 }
+            },
+            "README.md": {
+                "desc": "Methods for creating reactive actors for actions.",
+                "_index": "2",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Actors",
+                        "uri": "actors",
+                        "subtree": []
+                    }
+                ]
             },
             "unaccessorize": {
                 "README.md": {
@@ -474,18 +443,6 @@
             }
         },
         "connectors": {
-            "README.md": {
-                "desc": "Methods for building object hierarchies.",
-                "_index": "3",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Connectors",
-                        "uri": "connectors",
-                        "subtree": []
-                    }
-                ]
-            },
             "build": {
                 "README.md": {
                     "desc": "Explicitly create event links between a parent object and each of its children objects.",
@@ -561,6 +518,18 @@
                         }
                     ]
                 }
+            },
+            "README.md": {
+                "desc": "Methods for building object hierarchies.",
+                "_index": "3",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Connectors",
+                        "uri": "connectors",
+                        "subtree": []
+                    }
+                ]
             },
             "unlink": {
                 "README.md": {
@@ -736,18 +705,6 @@
             }
         },
         "reactions": {
-            "README.md": {
-                "desc": "Methods for reacting to actions.",
-                "_index": "first",
-                "outline": [
-                    {
-                        "level": 1,
-                        "title": "Reactions",
-                        "uri": "reactions",
-                        "subtree": []
-                    }
-                ]
-            },
             "closure": {
                 "README.md": {
                     "desc": "Create a reactive context under which to execute code.",
@@ -960,6 +917,18 @@
                     ]
                 }
             },
+            "README.md": {
+                "desc": "Methods for reacting to actions.",
+                "_index": "first",
+                "outline": [
+                    {
+                        "level": 1,
+                        "title": "Reactions",
+                        "uri": "reactions",
+                        "subtree": []
+                    }
+                ]
+            },
             "unintercept": {
                 "README.md": {
                     "desc": "Unbind interceptors previously bound with <code>Observer.intercept()</code>.",
@@ -1020,20 +989,22 @@
                     ]
                 }
             }
-        }
-    },
-    "getting-started": {
+        },
         "README.md": {
-            "_index": "first",
+            "desc": "The API Reference.",
+            "_index": "last",
+            "_subtreeType": "category",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Getting Started",
-                    "uri": "getting-started",
+                    "title": "API Reference",
+                    "uri": "api-reference",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "getting-started": {
         "download": {
             "README.md": {
                 "title": "Download",
@@ -1139,6 +1110,35 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "_index": "first",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Getting Started",
+                    "uri": "getting-started",
+                    "subtree": []
+                }
+            ]
         }
+    },
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "Observer API Documentation",
+                "uri": "observer-api-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
     }
 }

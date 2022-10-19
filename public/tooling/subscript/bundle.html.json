@@ -1,4 +1,5 @@
 {
+    "docs": "\\tooling\\subscript\\docs\\bundle.html.json",
     "README.md": {
         "outline": [
             {
@@ -28,7 +29,6 @@
             }
         ]
     },
-    "docs": "/tooling/subscript/docs/bundle.html.json",
     "summary.json": {
         "title": "Subscript",
         "icon": "terminal",

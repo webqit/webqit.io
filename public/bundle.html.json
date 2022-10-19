@@ -4,7 +4,7 @@
             "docs": {}
         }
     },
-    "cloud": "/cloud/bundle.html.json",
-    "community": "/community/bundle.html.json",
-    "tooling": "/tooling/bundle.html.json"
+    "cloud": "\\cloud\\bundle.html.json",
+    "community": "\\community\\bundle.html.json",
+    "tooling": "\\tooling\\bundle.html.json"
 }

@@ -66,7 +66,7 @@ cd webflo-app</code></pre>
 	<p>So, route handlers can both return <em>response data</em> of their own and act as a gateway for the request/response flow. As we will see shortly, response data returned from route handlers can either serve as <em>automatic JSON (API) responses</em> or get rendered into the default <code>/public/index.html</code> file and returned as a rendered <em>HTML response</em>.</p>
 	<p>So far, with just two files - <code>/public/index.html</code> and <code>/server/index.js</code> - we can already return either of three responses for the URL <code>http://localhost:3000/</code>: a JSON API response, a static HTML response, or a dynamically-rendered HTML response. Code examples ahead.</p>
 	<blockquote>
-	  <p>Now, if all you're creating is a traditional server-side application or simply an API backend, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/auth/docs/learn/server-side-routing">here</a> are server-side routing examples.</p>
+	  <p>Now, if all you're creating is a traditional server-side application or simply an API backend, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="\cloud\auth\docs\learn\server-side-routing">here</a> are server-side routing examples.</p>
 	</blockquote>
 	<h4 id="the-client-directory">The <code>/client</code> Directory</h4>
 	<p>If you intend to have JavaScript files that handle routing (e.g navigation requests) in the browser, place them in this directory.</p>
@@ -90,7 +90,7 @@ cd webflo-app</code></pre>
 	<p>As we will see, being able to either return an in-browser response data or act as a gateway for the request/response flow is a powerful way to create fast and smooth client-side experiences.</p>
 	<p>At this point, with just three files - <code>/public/index.html</code>, <code>/server/index.js</code> and <code>/client/index.js</code> - we can already have either a static site, an API backend, a server-side app, a client-side app, or a combination of all of these. Code examples ahead.</p>
 	<blockquote>
-	  <p>Okay, if all you're creating is a client-side application, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/auth/docs/learn/client-side-routing">here</a> are client-side routing examples.</p>
+	  <p>Okay, if all you're creating is a client-side application, your work ends in this directory! Routing is covered in <a href="#routing">the next section</a>. And <a href="\cloud\auth\docs\learn\client-side-routing">here</a> are client-side routing examples.</p>
 	</blockquote>
 	<h4 id="the-worker-directory">The <code>/worker</code> Directory</h4>
 	<p>What happens here is quite advanced and you can ignore this until you really need it. But if you already know about application Service Workers and intend to enhance your app's client-side experience with Service Workers, Webflo lets you implement routing at the service-worker level, and you place your route handlers in this directory.</p>
@@ -115,7 +115,7 @@ cd webflo-app</code></pre>
 	</ul>
 	<p>Woohoo! With a combition of just four files - <code>/public/index.html</code>, <code>/server/index.js</code>, <code>/client/index.js</code> and <code>/worker/index.js</code> - we can already have any type of application with great offline experiences.</p>
 	<blockquote>
-	  <p>It is even just possible to build an entire app out of the <code>/worker</code> directory alone, if all you're building is a client-side, offline-capable app! Routing is covered in <a href="#routing">the next section</a>. And <a href="/cloud/auth/docs/learn/worker-level-routing">here</a> are worker-level routing examples. Service Workers are covered in detail in <a href="/cloud/auth/docs/learn/progressive-web-apps">the Progressive Web Apps (PWA) tutorial</a>.</p>
+	  <p>It is even just possible to build an entire app out of the <code>/worker</code> directory alone, if all you're building is a client-side, offline-capable app! Routing is covered in <a href="#routing">the next section</a>. And <a href="\cloud\auth\docs\learn\worker-level-routing">here</a> are worker-level routing examples. Service Workers are covered in detail in <a href="\cloud\auth\docs\learn\progressive-web-apps">the Progressive Web Apps (PWA) tutorial</a>.</p>
 	</blockquote>
 	<h3 id="routing">Routing</h3>
 	<p>As seen, Webflo lets us follow the traditional filesystem layout for a project. The concept of routing is simply drawn on this layout. It is all about the <em>request/response flow and what happens along the path it takes</em>. Webflo's <em>skillfulness with flows</em> is probabbly the best thing about its name.</p>

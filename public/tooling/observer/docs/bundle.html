@@ -1,19 +1,6 @@
 
-<div exportgroup="README.md">
-	<h1 id="observer-api-documentation">Observer API Documentation</h1>
-	<p>Welcome to the Observer API documentation. We hope you find it easy to understand and navigate.</p>
-	<p>If you have questions about anything related to the Observer API, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
-	<h2 id="explore-the-docs">Explore the Docs</h2>
-</div>
 <template name="api">
-    <div exportgroup="README.md">
-    	<h1 id="api-reference">API Reference</h1>
-    	<p>Explore the API Reference.</p>
-    </div>
     <template name="actions">
-        <div exportgroup="README.md">
-        	<h1 id="actions">Actions</h1>
-        </div>
         <template name="defineProperty">
             <div exportgroup="README.md">
             	<h1 id="defineproperty"><code>.defineProperty()</code></h1>
@@ -30,12 +17,12 @@ Observer<span class="token punctuation">.</span><span class="token function">def
             	<li><strong><code>obj:                 Object|Array</code></strong> - An object or array.</li>
             	<li><strong><code>propertyName:        String</code></strong> - The property to define. If multiple, all listed properties will be defined with the same <em>propertyDescriptor</em>.</li>
             	<li><strong><code>propertyDescriptor:  Object</code></strong> - The property descriptor as specified for <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty"><code>Reflect.defineProperty()</code></a>.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>.</li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>.</li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
             	<li><strong>Boolean</strong> - This is either <code>true</code> or <code>false</code> on the outcome of the operation.</li>
-            	<li><strong>Event</strong> - The returned <a href="/tooling/observer/docs/core/Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
+            	<li><strong>Event</strong> - The returned <a href="\tooling\observer\docs\core\Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
             	</ul>
             	<h2 id="usage">Usage</h2>
             	<p><em>Case 1 - Define a specific property:</em></p>
@@ -48,10 +35,10 @@ Observer<span class="token punctuation">.</span><span class="token function">def
             	<p><code>Observer.defineProperty()</code> returns a <em>Boolean</em> value by default, and can, therefore, be used as the "defineProperty" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">defineProperty</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>defineProperty<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">defineProperty</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>defineProperty<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p><em>Define</em> operations will now be forwarded to <code>Observer.defineProperty()</code>, triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> and <a href="/tooling/observer/docs/core/overview#observe"><em>observers</em></a> that may be bound to the object.</p>
+            	<p><em>Define</em> operations will now be forwarded to <code>Observer.defineProperty()</code>, triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> and <a href="\tooling\observer\docs\core\overview#observe"><em>observers</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Reflect<span class="token punctuation">.</span><span class="token function">defineProperty</span><span class="token punctuation">(</span>_obj<span class="token punctuation">,</span> <span class="token string">'fruit'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">value</span><span class="token operator">:</span><span class="token string">'apple'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerdefineproperty">Intercepting <code>Observer.defineProperty()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.defineProperty()</code>. During a "defineProperty" operation, interceptors will receive an event object containing the property name being defined and the descriptor object.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.defineProperty()</code>. During a "defineProperty" operation, interceptors will receive an event object containing the property name being defined and the descriptor object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'defineProperty'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// What we received...</span>
@@ -84,8 +71,8 @@ Observer<span class="token punctuation">.</span><span class="token function">def
             	<p>The above should trigger our interceptor twice with <code>action.related</code> being <code>['fruit', 'brand']</code> each time.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -104,12 +91,12 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	<ul>
             	<li><strong><code>obj:                 Object|Array</code></strong> - An object or array.</li>
             	<li><strong><code>propertyName:        String</code></strong> - The property to delete.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>.</li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>.</li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
             	<li><strong>Boolean</strong> - This is either <code>true</code> or <code>false</code> on the outcome of the operation.</li>
-            	<li><strong>Event</strong> - The returned <a href="/tooling/observer/docs/core/Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
+            	<li><strong>Event</strong> - The returned <a href="\tooling\observer\docs\core\Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
             	</ul>
             	<h2 id="usage">Usage</h2>
             	<p><em>Case 1 - Delete a specific property:</em></p>
@@ -126,11 +113,11 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	<p><code>Observer.deleteProperty()</code> returns a <em>Boolean</em> value by default, and can, therefore, be used as the "deleteProperty" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">deleteProperty</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>deleteProperty<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">deleteProperty</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>deleteProperty<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>Delete operations will now be forwarded to <code>Observer.deleteProperty()</code>, triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> and <a href="/tooling/observer/docs/core/overview#observe"><em>observers</em></a> that may be bound to the object.</p>
+            	<p>Delete operations will now be forwarded to <code>Observer.deleteProperty()</code>, triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> and <a href="\tooling\observer\docs\core\overview#observe"><em>observers</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">delete</span> _obj<span class="token punctuation">.</span>fruit<span class="token punctuation">;</span>
 <span class="token keyword">delete</span> _arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerdeleteproperty">Intercepting <code>Observer.deleteProperty()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.deleteProperty()</code>. During a "deleteProperty" operation, interceptors will receive an event object containing the property name being deleted.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.deleteProperty()</code>. During a "deleteProperty" operation, interceptors will receive an event object containing the property name being deleted.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'deleteProperty'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// What we received...</span>
@@ -159,8 +146,8 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	<p>The above should trigger our interceptor twice with <code>action.related</code> being <code>['fruit', 'brand']</code> in each case.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -180,7 +167,7 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - An object or array.</li>
             	<li><strong><code>propertyName:    String</code></strong> - The property to read.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.get()</code>.</em></li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.get()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -204,21 +191,21 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	<p><code>Observer.get()</code> can be used as the "get" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">get</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>get <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">get</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>get <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p><em>Get</em> operations will now be forwarded to <code>Observer.get()</code>, triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
+            	<p><em>Get</em> operations will now be forwarded to <code>Observer.get()</code>, triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> fruit <span class="token operator">=</span> _obj<span class="token punctuation">.</span>fruit<span class="token punctuation">;</span>
 <span class="token keyword">let</span> value <span class="token operator">=</span> _arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="usage-with-property-getters">Usage with Property Getters</h2>
             	<p>It is possible to implement <em>property getters</em> that use <code>Observer.get()</code> behind the scene. This gives us the benefit of using JavaScript's accessor syntax reactively.</p>
-            	<p>This is automatically done by the <a href="/tooling/observer/docs/api/actors/accessorize"><code>Observer.accessorize()</code></a> function.</p>
+            	<p>This is automatically done by the <a href="\tooling\observer\docs\api\actors\accessorize"><code>Observer.accessorize()</code></a> function.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Virtualize a property or multiple properties</span>
 Observer<span class="token punctuation">.</span><span class="token function">accessorize</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'fruit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 Observer<span class="token punctuation">.</span><span class="token function">accessorize</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'fruit'</span><span class="token punctuation">,</span> <span class="token string">'brand'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>Now accessing the properties will trigger any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
+            	<p>Now accessing the properties will trigger any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Now we can do without Observer.get</span>
 <span class="token keyword">let</span> fruit <span class="token operator">=</span> obj<span class="token punctuation">.</span>fruit<span class="token punctuation">;</span>
 <span class="token keyword">let</span> brand <span class="token operator">=</span> obj<span class="token punctuation">.</span>brand<span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerget">Intercepting <code>Observer.get()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.get()</code>. During a "deleteProperty" operation, interceptors will receive an event object containing the property name being accessed.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.get()</code>. During a "deleteProperty" operation, interceptors will receive an event object containing the property name being accessed.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'get'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// What we received...</span>
@@ -241,8 +228,8 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	<p>The above should trigger our interceptor twice with <code>action.related</code> being <code>[ 'fruit', 'brand' ]</code> each time.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -257,7 +244,7 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - An object or array.</li>
             	<li><strong><code>propertyName:    String</code></strong> - The property to assert.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.has()</code>.</em></li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.has()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -275,11 +262,11 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	<p><code>Observer.has()</code> can be used as the "has" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">has</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>has <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">has</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>has <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p><em>Has</em> operations will now be forwarded to <code>Observer.has()</code>, triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
+            	<p><em>Has</em> operations will now be forwarded to <code>Observer.has()</code>, triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> exists <span class="token operator">=</span> <span class="token string">'fruit'</span> <span class="token keyword">in</span> _obj<span class="token punctuation">;</span>
 <span class="token keyword">let</span> exists <span class="token operator">=</span> <span class="token string">'1'</span> <span class="token keyword">in</span> _arr<span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerhas">Intercepting <code>Observer.has()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.has()</code>. During a "has" operation, interceptors will receive an event object containing the property name being asserted.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.has()</code>. During a "has" operation, interceptors will receive an event object containing the property name being asserted.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'has'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// What we received...</span>
@@ -291,8 +278,8 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> exists <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'fruit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -306,7 +293,7 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	<p><strong>Parameters</strong></p>
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - an object or array.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.ownKeys()</code>.</em></li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.ownKeys()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -322,11 +309,11 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	<p><code>Observer.ownKeys()</code> can be used as the "ownKeys" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ownKeys</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>ownKeys <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">ownKeys</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>ownKeys <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p><em>Show keys</em> operations will now be forwarded to <code>Observer.ownKeys()</code> , triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
+            	<p><em>Show keys</em> operations will now be forwarded to <code>Observer.ownKeys()</code> , triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> keys <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>_obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> keys <span class="token operator">=</span> Reflect<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>_arr<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerownkeys">Intercepting <code>Observer.ownKeys()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.ownKeys()</code>.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.ownKeys()</code>.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'ownKeys'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// The read operation</span>
@@ -335,11 +322,14 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> ownKeys <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">ownKeys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
+        <div exportgroup="README.md">
+        	<h1 id="actions">Actions</h1>
+        </div>
         <template name="set">
             <div exportgroup="README.md">
             	<h1 id="set"><code>.set()</code></h1>
@@ -360,12 +350,12 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	<li><strong><code>propertyNames:   Array</code></strong> - A list of properties to create or update. <em>These will be assigned the same value.</em></li>
             	<li><strong><code>value:           Any</code></strong> - The value to set.</li>
             	<li><strong><code>keyValueMap:     Object</code></strong> - An object of key/value pairs.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>.</li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. *See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>.</li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
             	<li><strong>Boolean</strong> - This is either <code>true</code> or <code>false</code> on the outcome of the operation.</li>
-            	<li><strong>Event</strong> - The returned <a href="/tooling/observer/docs/core/Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
+            	<li><strong>Event</strong> - The returned <a href="\tooling\observer\docs\core\Event">Event</a> object for the operation when the <code>params.eventTypeReturn</code> is set to <code>true</code>. <em>Learn more at <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
             	</ul>
             	<h2 id="usage">Usage</h2>
             	<p><em>Case 1 - Setting a specific property:</em></p>
@@ -394,21 +384,21 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	<p><code>Observer.set()</code> returns a <em>Boolean</em> value for <em>set</em> operations and can, therefore, be used as the "set" handler in Proxy traps.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> _obj <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">set</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>set<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">let</span> _arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Proxy</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">set</span><span class="token operator">:</span> Observer<span class="token punctuation">.</span>set<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>Assignment operations will now be forwarded to <code>Observer.set()</code> and triggering any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> and <a href="/tooling/observer/docs/core/overview#observe"><em>observers</em></a> that may be bound to the object.</p>
+            	<p>Assignment operations will now be forwarded to <code>Observer.set()</code> and triggering any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> and <a href="\tooling\observer\docs\core\overview#observe"><em>observers</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">_obj<span class="token punctuation">.</span>fruit <span class="token operator">=</span> <span class="token string">'apple'</span><span class="token punctuation">;</span>
 _arr<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'Item 3'</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="usage-with-property-setters">Usage with Property Setters</h2>
             	<p>It is possible to implement <em>property setters</em> that use <code>Observer.set()</code> behind the scene. This gives us the benefit of using JavaScript's assignment syntax reactively.</p>
-            	<p>This is automatically done by the <a href="/tooling/observer/docs/api/actors/accessorize"><code>Observer.accessorize()</code></a> method.</p>
+            	<p>This is automatically done by the <a href="\tooling\observer\docs\api\actors\accessorize"><code>Observer.accessorize()</code></a> method.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Virtualize a property or multiple properties</span>
 Observer<span class="token punctuation">.</span><span class="token function">accessorize</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'fruit'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 Observer<span class="token punctuation">.</span><span class="token function">accessorize</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token punctuation">[</span> <span class="token string">'fruit'</span><span class="token punctuation">,</span> <span class="token string">'brand'</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>Now assigning on the properties will trigger any <a href="/tooling/observer/docs/core/overview#intercept"><em>interceptors</em></a> and <a href="/tooling/observer/docs/core/overview#observer"><em>observers</em></a> that may be bound to the object.</p>
+            	<p>Now assigning on the properties will trigger any <a href="\tooling\observer\docs\core\overview#intercept"><em>interceptors</em></a> and <a href="\tooling\observer\docs\core\overview#observer"><em>observers</em></a> that may be bound to the object.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Now we can do without Observer.set</span>
 obj<span class="token punctuation">.</span>fruit <span class="token operator">=</span> <span class="token string">'apple'</span><span class="token punctuation">;</span>
 obj<span class="token punctuation">.</span>brand <span class="token operator">=</span> <span class="token string">'apple'</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="intercepting-observerset">Intercepting <code>Observer.set()</code></h2>
-            	<p>Using <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.set()</code>. During a "set" operation, interceptors will receive an event object containing the property name being set and the assignable value.</p>
+            	<p>Using <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>, it is possible to intercept calls to <code>Observer.set()</code>. During a "set" operation, interceptors will receive an event object containing the property name being set and the assignable value.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'set'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
 
     <span class="token comment">// What we received...</span>
@@ -438,16 +428,13 @@ obj<span class="token punctuation">.</span>brand <span class="token operator">=<
             	<p>The above should trigger our interceptor twice with <code>action.related</code> being <code>[ 'fruit', 'brand' ]</code> each time.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
     </template>
     <template name="actors">
-        <div exportgroup="README.md">
-        	<h1 id="actors">Actors</h1>
-        </div>
         <template name="accessorize">
             <div exportgroup="README.md">
             	<h1 id="accessorize"><code>.accessorize()</code></h1>
@@ -500,21 +487,21 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">obj<span class="token punctuation">.</span>fruit <span class="token operator">=</span> <span class="token string">'Orange'</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/actors/unaccessorize"><code>Observer.unaccessorize()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\unaccessorize"><code>Observer.unaccessorize()</code></a></li>
             	</ul>
             </div>
         </template>
         <template name="proxy">
             <div exportgroup="README.md">
             	<h1 id="proxy"><code>.proxy()</code></h1>
-            	<p>This function is used to wrap an object or array in a reactive proxy that forwards all operations to the appropriate <a href="/tooling/observer/docs/api/reactions/interceptors"><em>interceptors</em></a>, and announces them to <a href="/tooling/observer/docs/api/reactions/observe"><em>observers</em></a>.</p>
+            	<p>This function is used to wrap an object or array in a reactive proxy that forwards all operations to the appropriate <a href="\tooling\observer\docs\api\reactions\interceptors"><em>interceptors</em></a>, and announces them to <a href="\tooling\observer\docs\api\reactions\observe"><em>observers</em></a>.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Wrap an object</span>
 <span class="token keyword">let</span> _obj <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">proxy</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span><span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - an object or array.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.proxy()</code>.</em></li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.proxy()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -533,11 +520,14 @@ Observer<span class="token punctuation">.</span><span class="token function">pro
             	<p>The above operation above will notify our observer <em>three times</em> each for a <em>set</em> operation on the properties <code>0</code>, <code>1</code>, <code>length</code>.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/actors/unproxy"><code>Observer.unproxy()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/actors/accessorize"><code>Observer.accessorize()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\unproxy"><code>Observer.unproxy()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\accessorize"><code>Observer.accessorize()</code></a></li>
             	</ul>
             </div>
         </template>
+        <div exportgroup="README.md">
+        	<h1 id="actors">Actors</h1>
+        </div>
         <template name="unaccessorize">
             <div exportgroup="README.md">
             	<h1 id="unaccessorize"><code>.unaccessorize()</code></h1>
@@ -555,7 +545,7 @@ Observer<span class="token punctuation">.</span><span class="token function">pro
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - an object or array.</li>
             	<li><strong><code>propertyName:    String</code></strong> - the property to <em>unaccessorize</em>.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.unaccessorize()</code>.</em></li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.unaccessorize()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -581,21 +571,21 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">obj<span class="token punctuation">.</span>preferences <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/actors/accessorize"><code>Observer.accessorize()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\accessorize"><code>Observer.accessorize()</code></a></li>
             	</ul>
             </div>
         </template>
         <template name="unproxy">
             <div exportgroup="README.md">
             	<h1 id="unproxy"><code>.unproxy()</code></h1>
-            	<p>This function is used to obtain the original object or array of the current proxy from <a href="/tooling/observer/docs/api/actors/proxy"><code>Observer.proxy()</code></a>.</p>
+            	<p>This function is used to obtain the original object or array of the current proxy from <a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Unwrap an object</span>
 <span class="token keyword">let</span> obj <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">unproxy</span><span class="token punctuation">(</span>_obj<span class="token punctuation">[</span><span class="token punctuation">,</span> params <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
-            	<li><strong><code>_obj: Proxy</code></strong> - a Proxy object generated by <a href="/tooling/observer/docs/api/actors/proxy"><code>Observer.proxy()</code></a>.</li>
-            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.unproxy()</code>.</em></li>
+            	<li><strong><code>_obj: Proxy</code></strong> - a Proxy object generated by <a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a>.</li>
+            	<li><strong><code>params:          OperatorParams</code></strong> - Additional parameters for the operation. <em>See <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>. Note that the <code>params.eventTypeReturn</code> parameter cannot be used with <code>Observer.unproxy()</code>.</em></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<ul>
@@ -609,25 +599,22 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">unproxy</span><span class="token punctuation">(</span>_obj<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/actors/proxy"><code>Observer.proxy()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a></li>
             	</ul>
             </div>
         </template>
     </template>
     <template name="connectors">
-        <div exportgroup="README.md">
-        	<h1 id="connectors">Connectors</h1>
-        </div>
         <template name="build">
             <div exportgroup="README.md">
             	<h1 id="build"><code>.build()</code></h1>
-            	<p>This function is used to explicitly create event links between a parent object and each of its children objects such that events happening at <em>child</em> level can bubble up to <em>parent</em> level.  Event links are, under the hood, created using the <a href="/tooling/observer/docs/api/connectors/link"><code>Observer.link()</code></a> method.</p>
+            	<p>This function is used to explicitly create event links between a parent object and each of its children objects such that events happening at <em>child</em> level can bubble up to <em>parent</em> level.  Event links are, under the hood, created using the <a href="\tooling\observer\docs\api\connectors\link"><code>Observer.link()</code></a> method.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> paths <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">,</span> subtree <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
             	<li><strong><code>obj:              Object|Array</code></strong> - An object or array.</li>
-            	<li><strong><code>paths:              Array</code></strong> - An array of paths as used with <a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a>.</li>
+            	<li><strong><code>paths:              Array</code></strong> - An array of paths as used with <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a>.</li>
             	<li><strong><code>subtree:              Boolean</code></strong> - Whether or not to build recursively down the tree.</li>
             	</ul>
             	<p><strong>Return Value</strong></p>
@@ -659,11 +646,11 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             	<p>Events happening elsewhere will not bubble up</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>tree<span class="token punctuation">.</span>level1_b<span class="token punctuation">.</span>level2<span class="token punctuation">,</span> <span class="token string">'subprop1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="notes">Notes</h2>
-            	<p>See <a href="/tooling/observer/docs/api/connectors/link#notes">additional notes at <code>Observer.link()</code></a>.</p>
+            	<p>See <a href="\tooling\observer\docs\api\connectors\link#notes">additional notes at <code>Observer.link()</code></a>.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/connectors/link"><code>Observer.link()</code></a></li>
-            	<li><a href="/tooling/observer/docs/api/connectors/unlink"><code>Observer.unlink()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\connectors\link"><code>Observer.link()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\connectors\unlink"><code>Observer.unlink()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -693,7 +680,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	<p><em>An operation on child that bubbles up to parent, with event path being <code>[ 'prop1', 'subprop1' ]</code>.</em></p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>child<span class="token punctuation">,</span> <span class="token string">'subprop1'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="notes">Notes</h2>
-            	<p>Observer's mutation methods, like <a href="/tooling/observer/docs/api/actions/set"><code>Observer.set()</code></a>, already automatically manage event links between any parent and child objects such that <code>Observer.link()</code> and <code>Observer.unlink()</code> need not be explicitly used.</p>
+            	<p>Observer's mutation methods, like <a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, already automatically manage event links between any parent and child objects such that <code>Observer.link()</code> and <code>Observer.unlink()</code> need not be explicitly used.</p>
             	<ul>
             	<li><p>Any parent and child objects are automatically linked by the <code>Observer.set()</code> and <code>Observer.defineProperty()</code> methods.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> parent <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -710,10 +697,13 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	<p>The <code>Observer.link()</code> and <code>Observer.unlink()</code> methods are, therefore, only good for explicitly managing the event linking between two objects that are not actually hierarchically related or whose relationship was established (or broken) outside of Observer's mutation methods.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/connectors/unlink"><code>Observer.unlink()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\connectors\unlink"><code>Observer.unlink()</code></a></li>
             	</ul>
             </div>
         </template>
+        <div exportgroup="README.md">
+        	<h1 id="connectors">Connectors</h1>
+        </div>
         <template name="unlink">
             <div exportgroup="README.md">
             	<h1 id="unlink"><code>.unlink()</code></h1>
@@ -742,10 +732,10 @@ Observer<span class="token punctuation">.</span><span class="token function">set
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">unlink</span><span class="token punctuation">(</span>parent<span class="token punctuation">,</span> <span class="token string">'prop1'</span><span class="token punctuation">,</span> parent<span class="token punctuation">.</span>prop1<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p>Now subsequent operations on child will no longer bubble up to parent.</p>
             	<h2 id="notes">Notes</h2>
-            	<p>See <a href="/tooling/observer/docs/api/connectors/link#notes">additional notes at <code>Observer.link()</code></a>.</p>
+            	<p>See <a href="\tooling\observer\docs\api\connectors\link#notes">additional notes at <code>Observer.link()</code></a>.</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/connectors/link"><code>Observer.link()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\connectors\link"><code>Observer.link()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -754,7 +744,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         <template name="Action">
             <div exportgroup="README.md">
             	<h1 id="class-action-"><code>class Action {}</code></h1>
-            	<p>Instances of this class represent an action record. They are internally created by <a href="/tooling/observer/docs/api/actions">actions</a> (e.g. <a href="/tooling/observer/docs/api/actions/set"><code>Observer.set()</code></a>, <a href="/tooling/observer/docs/api/actions/get"><code>Observer.get()</code></a>, and <a href="/tooling/observer/docs/api/actions/ownKeys"><code>Observer.ownKeys()</code></a>, etc) and passed to <a href="/tooling/observer/docs/api/reactions/intercept">interceptors</a>.</p>
+            	<p>Instances of this class represent an action record. They are internally created by <a href="\tooling\observer\docs\api\actions">actions</a> (e.g. <a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\get"><code>Observer.get()</code></a>, and <a href="\tooling\observer\docs\api\actions\ownKeys"><code>Observer.ownKeys()</code></a>, etc) and passed to <a href="\tooling\observer\docs\api\reactions\intercept">interceptors</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> action <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Action</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> details<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
@@ -773,7 +763,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         <template name="Event">
             <div exportgroup="README.md">
             	<h1 id="class-event-"><code>class Event {}</code></h1>
-            	<p>Instances of this class represent a mutation event. They are internally created by mutators (<a href="/tooling/observer/docs/api/actions/set"><code>Observer.set()</code></a>, <a href="/tooling/observer/docs/api/actions/defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="/tooling/observer/docs/api/actions/deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="/tooling/observer/docs/api/reactions/observe">observers</a>.</p>
+            	<p>Instances of this class represent a mutation event. They are internally created by mutators (<a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="\tooling\observer\docs\api\actions\deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="\tooling\observer\docs\api\reactions\observe">observers</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> event <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Event</span><span class="token punctuation">(</span>target<span class="token punctuation">[</span><span class="token punctuation">,</span> cancellable <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
@@ -806,11 +796,11 @@ Observer<span class="token punctuation">.</span><span class="token function">set
     <span class="token comment">// Or event.respondWith(false);</span>
     <span class="token comment">// Or, return false;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>The initiator of the operation would need to have flagged the event as <em>cancellable</em> for the above to be honoured. (Learn more about <code>params.cancellable</code> at <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>.)</p>
+            	<p>The initiator of the operation would need to have flagged the event as <em>cancellable</em> for the above to be honoured. (Learn more about <code>params.cancellable</code> at <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>.)</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> propertyName<span class="token punctuation">,</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">cancellable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-            	<p>The initiator may also obtain the <code>Event</code> object to determine the state of the event. Notice the <code>params.eventTypeReturn</code> parameter below that tells <code>Observer.deleteProperty()</code> to return the <code>Event</code> object for use. (Learn more about <code>params.eventTypeReturn</code> at <a href="/tooling/observer/docs/api/core/OperatorParams">OperatorParams</a>.)</p>
+            	<p>The initiator may also obtain the <code>Event</code> object to determine the state of the event. Notice the <code>params.eventTypeReturn</code> parameter below that tells <code>Observer.deleteProperty()</code> to return the <code>Event</code> object for use. (Learn more about <code>params.eventTypeReturn</code> at <a href="\tooling\observer\docs\api\core\OperatorParams">OperatorParams</a>.)</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> event <span class="token operator">=</span> Observer<span class="token punctuation">.</span><span class="token function">deleteProperty</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> propertyName<span class="token punctuation">,</span> <span class="token punctuation">{</span>
     <span class="token literal-property property">cancellable</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
     <span class="token literal-property property">eventTypeReturn</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
@@ -849,7 +839,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         <template name="Mutation">
             <div exportgroup="README.md">
             	<h1 id="class-mutation-"><code>class Mutation {}</code></h1>
-            	<p>Instances of this class represent a mutation record. They are internally created by mutators (<a href="/tooling/observer/docs/api/actions/set"><code>Observer.set()</code></a>, <a href="/tooling/observer/docs/api/actions/defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="/tooling/observer/docs/api/actions/deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="/tooling/observer/docs/api/reactions/observe">observers</a>.</p>
+            	<p>Instances of this class represent a mutation record. They are internally created by mutators (<a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="\tooling\observer\docs\api\actions\deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="\tooling\observer\docs\api\reactions\observe">observers</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> mutation <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mutation</span><span class="token punctuation">(</span>target<span class="token punctuation">,</span> details<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p><strong>Parameters</strong></p>
@@ -871,17 +861,17 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         <template name="OperatorParams">
             <div exportgroup="README.md">
             	<h1 id="operatorparams-"><code>OperatorParams {}</code></h1>
-            	<p>This is an object of additional parameters that may be passed with any <a href="/tooling/observer/docs/api/actions">action</a>.</p>
+            	<p>This is an object of additional parameters that may be passed with any <a href="\tooling\observer\docs\api\actions">action</a>.</p>
             	<h2 id="properties">Properties</h2>
             	<p><em>Properties that can be passed by any action:</em></p>
             	<ul>
             	<li><strong><code>namespace:   String</code></strong> - (Experimental) A <em>namespace</em> under which to perform the action.</li>
             	</ul>
-            	<p><em>Properties that can be passed by mutators (<a href="/tooling/observer/docs/api/actions/set"><code>Observer.set()</code></a>, <a href="/tooling/observer/docs/api/actions/defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="/tooling/observer/docs/api/actions/deleteProperty"><code>Observer.deleteProperty()</code></a>)</em></p>
+            	<p><em>Properties that can be passed by mutators (<a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="\tooling\observer\docs\api\actions\deleteProperty"><code>Observer.deleteProperty()</code></a>)</em></p>
             	<ul>
             	<li><strong><code>detail:   Any</code></strong> - An optional value to pass to observers. <em>See <a href="#passing-a-value-to-observers">Passing a Value to Observers</a> below.</em></li>
-            	<li><strong><code>eventTypeReturn:   Boolean</code></strong> - Whether to return the <em>Event Object</em> for the operation. <em>Learn more at <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
-            	<li><strong><code>cancellable:      Boolean</code></strong> - Whether the default taken after this operation is cancellable by observers. <em>Learn more at <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
+            	<li><strong><code>eventTypeReturn:   Boolean</code></strong> - Whether to return the <em>Event Object</em> for the operation. <em>Learn more at <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
+            	<li><strong><code>cancellable:      Boolean</code></strong> - Whether the default taken after this operation is cancellable by observers. <em>Learn more at <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">Negotiating With Operators</a>.</em></li>
             	</ul>
             	<h2 id="passing-a-value-to-observers">Passing a Value to Observers</h2>
             	<p>The <code>params.detail</code> property can be used by mutators to pass a value specifically to observers that might be responding to an operation. Any type of value can be passed.</p>
@@ -899,13 +889,10 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         </div>
     </template>
     <template name="reactions">
-        <div exportgroup="README.md">
-        	<h1 id="reactions">Reactions</h1>
-        </div>
         <template name="closure">
             <div exportgroup="README.md">
             	<h1 id="closure"><code>.closure()</code></h1>
-            	<p>This method is used to create an <em>observer-aware</em> context under which to execute code that could potentially mutate an object or array. Under this context, all mutations made to the object will be detected and <a href="/tooling/observer/docs/concepts#observers"><em>observers</em></a> that may be bound to the object will be notified.</p>
+            	<p>This method is used to create an <em>observer-aware</em> context under which to execute code that could potentially mutate an object or array. Under this context, all mutations made to the object will be detected and <a href="\tooling\observer\docs\concepts#observers"><em>observers</em></a> that may be bound to the object will be notified.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Establish a closure on one or more objects</span>
 Observer<span class="token punctuation">.</span><span class="token function">closure</span><span class="token punctuation">(</span>callback<span class="token punctuation">,</span> object<span class="token punctuation">[</span><span class="token punctuation">,</span> object<span class="token punctuation">[</span><span class="token punctuation">,</span> … <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
@@ -942,10 +929,10 @@ Observer<span class="token punctuation">.</span><span class="token function">clo
     arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> arr<span class="token punctuation">,</span> obj<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<p>The operation above will notify our observer <em>once</em> for a <em>set</em> operation on the properties <code>0</code>, <code>1</code>, <code>2</code>, <code>length</code> of the array - which is what is given in <code>mutation.target</code>.</p>
-            	<p>Notice that changes are detected and reported by <em>observers</em> after the closure runs. These changes are detected by comparing the state of the objects before and after the transaction. Intermediate changes, therefore, do not get caught. Also, <em><a href="/tooling/observer/docs/overview#interceptors">interceptors</a></em> that may have been bound to the objects don't get fired. (Compare <a href="/tooling/observer/docs/api/actors/proxy"><code>Observer.proxy()</code></a>.)</p>
+            	<p>Notice that changes are detected and reported by <em>observers</em> after the closure runs. These changes are detected by comparing the state of the objects before and after the transaction. Intermediate changes, therefore, do not get caught. Also, <em><a href="\tooling\observer\docs\overview#interceptors">interceptors</a></em> that may have been bound to the objects don't get fired. (Compare <a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a>.)</p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/actors/proxy"><code>Observer.proxy()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -968,7 +955,7 @@ Observer<span class="token punctuation">.</span><span class="token function">int
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
-            	<li><strong><code>action:       Action</code></strong> - An <a href="/tooling/observer/docs/api/core/Action">Action</a> object containing details of the ongoing operation.</li>
+            	<li><strong><code>action:       Action</code></strong> - An <a href="\tooling\observer\docs\api\core\Action">Action</a> object containing details of the ongoing operation.</li>
             	<li><strong><code>previous:    Any</code></strong> - The value passed by a previous handler in the list, if any. <code>undefined</code> if none.</li>
             	<li><strong><code>next:        Function</code></strong> - A function that calls the next handler in the list, if any.</li></ul>
             	<p><strong>Return Value</strong></p>
@@ -980,7 +967,7 @@ Observer<span class="token punctuation">.</span><span class="token function">int
             	<p><strong>Return Value</strong></p>
             	<p>An <a href="#the-returned-interceptor-instance"><em>Interceptor</em> instance</a>.</p>
             	<h2 id="usage">Usage</h2>
-            	<p>Interception examples are documented alongside each <a href="/tooling/observer/docs/api/actions">action type</a>. Below are additional examples.</p>
+            	<p>Interception examples are documented alongside each <a href="\tooling\observer\docs\api\actions">action type</a>. Below are additional examples.</p>
             	<p><em>Case 1 - An imaginary product, with a computed <code>likes</code> property - a record of "user likes" -  calculated ondemand.</em></p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> product <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Product Name'</span><span class="token punctuation">,</span> <span class="token literal-property property">likes</span><span class="token operator">:</span> <span class="token keyword">null</span> <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
             	<p>Below, we're intercepting the <em>get</em> operation that accesses this property and doing the computation on the first access.</p>
@@ -1014,7 +1001,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<h2 id="handler-return-value">Handler Return Value</h2>
             	<p>The return value expected of a handler function depends on the operation being intercepted. For mutation operations - <code>set</code>, <code>defineProperty</code>, <code>deleteProperty</code> - a <em>Boolean</em> <code>true/false</code> is what is expected as a return value to indicate the outcome of the operation. For all other operations - <code>keys</code>, <code>has</code>, <code>get</code>, etc - the return value must correspond to the result defined for the operation. For example, the return value must be an array for <code>keys</code>, a Boolean for <code>has</code>, any value for <code>get</code>, and so on.</p>
             	<h2 id="tagging-an-interceptor">Tagging an Interceptor</h2>
-            	<p>The <code>params.tags</code> parameter can be used to tag an interceptor. Tags are an <em>array</em> of values (<em>strings</em>, <em>numbers</em>, <em>objects</em>, etc) that can be used to uniquely identify the interceptor for later retrieval. <em>See <a href="/tooling/observer/docs/api/reactions/unintercept"><code>Observer.unintercept()</code></a>.</em></p>
+            	<p>The <code>params.tags</code> parameter can be used to tag an interceptor. Tags are an <em>array</em> of values (<em>strings</em>, <em>numbers</em>, <em>objects</em>, etc) that can be used to uniquely identify the interceptor for later retrieval. <em>See <a href="\tooling\observer\docs\api\reactions\unintercept"><code>Observer.unintercept()</code></a>.</em></p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> handler<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">tags</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'#tag'</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="cascading-multiple-interceptors">Cascading Multiple Interceptors</h2>
             	<p>Multiple interceptors can be applied to an object. Each interceptor will forward events to the next.</p>
@@ -1041,7 +1028,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">instance<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/unintercept"><code>Observer.unintercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\unintercept"><code>Observer.unintercept()</code></a></li>
             	</ul>
             </div>
         </template>
@@ -1066,10 +1053,10 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mutations<span class="token punctuation">,</span> event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
-            	<li><strong><code>mutations: Array</code></strong> - An array of <em><a href="/tooling/observer/docs/api/core/Mutation">Mutation</a> objects</em> that each contains the details of a change.</li>
-            	<li><strong><code>event: Event</code></strong> - A <em><a href="/tooling/observer/docs/api/core/Event">Event</a></em> object.</li></ul>
+            	<li><strong><code>mutations: Array</code></strong> - An array of <em><a href="\tooling\observer\docs\api\core\Mutation">Mutation</a> objects</em> that each contains the details of a change.</li>
+            	<li><strong><code>event: Event</code></strong> - A <em><a href="\tooling\observer\docs\api\core\Event">Event</a></em> object.</li></ul>
             	<p><strong>Return Value</strong></p>
-            	<p><em>See the section on <a href="/tooling/observer/docs/api/core/Event#negotiating-with-actions">Negotiating With Operators</a>.</em></p></li>
+            	<p><em>See the section on <a href="\tooling\observer\docs\api\core\Event#negotiating-with-actions">Negotiating With Operators</a>.</em></p></li>
             	<li><p><strong><code>params:      Object</code></strong> - Additional parameters for the method.</p>
             	<ul>
             	<li><strong><code>type:    Boolean</code></strong> - The mutation type to observe. <em>See <a href="#specifying-a-mutation-type">Specifying a Mutation Type</a> below</em>.</li>
@@ -1135,8 +1122,8 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mutation<span class="token punctuation">,</span> event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
-            	<li><strong><code>mutation: Mutation</code></strong> - A <em><a href="/tooling/observer/docs/api/core/Mutation">Mutation</a> object</em> that contains the details of a change.</li>
-            	<li><strong><code>event: Event</code></strong> - A <em><a href="/tooling/observer/docs/api/core/Event">Event</a></em> object.</li></ul>
+            	<li><strong><code>mutation: Mutation</code></strong> - A <em><a href="\tooling\observer\docs\api\core\Mutation">Mutation</a> object</em> that contains the details of a change.</li>
+            	<li><strong><code>event: Event</code></strong> - A <em><a href="\tooling\observer\docs\api\core\Event">Event</a></em> object.</li></ul>
             	<p><strong>Return Value</strong></p>
             	<p><em>See <a href="#handler-return-value">handler return value</a> below.</em></p></li>
             	<li><p><strong><code>params:      Object</code></strong> - Additional parameters for the method.</p>
@@ -1222,8 +1209,8 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">mutations<span class="token punctuation">,</span> event</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
-            	<li><strong><code>mutations: Array</code></strong> - An array of <em><a href="/tooling/observer/docs/api/core/Mutation">Mutation</a> objects</em> that each contains the details of a change.</li>
-            	<li><strong><code>event: Event</code></strong> - A <em><a href="/tooling/observer/docs/api/core/Event">Event</a></em> object.</li></ul>
+            	<li><strong><code>mutations: Array</code></strong> - An array of <em><a href="\tooling\observer\docs\api\core\Mutation">Mutation</a> objects</em> that each contains the details of a change.</li>
+            	<li><strong><code>event: Event</code></strong> - A <em><a href="\tooling\observer\docs\api\core\Event">Event</a></em> object.</li></ul>
             	<p><strong>Return Value</strong></p>
             	<p><em>See <a href="#handler-return-value">handler return value</a> below.</em></p></li>
             	<li><p><strong><code>params:      Object</code></strong> - Additional parameters for the method.</p>
@@ -1289,7 +1276,7 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             	<p>The <code>params.type</code> parameter can be used to tell an observer to respond to a specific mutation types like "set" and "del".</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> path<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'del'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="tagging-an-observer">Tagging an Observer</h2>
-            	<p>The <code>params.tags</code> parameter can be used to tag an observer. Tags are an <em>array</em> of values (<em>strings</em>, <em>numbers</em>, <em>objects</em>, etc) that can be used to uniquely identify the observer for later retrieval. <em>See <a href="/tooling/observer/docs/api/reactions/unobserve"><code>Observer.unobserve()</code></a>.</em></p>
+            	<p>The <code>params.tags</code> parameter can be used to tag an observer. Tags are an <em>array</em> of values (<em>strings</em>, <em>numbers</em>, <em>objects</em>, etc) that can be used to uniquely identify the observer for later retrieval. <em>See <a href="\tooling\observer\docs\api\reactions\unobserve"><code>Observer.unobserve()</code></a>.</em></p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> path<span class="token punctuation">,</span> callback<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">tags</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">'#tag'</span> <span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="the-returned-observer-instance">The Returned Observer Instance</h2>
             	<p>The <code>Observer.observe()</code> method returns an <em>Observer</em> instance with certain useful methods.</p>
@@ -1305,14 +1292,17 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">instance<span class="token punctuation">.</span><span class="token function">disconnect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/unobserve"><code>Observer.unobserve()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\unobserve"><code>Observer.unobserve()</code></a></li>
             	</ul>
             </div>
         </template>
+        <div exportgroup="README.md">
+        	<h1 id="reactions">Reactions</h1>
+        </div>
         <template name="unintercept">
             <div exportgroup="README.md">
             	<h1 id="unintercept"><code>.unintercept()</code></h1>
-            	<p>This method is used to unbind interceptors previously bound with <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a>.</p>
+            	<p>This method is used to unbind interceptors previously bound with <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Unbind all interceptors bound to the following property name</span>
 <span class="token comment">// regardless of the handler function</span>
@@ -1330,22 +1320,22 @@ Observer<span class="token punctuation">.</span><span class="token function">uni
             	<p><strong>Parameters</strong></p>
             	<ul>
             	<li><strong><code>obj:             Object|Array</code></strong> - an object or array.</li>
-            	<li><strong><code>type:            String</code></strong> - if not <code>null</code>, the operation type used on <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
-            	<li><strong><code>originalHandler: Function</code></strong> - if not <code>null</code>, the <em>original</em> callback function used on <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
-            	<li><strong><code>params.tags:     Array</code></strong> - if not <code>null</code>, the list of <em>tags</em> (in any order) used on <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><strong><code>type:            String</code></strong> - if not <code>null</code>, the operation type used on <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
+            	<li><strong><code>originalHandler: Function</code></strong> - if not <code>null</code>, the <em>original</em> callback function used on <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
+            	<li><strong><code>params.tags:     Array</code></strong> - if not <code>null</code>, the list of <em>tags</em> (in any order) used on <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<p><em>undefined</em></p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a></li>
             	</ul>
             </div>
         </template>
         <template name="unobserve">
             <div exportgroup="README.md">
             	<h1 id="unobserve"><code>.unobserve()</code></h1>
-            	<p>This method is used to unbind <em>observers</em> previously bound with the <a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a> method.</p>
+            	<p>This method is used to unbind <em>observers</em> previously bound with the <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a> method.</p>
             	<h2 id="syntax">Syntax</h2>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Unbind all observers bound to the following property name</span>
 <span class="token comment">// regardless of the handler function</span>
@@ -1367,27 +1357,28 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
             	<ul>
             	<li><p><strong><code>obj:             Object|Array</code></strong> - An object or array.</p></li>
             	<li><p><strong><code>path:            String|Array</code></strong> - If not <code>null</code>, a path to unobserve.</p></li>
-            	<li><p><strong><code>originalCallback: Function</code></strong> - If not <code>null</code>, the <em>original</em> callback function used during <a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></p></li>
+            	<li><p><strong><code>originalCallback: Function</code></strong> - If not <code>null</code>, the <em>original</em> callback function used during <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></p></li>
             	<li><p><strong><code>params:          Object</code></strong> - Additional parameters for the method.</p>
             	<ul>
-            	<li><strong><code>tags:     Array</code></strong> - If not <code>null</code>, the list of the <em>original</em> tags (in any order) used during <a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a>.</li></ul></li>
+            	<li><strong><code>tags:     Array</code></strong> - If not <code>null</code>, the list of the <em>original</em> tags (in any order) used during <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a>.</li></ul></li>
             	</ul>
             	<p><strong>Return Value</strong></p>
             	<p><em>undefined</em></p>
             	<h2 id="usage">Usage</h2>
-            	<p><em>See <a href="/tooling/observer/docs/api/reactions/observe#usage"><code>Observer.observe()</code></a>.</em></p>
+            	<p><em>See <a href="\tooling\observer\docs\api\reactions\observe#usage"><code>Observer.observe()</code></a>.</em></p>
             	<h2 id="related-methods">Related Methods</h2>
             	<ul>
-            	<li><a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a></li>
+            	<li><a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a></li>
             	</ul>
             </div>
         </template>
     </template>
+    <div exportgroup="README.md">
+    	<h1 id="api-reference">API Reference</h1>
+    	<p>Explore the API Reference.</p>
+    </div>
 </template>
 <template name="getting-started">
-    <div exportgroup="README.md">
-    	<h1 id="getting-started">Getting Started</h1>
-    </div>
     <template name="download">
         <div exportgroup="README.md">
         	<h1 id="download-options">Download Options</h1>
@@ -1406,7 +1397,7 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Import the initializer</span>
 <span class="token keyword">import</span> Observer <span class="token keyword">from</span> <span class="token string">'@webqit/observer'</span><span class="token punctuation">;</span></code></pre>
         	<h2 id="next-steps">Next Steps</h2>
-        	<p>Continue to <a href="/tooling/observer/docs/api">learning the API</a>.</p>
+        	<p>Continue to <a href="\tooling\observer\docs\api">learning the API</a>.</p>
         </div>
     </template>
     <template name="explainer">
@@ -1421,20 +1412,20 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	
         	The Observer API shares much in API surface with JavaScript's built-in [*Object*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) and [*Reflect*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect) APIs. Compare:
         	
-        	+ [`Observer.set()`](/tooling/observer/docs/getting-started/api/set) / [`Reflect.set()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set)
-        	+ [`Observer.get()`](/tooling/observer/docs/getting-started/api/get) / [`Reflect.get()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get)
-        	+ [`Observer.has()`](/tooling/observer/docs/getting-started/api/has) / [`Reflect.has()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has)
-        	+ [`Observer.ownKeys()`](/tooling/observer/docs/getting-started/api/ownkeys) / [`Reflect.ownKeys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)
-        	+ [`Observer.deleteProperty()`](/tooling/observer/docs/getting-started/api/deleteproperty) / [`Reflect.deleteProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty) / [`Object.deleteProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/deleteProperty)
-        	+ [`Observer.defineProperty()`](/tooling/observer/docs/getting-started/api/defineproperty) / [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
-        	+ [`Observer.keys()`](/tooling/observer/docs/getting-started/api/defineproperty) / [`Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+        	+ [`Observer.set()`](\tooling\observer\docs\getting-started\api\set) / [`Reflect.set()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set)
+        	+ [`Observer.get()`](\tooling\observer\docs\getting-started\api\get) / [`Reflect.get()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get)
+        	+ [`Observer.has()`](\tooling\observer\docs\getting-started\api\has) / [`Reflect.has()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has)
+        	+ [`Observer.ownKeys()`](\tooling\observer\docs\getting-started\api\ownkeys) / [`Reflect.ownKeys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys)
+        	+ [`Observer.deleteProperty()`](\tooling\observer\docs\getting-started\api\deleteproperty) / [`Reflect.deleteProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty) / [`Object.deleteProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/deleteProperty)
+        	+ [`Observer.defineProperty()`](\tooling\observer\docs\getting-started\api\defineproperty) / [`Object.defineProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+        	+ [`Observer.keys()`](\tooling\observer\docs\getting-started\api\defineproperty) / [`Object.keys()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
         	
         	What they don't share in common is Observer's *observability* and *interceptibility* of these operations. Where these features are needed, Observer's APIs will serve as a drop-in replacement.
         	
         	Learn more about what's possible with the following methods:
         	
-        	+ [`Observer.observe()`](/tooling/observer/docs/getting-started/api/observe)
-        	+ [`Observer.intercept()`](/tooling/observer/docs/getting-started/api/intercept)
+        	+ [`Observer.observe()`](\tooling\observer\docs\getting-started\api\observe)
+        	+ [`Observer.intercept()`](\tooling\observer\docs\getting-started\api\intercept)
         	
         	## JavaScript's Property Accessors, and Proxies
         	
@@ -1577,13 +1568,13 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	
         	Learn more about what's possible with the following methods:
         	
-        	+ [`Observer.observe()`](/tooling/observer/docs/getting-started/api/observe)
-        	+ [`Observer.intercept()`](/tooling/observer/docs/getting-started/api/intercept)
-        	+ [`Observer.set()`](/tooling/observer/docs/getting-started/api/set)
-        	+ [`Observer.get()`](/tooling/observer/docs/getting-started/api/get)
-        	+ [`Observer.init()`](/tooling/observer/docs/getting-started/api/init)
-        	+ [`Observer.proxy()`](/tooling/observer/docs/getting-started/api/proxy)
-        	+ [`Observer.unproxy()`](/tooling/observer/docs/getting-started/api/unproxy)
+        	+ [`Observer.observe()`](\tooling\observer\docs\getting-started\api\observe)
+        	+ [`Observer.intercept()`](\tooling\observer\docs\getting-started\api\intercept)
+        	+ [`Observer.set()`](\tooling\observer\docs\getting-started\api\set)
+        	+ [`Observer.get()`](\tooling\observer\docs\getting-started\api\get)
+        	+ [`Observer.init()`](\tooling\observer\docs\getting-started\api\init)
+        	+ [`Observer.proxy()`](\tooling\observer\docs\getting-started\api\proxy)
+        	+ [`Observer.unproxy()`](\tooling\observer\docs\getting-started\api\unproxy)
         	
         	## JavaScript's Depreciated Object.observe()
         	
@@ -1711,8 +1702,8 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	
         	Learn more about what's possible with the following methods:
         	
-        	+ [`Observer.set()`](/tooling/observer/docs/getting-started/api/set)
-        	+ [`Observer.deleteProperty()`](/tooling/observer/docs/getting-started/api/deleteproperty)
+        	+ [`Observer.set()`](\tooling\observer\docs\getting-started\api\set)
+        	+ [`Observer.deleteProperty()`](\tooling\observer\docs\getting-started\api\deleteproperty)
         	-->
         </div>
     </template>
@@ -1723,7 +1714,7 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	<h2 id="observe">Observe</h2>
         	<p>Observe operations on any object or array…</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
-        	<p>…using the <a href="/tooling/observer/docs/api/reactions/observe"><code>Observer.observe()</code></a> method.</p>
+        	<p>…using the <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a> method.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token parameter">mutations</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     mutations<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">mutation</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>mutation<span class="token punctuation">.</span>type<span class="token punctuation">,</span> mutation<span class="token punctuation">.</span>name<span class="token punctuation">,</span> mutation<span class="token punctuation">.</span>path<span class="token punctuation">,</span> mutation<span class="token punctuation">.</span>value<span class="token punctuation">,</span> mutation<span class="token punctuation">.</span>oldValue<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -1731,7 +1722,7 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<p>Now changes will be delivered <em>synchronously</em> - as they happen.</p>
         	<h2 id="mutate">Mutate</h2>
-        	<p>Programmatically make <em>reactive</em> changes using the <em>Reflect-like</em> <a href="/tooling/observer/docs/api/actions">set of operators</a>…</p>
+        	<p>Programmatically make <em>reactive</em> changes using the <em>Reflect-like</em> <a href="\tooling\observer\docs\api\actions">set of operators</a>…</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// A single set operation</span>
 Observer<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'prop1'</span><span class="token punctuation">,</span> <span class="token string">'value1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// A batch set operation</span>
@@ -1739,7 +1730,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
     <span class="token literal-property property">prop2</span><span class="token operator">:</span> <span class="token string">'value2'</span><span class="token punctuation">,</span>
     <span class="token literal-property property">prop3</span><span class="token operator">:</span> <span class="token string">'value3'</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-        	<p>…or switch to using <em>object accessors</em> - using the <a href="/tooling/observer/docs/api/actors/accessorize"><code>Observer.accessorize()</code></a> method…</p>
+        	<p>…or switch to using <em>object accessors</em> - using the <a href="\tooling\observer\docs\api\actors\accessorize"><code>Observer.accessorize()</code></a> method…</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Accessorize all (existing) properties</span>
 Observer<span class="token punctuation">.</span><span class="token function">accessorize</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// Accessorize specific properties (existing or new)</span>
@@ -1765,7 +1756,7 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
 <span class="token comment">// And yet no problem if you inadvertently made a programmatic call over an already reactive Proxy</span>
 Observer<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>_obj<span class="token punctuation">,</span> <span class="token string">'prop1'</span><span class="token punctuation">,</span> <span class="token string">'value1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<h2 id="intercept">Intercept</h2>
-        	<p>How about some level of indirection - the ability to hook into operators like <code>Observer.set()</code> and  <code>Observer.deleteProperty()</code> to repurpose their operation? That's all possible using the <a href="/tooling/observer/docs/api/reactions/intercept"><code>Observer.intercept()</code></a> method!</p>
+        	<p>How about some level of indirection - the ability to hook into operators like <code>Observer.set()</code> and  <code>Observer.deleteProperty()</code> to repurpose their operation? That's all possible using the <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a> method!</p>
         	<p>Below, we catch any attempt to set an HTTP URL and force it to an HTTPS URL.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">intercept</span><span class="token punctuation">(</span>obj<span class="token punctuation">,</span> <span class="token string">'set'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">action<span class="token punctuation">,</span> previous<span class="token punctuation">,</span> next</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span>name <span class="token operator">===</span> <span class="token string">'url'</span> <span class="token operator">&amp;&amp;</span> action<span class="token punctuation">.</span>value<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">'http:'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -1816,21 +1807,30 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
 
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
-        	<p><em>Learn more about negotiation <a href="/tooling/observer/docs/api/core/Event#negotiating-with-operators">here</a></em></p>
+        	<p><em>Learn more about negotiation <a href="\tooling\observer\docs\api\core\Event#negotiating-with-operators">here</a></em></p>
         	<h2 id="clean-up-anytime">Clean Up Anytime</h2>
         	<p>Need to undo certain bindings? There are the methods for that!</p>
         	<ul>
-        	<li><a href="/tooling/observer/docs/api/reactions/unobserve"><code>Observer.unobserve()</code></a></li>
-        	<li><a href="/tooling/observer/docs/api/reactions/unintercept"><code>Observer.unintercept()</code></a></li>
-        	<li><a href="/tooling/observer/docs/api/actors/unproxy"><code>Observer.unproxy()</code></a></li>
-        	<li><a href="/tooling/observer/docs/api/actors/unaccessorize"><code>Observer.unaccessorize()</code></a></li>
+        	<li><a href="\tooling\observer\docs\api\reactions\unobserve"><code>Observer.unobserve()</code></a></li>
+        	<li><a href="\tooling\observer\docs\api\reactions\unintercept"><code>Observer.unintercept()</code></a></li>
+        	<li><a href="\tooling\observer\docs\api\actors\unproxy"><code>Observer.unproxy()</code></a></li>
+        	<li><a href="\tooling\observer\docs\api\actors\unaccessorize"><code>Observer.unaccessorize()</code></a></li>
         	</ul>
         	<h2 id="the-end">The End?</h2>
         	<p>Certainly not! But this rundown should be a good start. Next:</p>
         	<ul>
-        	<li>Visit the <a href="/tooling/observer/docs/getting-started/download">download</a> page to obtain the Observer API.</li>
-        	<li>Explore the <a href="/tooling/observer/docs/api">API Reference</a>.</li>
+        	<li>Visit the <a href="\tooling\observer\docs\getting-started\download">download</a> page to obtain the Observer API.</li>
+        	<li>Explore the <a href="\tooling\observer\docs\api">API Reference</a>.</li>
         	</ul>
         </div>
     </template>
+    <div exportgroup="README.md">
+    	<h1 id="getting-started">Getting Started</h1>
+    </div>
 </template>
+<div exportgroup="README.md">
+	<h1 id="observer-api-documentation">Observer API Documentation</h1>
+	<p>Welcome to the Observer API documentation. We hope you find it easy to understand and navigate.</p>
+	<p>If you have questions about anything related to the Observer API, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>
+	<h2 id="explore-the-docs">Explore the Docs</h2>
+</div>

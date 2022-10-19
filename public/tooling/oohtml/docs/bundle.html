@@ -1,18 +1,5 @@
 
-<div exportgroup="README.md">
-	<h1 id="oohtml-documentation">OOHTML Documentation</h1>
-	<p>Welcome to the OOHTML documentation. We hope you find it easy to understand and navigate.</p>
-	<p>If you have questions about anything related to OOHTML, you're always welcome to ask on our <a href="https://github.com/webqit/oohtml/discussions">GitHub Discussions</a>.</p>
-	<blockquote>
-	  <p><strong>Note</strong><br>
-	  Major updates coming soon! (See the "mext" branch on our <a href="https://github.com/webqit/oohtml">repo</a>.)</p>
-	</blockquote>
-	<h2 id="explore-the-docs">Explore the Docs</h2>
-</div>
 <template name="getting-started">
-    <div exportgroup="README.md">
-    	<h1 id="getting-started">Getting Started</h1>
-    </div>
     <template name="explainer">
         <div exportgroup="README-1.md">
         	<blockquote>
@@ -163,21 +150,21 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
         	<ul>
         	<li><p><strong><a href="https://getbem.com">BEM</a></strong> has been an agreeable workaround for many people. It's, however, clunky.</p>
         	<ul>
-        	<li>Compare that with the more succinct <strong><a href="/tooling/oohtml/docs/getting-started/namespaced-html#namespaced-selectors">Namespaced Selectors</a></strong> in <a href="/tooling/oohtml/docs/getting-started/namespaced-html">Namespaced HTML</a>.</li></ul>
+        	<li>Compare that with the more succinct <strong><a href="\tooling\oohtml\docs\getting-started\namespaced-html#namespaced-selectors">Namespaced Selectors</a></strong> in <a href="\tooling\oohtml\docs\getting-started\namespaced-html">Namespaced HTML</a>.</li></ul>
         	<p><em>BEM also doesn't really go beyond usage in CSS. Namespaced HTML, on the other hand, is able to translate Namespaces in markup into namespace objects in JavaScript by means of the Namespace API.</em></p></li>
         	<li><p><strong><a href="https://github.com/stuartpb/pwalls-spec">Stuart P.'s Parts and Walls</a></strong> proposal from 2015 also points to the same need for a modular naming that's accessible in JavaScript.</p>
         	<ul>
-        	<li>But while the above is based on programmatic DOM traversal, Namespaced HTML let's us access the same elements declaratively as live DOM properties. In other words, instead of having to query the DOM each time to access named elements, the DOM exposes them as properties and let's us receive updates when any of the properties change. <em>See details in the <a href="/tooling/oohtml/docs/getting-started/namespaced-html#api">Namespace API</a> of <a href="/tooling/oohtml/docs/getting-started/namespaced-html">Namespaced HTML</a>.</em></li></ul>
+        	<li>But while the above is based on programmatic DOM traversal, Namespaced HTML let's us access the same elements declaratively as live DOM properties. In other words, instead of having to query the DOM each time to access named elements, the DOM exposes them as properties and let's us receive updates when any of the properties change. <em>See details in the <a href="\tooling\oohtml\docs\getting-started\namespaced-html#api">Namespace API</a> of <a href="\tooling\oohtml\docs\getting-started\namespaced-html">Namespaced HTML</a>.</em></li></ul>
         	<p><em>And just for fun, it also looks like the DOM itself likes the idea of exposing strategic UI objects in JavaScript as DOM properties. See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/head"><code>document.head</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/body"><code>document.body</code></a>. These are indeed more concise than <code>document.querySelector('head')</code> and <code>document.querySelector('body')</code>.</em></p></li>
         	</ul>
-        	<p>Overall, <a href="/tooling/oohtml/docs/getting-started/namespaced-html">Namespaced HTML</a> is the far-reaching solution to authoring modular HTML and CSS.</p>
+        	<p>Overall, <a href="\tooling\oohtml\docs\getting-started\namespaced-html">Namespaced HTML</a> is the far-reaching solution to authoring modular HTML and CSS.</p>
         	<h2 id="html-modules-and-imports">HTML Modules and Imports</h2>
         	<p>We currently have HTML's standard <code>&lt;template&gt;</code> elements for defining reusable HTML snippets. But it still feels difficult getting things to work without a standard templating system.</p>
         	<p>For so many reasons, we often have to deal with application data at the document and element levels. We either want to render data on an element or pass it down its subtree to be eventually rendered. The state of this data may be changing, and we may have to maintain some of it at each level. These are modern UI development paradigms that have not particularly been welcomed natively.</p>
         	<hr>
-        	<p>On the expansive subject of <a href="https://github.com/WICG/webcomponents/issues/645"><em>HTML Modules</em></a>, OOHTML takes a very, very different approach from the many existing opinions to how reusable markup should be delivered and consumed in the browser - <em><a href="/tooling/oohtml/docs/getting-started/html-modules">OOHTML's HTML Modules</a></em>. What is the most important difference?</p>
+        	<p>On the expansive subject of <a href="https://github.com/WICG/webcomponents/issues/645"><em>HTML Modules</em></a>, OOHTML takes a very, very different approach from the many existing opinions to how reusable markup should be delivered and consumed in the browser - <em><a href="\tooling\oohtml\docs\getting-started\html-modules">OOHTML's HTML Modules</a></em>. What is the most important difference?</p>
         	<ul>
-        	<li>OOHTML sees HTML Modules as simply a way to ship and consume <strong>static, inert content</strong>, and is thus more oriented towards HTML's standard primitive for <em>static, inert content</em> - the <code>&lt;template&gt;</code> element. OOHTML simply introduces <a href="/tooling/oohtml/docs/getting-started/html-modules#remote-content">the <strong>src</strong> attribute</a> as a way to <em>load a template's content from a remote HTML file</em>.</li>
+        	<li>OOHTML sees HTML Modules as simply a way to ship and consume <strong>static, inert content</strong>, and is thus more oriented towards HTML's standard primitive for <em>static, inert content</em> - the <code>&lt;template&gt;</code> element. OOHTML simply introduces <a href="\tooling\oohtml\docs\getting-started\html-modules#remote-content">the <strong>src</strong> attribute</a> as a way to <em>load a template's content from a remote HTML file</em>.</li>
         	<li><a href="https://github.com/WICG/webcomponents/blob/gh-pages/proposals/html-modules-explainer.md">This explainer</a>, among others, however, follows the JavaScript route of using ES6 module infrastructure to load <strong>both static content and active script elements</strong>.</li>
         	</ul>
         	<p>How do these compare?</p>
@@ -204,13 +191,13 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
     <span class="token keyword">import</span> <span class="token punctuation">{</span> blogPost <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"import.html"</span><span class="token punctuation">;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">&gt;</span></code></pre></li>
         	<li><p><strong>OOHTML's approach provides for consuming the imported HTML <em>both in JavaScript and in HTML</em>.</strong> And it's as declarative as the following two cases:</p>
-        	<p><em>In JavaScript - as detailed in <a href="/tooling/oohtml/docs/getting-started/html-modules#api">HTML Modules API</a></em></p>
+        	<p><em>In JavaScript - as detailed in <a href="\tooling\oohtml\docs\getting-started\html-modules#api">HTML Modules API</a></em></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
     <span class="token keyword">let</span> <span class="token punctuation">[</span> blogPost <span class="token punctuation">]</span> <span class="token operator">=</span> document<span class="token punctuation">.</span>templates<span class="token punctuation">.</span>bundle<span class="token punctuation">.</span>exports<span class="token punctuation">.</span>blogPost<span class="token punctuation">;</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>blogPost<span class="token punctuation">.</span><span class="token function">cloneNode</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p><em>See also: <a href="https://discourse.wicg.io/t/document-templates/1057">[proposal - <code>document.templates</code>]</a></em></p>
-        	<p><em>In HTML - as detailed in <a href="/tooling/oohtml/docs/getting-started/html-imports">OOHTML Imports</a></em></p>
+        	<p><em>In HTML - as detailed in <a href="\tooling\oohtml\docs\getting-started\html-imports">OOHTML Imports</a></em></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>blogPost<span class="token punctuation">"</span></span> <span class="token attr-name">template</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bundle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
@@ -223,7 +210,7 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p><em>But <a href="https://github.com/WICG/webcomponents/issues/863">the new direction</a> of this approach is having an afterthought toward a declarative way to place imported content in markup.</em></p></li>
         	<li><p><strong>OOHTML's approach follows <em>lazy-loading of remote modules and lazy rendering of <code>&lt;import&gt;</code> elements, as driven by module events</em>.</strong> This makes <code>&lt;import&gt;</code> elements work just like elements like <code>&lt;img&gt;</code>: 'display whenever you can load', as seen below:</p>
-        	<p><em>In HTML - as detailed in <a href="/tooling/oohtml/docs/getting-started/html-imports">OOHTML Imports</a></em></p>
+        	<p><em>In HTML - as detailed in <a href="\tooling\oohtml\docs\getting-started\html-imports">OOHTML Imports</a></em></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
     <span class="token comment">&lt;!-- Resolves whenever module loads --&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>blogPost<span class="token punctuation">"</span></span> <span class="token attr-name">template</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>bundle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">&gt;</span></span>
@@ -231,7 +218,7 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
         	<p><strong>But, the other approach simply does not.</strong></p></li>
         	</ul>
         	<p>Overall, it seems more traditional to us to implement HTML Modules in HTML than in JavaScript, letting us do all HTML concerns in HTML (templates) and all JavaScript concerns in JavaScript (ES6 modules).</p>
-        	<p>But then, it is a common pattern today for some reusable HTML has to go with some logic. And it is interesting how another of OOHTML's features - <a href="/tooling/oohtml/docs/getting-started/subscript">Subscript</a> - lets us add such non-global JavaScript to HTML markup, with everything working happily:</p>
+        	<p>But then, it is a common pattern today for some reusable HTML has to go with some logic. And it is interesting how another of OOHTML's features - <a href="\tooling\oohtml\docs\getting-started\subscript">Subscript</a> - lets us add such non-global JavaScript to HTML markup, with everything working happily:</p>
         	<p><em>Remote File: /bundle.html</em></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>blogPost<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Content...<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>
@@ -251,10 +238,10 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
         	<p>Primitives for building <em>reactive</em> applications and keeping track of very dynamic state have not particularly found their way to native web languages.</p>
         	<ul>
         	<li><p><strong>State:</strong> We indeed have some primitives related to the concept of <em>state</em>, but they have very limited usecases. An example is <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTML5's DataSet API</a> that lets us keep state with HTML elements. But, it turns out to be tied to just HTML data <code>(data-*)</code> attributes - making it less useful as a general way to work with application state in the UI.</p>
-        	<p>Compare OOHTML's <a href="/tooling/oohtml/docs/getting-started/the-state-api">State API</a> which gives us robust <em>state management</em> - covering both document-level and element-level state, with automatic support for observability.</p></li>
+        	<p>Compare OOHTML's <a href="\tooling\oohtml\docs\getting-started\the-state-api">State API</a> which gives us robust <em>state management</em> - covering both document-level and element-level state, with automatic support for observability.</p></li>
         	<li><p><strong>Observability:</strong> Much engineering still goes into using JavaScript's change-detection mechanisms for <em>reactive</em> UI development, and some things don't even scale. Check out a consideration of some of those difficulties in <a href="https://webqit.io/tooling/observer/explainer">this explainer</a>.</p>
         	<p>Compare the <a href="https://github.com/webqit/observer">Observer API</a> which provides generic functions for observing and intercepting JavaScript objects. See its <em>universal</em> role across the rest of OOHTML, and potentially other technologies.</p></li>
-        	<li><p><strong>Reactivity:</strong> A Reactuve UI binding language? See <a href="/tooling/oohtml/docs/getting-started/subscript">Subscript</a>. It comes bringing the full power of JavaScript for the job.</p>
+        	<li><p><strong>Reactivity:</strong> A Reactuve UI binding language? See <a href="\tooling\oohtml\docs\getting-started\subscript">Subscript</a>. It comes bringing the full power of JavaScript for the job.</p>
         	<p>Compare <a href="https://discourse.wicg.io/t/extension-of-template/447">this early idea for a template syntax by Jonathan Kingston</a> from 2014, <a href="https://github.com/whatwg/html/issues/2254">this proposal</a> from 2017, and <a href="https://github.com/w3c/webcomponents/blob/gh-pages/proposals/Template-Instantiation.md">Apple's proposal</a> from 2017.</p></li>
         	</ul>
         </div>
@@ -327,7 +314,7 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p>The contents of the remote file automatically become the template's content on load.</p>
-        	<p><strong>Details are in the <a href="/tooling/oohtml/docs/spec/html-modules">HTML Modules</a> specification. Learn more about the convention, API, events, and the polyfill support.</strong></p>
+        	<p><strong>Details are in the <a href="\tooling\oohtml\docs\spec\html-modules">HTML Modules</a> specification. Learn more about the convention, API, events, and the polyfill support.</strong></p>
         	<h2 id="html-imports">HTML Imports</h2>
         	<p><em>HTML Imports</em> is a declarative way to use the <em>exports</em> of an <em>HTML Module</em> from anywhere in the main document.</p>
         	<blockquote>
@@ -370,7 +357,7 @@ With the state API, that could simply belong in `.state.style`.</code></pre>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Changing the module ID on the DIV container above will see all associated imports resolved again</span>
 document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'div[template="module1"]'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'template'</span><span class="token punctuation">,</span> <span class="token string">'module2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<p>This opens up new simple ways to create very dynamic applications.</p>
-        	<p><strong>Details are in the <a href="/tooling/oohtml/docs/spec/html-imports">HTML Imports</a> specification. Learn more about the convention, dynamicity, Slot Inheritance, isomorphic rendering, and the polyfill support.</strong></p>
+        	<p><strong>Details are in the <a href="\tooling\oohtml\docs\spec\html-imports">HTML Imports</a> specification. Learn more about the convention, dynamicity, Slot Inheritance, isomorphic rendering, and the polyfill support.</strong></p>
         	<h2 id="namespaced-html">Namespaced HTML</h2>
         	<p>Namespacing provides a way to let an element establish its own naming context for descendant elements. This makes it possible to keep IDs scoped to a context other than the document's global scope; thus the ability to write collision-free IDs across a page.</p>
         	<p>The following modular markup implements its IDs in namespaces:</p>
@@ -406,7 +393,7 @@ document<span class="token punctuation">.</span><span class="token function">que
         	<blockquote>
         	  <p>Much of our code in the examples below will now use the <code>namespace</code> attribute in markup and the <code>.namespace</code> property in JavaScript.</p>
         	</blockquote>
-        	<p><strong>Details are in the <a href="/tooling/oohtml/docs/spec/namespaced-html">Namespaced HTML</a> specification. Learn more about the convention, Namespaced Selectors, API, observability, and the polyfill support.</strong></p>
+        	<p><strong>Details are in the <a href="\tooling\oohtml\docs\spec\namespaced-html">Namespaced HTML</a> specification. Learn more about the convention, Namespaced Selectors, API, observability, and the polyfill support.</strong></p>
         	<h2 id="the-state-api">The State API</h2>
         	<p>The State API is a DOM API that lets us maintain application state at the document level and at individual element levels. It brings application state closer to the UI and makes it easy to keep the UI in sync with all the changes taking place.</p>
         	<p>This API exposes a document-level <em>state object</em> on a <code>document.state</code> property, and an element-level <em>state object</em> on an <code>element.state</code> property. Arbitrary values can be set and retrieved on <em>state objects</em> the same way we would with regular objects.</p>
@@ -417,7 +404,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">// At the element level</span>
 element<span class="token punctuation">.</span>state<span class="token punctuation">.</span>collapsed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>element<span class="token punctuation">.</span>state<span class="token punctuation">.</span>collapsed<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// true</span></code></pre>
-        	<p>But state objects are unique in that they support <em>observability</em>. They are <em>live objects</em> that can be observed for changes using the <a href="/tooling/oohtml/docs/spec/the-observer-api">Observer API</a>.</p>
+        	<p>But state objects are unique in that they support <em>observability</em>. They are <em>live objects</em> that can be observed for changes using the <a href="\tooling\oohtml\docs\spec\the-observer-api">Observer API</a>.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>state<span class="token punctuation">,</span> <span class="token string">'pageTitle'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'New Page Title: '</span> <span class="token operator">+</span> e<span class="token punctuation">.</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token comment">// Or we could reflect this state on the document title element</span>
@@ -456,7 +443,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>collapsible<span class="token punctuation">.</span>state<span class="token punctuation">,</span> <span class="token string">'collapsed'</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>value <span class="token operator">?</span> <span class="token string">'element collapsed'</span> <span class="token operator">:</span> <span class="token string">'element expanded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-        	<p><strong>Details are in the <a href="/tooling/oohtml/docs/spec/the-state-api">State API</a> specification. Learn more about the API, deep observability, and the polyfill support.</strong></p>
+        	<p><strong>Details are in the <a href="\tooling\oohtml\docs\spec\the-state-api">State API</a> specification. Learn more about the API, deep observability, and the polyfill support.</strong></p>
         	<h2 id="subscript">Subscript</h2>
         	<p><a href="/tooling/subscript">Subscript</a> is a special language feature for JavaScript that lets us write <em>reactive</em> JavaScript code in plain JavaScript. <em>Subscript UI</em> is a &lt;1KB extension of Subscript that further simplifies the concept of reactivity for UI development.</p>
         	<p>There are two approaches to using Subscript:</p>
@@ -524,10 +511,10 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
-        	<p><strong>Details are in the <a href="/tooling/oohtml/docs/spec/subscript">Subscript</a> specification. Learn more about the reactivity and observability concepts and the polyfill support.</strong></p>
+        	<p><strong>Details are in the <a href="\tooling\oohtml\docs\spec\subscript">Subscript</a> specification. Learn more about the reactivity and observability concepts and the polyfill support.</strong></p>
         	<h2 id="getting-started">Getting Started</h2>
-        	<p>You definitely want to visit the documentation for each of OOHTML's features and try everything out by pasting the code examples and running them right in your browser. Simply include the <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill</a> on your page and get away with writing modular, reusable, reactive HTML without a tool! </p>
-        	<p>We're putting together a collection of examples in the <a href="/tooling/oohtml/docs/learn/examples">examples</a> section.</p>
+        	<p>You definitely want to visit the documentation for each of OOHTML's features and try everything out by pasting the code examples and running them right in your browser. Simply include the <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill</a> on your page and get away with writing modular, reusable, reactive HTML without a tool! </p>
+        	<p>We're putting together a collection of examples in the <a href="\tooling\oohtml\docs\learn\examples">examples</a> section.</p>
         </div>
     </template>
     <template name="polyfill">
@@ -537,16 +524,16 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
         	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
         	<p>Add the following script tag to your page to include the all-in-one OOHTML build:</p>
         	<blockquote>
-        	  <p>With the script below, OOHTML will take effect on the page automatically. Two other APIs - <a href="/tooling/oohtml/docs/resources/the-observer-api">The Observer API</a> and <a href="/tooling/subscript">Subscript</a> - will also be exposed as <code>window.WebQit.Observer</code> and <code>window.WebQit.Subscript</code> respectively.</p>
+        	  <p>With the script below, OOHTML will take effect on the page automatically. Two other APIs - <a href="\tooling\oohtml\docs\resources\the-observer-api">The Observer API</a> and <a href="/tooling/subscript">Subscript</a> - will also be exposed as <code>window.WebQit.Observer</code> and <code>window.WebQit.Subscript</code> respectively.</p>
         	</blockquote>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://unpkg.com/@webqit/oohtml/dist/main.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p>Or embed individual OOHTML features via their respective build:</p>
         	<ul>
-        	<li><strong><a href="/tooling/oohtml/docs/spec/html-modules">HTML Modules</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/html-modules.js"&gt;&lt;/script&gt;</code></li>
-        	<li><strong><a href="/tooling/oohtml/docs/spec/html-imports">HTML Imports</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/html-imports.js"&gt;&lt;/script&gt;</code></li>
-        	<li><strong><a href="/tooling/oohtml/docs/spec/namespaced-html">Namespaced HTML</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/namespaced-html.js"&gt;&lt;/script&gt;</code></li>
-        	<li><strong><a href="/tooling/oohtml/docs/spec/the-state-api">The State API</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/state-api.js"&gt;&lt;/script&gt;</code></li>
-        	<li><strong><a href="/tooling/oohtml/docs/spec/subscript">Subscript</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/subscript.js"&gt;&lt;/script&gt;</code></li>
+        	<li><strong><a href="\tooling\oohtml\docs\spec\html-modules">HTML Modules</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/html-modules.js"&gt;&lt;/script&gt;</code></li>
+        	<li><strong><a href="\tooling\oohtml\docs\spec\html-imports">HTML Imports</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/html-imports.js"&gt;&lt;/script&gt;</code></li>
+        	<li><strong><a href="\tooling\oohtml\docs\spec\namespaced-html">Namespaced HTML</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/namespaced-html.js"&gt;&lt;/script&gt;</code></li>
+        	<li><strong><a href="\tooling\oohtml\docs\spec\the-state-api">The State API</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/state-api.js"&gt;&lt;/script&gt;</code></li>
+        	<li><strong><a href="\tooling\oohtml\docs\spec\subscript">Subscript</a></strong> - <code>&lt;script src="https://unpkg.com/@webqit/oohtml/dist/subscript.js"&gt;&lt;/script&gt;</code></li>
         	</ul>
         	<h2 id="option-2-as-an-npm-package">Option 2: As an npm Package</h2>
         	<p>With <a href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm">npm available on your terminal</a>, run the following command to install OOHTML:</p>
@@ -588,14 +575,14 @@ $ npm i --save @webqit/oohtml</code></pre>
 <span class="token keyword">let</span> template1 <span class="token operator">=</span> document<span class="token punctuation">.</span>templates<span class="token punctuation">.</span>template1<span class="token punctuation">;</span>
 <span class="token comment">// etc</span></code></pre>
         	<h2 id="next-steps">Next Steps</h2>
-        	<p>You want to visit each of <a href="/tooling/oohtml/docs/spec">OOHTML's features</a>.</p>
+        	<p>You want to visit each of <a href="\tooling\oohtml\docs\spec">OOHTML's features</a>.</p>
         </div>
     </template>
+    <div exportgroup="README.md">
+    	<h1 id="getting-started">Getting Started</h1>
+    </div>
 </template>
 <template name="learn">
-    <div exportgroup="README.md">
-    	<h1 id="using-oohtml">Using OOHTML</h1>
-    </div>
     <template name="examples">
         <div exportgroup="README.md">
         	<h1 id="examples">Examples</h1>
@@ -604,7 +591,7 @@ $ npm i --save @webqit/oohtml</code></pre>
         <template name="spa">
             <div exportgroup="README.md">
             	<h1 id="an-spa-in-oohtml">An SPA In OOHTML</h1>
-            	<p>This example makes a Single Page Application (SPA) out of <a href="/tooling/oohtml/docs/spec/html-modules">HTML Modules</a> and <a href="/tooling/oohtml/docs/spec/html-imports">HTML Imports</a>.</p>
+            	<p>This example makes a Single Page Application (SPA) out of <a href="\tooling\oohtml\docs\spec\html-modules">HTML Modules</a> and <a href="\tooling\oohtml\docs\spec\html-imports">HTML Imports</a>.</p>
             	<p>Below, we're using the two <code>&lt;template&gt;</code> elements to each represent a route - a page. Then we point the <code>&lt;body&gt;</code>'s template attribute to either of the <code>&lt;template&gt;</code>s, depending on the current URL.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
 
@@ -672,7 +659,7 @@ $ npm i --save @webqit/oohtml</code></pre>
         <template name="todo">
             <div exportgroup="README.md">
             	<h1 id="a-todo-list-in-oohtml">A TODO List In OOHTML</h1>
-            	<p>Below is a TODO list application we made out of a plain JavaScript array bound to <a href="/tooling/oohtml/docs/spec/the-state-api#document-level-state"><code>document.state</code></a>.</p>
+            	<p>Below is a TODO list application we made out of a plain JavaScript array bound to <a href="\tooling\oohtml\docs\spec\the-state-api#document-level-state"><code>document.state</code></a>.</p>
             	<p>It features the ability to add items and toggle the active state of each item.</p>
             	<ul>
             	<li><strong>For the <em>add</em> feature</strong> - When the <em>add</em> button in the TODO container is clicked, an item is added to the array - effectively becoming a new item in the UI.</li>
@@ -835,11 +822,21 @@ $ npm i --save @webqit/oohtml</code></pre>
             </div>
         </template>
     </template>
-</template>
-<template name="resources">
     <div exportgroup="README.md">
-    	
+    	<h1 id="using-oohtml">Using OOHTML</h1>
     </div>
+</template>
+<div exportgroup="README.md">
+	<h1 id="oohtml-documentation">OOHTML Documentation</h1>
+	<p>Welcome to the OOHTML documentation. We hope you find it easy to understand and navigate.</p>
+	<p>If you have questions about anything related to OOHTML, you're always welcome to ask on our <a href="https://github.com/webqit/oohtml/discussions">GitHub Discussions</a>.</p>
+	<blockquote>
+	  <p><strong>Note</strong><br>
+	  Major updates coming soon! (See the "next" branch on our <a href="https://github.com/webqit/oohtml">repo</a>.)</p>
+	</blockquote>
+	<h2 id="explore-the-docs">Explore the Docs</h2>
+</div>
+<template name="resources">
     <template name="ecosystem">
         <div exportgroup="README.md">
         	<h1 id="ecosystem">Ecosystem</h1>
@@ -856,7 +853,7 @@ $ npm i --save @webqit/oohtml</code></pre>
         	<p>OOHTML provides a meta tag for customizing its syntax or behaviour. It generally looks like this:</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>oohtml<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>prop1=val1; prop2=val2;<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p><em>The actual configurable properties are documented alongside the various OOHTML features.</em></p>
-        	<p>It is recommended (but not required) that you configure your usage of OOHTML using this meta tag. As an example, below is how the default OOHTML syntax looks like for the <em>HTML module, import and export</em> feature. What we want to do is <a href="/tooling/oohtml/docs/spec/html-imports#polyfill">use a custom <em>import</em> element</a> instead of the default <em>import</em> element.</p>
+        	<p>It is recommended (but not required) that you configure your usage of OOHTML using this meta tag. As an example, below is how the default OOHTML syntax looks like for the <em>HTML module, import and export</em> feature. What we want to do is <a href="\tooling\oohtml\docs\spec\html-imports#polyfill">use a custom <em>import</em> element</a> instead of the default <em>import</em> element.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -883,7 +880,7 @@ $ npm i --save @webqit/oohtml</code></pre>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html-import</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>export1<span class="token punctuation">"</span></span> <span class="token attr-name">template</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html-import</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
-        	<p>As another example, below is how the default OOHTML syntax looks like for the <em>scoped IDs</em> feature. What we want to do is <a href="/tooling/oohtml/docs/spec/namespaced-html#polyfill">use a custom attribute name</a> instead of the default <em>id</em> attribute.</p>
+        	<p>As another example, below is how the default OOHTML syntax looks like for the <em>scoped IDs</em> feature. What we want to do is <a href="\tooling\oohtml\docs\spec\namespaced-html#polyfill">use a custom attribute name</a> instead of the default <em>id</em> attribute.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">namespace</span><span class="token punctuation">&gt;</span></span>
@@ -914,6 +911,9 @@ $ npm i --save @webqit/oohtml</code></pre>
         	<p>Customization also lets you explore around the whole new idea. Feel free to bring your findings to OOHTML's <a href="https://github.com/webqit/oohtml/discussions">GitHub Discussions</a>.</p>
         </div>
     </template>
+    <div exportgroup="README.md">
+    	
+    </div>
     <template name="the-observer-api">
         <div exportgroup="README.md">
         	<h1 id="the-observer-api">The Observer API</h1>
@@ -922,13 +922,10 @@ $ npm i --save @webqit/oohtml</code></pre>
     </template>
 </template>
 <template name="spec">
-    <div exportgroup="README.md">
-    	<h1 id="oohtml-specifications">OOHTML Specifications</h1>
-    </div>
     <template name="html-imports">
         <div exportgroup="README.md">
         	<h1 id="html-imports">HTML Imports</h1>
-        	<p>HTML Imports are a declarative way to use the <em>exports</em> of an <em><a href="/tooling/oohtml/docs/spec/html-modules">HTML Module</a></em> from anywhere in the main document.</p>
+        	<p>HTML Imports are a declarative way to use the <em>exports</em> of an <em><a href="\tooling\oohtml\docs\spec\html-modules">HTML Module</a></em> from anywhere in the main document.</p>
         	<blockquote>
         	  <p>Note that this is different from the HTML Imports that was spec'd with an early version of Web Components.</p>
         	</blockquote>
@@ -1019,7 +1016,7 @@ $ npm i --save @webqit/oohtml</code></pre>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<h3 id="default-exports-and-imports">Default Exports and Imports</h3>
-        	<p>HTML Modules are allowed to have contents without an <em>export identifier</em> and these are known <a href="/tooling/oohtml/docs/spec/html-modules#default-exports">Default Exports</a>.</p>
+        	<p>HTML Modules are allowed to have contents without an <em>export identifier</em> and these are known <a href="\tooling\oohtml\docs\spec\html-modules#default-exports">Default Exports</a>.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
 
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -1051,7 +1048,7 @@ $ npm i --save @webqit/oohtml</code></pre>
         	<blockquote>
         	  <p>Above, the resolution stops at <code>module1/nonexistent</code> which is still <em>nonexisitent</em>. The <code>&lt;import&gt;</code> element is left unresolved.</p>
         	</blockquote></li>
-        	<li><p><strong>Wildcards:</strong> While the <code>+</code> character is <a href="/tooling/oohtml/docs/spec/html-modules#module-referencing">forbidden in module IDs</a>, it can be used as wildcard modifiers in the module reference on <code>&lt;import&gt;</code> elements. The <code>+</code> character is used to match </p></li>
+        	<li><p><strong>Wildcards:</strong> While the <code>+</code> character is <a href="\tooling\oohtml\docs\spec\html-modules#module-referencing">forbidden in module IDs</a>, it can be used as wildcard modifiers in the module reference on <code>&lt;import&gt;</code> elements. The <code>+</code> character is used to match </p></li>
         	</ul>
         	<h2 id="dynamicity">Dynamicity</h2>
         	<p><em>Import slots</em> are resolved in realtime in response to a number of events.</p>
@@ -1076,7 +1073,7 @@ nestedModule<span class="token punctuation">.</span>content<span class="token pu
 module1<span class="token punctuation">.</span>content<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>nestedModule<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<p>With the module removal below, all <code>&lt;import&gt;</code> elements currently <em>resolved</em> from <code>module1</code> and its nested modules will now be restored.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">module1<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
-        	<li><p>When the external contents of a remote module become available, all <code>&lt;import&gt;</code> elements that depend on the loaded content will be resolved. (See <a href="/tooling/oohtml/docs/spec/html-modules#module-events">Module Events</a>.)</p>
+        	<li><p>When the external contents of a remote module become available, all <code>&lt;import&gt;</code> elements that depend on the loaded content will be resolved. (See <a href="\tooling\oohtml\docs\spec\html-modules#module-events">Module Events</a>.)</p>
         	<p><strong>Remote file: /bundle.html</strong></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>export-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module-loaded<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -1152,7 +1149,7 @@ module1<span class="token punctuation">.</span>content<span class="token punctua
         	</ul>
         	<h2 id="isomorphic-rendering">Isomorphic Rendering</h2>
         	<p>When rendering happens on the server and has to be serialized for the browser to take over, <code>&lt;import&gt;</code> elements that are replaced on the server will need to be kept in some way in the serialized HTML output. This would enable the browser, on load, to <em>hydrate</em> the original <code>&lt;import&gt;</code> elements and map them in their replaced state to their currently slotted contents. With this, deleting a slot's contents, for example, should still trigger the restoration of the hydrated <code>&lt;import&gt;</code> element.</p>
-        	<p>HTML Imports makes it possible to serialize <code>&lt;import&gt;</code> elements into <em>comment nodes</em> (<code>&lt;!-- &lt;import&gt;&lt;/import&gt; --&gt;</code>) when rendering on the server. HTML Imports in the browser can also be told to rehydrate the resolved <code>&lt;!-- &lt;import&gt;&lt;/import&gt; --&gt;</code> elements found in the server's serialized HTML output. This feature is turned on by setting the <code>isomorphic</code> directive to <code>1</code> or <code>true</code> on the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>.</p>
+        	<p>HTML Imports makes it possible to serialize <code>&lt;import&gt;</code> elements into <em>comment nodes</em> (<code>&lt;!-- &lt;import&gt;&lt;/import&gt; --&gt;</code>) when rendering on the server. HTML Imports in the browser can also be told to rehydrate the resolved <code>&lt;!-- &lt;import&gt;&lt;/import&gt; --&gt;</code> elements found in the server's serialized HTML output. This feature is turned on by setting the <code>isomorphic</code> directive to <code>1</code> or <code>true</code> on the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>.</p>
         	<p><strong>HTML to be rendered on the server</strong></p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
 
@@ -1231,7 +1228,7 @@ module1<span class="token punctuation">.</span>content<span class="token punctua
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<h2 id="polyfill-support">Polyfill Support</h2>
-        	<p>The current <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill implementation</a> has full support for HTML Imports. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>:</p>
+        	<p>The current <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill implementation</a> has full support for HTML Imports. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>:</p>
         	<ul>
         	<li><p><strong><a href="#convention">element.import</a></strong> - The tag name for the <code>&lt;import&gt;</code> element. The standard <code>&lt;import&gt;</code> element is <code>&lt;import&gt;</code>. This can be changed where necessary.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -1255,7 +1252,7 @@ module1<span class="token punctuation">.</span>content<span class="token punctua
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>import</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>export-1<span class="token punctuation">"</span></span> <span class="token attr-name">template</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module2<span class="token punctuation">"</span></span> <span class="token attr-name">module-specificity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0-2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>import</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre></li>
         	</ul>
-        	<p>Learn more about customization and the OOHTML META tag <a href="/tooling/oohtml/docs/resources/meta-tag">here</a>.</p>
+        	<p>Learn more about customization and the OOHTML META tag <a href="\tooling\oohtml\docs\resources\meta-tag">here</a>.</p>
         </div>
     </template>
     <template name="html-modules">
@@ -1544,7 +1541,7 @@ module_nested_middle <span class="token operator">=</span> module<span class="to
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> module_leaf_a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">templatesQuery</span><span class="token punctuation">(</span><span class="token string">'module_nested_middle:deep()/module_near_leaf_a:deep()+module_near_leaf_b:deep()/module_leaf_a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
         	</ul>
         	<h2 id="polyfill-support">Polyfill Support</h2>
-        	<p>The current <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill implementation</a> has full support for the HTML Modules specification. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>:</p>
+        	<p>The current <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill implementation</a> has full support for the HTML Modules specification. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>:</p>
         	<ul>
         	<li><p><strong><a href="#convention">attr.moduleid</a></strong> - The <em>module ID</em> attribute. The standard attribute is <code>name</code>, but you may use a custom attribute name, where necessary.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -1606,7 +1603,7 @@ module_nested_middle <span class="token operator">=</span> module<span class="to
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></code></pre>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">let</span> templateDependency <span class="token operator">=</span> myPrompt<span class="token punctuation">.</span>tpl<span class="token punctuation">;</span></code></pre></li>
         	</ul>
-        	<p>Learn more about customization and the OOHTML meta tag <a href="/tooling/oohtml/docs/resources/meta-tag">here</a>.</p>
+        	<p>Learn more about customization and the OOHTML meta tag <a href="\tooling\oohtml\docs\resources\meta-tag">here</a>.</p>
         </div>
     </template>
     <template name="namespaced-html">
@@ -1675,7 +1672,7 @@ module_nested_middle <span class="token operator">=</span> module<span class="to
 <span class="token keyword">let</span> aboutAsia <span class="token operator">=</span> continents<span class="token punctuation">.</span>namespace<span class="token punctuation">.</span>asia<span class="token punctuation">.</span>namespace<span class="token punctuation">.</span>about<span class="token punctuation">;</span></code></pre></li>
         	</ul>
         	<h2 id="namespace-observability">Namespace Observability</h2>
-        	<p>The <code>document.namespace</code> property and the <code>Element.prototype.namespace</code> property are implemented as <em>live objects</em> that can be observed for realtime changes in the namespace tree. Live objects are observed using the <a href="/tooling/oohtml/docs/the-observer-api">Observer API</a>.</p>
+        	<p>The <code>document.namespace</code> property and the <code>Element.prototype.namespace</code> property are implemented as <em>live objects</em> that can be observed for realtime changes in the namespace tree. Live objects are observed using the <a href="\tooling\oohtml\docs\the-observer-api">Observer API</a>.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Obtain the Observer API and use the Observer.observe() method</span>
 Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>continents<span class="token punctuation">.</span>namespace<span class="token punctuation">,</span> <span class="token parameter">events</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -1705,7 +1702,7 @@ continents<span class="token punctuation">.</span><span class="token function">a
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<p>Other possibilities can be found in the Observer API documentation.</p>
         	<h2 id="polyfill-support">Polyfill Support</h2>
-        	<p>The current <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill implementation</a> has good support for the Namespaced HTML Specification. With the exception of <a href="#namespaced-selectors">Namespaced Selectors</a>, all aspects of the specification are supported. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>:</p>
+        	<p>The current <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill implementation</a> has good support for the Namespaced HTML Specification. With the exception of <a href="#namespaced-selectors">Namespaced Selectors</a>, all aspects of the specification are supported. The polyfill additionally makes it possible to customise the following areas of its implementation of the syntax using the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>:</p>
         	<ul>
         	<li><p><strong><a href="#convention">attr.namespace</a></strong> - The <em>namespace keyword</em> attribute. The standard <em>namespace keyword</em> attribute is <code>namespace</code>, but you may use a custom attribute name, where necessary.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -1730,9 +1727,12 @@ continents<span class="token punctuation">.</span><span class="token function">a
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Get the "continents" article</span>
 <span class="token keyword">let</span> continents <span class="token operator">=</span> document<span class="token punctuation">.</span>ns<span class="token punctuation">.</span>continents<span class="token punctuation">;</span></code></pre></li>
         	</ul>
-        	<p>Learn more about customization and the OOHTML meta tag <a href="/tooling/oohtml/docs/spec/meta-tag">here</a>.</p>
+        	<p>Learn more about customization and the OOHTML meta tag <a href="\tooling\oohtml\docs\spec\meta-tag">here</a>.</p>
         </div>
     </template>
+    <div exportgroup="README.md">
+    	<h1 id="oohtml-specifications">OOHTML Specifications</h1>
+    </div>
     <template name="subscript">
         <div exportgroup="README.md">
         	<h1 id="subscript">Subscript</h1>
@@ -1858,7 +1858,7 @@ scopedSubscript1<span class="token punctuation">.</span><span class="token funct
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">globalMessage <span class="token operator">+=</span> <span class="token string">' Click the botton below to make your cookie choices.'</span><span class="token punctuation">;</span>
 renderMethod<span class="token punctuation">.</span><span class="token function">thread</span><span class="token punctuation">(</span> <span class="token punctuation">[</span> <span class="token string">'globalMessage'</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<p>The <code>.thread()</code> method is Subscript's unique one-liner approach to perfect, granular, performant reactivity; without concerning itself with how the supposed changes are made or how anything is observed!</p>
-        	<p>Subscript UI takes this further to introduce <em>automatic observability</em> over the <code>document</code> object and over each element that implements Subscript - <em>class</em>-based or <code>&lt;script&gt;</code>-based. It uses the <a href="/tooling/oohtml/docs/resources/the-observer-api">Observer API</a> under the hood. </p>
+        	<p>Subscript UI takes this further to introduce <em>automatic observability</em> over the <code>document</code> object and over each element that implements Subscript - <em>class</em>-based or <code>&lt;script&gt;</code>-based. It uses the <a href="\tooling\oohtml\docs\resources\the-observer-api">Observer API</a> under the hood. </p>
         	<p>Thus, property mutations on the <code>document</code> object or an element instance are reactive!</p>
         	<p><strong>An <em>alert</em> element</strong>, this time, based on a custom <code>document.message</code> property:</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
@@ -1892,8 +1892,8 @@ Observer<span class="token punctuation">.</span><span class="token function">set
     Observer<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span> counterElement<span class="token punctuation">,</span> <span class="token string">'count'</span><span class="token punctuation">,</span> counterElement<span class="token punctuation">.</span>count <span class="token operator">+</span> <span class="token number">1</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<h2 id="keeping-it-neat-with-the-state-api-and-the-namespace-api">Keeping It Neat With the State API and the Namespace API</h2>
-        	<p>So we don't litter the <code>document</code> object and element instances with custom properties everywhere, we're rewriting the above examples to leverage the <a href="/tooling/oohtml/docs/spec/the-state-api"><code>.state</code> API</a>, which natively uses the Observer API under the hood.</p>
-        	<p>And… to simplify our access to the DOM, we're also rewriting the <code>querySelector()</code> calls to leverage the <a href="/tooling/oohtml/docs/spec/namespaced-html">Namespace API</a>.</p>
+        	<p>So we don't litter the <code>document</code> object and element instances with custom properties everywhere, we're rewriting the above examples to leverage the <a href="\tooling\oohtml\docs\spec\the-state-api"><code>.state</code> API</a>, which natively uses the Observer API under the hood.</p>
+        	<p>And… to simplify our access to the DOM, we're also rewriting the <code>querySelector()</code> calls to leverage the <a href="\tooling\oohtml\docs\spec\namespaced-html">Namespace API</a>.</p>
         	<p><strong>The <em>alert</em> element</strong>:</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>alert<span class="token punctuation">"</span></span> <span class="token attr-name">namespace</span><span class="token punctuation">&gt;</span></span>
 
@@ -1926,7 +1926,7 @@ counterElement<span class="token punctuation">.</span>state<span class="token pu
     counterElement<span class="token punctuation">.</span>state<span class="token punctuation">.</span>count <span class="token operator">++</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1000</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
         	<h2 id="polyfill-support">Polyfill Support</h2>
-        	<p>The current <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill implementation</a> has good support for Subscript. The polyfill additionally makes it possible to customise the follwoing areas of its implementation of the syntax using the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>:</p>
+        	<p>The current <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill implementation</a> has good support for Subscript. The polyfill additionally makes it possible to customise the follwoing areas of its implementation of the syntax using the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>:</p>
         	<ul>
         	<li><p><strong><a href="#convention">selector.script</a></strong> - The CSS selector for matching the script element. The default selector is <code>script[type="subscript"]</code>. You may use a custom selector, like <code>script[is="my-script"][type="subscript"]</code>, where necessary.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -1939,7 +1939,7 @@ counterElement<span class="token punctuation">.</span>state<span class="token pu
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span></code></pre></li>
         	</ul>
-        	<p>Learn more about customization and the OOHTML meta tag <a href="/tooling/oohtml/docs/resources/meta-tag">here</a>.</p>
+        	<p>Learn more about customization and the OOHTML meta tag <a href="\tooling\oohtml\docs\resources\meta-tag">here</a>.</p>
         </div>
     </template>
     <template name="the-state-api">
@@ -2055,7 +2055,7 @@ myCollapsible<span class="token punctuation">.</span><span class="token function
 myCollapsible<span class="token punctuation">.</span><span class="token function">clearState</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
         	</ul>
         	<h2 id="state-observability">State Observability</h2>
-        	<p>State objects are a special kind of objects in that they support <em>observability</em>. The <code>document.state</code> property and the <code>Element.prototype.state</code> property are implemented as <em>live objects</em> that can be observed for property changes using the <a href="/tooling/oohtml/docs/spec/the-observer-api">Observer API</a>.</p>
+        	<p>State objects are a special kind of objects in that they support <em>observability</em>. The <code>document.state</code> property and the <code>Element.prototype.state</code> property are implemented as <em>live objects</em> that can be observed for property changes using the <a href="\tooling\oohtml\docs\spec\the-observer-api">Observer API</a>.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token comment">// Obtain the Observer API and use the Observer.observe() method</span>
 Observer<span class="token punctuation">.</span><span class="token function">observe</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span>state<span class="token punctuation">,</span> <span class="token parameter">events</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
     events<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
@@ -2144,7 +2144,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
         	<p>External code gets a standard way to control state.</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">myCollapsible<span class="token punctuation">.</span>state<span class="token punctuation">.</span>collapsed <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span></code></pre>
         	<h2 id="polyfill-support">Polyfill Support</h2>
-        	<p>The current <a href="/tooling/oohtml/docs/getting-started/polyfill">OOHTML polyfill implementation</a> has full support for The State API. The polyfill additionally makes it possible to customise following areas of its implementation of the API using the <a href="/tooling/oohtml/docs/resources/meta-tag">OOHTML META tag</a>:</p>
+        	<p>The current <a href="\tooling\oohtml\docs\getting-started\polyfill">OOHTML polyfill implementation</a> has full support for The State API. The polyfill additionally makes it possible to customise following areas of its implementation of the API using the <a href="\tooling\oohtml\docs\resources\meta-tag">OOHTML META tag</a>:</p>
         	<ul>
         	<li><p><strong><a href="#api">api.state</a></strong> - The property name for exposing the <em>state object</em> on DOM elements and the document object. The standard property name is <code>state</code>, but you may use a custom property name, where necessary.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -2162,7 +2162,7 @@ Observer<span class="token punctuation">.</span><span class="token function">set
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span></code></pre>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">document<span class="token punctuation">.</span><span class="token function">clearStateObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre></li>
         	</ul>
-        	<p>Learn more about customization and the OOHTML meta tag <a href="/tooling/oohtml/docs/resources/meta-tag">here</a>.</p>
+        	<p>Learn more about customization and the OOHTML meta tag <a href="\tooling\oohtml\docs\resources\meta-tag">here</a>.</p>
         </div>
     </template>
 </template>

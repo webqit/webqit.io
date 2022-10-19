@@ -22,8 +22,7 @@
   "author": "Oxford Harrison <oxharris.dev@gmail.com>",
   "license": "SEE LICENSE IN LICENSE.md",
   "dependencies": {
-    "@webqit/util": "^0.7.1",
-    "@webqit/webflo": "^0.11.23"
+    "@webqit/util": "^0.7.1"
   },
   "devDependencies": {
     "@webqit/oohtml-cli": "^0.3.1",

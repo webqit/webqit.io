@@ -1,34 +1,5 @@
 {
-    "README.md": {
-        "_subtreeType": "category",
-        "outline": [
-            {
-                "level": 1,
-                "title": "OOHTML Documentation",
-                "uri": "oohtml-documentation",
-                "subtree": [
-                    {
-                        "level": 2,
-                        "title": "Explore the Docs",
-                        "uri": "explore-the-docs",
-                        "subtree": []
-                    }
-                ]
-            }
-        ]
-    },
     "getting-started": {
-        "README.md": {
-            "_index": "first",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "Getting Started",
-                    "uri": "getting-started",
-                    "subtree": []
-                }
-            ]
-        },
         "explainer": {
             "README-1.md": {
                 "outline": []
@@ -182,21 +153,20 @@
                     }
                 ]
             }
-        }
-    },
-    "learn": {
+        },
         "README.md": {
-            "title": "Learn",
-            "_index": "last",
+            "_index": "first",
             "outline": [
                 {
                     "level": 1,
-                    "title": "Using OOHTML",
-                    "uri": "using-oohtml",
+                    "title": "Getting Started",
+                    "uri": "getting-started",
                     "subtree": []
                 }
             ]
-        },
+        }
+    },
+    "learn": {
         "examples": {
             "README.md": {
                 "desc": "A few examples using OOHTML.",
@@ -246,13 +216,39 @@
                     ]
                 }
             }
+        },
+        "README.md": {
+            "title": "Learn",
+            "_index": "last",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "Using OOHTML",
+                    "uri": "using-oohtml",
+                    "subtree": []
+                }
+            ]
         }
     },
+    "README.md": {
+        "_subtreeType": "category",
+        "outline": [
+            {
+                "level": 1,
+                "title": "OOHTML Documentation",
+                "uri": "oohtml-documentation",
+                "subtree": [
+                    {
+                        "level": 2,
+                        "title": "Explore the Docs",
+                        "uri": "explore-the-docs",
+                        "subtree": []
+                    }
+                ]
+            }
+        ]
+    },
     "resources": {
-        "README.md": {
-            "_index": "2",
-            "outline": []
-        },
         "ecosystem": {
             "README.md": {
                 "desc": "Available Tools for developing OOHTML-based UIs.",
@@ -281,6 +277,10 @@
                 ]
             }
         },
+        "README.md": {
+            "_index": "2",
+            "outline": []
+        },
         "the-observer-api": {
             "README.md": {
                 "desc": "The Observer API documentation.",
@@ -296,18 +296,6 @@
         }
     },
     "spec": {
-        "README.md": {
-            "title": "Specifications",
-            "_index": "1",
-            "outline": [
-                {
-                    "level": 1,
-                    "title": "OOHTML Specifications",
-                    "uri": "oohtml-specifications",
-                    "subtree": []
-                }
-            ]
-        },
         "html-imports": {
             "README.md": {
                 "desc": "The <i>HTML Imports</i> specification.",
@@ -481,6 +469,18 @@
                     }
                 ]
             }
+        },
+        "README.md": {
+            "title": "Specifications",
+            "_index": "1",
+            "outline": [
+                {
+                    "level": 1,
+                    "title": "OOHTML Specifications",
+                    "uri": "oohtml-specifications",
+                    "subtree": []
+                }
+            ]
         },
         "subscript": {
             "README.md": {

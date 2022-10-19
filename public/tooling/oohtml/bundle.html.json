@@ -1,4 +1,5 @@
 {
+    "docs": "\\tooling\\oohtml\\docs\\bundle.html.json",
     "README.md": {
         "outline": [
             {
@@ -28,7 +29,6 @@
             }
         ]
     },
-    "docs": "/tooling/oohtml/docs/bundle.html.json",
     "summary.json": {
         "title": "OOHTML",
         "icon": "code-slash",
