@@ -1,7 +1,10 @@
 {
-    "port": 4000,
-    "domains": ["webqit.ioo"],
+    "port": 3100,
     "https": {
-        "port": 5000
+        "port": 0,
+        "domains": ["webqit.io", "www.webqit.io"],
+        "keyfile": "/etc/letsencrypt/live/webqit.io/privkey.pem",
+        "certfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
+        "force": false
     }
-} 
+}
