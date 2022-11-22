@@ -1,0 +1,10 @@
+{
+    "port": 3100,
+    "https": {
+        "port": 0,
+        "domains": ["webqit.io", "www.webqit.io"],
+        "keyfile": "/etc/letsencrypt/live/webqit.io/privkey.pem",
+        "certfile": "/etc/letsencrypt/live/webqit.io/fullchain.pem",
+        "force": false
+    }
+}
