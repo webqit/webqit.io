@@ -15,7 +15,7 @@ An HTML module is a standard `<template>` element with a `name` attribute - whic
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
         <label for="age">How old are you?</div>
         <input id="age" />
@@ -32,7 +32,7 @@ Now, exports may be more properly wrapped within an `<export>` element of a desi
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
         <export name="question">
             <label for="age">How old are you?</label>
@@ -51,10 +51,10 @@ Or they may be individually *tagged* to an export identifier using the `exportgr
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
-        <label exportgroup="question" for="age">How old are you?</label>
-        <input exportgroup="question" name="age" />
+        <label exportid="#question" for="age">How old are you?</label>
+        <input exportid="#question" name="age" />
         
         <div>This is another export</div>
 
@@ -76,12 +76,12 @@ For organizational purposes, modules may be nested.
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
         
         <div>This is snippet 1</div>
         <div>This is snippet 2</div>
 
-        <template name="module_nested">
+        <template exportid="module_nested">
             <div>This is snippet 3</div>
             <div>This is snippet 4</div>
         </template>
@@ -132,13 +132,13 @@ Template elements may reference remote content using the `src` attribute.
 
 ```html
 <head>
-    <template name="module1">
+    <template exportid="module1">
 
-        <div exportgroup="export5"></div>
-        <div exportgroup="export6"></div>
+        <div exportid="#export5"></div>
+        <div exportid="#export6"></div>
 
-        <template name="module_nested">...</template>
-        <template name="module_remote" src="/bundle.html"></template>
+        <template exportid="module_nested">...</template>
+        <template exportid="module_remote" src="/bundle.html"></template>
 
     </template>
 </head>
@@ -148,11 +148,11 @@ Template elements may reference remote content using the `src` attribute.
 
 ```html
 
-<div exportgroup="export1"></div>
-<div exportgroup="export2"></div>
-<template name="module_loaded">
-    <div exportgroup="export3"></div>
-    <div exportgroup="export4"></div>
+<div exportid="#export1"></div>
+<div exportid="#export2"></div>
+<template exportid="module_loaded">
+    <div exportid="#export3"></div>
+    <div exportid="#export4"></div>
 </template>
 
 ```
@@ -284,11 +284,11 @@ The following events are fired on the document object when the document's module
         
     ```html
     <head>
-        <template name="module2">
+        <template exportid="module2">
 
-            <div exportgroup="export5"></div>
-            <div exportgroup="export6"></div>
-            <template name="module_remote" src="/bundle.html"></template>
+            <div exportid="#export5"></div>
+            <div exportid="#export6"></div>
+            <template exportid="module_remote" src="/bundle.html"></template>
 
         </template>
     </head>
@@ -306,11 +306,11 @@ The following events are fired on the document object when the document's module
         
     ```html
     <head>
-        <template name="module2">
+        <template exportid="module2">
 
-            <div exportgroup="export5"></div>
-            <div exportgroup="export6"></div>
-            <template name="module_remote" src="/bundle.html"></template>
+            <div exportid="#export5"></div>
+            <div exportid="#export6"></div>
+            <template exportid="module_remote" src="/bundle.html"></template>
 
         </template>
     </head>
@@ -368,10 +368,10 @@ OOHTML supports expressions that make it easier to get to modules and their expo
 
     ```html
     <head>
-        <template name="root">
-            <template name="module_nested">
-                <template name="module_nested_middle">
-                    <template name="module_nested"></template>
+        <template exportid="root">
+            <template exportid="module_nested">
+                <template exportid="module_nested_middle">
+                    <template exportid="module_nested"></template>
                 </template>
             </template>
         </template>
@@ -413,15 +413,15 @@ OOHTML supports expressions that make it easier to get to modules and their expo
 
     ```html
     <head>
-        <template name="root">
-            <template name="module_nested">
-                <template name="module_nested_middle">
-                    <template name="module_nested">
-                        <template name="module_near_leaf_a">
-                            <template name="module_leaf_a"></template>
+        <template exportid="root">
+            <template exportid="module_nested">
+                <template exportid="module_nested_middle">
+                    <template exportid="module_nested">
+                        <template exportid="module_near_leaf_a">
+                            <template exportid="module_leaf_a"></template>
                         </template>
-                        <template name="module_near_leaf_b">
-                            <template name="module_leaf_b"></template>
+                        <template exportid="module_near_leaf_b">
+                            <template exportid="module_leaf_b"></template>
                         </template>
                     </template>
                 </template>
@@ -465,8 +465,8 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     <head>
         <meta name="oohtml" content="attr.moduleid=data-name;" />
         <template data-name="module2">
-            <div exportgroup="export-1"></div>
-            <div exportgroup="export-2"></div>
+            <div exportid="#export-1"></div>
+            <div exportid="#export-2"></div>
         </template>
     </head>
     ```
@@ -476,7 +476,7 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     ```html
     <head>
         <meta name="oohtml" content="element.export=html-export;" />
-        <template name="module2">
+        <template exportid="module2">
             <html-export name="export-1">
                 <div></div>
             </html-export>
@@ -489,7 +489,7 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     ```html
     <head>
         <meta name="oohtml" content="attr.exportid=data-name;" />
-        <template name="module2">
+        <template exportid="module2">
             <export data-name="export-1">
                 <div></div>
             </export>
@@ -505,9 +505,9 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     ```html
     <head>
         <meta name="oohtml" content="attr.exportgroup=data-exportgroup;" />
-        <template name="module2">
-            <div data-exportgroup="export-1"></div>
-            <div data-exportgroup="export-2"></div>
+        <template exportid="module2">
+            <div data-exportid="#export-1"></div>
+            <div data-exportid="#export-2"></div>
         </template>
     </head>
     ```

@@ -81,7 +81,7 @@ var globalMessage = 'This site uses cookies!';
 
 ```html
 <div id="alert">
-    <script type="subscript">
+    <script type="module" scoped contract>
         console.log( this.id ); // alert
     </script>
 </div>
@@ -107,7 +107,7 @@ var globalMessage = 'This site uses cookies!';
         <div class="message"></div>
 
         <!-- Scoped Subscript -->
-        <script type="subscript">
+        <script type="module" scoped contract>
             let messageElement = this.querySelector( '.message' );
             messageElement.innerHTML = globalMessage;
         </script>
@@ -130,7 +130,7 @@ And... it can be either *class*-based or `<script>`-based, or both! (For power u
     <span class="icon"></span> <!------------ introducing an icon, managed below -->
 
     <!-- Scoped Subscript -->
-    <script type="subscript">
+    <script type="module" scoped contract>
         let iconElement = this.querySelector( '.icon' );
         iconElement.classList.add( 'icon-alert' );
     </script>
@@ -199,7 +199,7 @@ Thus, property mutations on the `document` object or an element instance are rea
     <div class="message"></div>
 
     <!-- Scoped Subscript -->
-    <script type="subscript">
+    <script type="module" scoped contract>
         let messageElement = this.querySelector( '.message' );
         messageElement.innerHTML = document.message;
     </script>
@@ -223,7 +223,7 @@ Observer.set( document, 'message', document.message + ' Click the botton below t
     <div class="count"></div>
 
     <!-- Scoped Subscript -->
-    <script type="subscript">
+    <script type="module" scoped contract>
         let countElement = this.querySelector( '.count' );
         countElement.innerHTML = this.count;
     </script>
@@ -253,7 +253,7 @@ And... to simplify our access to the DOM, we're also rewriting the `querySelecto
     <div id="message"></div>
 
     <!-- Scoped Subscript -->
-    <script type="subscript">
+    <script type="module" scoped contract>
         let messageElement = this.namespace.message;
         messageElement.innerHTML = document.state.message;
     </script>
@@ -277,7 +277,7 @@ document.state.message += ' Click the botton below to make your cookie choices.'
     <div id="count"></div>
 
     <!-- Scoped Subscript -->
-    <script type="subscript">
+    <script type="module" scoped contract>
         let countElement = this.namespace.count;
         countElement.innerHTML = this.state.count;
     </script>
@@ -297,7 +297,7 @@ setInterval( () => {
 
 The current [OOHTML polyfill implementation](../../getting-started/polyfill) has good support for Subscript. The polyfill additionally makes it possible to customise the follwoing areas of its implementation of the syntax using the [OOHTML META tag](../../resources/meta-tag):
 
-+ **[selector.script](#convention)** - The CSS selector for matching the script element. The default selector is `script[type="subscript"]`. You may use a custom selector, like `script[is="my-script"][type="subscript"]`, where necessary.
++ **[selector.script](#convention)** - The CSS selector for matching the script element. The default selector is `script[type="module" scoped contract]`. You may use a custom selector, like `script[is="my-script"][type="module" scoped contract]`, where necessary.
         
     ```html
     <head>
@@ -305,8 +305,8 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     </head>
     <body>
         <div>
-            <script is="my-script" type="subscript"></script>
-            <script is="my-script" type="subscript"></script>
+            <script is="my-script" type="module" scoped contract></script>
+            <script is="my-script" type="module" scoped contract></script>
         </div>
     </body>
     ```

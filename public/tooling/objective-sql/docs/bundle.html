@@ -1,7 +1,7 @@
 
-<template name="getting-started">
-    <template name="download">
-        <div exportgroup="README.md">
+<template exportid="getting-started" inherits="#main.html">
+    <template exportid="download" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="download-options">Download Options</h1>
         	<p>Objective SQL can be used either from a CDN or as an npm package.</p>
         	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
@@ -21,8 +21,8 @@
         	<p>Continue to <a href="\tooling\objective-sql\docs\learn">learning the API</a>.</p>
         </div>
     </template>
-    <template name="overview">
-        <div exportgroup="README.md">
+    <template exportid="overview" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="overview">Overview</h1>
         	<p>Objective SQL is a query client that wraps powerful concepts in a simple, succint API.</p>
         	<ol>
@@ -103,11 +103,11 @@ LEFT JOIN users ON users.id = posts.author_id;</code></pre>
         	<p><a href="\tooling\objective-sql\docs\getting-started\learn\the-language">Learn more about the language</a> and see just what's possible with the <em>arrow</em> syntax. (DOCS coming soon.)</p>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="getting-started">Getting Started</h1>
     </div>
 </template>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h1 id="objective-sql-documentation">Objective-SQL Documentation</h1>
 	<p>Welcome to the Objective-SQL documentation. We hope you find it easy to understand and navigate.</p>
 	<p>If you have questions about anything related to the Objective-SQL, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>

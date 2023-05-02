@@ -1,7 +1,7 @@
 
-<template name="concepts">
-    <template name="conditionals-and-logic">
-        <div exportgroup="README.md">
+<template exportid="concepts" inherits="#main.html">
+    <template exportid="conditionals-and-logic" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="conditionals-and-logic">Conditionals And Logic</h1>
         	<p>When the <em>test expression</em> of an "If/Else" statement, "Switch" statement, or other logical expressions contains references, the statement or logical expression is bound to those references. This lets us have <em>reactive conditionals and logic</em>.</p>
         	<h2 id="ifelse-statements">"If/Else" Statements</h2>
@@ -58,8 +58,8 @@
         	<p><sup>*</sup>Since expressions in the "consequent" and "alternate" sides of a conditional or logical expression are mutually exclusive (<code>b</code> and <code>c</code> above), as determined by the "test" expression (<code>a()</code> above), only the thread events for the references in the currently active side (<code>b</code> above) are honoured by the expression at any given point in time.</p>
         </div>
     </template>
-    <template name="functions">
-        <div exportgroup="README.md">
+    <template exportid="functions" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="functions">Functions</h1>
         	<p>Functions are <em>static</em> definitions…</p>
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js"><span class="token keyword">function</span> <span class="token function">sum</span><span class="token punctuation">(</span> <span class="token parameter">a<span class="token punctuation">,</span> b</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -192,8 +192,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span></code></pre>
         </div>
     </template>
-    <template name="loops">
-        <div exportgroup="README.md">
+    <template exportid="loops" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="loops">Loops</h1>
         	<p>When the parameters of a loop ("For" loops, "While" and "Do … While" loops) contain references, the loop is bound to those references. This lets us have reactive loops.</p>
         	<h2 id="a-for-loop-while-and-do-…-while-loop">A <code>for</code> Loop, <code>while</code> And <code>do … while</code> Loop</h2>
@@ -290,11 +290,11 @@ fn<span class="token punctuation">.</span><span class="token function">thread</s
 <span class="token punctuation">}</span></code></pre>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="concepts">Concepts</h1>
     </div>
-    <template name="references-and-bindings">
-        <div exportgroup="README.md">
+    <template exportid="references-and-bindings" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="references-and-bindings">References And Bindings</h1>
         	<p>Expressions and statements in Subscript maintain a binding to their references. And that's the basis for reactivity in Subscript.</p>
         	<p>For example, variable declarations, with <code>let</code> and <code>var</code>, and assignment expressions, are bound to any references that may be in their argument. (<code>const</code> declarations are an exception as they're always <em>const</em> in nature.)</p>
@@ -313,8 +313,8 @@ fn<span class="token punctuation">.</span><span class="token function">thread</s
         	<p><em>And that's essentially two variables declared up there: <code>username</code> and <code>avatarUrl</code>! And while <code>username</code> is bound to <code>candidate.username</code>, <code>avatarUrl</code> is bound to <code>candidate.profile.avatar</code>. Each gets updated independent of the other; in sync with their own binding. (But a thread event for their common root object - <code>candidate</code> - gets both variables updated.)</em></p>
         </div>
     </template>
-    <template name="thread-events">
-        <div exportgroup="README.md">
+    <template exportid="thread-events" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="thread-events">Thread Events</h1>
         	<p>Subscript is not concerned with how changes happen or are detected on the outer scope of the function. It simply gives us a way to announce that something has changed. That announcement is called a <em>thread event</em>.</p>
         	<p>A Subscript function has a <code>thread()</code> method that lets us trigger a thread for the list of outside variables or properties that have changed.</p>
@@ -350,7 +350,7 @@ fn<span class="token punctuation">.</span><span class="token function">thread</s
         </div>
     </template>
 </template>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h1 id="an-overview">An Overview</h1>
 	<p>Subscript is a reactivity runtime for JavaScript. It takes any valid JavaScript code, reads its dependency graph, and offers a mechanism to run it both in whole and in <em>reactive</em> selections, called <em>dependency threads</em>.</p>
 	<h2 id="whats-a-dependency-thread">What's A Dependency Thread?</h2>
@@ -421,9 +421,9 @@ render<span class="token punctuation">.</span><span class="token function">threa
 	<h2 id="explore-the-docs">Explore the Docs</h2>
 	<p><em>If you have questions about anything related to the Subscript, you're always welcome to ask on our <a href="https://github.com/webqit/subscript/discussions">GitHub Discussions</a>.</em></p>
 </div>
-<template name="spec">
-    <template name="api">
-        <div exportgroup="README.md">
+<template exportid="spec" inherits="#main.html">
+    <template exportid="api" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="api">API</h1>
         	<h2 id="subscriptfunction">SubscriptFunction</h2>
         	<p><code>SubscriptFunction</code> is a one-to-one equivalent of the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function">JavaScript Function constructor</a>. They work interchangeably 😎.</p>
@@ -530,8 +530,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
         	<p><em>See <a href="\tooling\subscript\docs\usage\subscript-element">here</a> for usage examples</em></p>
         </div>
     </template>
-    <template name="download">
-        <div exportgroup="README.md">
+    <template exportid="download" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="download-options">Download Options</h1>
         	<p>Subscript can be used either from a CDN or as an npm package.</p>
         	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
@@ -549,16 +549,16 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token keyword">import</span> <span class="token punctuation">{</span> SubscriptFunction<span class="token punctuation">,</span> SubscriptClass <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@webqit/subscript'</span><span class="token punctuation">;</span></code></pre>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="spec">SPEC</h1>
     </div>
 </template>
-<template name="usage">
-    <div exportgroup="README.md">
+<template exportid="usage" inherits="#main.html">
+    <div exportid="#README.md">
     	<h1 id="usage">Usage</h1>
     </div>
-    <template name="subscript-element">
-        <div exportgroup="README.md">
+    <template exportid="subscript-element" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="subscript-element">Subscript Element</h1>
         	<h2 id="a-custom-element-example">A Custom Element Example</h2>
         	<p>As trivial as our hypothetical <a href="#whats-a-dependency-thread"><code>render()</code></a> function above is, we can see it applicable in real life places! Consider a neat reactive <em>Custom Element</em> example based on <a href="\tooling\subscript\docs\api#subscriptclass"><code>SubscriptClass</code></a>.</p>

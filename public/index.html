@@ -2,12 +2,13 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=html-import;element.export=html-export;">
+        <meta name="oohtml" content="isomorphic=1;attr.id=data-id;element.import=import;element.export=html-export;">
+		<script crossorigin="" ssr="" src="https://unpkg.com/@webqit/oohtml/dist/main.js"></script>
 
-        <title data-id="title"></title>
+        <title :id="title"></title>
+        <meta name="description" content="The tooling, cloud, and community for web-native development">
 
         <link rel="icon" href="/assets/img/logo/logo.ico" type="image/x-icon">
-        <meta name="description" content="The tooling, cloud, and community for web-native development">
         <link rel="manifest" href="/manifest.json">
         <meta name="theme-color" content="#cce6ff">
         
@@ -16,33 +17,20 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="#cce6ff">
         <link rel="apple-touch-icon" href="/assets/img/logo/logo-200x200.png">
 
-        <!-- CSS -->
-        <!--
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link crossorigin type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,400;1,500;1,600;1,700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:wght@100;200;300;400;500;600;700;800&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" />
-        <link type="text/css" rel="stylesheet" href="/css/fonts/Whitney-Font/font.css" />
-        -->
-
         <link crossorigin="" defer="" type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="https://use.typekit.net/zux1blc.css">
         <link type="text/css" rel="stylesheet" href="/assets/css/tailwind.css">
         <link defer="" rel="stylesheet" type="text/css" href="/assets/css/prism.css">
         <link defer="" rel="stylesheet" type="text/css" href="/assets/css/vs-code-dark.css">
 
+        <!-- Main JS -->
 		<script type="module" src="/bundle.js" by="webflo"></script>
-		<script crossorigin="" ssr="" src="https://unpkg.com/@webqit/playui-js/dist/main.js"></script>
-        <script crossorigin="" defer="" src="https://unpkg.com/@webqit/subscript/dist/console-element.js"></script>
-        <script crossorigin="" defer="" src="https://unpkg.com/@webqit/subscript/dist/player-element.js"></script>
-
         <script>
             window.Prism = window.Prism || {};
             window.Prism.manual = true;
             $ = WebQit.$;
             currentYear = (new Date).getFullYear();
         </script>
-        <!--
-        <script src="/assets/prism.js" data-manual></script>
-        -->
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9YMML9GXC1"></script>
@@ -54,17 +42,15 @@
             gtag('config', 'G-9YMML9GXC1');
         </script>
 
-        <script type="subscript">
+        <script type="module" scoped="" contract="">
             let { titleBar, title } = document.state.data || {};
             $(document.namespace.title).html(titleBar || title || '');
         </script>
     
-    </head>
+    </head><body namespace="" contextname="routingcontext" importscontext="" class="dark font-noto text-lg">
+        <span :id="top" aria-hidden="true"></span>
 
-    <body template="" namespace="" class="dark font-noto text-lg">
-        <span data-id="top" aria-hidden="true"></span>
-
-        <script type="subscript">
+        <script type="module" scoped="" contract="">
             let app = document.state;
             let urlPath = app.url?.pathname || '';
             $(this).attr('wqdiv', urlPath.length < 2 ? 'home' : urlPath.split('/')[1]);
@@ -147,7 +133,7 @@
         <div role="progressbar" dramatic-linearprogress="true" indeterminate="true" class="fixed group left-0 top-0 w-full z-10 overflow-hidden" style="height: 2px;">
             <div class="progressbar-indicator-a progressbar-trail hidden group-active2:block" style="background-color: red;"></div>
             <div class="progressbar-indicator-b hidden group-active2:block" style="background-color: blue;"></div>
-            <script type="subscript">
+            <script type="module" scoped="" contract="">
                 let { network, data } = document.state;
                 $(this).class('hidden', network?.requesting || network?.redirecting);
                 $(this).css('color', network?.error ? 'red' : 'blueviolet');
@@ -172,14 +158,14 @@
                     </form>
                 </div>
                 <div template="@layout/menu-x" class="w-0 lg:w-1/3 flex items-center justify-end">
-                    <div data-id="menuX" template="@layout/menu-x" class="flex items-center divide-x-2 divide-gray-400"></div>
+                    <div :id="menuX" template="@layout/menu-x" class="flex items-center divide-x-2 divide-gray-400"></div>
                 </div>
                 <i class="bi bi-search flex-center lg:hidden" style="cursor: pointer;"></i>
             </div>
             <span class="page-pad-r relative self-center group" tabindex="-1">
                 <i class="bi bi-three-dots-vertical relative w-10 -left-4 flex-center border-2 border-black md:border-0 text-xl font-bold py-2 hover:bg-black hover:text-white" style="cursor: pointer;"></i>
                 <div class="fixed top-3 right-4 lg:right-8 text-sm font-bold hidden group-focus-within:block rounded-lg shadow-xl bg-white divide-y-2 divide-gray-300" style="z-index: 1000;">
-                    <div data-id="menuY" template="@layout/menu-y" class="divide-y-2 divide-gray-300"></div>
+                    <div :id="menuY" template="@layout/menu-y" class="divide-y-2 divide-gray-300"></div>
                     <ul class="w-full order-last py-4 list-none">
                         <li class="flex items-center hover:bg-gray-200 p-3 px-6 dark:text-[blue] whitespace-nowrap" style="cursor: default;" onclick="document.body.classList.toggle('dark');">
                             <span class="pr-4 grow">Dark Mode</span>
@@ -188,17 +174,17 @@
                     </ul>
                 </div>
             </span>
-        </header>   
+        </header>
 
-        <html-import name="main.html:search(3-10)" class="pd-10">
+        <import module="@routingcontext/main.html" class="pd-10">
             <div class="flex-center bg-white dark:bg-black dark:text-gray-500" style="min-height: 100vh;">
                 <div namespace="" class="pd-10 pd-x3 text-center b anim-fade-in">
                     <i class="bi bi-globe"></i>
                     <br><br>
-                    <div data-id="error"></div>
+                    <div :id="error"></div>
                     <i class="bi bi-three-dots"></i><br>
                     <a href="/" class="color-1">← Back to Home</a>
-                    <script type="subscript">
+                    <script type="module" scoped="" contract="">
                         let app = document.state;
                         let cause = app.network?.error ? (app.network?.connectivity === 'online' ? 'Network Error - ' : "You're Offline - ") + app.network?.error.message : '404 - Not Found!';
                         setTimeout(() => {
@@ -207,7 +193,7 @@
                     </script>
                 </div>
             </div>
-        </html-import>
+        </import>
         
         <footer>
             <div class="flex py-10">
@@ -231,7 +217,7 @@
                             </div>
                         </div>
                     </div>
-                    <ul data-id="footerLinks" template="@layout/footer-menu#group" class="sm:w-9/12 p-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 list-none"></ul>
+                    <ul :id="footerLinks" template="@layout/footer-menu#group" class="sm:w-9/12 p-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 list-none"></ul>
                 </div>
                 <span class="page-pad-r hidden lg:block"></span>
             </div>
@@ -241,97 +227,73 @@
         </footer>
 
         <!-- TEMPLATES -->
-		<template name="routes" src="/bundle.html" by="oohtml-cli"></template>
-		<template name="routes" src="\bundle.html" by="oohtml-cli"></template>
-		<template name="routes" src="\bundle.html" by="oohtml-cli"></template>
-        <template name="@layout">
-            <template name="menu-x">
+        <template exportid="@layout">
+            <template exportid="menu-x">
 
                 <ul is="playui-list-ul" template="@layout/menu-x#item" overflow-visibility="1" class="flex px-4 space-x-5 list-none"></ul>
-                <li is="playui-linkitem-li" exportgroup="item" class="active2:text-wqdiv-color2" treewatch="">
+                <li is="playui-linkitem-li" exportid="#item" class="active2:text-wqdiv-color2" treewatch="">
                     <a href="#" class="whitespace-nowrap"></a>
                 </li>
 
             </template>
-            <template name="menu-y">
+            <template exportid="menu-y">
 
                 <ul is="playui-list-ul" template="@layout/menu-y#item" overflow-visibility="0" class="py-4 list-none"></ul>
-                <li is="playui-linkitem-li" exportgroup="item" namespace="" class="hover:bg-gray-200 active:text-wqdiv-color2 active2:text-wqdiv-color2" treewatch="">
+                <li is="playui-linkitem-li" exportid="#item" namespace="" class="hover:bg-gray-200 active:text-wqdiv-color2 active2:text-wqdiv-color2" treewatch="">
                     <a href="#" class="p-3 px-6 flex items-center justify-between">
-                        <span data-id="text" class="whitespace-nowrap pr-10"></span>
+                        <span :id="text" class="whitespace-nowrap pr-10"></span>
                         <i class="bi bi-chevron-right"></i>
                     </a>
                 </li>
 
             </template>
-            <template name="footer-menu">
+            <template exportid="footer-menu">
 
-                <li is="playui-linkitem-li" exportgroup="group" namespace="">
-                    <div data-id="legend" class="mb-4 font-bold text-gray-400"></div>
-                    <ul data-id="items" template="@layout/footer-menu#item" class="list-none"></ul>
-                    <script type="subscript">
+                <li is="playui-linkitem-li" exportid="#group" namespace="">
+                    <div :id="legend" class="mb-4 font-bold text-gray-400"></div>
+                    <ul :id="items" template="@layout/footer-menu#item" class="list-none"></ul>
+                    <script type="module" scoped="" contract="">
                         $(this.namespace.legend).html(this.state.legend);
                         $(this.namespace.items).list(this.state.items);
                     </script>
                 </li>
-                <li is="playui-linkitem-li" exportgroup="item" class="mt-1">
+                <li is="playui-linkitem-li" exportid="#item" class="mt-1">
                     <a href="#" class="hover:text-[blue]"></a>
                 </li>
 
             </template>
-            <template name="home">
-
-                <div exportgroup="section-intro" class="flex">
-                    <span class="page-pad-l hidden lg:block"></span>
-                    <div class="grow lg:flex items-end p-12 pt-24 pb-10 lg:pb-20">
-                        <div class="wqdiv-icon mb-8 lg:mb-0 lg:w-1/3 flex items-center">
-                            <span class="git-tee hidden lg:block"></span>
-                            <i data-id="landingIcon" class="bi w-11 h-11 flex-center radius-125 bg-wqdiv-color2 text-white font-bold drop-shadoww"></i>
-                            <span data-id="landingName" class="ml-4"></span>
-                        </div>
-                        <p data-id="introText" class="lg:w-1/3 lg:text-center text-2xl"></p>
-                        <div class="mt-4 lg:mt-0 lg:w-1/3 flex items-center lg:justify-end ">
-                            <a data-id="href" href="" class="relative -left-2.5 lg:left-0 lg:-bottom-2.5 w-16 h-16 flex-center border border-gray-300 hover:bg-gray-200 rounded-full">
-                                <i class="bi bi-arrow-right text-4xl"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <span class="page-pad-r hidden lg:block"></span>
-                </div>
-
-            </template>
-            <template name="landing1">
-                <template name="index">
+            <template exportid="landing1">
+                <template exportid="index">
                     
-                    <template name="filters">
-                        <li exportgroup="item" is="playui-linkitem-li" defaultactive="" class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
+                    <template exportid="filters">
+                        <li exportid="#item" is="playui-linkitem-li" defaultactive="" class="item text-gray-400 dark:text-gray-500 border-gray-200 dark:border-gray-800 hover:text-black dark:hover:text-gray-300 hover:border-black dark:hover:border-gray-500 active2:text-black dark:active2:text-gray-300 active2:border-black dark:active2:border-gray-400">
                             <a href=""></a>
                         </li>
                     </template>
 
-                    <li exportgroup="item" namespace="" class="item group overflow-hidden transition transition-all">
-                        <a data-id="href" href="" class="flex flex-col justify-between p-14 pb-10 h-full block rounded">
+                    <li exportid="#item" namespace="" class="item group overflow-hidden transition transition-all">
+                        <a :id="href" href="" class="flex flex-col justify-between p-14 pb-10 h-full block rounded">
                             <div class="w-full">
                                 <span class="icon h-10 w-10 rounded-xl inline-flex border-2 border-transparent group-hover:border-wqdiv-color2 text-wqdiv-color2 flex-center transition-all">
-                                    <i data-id="icon" class="bi flex-center text-4xl transform group-hover:scale-50 transition-all"></i>
+                                    <i :id="icon" class="bi flex-center text-4xl transform group-hover:scale-50 transition-all"></i>
                                 </span>
-                                <h3 data-id="title" class="py-4 font-black"></h3>
+                                <h3 :id="title" class="py-4 font-black"></h3>
                             </div>
                             <div class="w-full">
-                                <p data-id="desc"></p>
+                                <p :id="desc"></p>
                                 <span class="relative pt-4 pl-1 font-bold flex items-center text-wqdiv-color2 text-2xl">
                                     <i class="bi flex-center bi-dash w-0 group-hover:w-2 transition-all"></i><i class="bi flex-center bi-arrow-right"></i>
                                 </span>
                             </div>
                         </a>
-                        <div data-id="promoteContainer" class="hidden absolute right-10 top-14 mt-1 inline-flex">
+                        <div :id="promoteContainer" class="hidden absolute right-10 top-14 mt-1 inline-flex">
                             <span class="transform md:scale-0 group-hover:scale-100 transition-all group-hover:delay-500">
-                                <a data-id="promote" target="_blank" href="" class="flex items-center p-2 px-4 text-xs font-bold rounded-xl shadow-lg hover:text-white hover:bg-wqdiv-color2 border border-gray-500 dark:border-gray-500 hover:border-transparent dark:hover:border-transparent">
+                                <a :id="promote" target="_blank" href="" class="flex items-center p-2 px-4 text-xs font-bold rounded-xl shadow-lg hover:text-white hover:bg-wqdiv-color2 border border-gray-500 dark:border-gray-500 hover:border-transparent dark:hover:border-transparent">
                                     <i class="bi bi-github flex-center"></i> <span class="ml-2">star</span>
                                 </a>
                             </span>
                         </div>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.title) {
                                 $(this.namespace.icon).class('bi-' + this.state.icon, true);
                                 $(this.namespace.title).html(this.state.title);
@@ -346,17 +308,17 @@
                     </li>
                     
                 </template>
-                <template name="quickstarts">
+                <template exportid="quickstarts">
 
-                    <li exportgroup="item" namespace="" class="group text-left border-t-4 border-wqdiv-color2 transform md:hover:-translate-y-1 transition-transform">
-                        <a data-id="href" href="" class="block h-full transform md:group-hover:translate-y-0.5 transition-transform">
+                    <li exportid="#item" namespace="" class="group text-left border-t-4 border-wqdiv-color2 transform md:hover:-translate-y-1 transition-transform">
+                        <a :id="href" href="" class="block h-full transform md:group-hover:translate-y-0.5 transition-transform">
                             <div class="flex items-center justify-between py-5">
-                                <span data-id="title" class="text-gray-600 dark:text-gray-300"></span>
+                                <span :id="title" class="text-gray-600 dark:text-gray-300"></span>
                                 <i class="bi bi-chevron-right text-2xl font-bold text-gray-500"></i>
                             </div>
-                            <p data-id="desc" class="pb-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-400 dark:group-hover:text-gray-500"></p>
+                            <p :id="desc" class="pb-5 text-gray-500 dark:text-gray-400 group-hover:text-gray-400 dark:group-hover:text-gray-500"></p>
                         </a>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             $(this.namespace.title).html(this.state.title);
                             $(this.namespace.desc).html(this.state.desc);
                             $(this.namespace.href).attr('href', this.state.href || '');
@@ -364,22 +326,22 @@
                     </li>
 
                 </template>
-                <template name="highlights-section">
+                <template exportid="highlights-section">
 
-                    <li exportgroup="item" namespace="">
+                    <li exportid="#item" namespace="">
                         <div class="text">
                             <div class="content">
-                                <h3 data-id="title" class="font-bold"></h3>
-                                <p data-id="intro" class="py-2 italic"></p>
-                                <p data-id="content"></p>
+                                <h3 :id="title" class="font-bold"></h3>
+                                <p :id="intro" class="py-2 italic"></p>
+                                <p :id="content"></p>
                             </div>
                         </div>
                         <div class="dot"></div>
                         <div class="img flex-center">
                             <div class="w-1/2 border-t-2 border-dashed border-gray-300 dark:border-gray-800"></div>
-                            <img data-id="img">
+                            <img :id="img">
                         </div>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.title) {
                                 $(this.namespace.title).html(this.state.title);
                                 $(this.namespace.intro).html(this.state.intro);
@@ -395,15 +357,15 @@
                 </template>
 
             </template>
-            <template name="landing2">
-                <template name="quickstart">
+            <template exportid="landing2">
+                <template exportid="quickstart">
 
-                    <div exportgroup="link" namespace="" class="quickstart font-bold">
-                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
-                            <span data-id="cta_text" class="whitespace-nowrap"></span>
-                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                    <div exportid="#link" namespace="" class="quickstart font-bold">
+                        <a :id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
+                            <span :id="cta_text" class="whitespace-nowrap"></span>
+                            <i :id="icon" class="bi flex-center relative ml-4"></i>
                         </a>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.directive) {
                                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
                                 $(this.namespace.cta_href).attr('href', this.state.cta.href);
@@ -412,17 +374,17 @@
                         </script>
                     </div>
 
-                    <div exportgroup="code" namespace="" class="quickstart font-bold">
+                    <div exportid="#code" namespace="" class="quickstart font-bold">
                         <div class="flex items-stretch h-16 px-6 rounded-xl bg-gray-200 border border-gray-500">
                             <div class="flex items-center overflow-x-auto scrollbar-thin">
-                                <code data-id="directive" class="whitespace-nowrap bg-transparent" style="color: black;"></code>
+                                <code :id="directive" class="whitespace-nowrap bg-transparent" style="color: black;"></code>
                             </div>
                         </div>
-                        <a data-id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
-                            <span data-id="cta_text" class="whitespace-nowrap"></span>
-                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                        <a :id="cta_href" href="#" class="relative cta h-16 mt-4 top-2 flex md:inline-flex items-center justify-between px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
+                            <span :id="cta_text" class="whitespace-nowrap"></span>
+                            <i :id="icon" class="bi flex-center relative ml-4"></i>
                         </a>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.directive) {
                                 $(this.namespace.directive).html(this.state.directive);
                                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
@@ -432,15 +394,15 @@
                         </script>
                     </div>
 
-                    <form exportgroup="form" namespace="" class="quickstart font-bold">
+                    <form exportid="#form" namespace="" class="quickstart font-bold">
                         <div class="flex items-stretch h-16 rounded-xl bg-gray-200 border border-gray-500 overflow-hidden">
-                            <input data-id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none; color: black;">
+                            <input :id="directive" name="prompt" type="text" autocomplete="off" required="required" class="h-full w-full px-6 font-bold" style="background-color: transparent; border: none; color: black;">
                         </div>
                         <button class="relative cta h-16 mt-4 top-2 flex w-full md:inline-flex md:w-auto items-center justify-between px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white cursor-pointer font-bold" style="border: none;">
-                            <span data-id="cta_text" class="whitespace-nowrap"></span>
-                            <i data-id="icon" class="bi flex-center relative ml-4"></i>
+                            <span :id="cta_text" class="whitespace-nowrap"></span>
+                            <i :id="icon" class="bi flex-center relative ml-4"></i>
                         </button>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.directive) {
                                 $(this.namespace.directive).attr('placeholder', this.state.directive);
                                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-right'), true);
@@ -452,13 +414,13 @@
                     </form>
 
                 </template>
-                <template name="hero-section">
+                <template exportid="hero-section">
 
-                    <template name="cta">
+                    <template exportid="cta">
                         <a namespace="" href="#" class="cta d-inline-flex flex-y-center b">
-                            <i data-id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
-                            <span data-id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
-                            <script type="subscript">
+                            <i :id="icon" class="bi flex-center border-solid radius-10" style="padding: 5px; padding-left: 10px; padding-right: 10px;"></i>
+                            <span :id="text" class="pd-lft-10 pd-x2" style="font-size: 22px;"></span>
+                            <script type="module" scoped="" contract="">
                                 if (this.state.href) {
                                     $(this).attr('href', this.state.href);
                                     $(this.namespace.icon).class('bi-' + (this.state.icon || 'arrow-return-right'), true);
@@ -468,12 +430,12 @@
                         </a>
                     </template>
 
-                    <template name="nav">
+                    <template exportid="nav">
                         <li namespace="" class="hero-nav-item sm--d-flex">
-                            <a data-id="href" href="" class="flex-center radius-full border-solid">
-                                <i data-id="icon" class="bi flex-center sm"></i>
+                            <a :id="href" href="" class="flex-center radius-full border-solid">
+                                <i :id="icon" class="bi flex-center sm"></i>
                             </a>
-                            <script type="subscript">
+                            <script type="module" scoped="" contract="">
                                 if (this.state.href) {
                                     $(this.namespace.href).attr('href', this.state.href);
                                     $(this.namespace.icon).class('bi-' + this.state.icon, true);
@@ -483,21 +445,21 @@
                     </template>
                     
                 </template>
-                <template name="highlights-section">
+                <template exportid="highlights-section">
     
-                    <li exportgroup="item" namespace="" class="project-item flex flex-col bg-gray-100 dark:bg-gray-950 rounded-3xl">
+                    <li exportid="#item" namespace="" class="project-item flex flex-col bg-gray-100 dark:bg-gray-950 rounded-3xl">
                         <div class="px-12 pb-3 pt-10 font-bold">
-                            <i data-id="icon" class="subitem-icon bi inline-flex flex-center text-2xl text-wqdiv-color2 dark:text-wqdiv-color2-dim-text"></i>
-                            <h4 data-id="title" class="subitem-title pt-8 opacity-60"></h4>
+                            <i :id="icon" class="subitem-icon bi inline-flex flex-center text-2xl text-wqdiv-color2 dark:text-wqdiv-color2-dim-text"></i>
+                            <h4 :id="title" class="subitem-title pt-8 opacity-60"></h4>
                         </div>
-                        <p data-id="desc" class="subitem-desc grow h-fit px-12 py-1"></p>
+                        <p :id="desc" class="subitem-desc grow h-fit px-12 py-1"></p>
                         <div class="px-12 pt-3 pb-10">
-                            <a data-id="cta_href" href="/" class="cta subitem-cta py-1 text-wqdiv-color2 dark:text-wqdiv-color2-dim-text rounded-xl rounded-tl-none bold inline-flex items-center" style="text-decoration: none;">
+                            <a :id="cta_href" href="/" class="cta subitem-cta py-1 text-wqdiv-color2 dark:text-wqdiv-color2-dim-text rounded-xl rounded-tl-none bold inline-flex items-center" style="text-decoration: none;">
                                 <i class="bi bi-arrow-return-right font-bold flex-center"></i>
-                                <span data-id="cta_text" class="pl-4"></span>
+                                <span :id="cta_text" class="pl-4"></span>
                             </a>
                         </div>
-                        <script type="subscript">
+                        <script type="module" scoped="" contract="">
                             if (this.state.title) {
                                 $(this.namespace.icon).class('bi-' + (this.state.icon || 'square'), true);
                                 $(this.namespace.title).html(this.state.title);
@@ -513,14 +475,15 @@
                     </li>
 
                 </template>
-                <template name="showcase-section">
+                <template exportid="showcase-section">
 
-                    <section exportgroup="container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
+                    <section exportid="#container" class="box-padded-layout-section pd-top-10 pd-btm-10 pd-x8">
                         <img src="/assets/img/featured/udolu-logo.black.png" loading="eager" alt="Udolu" class="logo Udolu">
                     </section>
 
                 </template>
             </template>
         </template>
+		<template exportid="routes" src="/bundle.html" ssr="" by="oohtml-cli"></template>
 
 </body></html>

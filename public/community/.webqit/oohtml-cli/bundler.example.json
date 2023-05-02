@@ -15,15 +15,11 @@
     }],
     "public_base_url": "",
     "max_data_url_size": 1024,
-    "submodules_srcmode": "lazy",
+    "module_extends": "_landing2",
+    "module_src_mode": "lazy",
     "ignore_folders_by_prefix": [
         ".", "assets"
     ],
     "create_outline_file": "create",
-    "module_ext": "",
-    "module_id_attr": "name",
-    "export_mode": "attribute",
-    "export_group_attr": "exportgroup",
-    "export_element": "html-export",
-    "export_id_attr": "export"
+    "export_id_attr": "exportid"
 }

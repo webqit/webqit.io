@@ -3,7 +3,7 @@
 <div class="bg-white dark:bg-black dark:text-gray-400">
     <div namespace class="relative m-auto max-w-[1200px] rounded">
         
-        <script type="subscript">
+        <script type="module" scoped contract>
             let { title, href, outline, links = {}, landing = {} } = document.state.data || {};
             let { icon: projectIcon, slug: projectSlug, title: projectTitle, href: projectHref, subtree: projectNav, breadcrumb, wqdiv } = landing;
             if (wqdiv) {
@@ -72,48 +72,48 @@
         
         <div class="relative flex layout-section pb-12">
             
-            <div data-id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 lg:pr-4 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none z-[100]">
+            <div :id="pageLeft" class="docs-left-menu group w-0 lg:w-3/12 lg:pr-4 translate-x-[-75vw] lg:translate-x-0 active2:translate-x-0 transition-transform lg:transition-none z-[100]">
                 
                 <div class="w-[75vw] lg:w-full h-16 lg:h-28 px-6 flex items-center justify-between z-10 text-gray-500 bg-white dark:bg-black">
-                    <a data-id="projectUrl" href="" class="flex items-center hover:text-gray-400 dark:hover:text-gray-600">
-                        <i data-id="projectIcon" class="bi flex-center font-bold h-8 w-8 rounded-lg mr-2.5 border-dashed border-current"></i>
-                        <span data-id="projectTitle"></span>
+                    <a :id="projectUrl" href="" class="flex items-center hover:text-gray-400 dark:hover:text-gray-600">
+                        <i :id="projectIcon" class="bi flex-center font-bold h-8 w-8 rounded-lg mr-2.5 border-dashed border-current"></i>
+                        <span :id="projectTitle"></span>
                     </a>
-                    <a data-id="projectGithub" href="" target="_blank" class="flex items-center hover:text-gray-400 dark:hover:text-gray-600">
+                    <a :id="projectGithub" href="" target="_blank" class="flex items-center hover:text-gray-400 dark:hover:text-gray-600">
                         <i class="bi bi-github flex-center h-8 w-8 ml-2.5"></i>
                     </a>
                 </div>
                 <div class="sticky top-[10px] w-[75vw] lg:w-full h-[calc(100vh-20px)] flex flex-col pb-10 bg-gray-200 dark:bg-gray-850 dark:text-gray-300 rounded-2xl z-10">
-                    <ul data-id="primaryNavTabs" template="routes/-/-/docs/@layout/project-outline#tab" class="px-8 flex list-none"></ul>
-                    <div data-id="primaryNav" template="routes/-/-/docs/@layout/project-outline#tabBody" class="project-outline grow overflow-y-auto scrollbar-thin"></div>
+                    <ul :id="primaryNavTabs" template="routes/-/-/docs/@layout/project-outline#tab" class="px-8 flex list-none"></ul>
+                    <div :id="primaryNav" template="routes/-/-/docs/@layout/project-outline#tabBody" class="project-outline grow overflow-y-auto scrollbar-thin"></div>
                 </div>
 
             </div>
 
-            <main data-id="pageMain" class="relative w-full lg:w-9/12">
+            <main :id="pageMain" class="relative w-full lg:w-9/12">
                 <span data-viewport-top tabindex="-1"></span>
                                 
                 <header class="layout-section relative flex items-center h-16 lg:h-28 px-6 z-10 text-gray-500">
-                    <div namespace data-id="breadcrumb" class="breadcrumb grow">
-                        <ul data-id="main" template="routes/-/-/docs/@layout/breadcrumb" class="pl-1 inline-flex list-none" style="height: 60px; white-space: nowrap;">
-                            <li data-id="overflow" namespace class="overflow-notch hidden" tabindex="0">
+                    <div namespace :id="breadcrumb" class="breadcrumb grow">
+                        <ul :id="main" template="routes/-/-/docs/@layout/breadcrumb" class="pl-1 inline-flex list-none" style="height: 60px; white-space: nowrap;">
+                            <li :id="overflow" namespace class="overflow-notch hidden" tabindex="0">
                                 <div class="h-full flex items-center">
                                     <i class="bi bi-three-dots text-2xl px-1 mr-2 border border-dashed rounded border-current cursor-pointer"></i>
                                 </div>
                                 <div class="overflow h-0 flex justify-start">
-                                    <ul data-id="list" template="routes/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-gray-100 dark:bg-gray-850 dark:text-gray-400 absolute animation-x-fast anim-fly-top-small list-none"></ul>
+                                    <ul :id="list" template="routes/-/-/docs/@layout/breadcrumb#overflow" class="overflow-list bg-gray-100 dark:bg-gray-850 dark:text-gray-400 absolute animation-x-fast anim-fly-top-small list-none"></ul>
                                 </div>
                             </li>
-                            <li data-id="subtree" namespace class="overflow-notch hidden" tabindex="0">
+                            <li :id="subtree" namespace class="overflow-notch hidden" tabindex="0">
                                 <div class="h-full flex items-center cursor-pointer">
                                     <i class="bi bi-caret-down xs flex items-center"></i>
                                 </div>
                                 <div class="overflow h-0 flex justify-end">
-                                    <ul data-id="list" template="routes/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list bg-gray-100 dark:bg-gray-850 dark:text-gray-400 absolute pt-2 pb-2 drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
+                                    <ul :id="list" template="routes/-/-/docs/@layout/breadcrumb#subtree" class="overflow-list bg-gray-100 dark:bg-gray-850 dark:text-gray-400 absolute pt-2 pb-2 drop-shadow animation-x-fast anim-fly-top-small list-none"></ul>
                                 </div>
                             </li>
                         </ul>
-                        <script type="subscript">
+                        <script type="module" scoped contract>
                             var main = this.namespace.main;
                             var overflowNotch = this.namespace.overflow;
                             var overflowList = overflowNotch.namespace.list;
@@ -146,33 +146,33 @@
                             }
                         </script>
                     </div>
-                    <a data-id="editLink" href="" target="_blank" class="ml-3 pl-4 lg:border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-400 dark:hover:text-gray-600" title="Edit this page on github">
+                    <a :id="editLink" href="" target="_blank" class="ml-3 pl-4 lg:border-l border-gray-300 dark:border-gray-900 flex items-center hover:text-gray-400 dark:hover:text-gray-600" title="Edit this page on github">
                         <span class="mr-2 hidden md:block flex items-center">Edit</span>
                         <i class="bi bi-pencil flex-center rounded-lg border md:border-none border-dashed shrink-0 border-current" style="width: 40px; height: 30px; font-size: smaller;"></i>
                     </a>
                 </header>
 
                 <div class="relative bg-gray-100 dark:bg-gray-950 dark:text-gray-400 lg:rounded-2xl">
-                    <div data-id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-90 dark:active2:opacity-60 active2:pointer-events-auto transition-all bg-white dark:bg-black lg:rounded-2xl z-[90]"></div>
+                    <div :id="readmeBackdrop" class="absolute inset-0 opacity-0 pointer-events-none active2:opacity-90 dark:active2:opacity-60 active2:pointer-events-auto transition-all bg-white dark:bg-black lg:rounded-2xl z-[90]"></div>
                     
-                    <div data-id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[95]">
+                    <div :id="pageRight" class="absolute top-0 right-0 w-[75vw] lg:w-2/6 h-full pointer-events-none group z-[95]">
                         <div class="sticky top-[10px] overflow-hidden">
                             <div class="relative flex flex-col h-[calc(100vh-20px)] pb-10 translate-x-[100%] group-active2:translate-x-0 pointer-events-auto transition-transform bg-gray-200 dark:bg-gray-850 rounded-2xl">
-                                <div data-id="nav_control2" class="absolute right-[100%] mr-1 p-6 cursor-pointer rounded-lg shadow-2xl backdrop-blur-md hover:text-gray-500">
+                                <div :id="nav_control2" class="absolute right-[100%] mr-1 p-6 cursor-pointer rounded-lg shadow-2xl backdrop-blur-md hover:text-gray-500">
                                     <i class="bi bi-text-indent-right flex-center text-2xl"></i>
                                 </div>
                                 <div class="w-full h-12 shrink-0 px-7 py-10 flex items-center justify-between text-gray-500">
                                     <span class="sm">On this page</span>
-                                    <i data-id="nav_control2_b" class="bi bi-chevron-right h-8 w-8 -mr-1 xs flex-center rounded text-black dark:text-gray-400 border border-dashed border-current cursor-pointer"></i>
+                                    <i :id="nav_control2_b" class="bi bi-chevron-right h-8 w-8 -mr-1 xs flex-center rounded text-black dark:text-gray-400 border border-dashed border-current cursor-pointer"></i>
                                 </div>
-                                <ul data-id="secondaryNav" template="routes/-/-/docs/@layout/page-outline" class="page-outline grow px-4 list-none overflow-y-auto scrollbar-thin dark:text-gray-400"></ul>
+                                <ul :id="secondaryNav" template="routes/-/-/docs/@layout/page-outline" class="page-outline grow px-4 list-none overflow-y-auto scrollbar-thin dark:text-gray-400"></ul>
                             </div>
                         </div>
                     </div>
                     
-                    <div is="playui-scrollspy-div" data-id="readmeBody" class="relative doc-readme markdown-body py-10 px-11 md:px-16 min-h-[100vh]">
+                    <div is="playui-scrollspy-div" :id="readmeBody" class="relative doc-readme markdown-body py-10 px-11 md:px-16 min-h-[100vh]">
 
-                        <html-import name="README.md" data-id="main" class="overflow-hidden">
+                        <import module="@routingcontext/README.md" :id="main" class="overflow-hidden">
                             <div class="flex-center" style="height: 85vh;">
                                 <div class="text-center">
                                     No content
@@ -180,10 +180,10 @@
                                     <a href="#" onclick="window.location.reload()">Try Reloading this page.</a>
                                 </div>
                             </div>
-                        </html-import>
+                        </import>
 
-                        <ul data-id="index_links" template="routes/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
-                            <script type="subscript">
+                        <ul :id="index_links" template="routes/-/-/docs/@layout/index_links#item" class="py-5 pl-0 index-links list-none hidden">
+                            <script type="module" scoped contract>
                                 if (this.state.subtree) {
                                     $(this).list(this.state.subtree, {
                                         itemExportId: this.state._subtreeType,
@@ -196,13 +196,13 @@
 
                     <footer class="readme-footer sticky bottom-0 pointer-events-none z-[80]">
                         <div class="relative h-0 flex-center z-10">
-                            <button data-id="nav_control" class="pointer-events-auto h-14 w-14 text-wqdiv-color2-dim-text bg-gray-700 border-none active2:scale-0 transition-transform delay-75 font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
+                            <button :id="nav_control" class="pointer-events-auto h-14 w-14 text-wqdiv-color2-dim-text bg-gray-700 border-none active2:scale-0 transition-transform delay-75 font-bold rounded-full drop-shadoww flex flex-center lg:hidden cursor-pointer">
                                 <i class="bi bi-text-indent-left flex-center text-3xl"></i>
                             </button>
                         </div>
                         <ul class="relative footer-nav pointer-events-auto py-4 px-6 flex justify-between items-center font-bold list-none bg-gray-100 lg:bg-transparent dark:bg-gray-950 dark:lg:bg-transparent rounded-2xl">
-                            <li class="max-w-6/12 p-4 flex justify-start bg-gray-200 dark:bg-gray-850 rounded backdrop-blur-md"><a href="" data-id="nav_left" class="flex items-center pr-4 max-w-full rounded-2xl text-gray-500 hover:text-wqdiv-color2-dim-text"><i data-id="nav_left_icon" class="bi bi-chevron-compact-left sm flex-center mr-2.5"></i> <span data-id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
-                            <li class="max-w-6/12 p-4 flex justify-end bg-gray-200 dark:bg-gray-850 rounded backdrop-blur-md"><a href="" data-id="nav_right" class="flex items-center pl-4 max-w-full rounded-2xl text-gray-500 hover:text-wqdiv-color2-dim-text"><span data-id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i data-id="nav_right_icon" class="bi bi-chevron-compact-right sm flex-center ml-2.5"></i></a></li>
+                            <li class="max-w-6/12 p-4 flex justify-start bg-gray-200 dark:bg-gray-850 rounded backdrop-blur-md"><a href="" :id="nav_left" class="flex items-center pr-4 max-w-full rounded-2xl text-gray-500 hover:text-wqdiv-color2-dim-text"><i :id="nav_left_icon" class="bi bi-chevron-compact-left sm flex-center mr-2.5"></i> <span :id="nav_left_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">PREV</span></a></li>
+                            <li class="max-w-6/12 p-4 flex justify-end bg-gray-200 dark:bg-gray-850 rounded backdrop-blur-md"><a href="" :id="nav_right" class="flex items-center pl-4 max-w-full rounded-2xl text-gray-500 hover:text-wqdiv-color2-dim-text"><span :id="nav_right_text" class="hidden md:inline-block truncate text-ellipsis"></span><span class="md:hidden">NEXT</span> <i :id="nav_right_icon" class="bi bi-chevron-compact-right sm flex-center ml-2.5"></i></a></li>
                         </ul>
                     </footer>
                 </div>
@@ -216,13 +216,13 @@
 
 <!-- TEMPLATES -->
 
-<template name="@layout">
+<template exportid="@layout">
 
-    <template name="breadcrumb">
+    <template exportid="breadcrumb">
         <li namespace class="flex items-center">
             <i class="bi bi-slash xs"></i>
-            <a data-id="href" class="p-1.5 whitespace-nowrap hover:text-gray-400 dark:hover:text-gray-600" href="" style="font-size: smaller;"></a>
-            <script type="subscript">
+            <a :id="href" class="p-1.5 whitespace-nowrap hover:text-gray-400 dark:hover:text-gray-600" href="" style="font-size: smaller;"></a>
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.href).htmlAsync(this.state.title);
                     $(this.namespace.href).attrAsync('href', this.state.href);
@@ -230,12 +230,12 @@
                 }
             </script>
         </li>
-        <li exportgroup="overflow" namespace class="hover:bg-gray-200 dark:hover:bg-gray-950 hidden">
-            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
+        <li exportid="#overflow" namespace class="hover:bg-gray-200 dark:hover:bg-gray-950 hidden">
+            <a :id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
                 <i class="bi bi-arrow-return-right xs p-1"></i>
-                <span data-id="text" class="p-1" style="word-break: break-word;"></span>
+                <span :id="text" class="p-1" style="word-break: break-word;"></span>
             </a>
-            <script type="subscript">
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.text).htmlAsync(this.state.title);
                     $(this.namespace.href).attrAsync('href', this.state.href);
@@ -243,12 +243,12 @@
                 }
             </script>
         </li>
-        <li exportgroup="subtree" namespace>
-            <a data-id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
+        <li exportid="#subtree" namespace>
+            <a :id="href" class="flex items-center p-1 pl-2.5 pr-6" href="">
                 <i class="bi bi-chevron-right xs p-1" style="font-size: smaller;"></i>
-                <span data-id="text" class="p-1" style="word-break: break-word;"></span>
+                <span :id="text" class="p-1" style="word-break: break-word;"></span>
             </a>
-            <script type="subscript">
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.text).htmlAsync(this.state.title);
                     $(this.namespace.href).attrAsync('href', this.state.href);
@@ -257,16 +257,16 @@
         </li>
     </template>
 
-    <template name="project-outline">
+    <template exportid="project-outline">
 
-        <li exportgroup="tab" namespace is="playui-linkitem-li" class="tab active2:border-b border-current">
-            <a data-id="href" class="p-4 block">
-                <span data-id="text"></span>
+        <li exportid="#tab" namespace is="playui-linkitem-li" class="tab active2:border-b border-current">
+            <a :id="href" class="p-4 block">
+                <span :id="text"></span>
             </a>
         </li>
 
-        <ul exportgroup="tabBody" namespace is="playui-linkitem-ul" template="routes/-/-/docs/@layout/project-outline" class="p-6 list-none hidden">
-            <script type="subscript">
+        <ul exportid="#tabBody" namespace is="playui-linkitem-ul" template="routes/-/-/docs/@layout/project-outline" class="p-6 list-none hidden">
+            <script type="module" scoped contract>
                 $(this).class('hidden', !this.state.active && !this.state.hasActive);
                 if (this.state.subtree) {
                     $(this).list(this.state.subtree, { itemExportId: this.state._subtreeType });
@@ -274,10 +274,10 @@
             </script>
         </ul>
 
-        <li exportgroup="category" namespace is="playui-linkitem-li" class="category">
-            <div data-id="legend" class="legend border border-dashed border-transparent rounded-xl"></div>
-            <ul data-id="entries" template="routes/-/-/docs/@layout/project-outline" class="py-4 list-none"></ul>
-            <script type="subscript">
+        <li exportid="#category" namespace is="playui-linkitem-li" class="category">
+            <div :id="legend" class="legend border border-dashed border-transparent rounded-xl"></div>
+            <ul :id="entries" template="routes/-/-/docs/@layout/project-outline" class="py-4 list-none"></ul>
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.legend).htmlAsync(this.state.title.toUpperCase());
                     $(this.namespace.entries).list(this.state.subtree);
@@ -286,17 +286,17 @@
         </li>
 
         <li namespace is="playui-linkitem-li" class="group">
-            <div data-id="item_bar" class="item-bar flex px-3">
-                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
-                <a data-id="href" href="" class="grow flex items-center justify-between">
-                    <span data-id="text"></span>
+            <div :id="item_bar" class="item-bar flex px-3">
+                <span :id="subtree_notch" class="subtree-notch flex items-center"></span>
+                <a :id="href" href="" class="grow flex items-center justify-between">
+                    <span :id="text"></span>
                     <i class="bi bi-chevron-right flex items-center pl-2"></i>
                 </a>
             </div>
-            <div data-id="sub_menu_container" class="flex items-center overflow-hidden" style="height: 0px;">
-                <ul data-id="sub_menu" template="routes/-/-/docs/@layout/project-outline" class="w-full project-suboutline list-none"></ul>
+            <div :id="sub_menu_container" class="flex items-center overflow-hidden" style="height: 0px;">
+                <ul :id="sub_menu" template="routes/-/-/docs/@layout/project-outline" class="w-full project-suboutline list-none"></ul>
             </div>
-            <script type="subscript">
+            <script type="module" scoped contract>
                 if (this.toggleWith) this.toggleWith(this.namespace.subtree_notch);
                 //if (this.state.active && !this.state.hasActive) this.namespace.href.focus();
                 if (this.state.subtree) {
@@ -313,16 +313,16 @@
         </li>
     </template>
 
-    <template name="page-outline">
+    <template exportid="page-outline">
         <li namespace is="playui-linkitem-li" class="group">
-            <div data-id="item_bar" class="item-bar flex px-3">
-                <span data-id="subtree_notch" class="subtree-notch flex items-center"></span>
-                <a data-id="href" href="" class="grow text-inherit">
-                    <span data-id="text"></span>
+            <div :id="item_bar" class="item-bar flex px-3">
+                <span :id="subtree_notch" class="subtree-notch flex items-center"></span>
+                <a :id="href" href="" class="grow text-inherit">
+                    <span :id="text"></span>
                 </a>
             </div>
-            <ul data-id="sub_menu" template="routes/-/-/docs/@layout/page-outline" class="page-suboutline hidden list-none"></ul>
-            <script type="subscript">
+            <ul :id="sub_menu" template="routes/-/-/docs/@layout/page-outline" class="page-suboutline hidden list-none"></ul>
+            <script type="module" scoped contract>
                 if (this.state.subtree) {
                     $(this.namespace.sub_menu).classAsync('hidden', false);
                     $(this.namespace.sub_menu).list(this.state.subtree);
@@ -331,25 +331,25 @@
         </li>
     </template>
 
-    <template name="index_links">
-        <li exportgroup="category" namespace>
-            <div data-id="legend" class="p-3 text-xs text-gray-500"></div>
-            <ul data-id="entries" template="routes/-/-/docs/@layout/index_links#item" class="index-links list-none"></ul>
-            <script type="subscript">
+    <template exportid="index_links">
+        <li exportid="#category" namespace>
+            <div :id="legend" class="p-3 text-xs text-gray-500"></div>
+            <ul :id="entries" template="routes/-/-/docs/@layout/index_links#item" class="index-links list-none"></ul>
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.legend).html(this.state.title.toUpperCase());
                     $(this.namespace.entries).list(this.state.subtree);
                 }
             </script>
         </li>
-        <li exportgroup="item" namespace class="flex items-start index-link py-0.5">
+        <li exportid="#item" namespace class="flex items-start index-link py-0.5">
             <i class="bi bi-chevron-right relative -left-3 w-4 text-gray-800 dark:text-gray-500"></i>
             <span>
-                <a data-id="href" href="" class="text-wqdiv-color2 dark:text-wqdiv-color2-dim-text"></a>
+                <a :id="href" href="" class="text-wqdiv-color2 dark:text-wqdiv-color2-dim-text"></a>
                 <span class="ml-1">-</span>
-                <span data-id="desc" class="ml-1"></span>
+                <span :id="desc" class="ml-1"></span>
             </span>
-            <script type="subscript">
+            <script type="module" scoped contract>
                 if (this.state.title) {
                     $(this.namespace.href).htmlAsync(this.state.title);
                     $(this.namespace.desc).htmlAsync(this.state.desc || '');

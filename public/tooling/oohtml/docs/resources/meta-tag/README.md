@@ -12,13 +12,13 @@ OOHTML provides a meta tag for customizing its syntax or behaviour. It generally
 
 *The actual configurable properties are documented alongside the various OOHTML features.*
 
-It is recommended (but not required) that you configure your usage of OOHTML using this meta tag. As an example, below is how the default OOHTML syntax looks like for the *HTML module, import and export* feature. What we want to do is [use a custom *import* element](../../spec/html-imports#polyfill) instead of the default *import* element.
+It is recommended (but not required) that you configure your usage of OOHTML using this meta tag. As an example, below is how the default OOHTML syntax looks like for the *HTML module, import and export* feature. What we want to do is [use a custom *import* element](../../spec/imports#polyfill) instead of the default *import* element.
 
 ```html
 <head>
 
-    <template name="module1">
-        <div exportgroup="export1">Hello World!</div>
+    <template exportid="module1">
+        <div exportid="#export1">Hello World!</div>
     <template>
 
 </head>
@@ -34,15 +34,15 @@ On the meta tag, we would set the `element.import` directive to a custom element
 ```html
 <head>
 
-    <meta name="oohtml" content="element.import=html-import;">
-    <template name="module1">
-        <div exportgroup="export1">Hello World!</div>
+    <meta name="oohtml" content="element.import=import;">
+    <template exportid="module1">
+        <div exportid="#export1">Hello World!</div>
     <template>
 
 </head>
 <body>
 
-    <html-import name="export1" template="module1"><html-import>
+    <import name="export1" template="module1"><import>
 
 </body>
 ```
@@ -74,10 +74,10 @@ On the meta tag, we would set the `attr.id` directive to a custom attribute name
 <body>
 
     <div namespace>
-        <div data-id="scoped-id">
+        <div :id="scoped-id">
     <div>
     <div namespace>
-        <div data-id="scoped-id">
+        <div :id="scoped-id">
     <div>
 
 </body>

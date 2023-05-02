@@ -1,11 +1,11 @@
 
-<div exportgroup="LOGOS.md">
+<div exportid="#LOGOS.md">
 	<!--
 	Enter your logo URL in a new list item in the format:
 	+ ![Company Name](\community\URL.jpg)
 	-->
 </div>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h2 id="web-native---a-community-wide-realization">Web-Native - A Community-Wide Realization.</h2>
 	<p><strong>Web-native</strong> is an approach to web tooling that seeks to <em>solve for the traditonal, native web over vendor-specific interests</em>. This is an especially important goal for a web community that is now fragmented into <em>framework</em> silos.</p>
 	<p><strong>WebQit Community</strong> is an initiative to support an obvious community-wide paradigm shift for web-native development. We seek to drive community participation in new ideas for the web platform, and in all the projects that are revisiting much of the assumptions that brought us here, to explore new possibilities around just conventional web languages and APIs.</p>
@@ -20,5 +20,5 @@
 	<li><a href="https://w3.org/community/web-native">The Web-Native Community Group (<strong>Web-Native CG</strong>)</a> [new]</li>
 	</ul>
 </div>
-<template name="web-native-cg" src="\community\web-native-cg\bundle.html" loading="lazy"></template>
-<template name="webqit" src="\community\webqit\bundle.html" loading="lazy"></template>
+<template exportid="web-native-cg" extends="_landing2" src="/community/web-native-cg/bundle.html" ssr></template>
+<template exportid="webqit" extends="_landing2" src="/community/webqit/bundle.html" ssr></template>

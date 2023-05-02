@@ -1,6 +1,6 @@
 <div namespace>
 
-    <script type="subscript">
+    <script type="module" scoped contract>
         let { slug: wqdiv = '', headline, intro, landings = [], categories = [], quickstartsTitle, quickstartsIntro, quickstarts, ideaStart, idea, ideaEnd } = document.state.data || {};
         $(this.namespace.wqdivIcon).class({
             'bi-braces': wqdiv === 'tooling',
@@ -28,47 +28,47 @@
     <div id="hero" class="relative hero-no-cta pt-28 pb-16 px-10 lg:px-28 lg:flex items-start">
         <div class="wqdiv-icon lg:w-1/4 mt-20 mb-6 flex items-center">
             <span class="git-tee"></span>
-            <i data-id="wqdivIcon" class="bi w-11 h-11 flex-center radius-125 bg-wqdiv-color2 text-white font-bold drop-shadoww"></i>
-            <span data-id="wqdivName" class="ml-4"></span>
+            <i :id="wqdivIcon" class="bi w-11 h-11 flex-center radius-125 bg-wqdiv-color2 text-white font-bold drop-shadoww"></i>
+            <span :id="wqdivName" class="ml-4"></span>
         </div>
-        <h1 data-id="headline" class="lg:w-2/4 lg:text-center"></h1>
+        <h1 :id="headline" class="lg:w-2/4 lg:text-center"></h1>
         <div class="lg:w-1/4"></div>
     </div>
 
     <main class="bg-gray-100 md:bg-white dark:bg-black dark:text-gray-400">
         <section id="projects" class="main-main">
             <div class="bg-white dark:bg-gray-950 xl:bg-transparent xl:dark:bg-transparent">
-                <p data-id="intro" class="sm:w-1/2 xl:w-1/3 pt-28 pb-16 pr-20 pl-10 xl:pl-28 text-2xl"></p>
+                <p :id="intro" class="sm:w-1/2 xl:w-1/3 pt-28 pb-16 pr-20 pl-10 xl:pl-28 text-2xl"></p>
             </div>
             <div class="xl:flex xl:items-start pb-20">
-                <ul data-id="categories" template="@layout/landing1/index/filters#item" class="projects-filter scrollbar-thin bg-white dark:bg-gray-950 xl:bg-transparent xl:dark:bg-transparent list-none"></ul>
-                <ul data-id="pages" template="@layout/landing1/index#item" class="projects-grid-a grid md:grid-cols-2 lg:grid-cols-3 list-none"></ul>
+                <ul :id="categories" template="@layout/landing1/index/filters#item" class="projects-filter scrollbar-thin bg-white dark:bg-gray-950 xl:bg-transparent xl:dark:bg-transparent list-none"></ul>
+                <ul :id="pages" template="@layout/landing1/index#item" class="projects-grid-a grid md:grid-cols-2 lg:grid-cols-3 list-none"></ul>
             </div>
         </section>
         <section id="start" class="px-1 md:px-4 xl:px-28 pre-bar text-center md:bg-gray-50 dark:bg-black border border-x-0 border-dashed border-gray-500 dark:border-gray-800">
             <div class="py-28 px-4 md:px-0">
-                <h2 data-id="quickstartsTitle" class="px-6 pb-6">Quickstarts</h2>
-                <p data-id="quickstartsIntro_a" class="px-6 pb-16 text-2xl"></p>
+                <h2 :id="quickstartsTitle" class="px-6 pb-6">Quickstarts</h2>
+                <p :id="quickstartsIntro_a" class="px-6 pb-16 text-2xl"></p>
                 <div class="px-10 xl:px-20 py-20 bg-white shadow-xl dark:bg-gray-850">
-                    <p data-id="quickstartsIntro_b" class="pb-20">...</p>
-                    <ul data-id="quickstarts" template="@layout/landing1/quickstarts#item" class="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8 list-none"></ul>
+                    <p :id="quickstartsIntro_b" class="pb-20">...</p>
+                    <ul :id="quickstarts" template="@layout/landing1/quickstarts#item" class="grid md:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-8 list-none"></ul>
                 </div>
             </div>
         </section>
         <section id="highlights" class="py-20 px-4 xl:px-20 pre-bar md:bg-gray-50 dark:bg-black text-center">
             <h2>The whole idea</h2>
-            <p data-id="ideaStart_a" class="lg:w-3/6 m-auto p-10 pt-6 pb-4 text-2xl"></p>
-            <p data-id="ideaStart_b" class="lg:w-3/6 m-auto p-10 pt-4 text-2xl"></p>
-            <ul data-id="idea" template="@layout//landing1/highlights-section#item" class="landing1-highlight py-6 list-none"></ul>
-            <p data-id="ideaEnd_a" class="lg:w-3/6 m-auto p-10 pt-4 text-2xl"></p>
-            <p data-id="ideaEnd_b" class="lg:w-3/6 m-auto p-10 pt-0 text-2xl"></p>
+            <p :id="ideaStart_a" class="lg:w-3/6 m-auto p-10 pt-6 pb-4 text-2xl"></p>
+            <p :id="ideaStart_b" class="lg:w-3/6 m-auto p-10 pt-4 text-2xl"></p>
+            <ul :id="idea" template="@layout//landing1/highlights-section#item" class="landing1-highlight py-6 list-none"></ul>
+            <p :id="ideaEnd_a" class="lg:w-3/6 m-auto p-10 pt-4 text-2xl"></p>
+            <p :id="ideaEnd_b" class="lg:w-3/6 m-auto p-10 pt-0 text-2xl"></p>
         </section>
     </main>
     
     <div class="h-0 px-10 flex-center">
-        <a data-id="cta_href" href="#start" class="relative h-16 w-full md:w-auto flex md:inline-flex flex-center px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
-            <i data-id="icon" class="bi bi-arrow-return-right flex-center relative mr-4"></i>
-            <span data-id="cta_text" class="whitespace-nowrap">QuickStarts</span>
+        <a :id="cta_href" href="#start" class="relative h-16 w-full md:w-auto flex md:inline-flex flex-center px-10 rounded-lg shadow-xl bg-wqdiv-color2 text-white">
+            <i :id="icon" class="bi bi-arrow-return-right flex-center relative mr-4"></i>
+            <span :id="cta_text" class="whitespace-nowrap">QuickStarts</span>
         </a>
     </div>
     <div class="h-8"></div>

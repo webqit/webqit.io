@@ -1,5 +1,5 @@
 <div namespace class="">
-    <script type="subscript">
+    <script type="module" scoped contract>
         let { slug, title, desc, features, quickstart, wqdiv = '' } = document.state.data || {};
         $(this.namespace.wqdivIcon).class({
             'bi-braces': wqdiv === 'tooling',
@@ -22,28 +22,28 @@
     <section id="hero" class="relative pt-28 px-10 lg:px-28 lg:flex items-start">
         <span class="wqdiv-icon lg:w-1/6 mt-20 mb-6 flex items-center">
             <span class="git-tee"></span>
-            <i data-id="wqdivIcon" class="bi w-11 h-11 flex-center radius-125 bg-wqdiv-color2 text-white font-bold drop-shadoww"></i>
-            <span data-id="wqdivName" class="ml-4"></span>
+            <i :id="wqdivIcon" class="bi w-11 h-11 flex-center radius-125 bg-wqdiv-color2 text-white font-bold drop-shadoww"></i>
+            <span :id="wqdivName" class="ml-4"></span>
         </span>
         <div class="lg:w-4/6 md:text-center">
-            <h1 data-id="title"></h1>
-            <p data-id="desc" class="pt-6 text-2xl"></p>
-            <div data-id="ee" class="relative top-6">
-                <html-import data-id="quickstart" template="@layout/landing2/quickstart"></html-import>
+            <h1 :id="title"></h1>
+            <p :id="desc" class="pt-6 text-2xl"></p>
+            <div :id="ee" class="relative top-6">
+                <import :id="quickstart" module="@layout/landing2/quickstart"></import>
             </div>
         </div>
         <span class="lg:w-1/6"></span>
     </section>
 
     <section id="highlights" class="pt-36 pb-28 px-10 xl:px-28 bg-white dark:bg-black dark:text-gray-400">
-        <ul data-id="highlights" template="@layout/landing2/highlights-section#item" class="lg:w-4/6 lg:mx-auto grid lg:grid-cols-2 dark:bg-black dark:text-gray-400 gap-4"></ul>
+        <ul :id="highlights" template="@layout/landing2/highlights-section#item" class="lg:w-4/6 lg:mx-auto grid lg:grid-cols-2 dark:bg-black dark:text-gray-400 gap-4"></ul>
     </section>
 
     <div class="h-0 flex-center">
         <span class="p-6 text-sm bg-white dark:bg-black border border-gray-400 dark:border-gray-800 text-gray-600 dark:text-gray-400 rounded-lg z-10">README</span>
     </div>
     <section id="readme" class="markdown-body main-readme relative py-28 px-8 lg:px-28 border-t border-dashed border-gray-400 dark:border-gray-800 bg-white dark:bg-black dark:text-gray-400">
-        <html-import name="README.md" class="xl:w-4/6 xl:mx-auto p-10 rounded-2xl bg-gray-100 dark:bg-gray-950"></html-import>
+        <import module="@routingcontext/README.md" class="xl:w-4/6 xl:mx-auto p-10 rounded-2xl bg-gray-100 dark:bg-gray-950"></import>
     </section>
 
     <div class="flex justify-center relative z-10 bg-white dark:bg-black">

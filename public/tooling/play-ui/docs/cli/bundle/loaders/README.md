@@ -63,7 +63,7 @@ export default function loadsCSS(resource, params, args, received, meta, next) {
       return next(received);
   }
   // Return a module export format
-  return '<style exportgroup="">...</style>';
+  return '<style exportid="#">...</style>';
 }
 ```
 

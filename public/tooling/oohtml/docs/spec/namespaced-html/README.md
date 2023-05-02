@@ -177,8 +177,8 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
     <head>
         <meta name="oohtml" content="attr.id=data-id;" />
         <div namespace>
-            <div data-id="id01"></div>
-            <div data-id="id02"></div>
+            <div :id="id01"></div>
+            <div :id="id02"></div>
         </div>
     </head>
     ```

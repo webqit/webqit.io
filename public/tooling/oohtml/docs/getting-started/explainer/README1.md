@@ -42,7 +42,7 @@ How do these compare?
     *Remote File: /bundle.html*
 
     ```html
-    <div exportgroup="blogPost">
+    <div exportid="#blogPost">
         <p>Content...</p>
     </div>
     ```
@@ -50,7 +50,7 @@ How do these compare?
     *Main Document:*
 
     ```html
-    <template name="bundle" src="/bundle.html"></template>
+    <template exportid="bundle" src="/bundle.html"></template>
     ```
 
     *See also: [[proposal - **src** attribute]](https://discourse.wicg.io/t/add-src-attribute-to-template/2721), [[proposal - **src** attribute]](https://github.com/whatwg/html/issues/2791)*
@@ -90,7 +90,7 @@ How do these compare?
 
     *See also: [[proposal - `document.templates`]](https://discourse.wicg.io/t/document-templates/1057)*
     
-    *In HTML - as detailed in [OOHTML Imports](../html-imports)*
+    *In HTML - as detailed in [OOHTML Imports](../imports)*
 
     ```html
     <body>
@@ -113,7 +113,7 @@ How do these compare?
 
 + **OOHTML's approach follows _lazy-loading of remote modules and lazy rendering of `<import>` elements, as driven by module events_.** This makes `<import>` elements work just like elements like `<img>`: 'display whenever you can load', as seen below:
     
-    *In HTML - as detailed in [OOHTML Imports](../html-imports)*
+    *In HTML - as detailed in [OOHTML Imports](../imports)*
 
     ```html
     <body>
@@ -131,9 +131,9 @@ But then, it is a common pattern today for some reusable HTML has to go with som
 *Remote File: /bundle.html*
 
 ```html
-<div exportgroup="blogPost">
+<div exportid="#blogPost">
     <p id="content">Content...</p>
-    <script type="subscript">
+    <script type="module" scoped contract>
         this.querySelector('#content').innerHTML = document.state.content;
     </script>
     <!-- previous syntax: <script type="scoped"></script> -->
@@ -144,7 +144,7 @@ But then, it is a common pattern today for some reusable HTML has to go with som
 
 ```html
 <body>
-    <template name="bundle" src="/bundle.html"></template>
+    <template exportid="bundle" src="/bundle.html"></template>
     <!-- Resolves whenever module loads, and the slotted element's scoped script activates -->
     <import name="blogPost" template="bundle"></import>
 </body>

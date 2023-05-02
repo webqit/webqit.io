@@ -21,14 +21,14 @@ project-root
 The goal is to translate the above layout into the following *module* structure and get it written to a single file that can be linked to:
 
 ```html
-<template name="views">
+<template exportid="views">
 
-    <template name="home">
-       <div exportgroup="index" class="page-container">Home Page</div>
+    <template exportid="home">
+       <div exportid="#index" class="page-container">Home Page</div>
     </template>
 
-    <template name="about">
-       <div exportgroup="index" class="page-container">About Page</div>
+    <template exportid="about">
+       <div exportid="#index" class="page-container">About Page</div>
     </template>
 
 </template>
@@ -47,7 +47,7 @@ Now, on getting the files into a single bundle, we would next link to it as a re
   Here, we link to the remote content
   -->
   <head>
-    <template name="main" src="./bundle.html"></template>
+    <template exportid="main" src="./bundle.html"></template>
   </head>
 
   <!--
@@ -68,7 +68,7 @@ That said, lets go on to bundle.
 
 Navigate to `project-root` and run **`playui bundle`**. Two files should be reported bundled. 
 
-<html-import name="playui-bundle-1" template="page/tooling/play-ui/docs/cli/bundle"></html-import>
+<import name="playui-bundle-1" template="page/tooling/play-ui/docs/cli/bundle"></import>
 
 Remote content is now ready at `./bundle.html`!
 
@@ -169,7 +169,7 @@ This specifies the syntax for designating the *module exports* within the genera
 
 #### `[EXPORT_GROUP_ATTR]`
 
-This specifies the attribute name for designating the *export ID* in [attribute mode](#export_mode). The default value is `exportgroup` which conforms to [the default syntax](/tooling/oohtml/docs/spec/html-modules#convention) in the OOHTML spec. E.g. `<div exportgroup="export-id"></div>`.
+This specifies the attribute name for designating the *export ID* in [attribute mode](#export_mode). The default value is `exportgroup` which conforms to [the default syntax](/tooling/oohtml/docs/spec/html-modules#convention) in the OOHTML spec. E.g. `<div exportid="#export-id"></div>`.
 
 This should generally only be changed to align with the `attr.exportgroup` setting in the [OOHTML meta tag](/tooling/oohtml/docs/spec/html-modules#polyfill-support) of the page where the bundle will be used.
 
@@ -239,22 +239,22 @@ project-root
 
 
 ```html
-<template name="assets">
+<template exportid="assets">
 
-    <template name="img">
-       <img exportgroup="image1" src="/assets/img/image1.png" />
+    <template exportid="img">
+       <img exportid="#image1" src="/assets/img/image1.png" />
     </template>
 
 </template>
 
-<template name="views">
+<template exportid="views">
 
-    <template name="home">
-       <div exportgroup="index" class="page-container">Home Page</div>
+    <template exportid="home">
+       <div exportid="#index" class="page-container">Home Page</div>
     </template>
 
-    <template name="about">
-       <div exportgroup="index" class="page-container">About Page</div>
+    <template exportid="about">
+       <div exportid="#index" class="page-container">About Page</div>
     </template>
 
 </template>
@@ -267,7 +267,7 @@ The Bundler just needs to know under what file size to use the *data-URL* format
 In the case of `image1.png` above, the generated *module export* would look like:
 
 ```html
-<img exportgroup="image1" src="data:image/png,%89PNG%0D%0A=" />
+<img exportid="#image1" src="data:image/png,%89PNG%0D%0A=" />
 ```
 
 ## Further Reading

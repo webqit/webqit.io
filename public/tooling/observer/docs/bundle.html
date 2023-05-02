@@ -1,8 +1,8 @@
 
-<template name="api">
-    <template name="actions">
-        <template name="defineProperty">
-            <div exportgroup="README.md">
+<template exportid="api" inherits="#main.html">
+    <template exportid="actions" inherits="#main.html">
+        <template exportid="defineProperty" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="defineproperty"><code>.defineProperty()</code></h1>
             	<p>This method is used to reactively define a property on an object or array or reconfigures an existing property. It corresponds to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/defineProperty"><code>Reflect.defineProperty()</code></a>. <code>Observer.defineProperty()</code> offers reactivity over this operation.</p>
             	<p>The <code>Observer.def()</code> function is an alias of this function and can be used interchangeably.</p>
@@ -76,8 +76,8 @@ Observer<span class="token punctuation">.</span><span class="token function">def
             	</ul>
             </div>
         </template>
-        <template name="deleteProperty">
-            <div exportgroup="README.md">
+        <template exportid="deleteProperty" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="deleteproperty"><code>.deleteProperty()</code></h1>
             	<p>This method is used to reactively delete a property from an object. It corresponds to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/deleteProperty"><code>Reflect.deleteProperty()</code></a> function, which is itself the programmatic alternative to the <code>delete</code> keyword – <code>delete object.property</code>. <code>Observer.deleteProperty()</code> offers reactivity over this operation.</p>
             	<p>The <code>Observer.del()</code> function is an alias of this function and can be used interchangeably.</p>
@@ -151,8 +151,8 @@ Observer<span class="token punctuation">.</span><span class="token function">del
             	</ul>
             </div>
         </template>
-        <template name="get">
-            <div exportgroup="README.md">
+        <template exportid="get" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="get"><code>.get()</code></h1>
             	<p>This method is used to return the value of a property. It corresponds to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/get"><code>Reflect.get()</code></a> function, which is itself the programmatic alternative to the object accessor syntax – <code>obj.property; obj[property]</code>. <code>Observer.get()</code> offers reactivity over this operation.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -233,8 +233,8 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	</ul>
             </div>
         </template>
-        <template name="has">
-            <div exportgroup="README.md">
+        <template exportid="has" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="has"><code>.has()</code></h1>
             	<p>This method is used to test property presence. It corresponds to the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/has"><code>Reflect.has()</code></a> function, which is itself the programmatic alternative to the JavaScript <em>in</em> operator – <code>property in obj</code>. <code>Observer.has()</code> offers reactivity over this operation.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -283,8 +283,8 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	</ul>
             </div>
         </template>
-        <template name="ownKeys">
-            <div exportgroup="README.md">
+        <template exportid="ownKeys" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="ownkeys"><code>.ownKeys()</code></h1>
             	<p>This method is used to get an object's list of direct properties. It corresponds to the JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys"><code>Reflect.ownKeys()</code></a> function. <code>Observer.ownKeys()</code> offers reactivity over this operation.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -327,11 +327,11 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	</ul>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="actions">Actions</h1>
         </div>
-        <template name="set">
-            <div exportgroup="README.md">
+        <template exportid="set" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="set"><code>.set()</code></h1>
             	<p>This method is used to reactively set the value of an object's property. It corresponds to the JavaScript's <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set"><code>Reflect.set()</code></a> function, which is itself the programmatic alternative to the assignment expression – <code>object.property = value</code>. <code>Observer.set()</code> offers reactivity over this operation.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -434,9 +434,9 @@ obj<span class="token punctuation">.</span>brand <span class="token operator">=<
             </div>
         </template>
     </template>
-    <template name="actors">
-        <template name="accessorize">
-            <div exportgroup="README.md">
+    <template exportid="actors" inherits="#main.html">
+        <template exportid="accessorize" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="accessorize"><code>.accessorize()</code></h1>
             	<p>This function is used to create property <em>setters</em> and <em>getters</em> on that use <code>Observer.set()</code> and <code>Observer.get()</code> respectively behind the scene. This gives us the benefit of using JavaScript's assignment and accessor syntax reactively.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -491,8 +491,8 @@ Observer<span class="token punctuation">.</span><span class="token function">acc
             	</ul>
             </div>
         </template>
-        <template name="proxy">
-            <div exportgroup="README.md">
+        <template exportid="proxy" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="proxy"><code>.proxy()</code></h1>
             	<p>This function is used to wrap an object or array in a reactive proxy that forwards all operations to the appropriate <a href="\tooling\observer\docs\api\reactions\interceptors"><em>interceptors</em></a>, and announces them to <a href="\tooling\observer\docs\api\reactions\observe"><em>observers</em></a>.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -525,11 +525,11 @@ Observer<span class="token punctuation">.</span><span class="token function">pro
             	</ul>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="actors">Actors</h1>
         </div>
-        <template name="unaccessorize">
-            <div exportgroup="README.md">
+        <template exportid="unaccessorize" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="unaccessorize"><code>.unaccessorize()</code></h1>
             	<p>This function is used to restore an object's accessorized properties to their original state.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -575,8 +575,8 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             	</ul>
             </div>
         </template>
-        <template name="unproxy">
-            <div exportgroup="README.md">
+        <template exportid="unproxy" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="unproxy"><code>.unproxy()</code></h1>
             	<p>This function is used to obtain the original object or array of the current proxy from <a href="\tooling\observer\docs\api\actors\proxy"><code>Observer.proxy()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -604,9 +604,9 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             </div>
         </template>
     </template>
-    <template name="connectors">
-        <template name="build">
-            <div exportgroup="README.md">
+    <template exportid="connectors" inherits="#main.html">
+        <template exportid="build" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="build"><code>.build()</code></h1>
             	<p>This function is used to explicitly create event links between a parent object and each of its children objects such that events happening at <em>child</em> level can bubble up to <em>parent</em> level.  Event links are, under the hood, created using the <a href="\tooling\observer\docs\api\connectors\link"><code>Observer.link()</code></a> method.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -654,8 +654,8 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             	</ul>
             </div>
         </template>
-        <template name="link">
-            <div exportgroup="README.md">
+        <template exportid="link" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="link"><code>.link()</code></h1>
             	<p>This function is used to explicitly establish an event link between a parent and a child object such that events happening at <em>child</em> level can bubble up to <em>parent</em> level.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -701,11 +701,11 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	</ul>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="connectors">Connectors</h1>
         </div>
-        <template name="unlink">
-            <div exportgroup="README.md">
+        <template exportid="unlink" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="unlink"><code>.unlink()</code></h1>
             	<p>This function is used to explicitly break the event link between a parent and a child object such that events happening at <em>child</em> level no longer bubble up to <em>parent</em> level. </p>
             	<h2 id="syntax">Syntax</h2>
@@ -740,9 +740,9 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             </div>
         </template>
     </template>
-    <template name="core">
-        <template name="Action">
-            <div exportgroup="README.md">
+    <template exportid="core" inherits="#main.html">
+        <template exportid="Action" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-action-"><code>class Action {}</code></h1>
             	<p>Instances of this class represent an action record. They are internally created by <a href="\tooling\observer\docs\api\actions">actions</a> (e.g. <a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\get"><code>Observer.get()</code></a>, and <a href="\tooling\observer\docs\api\actions\ownKeys"><code>Observer.ownKeys()</code></a>, etc) and passed to <a href="\tooling\observer\docs\api\reactions\intercept">interceptors</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
@@ -760,8 +760,8 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	</ul>
             </div>
         </template>
-        <template name="Event">
-            <div exportgroup="README.md">
+        <template exportid="Event" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-event-"><code>class Event {}</code></h1>
             	<p>Instances of this class represent a mutation event. They are internally created by mutators (<a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="\tooling\observer\docs\api\actions\deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="\tooling\observer\docs\api\reactions\observe">observers</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
@@ -836,8 +836,8 @@ Observer<span class="token punctuation">.</span><span class="token function">set
 <span class="token punctuation">}</span></code></pre>
             </div>
         </template>
-        <template name="Mutation">
-            <div exportgroup="README.md">
+        <template exportid="Mutation" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-mutation-"><code>class Mutation {}</code></h1>
             	<p>Instances of this class represent a mutation record. They are internally created by mutators (<a href="\tooling\observer\docs\api\actions\set"><code>Observer.set()</code></a>, <a href="\tooling\observer\docs\api\actions\defineProperty"><code>Observer.defineProperty()</code></a>, and <a href="\tooling\observer\docs\api\actions\deleteProperty"><code>Observer.deleteProperty()</code></a>) and passed to <a href="\tooling\observer\docs\api\reactions\observe">observers</a>.</p>
             	<h2 id="constructor-NaN">Constructor</h2>
@@ -858,8 +858,8 @@ Observer<span class="token punctuation">.</span><span class="token function">set
             	</ul>
             </div>
         </template>
-        <template name="OperatorParams">
-            <div exportgroup="README.md">
+        <template exportid="OperatorParams" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="operatorparams-"><code>OperatorParams {}</code></h1>
             	<p>This is an object of additional parameters that may be passed with any <a href="\tooling\observer\docs\api\actions">action</a>.</p>
             	<h2 id="properties">Properties</h2>
@@ -884,13 +884,13 @@ Observer<span class="token punctuation">.</span><span class="token function">set
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="core">Core</h1>
         </div>
     </template>
-    <template name="reactions">
-        <template name="closure">
-            <div exportgroup="README.md">
+    <template exportid="reactions" inherits="#main.html">
+        <template exportid="closure" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="closure"><code>.closure()</code></h1>
             	<p>This method is used to create an <em>observer-aware</em> context under which to execute code that could potentially mutate an object or array. Under this context, all mutations made to the object will be detected and <a href="\tooling\observer\docs\concepts#observers"><em>observers</em></a> that may be bound to the object will be notified.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -936,8 +936,8 @@ Observer<span class="token punctuation">.</span><span class="token function">clo
             	</ul>
             </div>
         </template>
-        <template name="intercept">
-            <div exportgroup="README.md">
+        <template exportid="intercept" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="intercept"><code>.intercept()</code></h1>
             	<p>This method is used to intercept operations performed on an object or array with custom handlers. Operations like <em>set</em>, <em>deleteProperty</em>, <em>get</em> and <em>has</em> are trapped and forwarded to these custom handlers.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -1032,8 +1032,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	</ul>
             </div>
         </template>
-        <template name="observe">
-            <div exportgroup="README.md">
+        <template exportid="observe" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="observe"><code>.observe()</code></h1>
             	<p>This method is used to observe operations on an object or array.</p>
             	<ul>
@@ -1296,11 +1296,11 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
             	</ul>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="reactions">Reactions</h1>
         </div>
-        <template name="unintercept">
-            <div exportgroup="README.md">
+        <template exportid="unintercept" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="unintercept"><code>.unintercept()</code></h1>
             	<p>This method is used to unbind interceptors previously bound with <a href="\tooling\observer\docs\api\reactions\intercept"><code>Observer.intercept()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -1332,8 +1332,8 @@ Observer<span class="token punctuation">.</span><span class="token function">uni
             	</ul>
             </div>
         </template>
-        <template name="unobserve">
-            <div exportgroup="README.md">
+        <template exportid="unobserve" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="unobserve"><code>.unobserve()</code></h1>
             	<p>This method is used to unbind <em>observers</em> previously bound with the <a href="\tooling\observer\docs\api\reactions\observe"><code>Observer.observe()</code></a> method.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -1373,14 +1373,14 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
             </div>
         </template>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="api-reference">API Reference</h1>
     	<p>Explore the API Reference.</p>
     </div>
 </template>
-<template name="getting-started">
-    <template name="download">
-        <div exportgroup="README.md">
+<template exportid="getting-started" inherits="#main.html">
+    <template exportid="download" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="download-options">Download Options</h1>
         	<p>Observer can be used either from a CDN or as an npm package.</p>
         	<h2 id="option-1-from-a-cdn">Option 1: From a CDN</h2>
@@ -1400,8 +1400,8 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	<p>Continue to <a href="\tooling\observer\docs\api">learning the API</a>.</p>
         </div>
     </template>
-    <template name="explainer">
-        <div exportgroup="README.md">
+    <template exportid="explainer" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="explainer-todo">Explainer [TODO]</h1>
         	<!--
         	The observable alternative to Reflect
@@ -1707,8 +1707,8 @@ Observer<span class="token punctuation">.</span><span class="token function">uno
         	-->
         </div>
     </template>
-    <template name="overview">
-        <div exportgroup="README.md">
+    <template exportid="overview" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="overview">Overview</h1>
         	<p>Take a one-minute rundown of the Observer API.</p>
         	<h2 id="observe">Observe</h2>
@@ -1824,11 +1824,11 @@ Observer<span class="token punctuation">.</span><span class="token function">obs
         	</ul>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="getting-started">Getting Started</h1>
     </div>
 </template>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h1 id="observer-api-documentation">Observer API Documentation</h1>
 	<p>Welcome to the Observer API documentation. We hope you find it easy to understand and navigate.</p>
 	<p>If you have questions about anything related to the Observer API, you're always welcome to ask on our <a href="https://github.com/webqit/observer/discussions">GitHub Discussions</a>.</p>

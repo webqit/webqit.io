@@ -14,6 +14,6 @@ Remembering things is hard. Run the **`playui help`** command anytime to show a 
 
 > Syntax: **`playui help`**.
 
-<html-import name="playui-help" template="page/tooling/play-ui/docs/cli/help"></html-import>
+<import name="playui-help" template="page/tooling/play-ui/docs/cli/help"></import>
 
 Refer to the documentation of the command you want to use.

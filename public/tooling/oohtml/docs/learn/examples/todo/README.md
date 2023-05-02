@@ -35,12 +35,12 @@ It features the ability to add items and toggle the active state of each item.
             document.setState(app);
         </script>
 
-        <template name="items">
+        <template exportid="items">
             
             <li namespace>
-                <span data-id="desc"></span>
-                <button data-id="toggle">Toggle Active</button>
-                <script type="subscript">
+                <span :id="desc"></span>
+                <button :id="toggle">Toggle Active</button>
+                <script type="module" scoped contract>
                     $(this.namespace.desc).html(this.state.desc);
                     $(this.namespace.desc).css('opacity', this.state.active ? '1' : '0');
                     $(this.namespace.toggle).on('click', () => {
@@ -57,9 +57,9 @@ It features the ability to add items and toggle the active state of each item.
 
         <div namespace>
 
-            <h2 data-id="title"></h2>
-            <ol data-id="items" template="items"></ol>
-            <button data-id="add">Add</button>
+            <h2 :id="title"></h2>
+            <ol :id="items" template="items"></ol>
+            <button :id="add">Add</button>
             
             <br /><br />
 
@@ -68,7 +68,7 @@ It features the ability to add items and toggle the active state of each item.
             Open your console and type: <code>Observer.proxy(document.state.todo).push({desc:"New Item", active: true})</code>
             </div>
 
-            <script type="subscript">
+            <script type="module" scoped contract>
                 this.namespace.title.innerHTML = document.state.title;
                 $(this.namespace.items).list(document.state.todo);
                 this.namespace.add.addEventListener('click', () => {

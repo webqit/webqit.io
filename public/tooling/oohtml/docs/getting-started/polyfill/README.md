@@ -20,7 +20,7 @@ Add the following script tag to your page to include the all-in-one OOHTML build
 Or embed individual OOHTML features via their respective build:
 
   + **[HTML Modules](../../spec/html-modules)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/html-modules.js"></script>`
-  + **[HTML Imports](../../spec/html-imports)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/html-imports.js"></script>`
+  + **[HTML Imports](../../spec/imports)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/imports.js"></script>`
   + **[Namespaced HTML](../../spec/namespaced-html)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/namespaced-html.js"></script>`
   + **[The State API](../../spec/the-state-api)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/state-api.js"></script>`
   + **[Subscript](../../spec/subscript)** - `<script src="https://unpkg.com/@webqit/oohtml/dist/subscript.js"></script>`

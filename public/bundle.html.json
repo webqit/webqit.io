@@ -1,10 +1,10 @@
 {
-    "-": {
-        "-": {
-            "docs": {}
-        }
-    },
     "cloud": "\\cloud\\bundle.html.json",
     "community": "\\community\\bundle.html.json",
-    "tooling": "\\tooling\\bundle.html.json"
+    "tooling": "\\tooling\\bundle.html.json",
+    "_landing1": {
+        "_landing2": {
+            "_landing3": {}
+        }
+    }
 }

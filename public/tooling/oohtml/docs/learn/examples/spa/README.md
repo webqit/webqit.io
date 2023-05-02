@@ -1,6 +1,6 @@
 # An SPA In OOHTML
 
-This example makes a Single Page Application (SPA) out of [HTML Modules](../../../spec/html-modules) and [HTML Imports](../../../spec/html-imports).
+This example makes a Single Page Application (SPA) out of [HTML Modules](../../../spec/html-modules) and [HTML Imports](../../../spec/imports).
 
 Below, we're using the two `<template>` elements to each represent a route - a page. Then we point the `<body>`'s template attribute to either of the `<template>`s, depending on the current URL.
 
@@ -10,28 +10,28 @@ Below, we're using the two `<template>` elements to each represent a route - a p
     <head>
 
         <title>An SPA In OOHTML</title>
-        <meta name="oohtml" content="element.import=html-import" />
+        <meta name="oohtml" content="element.import=import" />
         
         <script src="https://unpkg.com/@webqit/oohtml@1.8.19/dist/main.js"></script>
 
-        <template name="pages">
+        <template exportid="pages">
 
             <!-- "home" page module -->
-            <template name="home">
-                <h1 exportgroup="headline">
+            <template exportid="home">
+                <h1 exportid="#headline">
                     Welcome Home!
                 </h1>
-                <p exportgroup="content">
+                <p exportid="#content">
                     <a href="#/about">About Me</a>
                 </p>
             </template>
 
             <!-- "about" page module -->
-            <template name="about">
-                <h1 exportgroup="headline">
+            <template exportid="about">
+                <h1 exportid="#headline">
                     About Me!
                 </h1>
-                <p exportgroup="content">
+                <p exportid="#content">
                     <a href="#/home">Back to Home</a>
                 </p>
             </template>
@@ -46,10 +46,10 @@ Below, we're using the two `<template>` elements to each represent a route - a p
 
         <main>
             <div>
-                <html-import name="headline">404</html-import>
+                <import name="headline">404</import>
             </div>
             <div>
-                <html-import name="content">Page not Found!</html-import>
+                <import name="content">Page not Found!</import>
             </div>
         </main>
  

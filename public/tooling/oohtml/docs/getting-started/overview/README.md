@@ -8,7 +8,7 @@ _index: first
 OOHTML offers a set of five features that make common UI development paradigms possible as native web platform features. These features may be used individually or together for some great UI-authoring capabilites. Here is an overview:
 
 + [HTML Modules](#html-modules)
-+ [HTML Imports](#html-imports)
++ [HTML Imports](#imports)
 + [Namespaced HTML](#namespaced-html)
 + [The State API](#the-state-api)
 + [Subscript](#subscript)
@@ -22,7 +22,7 @@ A module is a regular `<template>` element with a `name` attribute - *the module
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
         <label for="age">How old are you?</div>
         <input id="age" />
@@ -37,7 +37,7 @@ Exports may be more properly wrapped within an `<export>` element of a designate
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
         <export name="question">
             <label for="age">How old are you?</label>
@@ -56,10 +56,10 @@ Or they may be individually *tagged* to an export identifier using the `exportgr
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
 
-        <label exportgroup="question" for="age">How old are you?</label>
-        <input exportgroup="question" name="age" />
+        <label exportid="#question" for="age">How old are you?</label>
+        <input exportid="#question" name="age" />
         
         <div>This is another export</div>
 
@@ -86,7 +86,7 @@ Taking things further, template elements may reference remote content using the 
 ```html
 <head>
 
-    <template name="module-remote" src="/bundle.html"></template>
+    <template exportid="module-remote" src="/bundle.html"></template>
 
 </head>
 ```
@@ -156,7 +156,7 @@ document.querySelector('div[template="module1"]').setAttribute('template', 'modu
 
 This opens up new simple ways to create very dynamic applications.
 
-**Details are in the [HTML Imports](../../spec/html-imports) specification. Learn more about the convention, dynamicity, Slot Inheritance, isomorphic rendering, and the polyfill support.**
+**Details are in the [HTML Imports](../../spec/imports) specification. Learn more about the convention, dynamicity, Slot Inheritance, isomorphic rendering, and the polyfill support.**
 
 ## Namespaced HTML
 
@@ -347,7 +347,7 @@ var globalMessage = 'This site uses cookies!';
 
 ```html
 <div id="alert">
-    <script type="subscript">
+    <script type="module" scoped contract>
         console.log( this.id ); // alert
     </script>
 </div>
@@ -371,7 +371,7 @@ var globalMessage = 'This site uses cookies!';
         <div class="message"></div>
 
         <!-- Scoped Subscript -->
-        <script type="subscript">
+        <script type="module" scoped contract>
             let messageElement = this.querySelector( '.message' );
             messageElement.innerHTML = globalMessage;
         </script>

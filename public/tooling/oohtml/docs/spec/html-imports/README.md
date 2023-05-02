@@ -21,7 +21,7 @@ Below are some *module exports*.
 ```html
 <head>
 
-    <template name="module2">
+    <template exportid="module2">
 
         <export name="export-1">
             <img src="logo.png" />
@@ -34,12 +34,12 @@ Below are some *module exports*.
 
     </template>
 
-    <template name="module1">
+    <template exportid="module1">
 
-        <img exportgroup="export-1" src="logo.png" /> <!-- part of export-1 -->
+        <img exportid="#export-1" src="logo.png" /> <!-- part of export-1 -->
 
-        <label exportgroup="export-2" for="email">Enter your email address</label> <!-- part of export-2 -->
-        <input exportgroup="export-2" id="email" type="email" /> <!-- part of export-2 -->
+        <label exportid="#export-2" for="email">Enter your email address</label> <!-- part of export-2 -->
+        <input exportid="#export-2" id="email" type="email" /> <!-- part of export-2 -->
 
     </template>
 
@@ -62,7 +62,7 @@ And here's a typical `<import>` element that imports a corresponding *module exp
 ```html
 <body>
  
-    <img exportgroup="export-1" src="logo.png" />
+    <img exportid="#export-1" src="logo.png" />
     <!-- <import> element replaced -->
 
 </body>
@@ -85,8 +85,8 @@ All elements in the matched *module export* go together into the same *import sl
 <body>
  
     <question-element>
-        <label exportgroup="export-2" for="email">Enter your email address</label>
-        <input exportgroup="export-2" id="email" type="email" />
+        <label exportid="#export-2" for="email">Enter your email address</label>
+        <input exportid="#export-2" id="email" type="email" />
         <!-- <import> element replaced -->
     </question-element>
 
@@ -130,7 +130,7 @@ HTML Modules are allowed to have contents without an *export identifier* and the
 ```html
 <head>
 
-    <template name="module3">
+    <template exportid="module3">
 
         <label for="email">Enter your email</label> <!-- This is part of the default export -->
         <input id="email" type="email" /> <!-- This is part of the default export -->
@@ -234,9 +234,9 @@ HTML Imports supports certain conventions that let us dynamically match modules.
 
     ```html
 
-    <div exportgroup="export-2"></div>
-    <template name="module-loaded">
-        <div exportgroup="export-3"></div>
+    <div exportid="#export-2"></div>
+    <template exportid="module-loaded">
+        <div exportid="#export-3"></div>
     </template>
 
     ```
@@ -246,9 +246,9 @@ HTML Imports supports certain conventions that let us dynamically match modules.
     ```html
     <head>
 
-        <template name="module1">
-            <div exportgroup="export-1"></div>
-            <template name="module-remote" src="/bundle.html"></template>
+        <template exportid="module1">
+            <div exportid="#export-1"></div>
+            <template exportid="module-remote" src="/bundle.html"></template>
         </template>
 
     </head>
@@ -293,7 +293,7 @@ An `<import>` element's attributes and default content may also be inheritted by
 
         <div template="module1">
             <!-- The slotted element now inherits the style attribute  -->
-            <img exportgroup="export-1" src="logo.png" style="max-width:50px" />
+            <img exportid="#export-1" src="logo.png" style="max-width:50px" />
         </div>
 
     </body>
@@ -312,12 +312,12 @@ An `<import>` element's attributes and default content may also be inheritted by
     ```html
     <head>
 
-        <template name="module2">
+        <template exportid="module2">
 
             <!--
             The element being slotted pointing to its destination slot
             -->
-            <div exportgroup="export-1">
+            <div exportid="#export-1">
                 <!--
                 The <import> element that actually imports the contents of its destination slot
                 -->
@@ -339,7 +339,7 @@ An `<import>` element's attributes and default content may also be inheritted by
             The <import> element as a module
             -->
             <import name="export-1">
-                <div exportgroup="default-content">No results</div>
+                <div exportid="#default-content">No results</div>
             </import>
         </div>
 
@@ -352,8 +352,8 @@ An `<import>` element's attributes and default content may also be inheritted by
     <body>
 
         <div template="module2">
-            <div exportgroup="export-1" template="@slot">
-                <div exportgroup="default-content">No results</div>
+            <div exportid="#export-1" template="@slot">
+                <div exportid="#default-content">No results</div>
             </div>
         </div>
 
@@ -374,9 +374,9 @@ HTML Imports makes it possible to serialize `<import>` elements into *comment no
     <head>
 
         <meta name="oohtml" content="isomorphic=true;" />
-        <template name="module2">
-            <div exportgroup="export-1"></div>
-            <div exportgroup="export-2"></div>
+        <template exportid="module2">
+            <div exportid="#export-1"></div>
+            <div exportid="#export-2"></div>
         </template>
 
     </head>
@@ -402,9 +402,9 @@ HTML Imports makes it possible to serialize `<import>` elements into *comment no
     <head>
 
         <meta name="oohtml" content="isomorphic=true;" />
-        <template name="module2">
-            <div exportgroup="export-1"></div>
-            <div exportgroup="export-2"></div>
+        <template exportid="module2">
+            <div exportid="#export-1"></div>
+            <div exportid="#export-2"></div>
         </template>
 
     </head>
@@ -412,11 +412,11 @@ HTML Imports makes it possible to serialize `<import>` elements into *comment no
     <body>
 
         <div template="module1">
-            <div exportgroup="export-1" id="headline" style="color:red"></div>
+            <div exportid="#export-1" id="headline" style="color:red"></div>
             <!-- <import name="export-1" id="headline" style="color:red">Default Headline</import> -->
         </div>
 
-        <div exportgroup="export-1" style="color:blue"></div>
+        <div exportid="#export-1" style="color:blue"></div>
         <!-- <import template="module1" name="export-1" style="color:blue"></import> -->
 
     </body>
@@ -434,9 +434,9 @@ On loading the above serialized HTML output in the browser, find and delete the 
     <head>
 
         <meta name="oohtml" content="isomorphic=true;" />
-        <template name="module2">
-            <div exportgroup="export-1"></div>
-            <div exportgroup="export-2"></div>
+        <template exportid="module2">
+            <div exportid="#export-1"></div>
+            <div exportid="#export-2"></div>
         </template>
 
     </head>
@@ -464,10 +464,10 @@ The current [OOHTML polyfill implementation](../../getting-started/polyfill) has
         
     ```html
     <head>
-        <meta name="oohtml" content="element.import=html-import;" />
+        <meta name="oohtml" content="element.import=import;" />
     </head>
     <body>
-        <html-import name="export-1" template="module2"></html-import>
+        <import name="export-1" template="module2"></import>
     </body>
     ```
 

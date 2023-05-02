@@ -83,9 +83,9 @@ The document in context. The list items `<li>` in the module will be used to der
 ```html
 <head>
 
-    <template name="module1">
+    <template exportid="module1">
         <li></li> <!-- the default export -->
-        <li exportgroup="export1" class="fancy-item"></li> <!-- a named export -->
+        <li exportid="#export1" class="fancy-item"></li> <!-- a named export -->
     </template>
 
 </head>

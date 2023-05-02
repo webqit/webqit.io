@@ -1,13 +1,13 @@
 
-<template name="api">
-    <template name="css">
-        <template name="classes">
-            <div exportgroup="README.md">
+<template exportid="api" inherits="#main.html">
+    <template exportid="css" inherits="#main.html">
+        <template exportid="classes" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="classes">Classes</h1>
             	<p>Classes in this category.</p>
             </div>
-            <template name="TransformRule">
-                <div exportgroup="README.md">
+            <template exportid="TransformRule" inherits="#main.html">
+                <div exportid="#README.md">
                 	<h1 id="class-transformrule-"><code>class TransformRule {}</code></h1>
                 	<p>This class is an object model of the CSS transform rule.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -102,8 +102,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
                 </div>
             </template>
         </template>
-        <template name="css">
-            <div exportgroup="README.md">
+        <template exportid="css" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="css"><code>.css()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\css\cssSync"><code>.cssSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\css\cssSync"><code>.cssSync()</code></a> for documentation.</p>
             	<hr>
@@ -116,8 +116,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="cssAsync">
-            <div exportgroup="README.md">
+        <template exportid="cssAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="cssasync"><code>.cssAsync()</code></h1>
             	<p>This method is used to asynchronously set or get one or more style properties for the given element. It is a convenient alternative to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle"><code>window.getComputedStyle</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style"><code>ElementCSSInlineStyle.style</code></a>. It also has special support for vendor-prefixed properties.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\css\cssSync"><code>.cssSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -195,8 +195,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="cssSync">
-            <div exportgroup="README.md">
+        <template exportid="cssSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="csssync"><code>.cssSync()</code></h1>
             	<p>This method is used to set or get one or more style properties for the given element. It is a convenient alternative to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle"><code>window.getComputedStyle</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style"><code>ElementCSSInlineStyle.style</code></a>. It also has special support for vendor-prefixed properties.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\css\cssAsync"><code>.cssAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -273,8 +273,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="cssTransaction">
-            <div exportgroup="README.md">
+        <template exportid="cssTransaction" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="csstransaction"><code>.cssTransaction()</code></h1>
             	<p>This method is used to start a transaction on an element for CSS operations that eventually might need to be rolled back. It is a convenient way to use the Play UI's <a href="\tooling\play-ui\docs\api\css\classes\transaction">Transaction</a> class.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -356,13 +356,13 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="api-category-css">API Category: CSS</h1>
         </div>
     </template>
-    <template name="data">
-        <template name="data">
-            <div exportgroup="README.md">
+    <template exportid="data" inherits="#main.html">
+        <template exportid="data" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="data">.data()</h1>
             	<p>This method is used to store and manage arbitrary data with a data store internally associated with an element.</p>
             	<ul>
@@ -450,8 +450,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="list">
-            <div exportgroup="README.md">
+        <template exportid="list" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="list"><code>.list()</code></h1>
             	<p>This method is used to create a live list within an element in an <a href="/tooling/oohtml">OOHTML</a>-based document. (It requires the OHHTML polyfill to be available in the document.)</p>
             	<h2 id="syntax">Syntax</h2>
@@ -512,9 +512,9 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>The document in context. The list items <code>&lt;li&gt;</code> in the module will be used to derive the items for the list container <code>&lt;ul&gt;</code>.</p>
 <pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module1<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
         <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- the default export --&gt;</span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>export1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fancy-item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- a named export --&gt;</span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>li</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#export1<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>fancy-item<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>li</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!-- a named export --&gt;</span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
@@ -566,13 +566,13 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="api-category-data">API Category: Data</h1>
         </div>
     </template>
-    <template name="dom">
-        <template name="append">
-            <div exportgroup="README.md">
+    <template exportid="dom" inherits="#main.html">
+        <template exportid="append" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="append"><code>.append()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\appendSync"><code>.appendSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\appendSync"><code>.appendSync()</code></a> for documentation.</p>
             	<hr>
@@ -585,8 +585,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="appendAsync">
-            <div exportgroup="README.md">
+        <template exportid="appendAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="appendasync"><code>.appendAsync()</code></h1>
             	<p>This method is used to asynchronously append content to an element. It works exactly the same as the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append"><code>ParentNode.append()</code></a> except that when the implied content is undefined, it is converted to an empty string.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\appendSync"><code>.appendSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -615,8 +615,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="appendSync">
-            <div exportgroup="README.md">
+        <template exportid="appendSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="appendsync"><code>.appendSync()</code></h1>
             	<p>This method is used to append content to an element. It works exactly the same as the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append"><code>ParentNode.append()</code></a> except that when the implied content is undefined, it is converted to an empty string.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\appendAsync"><code>.appendAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -645,8 +645,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="appendToSync">
-            <div exportgroup="README.md">
+        <template exportid="appendToSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="appendtosync"><code>.appendToSync()</code></h1>
             	<p>This method is used to append matched elements to target elements.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\appendToAsync"><code>.appendToAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -676,8 +676,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="attr">
-            <div exportgroup="README.md">
+        <template exportid="attr" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="attr"><code>.attr()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\attrSync"><code>.attrSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\attrSync"><code>.attrSync()</code></a> for documentation.</p>
             	<hr>
@@ -690,8 +690,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="attrAsync">
-            <div exportgroup="README.md">
+        <template exportid="attrAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="attrasync"><code>.attrAsync()</code></h1>
             	<p>This method is used to asynchronously set or get an element's attribute. It is a shorter alternative to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code>Element.setAttribute()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"><code>Element.getAttribute()</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"><code>Element.removeAttribute()</code></a>. It also has special support for list-based attributes like <code>class</code>.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\attrSync"><code>attrSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -827,8 +827,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="attrSync">
-            <div exportgroup="README.md">
+        <template exportid="attrSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="attrsync"><code>.attrSync()</code></h1>
             	<p>This method is used to set or get an element's attribute. It is a shorter alternative to the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute"><code>Element.setAttribute()</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute"><code>Element.getAttribute()</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute"><code>Element.removeAttribute()</code></a>. It also has special support for list-based attributes like <code>class</code>.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\attrAsync"><code>attrAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -963,8 +963,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="class">
-            <div exportgroup="README.md">
+        <template exportid="class" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class"><code>.class()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\classSync"><code>.classSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\classSync"><code>.classSync()</code></a> for documentation.</p>
             	<hr>
@@ -977,8 +977,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="classAsync">
-            <div exportgroup="README.md">
+        <template exportid="classAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="classasync"><code>.classAsync()</code></h1>
             	<p>This method is used to asynchronously modify or match an element's class list. It provides convenience over using the <a href="\tooling\play-ui\docs\api\dom\attrAsync"><code>attrAsync()</code></a> method to modify an element's class attribute.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\classSync"><code>classSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -1065,8 +1065,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="classSync">
-            <div exportgroup="README.md">
+        <template exportid="classSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="classsync"><code>.classSync()</code></h1>
             	<p>This method is used to modify or match an element's class list. It provides convenience over using the <a href="\tooling\play-ui\docs\api\dom\attrSync"><code>attrSync()</code></a> method to modify an element's class attribute.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\classAsync"><code>classAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -1152,8 +1152,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="getTextNodes">
-            <div exportgroup="README.md">
+        <template exportid="getTextNodes" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="gettextnodes"><code>.getTextNodes()</code></h1>
             	<p>This method is used to get all text nodes within an element.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -1181,8 +1181,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="html">
-            <div exportgroup="README.md">
+        <template exportid="html" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="html"><code>.html()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\htmlSync"><code>.htmlSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\htmlSync"><code>.htmlSync()</code></a> for documentation.</p>
             	<hr>
@@ -1195,8 +1195,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="htmlAsync">
-            <div exportgroup="README.md">
+        <template exportid="htmlAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="htmlasync"><code>.htmlAsync()</code></h1>
             	<p>This method is used to asynchronously set or get an element's HTML/XML content. It is the programmatic alternative to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML"><code>Element.innerHTML</code></a>. Additionally, when this function receives <code>undefined</code> for a <em>set</em> operation, it is converted to an empty string.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\htmlSync"><code>.htmlSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -1242,8 +1242,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="htmlSync">
-            <div exportgroup="README.md">
+        <template exportid="htmlSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="htmlsync"><code>.htmlSync()</code></h1>
             	<p>This method is used to set or get an element's HTML/XML content. It is the programmatic alternative to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML"><code>Element.innerHTML</code></a>. Additionally, when this function receives <code>undefined</code> for a <em>set</em> operation, it is converted to an empty string.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\htmlAsync"><code>.htmlAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -1289,8 +1289,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="initialization">
-            <div exportgroup="README.md">
+        <template exportid="initialization" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="the-play-ui-constructor">The Play UI Constructor</h1>
             	<p>The main Play UI <em>constructor</em> is used to derive elements from a number of input formats and return a Play UI instance for them. It is a <em>constructable function</em> that can be instantiated either with the <code>new</code> keyword (<code>new $()</code>) or via a static call (<code>$()</code>).</p>
             	<ul>
@@ -1361,8 +1361,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
 <span class="token keyword">let</span> $divs <span class="token operator">=</span> <span class="token function">$</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// .length: 2</span></code></pre>
             </div>
         </template>
-        <template name="itemize">
-            <div exportgroup="README.md">
+        <template exportid="itemize" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="itemize"><code>.itemize()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\data\list"><code>.list()</code></a> method. See <a href="\tooling\play-ui\docs\api\data\list"><code>.list()</code></a> for documentation.</p>
             	<hr>
@@ -1375,8 +1375,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="prepend">
-            <div exportgroup="README.md">
+        <template exportid="prepend" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="prepend"><code>.prepend()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\prependsync"><code>.prependSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\prependsync"><code>.prependSync()</code></a> for documentation.</p>
             	<hr>
@@ -1389,8 +1389,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="prependAsync">
-            <div exportgroup="README.md">
+        <template exportid="prependAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="prependasync"><code>.prependAsync()</code></h1>
             	<p>This method is used to asynchronously prepend content to an element. It works exactly the same as the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend"><code>ParentNode.prepend()</code></a> except that when the implied content is undefined, it is converted to an empty string.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\prependsync"><code>.prependSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -1419,8 +1419,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="prependSync">
-            <div exportgroup="README.md">
+        <template exportid="prependSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="prependsync"><code>.prependSync()</code></h1>
             	<p>This method is used to prepend content to an element. It works exactly the same as the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend"><code>ParentNode.prepend()</code></a> except that when the implied content is undefined, it is converted to an empty string.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\prependasync"><code>.prependAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -1449,8 +1449,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="prependToAsync">
-            <div exportgroup="README.md">
+        <template exportid="prependToAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="prependtoasync"><code>.prependToAsync()</code></h1>
             	<p>This method is used to asynchronously prepend matched elements to target elements.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\prependtosync"><code>.prependToSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -1480,8 +1480,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="prependToSync">
-            <div exportgroup="README.md">
+        <template exportid="prependToSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="prependtosync"><code>.prependToSync()</code></h1>
             	<p>This method is used to prepend matched elements to target elements.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\prependtoasync"><code>.prependToAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -1511,11 +1511,11 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="api-category-dom">API Category: DOM</h1>
         </div>
-        <template name="text">
-            <div exportgroup="README.md">
+        <template exportid="text" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="text"><code>.text()</code></h1>
             	<p>This method is an alias of the <a href="\tooling\play-ui\docs\api\dom\textSync"><code>.textSync()</code></a> method. See <a href="\tooling\play-ui\docs\api\dom\textSync"><code>.textSync()</code></a> for documentation.</p>
             	<hr>
@@ -1528,8 +1528,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="textAsync">
-            <div exportgroup="README.md">
+        <template exportid="textAsync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="textasync"><code>.textAsync()</code></h1>
             	<p>This method is used to asynchronously set or get an element's text content. It is the programmatic alternative to <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText"><code>Element.innerText</code></a>. Additionally, when this function receives <code>undefined</code> for a <em>set</em> operation, it is converted to an empty string.</p>
             	<p>The suffix <em>Async</em> differentiates this method from its <em>Sync</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\textSync"><code>.textSync()</code></a>. Unlike the <em>Sync</em> counterpart, this method is promised-based. See <a href="\tooling\play-ui\docs\getting-started\overview#meet-async-ui">Async UI</a>.</p>
@@ -1575,8 +1575,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="textSync">
-            <div exportgroup="README.md">
+        <template exportid="textSync" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="textsync"><code>.textSync()</code></h1>
             	<p>This method is used to set or get an element's text content. It is the programmatic alternative to <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText"><code>Element.innerText</code></a>. Additionally, when this function receives <code>undefined</code> for a <em>set</em> operation, it is converted to an empty string.</p>
             	<p>The suffix <em>Sync</em> differentiates this method from its <em>Async</em> counterpart - <a href="\tooling\play-ui\docs\api\dom\textAsync"><code>.textAsync()</code></a>. Unlike the <em>Async</em> counterpart, this method is not promised-based.</p>
@@ -1623,15 +1623,15 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
             </div>
         </template>
     </template>
-    <template name="misc">
-        <template name="classes">
-            <div exportgroup="README.md">
+    <template exportid="misc" inherits="#main.html">
+        <template exportid="classes" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="classes">Classes</h1>
             	<p>Classes in this category.</p>
             </div>
-            <template name="Transaction">
-                <template name="apply">
-                    <div exportgroup="README.md">
+            <template exportid="Transaction" inherits="#main.html">
+                <template exportid="apply" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="apply"><code>.apply()</code></h1>
                     	<blockquote>
                     	  <p>The <code>transaction.apply()</code> method.</p>
@@ -1655,8 +1655,8 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="commit">
-                    <div exportgroup="README.md">
+                <template exportid="commit" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="commit"><code>.commit()</code></h1>
                     	<blockquote>
                     	  <p>The <code>transaction.commit()</code> method.</p>
@@ -1676,7 +1676,7 @@ textNodes<span class="token punctuation">.</span><span class="token function">fo
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">ananimationi<span class="token punctuation">.</span><span class="token function">commit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <div exportgroup="README.md">
+                <div exportid="#README.md">
                 	<h1 id="class-transaction-"><code>class Transaction {}</code></h1>
                 	<p>This class lets us create rollback points while manipulating an element.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -1782,8 +1782,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
                 	<h2 id="methods">Methods</h2>
                 	<p>Check out <em>Transaction's</em> methods.</p>
                 </div>
-                <template name="rollback">
-                    <div exportgroup="README.md">
+                <template exportid="rollback" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="rollback"><code>.rollback()</code></h1>
                     	<blockquote>
                     	  <p>The <code>transaction.rollback()</code> method.</p>
@@ -1804,8 +1804,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
                     	<p>See the <a href="\tooling\play-ui\docs\api\misc\classes\Transaction#usage">Transaction</a> class.</p>
                     </div>
                 </template>
-                <template name="savepoint">
-                    <div exportgroup="README.md">
+                <template exportid="savepoint" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="savepoint"><code>.savepoint()</code></h1>
                     	<blockquote>
                     	  <p>The <code>transaction.savepoint()</code> method.</p>
@@ -1823,11 +1823,11 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
                 </template>
             </template>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="api-category-miscellaneous">API Category: Miscellaneous</h1>
         </div>
-        <template name="transaction">
-            <div exportgroup="README.md">
+        <template exportid="transaction" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="transaction"><code>.transaction()</code></h1>
             	<p>This method is used to start a transaction on an element for operations that eventually might need to be rolled back. It is a convenient way to use the Play UI's <a href="\tooling\play-ui\docs\api\misc\classes\Transaction">Transaction</a> class.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -1855,15 +1855,15 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
             </div>
         </template>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="api-reference">API Reference</h1>
     	<p>Explore the API Reference.</p>
     </div>
-    <template name="ui">
-        <template name="classes">
-            <template name="Animation">
-                <template name="cancel">
-                    <div exportgroup="README.md">
+    <template exportid="ui" inherits="#main.html">
+        <template exportid="classes" inherits="#main.html">
+            <template exportid="Animation" inherits="#main.html">
+                <template exportid="cancel" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="cancel"><code>.cancel()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.cancel()</code> method.</p>
@@ -1880,8 +1880,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">animation<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="finish">
-                    <div exportgroup="README.md">
+                <template exportid="finish" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="finish"><code>.finish()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.finish()</code> method.</p>
@@ -1898,8 +1898,8 @@ el<span class="token punctuation">.</span>style<span class="token punctuation">.
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">animation<span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="oncancel">
-                    <div exportgroup="README.md">
+                <template exportid="oncancel" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="oncancel"><code>.oncancel()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.oncancel()</code> method.</p>
@@ -1934,8 +1934,8 @@ animation<span class="token punctuation">.</span><span class="token function">on
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="onfinish">
-                    <div exportgroup="README.md">
+                <template exportid="onfinish" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="onfinish"><code>.onfinish()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.onfinish()</code> method.</p>
@@ -1970,8 +1970,8 @@ animation<span class="token punctuation">.</span><span class="token function">on
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="pause">
-                    <div exportgroup="README.md">
+                <template exportid="pause" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="pause"><code>.pause()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.pause()</code> method.</p>
@@ -1988,8 +1988,8 @@ animation<span class="token punctuation">.</span><span class="token function">on
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">animation<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="play">
-                    <div exportgroup="README.md">
+                <template exportid="play" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="play"><code>.play()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.play()</code> method.</p>
@@ -2019,8 +2019,8 @@ animation<span class="token punctuation">.</span><span class="token function">pl
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="progress">
-                    <div exportgroup="README.md">
+                <template exportid="progress" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="progress"><code>.progress()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.progress()</code> method.</p>
@@ -2048,7 +2048,7 @@ animation<span class="token punctuation">.</span><span class="token function">pl
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">350</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <div exportgroup="README.md">
+                <div exportid="#README.md">
                 	<h1 id="class-animation-"><code>class Animation {}</code></h1>
                 	<p>This class provides an intuitive way to use the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API (WAAPI)</a>.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -2122,8 +2122,8 @@ animation<span class="token punctuation">.</span><span class="token function">pl
                 	<h2 id="methods">Methods</h2>
                 	<p>Explore the instance methods of this class.</p>
                 </div>
-                <template name="ready">
-                    <div exportgroup="README.md">
+                <template exportid="ready" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="ready"><code>.ready()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.ready()</code> method.</p>
@@ -2162,8 +2162,8 @@ aanimationni<span class="token punctuation">.</span><span class="token function"
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="reverse">
-                    <div exportgroup="README.md">
+                <template exportid="reverse" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="reverse"><code>.reverse()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.reverse()</code> method.</p>
@@ -2180,8 +2180,8 @@ aanimationni<span class="token punctuation">.</span><span class="token function"
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">animation<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="seek">
-                    <div exportgroup="README.md">
+                <template exportid="seek" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="seek"><code>.seek()</code></h1>
                     	<blockquote>
                     	  <p>The <code>animation.seek()</code> method.</p>
@@ -2213,8 +2213,8 @@ animation<span class="token punctuation">.</span><span class="token function">se
                     </div>
                 </template>
             </template>
-            <template name="Event">
-                <div exportgroup="README.md">
+            <template exportid="Event" inherits="#main.html">
+                <div exportid="#README.md">
                 	<h1 id="class-event-"><code>class Event {}</code></h1>
                 	<p>Instances of this class represent a DOM event or user gesture event.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -2240,8 +2240,8 @@ animation<span class="token punctuation">.</span><span class="token function">se
                 	<h3 id="eventresponse"><code>event.response()</code></h3>
                 </div>
             </template>
-            <template name="Listener">
-                <div exportgroup="README.md">
+            <template exportid="Listener" inherits="#main.html">
+                <div exportid="#README.md">
                 	<h1 id="class-listener-"><code>class Listener {}</code></h1>
                 	<p>Instances of this class represent an event listener.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -2251,13 +2251,13 @@ animation<span class="token punctuation">.</span><span class="token function">se
                 	<h3 id="listenerfire"><code>listener.fire()</code></h3>
                 </div>
             </template>
-            <div exportgroup="README.md">
+            <div exportid="#README.md">
             	<h1 id="classes">Classes</h1>
             	<p>Classes in this category.</p>
             </div>
-            <template name="Timeline">
-                <template name="add">
-                    <div exportgroup="README.md">
+            <template exportid="Timeline" inherits="#main.html">
+                <template exportid="add" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="add"><code>.add()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.add()</code> method.</p>
@@ -2280,8 +2280,8 @@ animation<span class="token punctuation">.</span><span class="token function">se
 timeline<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="cancel">
-                    <div exportgroup="README.md">
+                <template exportid="cancel" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="cancel"><code>.cancel()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.cancel()</code> method.</p>
@@ -2302,8 +2302,8 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">timeline<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="clear">
-                    <div exportgroup="README.md">
+                <template exportid="clear" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="clear"><code>.clear()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.clear()</code> method.</p>
@@ -2324,8 +2324,8 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">timeline<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="finish">
-                    <div exportgroup="README.md">
+                <template exportid="finish" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="finish"><code>.finish()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.finish()</code> method.</p>
@@ -2346,8 +2346,8 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">timeline<span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="oncancel">
-                    <div exportgroup="README.md">
+                <template exportid="oncancel" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="oncancel"><code>.oncancel()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.oncancel()</code> method.</p>
@@ -2390,8 +2390,8 @@ timeline<span class="token punctuation">.</span><span class="token function">onc
 animation<span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="onfinish">
-                    <div exportgroup="README.md">
+                <template exportid="onfinish" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="onfinish"><code>.onfinish()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.onfinish()</code> method.</p>
@@ -2434,8 +2434,8 @@ timeline<span class="token punctuation">.</span><span class="token function">onf
 animation<span class="token punctuation">.</span><span class="token function">finish</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="pause">
-                    <div exportgroup="README.md">
+                <template exportid="pause" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="pause"><code>.pause()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.pause()</code> method.</p>
@@ -2456,8 +2456,8 @@ animation<span class="token punctuation">.</span><span class="token function">fi
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">timeline<span class="token punctuation">.</span><span class="token function">pause</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="play">
-                    <div exportgroup="README.md">
+                <template exportid="play" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="play"><code>.play()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.play()</code> method.</p>
@@ -2484,8 +2484,8 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">300</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="progress">
-                    <div exportgroup="README.md">
+                <template exportid="progress" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="progress"><code>.progress()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.progress()</code> method.</p>
@@ -2518,7 +2518,7 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">450</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <div exportgroup="README.md">
+                <div exportid="#README.md">
                 	<h1 id="timeline">Timeline</h1>
                 	<p>This class provides a convenient way to control multiple <a href="\tooling\play-ui\docs\api\ui\classes\Animation">Animation</a> instances.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -2559,8 +2559,8 @@ timeline<span class="token punctuation">.</span><span class="token function">rem
                 	<h2 id="methods">Methods</h2>
                 	<p>Explore the instance methods of this class.</p>
                 </div>
-                <template name="remove">
-                    <div exportgroup="README.md">
+                <template exportid="remove" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="remove"><code>.remove()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.remove()</code> method.</p>
@@ -2586,8 +2586,8 @@ timeline<span class="token punctuation">.</span><span class="token function">add
 timeline<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span>animation<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="reverse">
-                    <div exportgroup="README.md">
+                <template exportid="reverse" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="reverse"><code>.reverse()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.reverse()</code> method.</p>
@@ -2608,8 +2608,8 @@ timeline<span class="token punctuation">.</span><span class="token function">rem
 <pre class="line-numbers match-braces language-js" tabindex="0"><code class="js language-js">timeline<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
                     </div>
                 </template>
-                <template name="seek">
-                    <div exportgroup="README.md">
+                <template exportid="seek" inherits="#main.html">
+                    <div exportid="#README.md">
                     	<h1 id="seek"><code>.seek()</code></h1>
                     	<blockquote>
                     	  <p>The <code>timeline.seek()</code> method.</p>
@@ -2641,8 +2641,8 @@ timeline<span class="token punctuation">.</span><span class="token function">see
                     </div>
                 </template>
             </template>
-            <template name="UIRect">
-                <div exportgroup="README.md">
+            <template exportid="UIRect" inherits="#main.html">
+                <div exportid="#README.md">
                 	<h1 id="class-uirect-"><code>class UIRect {}</code></h1>
                 	<p>Instances of this class represent the rendered rectangle of an element in the UI. And a good amount of transformation to this <em>rect</em> is possible.</p>
                 	<h2 id="constructor-NaN">Constructor</h2>
@@ -2683,8 +2683,8 @@ timeline<span class="token punctuation">.</span><span class="token function">see
                 </div>
             </template>
         </template>
-        <template name="custom-events">
-            <div exportgroup="README.md">
+        <template exportid="custom-events" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="custom-events">Custom Events</h1>
             	<p>Play UI's event system can be hooked into to provide custom event implementations. For example, its <em>tripletap</em>, <em>doubletap</em>, and <em>singletap</em> gestures are custom implementations/variations of the <em>tap</em> gesture. But, a custom event can be as simple as an alias for another event. Play UI makes everything easy!</p>
             	<p>To create a custom event, import the <code>CustomEvents</code> object.</p>
@@ -2724,8 +2724,8 @@ CustomEvents<span class="token punctuation">.</span>hit <span class="token opera
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
             </div>
         </template>
-        <template name="off">
-            <div exportgroup="README.md">
+        <template exportid="off" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="off"><code>.off()</code></h1>
             	<p>This method is used to unbind event or gesture handlers previously bound to an element using <a href="\tooling\play-ui\docs\api\ui\on"><code>.on()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -2771,8 +2771,8 @@ CustomEvents<span class="token punctuation">.</span>hit <span class="token opera
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="on">
-            <div exportgroup="README.md">
+        <template exportid="on" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="on"><code>.on()</code></h1>
             	<p>This method is used to bind event or gesture handlers to an element. This works like the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener"><code>EventTarget.addEventListener()</code></a> function but adds support for user gestures and custom event implementation.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -2833,8 +2833,8 @@ listener<span class="token punctuation">.</span><span class="token function">dis
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="play">
-            <div exportgroup="README.md">
+        <template exportid="play" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="play"><code>.play()</code></h1>
             	<p>This method is used to create and play an animation. This method is promise-based.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -2880,11 +2880,11 @@ listener<span class="token punctuation">.</span><span class="token function">dis
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="api-category-ui">API Category: UI</h1>
         </div>
-        <template name="rect">
-            <div exportgroup="README.md">
+        <template exportid="rect" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="rect"><code>.rect()</code></h1>
             	<p>This method is used to obtain the rendered rectangle of an element in the UI for manipualtion. It is an alias of the <a href="\tooling\play-ui\docs\api\ui\classes\UIRect#uirectcalculateelement-params--">UIRect.calculate()</a> function.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -2912,8 +2912,8 @@ listener<span class="token punctuation">.</span><span class="token function">dis
             	<p>See <a href="\tooling\play-ui\docs\getting-started\overview#use-as-descrete-utilities">the general way to use Play UI's standalone functions</a></p>
             </div>
         </template>
-        <template name="trigger">
-            <div exportgroup="README.md">
+        <template exportid="trigger" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="trigger"><code>.trigger()</code></h1>
             	<p>This method is used to trigger event or gesture handlers previously bound to an element using <a href="\tooling\play-ui\docs\api\ui\on"><code>.on()</code></a>.</p>
             	<h2 id="syntax">Syntax</h2>
@@ -2958,10 +2958,10 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         </template>
     </template>
 </template>
-<template name="cli">
-    <template name="bundle">
-        <template name="loaders">
-            <div exportgroup="README.md">
+<template exportid="cli" inherits="#main.html">
+    <template exportid="bundle" inherits="#main.html">
+        <template exportid="loaders" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="loaders">Loaders</h1>
             	<p>Play UI loaders are packages that extend the capabilities of the OOHTML Bundler. Play UI comes with certain loaders built-in and also makes it possible to provide custom loaders.</p>
             	<h2 id="overview">Overview</h2>
@@ -3004,7 +3004,7 @@ listener<span class="token punctuation">.</span><span class="token function">dis
       <span class="token keyword">return</span> <span class="token function">next</span><span class="token punctuation">(</span>received<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
   <span class="token comment">// Return a module export format</span>
-  <span class="token keyword">return</span> <span class="token string">'&lt;style exportgroup=""&gt;...&lt;/style&gt;'</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token string">'&lt;style exportid="#"&gt;...&lt;/style&gt;'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
             	<p><strong>Parameters</strong></p>
             	<ul>
@@ -3023,8 +3023,8 @@ listener<span class="token punctuation">.</span><span class="token function">dis
             	<p>Custom loaders are used by specifying their filename in the <a href="\tooling\play-ui\docs\cli\bundle#loaders"><code>[LOADERS]</code></a> config option. Loaders installed as an npm package are used by specifying their package name.</p>
             </div>
         </template>
-        <img src="\docs\cli\bundle\playui-bundle-1.png"  exportgroup="playui-bundle-1.png" />
-        <div exportgroup="README.md">
+        <img src="\docs\cli\bundle\playui-bundle-1.png"  exportid="#playui-bundle-1.png" />
+        <div exportid="#README.md">
         	<h1 id="-playui-bundle"><code>$ playui bundle</code></h1>
         	<p>The <strong><code>playui bundle</code></strong> command is used to automatically bundle static HTML files from the filesystem into <em><a href="/tooling/oohtml/docs/getting-started/overview#html-modules">HTML Modules</a></em>.</p>
         	<h2 id="overview">Overview</h2>
@@ -3036,14 +3036,14 @@ listener<span class="token punctuation">.</span><span class="token function">dis
     ├-- home
       ├-- index.html <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p>The goal is to translate the above layout into the following <em>module</em> structure and get it written to a single file that can be linked to:</p>
-<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>views<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>views<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>about<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>About Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>about<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>About Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
@@ -3056,7 +3056,7 @@ listener<span class="token punctuation">.</span><span class="token function">dis
   Here, we link to the remote content
   --&gt;</span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">&gt;</span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./bundle.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>main<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>./bundle.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">&gt;</span></span>
 
   <span class="token comment">&lt;!--
@@ -3073,7 +3073,7 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         	  <p>Syntax: <strong><code>playui bundle</code></strong></p>
         	</blockquote>
         	<p>Navigate to <code>project-root</code> and run <strong><code>playui bundle</code></strong>. Two files should be reported bundled. </p>
-        	<p><html-import name="playui-bundle-1" template="page/tooling/play-ui/docs/cli/bundle"></html-import></p>
+        	<p><import name="playui-bundle-1" template="page/tooling/play-ui/docs/cli/bundle"></import></p>
         	<p>Remote content is now ready at <code>./bundle.html</code>!</p>
         	<p>Now, beyond this point are so many other things we can do! And here is where a few configurations come in!</p>
         	<p>Run <strong><code>playui config bundler</code></strong> to walk down the options.</p>
@@ -3129,7 +3129,7 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         	<h4 id="export_mode"><code>[EXPORT_MODE]</code></h4>
         	<p>This specifies the syntax for designating the <em>module exports</em> within the generated <code>&lt;template&gt;</code> elements. The default value is <code>attribute</code> which translates to using the <code>exportgroup</code> attribute (or <a href="#export_group_attr"><code>[EXPORT_GROUP_ATTR]</code></a>) to designate <em>module exports</em>. Set to <code>element</code> to use the <code>&lt;export&gt;</code> element (or <a href="#export_element"><code>[EXPORT_ELEMENT]</code></a>) instead.  (See <a href="/tooling/oohtml/docs/spec/html-modules#convention">the two standard convetions</a>.)</p>
         	<h4 id="export_group_attr"><code>[EXPORT_GROUP_ATTR]</code></h4>
-        	<p>This specifies the attribute name for designating the <em>export ID</em> in <a href="#export_mode">attribute mode</a>. The default value is <code>exportgroup</code> which conforms to <a href="/tooling/oohtml/docs/spec/html-modules#convention">the default syntax</a> in the OOHTML spec. E.g. <code>&lt;div exportgroup="export-id"&gt;&lt;/div&gt;</code>.</p>
+        	<p>This specifies the attribute name for designating the <em>export ID</em> in <a href="#export_mode">attribute mode</a>. The default value is <code>exportgroup</code> which conforms to <a href="/tooling/oohtml/docs/spec/html-modules#convention">the default syntax</a> in the OOHTML spec. E.g. <code>&lt;div exportid="#export-id"&gt;&lt;/div&gt;</code>.</p>
         	<p>This should generally only be changed to align with the <code>attr.exportgroup</code> setting in the <a href="/tooling/oohtml/docs/spec/html-modules#polyfill-support">OOHTML meta tag</a> of the page where the bundle will be used.</p>
         	<blockquote>
         	  <p>This option is only shown when the <a href="#export_mode">export mode</a> option is set to <code>attribute</code>.</p>
@@ -3180,34 +3180,34 @@ listener<span class="token punctuation">.</span><span class="token function">dis
     ├-- home
       ├-- index.html <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p>…and an <code>&lt;img&gt;</code> element pointing to the <em>public</em> location of <code>image1.png</code> is added as a <em>module export</em> to the bundle.</p>
-<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>assets<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>assets<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image1<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/img/image1.png<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>img<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#image1<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/assets/img/image1.png<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>views<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>views<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>home<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Home Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>about<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
-       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>About Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>about<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#index<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>page-container<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>About Page<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></code></pre>
         	<p>Taking things further, it is possible to bundle small images (or other assets) with inline <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs">data URLs</a>. This way, the browser won't have to load them via HTTP request. Cutting down on the number of assets to load should greatly speed up the site's load time.</p>
         	<p>The Bundler just needs to know under what file size to use the <em>data-URL</em> format. Set the <a href="#max_data_url_size"><code>[MAX_DATA_URL_SIZE]</code></a> option to a size measured in bytes. E.g. <code>2048</code>. Assets below this size will now be bundled in <em>data-URL</em> format.</p>
         	<p>In the case of <code>image1.png</code> above, the generated <em>module export</em> would look like:</p>
-<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">exportgroup</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>image1<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data:image/png,%89PNG%0D%0A=<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span></code></pre>
+<pre class="line-numbers match-braces language-html" tabindex="0"><code class="html language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">exportid</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>#image1<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>data:image/png,%89PNG%0D%0A=<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span></code></pre>
         	<h2 id="further-reading">Further Reading</h2>
         </div>
     </template>
-    <template name="config">
-        <div exportgroup="README.md">
+    <template exportid="config" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-playui-config"><code>$ playui config</code></h1>
         	<p>The <strong><code>playui config</code></strong> command is used to configure other Play UI commands or a feature.</p>
         	<h2 id="overview">Overview</h2>
@@ -3220,9 +3220,9 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         	<p>To try, run <strong><code>playui config ...</code></strong>, pick a command from the list and follow the prompt. Be sure to consult the documentation for a command to achieve good configurations.</p>
         </div>
     </template>
-    <template name="help">
-        <img src="\docs\cli\help\playui-help.png"  exportgroup="playui-help.png" />
-        <div exportgroup="README.md">
+    <template exportid="help" inherits="#main.html">
+        <img src="\docs\cli\help\playui-help.png"  exportid="#playui-help.png" />
+        <div exportid="#README.md">
         	<h1 id="-playui-help"><code>$ playui help</code></h1>
         	<p>The <strong><code>playui help</code></strong> command is used to show available Play UI commands.</p>
         	<h2 id="overview">Overview</h2>
@@ -3231,18 +3231,18 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         	<blockquote>
         	  <p>Syntax: <strong><code>playui help</code></strong>.</p>
         	</blockquote>
-        	<p><html-import name="playui-help" template="page/tooling/play-ui/docs/cli/help"></html-import></p>
+        	<p><import name="playui-help" template="page/tooling/play-ui/docs/cli/help"></import></p>
         	<p>Refer to the documentation of the command you want to use.</p>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="command-line">Command Line</h1>
     	<p>The Play UI command-line tool.</p>
     </div>
 </template>
-<template name="getting-started">
-    <template name="download">
-        <div exportgroup="README.md">
+<template exportid="getting-started" inherits="#main.html">
+    <template exportid="download" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="download-options">Download Options</h1>
         	<p>In the Play UI family:</p>
         	<ul>
@@ -3286,8 +3286,8 @@ listener<span class="token punctuation">.</span><span class="token function">dis
         	<p>The <a href="\tooling\play-ui\docs\api">API Reference</a> or the <a href="\tooling\play-ui\docs\cli">Command Line Reference</a>.</p>
         </div>
     </template>
-    <template name="overview">
-        <div exportgroup="README.md">
+    <template exportid="overview" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="overview">Overview</h1>
         	<p>Play UI is a family of tools that brings a <em>utility-based</em> approach and a wholistic experience to UI development. This means: full UI authoring capabilities in the liberty and combinational power of standalone functionalities! Take an overview.</p>
         	<ul>
@@ -3451,12 +3451,12 @@ console<span class="token punctuation">.</span><span class="token function">log<
         	<p>The <a href="\tooling\play-ui\docs\getting-started\download">download options</a>.</p>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="getting-started">Getting Started</h1>
     	<p>The Play UI JavaScript library offers a succinct API for working with the DOM and UI. </p>
     </div>
 </template>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h1 id="play-ui-documentation">Play UI Documentation</h1>
 	<p>Welcome to the Play UI documentation. We hope you find it easy to understand and navigate. </p>
 	<p>If you have questions about anything related to the Play UI, you're always welcome to ask on our <a href="https://github.com/webqit/play-ui/discussions">GitHub Discussions</a>.</p>

@@ -18,8 +18,8 @@ Turns out that this is naturally possible!
     <body>
 
         <div id="alert" namespace>
-            <div data-id="message"></div>
-            <script type="subscript">
+            <div :id="message"></div>
+            <script type="module" scoped contract>
                 $(this.namespace.message).html(this.state.message || 'Task pending...');
             </script>
         </div>
@@ -56,8 +56,8 @@ This technique is natively implemented by the [Play UI](/tooling/play-ui) librar
     <body>
 
         <div id="alert" namespace>
-            <div data-id="message"></div>
-            <script type="subscript">
+            <div :id="message"></div>
+            <script type="module" scoped contract>
                 // The .html() method is asynchronous
                 if (!this.state.message) return;
                 $(this.namespace.message).htmlAsync(this.state.message).then(() => {

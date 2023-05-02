@@ -1,12 +1,12 @@
 
-<template name="api">
-    <div exportgroup="README.md">
+<template exportid="api" inherits="#main.html">
+    <div exportid="#README.md">
     	<h1 id="api">API</h1>
     	<p>The Webflo API reference.</p>
     </div>
-    <template name="route-handlers">
-        <template name="NavigationEvent">
-            <div exportgroup="README.md">
+    <template exportid="route-handlers" inherits="#main.html">
+        <template exportid="NavigationEvent" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-navigationevent-"><code>class NavigationEvent {}</code></h1>
             	<p>This is the <code>NavigationEvent</code> that is fired on every request which route handlers receive on their <code>event</code> parameter.</p>
             	<h2 id="properties">Properties</h2>
@@ -17,7 +17,7 @@
             	</ul>
             </div>
         </template>
-        <div exportgroup="README.md">
+        <div exportid="#README.md">
         	<h1 id="route-handlers">Route Handlers</h1>
         	<p>Route handlers are simple <em>export</em> functions that are designed to intercept a request and return a response. Webflo sticks with one way to define route handlers across all routing layers.</p>
         	<p><strong>Syntax</strong></p>
@@ -67,8 +67,8 @@
         	</ul>
         	<h2 id="associated-apis">Associated APIs</h2>
         </div>
-        <template name="Request">
-            <div exportgroup="README.md">
+        <template exportid="Request" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="interface-request-"><code>interface Request {}</code></h1>
             	<p>This is an interface that is additionally implemented by the incoming request instances that route handlers receive on their <code>event.request</code> parameter. (Client-side <code>event.request</code> objects are an instance of the standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request"><code>Request</code></a> interface. Server-side <code>event.request</code> objects are an instance of node.js's <a href="https://nodejs.org/api/http.html#http_class_http_incomingmessage"><code>http.IncomingMessage</code></a> class.)</p>
             	<h2 id="properties">Properties</h2>
@@ -108,8 +108,8 @@
 <span class="token keyword">let</span> profilePics <span class="token operator">=</span> submits<span class="token punctuation">.</span>files<span class="token punctuation">.</span>user<span class="token punctuation">.</span>profile<span class="token punctuation">.</span>pics<span class="token punctuation">;</span></code></pre>
             </div>
         </template>
-        <template name="Response">
-            <div exportgroup="README.md">
+        <template exportid="Response" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-response-"><code>class Response {}</code></h1>
             	<p>This class is used for returning responses from route handlers. It is available to route handlers on their <code>event.Response</code> parameter.</p>
             	<p>Returning responses with this class allows a handler to include an HTTP status code and some HTTP headers.</p>
@@ -264,8 +264,8 @@ response<span class="token punctuation">.</span>cookies<span class="token punctu
             	<p>Where <code>value</code> is set to <code>false</code> and no <code>maxAge</code> attribute is set, a <code>maxAge</code> of <code>0</code> is implied, effectively expiring the cookie immediately.</p>
             </div>
         </template>
-        <template name="URL">
-            <div exportgroup="README.md">
+        <template exportid="URL" inherits="#main.html">
+            <div exportid="#README.md">
             	<h1 id="class-url-"><code>class URL {}</code></h1>
             	<p>This is an interface that is additionally implemented by the request URL objects that route handlers receive on their <code>event.url</code> parameter. (Both client-side and server-side <code>event.url</code> objects are instances of the standard <a href="https://developer.mozilla.org/en-US/docs/Web/API/URL"><code>URL</code></a> interface.)</p>
             	<h2 id="properties">Properties</h2>
@@ -310,61 +310,61 @@ console<span class="token punctuation">.</span><span class="token function">log<
         </template>
     </template>
 </template>
-<template name="build-system">
-    <template name="javascript">
-        <div exportgroup="README.md">
+<template exportid="build-system" inherits="#main.html">
+    <template exportid="javascript" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="javascript-bundling">JavaScript Bundling</h1>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="build-system">Build System</h1>
     </div>
-    <template name="static-build">
-        <div exportgroup="README.md">
+    <template exportid="static-build" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="static-site-generation">Static Site Generation</h1>
         </div>
     </template>
 </template>
-<template name="cli">
-    <template name="build">
-        <div exportgroup="README.md">
+<template exportid="cli" inherits="#main.html">
+    <template exportid="build" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-webflo-config"><code>&gt; webflo config</code></h1>
         </div>
     </template>
-    <template name="cert">
-        <div exportgroup="README.md">
+    <template exportid="cert" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="self-hosting">Self Hosting</h1>
         </div>
     </template>
-    <template name="config">
-        <div exportgroup="README.md">
+    <template exportid="config" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-webflo-build"><code>&gt; webflo build</code></h1>
         </div>
     </template>
-    <template name="deploy">
-        <div exportgroup="README.md">
+    <template exportid="deploy" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-webflo-deploy"><code>&gt; webflo deploy</code></h1>
         </div>
     </template>
-    <template name="help">
-        <div exportgroup="README.md">
+    <template exportid="help" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-webflo-help"><code>&gt; webflo help</code></h1>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="command-line">Command-Line</h1>
     	<p>The Webflo Command-Line reference.</p>
     </div>
-    <template name="server">
-        <div exportgroup="README.md">
+    <template exportid="server" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="-webflo-server"><code>&gt; webflo :server</code></h1>
         	<!--Server lifecycle management.-->
         </div>
     </template>
 </template>
-<template name="client-runtime">
-    <template name="navigation">
-        <div exportgroup="README.md">
+<template exportid="client-runtime" inherits="#main.html">
+    <template exportid="navigation" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="navigation">Navigation</h1>
         	<!--
         	## Links
@@ -387,8 +387,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
         	-->
         </div>
     </template>
-    <template name="pwa">
-        <div exportgroup="README.md">
+    <template exportid="pwa" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="progressive-web-apps">Progressive Web Apps</h1>
         	<!--
         	Manifests
@@ -401,36 +401,36 @@ console<span class="token punctuation">.</span><span class="token function">log<
         	-->
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="client-runtime">Client Runtime</h1>
     </div>
 </template>
-<template name="deployment">
-    <template name="managed-hosting">
-        <div exportgroup="README.md">
+<template exportid="deployment" inherits="#main.html">
+    <template exportid="managed-hosting" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="managed-hosting">Managed Hosting</h1>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="deployment">Deployment</h1>
     </div>
-    <template name="self-hosting">
-        <div exportgroup="README.md">
+    <template exportid="self-hosting" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="self-hosting">Self Hosting</h1>
         </div>
     </template>
 </template>
-<template name="fundamentals">
-    <div exportgroup="README.md">
+<template exportid="fundamentals" inherits="#main.html">
+    <div exportid="#README.md">
     	<h1 id="fundamentals">Fundamentals</h1>
     </div>
-    <template name="rendering">
-        <div exportgroup="README.md">
+    <template exportid="rendering" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="rendering">Rendering</h1>
         </div>
     </template>
-    <template name="requests-and-responses">
-        <div exportgroup="README.md">
+    <template exportid="requests-and-responses" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="http-requests-and-responses">HTTP Requests and Responses</h1>
         	<p>Routes in Webflo can be designed for different types of requests and responses.</p>
         	<h2 id="api-calls-and-page-requests">API Calls and Page Requests</h2>
@@ -568,8 +568,8 @@ console<span class="token punctuation">.</span><span class="token function">log<
         	</blockquote>
         </div>
     </template>
-    <template name="routing">
-        <div exportgroup="README.md">
+    <template exportid="routing" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="routing">Routing</h1>
         	<p>In Webflo, routing is filesystem-based. Here, we simply create a file on the filesystem and it automatically becomes available as an URL.</p>
         	<p>The application's root URL <code>/</code>, for example, would be implemented by creating an <em>index file</em> - <code>&lt;indexFile&gt;</code> - in a chosen <em>routing directory</em> - <code>&lt;routingDirectory&gt;</code>.</p>
@@ -791,15 +791,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token punctuation">}</span></code></pre>
         </div>
     </template>
-    <template name="templating">
-        <div exportgroup="README.md">
+    <template exportid="templating" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="templating">Templating</h1>
         </div>
     </template>
 </template>
-<template name="getting-started">
-    <template name="installation">
-        <div exportgroup="README.md">
+<template exportid="getting-started" inherits="#main.html">
+    <template exportid="installation" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="installation">Installation</h1>
         	<p>Every Webflo project starts on an empty directory that you can create on your machine. The command below will make a new directory <code>webflo-app</code> from the terminal and navigate into it.</p>
 <pre class="line-numbers match-braces language-bash" tabindex="0"><code class="bash language-bash">mkdir webflo-app
@@ -868,8 +868,8 @@ cd webflo-app</code></pre>
         	<p>Continue to <a href="\tooling\webflo\docs\fundamentals">learning the fundamentals</a>.</p>
         </div>
     </template>
-    <template name="overview">
-        <div exportgroup="README.md">
+    <template exportid="overview" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="overview">Overview</h1>
         	<p>Webflo is the universal JavaScript framework for Web, Mobile, and API Backends, and the single tool that takes you from development, to deployment, to continous delivery. The Webflo experience is: <em>all of the possibilities</em> delivered in a <em>long-story-short approach</em>!</p>
         	<p>Take an overview!</p>
@@ -897,11 +897,11 @@ cd webflo-app</code></pre>
         	</blockquote>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="getting-started">Getting Started</h1>
     </div>
 </template>
-<div exportgroup="README-1.md">
+<div exportid="#README-1.md">
 	<h1 id="project-layout">Project Layout</h1>
 	<p>It's a good practice to locate certain project files in conventional places. Webflo is thus able to automatically identify them at runtime. Here's an overview (keep in mind that everything below is optional, and/or can be renamed):</p>
 	<ul>
@@ -1131,15 +1131,15 @@ cd webflo-app</code></pre>
 	<h3 id="the-process-object">The <code>process</code> Object</h3>
 	<p>When called, route handlers recieve very useful information about the ongoing HTTP process. This and a few other metadata are passed together as an object into the first parameter of the handler - the <code>process</code> parameter.</p>
 </div>
-<div exportgroup="README.md">
+<div exportid="#README.md">
 	<h1 id="webflo-documentation">Webflo Documentation</h1>
 	<p>Welcome to the Webflo documentation. We hope you find it easy to understand and navigate.</p>
 	<p>If you have questions about anything related to the Webflo, you're always welcome to ask on our <a href="https://github.com/webqit/webflo/discussions">GitHub Discussions</a>.</p>
 	<h2 id="explore-the-docs">Explore the Docs</h2>
 </div>
-<template name="server-runtime">
-    <template name="dns">
-        <div exportgroup="README.md">
+<template exportid="server-runtime" inherits="#main.html">
+    <template exportid="dns" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="hosts-resolution">Hosts Resolution</h1>
         	<!--
         	WWW
@@ -1150,8 +1150,8 @@ cd webflo-app</code></pre>
         	-->
         </div>
     </template>
-    <template name="processes">
-        <div exportgroup="README.md">
+    <template exportid="processes" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="server-processes">Server Processes</h1>
         	<!--
         	Starting in command line vs running in the background
@@ -1161,22 +1161,22 @@ cd webflo-app</code></pre>
         	-->
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="server-runtime">Server Runtime</h1>
     </div>
 </template>
-<template name="workflow">
-    <template name="dev-mode">
-        <div exportgroup="README.md">
+<template exportid="workflow" inherits="#main.html">
+    <template exportid="dev-mode" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="dev-mode">Dev Mode</h1>
         </div>
     </template>
-    <template name="git-flow">
-        <div exportgroup="README.md">
+    <template exportid="git-flow" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="git-workflow">Git Workflow</h1>
         </div>
     </template>
-    <div exportgroup="README.md">
+    <div exportid="#README.md">
     	<h1 id="workflow">Workflow</h1>
     	<!--
     	
@@ -1186,8 +1186,8 @@ cd webflo-app</code></pre>
     	+ config --env flag
     	-->
     </div>
-    <template name="testing">
-        <div exportgroup="README.md">
+    <template exportid="testing" inherits="#main.html">
+        <div exportid="#README.md">
         	<h1 id="testing-workflow">Testing Workflow</h1>
         </div>
     </template>

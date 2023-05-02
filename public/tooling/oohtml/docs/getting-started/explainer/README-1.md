@@ -6,14 +6,14 @@ For example:
 
 1. Web Components gives us the `<template>` element for keeping reusable markup. Using standard APIs like the `.querySelector()` method, we are able to find these contents and put them to use. But in-between lies additional questions that OOHTML seeks to answer:
 
-    + Since every piece of HTML has be identified by a CSS selector in order to be accessible by `.querySelector()`, why don't we have a common naming convention for `<template>` elements or their contents? You'll realise that this is a component system without a proper naming system and it has all been half the feature. OOHTML introduces this missing naming convention: `<template name="module1"></template>` and builds on it to come off with something that works like [a module system for HTML](http://webqit.io/tooling/oohtml/docs/getting-started/overview#html-modules). For example it introduces nesting of these modules to make for structuring markup bundles: 
+    + Since every piece of HTML has be identified by a CSS selector in order to be accessible by `.querySelector()`, why don't we have a common naming convention for `<template>` elements or their contents? You'll realise that this is a component system without a proper naming system and it has all been half the feature. OOHTML introduces this missing naming convention: `<template exportid="module1"></template>` and builds on it to come off with something that works like [a module system for HTML](http://webqit.io/tooling/oohtml/docs/getting-started/overview#html-modules). For example it introduces nesting of these modules to make for structuring markup bundles: 
 
         ```html
-        <template name="module1">
+        <template exportid="module1">
 
             <div>A reusable DIV</div>
 
-            <template name="nested_module1">
+            <template exportid="nested_module1">
                 <div>A reusable DIV</div>
             </template>
 
@@ -23,16 +23,16 @@ For example:
         It goes further to introduce identifiers for the reusable contents in a `<template>` element and calls them module exports:
 
         ```html
-        <template name="module1">
+        <template exportid="module1">
 
-            <div exportgroup="export1">A reusable DIV</div>
+            <div exportid="#export1">A reusable DIV</div>
 
             <!-- Or to put it another way: -->
             <export name="export1">
                 <div>A reusable DIV</div>
             </export>
 
-            <template name="nested_module1">
+            <template exportid="nested_module1">
                 <!-- And an identifier may not always be necessary too. We'll call the contents without an identifier as collectively the "default export" -->
                 <div>A reusable DIV</div>
             </template>
@@ -43,13 +43,13 @@ For example:
         And lastly, OOHTML introduces an `src` attribute for referencing remote content for a `<template>` element. Why deal with an imperative API - `fetch()` - for this when we can simply do what we already do for remote stuffs: `<script src=""></script>`, `<img src=""></img>`, etc.!
 
         ```html
-        <template name="module1" src="/bundle.html"></template><!-- a "load" event is fired on load -->
+        <template exportid="module1" src="/bundle.html"></template><!-- a "load" event is fired on load -->
        <!-- -->
         ```
        
         We might not realise it, but these are questions each developer would have to answer for himself; and well, for no extra benefit.
 
-    + How do we take this JavaScript - `.querySelector('template[name="module1"] > [div[exportgroup="export1"]')` - out of the picture in cases where we simply want to place a piece of markup from a `<template>` element into document body? OOHTML introduces [the `<import>` element](http://webqit.io/tooling/oohtml/docs/getting-started/overview#html-imports)!
+    + How do we take this JavaScript - `.querySelector('template[name="module1"] > [div[exportid="#export1"]')` - out of the picture in cases where we simply want to place a piece of markup from a `<template>` element into document body? OOHTML introduces [the `<import>` element](http://webqit.io/tooling/oohtml/docs/getting-started/overview#imports)!
     
         ```html
         <body>
@@ -63,7 +63,7 @@ For example:
         </body>
         ```
 
-    + How do we take the CSS selectors - `.querySelector('template[name="module1"] > [div[exportgroup="export1"]')` - completely out of JavaScript code where we need to programmatically reuse *exports*? OOHTML offers modules and their exports as objects and properties:
+    + How do we take the CSS selectors - `.querySelector('template[name="module1"] > [div[exportid="#export1"]')` - completely out of JavaScript code where we need to programmatically reuse *exports*? OOHTML offers modules and their exports as objects and properties:
 
         ```js
         let module1 = document.templates.module1;
@@ -77,9 +77,9 @@ For example:
 
         ```html
         <head>
-            <template name="officialModule" src="/bundle.html"></template>
-            <template name="vendor1Module" src="https://vendor1.com/bundle.html"></template>
-            <template name="vendor2Module" src="https://vendor2.com/bundle.html"></template>
+            <template exportid="officialModule" src="/bundle.html"></template>
+            <template exportid="vendor1Module" src="https://vendor1.com/bundle.html"></template>
+            <template exportid="vendor2Module" src="https://vendor2.com/bundle.html"></template>
         </head>
         <body>
             <import template="vendor1Module" name="header-component"></import>
